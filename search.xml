@@ -1,6 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>绘画笔记-冷暖</title>
+    <url>/2020/11/08/%E7%BB%98%E7%94%BB%E7%AC%94%E8%AE%B0-%E5%86%B7%E6%9A%96/</url>
+    <content><![CDATA[<h1 id="Alena-Aenami"><a href="#Alena-Aenami" class="headerlink" title="Alena Aenami"></a>Alena Aenami</h1><p>A站一个冷暖的画家</p>
+<p><img src="/images/huihuabiji/1546086573718.png" alt="1546086573718"></p>
+<h1 id="BATO-DUGARZHAPOV"><a href="#BATO-DUGARZHAPOV" class="headerlink" title="BATO DUGARZHAPOV"></a><a href="http://artrussia.ru/en/bato_dugarzhapov" target="_blank" rel="noopener">BATO DUGARZHAPOV</a></h1><p><img src="/images/huihuabiji/bato-dugarzhapov-untitled.jpg" alt="bato-dugarzhapov-untitled"></p>
+<h1 id="冷暖-饱和度-的一个高级作用——表现体积-而不用明度表现体积"><a href="#冷暖-饱和度-的一个高级作用——表现体积-而不用明度表现体积" class="headerlink" title="冷暖(饱和度)的一个高级作用——表现体积(而不用明度表现体积)"></a>冷暖(饱和度)的一个高级作用——表现体积(而不用明度表现体积)</h1><p>其实本质来讲就是<strong>有对比</strong> 和之前投影的笔记一个样子，投影使用明度对比塑造体积感，而冷暖用饱和度塑造体积感，这两者在素描的层面上都是明度发生了变化</p>
+<p><img src="/images/huihuabiji/冷暖和饱和度对比出体积-1546513659128.png" alt="冷暖和饱和度对比出体积-1546513659128"></p>
+]]></content>
+      <categories>
+        <category>绘画笔记</category>
+      </categories>
+      <tags>
+        <tag>色彩</tag>
+        <tag>笔记</tag>
+        <tag>思考</tag>
+        <tag>冷暖</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>绘画笔记-投影</title>
+    <url>/2020/11/08/%E7%BB%98%E7%94%BB%E7%AC%94%E8%AE%B0-%E6%8A%95%E5%BD%B1/</url>
+    <content><![CDATA[<h1 id="投影的对比感出来就算不是变暗也可以体现出投影的感觉"><a href="#投影的对比感出来就算不是变暗也可以体现出投影的感觉" class="headerlink" title="投影的对比感出来就算不是变暗也可以体现出投影的感觉"></a>投影的对比感出来就算不是变暗也可以体现出投影的感觉</h1><p><img src="/images/huihuabiji/1550383518656.png" alt="1550383518656"></p>
+<p>▽Omutatsu<br><a href="https://twitter.com/omrice4869" target="_blank" rel="noopener">https://twitter.com/omrice4869</a><br><a href="https://omutatsu.work" target="_blank" rel="noopener">https://omutatsu.work</a></p>
+<p><strong>投影的对比也算是一种增加插画丰富性的表现手法</strong></p>
+<h1 id="投影与苹果"><a href="#投影与苹果" class="headerlink" title="投影与苹果"></a>投影与苹果</h1><p><img src="/images/huihuabiji/1578665865201.png" alt="1578665865201"></p>
+]]></content>
+      <categories>
+        <category>绘画笔记</category>
+      </categories>
+      <tags>
+        <tag>色彩</tag>
+        <tag>笔记</tag>
+        <tag>思考</tag>
+        <tag>投影</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexoNext的设置备份</title>
+    <url>/2020/11/08/hexoNext%E7%9A%84%E8%AE%BE%E7%BD%AE%E5%A4%87%E4%BB%BD/</url>
+    <content><![CDATA[<h1 id="base-styl设置字体大小"><a href="#base-styl设置字体大小" class="headerlink" title="base.styl设置字体大小"></a>base.styl设置字体大小</h1><p>在 <code>themes\next\source\css\_variables\base.styl</code> 中修改</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// Font size</span><br><span class="line">$font-size-base           = (hexo-config(&apos;font.enable&apos;) and hexo-config(&apos;font.global.size&apos;) is a &apos;unit&apos;) ? unit(hexo-config(&apos;font.global.size&apos;), em) : .875em;</span><br><span class="line">$font-size-smallest       = .75em;</span><br><span class="line">$font-size-smaller        = .8125em;</span><br><span class="line">$font-size-small          = .875em;</span><br><span class="line">$font-size-medium         = 1em;</span><br><span class="line">$font-size-large          = 1.125em;</span><br><span class="line">$font-size-larger         = 1.25em;</span><br><span class="line">$font-size-largest        = 1.5em;</span><br></pre></td></tr></table></figure>
+<h1 id="主题-config-yml"><a href="#主题-config-yml" class="headerlink" title="主题_config.yml"></a>主题_config.yml</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">font:</span><br><span class="line">  enable: true</span><br><span class="line">  # Uri of fonts host. E.g. //fonts.googleapis.com (Default)</span><br><span class="line">  # 亲测这个可用，如果不可用，自己搜索 [Google 字体 国内镜像]，找个能用的就行</span><br><span class="line">  host: https://fonts.cat.net</span><br><span class="line">  # Global font settings used on &lt;body&gt; element.</span><br><span class="line">    # 全局字体，应用在 body 元素上</span><br><span class="line">  global:</span><br><span class="line">    external: true</span><br><span class="line">    family: Lato</span><br><span class="line">    size: 16</span><br><span class="line">    #csdn上就是16看着舒服多了</span><br></pre></td></tr></table></figure>
+<h1 id="custom-styl"><a href="#custom-styl" class="headerlink" title="custom.styl"></a>custom.styl</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">// 标题，修改成你期望的字体族</span><br><span class="line">$font-family-headings = Georgia, sans</span><br><span class="line"> </span><br><span class="line">// 修改成你期望的字体族</span><br><span class="line">$font-family-base = &quot;Microsoft YaHei&quot;, Verdana, sans-serif</span><br><span class="line"> </span><br><span class="line">// 代码字体</span><br><span class="line">$code-font-family = &quot;Input Mono&quot;, &quot;PT Mono&quot;, Consolas, Monaco, Menlo, monospace</span><br><span class="line"> </span><br><span class="line">// 正文字体的大小</span><br><span class="line">$font-size-base = 16px</span><br><span class="line"> </span><br><span class="line">// 代码字体的大小</span><br><span class="line">$code-font-size = 13px</span><br></pre></td></tr></table></figure>
+<p>第一个字体变量是题目的字体，第二个是其余部分的字体。<br>因为我们是中文博客，所以肯定希望能改成一些比较漂亮的中文字体，但是显而易见，你改成<code>宋体</code>是不合理的，因为第一会出现乱码情况，第二Hexo也不接受中文名字的字体。所以我们需要使用中文字体的英文名称。下面是中文字体对应的英文名称。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">新细明体：PMingLiU </span><br><span class="line">细明体：MingLiU </span><br><span class="line">标楷体：DFKai-SB </span><br><span class="line">黑体：SimHei </span><br><span class="line">宋体：SimSun </span><br><span class="line">新宋体：NSimSun </span><br><span class="line">仿宋：FangSong </span><br><span class="line">楷体：KaiTi </span><br><span class="line">仿宋_GB2312：FangSong_GB2312 </span><br><span class="line">楷体_GB2312：KaiTi_GB2312 </span><br><span class="line">微软正黑体：Microsoft JhengHei </span><br><span class="line">微软雅黑体：Microsoft YaHei </span><br><span class="line"></span><br><span class="line">装Office会多出来的一些字体： </span><br><span class="line">隶书：LiSu </span><br><span class="line">幼圆：YouYuan </span><br><span class="line">华文细黑：STXihei </span><br><span class="line">华文楷体：STKaiti </span><br><span class="line">华文宋体：STSong </span><br><span class="line">华文中宋：STZhongsong </span><br><span class="line">华文仿宋：STFangsong </span><br><span class="line">方正舒体：FZShuTi </span><br><span class="line">方正姚体：FZYaoti </span><br><span class="line">华文彩云：STCaiyun </span><br><span class="line">华文琥珀：STHupo </span><br><span class="line">华文隶书：STLiti </span><br><span class="line">华文行楷：STXingkai </span><br><span class="line">华文新魏：STXinwei </span><br><span class="line"></span><br><span class="line">苹果电脑中的字体： </span><br><span class="line">华文细黑：STHeiti Light [STXihei] </span><br><span class="line">华文黑体：STHeiti </span><br><span class="line">华文楷体：STKaiti </span><br><span class="line">华文宋体：STSong </span><br><span class="line">华文仿宋：STFangsong </span><br><span class="line">丽黑 Pro：LiHei Pro Medium </span><br><span class="line">丽宋 Pro：LiSong Pro Light </span><br><span class="line">标楷体：BiauKai </span><br><span class="line">苹果丽中黑：Apple LiGothic Medium </span><br><span class="line">苹果丽细宋：Apple LiSung Light</span><br></pre></td></tr></table></figure>
+<h1 id="字体大小不变的问题"><a href="#字体大小不变的问题" class="headerlink" title="字体大小不变的问题"></a>字体大小不变的问题</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hello, I have changed: source/css/_variables/custom.styl</span><br><span class="line">$font-size-base = 20px; and when $ hexo s the font is bigger, but $ hexo -g d , </span><br><span class="line">it not worked, how can i do that?thanks</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<h1 id="hexo升级"><a href="#hexo升级" class="headerlink" title="hexo升级"></a>hexo升级</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-cli -g</span><br><span class="line">hexo version 查看是否升级成功。</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>github</tag>
+        <tag>博客</tag>
+        <tag>Blog</tag>
+        <tag>next</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2020/09/24/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -1094,9 +1155,9 @@
       </categories>
       <tags>
         <tag>透视课</tag>
+        <tag>思考</tag>
         <tag>过程</tag>
         <tag>记录</tag>
-        <tag>思考</tag>
       </tags>
   </entry>
   <entry>
@@ -1160,8 +1221,8 @@
       </categories>
       <tags>
         <tag>Krenz</tag>
-        <tag>知识点</tag>
         <tag>DLC</tag>
+        <tag>知识点</tag>
         <tag>色彩</tag>
         <tag>色彩课</tag>
         <tag>油画</tag>

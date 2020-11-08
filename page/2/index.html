@@ -164,6 +164,447 @@
   
   
   <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/20/基础拓扑学笔记-1-欧拉定理/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/20/基础拓扑学笔记-1-欧拉定理/" class="post-title-link" itemprop="url">基础拓扑学笔记(1)--欧拉定理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-09-20 16:08:58 / 修改时间：16:26:51" itemprop="dateCreated datePublished" datetime="2020-09-20T16:08:58+08:00">2020-09-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/拓扑学/" itemprop="url" rel="index"><span itemprop="name">拓扑学</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>基本拓扑学=1/3点集拓扑+2/3 代数拓扑<br>微分几何 微分流形</p>
+<h2 id="1-顶点数-棱数-面数-2"><a href="#1-顶点数-棱数-面数-2" class="headerlink" title="1.顶点数-棱数+面数 = 2"></a>1.顶点数-棱数+面数 = 2</h2><p><img src="/images/VEF1.png" alt="在这里插入图片描述"><br><strong>V</strong>=Vertex 顶点数 <strong>E</strong>= Edge 边数 <strong>F</strong>=Face 面数</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/20/基础拓扑学笔记-1-欧拉定理/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/29/U-Net与胰腺分割学习（1）/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/29/U-Net与胰腺分割学习（1）/" class="post-title-link" itemprop="url">U-Net与胰腺分割学习（1）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-29 08:15:02" itemprop="dateCreated datePublished" datetime="2020-08-29T08:15:02+08:00">2020-08-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-15 10:04:04" itemprop="dateModified" datetime="2020-09-15T10:04:04+08:00">2020-09-15</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>怕什么真理无穷 进一寸有一寸的欢喜 - -胡适</strong></p>
+<h1 id="TCIA-The-Cancer-Imaging-Archive"><a href="#TCIA-The-Cancer-Imaging-Archive" class="headerlink" title="TCIA (The Cancer Imaging Archive)"></a><strong>TCIA (The Cancer Imaging Archive)</strong></h1><p>TCIA是一个包含常见肿瘤（肺癌、前列腺癌等）医学图像及相应临床信息（治疗方案细节、基因、病理等）的大规模公用数据库，其影像模态包括MRI、CT等，图像格式均为DICOM，并且网站内数据在持续增加。所有数据都是由TCIA整理并管理。</p>
+<p><strong>网址：<a href="http://www.cancerimagingarchive.net/" target="_blank" rel="noopener">http://www.cancerimagingarchive.net/</a></strong></p>
+<p><strong>通过点击Download下载，在电脑上得到后缀名为’.tcia’的文件，注意该文件必须通过‘NBIA DATA Retriever’软件打开，打开后就可以通过选择保存路径，开始下载数据集；</strong>(需要VPN)</p>
+<p><img src="/images/image-20200829081625498.png" alt="image-20200829081625498"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/08/29/U-Net与胰腺分割学习（1）/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/24/CNN-FCN-U-Net-卷积神经网络学习（1）/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/24/CNN-FCN-U-Net-卷积神经网络学习（1）/" class="post-title-link" itemprop="url">CNN FCN U-Net 卷积神经网络学习（1）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-24 16:35:34" itemprop="dateCreated datePublished" datetime="2020-08-24T16:35:34+08:00">2020-08-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-15 09:59:34" itemprop="dateModified" datetime="2020-09-15T09:59:34+08:00">2020-09-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/神经网络/" itemprop="url" rel="index"><span itemprop="name">神经网络</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前馈神经网络"><a href="#前馈神经网络" class="headerlink" title="前馈神经网络"></a>前馈神经网络</h1><h2 id="图像的表示和数字长方体"><a href="#图像的表示和数字长方体" class="headerlink" title="图像的表示和数字长方体"></a>图像的表示和数字长方体</h2><p>图像在计算机中是一堆按顺序排列的数字,数值为0到255,0表示最暗, 255表示最亮。你可以把这堆数字用一个长长的向量来表示。然而这样会失去平面结构的信息,为保留该结构信息,通常选择矩阵的表示方式: 28x28的矩阵。</p>
+<p>上图是只有黑白颜色的灰度图,而更普遍的图片表达方式是RGB颜色模型,即红(Red)、绿(Green) 、蓝(Blue)三原色的色光以不同的比例相加,以产生多种多样的色光。</p>
+<p>在电脑中,一张图片是数字构成的”长方体” 。可用宽width,高height,深depth来描述,如图。</p>
+<p><img src="/images/image-20200824172554595.png" alt="image-20200824172554595"></p>
+<h2 id="画面不变性"><a href="#画面不变性" class="headerlink" title="画面不变性"></a>画面不变性</h2><p>在决定如何处理”数字长方体”之前,需要清楚所建立的网络拥有什么样的特点。我们知道一个物体不管在画面左侧还是右侧,都会被识别为同一物体,这一特点就是不变性(invariance) ,如下图所示。</p>
+<p><img src="/images/image-20200824172638285.png" alt="image-20200824172638285"></p>
+<p>我们希望所建立的网络可以尽可能的满足这些不变性特点。为了理解卷积神经网络对这些不变性特点的贡献,我们将用不具备这些不变性特点的前馈神经网络来进行比较。</p>
+<h2 id="前馈神经网络的图像识别"><a href="#前馈神经网络的图像识别" class="headerlink" title="前馈神经网络的图像识别"></a>前馈神经网络的图像识别</h2><p>方便起见,我们用depth只有1的灰度图来举例。想要完成的任务是:在宽长为4x4的图片中识别是否有下图所示的”横折”。图中,黄色圆点表示值为0的像素,深色圆点表示值为1的像素。我们知道不管这个横折在图片中的什么位置,都会被认为是相同的横折。</p>
+<p><img src="/images/image-20200824172855849.png" alt="image-20200824172855849"></p>
+<p>若训练前馈神经网络来完成该任务,那么表达图像的三维张量将会被摊平成一个向量,作为网络的输入,即(width, height, depth)为(4, 4, 1)的图片会被展成维度为16的向量作为网络的输入层。再经过几层不同节点个数的隐藏层,最终输出两个节点,分别表示“有横折的概率”和”没有横折的概率” ,如下图所示。</p>
+<p><img src="/images/image-20200824172944449.png" alt="image-20200824172944449"></p>
+<p>下面我们用数字(16进制)对图片中的每一个像素点(pixel)进行编号。当使用右侧那种物体位于中间的训练数据来训练网络时,网络就只会对编号为5,6,9,a的节点的权重进行调节。若让该网络识别位于右下角的”横折”时,则无法识别。</p>
+<p><img src="/images/image-20200824173118513.png" alt="image-20200824173118513"></p>
+<p>解决办法是用大量物体位于不同位置的数据训练,同时增加网络的隐藏层个数从而扩大网络学习这些变体的能力。</p>
+<h2 id="前馈神经网络的缺点"><a href="#前馈神经网络的缺点" class="headerlink" title="前馈神经网络的缺点"></a>前馈神经网络的缺点</h2><p>然而这样做十分不效率,因为我们知道在左侧的“横折”也好,还是在右侧的”横折”也罢,大家都是”横折”。为什么相同的东西在位置变了之后要重新学习?有没有什么方法可以将中间所学到的规律也运用在其他的位置?换句话说,也就是让不同位置用相同的权重。</p>
+<p>卷积神经网络CNN就是让权重在不同位置共享的神经网络。</p>
+<h2 id="CNN的局部扫描"><a href="#CNN的局部扫描" class="headerlink" title="CNN的局部扫描"></a>CNN的局部扫描</h2><p>在卷积神经网络中,我们先选择一个局部区域,用这个局部区域去扫描整张图片。局部区域所圈起来的所有节点会被连接到下一层的一个节点上。</p>
+<p><img src="/images/image-20200824173504606.png" alt="image-20200824173504606"></p>
+<p><img src="/images/image-20200824173541949.png" alt="image-20200824173541949"></p>
+<p><img src="/images/image-20200824173605600.png" alt="image-20200824173605600"></p>
+<h2 id="CNN的输出"><a href="#CNN的输出" class="headerlink" title="CNN的输出"></a>CNN的输出</h2><p><img src="/images/image-20200824173623590.png" alt="image-20200824173623590"></p>
+<p><img src="/images/image-20200824173650926.png" alt="image-20200824173650926"></p>
+<h2 id="深度为复数的情况"><a href="#深度为复数的情况" class="headerlink" title="深度为复数的情况"></a>深度为复数的情况</h2><p>现在我们已经知道了depth维度只有1的灰度图是如何处理的。但前文提过,图片的普遍表达方式是下图这样有3个channels的RGB颜色模型。当depth为复数的时候,每个feature detector是如何卷积的?</p>
+<p><img src="/images/image-20200824173812745.png" alt="image-20200824173812745"></p>
+<p>在输入depth为1时:被filter size为2x2所圈中的4个输入节点连接到1个输出节点上。</p>
+<p>在输入depth为3时:被filter size为2x2,但是贯串3个channels后,所圈中的12个输入节点连接到1个输出节点上。</p>
+<p>在输入depth为n时: 2x2xn个输入节点连接到1个输出节点上。</p>
+<p><img src="/images/image-20200824173747971.png" alt="image-20200824173747971"></p>
+<h1 id="CNN（卷积神经网络）"><a href="#CNN（卷积神经网络）" class="headerlink" title="CNN（卷积神经网络）"></a>CNN（卷积神经网络）</h1><p>Facebook 将神经网络用于自动标注算法、谷歌将它用于图片搜索、亚马逊将它用于商品推荐、Pinterest 将它用于个性化主页推送、Instagram 将它用于搜索架构。</p>
+<p>然而，应用神经网络网络最经典最流行的案例是进行图像处理。在图像处理任务中，使用卷积神经网络进行<strong>图像分类</strong>。</p>
+<p>图像分类是对输入图像的操作，最终输出一组最好地描述了图像内容的分类（如猫、狗等）或分类的概率。对人类来说，识别是打出生便开始学习的技能之一，对成人来说更是信手拈来，毫不费力。我们只需一眼便能快速识别我们所处的环境以及环绕在我们身边的物体。当我们看到一张图片或是环看四周的时候，无需刻意观察，多数时候也能立即描述出场景特征并标记出每一个对象。快速识别不同模式、根据早前知识进行归纳、以及适应不同的图像环境一直都是人类的专属技能，机器尚未享有。</p>
+<p><img src="/images/image-20200824163735498.png" alt="image-20200824163735498"></p>
+<p>当计算机看到一张图像（输入一张图像）时，它看的是一大堆像素值。根据图片的分辨率和尺寸，它将看到一个 32 x 32 x 3 的数组（3 指代的是 RGB 值）。假设我们有一张 JPG 格式的 480 x 480 大小的彩色图片，那么它对应的数组就有 480 x 480 x 3 个元素。其中每个数字的值从 0 到 255 不等，其描述了对应那一点的像素灰度。当我们人类对图像进行分类时，这些数字毫无用处，可它们却是计算机可获得的唯一输入。其中的思想是：当你提供给计算机这一数组后，它将输出描述该图像属于某一特定分类的概率的数字（比如：80% 是猫、15% 是狗、5% 是鸟）。</p>
+<p>我们想要计算机能够区分开所有提供给它的图片，以及搞清楚猫猫狗狗各自的特有特征。这也是我们人类的大脑中不自觉进行着的过程。当我们看到一幅狗的图片时，如果有诸如爪子或四条腿之类的明显特征，我们便能将它归类为狗。同样地，计算机也可以通过寻找诸如边缘和曲线之类的低级特点来分类图片，继而通过一系列卷积层级建构出更为抽象的概念。这是 CNN（卷积神经网络）工作方式的大体概述，</p>
+<p>挑一张图像，让它历经一系列卷积层、非线性层、池化（下采样（downsampling））层和完全连接层，最终得到输出。输出可以是最好地描述了图像内容的一个单独分类或一组分类的概率。</p>
+<h2 id="卷积层"><a href="#卷积层" class="headerlink" title="卷积层"></a>卷积层</h2><p>CNN 的第一层通常是卷积层（Convolutional Layer）。首先需要了解卷积层的输入内容是什么。输入内容为一个 32 x 32 x 3 的像素值数组。现在，解释卷积层的最佳方法是想象有一束手电筒光正从图像的左上角照过。假设手电筒光可以覆盖 5 x 5 的区域，想象一下手电筒光照过输入图像的所有区域。</p>
+<p>在机器学习术语中，这束手电筒被叫做过滤器（filter，有时候也被称为神经元（neuron）或核（kernel）），被照过的区域被称为感受野（receptive field）。过滤器同样也是一个数组（其中的数字被称作权重或参数）。重点在于过滤器的深度必须与输入内容的深度相同（这样才能确保可以进行数学运算），因此过滤器大小为 5 x 5 x 3。</p>
+<p>现在，以过滤器所处在的第一个位置为例，即图像的左上角。当筛选值在图像上滑动（卷积运算）时，过滤器中的值会与图像中的原始像素值相乘（又称为计算点积）。这些乘积被加在一起（从数学上来说，一共会有 75 个乘积）。现在你得到了一个数字。切记，该数字只是表示过滤器位于图片左上角的情况。我们在输入内容上的每一位置重复该过程。（下一步将是将过滤器右移 1 单元，接着再右移 1 单元，以此类推。）输入内容上的每一特定位置都会产生一个数字。</p>
+<p>过滤器滑过所有位置后将得到一个 28 x 28 x 1 的数组，我们称之为激活映射（activation map）或特征映射（feature map）。之所以得到一个 28 x 28 的数组的原因在于，在一张 32 x 32 的输入图像上，5 x 5 的过滤器能够覆盖到 784 个不同的位置。这 784 个位置可映射为一个 28 x 28 的数组。</p>
+<p>当我们使用两个而不是一个 5 x 5 x 3 的过滤器时，输出总量将会变成  28 x 28 x 2。采用的过滤器越多，空间维度（ spatial dimensions）保留得也就越好。</p>
+<p><img src="/images/image-20200824164140102.png" alt="image-20200824164140102"></p>
+<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><p>不过，从高层次角度而言卷积是如何工作的？每个过滤器可以被看成是特征标识符（ feature identifiers）。这里的特征指的是例如直边缘、原色、曲线之类的东西。想一想所有图像都共有的一些最简单的特征。假设第一组过滤器是 7 x 7 x 3 的曲线检测器。（在这一节，为了易于分析，暂且忽略该过滤器的深度为 3 个单元，只考虑过滤器和图像的顶层层面。）作为曲线过滤器，它将有一个像素结构，在曲线形状旁时会产生更高的数值（切记，我们所讨论的过滤器不过是一组数值！）</p>
+<p><img src="/images/image-20200824164751404.png" alt="image-20200824164751404"></p>
+<p>回到数学角度来看这一过程。当我们将过滤器置于输入内容的左上角时，它将计算过滤器和这一区域像素值之间的点积。拿一张需要分类的照片为例，将过滤器放在它的左上角。</p>
+<p><img src="/images/image-20200824164819642.png" alt="image-20200824164819642"></p>
+<p>简单来说，如果输入图像上某个形状看起来很像过滤器表示的曲线，那么所有点积加在一起将会得出一个很大的值！让我们看看移动过滤器时会发生什么。</p>
+<p><img src="/images/image-20200824164837169.png" alt="image-20200824164837169"></p>
+<p>这个值小了很多！这是因为图像的这一部分和曲线检测器过滤器不存在对应。记住，这个卷积层的输出是一个激活映射（activation map）。因此，在这个带有一个过滤器卷积的例子里（当筛选值为曲线检测器），激活映射将会显示出图像里最像曲线的区域。在该例子中，28 x 28 x 1 的激活映射的左上角的值为 6600。高数值意味着很有可能是输入内容中的曲线激活了过滤器。激活地图右上角的值将会是 0，因为输入内容中没有任何东西能激活过滤器（更简单地说，原始图片中的这一区域没有任何曲线）。</p>
+<p>这仅仅是一组检测右弯曲线的过滤器。还有其它检测左弯曲线或直线边缘的过滤器。过滤器越多，激活映射的深度越大，我们对输入内容的了解也就越多。</p>
+<p><img src="/images/image-20200824165644252.png" alt="image-20200824165644252"></p>
+<p>为了预测出图片内容的分类，网络需要识别更高级的特征，例如手、爪子与耳朵的区别。第一个卷积层的输出将会是一个 28 x 28 x 3 的数组（假设我们采用三个 5 x 5 x 3 的过滤器）。当我们进入另一卷积层时，第一个卷积层的输出便是第二个卷积层的输入。</p>
+<p>第一层的输入是原始图像，而第二卷积层的输入正是第一层输出的激活映射。也就是说，这一层的输入大体描绘了低级特征在原始图片中的位置。在此基础上再采用一组过滤器（让它通过第 2 个卷积层），输出将是表示了更高级的特征的激活映射。这类特征可以是半圆（曲线和直线的组合）或四边形（几条直线的组合）。随着进入网络越深和经过更多卷积层后，将得到更为复杂特征的激活映射。</p>
+<h3 id="形状的抓取"><a href="#形状的抓取" class="headerlink" title="形状的抓取"></a>形状的抓取</h3><p>知道了每个filter在做什么之后,我们再来思考这样的一个filter会抓取到什么样的信息。我们知道不同的形状都可由细小的”零件”组合而成的。</p>
+<p>比如下图中,用2x2的范围所形成的16种形状可以组合成格式各样的”更大”形状。卷积的每个filter可以探测特定的形状。又由于Feature Map保持了抓取后的空间结构。若将探测到细小图形的Feature Map作为新的输入再次卷积后,则可以由此探测到”更大”的形状概念。比如下图的第一个“大”形状可由2,3,4,5基础形状拼成。第二个可由2,4,5,6组成。第三个可由6,1组成。</p>
+<p><img src="/images/image-20200824174111970.png" alt="image-20200824174111970"></p>
+<p>除了基础形状之外,颜色、对比度等概念对画面的识别结果也有影响。卷积层也会根据需要去探测特定的概念。</p>
+<p>可以从下面这张图中感受到不同数值的filters所卷积过后的Feature Map可以探测边缘,棱角,模糊,突出等概念。</p>
+<p><img src="/images/image-20200824174134995.png" alt="image-20200824174134995"></p>
+<p>而filter内的权重矩阵W是网络根据数据学习得到的,也就是说,我们让神经网络自己学习以什么样的方式去观察图片。</p>
+<p>拿老妇与少女的那幅图片举例,当标签是少女时,卷积网络就会学习抓取可以成少女的形状、概念。当标签是老妇时,卷积网络就会学习抓取可以成老妇的形状、概念。</p>
+<h3 id="多个过滤器"><a href="#多个过滤器" class="headerlink" title="多个过滤器"></a>多个过滤器</h3><p>每个过滤器可以抓取探测特定的形状的存在。假如我们要探测下图的长方框形状时,可以用4个过滤器去探测4个基础”零件”</p>
+<p><img src="/images/image-20200824175040587.png" alt="image-20200824175040587"></p>
+<p>因此我们自然而然的会选择用多个不同的filters对同一个图片进行多次抓取。如下图(动态图过大,如果显示不出,请看到该链接观看) ,同一个图片,经过两个(红色、绿色)不同的filters扫描过后可得到不同特点的Feature Maps,每增加一个filter,就意味着你想让网络多抓取一个特征。</p>
+<p><img src="/images/image-20200824175208570.png" alt="image-20200824175208570"></p>
+<p><img src="/images/image-20200824175222522.png" alt="image-20200824175222522"></p>
+<p>这样卷积层的输出也不再是depth为1的一个平面,而是和输入一样是depth为复数的长方体。</p>
+<p>如下图所示,当我们增加一个filter (紫色表示)后,就又可以得到一个Feature Map。将不同filters所卷积得到的Feature Maps按顺序堆叠后,就得到了一个卷积层的最终输出。</p>
+<p><img src="/images/image-20200824175255843.png" alt="image-20200824175255843"></p>
+<p>这样卷积后输出的长方体可以作为新的输入送入另一个卷积层中处理。</p>
+<h3 id="加入非线性"><a href="#加入非线性" class="headerlink" title="加入非线性"></a>加入非线性</h3><p>和前馈神经网络一样,经过线性组合和偏移后,会加入非线性增强模型的拟合能力。</p>
+<p>将卷积所得的Feature Map经过ReLU变换(elementwise)后所得到的output就如下图所展示。</p>
+<p><img src="/images/image-20200824175441671.png" alt="image-20200824175441671"></p>
+<h2 id="完全连接层"><a href="#完全连接层" class="headerlink" title="完全连接层"></a>完全连接层</h2><p>检测高级特征之后，网络最后的完全连接层就更是锦上添花了。简单地说，这一层处理输入内容（该输入可能是卷积层、ReLU 层或是池化层的输出）后会输出一个 N 维向量，N 是该程序必须选择的分类数量。例如，如果你想得到一个数字分类程序，如果有 10  个数字，N 就等于 10。这个 N 维向量中的每一数字都代表某一特定类别的概率。例如，如果某一数字分类程序的结果矢量是 [0 .1 .1 .75 0 0 0 0 0 .05]，则代表该图片有 10% 的概率是 1、10% 的概率是 2、75% 的概率是 3、还有 5% 的概率是 9（注：还有其他表现输出的方式，这里只展示了 softmax 的方法）。</p>
+<p>完全连接层观察上一层的输出（其表示了更高级特征的激活映射）并确定这些特征与哪一分类最为吻合。例如，如果该程序预测某一图像的内容为狗，那么激活映射中的高数值便会代表一些爪子或四条腿之类的高级特征。同样地，如果程序测定某一图片的内容为鸟，激活映射中的高数值便会代表诸如翅膀或鸟喙之类的高级特征。大体上来说，完全连接层观察高级特征和哪一分类最为吻合和拥有怎样的特定权重，因此当计算出权重与先前层之间的点积后，你将得到不同分类的正确概率。</p>
+<p><img src="/images/image-20200824170829653.png" alt="image-20200824170829653"></p>
+<h2 id="步幅和填充"><a href="#步幅和填充" class="headerlink" title="步幅和填充"></a><strong>步幅和填充</strong></h2><p>选择了过滤器的尺寸以后，我们还需要选择步幅（stride）和填充（padding）。</p>
+<h3 id="步长"><a href="#步长" class="headerlink" title="步长"></a>步长</h3><p>步幅控制着过滤器围绕输入内容进行卷积计算的方式。在第一部分我们举的例子中，过滤器通过每次移动一个单元的方式对输入内容进行卷积。过滤器移动的距离就是步幅。在那个例子中，步幅被默认设置为1。步幅的设置通常要确保输出内容是一个整数而非分数。让我们看一个例子。想象一个 7 x 7 的输入图像，一个 3 x 3 过滤器（简单起见不考虑第三个维度），步幅为 1。这是一种惯常的情况。</p>
+<p><img src="/images/image-20200824171041218.png" alt="image-20200824171041218"></p>
+<p><img src="/images/image-20200824171048563.png" alt="image-20200824171048563"></p>
+<p>感受野移动了两个单元，输出内容同样也会减小。注意，如果试图把我们的步幅设置成 3，那我们就会难以调节间距并确保感受野与输入图像匹配。正常情况下，程序员如果想让接受域重叠得更少并且想要更小的空间维度（spatial dimensions）时，他们会增加步幅。</p>
+<h3 id="填充"><a href="#填充" class="headerlink" title="填充"></a>填充</h3><p>现在让我们看一下填充（padding）。在此之前，想象一个场景：当你把 5 x 5 x 3 的过滤器用在 32 x 32 x 3 的输入上时，会发生什么？输出的大小会是 28 x 28 x 3。注意，这里空间维度减小了。如果我们继续用卷积层，尺寸减小的速度就会超过我们的期望。</p>
+<p>在网络的早期层中，我们想要尽可能多地保留原始输入内容的信息，这样我们就能提取出那些低层的特征。比如说我们想要应用同样的卷积层，但又想让输出量维持为 32 x 32 x 3 。为做到这点，我们可以对这个层应用大小为 2 的零填充（zero padding）。零填充在输入内容的边界周围补充零。如果我们用两个零填充，就会得到一个 36 x 36 x 3 的输入卷。</p>
+<p><img src="/images/image-20200824171233700.png" alt="image-20200824171233700"></p>
+<h2 id="池化层"><a href="#池化层" class="headerlink" title="池化层"></a>池化层</h2><p>在几个 ReLU 层之后，程序员也许会选择用一个池化层（pooling layer）。它同时也被叫做下采样（downsampling）层。在这个类别中，也有几种可供选择的层，最受欢迎的就是最大池化（ max-pooling）。它基本上采用了一个过滤器（通常是 2x2 的）和一个同样长度的步幅。然后把它应用到输入内容上，输出过滤器卷积计算的每个子区域中的最大数字。</p>
+<p><img src="/images/image-20200824171937608.png" alt="image-20200824171937608"></p>
+<p>Max pooling的主要功能是downsampling,却不会损坏识别结果。这意味着卷积后的FeatureMap中有对于识别物体不必要的冗余信息。那么我们就反过来思考,这些”冗”信息是如何产生的。</p>
+<p>直觉上,我们为了探测到某个特定形状的存在,用一个filer对整个图片进行逐步扫描。但只有出现了该特定形状的区域所卷积获得的输出才是真正有用的,用该filter卷积其他区域得出的数值就可能对该形状是否存在的判定影响较小。</p>
+<p>比如下图中,我们还是考虑探测”横折”这个形状。卷积后得到3x3的Feature Map中,真正有用的就是数字为3的那个节点,其余数值对于这个任务而言都是无关的。所以用3x3的Max pooling后,并没有对“横折”的探测产生影响。试想在这里例子中如果不使用Max pooling,而让网络自己去学习。网络也会去学习与Max pooling近似效果的权重。因为是近似效果,增加了更多的parameters的代价,却还不如直接进行Max pooling</p>
+<p><img src="/images/image-20200824181250361.png" alt="image-20200824181250361"></p>
+<p>池化层还有其他选择，比如平均池化（average pooling）和 L2-norm 池化 。这一层背后的直观推理是：一旦我们知道了原始输入（这里会有一个高激活值）中一个特定的特征，它与其它特征的相对位置就比它的绝对位置更重要。可想而知，这一层大幅减小了输入卷的空间维度（长度和宽度改变了，但深度没变）。</p>
+<p>这到达了两个主要目的。第一个是权重参数的数目减少到了75%，因此降低了计算成本。第二是它可以控制过拟合（overfitting）。这个术语是指一个模型与训练样本太过匹配了，以至于用于验证和检测组时无法产生出好的结果。出现过拟合的表现是一个模型在训练集能达到 100% 或 99% 的准确度，而在测试数据上却只有50%。</p>
+<h2 id="数据增强技术"><a href="#数据增强技术" class="headerlink" title="数据增强技术"></a><strong>数据增强技术</strong></h2><p>如何利用一些简单的转换方法将你现有的数据集变得更大。正如我们之前所提及的，当计算机将图片当作输入时，它将用一个包含一列像素值的数组描述（这幅图）。若是图片左移一个像素。对你和我来说，这种变化是微不可察的。然而对计算机而已，这种变化非常显著：这幅图的类别和标签保持不变，数组却变化了。</p>
+<p>这种改变训练数据的数组表征而保持标签不变的方法被称作数据增强技术。这是一种人工扩展数据集的方法。人们经常使用的增强方法包括灰度变化、水平翻转、垂直翻转、随机编组、色值跳变、翻译、旋转等其他多种方法。通过利用这些训练数据的转换方法，你将获得两倍甚至三倍于原数据的训练样本。</p>
+<h1 id="FCN-全卷积网络-Fully-Convolutional-Network"><a href="#FCN-全卷积网络-Fully-Convolutional-Network" class="headerlink" title="FCN(全卷积网络)(Fully Convolutional Network)"></a>FCN(全卷积网络)(Fully Convolutional Network)</h1><h2 id="分割-语义，实例，全景分割"><a href="#分割-语义，实例，全景分割" class="headerlink" title="分割(语义，实例，全景分割)"></a>分割(语义，实例，全景分割)</h2><p>分割，顾名思义，就是把一个完整的东西按照某种方式或规则分成若干个部分。</p>
+<p>那么什么是图像分割呢？简单来说，就是把图像中属于同一类别或同一个体的东西划分在一起，并将各个子部分区分开来。像下图这样：</p>
+<p><img src="/images/image-20200825153649825.png" alt="image-20200825153649825"></p>
+<p>为了训练神经网络，图片中这些像素点会按照某种规则被贴上一个“标签”，比如这个像素点是属于人、天空、草地还是树；更详细一点，可以再给它们第二个标签，声明它们是属于“哪一个人”或“哪一棵树”。</p>
+<p>对于只有一个标签的（只区分类别）的任务，我们称之为<strong>“语义分割”（semantic segmentation）</strong>；</p>
+<p>对于区分相同类别的不同个体的，则称之为<strong>实例分割（instance segmentation）</strong>。</p>
+<p>由于实例分割往往只能分辨可数目标，因此，为了同时实现实例分割与不可数类别的语义分割，2018年Alexander Kirillov等人提出了<strong>全景分割（panoptic segmentation）</strong>的概念。</p>
+<p>下图分别展示了（a）原始图像，（b）语义分割，（c）实例分割和（d）全景分割。</p>
+<p><img src="/images/image-20200825153755444.png" alt="image-20200825153755444"></p>
+<h2 id="语义分割"><a href="#语义分割" class="headerlink" title="语义分割"></a>语义分割</h2><p>图像语义分割(Semantic Segmentation)是图像处理和是机器视觉技术中关于图像理解的重要一环，也是 AI 领域中一个重要的分支。语义分割即是对图像中每一个像素点进行分类，确定每个点的类别（如属于背景、人或车等），从而进行区域划分。目前，语义分割已经被广泛应用于自动驾驶、无人机落点判定等场景中。</p>
+<p><img src="/images/image-20200824181720616.png" alt="image-20200824181720616"></p>
+<p>截止目前，CNN已经在图像分类分方面取得了巨大的成就，涌现出如VGG和Resnet等网络结构，并在ImageNet中取得了好成绩。CNN的强大之处在于它的多层结构能自动学习特征，并且可以学习到多个层次的特征：</p>
+<p>这些抽象特征对物体的大小、位置和方向等敏感性更低，从而有助于分类性能的提高。这些抽象的特征对分类很有帮助，可以很好地判断出一幅图像中包含什么类别的物体。<strong>图像分类是图像级别的！</strong></p>
+<p><img src="/images/image-20200824181810618.png" alt="image-20200824181810618"></p>
+<p>与分类不同的是，语义分割需要判断图像每个像素点的类别，进行精确分割。<strong>图像语义分割是像素级别的！</strong>但是由于CNN在进行convolution和pooling过程中丢失了图像细节，即feature map size逐渐变小，所以不能很好地指出物体的具体轮廓、指出每个像素具体属于哪个物体，无法做到精确的分割。</p>
+<p>针对这个问题，<a href="https://link.zhihu.com/?target=http%3A//people.eecs.berkeley.edu/~jonlong/" target="_blank" rel="noopener">Jonathan Long</a>等人提出了<strong>Fully Convolutional Networks（FCN）</strong>用于图像语义分割。自从提出后，FCN已经成为语义分割的基本框架，后续算法其实都是在这个框架中改进而来。</p>
+<h2 id="FCN与CNN区别"><a href="#FCN与CNN区别" class="headerlink" title="FCN与CNN区别"></a>FCN与CNN区别</h2><p>对于一般的分类CNN网络，如VGG和Resnet，都会在网络的最后加入一些全连接层，经过softmax后就可以获得类别概率信息。但是这个概率信息是1维的，即只能标识整个图片的类别，不能标识每个像素点的类别，所以这种全连接方法不适用于图像分割。</p>
+<p><img src="/images/image-20200824181946499.png" alt="image-20200824181946499"></p>
+<p>而FCN提出可以把后面几个全连接都换成卷积，这样就可以获得一张2维的feature map，后接softmax获得每个像素点的分类信息，从而解决了分割问题，如图4。</p>
+<p><img src="/images/image-20200824182012059.png" alt="image-20200824182012059"></p>
+<p><img src="/images/image-20200824182045698.png" alt="image-20200824182045698"></p>
+<h2 id="反卷积与上采样"><a href="#反卷积与上采样" class="headerlink" title="反卷积与上采样"></a>反卷积与上采样</h2><p><strong>上采样（upsampling）一般包括2种方式：</strong></p>
+<ol>
+<li>Resize，如双线性插值直接缩放，类似于图像缩放</li>
+<li>Deconvolution，也叫Transposed Convolution</li>
+</ol>
+<p>对于一般卷积，输入蓝色4x4矩阵，卷积核大小3x3。当设置卷积参数pad=0，stride=1时，卷积输出绿色2x2矩阵，如图6。</p>
+<p><img src="/images/image-20200824182236071.png" alt="image-20200824182236071"></p>
+<p>而对于反卷积，相当于把普通卷积反过来，输入蓝色2x2矩阵（周围填0变成6x6），卷积核大小还是3x3。当设置反卷积参数pad=0，stride=1时输出绿色4x4矩阵，如图7，这相当于完全将图4倒过来</p>
+<p><img src="/images/image-20200824182254014.png" alt="image-20200824182254014"></p>
+<p>传统的网络是subsampling的，对应的输出尺寸会降低；<strong>upsampling的意义在于将小尺寸的高维度feature map恢复回去</strong>，以便做pixelwise prediction，获得每个点的分类信息。</p>
+<p><img src="/images/image-20200824182310073.png" alt="image-20200824182310073"></p>
+<p>上采样在FCN网络中的作用如图8，明显可以看到经过上采样后恢复了较大的pixelwise feature map，这其实相当于一个Encode-Decode的过程。 （编码和解码</p>
+<h2 id="FCN的缺陷"><a href="#FCN的缺陷" class="headerlink" title="FCN的缺陷"></a>FCN的缺陷</h2><ul>
+<li>无法解决实例分割问题</li>
+<li>速度远不能达到实时</li>
+<li>不能够应对诸如3D点云等不定型数据</li>
+</ul>
+<p><img src="/images/image-20200825154150329.png" alt="image-20200825154150329"></p>
+<h1 id="U-Net"><a href="#U-Net" class="headerlink" title="U-Net"></a>U-Net</h1><p>U-Net是一种分割网络，能够适应很小的训练集（大约30张图）。</p>
+<p><img src="/images/image-20200824182811504.png" alt="image-20200824182811504"></p>
+<p>整个U-Net网络结构如图9，类似于一个大大的U字母：首先进行Conv+Pooling下采样；然后Deconv反卷积进行上采样，crop之前的低层feature map，进行融合；然后再次上采样。重复这个过程，直到获得输出388x388x2的feature map，最后经过softmax获得output segment map。总体来说与FCN思路非常类似。</p>
+<p>Unet 网络结构是对称的，形似英文字母 U 所以被称为 Unet。整张图都是由蓝/白色框与各种颜色的箭头组成，其中，<strong>蓝/白色框表示 feature map；蓝色箭头表示 3x3 卷积，用于特征提取；灰色箭头表示 skip-connection，用于特征融合；红色箭头表示池化 pooling，用于降低维度；绿色箭头表示上采样 upsample，用于恢复维度；青色箭头表示 1x1 卷积，用于输出结果</strong>。</p>
+<p><strong>U-Net采用了与FCN完全不同的特征融合方式：拼接！</strong></p>
+<p><img src="/images/image-20200824182930397.png" alt="image-20200824182930397"></p>
+<p>与FCN逐点相加不同，U-Net采用将特征在channel维度拼接在一起，形成更“厚”的特征。所以：</p>
+<h2 id="两种特征融合方法"><a href="#两种特征融合方法" class="headerlink" title="两种特征融合方法"></a>两种特征融合方法</h2><p><strong>语义分割网络在特征融合时也有2种办法：</strong></p>
+<ol>
+<li>FCN式的逐点相加，</li>
+<li>U-Net式的channel维度拼接融合</li>
+</ol>
+<p><img src="/images/image-20200824183103024.png" alt="image-20200824183103024"></p>
+<p>运用CNN的分割问题上，主要分为以FCN为基础的结构，和以U-Net为基础的结构。前者的encoder-decoder是非对称的，后者的encoder-decoder是对称的；</p>
+<h2 id="U-Net为何适用于医学图像"><a href="#U-Net为何适用于医学图像" class="headerlink" title="U-Net为何适用于医学图像"></a>U-Net为何适用于医学图像</h2><h2 id="医学图像特点"><a href="#医学图像特点" class="headerlink" title="医学图像特点"></a>医学图像特点</h2><ol>
+<li>图像语义较为简单、结构较为固定。我们做脑的，就用脑CT和脑MRI，做胸片的只用胸片CT，做眼底的只用眼底OCT，都是一个固定的器官的成像。由于器官本身结构固定和语义信息没有特别丰富，所以高级语义信息和低级特征都显得很重要(UNet的skip connection和U型结构就派上了用场)。</li>
+<li>数据量少。医学影像的数据获取相对难一些，很多比赛只提供不到100例数据。所以我们设计的模型不宜过大，如果参数过多，很容易导致过拟合。</li>
+<li>多模态。相比自然影像，医疗影像比较有趣和不同的一点是，医疗影像是具有多种模态的。以ISLES脑梗竞赛为例，其官方提供了CBF,MTT,CBV,TMAX,CTP等多种模态的数据。这就需要我们更好的设计网络去提取不同模态的特征feature。。</li>
+<li>可解释性重要。由于医疗影像最终是辅助医生的临床诊断，所以网络告诉医生一个3D的CT有没有病是远远不够的，医生还要进一步的想知道，病灶在哪一层，在哪一层的哪个位置，分割出来了吗，能求体积嘛？同时对于网络给出的分类和分割等结果，医生还想知道为什么，也就是说从医生角度出发，更希望知道医疗AI的可解释性如何<br>解释医学影像以Attention及CAM(class-activation-map)等可视化方法为主。</li>
+</ol>
+<p>因为医学图像边界模糊、梯度复杂，需要较多的高分辨率信息。高分辨率用于精准分割。</p>
+<p>人体内部结构相对固定，分割目标在人体图像中的分布很具有规律，语义简单明确，低分辨率信息能够提供这一信息，用于目标物体的识别。<br>UNet结合了<strong>低分辨率信息</strong>（提供物体类别识别依据）和<strong>高分辨率信息</strong>（提供精准分割定位依据），完美适用于医学图像分割。</p>
+<h1 id="Seg-Net"><a href="#Seg-Net" class="headerlink" title="Seg-Net"></a>Seg-Net</h1><h2 id="解码器"><a href="#解码器" class="headerlink" title="解码器"></a>解码器</h2><p>分割任务中的编码器encode与解码器decode就像是玩“你来比划我来猜”的双方：比划的人想把看到的东西用一种方式描述出来，猜的人根据比划的人提供的信息猜出答案。</p>
+<p>其中，“比划的人”叫做<strong>编码器</strong>，“猜的人”就是<strong>解码器</strong>。</p>
+<p>具体来说，编码器的任务是在给定输入图像后，通过神经网络学习得到输入图像的特征图谱；而解码器则在编码器提供特征图后，逐步实现每个像素的类别标注，也就是分割。</p>
+<p>通常，分割任务中的编码器结构比较类似，大多来源于用于分类任务的网络结构，比如VGG。这样做有一个好处，就是可以借用在大数据库下训练得到的分类网络的权重参数，通过迁移学习实现更好的效果。因此，<strong>解码器的不同在很大程度上决定了一个基于编解码结构的分割网络的效果。</strong></p>
+<p><img src="/images/image-20200825154816865.png" alt="image-20200825154816865"></p>
+<p>SegNet的编码器结构与解码器结构是一一对应的，即一个decoder具有与其对应的encoder相同的空间尺寸和通道数。对于基础SegNet结构，二者各有13个卷积层，其中编码器的卷积层就对应了VGG16网络结构中的前13个卷积层。</p>
+<p>下图是SegNet的网络结构，其中蓝色代表卷积+Batch Normalization+ReLU，绿色代表max-pooling，红色代表上采样，黄色是Softmax。</p>
+<p><img src="/images/image-20200825154846862.png" alt="image-20200825154846862"></p>
+<p>SegNet与FCN的对应结构相比，体量要小很多。这主要得益于SegNet中为了权衡计算量而采取的操作：用记录的池化过程的位置信息替代直接的反卷积操作。具体如下图所示。</p>
+<h2 id="Seg-Net与FCN解码方式的不同"><a href="#Seg-Net与FCN解码方式的不同" class="headerlink" title="Seg-Net与FCN解码方式的不同"></a>Seg-Net与FCN解码方式的不同</h2><p><img src="/images/image-20200825154906316.png" alt="image-20200825154906316"></p>
+<p>图中左侧是SegNet使用的解码方式，右侧是FCN对应的解码方式。可以看到，SegNet的做法是先根据位置信息生成稀疏的特征图，再利用后续的卷积计算恢复稠密特征图。而FCN则直接利用反卷积操作求得上采样后的特征图，再将其与编码器特征图相加。</p>
+<h2 id="改变解码器的参数"><a href="#改变解码器的参数" class="headerlink" title="改变解码器的参数"></a>改变解码器的参数</h2><p>前文已经提到，编解码结构中，解码器的效果和复杂程度对于整个分割网络的影响是非常大的。这里我们就一起来看一下不同解码器结构和它们的效果。</p>
+<p>SegNet中一共尝试了8种不同的解码结构，先上结果：</p>
+<p><img src="/images/image-20200825155038967.png" alt="image-20200825155038967"></p>
+<p>这些变体共用相同的编码器结构，只是在解码器结构上有所不同。比如，将解码器的结构单纯减少层数，改变解码器最后一层通道数，改变编解码器对应结构之间的连接方式（只连接池化信息、保留特征层内信息或全部保留），改变采样方式等。</p>
+<p>除上面几种变体外，论文中还尝试了改变上采样方法，或取消池化和下采样过程，但是这些改变都没有带来更好的结果。</p>
+<h2 id="解码器总结"><a href="#解码器总结" class="headerlink" title="解码器总结"></a>解码器总结</h2><ul>
+<li>保留编码器所有特征图所实现的效果最好，在这一点上语义分割边缘轮廓描述度量（BF）体现最为明显。</li>
+<li>当推理过程的内存受限时，可以使用编码器特征图的压缩形式（比如缩小维度、使用池化信息等），但需要搭配合适的解码器形式（比如SegNet类型的）来提升表现。</li>
+<li>在给定编码器时，越大的解码器效果越好。</li>
+</ul>
+<p><img src="/images/image-20200825155141488.png" alt="image-20200825155141488"></p>
+<h1 id="图像处理的非深度学习方法"><a href="#图像处理的非深度学习方法" class="headerlink" title="图像处理的非深度学习方法"></a>图像处理的非深度学习方法</h1><p>图像分割是什么？如果下学术定义，就是把图像分割成想要的语义上相同的若干子区域，看上面的自动驾驶的分割任务，路是路，车是车，树是树。</p>
+<p>这些子区域，组成图像的完备子集，相互之间不重叠。图像分割可以被看作是一个逐像素的图像分类问题</p>
+<p>没有深度学习的那些年，也发展出了非常多的图像分割技术。</p>
+<h2 id="边缘与阈值法"><a href="#边缘与阈值法" class="headerlink" title="边缘与阈值法"></a>边缘与阈值法</h2><p>简单的边缘检测也曾被用于图像分割，但是因为要做复杂后处理以及后面和其他方法有重叠，这里就不再说了，而是从阈值法开始说。</p>
+<p>阈值法的基本思想是基于图像的灰度特征来计算一个或多个灰度阈值，并将图像中每个像素的灰度值与阈值相比较。</p>
+<p>其中，最广泛使用也最具有代表性质就是OTSU【1】方法，它是用于灰度图像分割的方法，核心思想就是使<strong>类间方差最大</strong>。</p>
+<p>这样的方法，非常简单，要求被分割的物体颜色纹理比较紧凑，类内方差小，只适合一些文本图像的处理，比如车牌，比如指纹。</p>
+<p><img src="/images/image-20200825160014067.png" alt="image-20200825160014067"></p>
+<h2 id="区域增长，分裂"><a href="#区域增长，分裂" class="headerlink" title="区域增长，分裂"></a>区域增长，分裂</h2><p>阈值法的一个硬伤是太粗暴简单，哪怕是自适应的局部阈值法，一样难逃无法分割类内方差较大的目标的宿命。它完全没有利用好像素的空间信息，导致分割结果极其容易受噪声干扰，经常出现断裂的边缘，需要后处理。</p>
+<p>所以，<strong>区域生长法出现了，它通过一些种子点，再加上相似性准则来不断扩充区域直到达到类别的边界</strong>，这时候分割结果是连续的了。</p>
+<p>区域分裂则是反过程，不再详述。区域增长法的佼佼者，就是分水岭算法【2】。</p>
+<p>分水岭算法是一种基于拓扑理论的数学形态学的分割方法，将图像中每一点像素的灰度值表示该点的海拔高度，每一个局部极小值称为集水盆，而集水盆的边界则是分水岭。分水岭算法有很多种实现算法，常用浸水模拟法。</p>
+<p><strong>分水岭算法对于弱边缘有不错的响应</strong>，因此常被用于材料图像的分割，以及产生超像素用于提高其他方法的分割效率。咱在硕士期间也与师姐鼓捣过半导体材料的分割，还不错。</p>
+<p><img src="/images/image-20200825160125758.png" alt="image-20200825160125758"></p>
+<p>说到这里，超像素也是很重要的一种方法，某种程度上也能被归为图像分割的方法。SLIC，Meanshift等都是非常经典的方法，去文【3】中做更详细解读吧。</p>
+<p><img src="/images/image-20200825160151786.png" alt="image-20200825160151786"></p>
+<h2 id="图割"><a href="#图割" class="headerlink" title="图割"></a>图割</h2><p>以graphcut【4】为代表的图割方法，是传统图像分割里面鲁棒性最好的方法，它是一种概率无向图模型(Probabilistic undirected graphical model)，又被称Markov random field马尔可夫随机场。</p>
+<p>Graphcut的基本思路，就是建立一张图，看下面这张图，其中以图像像素或者超像素作为图像顶点，然后优化的目标就是要找到一个切割，使得各个子图不相连从而实现分割，前提是移除边的和权重最小。</p>
+<p>后来图割方法从MRF发展到CRF，也就是条件随机场。它通常包含两个优化目标，一个是区域的相似度，被称为区域能量项，即piecewise能量。一个是被切断边的相似度，被称为边缘能量项，即pairwise能量。它追求区域能量项的最大化以及边缘能量的最小化，也就是<strong>区域内部越相似越好，区域间相似度越低越好。</strong></p>
+<p>图割方法很通用，对于纹理比较复杂的图像分割效果也不错。缺点是时间复杂度和空间复杂度较高，所以通常使用超像素进行加速计算，上面的分水岭算法就可以拿来用用。</p>
+<p><img src="/images/image-20200825160228037.png" alt="image-20200825160228037"></p>
+<p>graphcut的迭代版本，也就是grabcut【5】更好用，它的基本思路是；使用混合高斯<strong>模型(Gaussian Mixture Model，GMM)</strong>替代了graphcut基于灰度的模型，初始的混合高斯模型的构建，通过用户交互来指定，只需要指定确定性的背景像素区域即可，通常是画一个框。</p>
+<p>多年以后再看下面这张图，效果依然是惊艳的，边缘很不错。不像上面的几个方法，图割方法仍然被广泛使用，deeplab系列的前几篇文章就用到了全连接的crf，它与mrf的区别可以参考这篇文章【Discriminative fields for modeling spatial dependencies in natural images】。</p>
+<p><img src="/images/image-20200825160259976.png" alt="image-20200825160259976"></p>
+<h2 id="轮廓模型"><a href="#轮廓模型" class="headerlink" title="轮廓模型"></a>轮廓模型</h2><p>轮廓模型大部分人可能不知道，它的<strong>基本思想是使用连续曲线来表达目标轮廓，并定义一个能量泛函，其自变量为曲线，将分割过程转变为求解能量泛函的最小值的过程。</strong>数值实现可通过求解函数对应的欧拉(Euler-Lagrange)方程来实现。包括以snake模型为代表的参数活动轮廓模型和以水平集方法为代表的几何活动轮廓模型。</p>
+<p><strong>当能量达到最小时的，曲线位置就处于正确的目标轮廓。</strong></p>
+<p>该类分割方法具有几个显著的特点：(1)由于能量泛函是在连续状态下实现，所以最终得到的图像轮廓可以达到较高的精度；(2)通过约束目标轮廓为光滑，同时融入其它关于目标形状的先验信息，算法可以具有较强的鲁棒性；(3)使用光滑的闭合曲线表示物体的轮廓，可获取完整的轮廓，从而避免传统图像分割方法中的预/后处理过程。</p>
+<p>不过，缺点也很明显，比较敏感，容易陷入局部极值。</p>
+<p>下面是我的硕士论文【6】中采用水平集方法分割出的肿瘤，就是白色那一块。这个方法的数学味有点浓，考虑到咱们是闲聊，就不摆公式了，毕竟后面还有很多事。</p>
+<p><img src="/images/image-20200825160334846.png" alt="image-20200825160334846"></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.zhihu.com/question/52668301" target="_blank" rel="noopener">CNN（卷积神经网络）是什么？有何入门简介或文章吗？</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzA3NDIyMjM1NA==&amp;mid=2649032348&amp;idx=1&amp;sn=80825e10fcfd502e2145ed9ce8e6b430&amp;chksm=8712b8e1b06531f7723c37851204ccea66b212b24cf36315a2859aec07dbe0938c9a6bfe59fb&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">【图像分割模型】编解码结构SegNet</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzA3NDIyMjM1NA==&amp;mid=2649032209&amp;idx=2&amp;sn=ee63ef7fc1ac163cea8277b9a1dcaf84&amp;chksm=8712b86cb065317aa4a79c774614965318a95333952ef31d9b6aaddfae0666d714bc0026cb8f&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">【图像分割模型】从FCN说起</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzA3NDIyMjM1NA==&amp;mid=2649029723&amp;idx=1&amp;sn=555a2d45fa210a1c5c5c703de54899a4&amp;chksm=87134226b064cb30f070ea5a2368f1c5bb6679d0f13e7e84b3f6374be33c549ce81a665d6e25&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">【技术综述】闲聊图像分割这件事儿</a></p>
+<p><a href="https://zhuanlan.zhihu.com/c_151876233" target="_blank" rel="noopener">有三AI学院</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/72691417" target="_blank" rel="noopener">图像分割之UNet++ 论文笔记</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/43927696" target="_blank" rel="noopener">图像分割之U-Net</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/118540575" target="_blank" rel="noopener">U-Net+与FCN的区别+医学表现+网络详解+创新</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/159173338" target="_blank" rel="noopener">FCN、Unet、Unet++医学图像分割那点事儿</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/79204199" target="_blank" rel="noopener">语义分割网络 U-Net 详解</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/14/共形几何第四节-不动点，庞加莱-霍普斯定理/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -922,249 +1363,10 @@
   
   
 
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/22/绘画过程与思考-厨房的过程记录/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/22/绘画过程与思考-厨房的过程记录/" class="post-title-link" itemprop="url">绘画过程与思考-厨房的过程记录</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-04-22 23:36:01" itemprop="dateCreated datePublished" datetime="2020-04-22T23:36:01+08:00">2020-04-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-15 09:58:54" itemprop="dateModified" datetime="2020-09-15T09:58:54+08:00">2020-09-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/绘画过程/" itemprop="url" rel="index"><span itemprop="name">绘画过程</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="四叶妹妹厨房"><a href="#四叶妹妹厨房" class="headerlink" title="四叶妹妹厨房"></a>四叶妹妹厨房</h2><p><img src="/images/TouShi/siyemeimei/siyemeimei.png" alt=""></p>
-<p>这线条我画的好认真啊…</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/04/22/绘画过程与思考-厨房的过程记录/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/22/Krenz透视课知识点截图汇总/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/22/Krenz透视课知识点截图汇总/" class="post-title-link" itemprop="url">Krenz透视课知识点截图汇总</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-04-22 13:19:29" itemprop="dateCreated datePublished" datetime="2020-04-22T13:19:29+08:00">2020-04-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-02 13:06:13" itemprop="dateModified" datetime="2020-05-02T13:06:13+08:00">2020-05-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/透视课/" itemprop="url" rel="index"><span itemprop="name">透视课</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="大透视"><a href="#大透视" class="headerlink" title="大透视"></a>大透视</h1><h2 id="K大谈大透视创作"><a href="#K大谈大透视创作" class="headerlink" title="K大谈大透视创作"></a>K大谈大透视创作</h2><p><img src="/images/TouShi/KnowLedge/200222 K大答疑：大透视创作.jpg" alt=""></p>
-<h1 id="摄影机与角度控制"><a href="#摄影机与角度控制" class="headerlink" title="摄影机与角度控制"></a>摄影机与角度控制</h1><h2 id="透视第一堂"><a href="#透视第一堂" class="headerlink" title="透视第一堂"></a>透视第一堂</h2><p><img src="/images/TouShi/KnowLedge/150704透视第一堂.jpg" alt=""></p>
-<h2 id="角度控制和摄影机-refs"><a href="#角度控制和摄影机-refs" class="headerlink" title="角度控制和摄影机_refs"></a>角度控制和摄影机_refs</h2><p><img src="/images/TouShi/KnowLedge/2.角度控制和摄影机_refs.jpg" alt=""></p>
-<h2 id="角度控制和摄影机"><a href="#角度控制和摄影机" class="headerlink" title="角度控制和摄影机"></a>角度控制和摄影机</h2><p><img src="/images/TouShi/KnowLedge/2.角度控制和摄影机.jpg" alt=""></p>
-<h1 id="安全距离与取景框"><a href="#安全距离与取景框" class="headerlink" title="安全距离与取景框"></a>安全距离与取景框</h1><h2 id="K大说安全的透视距离"><a href="#K大说安全的透视距离" class="headerlink" title="K大说安全的透视距离"></a>K大说安全的透视距离</h2><p><img src="/images/TouShi/KnowLedge/K大说安全的透视距离.png" alt=""></p>
-<h2 id="画方块时消失点抓多远的安全参考范围"><a href="#画方块时消失点抓多远的安全参考范围" class="headerlink" title="画方块时消失点抓多远的安全参考范围"></a>画方块时消失点抓多远的安全参考范围</h2><p><img src="/images/TouShi/KnowLedge/画方块时消失点抓多远的安全参考范围.jpg" alt=""></p>
-<h2 id="K大说取景框"><a href="#K大说取景框" class="headerlink" title="K大说取景框"></a>K大说取景框</h2><p><img src="/images/TouShi/KnowLedge/K大说取景框-1.jpg" alt=""></p>
-<h1 id="分法"><a href="#分法" class="headerlink" title="分法"></a>分法</h1><h2 id="三分法"><a href="#三分法" class="headerlink" title="三分法"></a>三分法</h2><p><img src="/images/TouShi/KnowLedge/三分法 boss助教.PNG" alt=""></p>
-<h2 id="五分之一分段画法"><a href="#五分之一分段画法" class="headerlink" title="五分之一分段画法"></a>五分之一分段画法</h2><p><img src="/images/TouShi/KnowLedge/五分之一分段画法.jpg.png" alt=""></p>
-<h2 id="七分之一分段画法"><a href="#七分之一分段画法" class="headerlink" title="七分之一分段画法"></a>七分之一分段画法</h2><p><img src="/images/TouShi/KnowLedge/七分之一分段画法.jpg" alt=""></p>
-<h1 id="16个方块"><a href="#16个方块" class="headerlink" title="16个方块"></a>16个方块</h1><p><img src="/images/TouShi/KnowLedge/方块1.png" alt=""></p>
-<p><img src="/images/TouShi/KnowLedge/方块2.png" alt=""></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/21/色彩课心智图-文字总结/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/21/色彩课心智图-文字总结/" class="post-title-link" itemprop="url">色彩课心智图-文字总结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-04-21 23:16:50 / 修改时间：23:23:57" itemprop="dateCreated datePublished" datetime="2020-04-21T23:16:50+08:00">2020-04-21</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/色彩课/" itemprop="url" rel="index"><span itemprop="name">色彩课</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="L1知识点"><a href="#L1知识点" class="headerlink" title="L1知识点"></a>L1知识点</h2><h3 id="1-焦点"><a href="#1-焦点" class="headerlink" title="1.焦点"></a>1.焦点</h3><p>一張作品中想表現的重點區域，我們在構圖/配色/打光所做的各種安排多是為了突顯焦點</p>
-<p>突顯焦點的方法：①灰純對比     ②冷暖(色相)對比    ③邊緣虚實對比    </p>
-<p>​                            ④明度对比      ⑤疏密對比              ⑥視覺導引</p>
-<h3 id="2-权利游戏-权重"><a href="#2-权利游戏-权重" class="headerlink" title="2.权利游戏(权重)"></a>2.权利游戏(权重)</h3><p>就像三國志的勢力圖,我們每下一筆色彩/光影/形狀,都會造成圖面上的勢力波動，要保持焦點擁有較好/較稀缺的資源(較顯眼)</p>
-<h3 id="3-固有色配色"><a href="#3-固有色配色" class="headerlink" title="3.固有色配色"></a>3.固有色配色</h3><h4 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想:"></a>核心思想:</h4><p>高富帥主角-確認焦點處的重要地位，給予高純度/特殊色相/高明度差等等強烈對比，人物畫來說,通常是瞳孔/髮飾/首飾等等區域，高純度/冷暖明顯的這個色彩又常被說是提神色</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1231,20 +1433,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">62</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">89</span>
+        <span class="site-state-item-count">92</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
