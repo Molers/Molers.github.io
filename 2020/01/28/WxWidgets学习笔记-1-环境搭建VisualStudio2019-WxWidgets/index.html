@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="参考链接:Setting Up wxWidgets Using Visual Studio 2019  下载解压，进入build-&amp;gt;msw文件夹，VS2019打开wx_vc16.sln,VS2017打开wx_vc15.sln">
+<meta name="keywords" content="图形界面,WxWidgets,GUI,C++,VisualStudio">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WxWidgets学习笔记-1-环境搭建VisualStudio2019+WxWidgets">
+<meta property="og:url" content="http://yoursite.com/2020/01/28/WxWidgets学习笔记-1-环境搭建VisualStudio2019-WxWidgets/index.html">
+<meta property="og:site_name" content="Molers Blog">
+<meta property="og:description" content="参考链接:Setting Up wxWidgets Using Visual Studio 2019  下载解压，进入build-&amp;gt;msw文件夹，VS2019打开wx_vc16.sln,VS2017打开wx_vc15.sln">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/image-20200128155515862.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200128155548868.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200128155700206.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200128155905012.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200128160242905.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200128160737543.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200128160804566.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200128160835255.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200128161007701.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200128161230608.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200626160008561.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200626160127455.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200626160230367.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200626160309863.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200626160832957.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200626160407253.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200626160448956.png">
+<meta property="og:updated_time" content="2020-06-26T08:10:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WxWidgets学习笔记-1-环境搭建VisualStudio2019+WxWidgets">
+<meta name="twitter:description" content="参考链接:Setting Up wxWidgets Using Visual Studio 2019  下载解压，进入build-&amp;gt;msw文件夹，VS2019打开wx_vc16.sln,VS2017打开wx_vc15.sln">
+<meta name="twitter:image" content="http://yoursite.com/images/image-20200128155515862.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/01/28/WxWidgets学习笔记-1-环境搭建VisualStudio2019-WxWidgets/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>WxWidgets学习笔记-1-环境搭建VisualStudio2019+WxWidgets | Molers Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Molers Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">饱腹的鼹鼠</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/28/WxWidgets学习笔记-1-环境搭建VisualStudio2019-WxWidgets/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          WxWidgets学习笔记-1-环境搭建VisualStudio2019+WxWidgets
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-28 14:15:22" itemprop="dateCreated datePublished" datetime="2020-01-28T14:15:22+08:00">2020-01-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-26 16:10:00" itemprop="dateModified" datetime="2020-06-26T16:10:00+08:00">2020-06-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/WxWidgets图形化界面学习/" itemprop="url" rel="index"><span itemprop="name">WxWidgets图形化界面学习</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>参考链接:<a href="https://www.youtube.com/watch?v=sRhoZcNpMb4" target="_blank" rel="noopener">Setting Up wxWidgets Using Visual Studio 2019</a></p>
+<p><img src="/images/image-20200128155515862.png" alt="image-20200128155515862"></p>
+<h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><p>解压，进入build-&gt;msw文件夹，VS2019打开wx_vc16.sln,VS2017打开wx_vc15.sln</p>
+<a id="more"></a>
+<p><img src="/images/image-20200128155548868.png" alt="image-20200128155548868"></p>
+<p><img src="/images/image-20200128155700206.png" alt="image-20200128155700206"></p>
+<h4 id="Build生成解决方案"><a href="#Build生成解决方案" class="headerlink" title="Build生成解决方案"></a>Build生成解决方案</h4><p>生成Debug Win32 x64 和Release win32 x64四个解决方案</p>
+<p><img src="/images/image-20200128155905012.png" alt="image-20200128155905012"></p>
+<h4 id="环境变量设置"><a href="#环境变量设置" class="headerlink" title="环境变量设置"></a>环境变量设置</h4><p><img src="/images/image-20200128160242905.png" alt="image-20200128160242905"></p>
+<h4 id="新建解决方案打开属性管理器"><a href="#新建解决方案打开属性管理器" class="headerlink" title="新建解决方案打开属性管理器"></a>新建解决方案打开属性管理器</h4><p><img src="/images/image-20200128160737543.png" alt="image-20200128160737543"></p>
+<p>右键添加现有属性表</p>
+<p><img src="/images/image-20200128160804566.png" alt="image-20200128160804566"></p>
+<p><img src="/images/image-20200128160835255.png" alt="image-20200128160835255"></p>
+<h4 id="使用样例"><a href="#使用样例" class="headerlink" title="使用样例"></a>使用样例</h4><p><img src="/images/image-20200128161007701.png" alt="image-20200128161007701"></p>
+<h4 id="连接器修改"><a href="#连接器修改" class="headerlink" title="连接器修改"></a>连接器修改</h4><p><img src="/images/image-20200128161230608.png" alt="image-20200128161230608"></p>
+<h4 id="注意应用到所有配置所有平台"><a href="#注意应用到所有配置所有平台" class="headerlink" title="注意应用到所有配置所有平台"></a>注意应用到所有配置所有平台</h4><iframe width="560" height="315" src="https://www.youtube.com/embed/sRhoZcNpMb4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+<h3 id="2020-6-26更新"><a href="#2020-6-26更新" class="headerlink" title="2020.6.26更新"></a>2020.6.26更新</h3><p>之前的教程没有分离出库文件和头文件而且还用了环境变量不方便移植，正确的做法应该是把文件夹里的Lib和inciude提取出来放到项目底下</p>
+<h4 id="Linker-gt-system-gt-subsystem改为Windows"><a href="#Linker-gt-system-gt-subsystem改为Windows" class="headerlink" title="Linker-&gt;system-&gt;subsystem改为Windows"></a>Linker-&gt;system-&gt;subsystem改为Windows</h4><p><img src="/images/image-20200626160008561.png" alt="image-20200626160008561"></p>
+<h4 id="预处理器添加WXUSINGDLL"><a href="#预处理器添加WXUSINGDLL" class="headerlink" title="预处理器添加WXUSINGDLL"></a>预处理器添加WXUSINGDLL</h4><p><img src="/images/image-20200626160127455.png" alt="image-20200626160127455"></p>
+<h4 id="配置所用平台的目录"><a href="#配置所用平台的目录" class="headerlink" title="配置所用平台的目录"></a>配置所用平台的目录</h4><p><img src="/images/image-20200626160230367.png" alt="image-20200626160230367"></p>
+<h4 id="Debug设置"><a href="#Debug设置" class="headerlink" title="Debug设置"></a>Debug设置</h4><p><img src="/images/image-20200626160309863.png" alt="image-20200626160309863"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(ProjectDir)3rdParty\wxWidgets\lib\vc_x64_dll\mswud</span><br><span class="line">$(ProjectDir)3rdParty\wxWidgets\include\</span><br></pre></td></tr></table></figure>
+<p><img src="/images/image-20200626160832957.png" alt="image-20200626160832957"></p>
+<h4 id="Release设置"><a href="#Release设置" class="headerlink" title="Release设置"></a>Release设置</h4><p><img src="/images/image-20200626160407253.png" alt="image-20200626160407253"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(ProjectDir)3rdParty\wxWidgets\lib\vc_x64_dll\mswu</span><br><span class="line">$(ProjectDir)3rdParty\wxWidgets\include\</span><br></pre></td></tr></table></figure>
+<p><img src="/images/image-20200626160448956.png" alt="image-20200626160448956"></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EI2taYkErRg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/图形界面/" rel="tag"># 图形界面</a>
+              <a href="/tags/WxWidgets/" rel="tag"># WxWidgets</a>
+              <a href="/tags/GUI/" rel="tag"># GUI</a>
+              <a href="/tags/C/" rel="tag"># C++</a>
+              <a href="/tags/VisualStudio/" rel="tag"># VisualStudio</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/28/使用Unity与Unreal4来可视化学习光线跟踪-1-前期准备/" rel="prev" title="使用Unity与Unreal4来可视化学习光线跟踪-1-前期准备">
+      <i class="fa fa-chevron-left"></i> 使用Unity与Unreal4来可视化学习光线跟踪-1-前期准备
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/01/28/WxWidgets学习笔记-2-应用程序类WxAPP和Frame窗口类学习/" rel="next" title="WxWidgets学习笔记-2-应用程序类WxAPP和Frame窗口类学习">
+      WxWidgets学习笔记-2-应用程序类WxAPP和Frame窗口类学习 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载"><span class="nav-number">1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Build生成解决方案"><span class="nav-number">2.</span> <span class="nav-text">Build生成解决方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#环境变量设置"><span class="nav-number">3.</span> <span class="nav-text">环境变量设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建解决方案打开属性管理器"><span class="nav-number">4.</span> <span class="nav-text">新建解决方案打开属性管理器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用样例"><span class="nav-number">5.</span> <span class="nav-text">使用样例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#连接器修改"><span class="nav-number">6.</span> <span class="nav-text">连接器修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意应用到所有配置所有平台"><span class="nav-number">7.</span> <span class="nav-text">注意应用到所有配置所有平台</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-6-26更新"><span class="nav-number"></span> <span class="nav-text">2020.6.26更新</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Linker-gt-system-gt-subsystem改为Windows"><span class="nav-number">1.</span> <span class="nav-text">Linker-&gt;system-&gt;subsystem改为Windows</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#预处理器添加WXUSINGDLL"><span class="nav-number">2.</span> <span class="nav-text">预处理器添加WXUSINGDLL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置所用平台的目录"><span class="nav-number">3.</span> <span class="nav-text">配置所用平台的目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Debug设置"><span class="nav-number">4.</span> <span class="nav-text">Debug设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Release设置"><span class="nav-number">5.</span> <span class="nav-text">Release设置</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Molers" src="/images/Avatar.jpg">
+  <p class="site-author-name" itemprop="name">Molers</p>
+  <div class="site-description" itemprop="description">计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">89</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Molers" title="GitHub → https://github.com/Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/3179969322" title="Weibo → https://weibo.com/3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/s992545366" title="Twitter → https://twitter.com/s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Molers</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="怕什么真理无穷 进一寸有一寸的欢喜 - -胡适 TCIA (The Cancer Imaging Archive)TCIA是一个包含常见肿瘤（肺癌、前列腺癌等）医学图像及相应临床信息（治疗方案细节、基因、病理等）的大规模公用数据库，其影像模态包括MRI、CT等，图像格式均为DICOM，并且网站内数据在持续增加。所有数据都是由TCIA整理并管理。 网址：http://www.cancerimagin">
+<meta name="keywords" content="CNN,前馈神经网络,图像识别,U-Net,胰腺分割">
+<meta property="og:type" content="article">
+<meta property="og:title" content="U-Net与胰腺分割学习（1）">
+<meta property="og:url" content="http://yoursite.com/2020/08/29/U-Net与胰腺分割学习（1）/index.html">
+<meta property="og:site_name" content="Molers Blog">
+<meta property="og:description" content="怕什么真理无穷 进一寸有一寸的欢喜 - -胡适 TCIA (The Cancer Imaging Archive)TCIA是一个包含常见肿瘤（肺癌、前列腺癌等）医学图像及相应临床信息（治疗方案细节、基因、病理等）的大规模公用数据库，其影像模态包括MRI、CT等，图像格式均为DICOM，并且网站内数据在持续增加。所有数据都是由TCIA整理并管理。 网址：http://www.cancerimagin">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/image-20200829081625498.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200906175024434.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200829085508826.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200829090259936.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200829091543359.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200829091629383.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200829124210777.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200831131826360.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200831141406162.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200831142210489.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200831143804721.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200831150621669.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200831171018968.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200831171032146.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200831171449706.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200831172440951.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200831172922907.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200831172952822.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200831173004117.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200831173013623.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200831173021885.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200831173346443.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200831174918176.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200831175232910.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200831175252286.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200831185502855.png">
+<meta property="og:updated_time" content="2020-09-15T02:04:04.565Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="U-Net与胰腺分割学习（1）">
+<meta name="twitter:description" content="怕什么真理无穷 进一寸有一寸的欢喜 - -胡适 TCIA (The Cancer Imaging Archive)TCIA是一个包含常见肿瘤（肺癌、前列腺癌等）医学图像及相应临床信息（治疗方案细节、基因、病理等）的大规模公用数据库，其影像模态包括MRI、CT等，图像格式均为DICOM，并且网站内数据在持续增加。所有数据都是由TCIA整理并管理。 网址：http://www.cancerimagin">
+<meta name="twitter:image" content="http://yoursite.com/images/image-20200829081625498.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/08/29/U-Net与胰腺分割学习（1）/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>U-Net与胰腺分割学习（1） | Molers Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Molers Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">饱腹的鼹鼠</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/29/U-Net与胰腺分割学习（1）/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          U-Net与胰腺分割学习（1）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-29 08:15:02" itemprop="dateCreated datePublished" datetime="2020-08-29T08:15:02+08:00">2020-08-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-15 10:04:04" itemprop="dateModified" datetime="2020-09-15T10:04:04+08:00">2020-09-15</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>怕什么真理无穷 进一寸有一寸的欢喜 - -胡适</strong></p>
+<h1 id="TCIA-The-Cancer-Imaging-Archive"><a href="#TCIA-The-Cancer-Imaging-Archive" class="headerlink" title="TCIA (The Cancer Imaging Archive)"></a><strong>TCIA (The Cancer Imaging Archive)</strong></h1><p>TCIA是一个包含常见肿瘤（肺癌、前列腺癌等）医学图像及相应临床信息（治疗方案细节、基因、病理等）的大规模公用数据库，其影像模态包括MRI、CT等，图像格式均为DICOM，并且网站内数据在持续增加。所有数据都是由TCIA整理并管理。</p>
+<p><strong>网址：<a href="http://www.cancerimagingarchive.net/" target="_blank" rel="noopener">http://www.cancerimagingarchive.net/</a></strong></p>
+<p><strong>通过点击Download下载，在电脑上得到后缀名为’.tcia’的文件，注意该文件必须通过‘NBIA DATA Retriever’软件打开，打开后就可以通过选择保存路径，开始下载数据集；</strong>(需要VPN)</p>
+<p><img src="/images/image-20200829081625498.png" alt="image-20200829081625498"></p>
+<a id="more"></a>
+<h1 id="管理conda"><a href="#管理conda" class="headerlink" title="管理conda"></a>管理conda</h1><p>conda添加到环境变量</p>
+<p><img src="/images/image-20200906175024434.png" alt="image-20200906175024434"></p>
+<h2 id="1-验证conda已被安装"><a href="#1-验证conda已被安装" class="headerlink" title="1. 验证conda已被安装"></a>1. 验证conda已被安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda --version</span><br></pre></td></tr></table></figure>
+<h2 id="2-获取当前环境中已安装的包信息"><a href="#2-获取当前环境中已安装的包信息" class="headerlink" title="2. 获取当前环境中已安装的包信息"></a>2. 获取当前环境中已安装的包信息</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda <span class="built_in">list</span></span><br></pre></td></tr></table></figure>
+<h2 id="Python包安装错误的解决办法"><a href="#Python包安装错误的解决办法" class="headerlink" title="Python包安装错误的解决办法"></a>Python包安装错误的解决办法</h2><p>EnvironmentNotWritableError: The current user does not have write permissions to the target environment.<br>  environment location: C:\ProgramData\Anaconda3</p>
+<p><strong>无法写入错误：当前的用户没有写入到该路径文件的权限</strong></p>
+<p>以管理员身份启动Anaconda（Anaconda Navigator或者Anaconda Prompt）</p>
+<h1 id="安装Pydicom"><a href="#安装Pydicom" class="headerlink" title="安装Pydicom"></a>安装Pydicom</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install -c conda-forge pydicom</span><br></pre></td></tr></table></figure>
+<p><img src="/images/image-20200829085508826.png" alt="image-20200829085508826"></p>
+<p>安装完毕</p>
+<p><img src="/images/image-20200829090259936.png" alt="image-20200829090259936"></p>
+<p>ImportError:通过“import dicom”的Pydicom已经在Pydicom 1.0版本中被删除，请安装dicom包来恢复依赖于Pydicom 0.9的代码的功能或更早。例如，pip install dicom交替，大多数代码可以轻松转换为pydicom&gt;1.0通过改变import 1ines从import dicom到import pydicomiSee过渡指南</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install dicom</span><br></pre></td></tr></table></figure>
+<p><img src="/images/image-20200829091543359.png" alt="image-20200829091543359"></p>
+<p><img src="/images/image-20200829091629383.png" alt="image-20200829091629383"></p>
+<h1 id="DICOM转换为Numpy数组数据"><a href="#DICOM转换为Numpy数组数据" class="headerlink" title="DICOM转换为Numpy数组数据"></a>DICOM转换为Numpy数组数据</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python dicom2npy.py</span><br></pre></td></tr></table></figure>
+<p>执行Python文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> pydicom</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">N = <span class="number">82</span></span><br><span class="line">W = <span class="number">512</span></span><br><span class="line">H = <span class="number">512</span></span><br><span class="line">path1 = <span class="string">'DOI'</span></span><br><span class="line">path2 = <span class="string">'images'</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(path2):</span><br><span class="line">    os.makedirs(path2)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> range(N):</span><br><span class="line">    volumeID = <span class="string">'&#123;:0&gt;4&#125;'</span>.format(n + <span class="number">1</span>)</span><br><span class="line">    <span class="comment"># 宽度 ：后带填充的字符 0001~0082</span></span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'Processing File '</span> + volumeID)</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'正在处理文件'</span> + volumeID)</span><br><span class="line">    <span class="comment"># Processing File 0001 ~0082</span></span><br><span class="line">    filename1 = <span class="string">'PANCREAS_'</span> + volumeID</span><br><span class="line">    <span class="comment"># PANCREAS_0001 ~PANCREAS_0082</span></span><br><span class="line">    directory1 = os.path.join(path1, filename1)</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'directory1:'</span> + directory1)</span><br><span class="line">    <span class="comment"># 把目录和文件名合成一个路径 directory1 = DOI/PANCREAS_0001/</span></span><br><span class="line">    filename2 = volumeID + <span class="string">'.npy'</span></span><br><span class="line">    <span class="comment"># filename2 = 0001.npy ~0082.npy</span></span><br><span class="line">    <span class="keyword">for</span> path_, _, file_ <span class="keyword">in</span> os.walk(directory1):</span><br><span class="line">    <span class="comment">#for dirpath, _dirnames,filenames in os.walk(path):</span></span><br><span class="line">        <span class="keyword">print</span> (path_,_,file_)</span><br><span class="line">    <span class="comment"># 文件夹的绝对路径，dirpath  文件夹下的子文件夹的名字，dirnames 文件夹的文件的名字，filenames</span></span><br><span class="line">    <span class="comment">#注意，函数会自动改变root的值使得遍历所有的子文件夹。、</span></span><br><span class="line">    <span class="comment">#所以返回的三元元组的个数为所有子文件夹（包括子子文件夹，子子子文件夹等等）加上1（根文件夹）。</span></span><br><span class="line">        L = len(file_)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 文件夹内文件的个数 files 同样是 list , 内容是该文件夹中所有的文件(不包括子目录)</span></span><br><span class="line">        <span class="keyword">if</span> L &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">print</span> (<span class="string">'  '</span> + str(L) + <span class="string">' slices along the axial view.'</span>)</span><br><span class="line">            <span class="comment">#沿轴向视图切片</span></span><br><span class="line">            data = np.zeros((W, H, L), dtype = np.int16)</span><br><span class="line">            <span class="keyword">for</span> f <span class="keyword">in</span> sorted(file_):</span><br><span class="line">                file1 = os.path.abspath(os.path.join(path_, f)) <span class="comment">#绝对路径</span></span><br><span class="line">                <span class="keyword">print</span> (<span class="string">'file1:'</span> + file1)</span><br><span class="line"></span><br><span class="line">                image = pydicom.read_file(file1)</span><br><span class="line">                sliceID = image.data_element(<span class="string">"InstanceNumber"</span>).value - <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> image.pixel_array.shape[<span class="number">0</span>] != <span class="number">512</span> <span class="keyword">or</span> image.pixel_array.shape[<span class="number">1</span>] != <span class="number">512</span>:</span><br><span class="line">                    exit(<span class="string">'  Error: DICOM image does not fit '</span> + str(W) + <span class="string">'x'</span> + str(H) + <span class="string">' size!'</span>)</span><br><span class="line">                data[:, :, sliceID] = image.pixel_array</span><br><span class="line">            file2 = os.path.join(path2, filename2)</span><br><span class="line">            np.save(file2, data)</span><br><span class="line">            <span class="keyword">print</span>  (<span class="string">'File '</span> + volumeID + <span class="string">' is saved in '</span> + file2 + <span class="string">' .'</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="/images/image-20200829124210777.png" alt="image-20200829124210777"></p>
+<h1 id="Nibabel"><a href="#Nibabel" class="headerlink" title="Nibabel"></a>Nibabel</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install -c conda-forge nibabel</span><br></pre></td></tr></table></figure>
+<p><strong>然后我发现他这个执行脚本是Linux的…</strong></p>
+<p>在VMware安装Ubuntu的时候发现下载异常的慢，然后上网搜要跳过SKIP（- -）换源</p>
+<h2 id="在Ubuntu里安装Anaconda"><a href="#在Ubuntu里安装Anaconda" class="headerlink" title="在Ubuntu里安装Anaconda"></a>在Ubuntu里安装Anaconda</h2><p><img src="/images/image-20200831131826360.png" alt="image-20200831131826360"></p>
+<p><img src="/images/image-20200831141406162.png" alt="image-20200831141406162"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /mnt/hgfs/UbuntuSharedFolder</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash Anaconda3-2020.07-Linux-x86_64.sh</span><br></pre></td></tr></table></figure>
+<p><img src="/images/image-20200831142210489.png" alt="image-20200831142210489"></p>
+<p>Anaconda3的安装目录</p>
+<p>退出终端，重新进来就出现了<code>（base）</code>，则安装成功。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">source ~/anaconda3/bin/activate root</span><br><span class="line">anaconda-navigator</span><br></pre></td></tr></table></figure>
+<p>出现anaconda图形界面加载一会儿，就可以将其添加到任务栏或收藏夹上，下次可直接点击该图标即可实现可视化anaconda图形界面的操作。</p>
+<p><img src="/images/image-20200831143804721.png" alt="image-20200831143804721"></p>
+<p>然后安装Pydicom和上面步骤一样</p>
+<p>更改脚本里的文件夹路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DIR=&quot;/mnt/hgfs/UbuntuSharedFolder/images&quot;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/image-20200831150621669.png" alt="image-20200831150621669"></p>
+<h1 id="CUDA安装"><a href="#CUDA安装" class="headerlink" title="CUDA安装"></a>CUDA安装</h1><p>不知道为什么CUDA安装完虚拟机就崩了，崩溃中…虚拟机方案失败，接下来试试子系统</p>
+<p>网上搜索了一下好像虚拟机不能用CUDA加速，难道真的要安装双系统了吗..</p>
+<p>先来试一试Windows的Ubuntu子系统看能不能使用物理显卡加速深度学习计算</p>
+<p>先试试结果怎么样，真要用服务器计算的话就之后再说</p>
+<h2 id="Win10安装Ubuntu子系统"><a href="#Win10安装Ubuntu子系统" class="headerlink" title="Win10安装Ubuntu子系统"></a>Win10安装Ubuntu子系统</h2><p><img src="/images/image-20200831171018968.png" alt="image-20200831171018968"></p>
+<p><img src="/images/image-20200831171032146.png" alt="image-20200831171032146"></p>
+<p><img src="/images/image-20200831171449706.png" alt="image-20200831171449706"></p>
+<h3 id="关于Linux的安装位置"><a href="#关于Linux的安装位置" class="headerlink" title="关于Linux的安装位置"></a>关于Linux的安装位置</h3><p><img src="/images/image-20200831172440951.png" alt="image-20200831172440951"></p>
+<h3 id="WindowsAPP拒绝访问的解决办法"><a href="#WindowsAPP拒绝访问的解决办法" class="headerlink" title="WindowsAPP拒绝访问的解决办法"></a>WindowsAPP拒绝访问的解决办法</h3><p><img src="/images/image-20200831172922907.png" alt="image-20200831172922907"></p>
+<p><img src="/images/image-20200831172952822.png" alt="image-20200831172952822"></p>
+<p><img src="/images/image-20200831173004117.png" alt="image-20200831173004117"></p>
+<p>其中我把Administrator换为了Everyone</p>
+<p><img src="/images/image-20200831173013623.png" alt="image-20200831173013623"></p>
+<p><img src="/images/image-20200831173021885.png" alt="image-20200831173021885"></p>
+<h3 id="找到了Ubuntu安装位置"><a href="#找到了Ubuntu安装位置" class="headerlink" title="找到了Ubuntu安装位置"></a>找到了Ubuntu安装位置</h3><p><img src="/images/image-20200831173346443.png" alt="image-20200831173346443"></p>
+<h3 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/apt</span><br><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list_b</span><br><span class="line">sudo nano sources.list</span><br></pre></td></tr></table></figure>
+<p>Ctrl+K全删完</p>
+<ul>
+<li>中科大镜像</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.ustc.edu.cn/ubuntu/ bionic-proposed main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="——————————-废弃"><a href="#——————————-废弃" class="headerlink" title="——————————-废弃"></a>——————————-废弃</h3><h3 id="安装VcXsrv"><a href="#安装VcXsrv" class="headerlink" title="安装VcXsrv"></a>安装VcXsrv</h3><p><a href="https://sourceforge.net/projects/vcxsrv/" target="_blank" rel="noopener">https://sourceforge.net/projects/vcxsrv/</a></p>
+<p><img src="/images/image-20200831174918176.png" alt="image-20200831174918176"></p>
+<p>其余默认下一步</p>
+<p><img src="/images/image-20200831175232910.png" alt="image-20200831175232910"></p>
+<p>保存设置到桌面直接启动</p>
+<p><img src="/images/image-20200831175252286.png" alt="image-20200831175252286"></p>
+<h3 id="Ubuntu内安装桌面环境"><a href="#Ubuntu内安装桌面环境" class="headerlink" title="Ubuntu内安装桌面环境"></a>Ubuntu内安装桌面环境</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ubuntu-desktop unity compizconfig-settings-manager</span><br></pre></td></tr></table></figure>
+<h3 id="——————————————废弃"><a href="#——————————————废弃" class="headerlink" title="——————————————废弃"></a>——————————————废弃</h3><p>尝试之后发现XcXsrv并不好用，还报了很多错，放弃。</p>
+<h2 id="通过本机远程桌面"><a href="#通过本机远程桌面" class="headerlink" title="通过本机远程桌面"></a>通过本机远程桌面</h2><p><strong>安装xorg（</strong>包括显卡驱动、图形环境库等等一系列软件包<strong>）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install xorg</span><br></pre></td></tr></table></figure>
+<p><strong>安装xfce4（</strong>运行在类Unix操作系统上，提供轻量级桌面环境<strong>）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install xfce4</span><br></pre></td></tr></table></figure>
+<p><strong>安装xrdp（</strong>一种开源的远程桌面协议（RDP）服务器<strong>）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install xrdp</span><br></pre></td></tr></table></figure>
+<p><strong>配置xrdp（</strong>配置端口<strong>）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sed -i &apos;s/port=3389/port=3390/g&apos; /etc/xrdp/xrdp.ini</span><br></pre></td></tr></table></figure>
+<p><strong>向.xsession中写入xfce4-session</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo echo xfce4-session &gt;~/.xsession</span><br></pre></td></tr></table></figure>
+<p><strong>重启xrdp服务</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service xrdp restart</span><br></pre></td></tr></table></figure>
+<p>在Cortana中搜索远程桌面连接，点击进入，计算机栏输入【本机IP:端口】，用户名栏输入子系统用户名，点击连接。</p>
+<p>127.0.0.1:<strong>3390</strong></p>
+<p><img src="/images/image-20200831185502855.png" alt="image-20200831185502855"></p>
+<h1 id="PiP设置"><a href="#PiP设置" class="headerlink" title="PiP设置"></a>PiP设置</h1><p>临时使用 加参数-i <a href="https://pypi.tuna.tsinghua.edu.cn/simple" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pyspider</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.pip</span><br><span class="line">cd .pip</span><br><span class="line">touch pip.conf</span><br><span class="line">nano pip.conf</span><br></pre></td></tr></table></figure>
+<p>pip.conf内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url = https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">[install]</span><br><span class="line">trusted-host=mirrors.aliyun.com</span><br></pre></td></tr></table></figure>
+<h1 id="Tensenflow安装"><a href="#Tensenflow安装" class="headerlink" title="Tensenflow安装"></a>Tensenflow安装</h1><p>安完Ubuntu没有pip,先安装pip</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python3-dev python-scipy python-numpy python-matplotlib python-pandas python-nose</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Requires the latest pip 升级pip</span><br><span class="line">pip install --upgrade pip</span><br><span class="line"># Current stable release for CPU and GPU</span><br><span class="line">pip install tensorflow</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-pip</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install tensorflow</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 系统升级</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 安装python基础开发包</span><br><span class="line">sudo apt install -y python-dev python-pip python-nose gcc g++ git gfortran vim</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安装运算加速库 打开<code>终端</code>输入：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y libopenblas-dev liblapack-dev libatlas-base-dev</span><br></pre></td></tr></table></figure>
+<h2 id="CUDA开发环境的搭建"><a href="#CUDA开发环境的搭建" class="headerlink" title="CUDA开发环境的搭建"></a>CUDA开发环境的搭建</h2><p><a href="https://developer.nvidia.com/cuda-downloads" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-downloads</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-ubuntu1604.pin</span><br><span class="line">sudo mv cuda-ubuntu1604.pin /etc/apt/preferences.d/cuda-repository-pin-600</span><br><span class="line">wget https://developer.download.nvidia.com/compute/cuda/11.0.3/local_installers/cuda-repo-ubuntu1604-11-0-local_11.0.3-450.51.06-1_amd64.deb</span><br><span class="line">sudo dpkg -i cuda-repo-ubuntu1604-11-0-local_11.0.3-450.51.06-1_amd64.deb</span><br><span class="line">sudo apt-key add /var/cuda-repo-ubuntu1604-11-0-local/7fa2af80.pub</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get -y install cuda</span><br></pre></td></tr></table></figure>
+<ul>
+<li>将CUDA路径添加至环境变量 在<code>终端</code>输入：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/profile</span><br></pre></td></tr></table></figure>
+<p>在<code>profile</code>文件中添加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export CUDA_HOME=/usr/local/cuda-11.0</span><br><span class="line">export PATH=/usr/local/cuda-11.0/bin$&#123;PATH:+:$&#123;PATH&#125;&#125;</span><br><span class="line">export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64$&#123;LD_LIBRARY_PATH:+:$&#123;LD_LIBRARY_PATH&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>之后<code>source /etc/profile</code>即可</p>
+<ul>
+<li>测试 在<code>终端</code>输入：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvcc -V</span><br></pre></td></tr></table></figure>
+<p>会得到相应的nvcc编译器相应的信息，那么CUDA配置成功了。(<strong>记得重启系统</strong>)</p>
+<p>如果要进行<code>cuda性能测试</code>，可以进行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/cuda/samples</span><br><span class="line">sudo make -j8</span><br></pre></td></tr></table></figure>
+<p>编译完成后，可以进<code>samples/bin/.../.../...</code>的底层目录，运行各类实例。</p>
+<h2 id="no-CUDA-capable-device-is-detected"><a href="#no-CUDA-capable-device-is-detected" class="headerlink" title="no CUDA-capable device is detected"></a>no CUDA-capable device is detected</h2><p><a href="https://www.zhihu.com/question/349262900" target="_blank" rel="noopener">请问win10下的ubuntu子系统可以配置gpu深度学习环境吗？</a></p>
+<p>win10下使用Ubuntu子系统调用GPU失败，下一个方案，docker调用GPU搭建深度学习环境</p>
+<h1 id="Keras安装"><a href="#Keras安装" class="headerlink" title="Keras安装"></a>Keras安装</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install keras</span><br></pre></td></tr></table></figure>
+<p><a href="https://blog.csdn.net/daybreak222/article/details/87968078" target="_blank" rel="noopener">Win10安装Ubuntu子系统及图形化界面详细教程</a></p>
+<p><a href="http://www.xitongcheng.com/jiaocheng/win10_article_45151.html" target="_blank" rel="noopener">Win10系统下WindowsApps文件夹拒绝访问如何获取权限</a></p>
+<p><a href="https://www.cnblogs.com/raisok/p/10847869.html" target="_blank" rel="noopener">win10 linux Ubuntu 18.04更换国内源</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/CNN/" rel="tag"># CNN</a>
+              <a href="/tags/前馈神经网络/" rel="tag"># 前馈神经网络</a>
+              <a href="/tags/图像识别/" rel="tag"># 图像识别</a>
+              <a href="/tags/U-Net/" rel="tag"># U-Net</a>
+              <a href="/tags/胰腺分割/" rel="tag"># 胰腺分割</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/24/CNN-FCN-U-Net-卷积神经网络学习（1）/" rel="prev" title="CNN FCN U-Net 卷积神经网络学习（1）">
+      <i class="fa fa-chevron-left"></i> CNN FCN U-Net 卷积神经网络学习（1）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/09/20/基础拓扑学笔记-1-欧拉定理/" rel="next" title="基础拓扑学笔记(1)--欧拉定理">
+      基础拓扑学笔记(1)--欧拉定理 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TCIA-The-Cancer-Imaging-Archive"><span class="nav-number">1.</span> <span class="nav-text">TCIA (The Cancer Imaging Archive)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#管理conda"><span class="nav-number">2.</span> <span class="nav-text">管理conda</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-验证conda已被安装"><span class="nav-number">2.1.</span> <span class="nav-text">1. 验证conda已被安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-获取当前环境中已安装的包信息"><span class="nav-number">2.2.</span> <span class="nav-text">2. 获取当前环境中已安装的包信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python包安装错误的解决办法"><span class="nav-number">2.3.</span> <span class="nav-text">Python包安装错误的解决办法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Pydicom"><span class="nav-number">3.</span> <span class="nav-text">安装Pydicom</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DICOM转换为Numpy数组数据"><span class="nav-number">4.</span> <span class="nav-text">DICOM转换为Numpy数组数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Nibabel"><span class="nav-number">5.</span> <span class="nav-text">Nibabel</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在Ubuntu里安装Anaconda"><span class="nav-number">5.1.</span> <span class="nav-text">在Ubuntu里安装Anaconda</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CUDA安装"><span class="nav-number">6.</span> <span class="nav-text">CUDA安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Win10安装Ubuntu子系统"><span class="nav-number">6.1.</span> <span class="nav-text">Win10安装Ubuntu子系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于Linux的安装位置"><span class="nav-number">6.1.1.</span> <span class="nav-text">关于Linux的安装位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WindowsAPP拒绝访问的解决办法"><span class="nav-number">6.1.2.</span> <span class="nav-text">WindowsAPP拒绝访问的解决办法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#找到了Ubuntu安装位置"><span class="nav-number">6.1.3.</span> <span class="nav-text">找到了Ubuntu安装位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#换源"><span class="nav-number">6.1.4.</span> <span class="nav-text">换源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#——————————-废弃"><span class="nav-number">6.1.5.</span> <span class="nav-text">——————————-废弃</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装VcXsrv"><span class="nav-number">6.1.6.</span> <span class="nav-text">安装VcXsrv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu内安装桌面环境"><span class="nav-number">6.1.7.</span> <span class="nav-text">Ubuntu内安装桌面环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#——————————————废弃"><span class="nav-number">6.1.8.</span> <span class="nav-text">——————————————废弃</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过本机远程桌面"><span class="nav-number">6.2.</span> <span class="nav-text">通过本机远程桌面</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PiP设置"><span class="nav-number">7.</span> <span class="nav-text">PiP设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tensenflow安装"><span class="nav-number">8.</span> <span class="nav-text">Tensenflow安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CUDA开发环境的搭建"><span class="nav-number">8.1.</span> <span class="nav-text">CUDA开发环境的搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#no-CUDA-capable-device-is-detected"><span class="nav-number">8.2.</span> <span class="nav-text">no CUDA-capable device is detected</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Keras安装"><span class="nav-number">9.</span> <span class="nav-text">Keras安装</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Molers" src="/images/Avatar.jpg">
+  <p class="site-author-name" itemprop="name">Molers</p>
+  <div class="site-description" itemprop="description">计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">89</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Molers" title="GitHub → https://github.com/Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/3179969322" title="Weibo → https://weibo.com/3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/s992545366" title="Twitter → https://twitter.com/s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Molers</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

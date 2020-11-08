@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="如何制作一张地图？ 怎么样做一个地球的平面图？很难，就像把橘子皮摊平一样，如果没有扭曲和切割几乎不可能。  既然不能尺寸和角度不能都保留，那么共形几何选择在绘制地图的时候保持角度，在航海地图的时候很有用。  保留角度会使得地图上一些区域的面积严重扭曲，例如在地图上看，格陵兰岛面积比澳大利亚大，但是实际上澳大利亚面积768万平方千米，是世界上最小的大陆；格陵兰岛面积216万平方千米，是世界上最大的岛">
+<meta name="keywords" content="共形几何,笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算共形几何笔记-1">
+<meta property="og:url" content="http://yoursite.com/2020/07/10/计算共形几何笔记-1/index.html">
+<meta property="og:site_name" content="Molers Blog">
+<meta property="og:description" content="如何制作一张地图？ 怎么样做一个地球的平面图？很难，就像把橘子皮摊平一样，如果没有扭曲和切割几乎不可能。  既然不能尺寸和角度不能都保留，那么共形几何选择在绘制地图的时候保持角度，在航海地图的时候很有用。  保留角度会使得地图上一些区域的面积严重扭曲，例如在地图上看，格陵兰岛面积比澳大利亚大，但是实际上澳大利亚面积768万平方千米，是世界上最小的大陆；格陵兰岛面积216万平方千米，是世界上最大的岛">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712210233986.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712211535319.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712211437488.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712212559590.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712212804648.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712213036382.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712213324338.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712213440834.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712213631266.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712214517442.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712214830145.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712215050784.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712215408556.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712215853886.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712215948948.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712220048484.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712220200126.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712220431816.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712220613894.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713145958920.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713150457565.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713151959839.png">
+<meta property="og:image" content="http://yoursite.com/images/gongxing/image-20201108093131990.png">
+<meta property="og:image" content="http://yoursite.com/images/gongxing/image-20201108093449089.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20201108093600305.png">
+<meta property="og:image" content="http://yoursite.com/images/gongxing/image-20201108101157545.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713152246136.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713152813767.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713153052228.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713153139750.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713153409827.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713154138607.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713154226992.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713154351569.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713154600878.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713154816139.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713154926621.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713154957758.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713155034422.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713155051332.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713155305899.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713155316499.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713155325662.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713145121704.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713145230676.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712201526208.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712201601680.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712201616702.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712221448627.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712221552677.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712221734728.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713155607729.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712224413061.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713155748624.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712224823740.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712224920050.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712225014760.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712225134880.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712225249285.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712225331229.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712225437118.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712225454397.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712225639796.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712225719260.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200712225742163.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713160515566.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713160608677.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713160952980.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713161407284.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713161504438.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713161638872.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713161709664.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713161724001.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713161838369.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713161904184.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713161926475.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713161942032.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713162004040.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713162156799.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200713162209896.png">
+<meta property="og:updated_time" content="2020-11-08T02:24:54.513Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算共形几何笔记-1">
+<meta name="twitter:description" content="如何制作一张地图？ 怎么样做一个地球的平面图？很难，就像把橘子皮摊平一样，如果没有扭曲和切割几乎不可能。  既然不能尺寸和角度不能都保留，那么共形几何选择在绘制地图的时候保持角度，在航海地图的时候很有用。  保留角度会使得地图上一些区域的面积严重扭曲，例如在地图上看，格陵兰岛面积比澳大利亚大，但是实际上澳大利亚面积768万平方千米，是世界上最小的大陆；格陵兰岛面积216万平方千米，是世界上最大的岛">
+<meta name="twitter:image" content="http://yoursite.com/images/image-20200712210233986.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/07/10/计算共形几何笔记-1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>计算共形几何笔记-1 | Molers Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Molers Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">饱腹的鼹鼠</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/10/计算共形几何笔记-1/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算共形几何笔记-1
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-10 23:28:49" itemprop="dateCreated datePublished" datetime="2020-07-10T23:28:49+08:00">2020-07-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-08 10:24:54" itemprop="dateModified" datetime="2020-11-08T10:24:54+08:00">2020-11-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/共形几何/" itemprop="url" rel="index"><span itemprop="name">共形几何</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="如何制作一张地图？"><a href="#如何制作一张地图？" class="headerlink" title="如何制作一张地图？"></a>如何制作一张地图？</h2><p><img src="/images/image-20200712210233986.png" alt="image-20200712210233986"></p>
+<p>怎么样做一个地球的平面图？很难，就像把橘子皮摊平一样，如果没有扭曲和切割几乎不可能。</p>
+<p><img src="/images/image-20200712211535319.png" alt="image-20200712211535319"></p>
+<p>既然不能尺寸和角度不能都保留，那么共形几何选择在绘制地图的时候保持角度，在航海地图的时候很有用。</p>
+<p><img src="/images/image-20200712211437488.png" alt="image-20200712211437488"></p>
+<p>保留角度会使得地图上一些区域的面积严重扭曲，例如在地图上看，格陵兰岛面积比澳大利亚大，但是实际上澳大利亚面积768万平方千米，是世界上最小的大陆；格陵兰岛面积216万平方千米，是世界上最大的岛屿。澳大利亚的实际面积相当于格陵兰岛的三倍多。</p>
+<p>经过将球体地图投影到平面上，角度得到了保留，但是局部的尺寸和比例发生了严重的变化。</p>
+<p><img src="/images/image-20200712212559590.png" alt="image-20200712212559590"></p>
+<p>一般来讲，共型几何研究的是<strong>保持角度</strong>。</p>
+<p><img src="/images/image-20200712212804648.png" alt="image-20200712212804648"></p>
+<p><img src="/images/image-20200712213036382.png" alt="image-20200712213036382"></p>
+<h2 id="为何保持角度？"><a href="#为何保持角度？" class="headerlink" title="为何保持角度？"></a>为何保持角度？</h2><p>那为什么要保持角度不变，即共形？</p>
+<p><img src="/images/image-20200712213324338.png" alt="image-20200712213324338"></p>
+<p>计算效率和几何处理效率更高。</p>
+<p><img src="/images/image-20200712213440834.png" alt="image-20200712213440834"></p>
+<p><strong>尺寸变化非常平滑。</strong></p>
+<p><img src="/images/image-20200712213631266.png" alt="image-20200712213631266"></p>
+<p>假设在地球上旅行，可以不用思考角度问题，而只考虑尺寸，这样简化了问题。</p>
+<p><img src="/images/image-20200712214517442.png" alt="image-20200712214517442"></p>
+<p>那为什么不保留面积？保留面积产生的图形极为复杂难懂，也不平滑。</p>
+<p><img src="/images/image-20200712214830145.png" alt="image-20200712214830145"></p>
+<p>共形几何可以解决很多问题。</p>
+<p><img src="/images/image-20200712215050784.png" alt="image-20200712215050784"></p>
+<p><img src="/images/image-20200712215408556.png" alt="image-20200712215408556"></p>
+<p><img src="/images/image-20200712215853886.png" alt="image-20200712215853886"></p>
+<p>一旦把第一个三角形保留了角度，其他的都不能变了。结果已经固定，这时候需要一些别的思考方式。</p>
+<p><img src="/images/image-20200712215948948.png" alt="image-20200712215948948"></p>
+<p><img src="/images/image-20200712220048484.png" alt="image-20200712220048484"></p>
+<p><img src="/images/image-20200712220200126.png" alt="image-20200712220200126"></p>
+<p><img src="/images/image-20200712220431816.png" alt="image-20200712220431816"></p>
+<h2 id="曲面的保角映射"><a href="#曲面的保角映射" class="headerlink" title="曲面的保角映射"></a>曲面的保角映射</h2><p><img src="/images/image-20200712220613894.png" alt="image-20200712220613894"></p>
+<p><img src="/images/image-20200713145958920.png" alt="image-20200713145958920"></p>
+<p>把雕像展为2维平面和制作一幅地图的过程是一样的。</p>
+<p><img src="/images/image-20200713150457565.png" alt="image-20200713150457565"></p>
+<p><img src="/images/image-20200713151959839.png" alt="image-20200713151959839"></p>
+<p>如果在平面上绘制小圆，则经过变换之后的3维空间中的圆形则会保持角度，但大小会发生扭曲，变成椭圆。</p>
+<h3 id="共形映射补充-2020-11-8"><a href="#共形映射补充-2020-11-8" class="headerlink" title="共形映射补充(2020-11-8)"></a>共形映射补充(2020-11-8)</h3><p>来源:<a href="https://www.youtube.com/watch?v=WXtuoV9yON8&amp;ab_channel=%E4%B8%AD%E5%9B%BD%E5%A4%A7%E5%AD%A6MOOC-%E6%85%95%E8%AF%BE" target="_blank" rel="noopener">复变函数与积分变换</a> 华中科技大学 MOOC 尹慧 第六章共形映射</p>
+<p><img src="/images/gongxing/image-20201108093131990.png" alt="image-20201108093131990"></p>
+<h3 id="伸缩率的概念"><a href="#伸缩率的概念" class="headerlink" title="伸缩率的概念"></a>伸缩率的概念</h3><p><img src="/images/gongxing/image-20201108093449089.png" alt="image-20201108093449089"></p>
+<h3 id="旋转角的概念"><a href="#旋转角的概念" class="headerlink" title="旋转角的概念"></a>旋转角的概念</h3><p><img src="/images/image-20201108093600305.png" alt="image-20201108093600305"></p>
+<h3 id="导数的几何意义"><a href="#导数的几何意义" class="headerlink" title="导数的几何意义"></a>导数的几何意义</h3><p><img src="/images/gongxing/image-20201108101157545.png" alt="image-20201108101157545"></p>
+<p>我TM直接爆炸草？</p>
+<h2 id="单值化定理"><a href="#单值化定理" class="headerlink" title="单值化定理"></a>单值化定理</h2><p><strong>所有带度量的封闭曲面都可以共形映射到三种标准空间中的一种，球面，欧式平面或者双曲球面。</strong></p>
+<p><img src="/images/image-20200713152246136.png" alt="image-20200713152246136"></p>
+<p><img src="/images/image-20200713152813767.png" alt="image-20200713152813767"></p>
+<p>0亏格的封闭曲面保角变换到球面上。</p>
+<p><img src="/images/image-20200713153052228.png" alt="image-20200713153052228"></p>
+<p>亏格为一的曲面映射到欧式平面上。</p>
+<p><img src="/images/image-20200713153139750.png" alt="image-20200713153139750"></p>
+<p>亏格为2的曲面覆盖整个双曲曲面。</p>
+<p><img src="/images/image-20200713153409827.png" alt="image-20200713153409827"></p>
+<p>带有边界的曲面。</p>
+<p><img src="/images/image-20200713154138607.png" alt="image-20200713154138607"></p>
+<h3 id="1-调和映射（适用于亏格为0的曲面"><a href="#1-调和映射（适用于亏格为0的曲面" class="headerlink" title="1.调和映射（适用于亏格为0的曲面"></a>1.调和映射（适用于亏格为0的曲面</h3><p><img src="/images/image-20200713154226992.png" alt="image-20200713154226992"></p>
+<h3 id="2-全纯微分（适用于亏格为1的曲面"><a href="#2-全纯微分（适用于亏格为1的曲面" class="headerlink" title="2.全纯微分（适用于亏格为1的曲面"></a>2.全纯微分（适用于亏格为1的曲面</h3><p><img src="/images/image-20200713154351569.png" alt="image-20200713154351569"></p>
+<p>找到散度和梯度为0的像静电场形式的，其映射具有唯一性。</p>
+<h3 id="3-Ricci-流（适用于高亏格曲面）"><a href="#3-Ricci-流（适用于高亏格曲面）" class="headerlink" title="3.Ricci 流（适用于高亏格曲面）"></a>3.Ricci 流（适用于高亏格曲面）</h3><p><img src="/images/image-20200713154600878.png" alt="image-20200713154600878"></p>
+<h2 id="表面纹理映射参数化"><a href="#表面纹理映射参数化" class="headerlink" title="表面纹理映射参数化"></a>表面纹理映射参数化</h2><p><img src="/images/image-20200713154816139.png" alt="image-20200713154816139"></p>
+<p>传统纹理工艺浪费大量的内存</p>
+<p><img src="/images/image-20200713154926621.png" alt="image-20200713154926621"></p>
+<p><img src="/images/image-20200713154957758.png" alt="image-20200713154957758"></p>
+<p>法向映射</p>
+<p><img src="/images/image-20200713155034422.png" alt="image-20200713155034422"></p>
+<p>保持角度和保持面积的到不同的映射</p>
+<p><img src="/images/image-20200713155051332.png" alt="image-20200713155051332"></p>
+<h2 id="几何图像"><a href="#几何图像" class="headerlink" title="几何图像"></a>几何图像</h2><p>使用2维图像保存3维模型数据。</p>
+<p><img src="/images/image-20200713155305899.png" alt="image-20200713155305899"></p>
+<p><img src="/images/image-20200713155316499.png" alt="image-20200713155316499"></p>
+<p><img src="/images/image-20200713155325662.png" alt="image-20200713155325662"></p>
+<h2 id="如何处理大量的三维数据"><a href="#如何处理大量的三维数据" class="headerlink" title="如何处理大量的三维数据"></a>如何处理大量的三维数据</h2><p>使用三维技术，人们可以非常容易地得到三维的数据结构。</p>
+<p>例如使用结构光的方法进行扫描，扫描速度非常快，解析度也高。</p>
+<p><img src="/images/image-20200713145121704.png" alt="image-20200713145121704"></p>
+<p>动态的表情变化每一帧有差不多50万个采样点。这样可以得到非常迅速的、大规模的三维数据的采集。</p>
+<p><img src="/images/image-20200713145230676.png" alt="image-20200713145230676"></p>
+<p><img src="/images/image-20200712201526208.png" alt="image-20200712201526208"></p>
+<p><img src="/images/image-20200712201601680.png" alt="image-20200712201601680"></p>
+<p><img src="/images/image-20200712201616702.png" alt="image-20200712201616702"></p>
+<p>我们瞬间可以得到大量的三维数据，但是如何来处理这些非常难以处理的三维的数据？</p>
+<p>平直空间的问题可以使用线性代数，而对于曲面的话无能为力，因此必须要引入现代的<strong>微分几何和共形几何</strong>。</p>
+<p><img src="/images/image-20200712221448627.png" alt="image-20200712221448627"></p>
+<p>角度不变，尺寸发生改变。</p>
+<h1 id="共形几何应用"><a href="#共形几何应用" class="headerlink" title="共形几何应用"></a>共形几何应用</h1><h2 id="人脸曲面配准"><a href="#人脸曲面配准" class="headerlink" title="人脸曲面配准"></a>人脸曲面配准</h2><p>给定两张三维人脸，如何在他们之间，建立比较好的一一映射？我们的方法就是把三维人脸，用黎曼映照，映到二维的圆盘上。这样通过降维攻击，就把这三维问题变成了二维问题。二维问题，会简化非常多。</p>
+<p><img src="/images/image-20200712221552677.png" alt="image-20200712221552677"></p>
+<p>把这个男孩的这张脸映到女孩这张脸。第一步，用一些机器学习的方法，找到人脸上的特征点，比如眼角、鼻窝还有鼻尖，然后使特征点对齐。第二步，使得整个的畸变达到最小。使畸变最小这个映射，被称为<strong>泰希米勒映射</strong>。（?</p>
+<p><img src="/images/image-20200712221734728.png" alt="image-20200712221734728"></p>
+<p>畸变由什么决定呢？是由<strong>两族Foliation（叶状结构）</strong>决定，调和叶状结构决定。（<strong>？</strong></p>
+<p>为什么要得到非常精细的映射呢？主要是<strong>为了做精准医疗。</strong>欧美的白人他们祖先生活在寒带，所以他的基因中缺乏抵御紫外线的功能。所以对于白人来讲，非常容易得皮肤癌，也就是所谓的黑色素瘤。黑色素瘤非常小，肉眼几乎不可见，低于毫米。如果用人工去筛查这个黑色素瘤就会非常痛苦。我们就发明这种方法，同一个人每隔一年扫描一次，然后精细地筛查在皮肤上逐点比较看哪一点皮肤发生突变。这样可以非常自动地找到这个黑色素瘤。所以计算机视觉在医学上也有很深的应用。</p>
+<h3 id="三维映射"><a href="#三维映射" class="headerlink" title="三维映射"></a>三维映射</h3><p><img src="/images/image-20200713155607729.png" alt="image-20200713155607729"></p>
+<h2 id="动画与电影"><a href="#动画与电影" class="headerlink" title="动画与电影"></a>动画与电影</h2><h3 id="动作捕捉和表情捕捉"><a href="#动作捕捉和表情捕捉" class="headerlink" title="动作捕捉和表情捕捉"></a>动作捕捉和表情捕捉</h3><p>动漫领域，这些方法也有很好的应用。在动漫电影中，动作捕捉和表情捕捉是非常关键的技术。比如武打片的动作捕捉，就是要得到各个关节的信息。但是动作捕捉非常容易，因为人的关节只有几十个，表情捕捉却非常难，表情的自由度有无穷多个。所以现在整个动漫产业，最困难的就是<strong>表情捕捉</strong>。那么怎么进行表情捕捉呢？</p>
+<p>把动态的三维人脸，通过<strong>黎曼映照</strong>映到二维的圆盘上，然后用刚才的方法可以建立帧与帧之间的一一映射。</p>
+<p><img src="/images/image-20200712224413061.png" alt="image-20200712224413061"></p>
+<p><code>哦。也就是说在工程上这些数据的数据量压缩到最小同时保留了角度信息，可以还原。</code></p>
+<p><img src="/images/image-20200713155748624.png" alt="image-20200713155748624"></p>
+<h3 id="表情移植到卡通人物上"><a href="#表情移植到卡通人物上" class="headerlink" title="表情移植到卡通人物上"></a>表情移植到卡通人物上</h3><p>把一张蓝色的四边形网格贴到第一张脸上，依随这个人脸的变化而变化。这个蓝色网格上每一个点会得到三维空间中的一条轨迹，这个轨迹就代表了这个表情的信息。我们可以把这表情信息拿出来，去移植到其他的卡通人物身上。</p>
+<p><img src="/images/image-20200712224823740.png" alt="image-20200712224823740"></p>
+<h3 id="虚拟演员"><a href="#虚拟演员" class="headerlink" title="虚拟演员"></a>虚拟演员</h3><p>把三维的人脸表情拿下来，然后进行表情捕捉。建立一个<strong>虚拟演员</strong>。</p>
+<p><img src="/images/image-20200712224920050.png" alt="image-20200712224920050"></p>
+<p>现在明星拍摄非常非常昂贵。那么我们是不是可以把他的所有的表情以三维的方式记录下来，然后导演来决定，到哪一个情节、哪一个台词，用什么表情，从数据库中给它取出来。如果这样，我们不需要这个演员真正来出演，只需要得到他的数字版权就可以。</p>
+<p>在这边找了一个演员，把他的一些标准表情给数字化，然后做了下面一个非常小的一个电影片段。这边的整个场景是假的，是用Maya（三维动画）做的。人也是假的，表情也是假的。所以我们相信虚拟演员这个技术，未来可以在VR、AR中很大地普及。</p>
+<p><img src="/images/image-20200712225014760.png" alt="image-20200712225014760"></p>
+<h2 id="数据压缩"><a href="#数据压缩" class="headerlink" title="数据压缩"></a>数据压缩</h2><p>在VR,AR中，<strong>数据压缩</strong>是一个非常关键的问题。比如我们为了表达一张老人的脸，饱经沧桑、满布皱纹，需要大量的几何信息。如果要通过无线网络来传递这个信息，或者是本身硬件性能比较差，渲染速度就非常慢。如何来压缩这个复杂的几何信息是一个非常关键的问题。我们把一个老人头映到平面的圆盘，然后再控制每个区域在平面上的大小。比如说它曲率比较高的地方，皱纹比较高的地方，让它在平面的区域变得比较大。</p>
+<p><img src="/images/image-20200712225134880.png" alt="image-20200712225134880"></p>
+<p>比如这幅图，我们在平面上采样，采样之后在平面上重新进行三角剖分得到这个简化的模型。这边如果我们只用2000个这个采样点，得到的是左侧这张人脸。如果用4000的话得到右侧这张人脸。所以增加采样率，可以使得图像几何的特征越来越细腻。这样就可以求得一个渲染的质量和这个所谓的空间的存储一个很好的一个平衡。这是在VR、AR中几何压缩的一个应用。</p>
+<p><img src="/images/image-20200712225249285.png" alt="image-20200712225249285"></p>
+<h2 id="医学图像领域"><a href="#医学图像领域" class="headerlink" title="医学图像领域"></a>医学图像领域</h2><h3 id="脑图"><a href="#脑图" class="headerlink" title="脑图"></a>脑图</h3><p>在医学图像领域，共形几何用得也非常广泛，比如说<strong>共形脑图</strong>。人的大脑，形状非常地复杂，有很多沟回，这些沟回，随着岁月的增长是会发生变化的。比较两个大脑本身来讲非常困难。通过刚才大一统定理，我们知道存在一个共形变换。把大脑映到单位球面上，并且这个映射，基本是唯一的。得到这个映射之后，我们为大脑的每一点，确定唯一的经纬坐标。这样可以在大脑上精确地定位，进行比较。</p>
+<p><img src="/images/image-20200712225331229.png" alt="image-20200712225331229"></p>
+<h3 id="老年痴呆"><a href="#老年痴呆" class="headerlink" title="老年痴呆"></a>老年痴呆</h3><p><strong>老年痴呆症</strong>是一个非常普遍的一个疾病。人的大脑根据功能有很多种分区。比如最中间的这个山谷，是胚胎期最先形成的一个皱褶，人的感情，基本存在这个皱褶两边。</p>
+<p><img src="/images/image-20200712225437118.png" alt="image-20200712225437118"></p>
+<p>下图中，不同颜色代表不同的功能区域。有的区域主管语言，有的区域主管着运动，有的区域主管感情，有的区域主管推理。老年痴呆，是对应的某些功能区域会发生萎缩。</p>
+<p><img src="/images/image-20200712225454397.png" alt="image-20200712225454397"></p>
+<p>如果我们通过共形脑图，来进行精确的比较，发现老人的语言中枢开始萎缩，可以让他学一门新的外语，这样就可以延缓他老年痴呆症状。如果他的感情中枢开始萎缩，让他多参加社交，如果他的运动中枢开始萎缩，让他去跳广场舞，这样可以加强对这个区域刺激。</p>
+<h3 id="癌症检测与虚拟肠镜"><a href="#癌症检测与虚拟肠镜" class="headerlink" title="癌症检测与虚拟肠镜"></a>癌症检测与虚拟肠镜</h3><p>​    在医学图像中的，另外的应用，是关于<strong>癌症检测</strong>。直肠癌，是男子的第四号杀手，普通男子过了中年之后，肠子里面会长出一些息肉。如果息肉的位置长得不对，经常地摩擦溃疡，摩擦溃疡之后复合，复合之后又反复摩擦溃疡，它的DNA复制次数就会非常多，这样就非常容易出错，出错之后就会形成癌变。</p>
+<p>​    从一个息肉变到癌变，一般需要5到8年，如果在这期间，进行了肠镜检查，就可以非常有效地预防和防止。但是传统的肠镜检查非常痛苦，病人需要全身被麻醉，同时肠镜检查的方式具有非常强的侵犯性。并且老年人的肠壁肌肉非常薄弱，很容易产生非常强烈的并发症。</p>
+<p>​    还有一个很大的问题，直肠有很多皱褶，如果我们的息肉长在皱褶里面的话，传统的光学方法是看不到的，所以用传统的检测方式来进行检查会有大概30%的漏检率。</p>
+<p><img src="/images/image-20200712225639796.png" alt="image-20200712225639796"></p>
+<p>于是我们就发明了<strong>虚拟肠镜</strong>的方法，核心的想法就是–把肠子的皱褶打开摊平到整个平面上。如果以传统方式来检查，在活人身上是不可能实现的，但是用数字模型可以做到这一点。虚拟肠镜可以把所有肠壁的皱褶给摊开，把所有的息肉暴露出来，然后我们用CT来扫描人的直肠得到数字模型。于是，医生就可以戴上VR眼镜，来观察肠道的内壁。</p>
+<p><img src="/images/image-20200712225719260.png" alt="image-20200712225719260"></p>
+<p>用伪彩色表达肠道内壁，那核心的话我们是要寻找一些肿瘤，或者一些比较大的息肉，那么在这个肠道中探索这个和真实的光学肠镜这个体验是非常相近的。通过这种方法我们就能看到一些比较可疑的息肉。</p>
+<p><img src="/images/image-20200712225742163.png" alt="image-20200712225742163"></p>
+<p>虚拟肠镜有非常多好处。第一，病人不需要全身麻醉。第二，医生和病人没有肢体接触，第三，我们能暴露所有潜在的息肉，提高诊断的准确率。</p>
+<p>这个技术现在北美和日本用得非常普遍，在中国大陆，所有的医院几乎都有这套算法但是很可惜没有被真正用起来。那么它后边基于的是什么？非常艰深的几何用于医疗挽救了非常多的生命。</p>
+<h2 id="物联网路由器"><a href="#物联网路由器" class="headerlink" title="物联网路由器"></a>物联网路由器</h2><p><img src="/images/image-20200713160515566.png" alt="image-20200713160515566"></p>
+<p>交付保证贪婪路由，</p>
+<p><img src="/images/image-20200713160608677.png" alt="image-20200713160608677"></p>
+<p>给传感器分配虚拟坐标</p>
+<h2 id="整形图像分析"><a href="#整形图像分析" class="headerlink" title="整形图像分析"></a>整形图像分析</h2><p><img src="/images/image-20200713160952980.png" alt="image-20200713160952980"></p>
+<p>比较微整容前后的差异</p>
+<h2 id="工业界"><a href="#工业界" class="headerlink" title="工业界"></a>工业界</h2><p>样条曲面要求2阶可导</p>
+<p><img src="/images/image-20200713161407284.png" alt="image-20200713161407284"></p>
+<h2 id="四边形网格曲面"><a href="#四边形网格曲面" class="headerlink" title="四边形网格曲面"></a>四边形网格曲面</h2><p><img src="/images/image-20200713161504438.png" alt="image-20200713161504438"></p>
+<p>模拟仿真需要计算高质量的四边形网格，如何生成高质量的网格。</p>
+<p><img src="/images/image-20200713161638872.png" alt="image-20200713161638872"></p>
+<p><img src="/images/image-20200713161709664.png" alt="image-20200713161709664"></p>
+<p><img src="/images/image-20200713161724001.png" alt="image-20200713161724001"></p>
+<p><img src="/images/image-20200713161838369.png" alt="image-20200713161838369"></p>
+<p><img src="/images/image-20200713161904184.png" alt="image-20200713161904184"></p>
+<p><img src="/images/image-20200713161926475.png" alt="image-20200713161926475"></p>
+<p><img src="/images/image-20200713161942032.png" alt="image-20200713161942032"></p>
+<p><img src="/images/image-20200713162004040.png" alt="image-20200713162004040"></p>
+<h2 id="雕塑与力学结构"><a href="#雕塑与力学结构" class="headerlink" title="雕塑与力学结构"></a>雕塑与力学结构</h2><p><img src="/images/image-20200713162156799.png" alt="image-20200713162156799"></p>
+<p><img src="/images/image-20200713162209896.png" alt="image-20200713162209896"></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h1><p><a href="https://mp.weixin.qq.com/s?__biz=MzA5MzgwNzM4OQ==&amp;mid=2651900461&amp;idx=1&amp;sn=355073afdd1b4e164ccd810c4be2238a&amp;chksm=8bbc5c5fbccbd549fc9ed5fc3d99fec5c4016429ffc89154b1408c10bbe0bc1cdc9ce55ac308&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">几何为万物赋能——建筑、医疗、动漫、游戏…… | 凤凰卫视世纪大讲堂</a></p>
+<p><a href="https://www.youtube.com/watch?v=g0nY5VM1PSU" target="_blank" rel="noopener">Conformal Geometry Processing</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Conformal_geometry" target="_blank" rel="noopener">Conformal geometry wiki</a> </p>
+<p><a href="https://www.bilibili.com/video/BV1nT4y1E74A" target="_blank" rel="noopener">Lecture 0 - Introduction to Computational Conformal Geometry</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/共形几何/" rel="tag"># 共形几何</a>
+              <a href="/tags/笔记/" rel="tag"># 笔记</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/04/三维重建学习-1/" rel="prev" title="三维重建学习-1">
+      <i class="fa fa-chevron-left"></i> 三维重建学习-1
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/07/14/计算共形几何2-基础群和覆盖空间/" rel="next" title="计算共形几何2-基础群和覆盖空间">
+      计算共形几何2-基础群和覆盖空间 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何制作一张地图？"><span class="nav-number">1.</span> <span class="nav-text">如何制作一张地图？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为何保持角度？"><span class="nav-number">2.</span> <span class="nav-text">为何保持角度？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#曲面的保角映射"><span class="nav-number">3.</span> <span class="nav-text">曲面的保角映射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#共形映射补充-2020-11-8"><span class="nav-number">3.1.</span> <span class="nav-text">共形映射补充(2020-11-8)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#伸缩率的概念"><span class="nav-number">3.2.</span> <span class="nav-text">伸缩率的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#旋转角的概念"><span class="nav-number">3.3.</span> <span class="nav-text">旋转角的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导数的几何意义"><span class="nav-number">3.4.</span> <span class="nav-text">导数的几何意义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单值化定理"><span class="nav-number">4.</span> <span class="nav-text">单值化定理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-调和映射（适用于亏格为0的曲面"><span class="nav-number">4.1.</span> <span class="nav-text">1.调和映射（适用于亏格为0的曲面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-全纯微分（适用于亏格为1的曲面"><span class="nav-number">4.2.</span> <span class="nav-text">2.全纯微分（适用于亏格为1的曲面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Ricci-流（适用于高亏格曲面）"><span class="nav-number">4.3.</span> <span class="nav-text">3.Ricci 流（适用于高亏格曲面）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表面纹理映射参数化"><span class="nav-number">5.</span> <span class="nav-text">表面纹理映射参数化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#几何图像"><span class="nav-number">6.</span> <span class="nav-text">几何图像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何处理大量的三维数据"><span class="nav-number">7.</span> <span class="nav-text">如何处理大量的三维数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#共形几何应用"><span class="nav-number"></span> <span class="nav-text">共形几何应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#人脸曲面配准"><span class="nav-number">1.</span> <span class="nav-text">人脸曲面配准</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三维映射"><span class="nav-number">1.1.</span> <span class="nav-text">三维映射</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动画与电影"><span class="nav-number">2.</span> <span class="nav-text">动画与电影</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#动作捕捉和表情捕捉"><span class="nav-number">2.1.</span> <span class="nav-text">动作捕捉和表情捕捉</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表情移植到卡通人物上"><span class="nav-number">2.2.</span> <span class="nav-text">表情移植到卡通人物上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟演员"><span class="nav-number">2.3.</span> <span class="nav-text">虚拟演员</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据压缩"><span class="nav-number">3.</span> <span class="nav-text">数据压缩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#医学图像领域"><span class="nav-number">4.</span> <span class="nav-text">医学图像领域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#脑图"><span class="nav-number">4.1.</span> <span class="nav-text">脑图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#老年痴呆"><span class="nav-number">4.2.</span> <span class="nav-text">老年痴呆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#癌症检测与虚拟肠镜"><span class="nav-number">4.3.</span> <span class="nav-text">癌症检测与虚拟肠镜</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#物联网路由器"><span class="nav-number">5.</span> <span class="nav-text">物联网路由器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整形图像分析"><span class="nav-number">6.</span> <span class="nav-text">整形图像分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工业界"><span class="nav-number">7.</span> <span class="nav-text">工业界</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四边形网格曲面"><span class="nav-number">8.</span> <span class="nav-text">四边形网格曲面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#雕塑与力学结构"><span class="nav-number">9.</span> <span class="nav-text">雕塑与力学结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number"></span> <span class="nav-text">Reference:</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Molers" src="/images/Avatar.jpg">
+  <p class="site-author-name" itemprop="name">Molers</p>
+  <div class="site-description" itemprop="description">计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">89</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Molers" title="GitHub → https://github.com/Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/3179969322" title="Weibo → https://weibo.com/3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/s992545366" title="Twitter → https://twitter.com/s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Molers</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

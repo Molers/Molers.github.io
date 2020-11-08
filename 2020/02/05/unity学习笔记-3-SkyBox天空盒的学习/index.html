@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="2D图片-&amp;gt;SkyBox Texture Shape-&amp;gt;从2D转为Cube 就变为可以用的天空盒了  2017之前可以直接拖动 2017之后的版本要新建一个Material Shader-&amp;gt;SkyBox-&amp;gt;Cubemap在CubeMap里拖动上面做好的SkyBox  CubeMap 123-Tint Color 基础颜色-Exposure 曝光程度-Rotation 旋转">
+<meta name="keywords" content="学习笔记,Unity,SkyBox">
+<meta property="og:type" content="article">
+<meta property="og:title" content="unity学习笔记-3-SkyBox天空盒的学习">
+<meta property="og:url" content="http://yoursite.com/2020/02/05/unity学习笔记-3-SkyBox天空盒的学习/index.html">
+<meta property="og:site_name" content="Molers Blog">
+<meta property="og:description" content="2D图片-&amp;gt;SkyBox Texture Shape-&amp;gt;从2D转为Cube 就变为可以用的天空盒了  2017之前可以直接拖动 2017之后的版本要新建一个Material Shader-&amp;gt;SkyBox-&amp;gt;Cubemap在CubeMap里拖动上面做好的SkyBox  CubeMap 123-Tint Color 基础颜色-Exposure 曝光程度-Rotation 旋转">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2020/02/05/KrjtCvahF5XdUkn.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/05/uBVJZXNW7ysGq1v.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/05/iQzCqR6hXjnNoHe.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/05/BCLe8HqN16aUPmi.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/05/oj1g9Xy5hiBnCrv.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/05/FYgXDlbqduHQmrV.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/05/ZCkGi8meLJD16UQ.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/05/9x5zcBZbFmktNAa.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/05/v8EkQqxspFXaSVc.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/05/cIu5Ct2AGKiBl47.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/05/V8OdklMDUFbaR2Z.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/05/vmVzD7dUFRlG2HE.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/05/UE6DrX3BWcLv9nO.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/05/4wQs3L9WqiYaG7j.png">
+<meta property="og:updated_time" content="2020-09-15T01:31:09.680Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="unity学习笔记-3-SkyBox天空盒的学习">
+<meta name="twitter:description" content="2D图片-&amp;gt;SkyBox Texture Shape-&amp;gt;从2D转为Cube 就变为可以用的天空盒了  2017之前可以直接拖动 2017之后的版本要新建一个Material Shader-&amp;gt;SkyBox-&amp;gt;Cubemap在CubeMap里拖动上面做好的SkyBox  CubeMap 123-Tint Color 基础颜色-Exposure 曝光程度-Rotation 旋转">
+<meta name="twitter:image" content="https://i.loli.net/2020/02/05/KrjtCvahF5XdUkn.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/02/05/unity学习笔记-3-SkyBox天空盒的学习/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>unity学习笔记-3-SkyBox天空盒的学习 | Molers Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Molers Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">饱腹的鼹鼠</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/05/unity学习笔记-3-SkyBox天空盒的学习/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          unity学习笔记-3-SkyBox天空盒的学习
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-05 21:43:53" itemprop="dateCreated datePublished" datetime="2020-02-05T21:43:53+08:00">2020-02-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-15 09:31:09" itemprop="dateModified" datetime="2020-09-15T09:31:09+08:00">2020-09-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Unity/" itemprop="url" rel="index"><span itemprop="name">Unity</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="2D图片-gt-SkyBox"><a href="#2D图片-gt-SkyBox" class="headerlink" title="2D图片-&gt;SkyBox"></a>2D图片-&gt;SkyBox</h2><p><img src="https://i.loli.net/2020/02/05/KrjtCvahF5XdUkn.png" alt="image.png"></p>
+<p>Texture Shape-&gt;从2D转为Cube 就变为可以用的天空盒了</p>
+<p><img src="https://i.loli.net/2020/02/05/uBVJZXNW7ysGq1v.png" alt="image.png"></p>
+<p>2017之前可以直接拖动</p>
+<p>2017之后的版本要新建一个Material Shader-&gt;SkyBox-&gt;Cubemap在CubeMap里拖动上面做好的SkyBox</p>
+<p><img src="https://i.loli.net/2020/02/05/iQzCqR6hXjnNoHe.png" alt="image.png"></p>
+<h2 id="CubeMap"><a href="#CubeMap" class="headerlink" title="CubeMap"></a>CubeMap</h2><p><img src="https://i.loli.net/2020/02/05/BCLe8HqN16aUPmi.png" alt="image.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-Tint Color 基础颜色</span><br><span class="line">-Exposure 曝光程度</span><br><span class="line">-Rotation 旋转</span><br></pre></td></tr></table></figure>
+<h2 id="HDRI"><a href="#HDRI" class="headerlink" title="HDRI"></a>HDRI</h2><p><img src="https://i.loli.net/2020/02/05/oj1g9Xy5hiBnCrv.png" alt="image.png"></p>
+<p>1.转为Cube可以作为SkyBox</p>
+<p>2.新建Material Shader-&gt;Skybox-&gt;Panoramic</p>
+<p><img src="https://i.loli.net/2020/02/05/FYgXDlbqduHQmrV.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2020/02/05/ZCkGi8meLJD16UQ.png" alt="image.png"></p>
+<iframe src="//player.bilibili.com/player.html?aid=57479723&cid=100349191&page=8" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+
+
+<h2 id="Lighting-Setting"><a href="#Lighting-Setting" class="headerlink" title="Lighting Setting"></a>Lighting Setting</h2><h2 id="Environment环境"><a href="#Environment环境" class="headerlink" title="Environment环境"></a>Environment环境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Sun Source 最亮的灯作为太阳 默认为Direction Light</span><br></pre></td></tr></table></figure>
+<h2 id="Environment-Lighting"><a href="#Environment-Lighting" class="headerlink" title="Environment Lighting"></a>Environment Lighting</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-Source [Color][SkyBox][]</span><br><span class="line"></span><br><span class="line">-SKy Color 天空</span><br><span class="line">-Equator Color 赤道</span><br><span class="line">-Ground Color地面</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2020/02/05/9x5zcBZbFmktNAa.png" alt="image.png"></p>
+<p>方块基本色是白色的，但是因为环境光的影响变为了粉色，环境光的颜色是场景里最暗的不可能有比之还暗的颜色</p>
+<p><img src="https://i.loli.net/2020/02/05/v8EkQqxspFXaSVc.png" alt="image.png"></p>
+<p>注意这是球体反射的环境，-SKy Color 天空-Equator Color 赤道-Ground Color地面的设置</p>
+<h2 id="Environment-Reflections环境反射"><a href="#Environment-Reflections环境反射" class="headerlink" title="Environment Reflections环境反射"></a>Environment Reflections环境反射</h2><p>环境反射：Environment Reflections</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-source  预设使用Skybox反射</span><br><span class="line">-Resolution 分辨率</span><br><span class="line">-Compression 压缩  集成显卡不压缩 好的显卡选择Compression</span><br><span class="line">-Intensity Multiplier 权重</span><br><span class="line">-Bounces 反射次数</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2020/02/05/cIu5Ct2AGKiBl47.png" alt="image.png"></p>
+<p>但是这里反射是假的反射，在旁白新建一个物体的话，其不会反射出来</p>
+<p><img src="https://i.loli.net/2020/02/05/V8OdklMDUFbaR2Z.png" alt="image.png"></p>
+<p>更改SkyBox的话其反射也会不符合环境</p>
+<h3 id="Reflection-Probe"><a href="#Reflection-Probe" class="headerlink" title="Reflection Probe"></a>Reflection Probe</h3><p>如果要把旁边的正方体反射出来需要使用Reflection Probe</p>
+<p><img src="https://i.loli.net/2020/02/05/vmVzD7dUFRlG2HE.png" alt="image.png"></p>
+<h2 id="Material的金属与环境光的作用"><a href="#Material的金属与环境光的作用" class="headerlink" title="Material的金属与环境光的作用"></a>Material的金属与环境光的作用</h2><p><img src="https://i.loli.net/2020/02/05/UE6DrX3BWcLv9nO.png" alt="image.png">0的话偏向环境光，1 的话偏向环境反射</p>
+<p><img src="https://i.loli.net/2020/02/05/4wQs3L9WqiYaG7j.png" alt="image.png"></p>
+<h2 id="参考视频"><a href="#参考视频" class="headerlink" title="参考视频"></a>参考视频</h2><iframe src="//player.bilibili.com/player.html?aid=57479723&cid=100349324&page=9" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+              <a href="/tags/Unity/" rel="tag"># Unity</a>
+              <a href="/tags/SkyBox/" rel="tag"># SkyBox</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/05/unity学习笔记-2-Material的学习/" rel="prev" title="unity学习笔记-2-Material的学习">
+      <i class="fa fa-chevron-left"></i> unity学习笔记-2-Material的学习
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/05/unity学习笔记-脚本的开发学习/" rel="next" title="unity学习笔记- -脚本的开发学习">
+      unity学习笔记- -脚本的开发学习 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2D图片-gt-SkyBox"><span class="nav-number">1.</span> <span class="nav-text">2D图片-&gt;SkyBox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CubeMap"><span class="nav-number">2.</span> <span class="nav-text">CubeMap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HDRI"><span class="nav-number">3.</span> <span class="nav-text">HDRI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lighting-Setting"><span class="nav-number">4.</span> <span class="nav-text">Lighting Setting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Environment环境"><span class="nav-number">5.</span> <span class="nav-text">Environment环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Environment-Lighting"><span class="nav-number">6.</span> <span class="nav-text">Environment Lighting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Environment-Reflections环境反射"><span class="nav-number">7.</span> <span class="nav-text">Environment Reflections环境反射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Reflection-Probe"><span class="nav-number">7.1.</span> <span class="nav-text">Reflection Probe</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Material的金属与环境光的作用"><span class="nav-number">8.</span> <span class="nav-text">Material的金属与环境光的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考视频"><span class="nav-number">9.</span> <span class="nav-text">参考视频</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Molers" src="/images/Avatar.jpg">
+  <p class="site-author-name" itemprop="name">Molers</p>
+  <div class="site-description" itemprop="description">计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">89</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Molers" title="GitHub → https://github.com/Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/3179969322" title="Weibo → https://weibo.com/3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/s992545366" title="Twitter → https://twitter.com/s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Molers</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

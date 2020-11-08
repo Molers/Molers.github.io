@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="布劳威尔(Brouwer)不动点理论 对于一个拓扑空间中满足一定条件的连续函数f，存在一个点x0，使得f(x0) = x0。 这个定理可以通过很实际的例子来理解。比如：取两张一样大小的白纸，在上面画好垂直的坐标系以及纵横的方格。将一张纸平铺在桌面，而另外一张随意揉成一个形状（但不能撕裂），放在第一张白纸之上，不超出第一张的边界。那么第二张纸上一定有一点正好就在第一张纸的对应点的正上方。一个更简单的">
+<meta name="keywords" content="共形几何,笔记,微分流形">
+<meta property="og:type" content="article">
+<meta property="og:title" content="共形几何第四节-不动点，庞加莱-霍普斯定理">
+<meta property="og:url" content="http://yoursite.com/2020/08/14/共形几何第四节-不动点，庞加莱-霍普斯定理/index.html">
+<meta property="og:site_name" content="Molers Blog">
+<meta property="og:description" content="布劳威尔(Brouwer)不动点理论 对于一个拓扑空间中满足一定条件的连续函数f，存在一个点x0，使得f(x0) = x0。 这个定理可以通过很实际的例子来理解。比如：取两张一样大小的白纸，在上面画好垂直的坐标系以及纵横的方格。将一张纸平铺在桌面，而另外一张随意揉成一个形状（但不能撕裂），放在第一张白纸之上，不超出第一张的边界。那么第二张纸上一定有一点正好就在第一张纸的对应点的正上方。一个更简单的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/image-20200814210228342.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200814212216708.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200814215147535.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200814215339484.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200814215849072.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200817154608848.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200817154717789.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200817154728479.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200817154838430.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200817154846239.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200817160912089.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200817161215934.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200817165012506.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200817165036534.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200817165115345.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200817165341939.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200817170346054.png">
+<meta property="og:updated_time" content="2020-09-15T01:58:46.731Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="共形几何第四节-不动点，庞加莱-霍普斯定理">
+<meta name="twitter:description" content="布劳威尔(Brouwer)不动点理论 对于一个拓扑空间中满足一定条件的连续函数f，存在一个点x0，使得f(x0) = x0。 这个定理可以通过很实际的例子来理解。比如：取两张一样大小的白纸，在上面画好垂直的坐标系以及纵横的方格。将一张纸平铺在桌面，而另外一张随意揉成一个形状（但不能撕裂），放在第一张白纸之上，不超出第一张的边界。那么第二张纸上一定有一点正好就在第一张纸的对应点的正上方。一个更简单的">
+<meta name="twitter:image" content="http://yoursite.com/images/image-20200814210228342.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/08/14/共形几何第四节-不动点，庞加莱-霍普斯定理/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>共形几何第四节-不动点，庞加莱-霍普斯定理 | Molers Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Molers Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">饱腹的鼹鼠</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/14/共形几何第四节-不动点，庞加莱-霍普斯定理/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          共形几何第四节-不动点，庞加莱-霍普斯定理
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-14 20:58:30" itemprop="dateCreated datePublished" datetime="2020-08-14T20:58:30+08:00">2020-08-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-15 09:58:46" itemprop="dateModified" datetime="2020-09-15T09:58:46+08:00">2020-09-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/共形几何/" itemprop="url" rel="index"><span itemprop="name">共形几何</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="布劳威尔-Brouwer-不动点理论"><a href="#布劳威尔-Brouwer-不动点理论" class="headerlink" title="布劳威尔(Brouwer)不动点理论"></a>布劳威尔(Brouwer)不动点理论</h2><p><img src="/images/image-20200814210228342.png" alt="image-20200814210228342"></p>
+<p><strong>对于一个拓扑空间中满足一定条件的连续函数f，存在一个点x0，使得f(x0) = x0。</strong></p>
+<p>这个定理可以通过很实际的例子来理解。比如：取两张一样大小的白纸，在上面画好垂直的坐标系以及纵横的方格。将一张纸平铺在桌面，而另外一张随意揉成一个形状（但不能撕裂），放在第一张白纸之上，不超出第一张的边界。那么第二张纸上一定有一点正好就在第一张纸的对应点的正上方。一个更简单的说法是：将一张白纸平铺在桌面上，再将它揉成一团（不撕裂），放在原来白纸所在的地方，那么只要它不超出原来白纸平铺时的边界，那么白纸上一定有一点在水平方向上没有移动过。</p>
+<p>这个断言的根据就是布劳威尔不动点定理在二维欧几里得空间（欧几里得平面）的情况，因为把纸揉皱是一个连续的变换过程。</p>
+<p>另一个例子是大商场等地方可以看到的平面地图，上面标有“您在此处”的红点。如果标注足够精确，那么这个点就是把实际地形射到地图的连续函数的不动点。</p>
+<p>地球绕着它的自转轴自转。自转轴在自转过程中是不变的，也就是自转运动的不动点</p>
+<p>如果我们用一个密封的锅子煮水，那么总有一个水分子在煮开前的某一刻和煮开后的某一刻处于同样的位置。</p>
+<a id="more"></a>
+<p><a href="https://www.youtube.com/watch?v=tN5VHfu0Svg" target="_blank" rel="noopener">拓扑学，布劳威尔不动点定理得直观和直接的证明</a></p>
+<h2 id="Lefschetz-莱夫谢茨不动点定理"><a href="#Lefschetz-莱夫谢茨不动点定理" class="headerlink" title="(Lefschetz)莱夫谢茨不动点定理"></a>(Lefschetz)莱夫谢茨不动点定理</h2><p>布劳威尔不动点定理是莱夫谢茨不动点定理的特例。</p>
+<p>莱夫谢茨不动点定理是布劳威尔不动点定理的推广。</p>
+<p><strong>设|K|为有限多面体，f:|K|→|K|为<a href="https://baike.baidu.com/item/连续映射/18916806" target="_blank" rel="noopener">连续映射</a>，若f的莱夫谢茨数L(f)≠0，则f有不动点。</strong></p>
+<p><img src="/images/image-20200814212216708.png" alt="image-20200814212216708"></p>
+<h2 id="孤立零点"><a href="#孤立零点" class="headerlink" title="孤立零点"></a>孤立零点</h2><p><img src="/images/image-20200814215147535.png" alt="image-20200814215147535"></p>
+<h2 id="零点的指标"><a href="#零点的指标" class="headerlink" title="零点的指标"></a>零点的指标</h2><p><img src="/images/image-20200814215339484.png" alt="image-20200814215339484"></p>
+<p><img src="/images/image-20200814215849072.png" alt="image-20200814215849072"></p>
+<h2 id="庞加莱-霍普夫-Poincare-Hopf-定理"><a href="#庞加莱-霍普夫-Poincare-Hopf-定理" class="headerlink" title="庞加莱-霍普夫(Poincaré-Hopf)定理"></a><strong>庞加莱-霍普夫(Poincaré-Hopf)</strong>定理</h2><p><strong>庞加莱-霍普夫(Poincaré-Hopf)</strong>定理(也称为<strong>庞加莱-霍普夫指标定理</strong>，<strong>庞加莱-霍普夫指标公式</strong>，或<strong>霍普夫指标定理</strong>)是<a href="http://www.wanweibaike.com/wiki-微分拓扑" target="_blank" rel="noopener">微分拓扑</a>的重要定理。</p>
+<p><img src="/images/image-20200817154608848.png" alt="image-20200817154608848"></p>
+<p><img src="/images/image-20200817154717789.png" alt="image-20200817154717789"></p>
+<p><img src="/images/image-20200817154728479.png" alt="image-20200817154728479"></p>
+<p><img src="/images/image-20200817154838430.png" alt="image-20200817154838430"></p>
+<p><img src="/images/image-20200817154846239.png" alt="image-20200817154846239"></p>
+<p><img src="/images/image-20200817160912089.png" alt="image-20200817160912089"></p>
+<h2 id="流形"><a href="#流形" class="headerlink" title="流形"></a>流形</h2><p><img src="/images/image-20200817161215934.png" alt="image-20200817161215934"></p>
+<p><img src="/images/image-20200817165012506.png" alt="image-20200817165012506"></p>
+<p><img src="/images/image-20200817165036534.png" alt="image-20200817165036534"></p>
+<p><img src="/images/image-20200817165115345.png" alt="image-20200817165115345"></p>
+<p><img src="/images/image-20200817165341939.png" alt="image-20200817165341939"></p>
+<p><img src="/images/image-20200817170346054.png" alt="image-20200817170346054"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/共形几何/" rel="tag"># 共形几何</a>
+              <a href="/tags/笔记/" rel="tag"># 笔记</a>
+              <a href="/tags/微分流形/" rel="tag"># 微分流形</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/24/共形几何第三节-同调群和上同调群/" rel="prev" title="共形几何第三节-同调群和上同调群Homology and Cohomology">
+      <i class="fa fa-chevron-left"></i> 共形几何第三节-同调群和上同调群Homology and Cohomology
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/24/CNN-FCN-U-Net-卷积神经网络学习（1）/" rel="next" title="CNN FCN U-Net 卷积神经网络学习（1）">
+      CNN FCN U-Net 卷积神经网络学习（1） <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#布劳威尔-Brouwer-不动点理论"><span class="nav-number">1.</span> <span class="nav-text">布劳威尔(Brouwer)不动点理论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lefschetz-莱夫谢茨不动点定理"><span class="nav-number">2.</span> <span class="nav-text">(Lefschetz)莱夫谢茨不动点定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#孤立零点"><span class="nav-number">3.</span> <span class="nav-text">孤立零点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#零点的指标"><span class="nav-number">4.</span> <span class="nav-text">零点的指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#庞加莱-霍普夫-Poincare-Hopf-定理"><span class="nav-number">5.</span> <span class="nav-text">庞加莱-霍普夫(Poincaré-Hopf)定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流形"><span class="nav-number">6.</span> <span class="nav-text">流形</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Molers" src="/images/Avatar.jpg">
+  <p class="site-author-name" itemprop="name">Molers</p>
+  <div class="site-description" itemprop="description">计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">89</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Molers" title="GitHub → https://github.com/Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/3179969322" title="Weibo → https://weibo.com/3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/s992545366" title="Twitter → https://twitter.com/s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Molers</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

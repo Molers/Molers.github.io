@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="闭合曲面的拓扑 带有边界的曲面的拓扑  g为洞的数目，b为边界的数目">
+<meta name="keywords" content="共形几何,笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="共形几何第三节-同调群和上同调群Homology and Cohomology">
+<meta property="og:url" content="http://yoursite.com/2020/07/24/共形几何第三节-同调群和上同调群/index.html">
+<meta property="og:site_name" content="Molers Blog">
+<meta property="og:description" content="闭合曲面的拓扑 带有边界的曲面的拓扑  g为洞的数目，b为边界的数目">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726113232194.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726113243216.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726114406417.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726113912895.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726113928708.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726114220282.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726114235740.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726122603769.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726212207039.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726212717260.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726213324643.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726212852103.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726213108274.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726213152393.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726213216805.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726212907797.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726213041304.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726213855932.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726213948575.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726214147520.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726214217713.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726214323947.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726214347558.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726214400900.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726214412082.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726214452854.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726214509388.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726215141449.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726215227502.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726215244751.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726215258963.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726155442814.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726155457405.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726155514917.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726155542389.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726155552526.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726155611749.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726155651316.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726155700375.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726155712610.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726155729988.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726155800533.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726155816170.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726155825266.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726160557373.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726160718926.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726160727215.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726160748741.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726160834501.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726160946059.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726161117794.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727142140492.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727142155781.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727142854652.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727143111768.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727143302446.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727143448145.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727150954102.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727151039273.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726161400361.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726161527416.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726161659174.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726162007885.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726162015676.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727134955577.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727135241758.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727135831770.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727140152495.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727151327730.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727151833509.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727151848877.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727151855670.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727154132115.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727154556463.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727154930164.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727155229585.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727155359806.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727175203674.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727175351134.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727175457087.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727175626648.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726162602425.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726163557458.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726163650680.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726165536675.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726170212704.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726171323106.png">
+<meta property="og:updated_time" content="2020-09-15T01:58:39.121Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="共形几何第三节-同调群和上同调群Homology and Cohomology">
+<meta name="twitter:description" content="闭合曲面的拓扑 带有边界的曲面的拓扑  g为洞的数目，b为边界的数目">
+<meta name="twitter:image" content="http://yoursite.com/images/image-20200726113232194.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/07/24/共形几何第三节-同调群和上同调群/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>共形几何第三节-同调群和上同调群Homology and Cohomology | Molers Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Molers Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">饱腹的鼹鼠</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/24/共形几何第三节-同调群和上同调群/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          共形几何第三节-同调群和上同调群Homology and Cohomology
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-24 19:23:59" itemprop="dateCreated datePublished" datetime="2020-07-24T19:23:59+08:00">2020-07-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-15 09:58:39" itemprop="dateModified" datetime="2020-09-15T09:58:39+08:00">2020-09-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/共形几何/" itemprop="url" rel="index"><span itemprop="name">共形几何</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="闭合曲面的拓扑"><a href="#闭合曲面的拓扑" class="headerlink" title="闭合曲面的拓扑"></a>闭合曲面的拓扑</h1><p><img src="/images/image-20200726113232194.png" alt="image-20200726113232194"></p>
+<p>带有边界的曲面的拓扑</p>
+<p><img src="/images/image-20200726113243216.png" alt="image-20200726113243216"></p>
+<p>g为洞的数目，b为边界的数目</p>
+<a id="more"></a>
+<h1 id="连通和"><a href="#连通和" class="headerlink" title="连通和"></a>连通和</h1><p><img src="/images/image-20200726114406417.png" alt="image-20200726114406417"></p>
+<p><img src="/images/image-20200726113912895.png" alt="image-20200726113912895"></p>
+<p><img src="/images/image-20200726113928708.png" alt="image-20200726113928708"></p>
+<p>射影平面</p>
+<p><img src="/images/image-20200726114220282.png" alt="image-20200726114220282"></p>
+<p><img src="/images/image-20200726114235740.png" alt="image-20200726114235740"></p>
+<p><img src="/images/image-20200726122603769.png" alt="image-20200726122603769"></p>
+<p>闭合曲面的连通和是可定向的曲面，而具有交叉的曲面的连通和是不可定向的</p>
+<p><img src="/images/image-20200726212207039.png" alt="image-20200726212207039"></p>
+<h2 id="一些基本连接面"><a href="#一些基本连接面" class="headerlink" title="一些基本连接面"></a>一些基本连接面</h2><p><img src="/images/image-20200726212717260.png" alt="image-20200726212717260"></p>
+<h2 id="D-Disk圆盘-S-Sphere球体-T"><a href="#D-Disk圆盘-S-Sphere球体-T" class="headerlink" title="D Disk圆盘 S Sphere球体 T"></a>D Disk圆盘 S Sphere球体 T</h2><p>可定向曲面和不可定向曲面连接和的代数表述</p>
+<p><img src="/images/image-20200726213324643.png" alt="image-20200726213324643"></p>
+<p><img src="/images/image-20200726212852103.png" alt="image-20200726212852103"></p>
+<p><img src="/images/image-20200726213108274.png" alt="image-20200726213108274"></p>
+<p><img src="/images/image-20200726213152393.png" alt="image-20200726213152393"></p>
+<p>具有三个不同基本结构曲面的连接</p>
+<p><img src="/images/image-20200726213216805.png" alt="image-20200726213216805"></p>
+<p><img src="/images/image-20200726212907797.png" alt="image-20200726212907797"></p>
+<p><img src="/images/image-20200726213041304.png" alt="image-20200726213041304"></p>
+<h2 id="球体-环面-S-L"><a href="#球体-环面-S-L" class="headerlink" title="球体+环面 S#L"></a>球体+环面 S#L</h2><p><img src="/images/image-20200726213855932.png" alt="image-20200726213855932"></p>
+<p><img src="/images/image-20200726213948575.png" alt="image-20200726213948575"></p>
+<p>其结果和环面同胚</p>
+<p>实际上球体和任何曲面相连都是一样的</p>
+<h2 id="一个假设-球体以外的任何曲面都可以由T-D，IRP三种曲面组合而成"><a href="#一个假设-球体以外的任何曲面都可以由T-D，IRP三种曲面组合而成" class="headerlink" title="一个假设:球体以外的任何曲面都可以由T,D，IRP三种曲面组合而成"></a>一个假设:球体以外的任何曲面都可以由T,D，IRP三种曲面组合而成</h2><p><img src="/images/image-20200726214147520.png" alt="image-20200726214147520"></p>
+<p>圆环与莫比斯环 T\D # M\D</p>
+<p><img src="/images/image-20200726214217713.png" alt="image-20200726214217713"></p>
+<p><img src="/images/image-20200726214323947.png" alt="image-20200726214323947"></p>
+<h2 id="圆环的变形"><a href="#圆环的变形" class="headerlink" title="圆环的变形"></a>圆环的变形</h2><p><img src="/images/image-20200726214347558.png" alt="image-20200726214347558"></p>
+<p><img src="/images/image-20200726214400900.png" alt="image-20200726214400900"></p>
+<p><img src="/images/image-20200726214412082.png" alt="image-20200726214412082"></p>
+<p><img src="/images/image-20200726214452854.png" alt="image-20200726214452854"></p>
+<h2 id="圆环-莫比乌斯带-T-M"><a href="#圆环-莫比乌斯带-T-M" class="headerlink" title="圆环+莫比乌斯带 T # M"></a>圆环+莫比乌斯带 T # M</h2><p><img src="/images/image-20200726214509388.png" alt="image-20200726214509388"></p>
+<h2 id="圆环-圆盘-L-D-L-D"><a href="#圆环-圆盘-L-D-L-D" class="headerlink" title="圆环+圆盘 L#D = L\D"></a>圆环+圆盘 L#D = L\D</h2><p><img src="/images/image-20200726215141449.png" alt="image-20200726215141449"></p>
+<p><img src="/images/image-20200726215227502.png" alt="image-20200726215227502"></p>
+<p><img src="/images/image-20200726215244751.png" alt="image-20200726215244751"></p>
+<p><img src="/images/image-20200726215258963.png" alt="image-20200726215258963"></p>
+<p>结果相当于圆环减去一个圆盘  L+D=L-D</p>
+<h1 id="Youtube一个讲解射影平面的视频"><a href="#Youtube一个讲解射影平面的视频" class="headerlink" title="Youtube一个讲解射影平面的视频"></a>Youtube一个讲解射影平面的视频</h1><iframe width="560" height="315" src="https://www.youtube.com/embed/dBH-Id8VC3U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><img src="/images/image-20200726155442814.png" alt="image-20200726155442814"><br><br><img src="/images/image-20200726155457405.png" alt="image-20200726155457405"><br><br><img src="/images/image-20200726155514917.png" alt="image-20200726155514917"><br><br><img src="/images/image-20200726155542389.png" alt="image-20200726155542389"><br><br><img src="/images/image-20200726155552526.png" alt="image-20200726155552526"><br><br><img src="/images/image-20200726155611749.png" alt="image-20200726155611749"><br><br>## <strong>投影平面=莫比乌斯环U圆盘Disk</strong><br><br><img src="/images/image-20200726155651316.png" alt="image-20200726155651316"><br><br><img src="/images/image-20200726155700375.png" alt="image-20200726155700375"><br><br><img src="/images/image-20200726155712610.png" alt="image-20200726155712610"><br><br><img src="/images/image-20200726155729988.png" alt="image-20200726155729988"><br><br><img src="/images/image-20200726155800533.png" alt="image-20200726155800533"><br><br><img src="/images/image-20200726155816170.png" alt="image-20200726155816170"><br><br><img src="/images/image-20200726155825266.png" alt="image-20200726155825266"><br><br># 单形与复形<br><br><img src="/images/image-20200726160557373.png" alt="image-20200726160557373"><br><br><a href="https://zhuanlan.zhihu.com/p/137677583" target="_blank" rel="noopener">单纯同调群</a><br><br><img src="/images/image-20200726160718926.png" alt="image-20200726160718926"><br><br><img src="/images/image-20200726160727215.png" alt="image-20200726160727215"><br><br><img src="/images/image-20200726160748741.png" alt="image-20200726160748741"><br><br><img src="/images/image-20200726160834501.png" alt="image-20200726160834501"><br><br>左侧是复形，右侧并非复形，<br><br># 链空间<br><br><img src="/images/image-20200726160946059.png" alt="image-20200726160946059"><br><br># 边界算子<br><br><img src="/images/image-20200726161117794.png" alt="image-20200726161117794"><br><br>边界算子就像是分解 降维<br><br><img src="/images/image-20200727142140492.png" alt="image-20200727142140492"><br><br>一个边界算子计算的例子<br><br><img src="/images/image-20200727142155781.png" alt="image-20200727142155781"><br><br><img src="/images/image-20200727142854652.png" alt="image-20200727142854652"><br><br><img src="/images/image-20200727143111768.png" alt="image-20200727143111768"><br><br>Z 表示圈，B表示边界<br><br><img src="/images/image-20200727143302446.png" alt="image-20200727143302446"><br><br><img src="/images/image-20200727143448145.png" alt="image-20200727143448145"><br><br><img src="/images/image-20200727150954102.png" alt="image-20200727150954102"><br><br>B为<strong>实心图形</strong>的边界<br><br>C为链<br><br><img src="/images/image-20200727151039273.png" alt="image-20200727151039273"><br><br># 闭链<br><br><img src="/images/image-20200726161400361.png" alt="image-20200726161400361"><br><br># 恰当链，边缘链<br><br><img src="/images/image-20200726161527416.png" alt="image-20200726161527416"><br><br>右侧为闭链，但不是恰当链<br><br># 边的边为空<br><br><img src="/images/image-20200726161659174.png" alt="image-20200726161659174"><br><br># 同调群<br><br><img src="/images/image-20200726162007885.png" alt="image-20200726162007885"><br><br><img src="/images/image-20200726162015676.png" alt="image-20200726162015676"><br><br><img src="/images/image-20200727134955577.png" alt="image-20200727134955577"><br><br><img src="/images/image-20200727135241758.png" alt="image-20200727135241758"><br><br><strong>其拓扑空间的三角剖分可以有多个</strong><br><br>## 定向的单形<br><br><img src="/images/image-20200727135831770.png" alt="image-20200727135831770"><br><br>p链等于定向单形的和<br><br><img src="/images/image-20200727140152495.png" alt="image-20200727140152495"><br><br>C1(K)代表单纯复形的一链<br><br>K代表单纯复形<br><br><img src="/images/image-20200727151327730.png" alt="image-20200727151327730"><br><br>一阶同调群为 一阶圈群/一阶边界群<br><br>##  H(K) = Z/B<br><br><br><br><img src="/images/image-20200727151833509.png" alt="image-20200727151833509"><br><br><img src="/images/image-20200727151848877.png" alt="image-20200727151848877"><br><br><img src="/images/image-20200727151855670.png" alt="image-20200727151855670"><br><br>## 环面同调群的计算过程<br><br><img src="/images/image-20200727154132115.png" alt="image-20200727154132115"><br><br><img src="/images/image-20200727154556463.png" alt="image-20200727154556463"><br><br><img src="/images/image-20200727154930164.png" alt="image-20200727154930164"><br><br><img src="/images/image-20200727155229585.png" alt="image-20200727155229585"><br><br><img src="/images/image-20200727155359806.png" alt="image-20200727155359806"><br><br><img src="/images/image-20200727175203674.png" alt="image-20200727175203674"><br><br><img src="/images/image-20200727175351134.png" alt="image-20200727175351134"><br><br><img src="/images/image-20200727175457087.png" alt="image-20200727175457087"><br><br>## 结论:对于一般的拓扑空间，一阶同调群同构与其基本群的abel化<br><br><img src="/images/image-20200727175626648.png" alt="image-20200727175626648"><br><br><iframe src="//player.bilibili.com/player.html?aid=92141490&bvid=BV1P7411N7fW&cid=213222342&page=54" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<p><a href="https://zhuanlan.zhihu.com/p/137677583" target="_blank" rel="noopener">单纯同调群</a></p>
+<p><img src="/images/image-20200726162602425.png" alt="image-20200726162602425"></p>
+<h1 id="上同调群与上链空间"><a href="#上同调群与上链空间" class="headerlink" title="上同调群与上链空间"></a>上同调群与上链空间</h1><p><img src="/images/image-20200726163557458.png" alt="image-20200726163557458"></p>
+<p><img src="/images/image-20200726163650680.png" alt="image-20200726163650680"></p>
+<h1 id="单纯映射"><a href="#单纯映射" class="headerlink" title="单纯映射"></a>单纯映射</h1><p><img src="/images/image-20200726165536675.png" alt="image-20200726165536675"></p>
+<h1 id="映射度"><a href="#映射度" class="headerlink" title="映射度"></a>映射度</h1><p><img src="/images/image-20200726170212704.png" alt="image-20200726170212704"></p>
+<p><img src="/images/image-20200726171323106.png" alt="image-20200726171323106"></p>
+<p>高斯映射</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AmgkSdhK4K8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://zh.wikipedia.org/wiki/%E5%90%8C%E8%B0%83" target="_blank" rel="noopener">同调维基百科</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Simplicial_homology" target="_blank" rel="noopener">Simplicial homology Wiki</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/137677583" target="_blank" rel="noopener">单纯同调群 zhihu</a></p>
+<p><a href="https://bkso.baidu.com/item/%E5%8D%95%E7%BA%AF%E5%90%8C%E8%B0%83%E7%BE%A4" target="_blank" rel="noopener">单纯同调群 baike</a></p>
+<p><a href="http://blog.sciencenet.cn/blog-2472277-1173812.html" target="_blank" rel="noopener">计算共形几何讲义 （4）单纯同调</a></p>
+<p><a href="https://www.bilibili.com/video/BV1ws411q7rw/?spm_id_from=333.788.videocard.6" target="_blank" rel="noopener">[轻松愉快] 拓扑学 Topology &amp; Geometry by Dr Tadashi Tokieda</a></p>
+<p><a href="https://zh.wikipedia.org/wiki/%E5%B0%84%E5%BD%B1%E5%B9%B3%E9%9D%A2" target="_blank" rel="noopener">射影平面 维基百科</a>  <a href="https://baike.baidu.com/item/%E5%B0%84%E5%BD%B1%E5%B9%B3%E9%9D%A2/4559683?fr=aladdin#reference-[2]-1751996-wrap" target="_blank" rel="noopener">射影平面 百度百科</a>  <a href="https://zh.wikipedia.org/wiki/%E5%AE%9E%E5%B0%84%E5%BD%B1%E5%B9%B3%E9%9D%A2" target="_blank" rel="noopener">real projective plane 实射影平面 wiki</a></p>
+<p><a href="https://www.cnblogs.com/XiongRuiMath/p/10241912.html" target="_blank" rel="noopener">映射的度</a></p>
+<p><a href="http://pi.math.cornell.edu/~mec/Winter2009/Victor/part3.htm" target="_blank" rel="noopener">Orientable and Nonorientable Surfaces</a></p>
+<p><a href="https://www.math3ma.com/blog/the-fundamental-group-of-the-real-projective-plane" target="_blank" rel="noopener">The Fundamental Group of the Real Projective Plane</a></p>
+<p><a href="https://www.youtube.com/watch?v=u0VkikpElMo&amp;feature=emb_rel_pause" target="_blank" rel="noopener">Real projective plane and Moebius strip</a></p>
+<p><a href="https://www.youtube.com/user/numberphile/search?query=Topology" target="_blank" rel="noopener">Numberphile youtube</a></p>
+<p><a href="https://www.youtube.com/watch?v=H8qwqGjOlSE" target="_blank" rel="noopener">Topology Riddles | Infinite Series</a></p>
+<p><a href="https://www.youtube.com/watch?v=i0KfrQ3dg9k" target="_blank" rel="noopener">Real Projective Plane-Connected sum</a></p>
+<p><a href="https://www.youtube.com/watch?v=yaeyNjUPVqs" target="_blank" rel="noopener">The Klein bottle</a></p>
+<p><a href="http://www.map.mpim-bonn.mpg.de/Projective_plane:_a_history" target="_blank" rel="noopener">Projective plane: a history</a></p>
+<p><a href="https://www.youtube.com/watch?v=lDqmaPEjJpk" target="_blank" rel="noopener">The Real Projective Plane youtube anime</a></p>
+<p><a href="https://www.youtube.com/watch?v=x2SZSfYYSc8" target="_blank" rel="noopener">The Möbius band and the projective plane youtube anime</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/共形几何/" rel="tag"># 共形几何</a>
+              <a href="/tags/笔记/" rel="tag"># 笔记</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/14/计算共形几何2-基础群和覆盖空间/" rel="prev" title="计算共形几何2-基础群和覆盖空间">
+      <i class="fa fa-chevron-left"></i> 计算共形几何2-基础群和覆盖空间
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/14/共形几何第四节-不动点，庞加莱-霍普斯定理/" rel="next" title="共形几何第四节-不动点，庞加莱-霍普斯定理">
+      共形几何第四节-不动点，庞加莱-霍普斯定理 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#闭合曲面的拓扑"><span class="nav-number">1.</span> <span class="nav-text">闭合曲面的拓扑</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#连通和"><span class="nav-number">2.</span> <span class="nav-text">连通和</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一些基本连接面"><span class="nav-number">2.1.</span> <span class="nav-text">一些基本连接面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D-Disk圆盘-S-Sphere球体-T"><span class="nav-number">2.2.</span> <span class="nav-text">D Disk圆盘 S Sphere球体 T</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#球体-环面-S-L"><span class="nav-number">2.3.</span> <span class="nav-text">球体+环面 S#L</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一个假设-球体以外的任何曲面都可以由T-D，IRP三种曲面组合而成"><span class="nav-number">2.4.</span> <span class="nav-text">一个假设:球体以外的任何曲面都可以由T,D，IRP三种曲面组合而成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圆环的变形"><span class="nav-number">2.5.</span> <span class="nav-text">圆环的变形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圆环-莫比乌斯带-T-M"><span class="nav-number">2.6.</span> <span class="nav-text">圆环+莫比乌斯带 T # M</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圆环-圆盘-L-D-L-D"><span class="nav-number">2.7.</span> <span class="nav-text">圆环+圆盘 L#D = L\D</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Youtube一个讲解射影平面的视频"><span class="nav-number">3.</span> <span class="nav-text">Youtube一个讲解射影平面的视频</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#上同调群与上链空间"><span class="nav-number">4.</span> <span class="nav-text">上同调群与上链空间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#单纯映射"><span class="nav-number">5.</span> <span class="nav-text">单纯映射</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#映射度"><span class="nav-number">6.</span> <span class="nav-text">映射度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Molers" src="/images/Avatar.jpg">
+  <p class="site-author-name" itemprop="name">Molers</p>
+  <div class="site-description" itemprop="description">计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">89</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Molers" title="GitHub → https://github.com/Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/3179969322" title="Weibo → https://weibo.com/3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/s992545366" title="Twitter → https://twitter.com/s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Molers</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

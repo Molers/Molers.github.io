@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="如何定义一个曲面   Handle loops 在外部缩成一个点，t unnel在内部缩成一个点。">
+<meta name="keywords" content="共形几何,笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算共形几何2-基础群和覆盖空间">
+<meta property="og:url" content="http://yoursite.com/2020/07/14/计算共形几何2-基础群和覆盖空间/index.html">
+<meta property="og:site_name" content="Molers Blog">
+<meta property="og:description" content="如何定义一个曲面   Handle loops 在外部缩成一个点，t unnel在内部缩成一个点。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/image-20200714210523323.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200714210938379.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200714211405075.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200714211504183.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200714212222933.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200714212249910.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200714212315299.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200718194326144.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200714212414979.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200714213359524.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200714213535320.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200718193420922.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200718193557384.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200718193246350.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200718194829237.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200718194833977.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200718194846669.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200718195229858.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200718195445085.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200718195518586.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200718200815406.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200718200857467.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200718201425645.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726172230602.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726172350878.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726174221347.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726174421903.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200726175027394.png">
+<meta property="og:image" content="http://yoursite.com/images/46988976e9e705a5fd4875086254aa5f_r.jpg">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720193931191.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720193911278.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720193231451.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200718202002876.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200718202132192.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200718202328467.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200718202305292.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200718202535408.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200719223916410.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200719224247221.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200719224501664.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200719224547657.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200719225058276.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200719225214579.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200719225358435.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200719225413914.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200719225727530.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200719225910465.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200719230118222.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200719230400428.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200719230819194.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200719230915657.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720114046331.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720113919180.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720114333012.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720114553753.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720114903381.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720115259324.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720120129552.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720115810758.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720115843213.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720120233345.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720120512184.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720120746045.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720121038667.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720121240817.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720121730101.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720121839706.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720121532927.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720164224525.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720164405109.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720171150699.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720170944837.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720171012957.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720171039452.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720164800688.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720191124569.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200720191202821.png">
+<meta property="og:updated_time" content="2020-09-15T01:58:59.750Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算共形几何2-基础群和覆盖空间">
+<meta name="twitter:description" content="如何定义一个曲面   Handle loops 在外部缩成一个点，t unnel在内部缩成一个点。">
+<meta name="twitter:image" content="http://yoursite.com/images/image-20200714210523323.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/07/14/计算共形几何2-基础群和覆盖空间/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>计算共形几何2-基础群和覆盖空间 | Molers Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Molers Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">饱腹的鼹鼠</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/14/计算共形几何2-基础群和覆盖空间/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算共形几何2-基础群和覆盖空间
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-14 21:03:43" itemprop="dateCreated datePublished" datetime="2020-07-14T21:03:43+08:00">2020-07-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-15 09:58:59" itemprop="dateModified" datetime="2020-09-15T09:58:59+08:00">2020-09-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/共形几何/" itemprop="url" rel="index"><span itemprop="name">共形几何</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="如何定义一个曲面"><a href="#如何定义一个曲面" class="headerlink" title="如何定义一个曲面"></a>如何定义一个曲面</h2><p><img src="/images/image-20200714210523323.png" alt="image-20200714210523323"></p>
+<p><img src="/images/image-20200714210938379.png" alt="image-20200714210938379"></p>
+<p><img src="/images/image-20200714211405075.png" alt="image-20200714211405075"></p>
+<p>Handle loops 在外部缩成一个点，t unnel在内部缩成一个点。</p>
+<a id="more"></a>
+<h2 id="环柄在医学上的应用"><a href="#环柄在医学上的应用" class="headerlink" title="环柄在医学上的应用"></a>环柄在医学上的应用</h2><p><img src="/images/image-20200714211504183.png" alt="image-20200714211504183"></p>
+<p>拓扑去噪，用环柄找出大肠微小的环柄，一些医疗设备，西门子会使用这些技术。</p>
+<h2 id="代数拓扑与群"><a href="#代数拓扑与群" class="headerlink" title="代数拓扑与群"></a>代数拓扑与群</h2><p><img src="/images/image-20200714212222933.png" alt="image-20200714212222933"></p>
+<h3 id="1-基本群的定义"><a href="#1-基本群的定义" class="headerlink" title="1.基本群的定义"></a>1.基本群的定义</h3><p><img src="/images/image-20200714212249910.png" alt="image-20200714212249910"></p>
+<p><img src="/images/image-20200714212315299.png" alt="image-20200714212315299"></p>
+<p>所有过基点的环路集合</p>
+<p><img src="/images/image-20200718194326144.png" alt="image-20200718194326144"></p>
+<p>这样？环路的同伦类好像还是在这个集合里？</p>
+<h3 id="2-何为同伦"><a href="#2-何为同伦" class="headerlink" title="2.何为同伦"></a>2.何为同伦</h3><p><img src="/images/image-20200714212414979.png" alt="image-20200714212414979"></p>
+<p><img src="/images/image-20200714213359524.png" alt="image-20200714213359524"></p>
+<p>同伦是一种等价关系</p>
+<p><img src="/images/image-20200714213535320.png" alt="image-20200714213535320"></p>
+<h3 id="3-乘积和逆"><a href="#3-乘积和逆" class="headerlink" title="3.乘积和逆"></a>3.乘积和逆</h3><p>环路的乘积</p>
+<p><img src="/images/image-20200718193420922.png" alt="image-20200718193420922"></p>
+<p><img src="/images/image-20200718193557384.png" alt="image-20200718193557384"></p>
+<p>环路的逆</p>
+<p><img src="/images/image-20200718193246350.png" alt="image-20200718193246350"></p>
+<h2 id="基本群的表示"><a href="#基本群的表示" class="headerlink" title="基本群的表示"></a>基本群的表示</h2><p><img src="/images/image-20200718194829237.png" alt="image-20200718194829237"></p>
+<p>使用字母来表示环路</p>
+<p>词群的插入和删除操作</p>
+<p><img src="/images/image-20200718194833977.png" alt="image-20200718194833977"></p>
+<p><img src="/images/image-20200718194846669.png" alt="image-20200718194846669"></p>
+<p>曲面交叉索引的值，交点曲线切向量叉积和法线同个方向值为1，垂直值为0，相反为-1，这样为每个焦点定义了一个指标。</p>
+<p><img src="/images/image-20200718195229858.png" alt="image-20200718195229858"></p>
+<p>代数相交数</p>
+<p><img src="/images/image-20200718195445085.png" alt="image-20200718195445085"></p>
+<p><img src="/images/image-20200718195518586.png" alt="image-20200718195518586"></p>
+<p>代数相交数在同伦变换下不变</p>
+<h3 id="基本群的典范表示"><a href="#基本群的典范表示" class="headerlink" title="基本群的典范表示"></a>基本群的典范表示</h3><p><img src="/images/image-20200718200815406.png" alt="image-20200718200815406"></p>
+<p><img src="/images/image-20200718200857467.png" alt="image-20200718200857467"></p>
+<p>a1,b2,a2,b2 叫做曲面基本群的典范基底。</p>
+<h2 id="拓扑同胚和基本群-Homeomorphism"><a href="#拓扑同胚和基本群-Homeomorphism" class="headerlink" title="拓扑同胚和基本群(Homeomorphism)"></a>拓扑同胚和基本群(Homeomorphism)</h2><p><img src="/images/image-20200718201425645.png" alt="image-20200718201425645"></p>
+<p>两个曲面的基本群同构，则其拓扑等价，即拓扑同胚。</p>
+<p><img src="/images/image-20200726172230602.png" alt="image-20200726172230602"></p>
+<p><img src="/images/image-20200726172350878.png" alt="image-20200726172350878"></p>
+<p><strong>莫比乌斯环是不可定向的曲面</strong></p>
+<p><img src="/images/image-20200726174221347.png" alt="image-20200726174221347"></p>
+<p><strong>球和圆环是可定向的曲面</strong></p>
+<p><img src="/images/image-20200726174421903.png" alt="image-20200726174421903"></p>
+<p><strong>曲面不可定向则包含莫比乌斯环，包含莫比乌斯环的曲面必然不可定向</strong></p>
+<p><img src="/images/image-20200726175027394.png" alt="image-20200726175027394"></p>
+<p>没有边界并且不可定向的曲面</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/e8lVhJjiwk0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p><a href="https://baike.baidu.com/item/%E5%9F%BA%E6%9C%AC%E7%BE%A4/4587933?fr=aladdin" target="_blank" rel="noopener">百科 基本群</a></p>
+<p>基本群的概念和正交基之类的相同(应该)，即使用最少的元素表示一个空间或者曲面。</p>
+<p><img src="/images/46988976e9e705a5fd4875086254aa5f_r.jpg" alt="img"></p>
+<p><img src="/images/image-20200720193931191.png" alt="image-20200720193931191"></p>
+<p><img src="/images/image-20200720193911278.png" alt="image-20200720193911278"></p>
+<p><img src="/images/image-20200720193231451.png" alt="image-20200720193231451"></p>
+<h3 id="拓扑空间分解"><a href="#拓扑空间分解" class="headerlink" title="拓扑空间分解"></a>拓扑空间分解</h3><p><img src="/images/image-20200718202002876.png" alt="image-20200718202002876"></p>
+<h3 id="曲面的连通和"><a href="#曲面的连通和" class="headerlink" title="曲面的连通和"></a>曲面的连通和</h3><p><img src="/images/image-20200718202132192.png" alt="image-20200718202132192"></p>
+<h3 id="表面拓扑分类"><a href="#表面拓扑分类" class="headerlink" title="表面拓扑分类"></a>表面拓扑分类</h3><p><img src="/images/image-20200718202328467.png" alt="image-20200718202328467"></p>
+<p><img src="/images/image-20200718202305292.png" alt="image-20200718202305292"></p>
+<iframe width="560" height="560" src="https://www.youtube.com/embed/0XebqXmWM0A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h3 id="环面的基本群"><a href="#环面的基本群" class="headerlink" title="环面的基本群"></a>环面的基本群</h3><p><img src="/images/image-20200718202535408.png" alt="image-20200718202535408"></p>
+<h3 id="刺破环面基本群的表示-亏格为2的曲面的基本群表示"><a href="#刺破环面基本群的表示-亏格为2的曲面的基本群表示" class="headerlink" title="刺破环面基本群的表示(亏格为2的曲面的基本群表示)"></a>刺破环面基本群的表示(亏格为2的曲面的基本群表示)</h3><p><img src="/images/image-20200719223916410.png" alt="image-20200719223916410"></p>
+<p>其证明</p>
+<p><img src="/images/image-20200719224247221.png" alt="image-20200719224247221"></p>
+<p><img src="/images/image-20200719224501664.png" alt="image-20200719224501664"></p>
+<h2 id="切图-Cut-Graph"><a href="#切图-Cut-Graph" class="headerlink" title="切图(Cut Graph)"></a>切图(Cut Graph)</h2><p><img src="/images/image-20200719224547657.png" alt="image-20200719224547657"></p>
+<h3 id="计算切图的算法"><a href="#计算切图的算法" class="headerlink" title="计算切图的算法"></a>计算切图的算法</h3><p><img src="/images/image-20200719225058276.png" alt="image-20200719225058276"></p>
+<h3 id="亏格为3的切图"><a href="#亏格为3的切图" class="headerlink" title="亏格为3的切图"></a>亏格为3的切图</h3><p><img src="/images/image-20200719225214579.png" alt="image-20200719225214579"></p>
+<p><img src="/images/image-20200719225358435.png" alt="image-20200719225358435"></p>
+<h3 id="基本群的关系算法"><a href="#基本群的关系算法" class="headerlink" title="基本群的关系算法"></a>基本群的关系算法</h3><h2 id="万有覆盖空间"><a href="#万有覆盖空间" class="headerlink" title="万有覆盖空间(?)"></a>万有覆盖空间(?)</h2><p><img src="/images/image-20200719225413914.png" alt="image-20200719225413914"></p>
+<p><img src="/images/image-20200719225727530.png" alt="image-20200719225727530"></p>
+<p><img src="/images/image-20200719225910465.png" alt="image-20200719225910465"></p>
+<h3 id="覆盖群的结构"><a href="#覆盖群的结构" class="headerlink" title="覆盖群的结构"></a>覆盖群的结构</h3><p><img src="/images/image-20200719230118222.png" alt="image-20200719230118222"></p>
+<h3 id="亏格为2的曲面的万有覆盖空间"><a href="#亏格为2的曲面的万有覆盖空间" class="headerlink" title="亏格为2的曲面的万有覆盖空间"></a>亏格为2的曲面的万有覆盖空间</h3><p><img src="/images/image-20200719230400428.png" alt="image-20200719230400428"></p>
+<p><img src="/images/image-20200719230819194.png" alt="image-20200719230819194"></p>
+<h3 id="万有覆盖空间的算法表示"><a href="#万有覆盖空间的算法表示" class="headerlink" title="万有覆盖空间的算法表示"></a>万有覆盖空间的算法表示</h3><p><img src="/images/image-20200719230915657.png" alt="image-20200719230915657"></p>
+<h1 id="基本拓扑学笔记"><a href="#基本拓扑学笔记" class="headerlink" title="基本拓扑学笔记"></a>基本拓扑学笔记</h1><p><a href="https://www.bilibili.com/video/BV1P7411N7fW?p=1" target="_blank" rel="noopener">基础拓扑学</a></p>
+<h2 id="第一节-欧拉定理"><a href="#第一节-欧拉定理" class="headerlink" title="第一节:欧拉定理"></a>第一节:欧拉定理</h2><h3 id="1-欧拉定理"><a href="#1-欧拉定理" class="headerlink" title="1.欧拉定理"></a>1.欧拉定理</h3><p><img src="/images/image-20200720114046331.png" alt="image-20200720114046331"></p>
+<p>凸多面体的任何截面都是凸多边形，与凹多面体相反。</p>
+<p>把凸多面体的任何一个面伸展成平面，它的所有其他各面都在这个平面的同侧。</p>
+<p><img src="/images/image-20200720113919180.png" alt="image-20200720113919180"></p>
+<p><img src="/images/image-20200720114333012.png" alt="image-20200720114333012"></p>
+<p>最后一个计算没有意义因为顶面的形状不算是多边形。</p>
+<h4 id="v-e-f-0的例子"><a href="#v-e-f-0的例子" class="headerlink" title="v-e+f=0的例子"></a>v-e+f=0的例子</h4><p><img src="/images/image-20200720114553753.png" alt="image-20200720114553753"></p>
+<h4 id="几个多面体其本质的不同"><a href="#几个多面体其本质的不同" class="headerlink" title="几个多面体其本质的不同"></a>几个多面体其本质的不同</h4><p><img src="/images/image-20200720114903381.png" alt="image-20200720114903381"></p>
+<p><img src="/images/image-20200720115259324.png" alt="image-20200720115259324"></p>
+<p>具体的几何形状无关，而更深层的几何结构有关</p>
+<h2 id="第二节-拓扑引论"><a href="#第二节-拓扑引论" class="headerlink" title="第二节:拓扑引论"></a>第二节:拓扑引论</h2><h3 id="同胚"><a href="#同胚" class="headerlink" title="同胚"></a>同胚</h3><p>双射</p>
+<p><img src="/images/image-20200720120129552.png" alt="image-20200720120129552"></p>
+<p><img src="/images/image-20200720115810758.png" alt="image-20200720115810758"></p>
+<p><img src="/images/image-20200720115843213.png" alt="image-20200720115843213"></p>
+<h3 id="不同胚的例子"><a href="#不同胚的例子" class="headerlink" title="不同胚的例子"></a>不同胚的例子</h3><p><img src="/images/image-20200720120233345.png" alt="image-20200720120233345"></p>
+<h3 id="拓扑不变量"><a href="#拓扑不变量" class="headerlink" title="拓扑不变量"></a>拓扑不变量</h3><p><img src="/images/image-20200720120512184.png" alt="image-20200720120512184"></p>
+<h3 id="什么是连续"><a href="#什么是连续" class="headerlink" title="什么是连续"></a>什么是连续</h3><p>微积分中的连续定义</p>
+<p><img src="/images/image-20200720120746045.png" alt="image-20200720120746045"></p>
+<h3 id="开集与逆"><a href="#开集与逆" class="headerlink" title="开集与逆"></a><a href="https://baike.baidu.com/item/%E5%BC%80%E9%9B%86/10505701?fr=aladdin#3" target="_blank" rel="noopener">开集与逆</a></h3><p><img src="/images/image-20200720121038667.png" alt="image-20200720121038667"></p>
+<p><img src="/images/image-20200720121240817.png" alt="image-20200720121240817"></p>
+<p><img src="/images/image-20200720121730101.png" alt="image-20200720121730101"></p>
+<p><img src="/images/image-20200720121839706.png" alt="image-20200720121839706"></p>
+<h2 id="第三节-拓扑空间"><a href="#第三节-拓扑空间" class="headerlink" title="第三节:拓扑空间"></a>第三节:拓扑空间</h2><p><img src="/images/image-20200720121532927.png" alt="image-20200720121532927"></p>
+<p>有限个开集的交为开集</p>
+<p><img src="/images/image-20200720164224525.png" alt="image-20200720164224525"></p>
+<p>这样？</p>
+<h3 id="平凡拓扑-只有空集和全集"><a href="#平凡拓扑-只有空集和全集" class="headerlink" title="平凡拓扑 只有空集和全集"></a>平凡拓扑 只有空集和全集</h3><h3 id="离散拓扑"><a href="#离散拓扑" class="headerlink" title="离散拓扑"></a>离散拓扑</h3><p><img src="/images/image-20200720164405109.png" alt="image-20200720164405109"></p>
+<h3 id="度量空间"><a href="#度量空间" class="headerlink" title="度量空间"></a><a href="https://zhuanlan.zhihu.com/p/54041981" target="_blank" rel="noopener">度量空间</a></h3><p><img src="/images/image-20200720171150699.png" alt="image-20200720171150699"></p>
+<p><strong>度量空间（metric space）是一种具有度量函数（metric function）或者叫做距离函数（distance function）的集合，此函数定义集合内所有元素间的距离，被称为集合上的metric。</strong></p>
+<p><strong>度量空间中最符合直观理解的是三维欧氏空间，事实上，metric的概念是欧氏距离性质的推广。</strong></p>
+<p>度量空间是1906年Maurice Fréchet在其著作中引入的，但是名字来自于Felix Hausdorff。</p>
+<p>度量空间在分析学中有重要应用。</p>
+<h4 id="实数序列的极限与metric-function"><a href="#实数序列的极限与metric-function" class="headerlink" title="实数序列的极限与metric function"></a><strong>实数序列的极限与metric function</strong></h4><p><img src="/images/image-20200720170944837.png" alt="image-20200720170944837"></p>
+<p><img src="/images/image-20200720171012957.png" alt="image-20200720171012957"></p>
+<p><img src="/images/image-20200720171039452.png" alt="image-20200720171039452"></p>
+<p>除了极限的概念，通过度量空间还可以定义连续、一致连续、Lipschitz连续、一致收敛等性质，度量空间本身还可以具有很多性质，如完备性、紧致性、连通性、分离性等。此外度量空间还能导出开集与闭集等拓扑性质，<strong>这导致了对再度抽象的拓扑空间的研究。</strong></p>
+<p><strong>数学是一个不断抽象的过程，度量空间以及更加抽象的拓扑空间的引入，并不是为了抽象而抽象，而是为了研究的方便，使概念准确和简洁。</strong></p>
+<h3 id="度量空间诱导的拓扑"><a href="#度量空间诱导的拓扑" class="headerlink" title="度量空间诱导的拓扑"></a>度量空间诱导的拓扑</h3><p><img src="/images/image-20200720164800688.png" alt="image-20200720164800688"></p>
+<h3 id="子空间拓扑"><a href="#子空间拓扑" class="headerlink" title="子空间拓扑"></a>子空间拓扑</h3><p><img src="/images/image-20200720191124569.png" alt="image-20200720191124569"></p>
+<p><img src="/images/image-20200720191202821.png" alt="image-20200720191202821"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/共形几何/" rel="tag"># 共形几何</a>
+              <a href="/tags/笔记/" rel="tag"># 笔记</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/10/计算共形几何笔记-1/" rel="prev" title="计算共形几何笔记-1">
+      <i class="fa fa-chevron-left"></i> 计算共形几何笔记-1
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/07/24/共形几何第三节-同调群和上同调群/" rel="next" title="共形几何第三节-同调群和上同调群Homology and Cohomology">
+      共形几何第三节-同调群和上同调群Homology and Cohomology <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何定义一个曲面"><span class="nav-number">1.</span> <span class="nav-text">如何定义一个曲面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环柄在医学上的应用"><span class="nav-number">2.</span> <span class="nav-text">环柄在医学上的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代数拓扑与群"><span class="nav-number">3.</span> <span class="nav-text">代数拓扑与群</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-基本群的定义"><span class="nav-number">3.1.</span> <span class="nav-text">1.基本群的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-何为同伦"><span class="nav-number">3.2.</span> <span class="nav-text">2.何为同伦</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-乘积和逆"><span class="nav-number">3.3.</span> <span class="nav-text">3.乘积和逆</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本群的表示"><span class="nav-number">4.</span> <span class="nav-text">基本群的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本群的典范表示"><span class="nav-number">4.1.</span> <span class="nav-text">基本群的典范表示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拓扑同胚和基本群-Homeomorphism"><span class="nav-number">5.</span> <span class="nav-text">拓扑同胚和基本群(Homeomorphism)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#拓扑空间分解"><span class="nav-number">5.1.</span> <span class="nav-text">拓扑空间分解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#曲面的连通和"><span class="nav-number">5.2.</span> <span class="nav-text">曲面的连通和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表面拓扑分类"><span class="nav-number">5.3.</span> <span class="nav-text">表面拓扑分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环面的基本群"><span class="nav-number">5.4.</span> <span class="nav-text">环面的基本群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#刺破环面基本群的表示-亏格为2的曲面的基本群表示"><span class="nav-number">5.5.</span> <span class="nav-text">刺破环面基本群的表示(亏格为2的曲面的基本群表示)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#切图-Cut-Graph"><span class="nav-number">6.</span> <span class="nav-text">切图(Cut Graph)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算切图的算法"><span class="nav-number">6.1.</span> <span class="nav-text">计算切图的算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#亏格为3的切图"><span class="nav-number">6.2.</span> <span class="nav-text">亏格为3的切图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本群的关系算法"><span class="nav-number">6.3.</span> <span class="nav-text">基本群的关系算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#万有覆盖空间"><span class="nav-number">7.</span> <span class="nav-text">万有覆盖空间(?)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#覆盖群的结构"><span class="nav-number">7.1.</span> <span class="nav-text">覆盖群的结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#亏格为2的曲面的万有覆盖空间"><span class="nav-number">7.2.</span> <span class="nav-text">亏格为2的曲面的万有覆盖空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#万有覆盖空间的算法表示"><span class="nav-number">7.3.</span> <span class="nav-text">万有覆盖空间的算法表示</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本拓扑学笔记"><span class="nav-number"></span> <span class="nav-text">基本拓扑学笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一节-欧拉定理"><span class="nav-number">1.</span> <span class="nav-text">第一节:欧拉定理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-欧拉定理"><span class="nav-number">1.1.</span> <span class="nav-text">1.欧拉定理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#v-e-f-0的例子"><span class="nav-number">1.1.1.</span> <span class="nav-text">v-e+f=0的例子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#几个多面体其本质的不同"><span class="nav-number">1.1.2.</span> <span class="nav-text">几个多面体其本质的不同</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二节-拓扑引论"><span class="nav-number">2.</span> <span class="nav-text">第二节:拓扑引论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#同胚"><span class="nav-number">2.1.</span> <span class="nav-text">同胚</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不同胚的例子"><span class="nav-number">2.2.</span> <span class="nav-text">不同胚的例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拓扑不变量"><span class="nav-number">2.3.</span> <span class="nav-text">拓扑不变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是连续"><span class="nav-number">2.4.</span> <span class="nav-text">什么是连续</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开集与逆"><span class="nav-number">2.5.</span> <span class="nav-text">开集与逆</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三节-拓扑空间"><span class="nav-number">3.</span> <span class="nav-text">第三节:拓扑空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#平凡拓扑-只有空集和全集"><span class="nav-number">3.1.</span> <span class="nav-text">平凡拓扑 只有空集和全集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#离散拓扑"><span class="nav-number">3.2.</span> <span class="nav-text">离散拓扑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#度量空间"><span class="nav-number">3.3.</span> <span class="nav-text">度量空间</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实数序列的极限与metric-function"><span class="nav-number">3.3.1.</span> <span class="nav-text">实数序列的极限与metric function</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#度量空间诱导的拓扑"><span class="nav-number">3.4.</span> <span class="nav-text">度量空间诱导的拓扑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子空间拓扑"><span class="nav-number">3.5.</span> <span class="nav-text">子空间拓扑</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Molers" src="/images/Avatar.jpg">
+  <p class="site-author-name" itemprop="name">Molers</p>
+  <div class="site-description" itemprop="description">计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">89</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Molers" title="GitHub → https://github.com/Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/3179969322" title="Weibo → https://weibo.com/3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/s992545366" title="Twitter → https://twitter.com/s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Molers</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
