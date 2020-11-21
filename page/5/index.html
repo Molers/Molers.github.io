@@ -164,6 +164,656 @@
   
   
   <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/03/Qt学习笔记-1-QtCreator和QtDesigner的安装与配置/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/03/Qt学习笔记-1-QtCreator和QtDesigner的安装与配置/" class="post-title-link" itemprop="url">Qt学习笔记-1-QtCreator和QtDesigner的安装与配置</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-03 23:23:40" itemprop="dateCreated datePublished" datetime="2020-02-03T23:23:40+08:00">2020-02-03</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/03/VisualStudio学习笔记-报错-include-stdio-h的报错安全问题/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/03/VisualStudio学习笔记-报错-include-stdio-h的报错安全问题/" class="post-title-link" itemprop="url">VisualStudio学习笔记-报错-#include stdio.h的报错安全问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-03 20:43:13 / 修改时间：22:28:26" itemprop="dateCreated datePublished" datetime="2020-02-03T20:43:13+08:00">2020-02-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/VisualStudio/" itemprop="url" rel="index"><span itemprop="name">VisualStudio</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>由于高版本的visual studio默认不让使用scanf等函数，认为这些函数不够安全，而其相对应的代替函数为scanf_s等。如果在visual studio中使用scanf等那些visual studio认为不安全的函数，就会报错。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;scanf&apos;: This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.</span><br></pre></td></tr></table></figure>
+<p>以下几种方法可以解决该问题：</p>
+<p>1.在文件开头添加 #define _CRT_SECURE_NO_WARNINGS</p>
+<p>例如</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="comment">//添加到头行,添加到stdio.h等头文件后还是会出警告的</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> str[<span class="number">256</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%255s"</span>,str);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Hello World!\n"</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,str);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.在 项目-&gt;属性-&gt;C/C++-&gt;预处理器-&gt;预处理器定义中添加_CRT_SECURE_NO_WARNINGS</p>
+<p><img src="https://i.loli.net/2020/02/03/jA5Dc8NHRmSyntQ.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2020/02/03/djZsWhQHSpPoEAF.png" alt="image.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/03/WxWidgets学习笔记-Tips-Makefile理念学习/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/03/WxWidgets学习笔记-Tips-Makefile理念学习/" class="post-title-link" itemprop="url">WxWidgets学习笔记-Tips-Makefile理念学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-03 20:17:19 / 修改时间：20:19:26" itemprop="dateCreated datePublished" datetime="2020-02-03T20:17:19+08:00">2020-02-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/WxWidgets图形化界面学习/" itemprop="url" rel="index"><span itemprop="name">WxWidgets图形化界面学习</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>第一次从零开始开发一个东西，使用到了WxWidgets</p>
+<p><img src="https://i.loli.net/2020/02/03/alQyo6WK5Z1YNtd.png" alt="image.png"></p>
+<p>其目录就像这样…根本不知道下那个和其区别是什么，是编译器的区别吗？</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/03/WxWidgets学习笔记-1-1-环境搭建Codeblocks-WxWidgets/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/03/WxWidgets学习笔记-1-1-环境搭建Codeblocks-WxWidgets/" class="post-title-link" itemprop="url">WxWidgets学习笔记-1.1-环境搭建Codeblocks-WxWidgets</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-03 18:10:16" itemprop="dateCreated datePublished" datetime="2020-02-03T18:10:16+08:00">2020-02-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-04 00:54:36" itemprop="dateModified" datetime="2020-02-04T00:54:36+08:00">2020-02-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/WxWidgets图形化界面学习/" itemprop="url" rel="index"><span itemprop="name">WxWidgets图形化界面学习</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="方法1-自己编译"><a href="#方法1-自己编译" class="headerlink" title="方法1:自己编译"></a>方法1:自己编译</h2><p><img src="https://i.loli.net/2020/02/03/wTn5JElicHfN8yV.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2020/02/03/ANKWxL7H53pR9SG.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2020/02/03/uklxfGRBAdjH846.png" alt="image.png"></p>
+<p><img src="/images/986259-20160830144920371-1144319313.png" alt="img"></p>
+<p><img src="https://i.loli.net/2020/02/03/liTDBtmNkyeP2bC.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2020/02/03/LqU3OhF4CVBtSwu.png" alt="image.png"></p>
+<p>记得用管理员打开CMD或者PowerShell</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mingw32-make -f makefile.gcc clean</span><br><span class="line">mingw32-make -f makefile.gcc MONOLITHIC=<span class="number">0</span> SHARED=<span class="number">1</span> UNICODE=<span class="number">1</span> BUILD=release</span><br><span class="line">mingw32-make -f makefile.gcc MONOLITHIC=<span class="number">0</span> SHARED=<span class="number">1</span> UNICODE=<span class="number">1</span> BUILD=debug</span><br></pre></td></tr></table></figure>
+<p>SHARED控制wxWidgets是构建DLL（SHARED=1）还是静态库（SHARED=0）。上面构建DLL，是因为动态库较小   且加载比较快。</p>
+<p>  MONOLITHIC控制是构建一个单一的库（MONOLITHIC=1）还是多个组件库（MONOLITHIC=0）。</p>
+<p>  UNICODE控制wxWidgets以及你的程序是否使用支持Unicode的宽字符串。</p>
+<p>  *关于参数的详细解释可以参照<a href="http://blog.csdn[.NET](http://lib.csdn.net/base/dotnet)/longzuyuan/article/details/22382131中写的，在此不再赘余。" target="_blank" rel="noopener">http://blog.csdn[.NET](http://lib.csdn.net/base/dotnet)/longzuyuan/article/details/22382131中写的，在此不再赘余。</a></p>
+<p><img src="https://i.loli.net/2020/02/03/KjdXfs2qPYnL65c.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2020/02/03/fC15pjQadwSiYEe.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2020/02/03/fkYvsnabXVMWLP3.png" alt="image.png"></p>
+<h2 id="codeblocks全局环境配置"><a href="#codeblocks全局环境配置" class="headerlink" title="codeblocks全局环境配置"></a>codeblocks全局环境配置</h2><p> 1、打开codeblocks，点击菜单栏的settings-&gt;Global variables…出现下图：</p>
+<p><img src="https://i.loli.net/2020/02/04/DI57Ta2UmbHL6Be.png" alt="image.png"></p>
+<h3 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h3><p>坑1：每个不同版本的wxWidgets都需要指定的WinGW版本才可以编译，如wxWidgets 3.1.0需要TDM-GCC 4.9 and 5.1版才可以编译，wxWidgets 3.0.2需要TDM-GCC 4.7 and 4.8 才可以编译，一开始没注意到这个问题，用了CodeBlocks中自带的4.9.1去编译wxWidgets 3.0.2，结果自然是中途出错，被坑死了。</p>
+<h3 id="参考视频"><a href="#参考视频" class="headerlink" title="参考视频:"></a>参考视频:</h3><iframe width="560" height="315" src="https://www.youtube.com/embed/FgAaiBg4wEE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PlOhu1KkTZw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h2 id="方法2-下载"><a href="#方法2-下载" class="headerlink" title="方法2:下载"></a>方法2:下载</h2><h3 id="1-查看gcc和g-的版本"><a href="#1-查看gcc和g-的版本" class="headerlink" title="1.查看gcc和g++的版本"></a>1.查看gcc和g++的版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -v</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ -v</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc version 5.1.0 (tdm-1)</span><br></pre></td></tr></table></figure>
+<p>直接找到Gcc相同的版本，这里是<a href="https://github.com/wxWidgets/wxWidgets/releases/tag/v3.0.4" target="_blank" rel="noopener">3.0.4</a></p>
+<p><img src="https://i.loli.net/2020/02/04/Zjr29nvHPItWGYS.png" alt="image.png"></p>
+<p>下载下来解压</p>
+<p><img src="https://i.loli.net/2020/02/04/Ux5zsL9vtOkKMjb.png" alt="image.png"></p>
+<p>相当于构建完了</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接:"></a>参考链接:</h2><p><a href="https://jingyan.baidu.com/article/eae0782742ba9d1fec54853f.html" target="_blank" rel="noopener">windowns下查看CodeBlocks中MinGW的gcc版本信息</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/31/Hexo双线部署与双SSH设置/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/31/Hexo双线部署与双SSH设置/" class="post-title-link" itemprop="url">Hexo双线部署与双SSH设置</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-31 19:35:43" itemprop="dateCreated datePublished" datetime="2020-01-31T19:35:43+08:00">2020-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-08 21:06:53" itemprop="dateModified" datetime="2020-11-08T21:06:53+08:00">2020-11-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1-SSH配置"><a href="#1-SSH配置" class="headerlink" title="1.SSH配置"></a>1.SSH配置</h2><p>Hexo博客要同时在github和coding上发布，两端同时需要提交代码，这个时候就需要电脑配置多个ssh</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">进入~/.ssh目录</span><br><span class="line"></span><br><span class="line">ssh-keygen -t rsa -C &quot;你的邮箱&quot; </span><br><span class="line"></span><br><span class="line">SSH命名为Coding 按回车</span><br><span class="line"></span><br><span class="line">生成ssh成功，会生成coding和Coding.pub文件</span><br><span class="line"></span><br><span class="line">同样的操作，再创建Github ssh</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2020/01/31/wE8H9QyiRZzLSAf.png" alt="92SZ_NP3XFQGJG4_5BXP5MH.png"></p>
+<p><img src="https://i.loli.net/2020/01/31/Sr8wWBPVNIMqU54.png" alt="H~4FLTAPS_8_@A_2PS_WFG3.png"></p>
+<p><img src="https://i.loli.net/2020/01/31/upcFLNHEPMqf75W.png" alt="2B_5Z_BO12L`YFF1_UB~__1.png"></p>
+<h2 id="2-添加和编辑配置文件config"><a href="#2-添加和编辑配置文件config" class="headerlink" title="2.添加和编辑配置文件config"></a>2.添加和编辑配置文件config</h2><p>在 ~/.ssh 目录下新建一个config文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch ~/.ssh/config</span><br></pre></td></tr></table></figure>
+<p>添加如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># github 个人的GitHub公钥</span><br><span class="line">Host Github</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/Github  # 指定特定的ssh私钥文件</span><br><span class="line">User git</span><br><span class="line"></span><br><span class="line"># Coding 个人的Coding公钥</span><br><span class="line">Host Coding</span><br><span class="line">HostName git.coding.net</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/Coding  # 指定特定的ssh私钥文件</span><br><span class="line">User git</span><br></pre></td></tr></table></figure>
+<h2 id="3-绑定github和coding的ssh"><a href="#3-绑定github和coding的ssh" class="headerlink" title="3.绑定github和coding的ssh"></a>3.绑定github和coding的ssh</h2><p><img src="https://i.loli.net/2020/01/31/PL4h13yFRjEGzAc.png" alt="LJV5`2OC4BO4_~_2R@LXXWO.png"></p>
+<p><img src="https://i.loli.net/2020/01/31/S83piQJfCOlRtes.png" alt="KA__X~H9S38VCXDWZU2_G0L.png"></p>
+<h2 id="4-ssh-add"><a href="#4-ssh-add" class="headerlink" title="4.ssh-add"></a>4.ssh-add</h2><p>手动开启ssh</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eval `ssh-agent -s`</span><br></pre></td></tr></table></figure>
+<p>执行ssh-add </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-add Coding</span><br><span class="line">ssh-add Github</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;ssh-add -K 私钥&apos; 这个命令可以永久生效.</span><br></pre></td></tr></table></figure>
+<p>ssh-add -l查看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-add -l</span><br><span class="line">2048 SHA256:**********************（一长串) Coding (RSA)</span><br><span class="line">2048 SHA256:******************(一长串) Github (RSA)</span><br></pre></td></tr></table></figure>
+<h3 id="关于windows下ssh-add失败的解决办法"><a href="#关于windows下ssh-add失败的解决办法" class="headerlink" title="关于windows下ssh-add失败的解决办法"></a>关于windows下ssh-add失败的解决办法</h3><p>打开git Bash命令行,依次执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exec ssh-agent bash</span><br><span class="line">eval ssh-agent -s</span><br><span class="line">ssh-add &quot;XXX\.ssh\id_rsa&quot;</span><br></pre></td></tr></table></figure>
+<p>**引号中的路径就是你私钥文件的路径</p>
+<h2 id="5-测试"><a href="#5-测试" class="headerlink" title="5.测试"></a>5.测试</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>出现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi ! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+<p>成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T  git@git.coding.net</span><br></pre></td></tr></table></figure>
+<p>出现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Coding 提示: Hello *****, You&apos;ve connected to Coding.net via SSH. This is a personal key.</span><br><span class="line">*****，你好，你已经通过 SSH 协议认证 Coding.net 服务，这是一个个人公钥</span><br></pre></td></tr></table></figure>
+<p>成功</p>
+<h2 id="hexo下的设置"><a href="#hexo下的设置" class="headerlink" title="hexo下的设置"></a>hexo下的设置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: </span><br><span class="line">     github: git@github.com:Molers/Molers.github.io.git,master</span><br><span class="line">     coding: git@git.dev.tencent.com:molers233/molers233.git,master</span><br></pre></td></tr></table></figure>
+<h2 id="遗留问题"><a href="#遗留问题" class="headerlink" title="遗留问题"></a>遗留问题</h2><p>貌似每一次开启都需要ssh-add</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add Coding Github</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/29/WxWidgets学习笔记-3-多线程编程/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/29/WxWidgets学习笔记-3-多线程编程/" class="post-title-link" itemprop="url">WxWidgets学习笔记-3-多线程编程</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-29 23:23:32" itemprop="dateCreated datePublished" datetime="2020-01-29T23:23:32+08:00">2020-01-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-31 17:45:38" itemprop="dateModified" datetime="2020-01-31T17:45:38+08:00">2020-01-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/WxWidgets图形化界面学习/" itemprop="url" rel="index"><span itemprop="name">WxWidgets图形化界面学习</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>​    大多数时候,事件驱动的GUI程序可以给你造成一个很好的假象:多个任务在同时的运行这是因为,重绘窗口通常只占用很少的时间,用户输入也被很快的进行了处理.然后,有时候,有些任务很难将其分割成足够小的让人难以察觉的小块来运行,这时候就要使用多线程编程了，本章我们来介绍一下在wxWidgets中怎样实现多线程编程在本章的最后,我们将介绍一下多线程编程的一些替代解决方案..</p>
+<p>## </p>
+<h2 id="1-使用wxThread"><a href="#1-使用wxThread" class="headerlink" title="1.使用wxThread"></a>1.使用wxThread</h2><p>如果你要在你的代码中使用线程,首先要实现一个wxThread的派生类,并且至少要重载其虚函数Entry,这个函数包含了线程要做的主要的事情举例来说,比如我们要用一个单独的线程来计算图片中颜色的数目,下面是我们的派生类的声明:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> :</span> <span class="keyword">public</span> wxThread </span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	MyThread(wxImage∗ image, <span class="keyword">int</span>∗ count): </span><br><span class="line">	m image(image), m count(count) &#123;&#125;</span><br><span class="line">	<span class="keyword">virtual</span> <span class="keyword">void</span> ∗Entry(); 、</span><br><span class="line"><span class="keyword">private</span> :</span><br><span class="line">	wxImage∗ m image; </span><br><span class="line">	<span class="keyword">int</span>∗ m count;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//一个标识符用来在线程工作完成的时候通知应用程序</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ID_COUNTED_COLORS_100</span></span><br></pre></td></tr></table></figure>
+<p>Entry函数用来进行计算工作并且返回一个返回值(对于联合线程(即将介绍),Wait函数将返回这个值),下面是我们的Entry函数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void ∗MyThread::Entry() &#123;</span><br><span class="line">(∗ m count) = m image−&gt;CountColours(); </span><br><span class="line">// . wxCommandEvent event(wxEVT COMMAND MENU SELECTED, ID COUNTED COLORS);</span><br><span class="line">wxGetApp().AddPendingEvent(event); return NULL;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/29/东馆艺术课-色彩-1-开场/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/29/东馆艺术课-色彩-1-开场/" class="post-title-link" itemprop="url">东馆艺术课-色彩-1-开场</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-29 14:49:00 / 修改时间：23:26:51" itemprop="dateCreated datePublished" datetime="2020-01-29T14:49:00+08:00">2020-01-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/色彩/" itemprop="url" rel="index"><span itemprop="name">色彩</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="/images/image-20200129145223137.png" alt="image-20200129145223137"></p>
+<p>学院派和CG插画实际上并不一样，设计色彩有问题，去练习写生的话什么也解决不了，其目标完全不一样</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/29/东馆艺术课-色彩-1-开场/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/29/东馆方案学习笔记-2-素描-1几何-意义与调子/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/29/东馆方案学习笔记-2-素描-1几何-意义与调子/" class="post-title-link" itemprop="url">东馆方案学习笔记-2-素描-1几何-意义与调子</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-29 14:42:04" itemprop="dateCreated datePublished" datetime="2020-01-29T14:42:04+08:00">2020-01-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-01 14:51:31" itemprop="dateModified" datetime="2020-02-01T14:51:31+08:00">2020-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/东馆方案/" itemprop="url" rel="index"><span itemprop="name">东馆方案</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1-几何形体的意义"><a href="#1-几何形体的意义" class="headerlink" title="1.几何形体的意义"></a>1.几何形体的意义</h2><p>几何形体其实是一种思维方式，思考能力，有这种意识其实几何并不一定要练习</p>
+<p><img src="/images/image-20200129144527247.png" alt="image-20200129144527247"></p>
+<p>真正要思考的是如何<strong>把物体归纳为几何形体的能力</strong>，这才是练习几何形体的意义所在，其练习意义并不在于正方形和长方形的本身</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/29/东馆方案学习笔记-2-素描-1几何-意义与调子/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/29/东馆方案学习笔记-1-春节训练任务-目录讲解/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -320,648 +970,6 @@
   
   
 
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/28/读书札记-1-言语/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/28/读书札记-1-言语/" class="post-title-link" itemprop="url">读书札记-1-言语</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-01-28 19:39:03 / 修改时间：19:45:07" itemprop="dateCreated datePublished" datetime="2020-01-28T19:39:03+08:00">2020-01-28</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/读书札记/" itemprop="url" rel="index"><span itemprop="name">读书札记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>​    说来奇怪，今天翻到了高中时候的读书笔记，自从上了大学倒没有记笔记的习惯了，这里暂且写一下占个地方也好，就当回忆一下黑历史了(笑)。</p>
-<h2 id="1-谈小说的作用"><a href="#1-谈小说的作用" class="headerlink" title="1.谈小说的作用"></a>1.谈小说的作用</h2><blockquote>
-<p>六经不能教，当以小说教之；正史不能入，当以小说入之。</p>
-<p>语录不能渝，当以小说渝之；律例不能活，当以小说活之。</p>
-</blockquote>
-<p>​                                                                                                                                          ——(小说的作用，市民文学现状)</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/28/WxWidgets学习笔记-2-应用程序类WxAPP和Frame窗口类学习/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/28/WxWidgets学习笔记-2-应用程序类WxAPP和Frame窗口类学习/" class="post-title-link" itemprop="url">WxWidgets学习笔记-2-应用程序类WxAPP和Frame窗口类学习</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-28 16:44:22" itemprop="dateCreated datePublished" datetime="2020-01-28T16:44:22+08:00">2020-01-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-29 09:30:26" itemprop="dateModified" datetime="2020-06-29T09:30:26+08:00">2020-06-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/WxWidgets图形化界面学习/" itemprop="url" rel="index"><span itemprop="name">WxWidgets图形化界面学习</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="1-WxApp"><a href="#1-WxApp" class="headerlink" title="1.WxApp"></a>1.WxApp</h2><p>每一个wxWidgets程序都需要定义一个wxApp类的子类,并且<strong>需要创建并且只能创建一个</strong>这个类的实例,</p>
-<p>实例控制着整个程序的执行,这个继承自wxApp的子类至少需要定义一个<strong>OnInit</strong>函数,</p>
-<p>当运行代码的时候,将会调用这个函数(和一个典型的Win32程序中的main函数或者WinMain函数类似)。</p>
-<h3 id="1-wxApp类"><a href="#1-wxApp类" class="headerlink" title="1.wxApp类"></a>1.wxApp类</h3><p>定义这个子类及其OnInit函数的代码如下所示:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> :</span> <span class="keyword">public</span> wxApp</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">bool</span> <span class="title">OnInit</span><span class="params">()</span></span>;<span class="comment">//相当于Main函数 函数入口</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>在这个Onlnit函数中,通常应该作的事情包括:</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/28/WxWidgets学习笔记-2-应用程序类WxAPP和Frame窗口类学习/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/28/WxWidgets学习笔记-1-环境搭建VisualStudio2019-WxWidgets/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/28/WxWidgets学习笔记-1-环境搭建VisualStudio2019-WxWidgets/" class="post-title-link" itemprop="url">WxWidgets学习笔记-1-环境搭建VisualStudio2019+WxWidgets</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-28 14:15:22" itemprop="dateCreated datePublished" datetime="2020-01-28T14:15:22+08:00">2020-01-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-26 16:10:00" itemprop="dateModified" datetime="2020-06-26T16:10:00+08:00">2020-06-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/WxWidgets图形化界面学习/" itemprop="url" rel="index"><span itemprop="name">WxWidgets图形化界面学习</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>参考链接:<a href="https://www.youtube.com/watch?v=sRhoZcNpMb4" target="_blank" rel="noopener">Setting Up wxWidgets Using Visual Studio 2019</a></p>
-<p><img src="/images/image-20200128155515862.png" alt="image-20200128155515862"></p>
-<h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><p>解压，进入build-&gt;msw文件夹，VS2019打开wx_vc16.sln,VS2017打开wx_vc15.sln</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/28/WxWidgets学习笔记-1-环境搭建VisualStudio2019-WxWidgets/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/28/使用Unity与Unreal4来可视化学习光线跟踪-1-前期准备/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/28/使用Unity与Unreal4来可视化学习光线跟踪-1-前期准备/" class="post-title-link" itemprop="url">使用Unity与Unreal4来可视化学习光线跟踪-1-前期准备</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-28 13:30:31" itemprop="dateCreated datePublished" datetime="2020-01-28T13:30:31+08:00">2020-01-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-29 23:27:47" itemprop="dateModified" datetime="2020-01-29T23:27:47+08:00">2020-01-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/光线跟踪演示/" itemprop="url" rel="index"><span itemprop="name">光线跟踪演示</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-Unity的设置"><a href="#1-Unity的设置" class="headerlink" title="1.Unity的设置"></a>1.Unity的设置</h1><p><img src="/images/image-20200128135530584.png" alt="image-20200128135530584"></p>
-<h4 id="1-删除直射光，右键Delete"><a href="#1-删除直射光，右键Delete" class="headerlink" title="1.删除直射光，右键Delete"></a>1.删除直射光，右键Delete</h4>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/28/使用Unity与Unreal4来可视化学习光线跟踪-1-前期准备/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/27/从零开始的光线跟踪-1-C-GUi-的框架实现/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/27/从零开始的光线跟踪-1-C-GUi-的框架实现/" class="post-title-link" itemprop="url">从零开始的光线跟踪-1-C++GUi 的框架实现Qt和WxWidget双版本</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-27 23:13:51" itemprop="dateCreated datePublished" datetime="2020-01-27T23:13:51+08:00">2020-01-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-29 23:26:39" itemprop="dateModified" datetime="2020-01-29T23:26:39+08:00">2020-01-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/光线跟踪/" itemprop="url" rel="index"><span itemprop="name">光线跟踪</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-参考书籍"><a href="#1-参考书籍" class="headerlink" title="1.参考书籍"></a>1.参考书籍</h1><p>实现的参考书籍是光线跟踪算法技术，清华大学出版社，下面这本</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/27/从零开始的光线跟踪-1-C-GUi-的框架实现/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/27/Qt学习笔记-11-Qt-VisualStudio点击按钮或目录打开对话框QDialog/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/27/Qt学习笔记-11-Qt-VisualStudio点击按钮或目录打开对话框QDialog/" class="post-title-link" itemprop="url">Qt学习笔记-11-Qt+VisualStudio点击按钮或目录打开对话框QDialog</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-27 13:19:54" itemprop="dateCreated datePublished" datetime="2020-01-27T13:19:54+08:00">2020-01-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-29 23:24:06" itemprop="dateModified" datetime="2020-01-29T23:24:06+08:00">2020-01-29</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>之前创建的是QWidget</p>
-<p><img src="/images/image-20200127132043210.png" alt="image-20200127132043210"></p>
-<p>这次要创建的是对话框，虽然看起来很像但是其实不一样QWidget和QDialog是不一样的应该吧..</p>
-<p><img src="/images/image-20200127132110870.png" alt="image-20200127132110870"></p>
-<p><img src="/images/image-20200127132059000.png" alt="image-20200127132059000"></p>
-<p>先新建一个ui窗口</p>
-<p><img src="/images/image-20200127132249254.png" alt="image-20200127132249254"></p>
-<p>改一下名字改为MyDialog</p>
-<p><img src="/images/image-20200127132340412.png" alt="image-20200127132340412"></p>
-<p>基类从QWidget改为QDialog试一下</p>
-<p><img src="/images/image-20200127132412770.png" alt="image-20200127132412770"></p>
-<p>目录中会多出3个文件</p>
-<p><img src="/images/image-20200127132546447.png" alt="image-20200127132546447"></p>
-<p>参考:<a href="https://blog.csdn.net/rxs0011/article/details/89481631" target="_blank" rel="noopener">VS2015下用Qt Designer创建对话框</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/27/Qt学习笔记-10-Qt-VisualStudio点击按钮或目录Action打开新窗口/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/27/Qt学习笔记-10-Qt-VisualStudio点击按钮或目录Action打开新窗口/" class="post-title-link" itemprop="url">Qt学习笔记-10-Qt+VisualStudio点击按钮或目录Action打开新窗口</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-01-27 13:02:52 / 修改时间：13:15:01" itemprop="dateCreated datePublished" datetime="2020-01-27T13:02:52+08:00">2020-01-27</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Qt图形化界面学习/" itemprop="url" rel="index"><span itemprop="name">Qt图形化界面学习</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="1-新建UI文件"><a href="#1-新建UI文件" class="headerlink" title="1.新建UI文件"></a>1.新建UI文件</h4><p>总之先新建两个UI文件</p>
-<p><img src="/images/image-20200127130344280.png" alt="image-20200127130344280"></p>
-<h4 id="2-添加按钮-动作-和槽函数"><a href="#2-添加按钮-动作-和槽函数" class="headerlink" title="2.添加按钮(动作)和槽函数"></a>2.添加按钮(动作)和槽函数</h4><p><img src="/images/image-20200127130455905.png" alt="image-20200127130455905"></p>
-<p>我这里是点击Information就弹出新的窗口 QtSon</p>
-<h4 id="3-添加代码"><a href="#3-添加代码" class="headerlink" title="3.添加代码"></a>3.添加代码</h4><p>在主函数窗口QtGuiApplication1.h里添加一个槽函数来响应Information这个QAction，同时包含QtSon的头文件声明一个</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"QtSon.h"</span></span></span><br><span class="line">	......</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">			QtSon* son;</span><br><span class="line">	......</span><br><span class="line">    ......</span><br><span class="line"><span class="keyword">private</span> slots:</span><br><span class="line">			<span class="function"><span class="keyword">void</span> <span class="title">QtSonslot</span><span class="params">()</span></span>;</span><br><span class="line">	......</span><br></pre></td></tr></table></figure>
-<p>在QtGuiApplication1.cpp里连接和实现它</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">QtGuiApplication1::QtGuiApplication1(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">    ui.setupUi(<span class="keyword">this</span>);</span><br><span class="line">        <span class="comment">//连接</span></span><br><span class="line"> 	connect(ui.actionInformation, SIGNAL(triggered()), <span class="keyword">this</span>, SLOT(QtSonslot()));   </span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//实现</span></span><br><span class="line"><span class="keyword">void</span> QtGuiApplication1::QtSonslot()</span><br><span class="line">&#123;</span><br><span class="line">    son = <span class="keyword">new</span> QtSon();<span class="comment">//实例化</span></span><br><span class="line">    son-&gt;show();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="4-运行结果"><a href="#4-运行结果" class="headerlink" title="4.运行结果"></a>4.运行结果</h4><p><img src="/images/image-20200127131222754.png" alt="image-20200127131222754"></p>
-<p>参考链接:<a href="https://blog.csdn.net/weixin_41991128/article/details/86602385" target="_blank" rel="noopener">Qt5+VS2017点击按钮打开新窗口</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/26/Qt学习笔记-9-在VisualStudio里快速创建Qt工程的-h与C-文件/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/26/Qt学习笔记-9-在VisualStudio里快速创建Qt工程的-h与C-文件/" class="post-title-link" itemprop="url">Qt学习笔记-9-在VisualStudio里快速创建Qt工程的.h与C++文件</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-26 23:42:32" itemprop="dateCreated datePublished" datetime="2020-01-26T23:42:32+08:00">2020-01-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-29 23:24:13" itemprop="dateModified" datetime="2020-01-29T23:24:13+08:00">2020-01-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Qt图形化界面学习/" itemprop="url" rel="index"><span itemprop="name">Qt图形化界面学习</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>新建了一个UI文件，在VisualStudio里新建了一个UI文件的步骤如下所示</p>
-<p><img src="/images/image-20200126234404158.png" alt="image-20200126234404158"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/26/Qt学习笔记-9-在VisualStudio里快速创建Qt工程的-h与C-文件/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1032,20 +1040,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-count">70</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">92</span>
+        <span class="site-state-item-count">101</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1130,6 +1138,8 @@
 
 
 
+
+  
 
   
 
