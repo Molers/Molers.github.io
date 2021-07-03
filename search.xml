@@ -1,6 +1,243 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>pbrt-v3-第一章介绍</title>
+    <url>/2021/06/30/pbrt-v3-%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[<p>虽然基于物理的方法似乎是最明显的渲染方法，但它只是在过去10年左右的实践中才被广泛采用。本章末尾的第1.7节简要介绍了基于物理的渲染，以及它最近被用于电影的离线渲染和游戏的交互式渲染。</p>
+<p>pbrt，一个基于<strong>光线追踪算法</strong>的<strong>物理</strong>渲染系统。</p>
+<blockquote>
+<p>也就是有着并非基于光线追踪的物理渲染系统和不是基于物理的方法，比如phong是基于经验的渲染模型</p>
+</blockquote>
+<h1 id="真实感渲染"><a href="#真实感渲染" class="headerlink" title="真实感渲染"></a>真实感渲染</h1><p>几乎所有逼真的渲染系统都基于光线追踪算法。</p>
+<p>光线跟踪器系统需要模拟的对象:</p>
+<ul>
+<li>摄像机<em>Cameras</em></li>
+<li>射线与物体的交点<em>Ray–object intersections</em></li>
+<li>光源<em>Light sources:</em></li>
+<li>可见性<em>Visibility:</em> </li>
+<li>表面散射<em>Surface scattering</em></li>
+<li>间接光传输Indirect light transport</li>
+<li>射线传播Ray propagation </li>
+</ul>
+<blockquote>
+<p>我们需要知道当光沿着射线穿过空间时发生了什么。如果我们在真空中渲染一个场景，光能量沿一条射线保持恒定。虽然真正的真空在地球上并不常见，但对于许多环境来说，它们都是一个合理的近似。更复杂的模型可用来追踪通过雾、烟、地球大气层等的光线。</p>
+</blockquote>
+<h1 id="摄像机Cameras"><a href="#摄像机Cameras" class="headerlink" title="摄像机Cameras"></a>摄像机<em>Cameras</em></h1><p><img src="/images/image-20210630163655683.png" alt="image-20210630163655683"></p>
+]]></content>
+      <categories>
+        <category>图形学基础</category>
+      </categories>
+      <tags>
+        <tag>图形学</tag>
+        <tag>PBR</tag>
+        <tag>真实感渲染</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图形学基础-漫反射，高光，环境光</title>
+    <url>/2021/06/30/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E6%BC%AB%E5%8F%8D%E5%B0%84%EF%BC%8C%E9%AB%98%E5%85%89%EF%BC%8C%E7%8E%AF%E5%A2%83%E5%85%89/</url>
+    <content><![CDATA[<h1 id="光的能量衰减"><a href="#光的能量衰减" class="headerlink" title="光的能量衰减"></a>光的能量衰减</h1><p><img src="/images/image-20210630155513283.png" alt="image-20210630155513283"></p>
+<h1 id="漫反射计算公式"><a href="#漫反射计算公式" class="headerlink" title="漫反射计算公式"></a>漫反射计算公式</h1><p><img src="/images/image-20210630155610575.png" alt="image-20210630155610575"></p>
+<h1 id="高光：观测所得，观测方向接近反射方向"><a href="#高光：观测所得，观测方向接近反射方向" class="headerlink" title="高光：观测所得，观测方向接近反射方向"></a>高光：观测所得，观测方向接近反射方向</h1><p>半程向量h接近于法线方向也是  点乘（两个向量点乘为1的时候接近）越大，说明夹角越小（反射光越接近光的颜色） </p>
+<p><img src="/images/image-20210630155637670.png" alt="image-20210630155637670"></p>
+<p>这里指数p一般在100到200，因为高光只有一点点 </p>
+<p><img src="/images/image-20210630155650578.png" alt="image-20210630155650578"></p>
+<h1 id="环境光"><a href="#环境光" class="headerlink" title="环境光"></a>环境光</h1><p>简化为环境光都是一样的，即 </p>
+<p><img src="/images/image-20210630155718178.png" alt="image-20210630155718178"></p>
+<h1 id="Blinn-Phong光照模型"><a href="#Blinn-Phong光照模型" class="headerlink" title="Blinn-Phong光照模型"></a>Blinn-Phong光照模型</h1><p>就在在每个像素上把环境光，漫反射，高光加起来 </p>
+<p><img src="/images/image-20210630155803989.png" alt="image-20210630155803989"></p>
+]]></content>
+      <categories>
+        <category>图形学基础</category>
+      </categories>
+      <tags>
+        <tag>图形学</tag>
+        <tag>Phong</tag>
+        <tag>Blinn-Phong</tag>
+        <tag>光照模型</tag>
+        <tag>漫反射</tag>
+        <tag>高光</tag>
+        <tag>环境光</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图形学基础-Phong和Blinn-Phong光照模型</title>
+    <url>/2021/06/30/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-Phong%E5%92%8CBlinn-Phong%E5%85%89%E7%85%A7%E6%A8%A1%E5%9E%8B/</url>
+    <content><![CDATA[<p>Phong和Blinn-Phong光照模型都是<strong>基于经验的渲染模型</strong>，都是高光反射模型</p>
+<p>Blinn-Phong 光照模型，又称为 Blinn-phong 反射模型（Blinn–Phong reflection model）或者 phong 修正模型（modified Phong reflection model），是由 Jim Blinn于 1977 年在文章“Models of light reflection for computer synthesized pictures”中对传统 phong 光照模型基础上进行修改提出的。</p>
+<p>和传统 phong 光照模型相比，Blinn-phong 光照模型混合了 Lambert 的漫射部分和标准的高光，渲染效果有时比 Phong 高光更柔和、更平滑，此外它在速度上相当快，因此成为许多 CG 软件中的默认光照渲染方法。此外它也集成在了大多数图形芯片中，用以产生实时快速的渲染。在 OpenGL 和 Direct3D 渲染管线中， Blinn-Phong 就是默认的渲染模型。</p>
+<h2 id="Phong不能处理的情况"><a href="#Phong不能处理的情况" class="headerlink" title="Phong不能处理的情况"></a>Phong不能处理的情况</h2><p>Phong模型在计算镜面光系数为:</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">float</span>   specFactor = <span class="built_in">pow</span>(max(dot(reflectDir, viewDir), <span class="number">0.0</span>), <span class="number">32</span>); <span class="comment">// 32为镜面高光系数</span></span><br><span class="line"><span class="comment">//其中viewDir是相机坐标和物体坐标之差，reflectDir是光照方向与物体法向的反射，如下图所示：</span></span><br></pre></td></tr></table></figure>
+<p>高光发射的值由 反射向量和观察向量决定. 当两者的夹角θ超过90时，截断为0.0.就没有高光反射分量了.因此Phong模型能处理的是下面的左图中(θ≤90)的情况,而对于右图中(θ&gt;90)的情况则镜面光成分计算为0.</p>
+<p>但是这种计算方式有一个问题，如右图所示：当相机和光照处于同一侧时，此时得到的反射向量reflectDir和视角的方向viewDir的夹角已经大于90度，因此通过dot计算得出的值为负数。表现在渲染结果中就是当相机转到某个角度的时候，高光反射会突然消失，显得很不自然：为了解决这个问题，James F.Blinn与1977年提出了Phong模型的改进算法：Blinn-Phong光照算法。该算法相比于Phong增加了HalfDir的概念</p>
+<p><img src="/images/20190420204310459.png" alt="在这里插入图片描述"></p>
+<p>而右图的这种情况实际上是存在的，将镜面光成分取为0，没有很好地体现实际光照情况。</p>
+<h2 id="Blinn-Phong"><a href="#Blinn-Phong" class="headerlink" title="Blinn-Phong"></a>Blinn-Phong</h2><p><img src="/images/20190420204343287.png" alt="在这里插入图片描述"></p>
+<p><strong>Blinn-Phong模型不再依赖于反射向量</strong>，而是采用了所谓的 <strong>半程向量(Halfway Vector)</strong>，即光线与视线夹角一半方向上的一个单位向量。当半程向量与法线向量越接近时，镜面光分量就越大。</p>
+<p><img src="/images/1332963-20180706004448932-420024011.png" alt="img"></p>
+<p>HalfDir是光照方向和视角方向的相加并归一化，最终比较的是它和normal的夹角。因为HalfDir和normal的夹角永远不会高于90度，因此不用担心dot值出现负数的情况。计算代码如下所示：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">vec3 lightDir = normalize(lightPos - FragPos); </span><br><span class="line">vec3 viewDir = normalize(viewPos - FragPos);</span><br><span class="line">vec3 halfwayDir = normalize(lightDir + viewDir);</span><br><span class="line"><span class="keyword">float</span> spec = <span class="built_in">pow</span>(max(dot(normal, halfwayDir), <span class="number">0.0</span>), shininess);</span><br></pre></td></tr></table></figure>
+<p><img src="/images/20190420204433405.png" alt="在这里插入图片描述"> </p>
+<blockquote>
+<p>半角向量计算公式</p>
+</blockquote>
+<p><strong>当观察向量与反射向量越接近，那么半角向量与法向量N越接近，观察者看到的镜面光成分越强。</strong></p>
+<hr>
+<blockquote>
+<p>Blinn-Phong： ambientColor + diffColor<em>max(0,dot(n,l)) + specColor</em>max(0,dot(n,h))*shininess</p>
+</blockquote>
+<p>N：表面法向量</p>
+<p>H：光入射方向L和视点方向V的中间向量</p>
+<p>Shininess：高光系数</p>
+]]></content>
+      <categories>
+        <category>图形学基础</category>
+      </categories>
+      <tags>
+        <tag>图形学</tag>
+        <tag>Phong</tag>
+        <tag>Blinn-Phong</tag>
+        <tag>光照模型</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>曼昆微观经济学笔记1-经济学十大原理</title>
+    <url>/2021/04/09/%E6%9B%BC%E6%98%86%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%94%E8%AE%B01-%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%8D%81%E5%A4%A7%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<h1 id="稀缺"><a href="#稀缺" class="headerlink" title="稀缺"></a>稀缺</h1><p>社会资源的管理非常重要，这是因为资源是稀缺的。稀缺（scarcity）是说社会的资源是有限的，从而无法生产出人们想要的所有商品和服务。</p>
+<h1 id="经济学"><a href="#经济学" class="headerlink" title="经济学"></a>经济学</h1><p>经济学 （Economics）研究的是社会如何管理它的稀缺资源。</p>
+<h1 id="原理-1：人们面临权衡"><a href="#原理-1：人们面临权衡" class="headerlink" title="原理 1：人们面临权衡"></a>原理 1：人们面临权衡</h1><h2 id="国防-与消费品"><a href="#国防-与消费品" class="headerlink" title="国防 与消费品"></a>国防 与消费品</h2><p>大炮用于保护自己的海岸不受外敌侵略，而黄油则可用于提高国内生活水平。一个社会在国防（大炮）上的花费越多，在消费品（黄油）上的花费就越少。</p>
+<h2 id="清洁环境和高收入水平"><a href="#清洁环境和高收入水平" class="headerlink" title="清洁环境和高收入水平"></a>清洁环境和高收入水平</h2><p>如果法律规定企业减少污染，企业生产商品和服务的成本就会增加。生产成本增加的后果是企业利润减少、工资降低、商品价格提高，或者是这些后果中的几种同时出现。</p>
+<p>污染管制的收益是更清洁的环境和由此导致的更高健康水平，</p>
+<p>污染管制的成本是使受管制企业的企业主、员工和消费者的收入减少。</p>
+<h2 id="效率和平等"><a href="#效率和平等" class="headerlink" title="效率和平等"></a>效率和平等</h2><p>社会面对的另一种权衡是效率和平等之间的取舍。</p>
+<p>效率（efficiency）是指社会从它的稀缺资源中获得最大收益。</p>
+<p>平等（equality）是说这些收益在社会成员之间平均分配。</p>
+<p>效率是指经济馅饼的大小，而公平是指如何将这个馅饼分成各个小块。</p>
+<h3 id="效率-饼的大小"><a href="#效率-饼的大小" class="headerlink" title="效率 饼的大小"></a>效率 饼的大小</h3><h3 id="公平-饼的分配"><a href="#公平-饼的分配" class="headerlink" title="公平 饼的分配"></a>公平 饼的分配</h3><p>当政府制定政策时，这两个目标通常是冲突的。例如，很多政策的目标是使经济财富分配更公平：其中的一些政策例如福利体系或失业保险的目的，是帮助最需要帮助的社会成员；</p>
+<p>个人所得税，要求财务成功人士比其他人缴纳更高的税。这些政策在实现更高公平性时的同时，降低了效率。</p>
+<p>当政府将收入从富人那里再分配给穷人时，这种政策减少了努力工作的回报；结果，人们工作得更少，商品和服务生产量减少。换句话说，当政府试图将经济馅饼切得更平均些时，馅饼本身变小了。</p>
+<h1 id="原理-2：某事的成本是为了得到它而放弃的其他东西"><a href="#原理-2：某事的成本是为了得到它而放弃的其他东西" class="headerlink" title="原理 2：某事的成本是为了得到它而放弃的其他东西"></a>原理 2：某事的成本是为了得到它而放弃的其他东西</h1><p>机会成本（opportunity cost）：某事的机会成本是为了得到它而放弃的其他 事的机会成本是为了得到它而放弃的其他 </p>
+<p>上大学的主要收益是智力水平的提高和一生都有更好的工作机会。</p>
+<p>上大学的成本</p>
+<p>时间成本。当你花费一年时间来听课、读书和写论文时，你就不能将这些时间用于工作。对于绝大部分学生来说，因上学而放弃的工作收入是教育的最大单项成本。</p>
+<p>机会成本。中的某些运动员知道自己上大学的机会成本很大，因为如果他们退学而去打职业比赛的话，能赚几百万元。所以，他们通常判定上大学的收益远小于其机会成本从而退学，这并不奇怪</p>
+<h1 id="边际收益和边际成本"><a href="#边际收益和边际成本" class="headerlink" title="边际收益和边际成本"></a>边际收益和边际成本</h1><p>现企业<br>为使利润最大化，它要决定雇佣工人数量以及决定生产和销售产品数量。你也会发现个人为<br>实现最高水平的满足程度，他要决定工作时间的长短，以及决定使用工作收入购买哪些商品<br>和服务。</p>
+<p>生活中的决策通常不是黑与白之间的选择，而是涉及灰色地带。吃午饭时，<br>你面对的决策不是一口不吃和大吃特吃之间的选择，而为是否再吃一口土豆泥。当考试临近<br>时，你的决策不是一点也不学和一天学 24 小时之间的选择，而是是否再多温习一小时的笔<br>记而不是看电视。经济学家使用术语边际（上的）变动（marginal change）来表示对某个<br>已存在方案的微小增量的调整。记住，边际边际边际边际（margin）表示“边缘”（edge）。因此，边际变<br>动表示在你所做事情的边缘处所做的微小调整。理性人在决策时通常要比较边际收益 边际收益<br>（marginal benefits）和边际成本 边际成本（marginal costs）。</p>
+<p>每位乘客的平均成本 平均成本 ．．．．（average cost）为 500 元，但增加一位乘客带来<br>的成本即边际成本 边际成本 ．．．．（marginal cost）仅为该乘客消费的一袋花生米和一罐苏打水的费用（航<br>空公司为每位乘客免费提供）。只要这样的乘客支付的价格大于边际成本，卖票给他对于航<br>空公司来说是有利可图的。</p>
+<h1 id="原理-4：人们对激励作出反应"><a href="#原理-4：人们对激励作出反应" class="headerlink" title="原理 4：人们对激励作出反应"></a>原理 4：人们对激励作出反应</h1><p>当苹果的价格上涨，人们决定少吃一些苹<br>果。与此同时，果园决定多雇佣一些工人、多摘一些苹果。换句话说，市场中某商品的较高<br>价格激励买方少消费、激励卖方多生产。我们将看到，价格对消费者和生产者行为的影响，<br>对于市场经济如何分配稀缺资源非常关键。</p>
+<p>公共政策制定者应该牢记激励做法：很多政策改变了人们面对的成本或收益，从而改变<br>了他们的行为。例如，对汽油消费征税鼓励人们购买更小、更节能的汽车。这是欧洲人开小<br>型汽车的原因之一，这是由于欧洲的汽油税税率较高而美国较低。汽油税也可以鼓励人们拼<br>车、坐公交以及住在工作地点附近。如果税率进一步提高，很多人将驾驶使用混合能源的汽<br>车，如果税率非常高，人们将转而购买电动汽车。</p>
+<p>政府出手的原因有两大类：促进效率或促进平等。也就是说大多数政策的目的，要么是扩大经济馅饼要么是改变馅饼的分割方法。</p>
+]]></content>
+      <categories>
+        <category>经济学</category>
+      </categories>
+      <tags>
+        <tag>曼昆</tag>
+        <tag>经济学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Qt学习笔记-VisualStudio插件自动更新问题</title>
+    <url>/2021/04/06/Qt%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-VisualStudio%E6%8F%92%E4%BB%B6%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p><strong>ERROR MSB4181 QtRunwork 返回了false，但未记录错误</strong></p>
+<p><strong>问题原因</strong>：Qt扩展版本自动更新，而新的Qt并不兼容；</p>
+<p><strong>解决方法</strong>：VS上方扩展 —&gt; 管理扩展 —&gt;卸载当前的Qt插件，再重新安装之前的Qt插件，记得<strong>关闭自动更新</strong>，以防再次出现同样的问题。</p>
+<p><a href="https://download.qt.io/official_releases/vsaddin/2.7.1/" target="_blank" rel="noopener">https://download.qt.io/official_releases/vsaddin/2.7.1/</a></p>
+<p>所以我才不想用QT这种傻逼GUI</p>
+]]></content>
+      <categories>
+        <category>Qt图形化界面学习</category>
+      </categories>
+      <tags>
+        <tag>图形界面</tag>
+        <tag>Qt</tag>
+        <tag>GUI</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>绘画笔记-V大课程笔记-① 第一周 简介 认知与方法论 结构及人工网格</title>
+    <url>/2021/02/23/%E7%BB%98%E7%94%BB%E7%AC%94%E8%AE%B0-V%E5%A4%A7%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0-%E2%91%A0-%E7%AC%AC%E4%B8%80%E5%91%A8-%E7%AE%80%E4%BB%8B-%E8%AE%A4%E7%9F%A5%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA-%E7%BB%93%E6%9E%84%E5%8F%8A%E4%BA%BA%E5%B7%A5%E7%BD%91%E6%A0%BC/</url>
+    <content><![CDATA[<p><strong>基本几何体</strong> </p>
+<p><strong>最大转折</strong>:褶皱这类的概括使用最大转折来概括</p>
+<p><strong>形成方式:截面</strong></p>
+<p>1.结构</p>
+]]></content>
+      <categories>
+        <category>V大课程笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>绘画</tag>
+        <tag>思考</tag>
+        <tag>V大</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>michael hampton视频学习笔记</title>
+    <url>/2021/02/09/michael-hampton%E8%A7%86%E9%A2%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>绘画笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>手记-可笑的畅想未来</title>
+    <url>/2021/02/06/%E6%89%8B%E8%AE%B0-%E5%8F%AF%E7%AC%91%E7%9A%84%E7%95%85%E6%83%B3%E6%9C%AA%E6%9D%A5/</url>
+    <content><![CDATA[<pre><code>く__,.ヘヽ.　　　　/　,ー､ 〉
+　　　　　＼ &apos;, !-─‐-i　/　/´
+　　　 　 ／｀ｰ&apos;　　　 L/／｀ヽ､           
+　　 　 /　 ／,　 /|　 ,　 ,　　　 &apos;,                                 
+　　　ｲ 　/ /-‐/　ｉ　L_ ﾊ ヽ!　 i                   
+　　　 ﾚ ﾍ 7ｲ｀ﾄ　 ﾚ&apos;ｧ-ﾄ､!ハ|　 |  
+　　　　 !,/7 &apos;0&apos;　　 ´0iソ| 　 |　　　
+　　　　 |.从&quot;　　_　　 ,,,, / |./ 　 |           
+　　　　 ﾚ&apos;| i＞.､,,__　_,.イ / 　.i 　|                   
+　　　　　 ﾚ&apos;| | / k_７_/ﾚ&apos;ヽ,　ﾊ.　|           
+　　　　　　 | |/i 〈|/　 i　,.ﾍ |　i　| 
+　　　　　　.|/ /　ｉ： 　 ﾍ!　　＼　|          
+　　　 　 　 kヽ&gt;､ﾊ 　 _,.ﾍ､ 　 /､!           
+　　　　　　 !&apos;〈//｀Ｔ´&apos;, ＼ ｀&apos;7&apos;ｰr&apos;          
+　　　　　　 ﾚ&apos;ヽL__|___i,___,ンﾚ|ノ
+　　　　　 　　　ﾄ-,/　|___./
+　　　　　 　　　&apos;ｰ&apos;　　!_,.:
+</code></pre><p>(1) 回顾你过去将近3年的学习经历</p>
+<p>当初你报考的时候，是真正喜欢计算机这个专业吗？</p>
+<p>并非如此，当时只是对其他的专业无感，没有太多的兴趣。</p>
+<p>你现在后悔选择了这个专业吗？</p>
+<p>并不后悔，当初填报志愿的时候选择了很多专业，最后觉得还是计算机比较适合，感觉几年前的自己对专业的理解太过狭隘，如今找到了自己想努力的方向还是非常开心的。</p>
+<p>你认为你现在最喜欢的领域是什么（可以是计算机的也可以是其它领域）？</p>
+<p>计算机图形学与3D技术，爱好绘画，热爱动漫文化。</p>
+<hr>
+<p>(2) 总结你现在已经掌握的知识</p>
+<p>你都具备了那些专业知识和能力？</p>
+<p>分析小问题和解决小问题，阅读文档，搜索资料，越是深入越觉得知识深似海底，自己不过是窥见了冰山一角，还有很多知识需要学习，列如UE4,Blender等3维软件的一些文档我如今还没看完。</p>
+<p>你认为你已经为成为一个合格的计算机软件工程是做好准备了吗？</p>
+<p>严格来说，思想准备倒是一直有，只不过目前深感技术和知识上的欠缺需要时间去弥补</p>
+<p>在专业技术、个人能力以及其它方面你还有那些欠缺？</p>
+<p>目前主要是阅读书籍和文档以及源代码，专业技术可能学的不太系统，打算之后有时间重新来一次，个人能力的话…我想想,欠缺的很多啊…</p>
+<hr>
+<p>(3) 畅想未来</p>
+<p>对照材料中前人的经历，你还准备从事计算机这个行业吗？</p>
+<p>未来的事情谁都说不定，但是目前是这样打算的。</p>
+<p>你认为与其它专业的同学相比，你的优势都有哪些？</p>
+<p>个人有个人努力的方向，朝着自己喜欢的方向前进就好了。</p>
+<p>对已经不远的将来，你的职涯规划是什么？</p>
+<p>有打算成为一名Computer Graphic Programmer。</p>
+<hr>
+<p>自嘲一般</p>
+]]></content>
+      <categories>
+        <category>手记</category>
+      </categories>
+      <tags>
+        <tag>手记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>色彩之路的两个选择</title>
     <url>/2021/01/21/%E8%89%B2%E5%BD%A9%E4%B9%8B%E8%B7%AF%E7%9A%84%E4%B8%A4%E4%B8%AA%E9%80%89%E6%8B%A9/</url>
     <content><![CDATA[]]></content>
@@ -324,6 +561,7 @@
 <tr>
 <td>RSS  Feed Demon mozilla thunder</td>
 <td>数学 MathType 7 Mathpix Snipping Tool Axmath</td>
+<td>MobaXterm</td>
 </tr>
 </tbody>
 </table>
@@ -506,6 +744,7 @@
 <p>-动画/模拟(Animation / Simulation)</p>
 <h2 id="光栅化-Rasterization"><a href="#光栅化-Rasterization" class="headerlink" title="光栅化(Rasterization)"></a>光栅化(Rasterization)</h2><p>课外补充:</p>
 <p>光栅化就是把矢量图形转化成像素点儿的过程。我们屏幕上显示的画面都是由像素组成，而三维物体都是点线面构成的。要让点线面，变成能在屏幕上显示的像素，就需要Rasterize这个过程。就是从矢量的点线面的描述，变成像素的描述，这个过程就是Rasterize。</p>
+<p>有点像是模拟信号转化为数字信号的过程，路由器？</p>
 <p><img src="/images/Games101/image-20201110105739804.png" alt="image-20201110105739804"></p>
 <p><img src="/images/Games101/image-20201110105754703.png" alt="image-20201110105754703"></p>
 <h2 id="曲线和网格-Curves-and-Meshes"><a href="#曲线和网格-Curves-and-Meshes" class="headerlink" title="曲线和网格(Curves and Meshes)"></a>曲线和网格(Curves and Meshes)</h2><p>如何在计算机中表示曲面与曲线</p>
@@ -766,8 +1005,8 @@
         <category>拓扑学</category>
       </categories>
       <tags>
-        <tag>拓扑</tag>
         <tag>连续</tag>
+        <tag>拓扑</tag>
       </tags>
   </entry>
   <entry>
@@ -824,8 +1063,8 @@
         <category>拓扑学</category>
       </categories>
       <tags>
-        <tag>欧拉</tag>
         <tag>拓扑</tag>
+        <tag>欧拉</tag>
       </tags>
   </entry>
   <entry>
@@ -1233,8 +1472,8 @@
         <category>共形几何</category>
       </categories>
       <tags>
-        <tag>共形几何</tag>
         <tag>笔记</tag>
+        <tag>共形几何</tag>
         <tag>微分流形</tag>
       </tags>
   </entry>
@@ -1318,8 +1557,8 @@
         <category>共形几何</category>
       </categories>
       <tags>
-        <tag>共形几何</tag>
         <tag>笔记</tag>
+        <tag>共形几何</tag>
       </tags>
   </entry>
   <entry>
@@ -1448,8 +1687,8 @@
         <category>共形几何</category>
       </categories>
       <tags>
-        <tag>共形几何</tag>
         <tag>笔记</tag>
+        <tag>共形几何</tag>
       </tags>
   </entry>
   <entry>
@@ -1605,8 +1844,8 @@
         <category>共形几何</category>
       </categories>
       <tags>
-        <tag>共形几何</tag>
         <tag>笔记</tag>
+        <tag>共形几何</tag>
       </tags>
   </entry>
   <entry>
@@ -1822,13 +2061,17 @@
   <entry>
     <title>Unity Shader学习笔记-1-一个最简单的顶点/片元着色器</title>
     <url>/2020/02/05/Unity-Shader%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1-%E4%B8%80%E4%B8%AA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E9%A1%B6%E7%82%B9-%E7%89%87%E5%85%83%E7%9D%80%E8%89%B2%E5%99%A8/</url>
-    <content><![CDATA[<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Shader <span class="string">"Custom/Chapter5-SimpleShader"</span> &#123;</span><br><span class="line"></span><br><span class="line">    SubShader &#123;</span><br><span class="line">        Pass&#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 两条非常重要的编译指令</span></span><br><span class="line">            <span class="meta">#<span class="meta-keyword">pragma</span> vertex vert <span class="comment">// 定点着色器</span></span></span><br><span class="line">            <span class="meta">#<span class="meta-keyword">pragma</span> fragment frag <span class="comment">// 片元着色器</span></span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 这一步是把顶点坐标从模型空间转换到裁剪空间</span></span><br><span class="line">            float4 vert(float4 v : POSITION) : SV_POSITION &#123;</span><br><span class="line">                <span class="keyword">return</span> mul(UNITY_MATRIX_MVP, v);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            fixed4 frag() : SV_Target&#123;</span><br><span class="line">                <span class="keyword">return</span> fixed4(<span class="number">1.0</span>,<span class="number">1.0</span>,<span class="number">1.0</span>,<span class="number">1.0</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h1 id="Chapter5-SimpleShader-BaseShader"><a href="#Chapter5-SimpleShader-BaseShader" class="headerlink" title="Chapter5-SimpleShader-BaseShader"></a>Chapter5-SimpleShader-BaseShader</h1><p>SV_POSITION SV_前缀的变量代表system value SV_POSTION一旦被作为vertex shader的输出,那么这个最终的顶点位置就被固定了(不能tensellate），直接进入光栅化处理。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Shader <span class="string">"Custom/Chapter5-SimpleShader"</span> &#123;</span><br><span class="line"></span><br><span class="line">    SubShader &#123;</span><br><span class="line">        Pass&#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 两条非常重要的编译指令</span></span><br><span class="line">            <span class="meta">#<span class="meta-keyword">pragma</span> vertex vert <span class="comment">// 顶点着色器的名字 指明那个是顶点着色器</span></span></span><br><span class="line">            <span class="meta">#<span class="meta-keyword">pragma</span> fragment frag <span class="comment">// 片元着色器</span></span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 这一步是把顶点坐标从模型空间转换到裁剪空间</span></span><br><span class="line">            float4 vert(float4 v : POSITION) : SV_POSITION &#123;//裁剪空间坐标</span><br><span class="line">                <span class="keyword">return</span> mul(UNITY_MATRIX_MVP, v);<span class="comment">//MVP 是指Model模型 View观察(摄像机) Projection投影</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            fixed4 frag() : SV_Target&#123;</span><br><span class="line">                <span class="keyword">return</span> fixed4(<span class="number">1.0</span>,<span class="number">1.0</span>,<span class="number">1.0</span>,<span class="number">1.0</span>);<span class="comment">//白色 每个输出的顶点都会执行一次</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <ol>
 <li>vert , 顶点着色器代码, 逐顶点执行, 函数的输入 v 包含了这个顶点的位置, 返回值是该顶点在模型空间中的位置, POSITION : 把模型的顶点坐标填充到输入参数中, SV_POSITION : 顶点着色器的输出是裁剪空间中的顶点坐标</li>
 <li>frag , SV_Target : 把用户的输出颜色存储到一个渲染目标中, 这里将输出到默认的帧缓存中, 片元着色器输出的颜色的每个分量范围是[0,1].</li>
 </ol>
 </blockquote>
+<h1 id="Chapter-5-Simple-Shader"><a href="#Chapter-5-Simple-Shader" class="headerlink" title="Chapter 5/Simple Shader"></a>Chapter 5/Simple Shader</h1><p>加入模型数据</p>
+<p>材质的Mesh Render组件提供POSITION, TANGENT, NORMAL数据,在每帧调用Draw Call的时候, Mesh Render组件会把它负责渲染的模型数据发送给Unity Shader.</p>
+<figure class="highlight glsl"><table><tr><td class="code"><pre><span class="line">Shader "Unity Shaders Book/Chapter 5/Simple Shader" &#123;</span><br><span class="line">	Properties &#123;</span><br><span class="line">		_Color ("Color Tint", Color) = (1, 1, 1, 1)</span><br><span class="line">	&#125;</span><br><span class="line">	SubShader &#123;</span><br><span class="line">        Pass &#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line"></span><br><span class="line">            <span class="meta">#pragma vertex vert</span></span><br><span class="line">            <span class="meta">#pragma fragment frag</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">uniform</span> fixed4 _Color;</span><br><span class="line"></span><br><span class="line">			struct a2v &#123;<span class="comment">//Application to vertex shader 应用阶段到顶点着色器</span></span><br><span class="line">             	float4 vertex   : POSITION;</span><br><span class="line">			   float3 normal   : NORMAL;</span><br><span class="line">			   float4 texcoord : TEXCOORD0;</span><br><span class="line">            &#125;;</span><br><span class="line">            </span><br><span class="line">                </span><br><span class="line">            struct v2f &#123;</span><br><span class="line">                float4 pos : SV_POSITION;</span><br><span class="line">                fixed3 color : COLOR0;</span><br><span class="line">            &#125;;</span><br><span class="line">            </span><br><span class="line">            v2f vert(a2v v) &#123;</span><br><span class="line">            	v2f o;</span><br><span class="line">            	o.pos = mul(UNITY_MATRIX_MVP, v.vertex);</span><br><span class="line">            	o.color = v.normal * <span class="number">0.5</span> + fixed3(<span class="number">0.5</span>, <span class="number">0.5</span>, <span class="number">0.5</span>);</span><br><span class="line">                <span class="keyword">return</span> o;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            fixed4 frag(v2f i) : SV_Target &#123;</span><br><span class="line">            	fixed3 c = i.color;</span><br><span class="line">            	c *= _Color.rgb;</span><br><span class="line">                <span class="keyword">return</span> fixed4(c, <span class="number">1.0</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Unity Shader</category>
@@ -2019,9 +2262,9 @@
       </categories>
       <tags>
         <tag>图形界面</tag>
-        <tag>WxWidgets</tag>
         <tag>GUI</tag>
         <tag>C++</tag>
+        <tag>WxWidgets</tag>
         <tag>MakeFile</tag>
       </tags>
   </entry>
@@ -2065,9 +2308,9 @@
       </categories>
       <tags>
         <tag>图形界面</tag>
-        <tag>WxWidgets</tag>
         <tag>GUI</tag>
         <tag>C++</tag>
+        <tag>WxWidgets</tag>
         <tag>Codeblocks</tag>
       </tags>
   </entry>
@@ -2133,10 +2376,10 @@
       </categories>
       <tags>
         <tag>图形界面</tag>
-        <tag>WxWidgets</tag>
         <tag>GUI</tag>
         <tag>C++</tag>
         <tag>VisualStudio</tag>
+        <tag>WxWidgets</tag>
       </tags>
   </entry>
   <entry>
@@ -2495,10 +2738,10 @@
       </categories>
       <tags>
         <tag>图形界面</tag>
-        <tag>WxWidgets</tag>
         <tag>GUI</tag>
         <tag>C++</tag>
         <tag>VisualStudio</tag>
+        <tag>WxWidgets</tag>
       </tags>
   </entry>
   <entry>
@@ -2539,10 +2782,10 @@
       </categories>
       <tags>
         <tag>图形界面</tag>
-        <tag>WxWidgets</tag>
         <tag>GUI</tag>
         <tag>C++</tag>
         <tag>VisualStudio</tag>
+        <tag>WxWidgets</tag>
       </tags>
   </entry>
   <entry>
@@ -2593,9 +2836,9 @@
         <category>光线跟踪</category>
       </categories>
       <tags>
+        <tag>Qt</tag>
         <tag>GUI</tag>
         <tag>VisualStudio</tag>
-        <tag>Qt</tag>
         <tag>程序设计</tag>
         <tag>WxWidget</tag>
         <tag>Codeblock</tag>
@@ -2639,10 +2882,10 @@
       </categories>
       <tags>
         <tag>图形界面</tag>
+        <tag>Qt</tag>
         <tag>GUI</tag>
         <tag>C++</tag>
         <tag>VisualStudio</tag>
-        <tag>Qt</tag>
         <tag>QDialog</tag>
       </tags>
   </entry>
@@ -2669,10 +2912,10 @@
       </categories>
       <tags>
         <tag>图形界面</tag>
+        <tag>Qt</tag>
         <tag>GUI</tag>
         <tag>C++</tag>
         <tag>VisualStudio</tag>
-        <tag>Qt</tag>
       </tags>
   </entry>
   <entry>
@@ -2697,9 +2940,9 @@
       </categories>
       <tags>
         <tag>图形界面</tag>
+        <tag>Qt</tag>
         <tag>GUI</tag>
         <tag>C++</tag>
-        <tag>Qt</tag>
         <tag>QMenu</tag>
       </tags>
   </entry>
@@ -2726,9 +2969,9 @@
       </categories>
       <tags>
         <tag>图形界面</tag>
+        <tag>Qt</tag>
         <tag>GUI</tag>
         <tag>C++</tag>
-        <tag>Qt</tag>
         <tag>QMessageBox</tag>
       </tags>
   </entry>
@@ -2744,9 +2987,9 @@
       </categories>
       <tags>
         <tag>图形界面</tag>
+        <tag>Qt</tag>
         <tag>GUI</tag>
         <tag>C++</tag>
-        <tag>Qt</tag>
         <tag>QtParent</tag>
       </tags>
   </entry>
@@ -2818,9 +3061,9 @@
       </categories>
       <tags>
         <tag>图形界面</tag>
+        <tag>Qt</tag>
         <tag>GUI</tag>
         <tag>C++</tag>
-        <tag>Qt</tag>
         <tag>QFileDialog</tag>
       </tags>
   </entry>
@@ -2856,9 +3099,9 @@
       </categories>
       <tags>
         <tag>图形界面</tag>
+        <tag>Qt</tag>
         <tag>GUI</tag>
         <tag>C++</tag>
-        <tag>Qt</tag>
         <tag>QstatusBar</tag>
       </tags>
   </entry>

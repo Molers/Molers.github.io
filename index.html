@@ -164,6 +164,685 @@
   
   
   <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/30/pbrt-v3-第一章介绍/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/30/pbrt-v3-第一章介绍/" class="post-title-link" itemprop="url">pbrt-v3-第一章介绍</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-06-30 16:25:10 / 修改时间：16:37:02" itemprop="dateCreated datePublished" datetime="2021-06-30T16:25:10+08:00">2021-06-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/图形学基础/" itemprop="url" rel="index"><span itemprop="name">图形学基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>虽然基于物理的方法似乎是最明显的渲染方法，但它只是在过去10年左右的实践中才被广泛采用。本章末尾的第1.7节简要介绍了基于物理的渲染，以及它最近被用于电影的离线渲染和游戏的交互式渲染。</p>
+<p>pbrt，一个基于<strong>光线追踪算法</strong>的<strong>物理</strong>渲染系统。</p>
+<blockquote>
+<p>也就是有着并非基于光线追踪的物理渲染系统和不是基于物理的方法，比如phong是基于经验的渲染模型</p>
+</blockquote>
+<h1 id="真实感渲染"><a href="#真实感渲染" class="headerlink" title="真实感渲染"></a>真实感渲染</h1><p>几乎所有逼真的渲染系统都基于光线追踪算法。</p>
+<p>光线跟踪器系统需要模拟的对象:</p>
+<ul>
+<li>摄像机<em>Cameras</em></li>
+<li>射线与物体的交点<em>Ray–object intersections</em></li>
+<li>光源<em>Light sources:</em></li>
+<li>可见性<em>Visibility:</em> </li>
+<li>表面散射<em>Surface scattering</em></li>
+<li>间接光传输Indirect light transport</li>
+<li>射线传播Ray propagation </li>
+</ul>
+<blockquote>
+<p>我们需要知道当光沿着射线穿过空间时发生了什么。如果我们在真空中渲染一个场景，光能量沿一条射线保持恒定。虽然真正的真空在地球上并不常见，但对于许多环境来说，它们都是一个合理的近似。更复杂的模型可用来追踪通过雾、烟、地球大气层等的光线。</p>
+</blockquote>
+<h1 id="摄像机Cameras"><a href="#摄像机Cameras" class="headerlink" title="摄像机Cameras"></a>摄像机<em>Cameras</em></h1><p><img src="/images/image-20210630163655683.png" alt="image-20210630163655683"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/30/图形学基础-漫反射，高光，环境光/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/30/图形学基础-漫反射，高光，环境光/" class="post-title-link" itemprop="url">图形学基础-漫反射，高光，环境光</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-06-30 15:52:48 / 修改时间：15:58:08" itemprop="dateCreated datePublished" datetime="2021-06-30T15:52:48+08:00">2021-06-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/图形学基础/" itemprop="url" rel="index"><span itemprop="name">图形学基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="光的能量衰减"><a href="#光的能量衰减" class="headerlink" title="光的能量衰减"></a>光的能量衰减</h1><p><img src="/images/image-20210630155513283.png" alt="image-20210630155513283"></p>
+<h1 id="漫反射计算公式"><a href="#漫反射计算公式" class="headerlink" title="漫反射计算公式"></a>漫反射计算公式</h1><p><img src="/images/image-20210630155610575.png" alt="image-20210630155610575"></p>
+<h1 id="高光：观测所得，观测方向接近反射方向"><a href="#高光：观测所得，观测方向接近反射方向" class="headerlink" title="高光：观测所得，观测方向接近反射方向"></a>高光：观测所得，观测方向接近反射方向</h1><p>半程向量h接近于法线方向也是  点乘（两个向量点乘为1的时候接近）越大，说明夹角越小（反射光越接近光的颜色） </p>
+<p><img src="/images/image-20210630155637670.png" alt="image-20210630155637670"></p>
+<p>这里指数p一般在100到200，因为高光只有一点点 </p>
+<p><img src="/images/image-20210630155650578.png" alt="image-20210630155650578"></p>
+<h1 id="环境光"><a href="#环境光" class="headerlink" title="环境光"></a>环境光</h1><p>简化为环境光都是一样的，即 </p>
+<p><img src="/images/image-20210630155718178.png" alt="image-20210630155718178"></p>
+<h1 id="Blinn-Phong光照模型"><a href="#Blinn-Phong光照模型" class="headerlink" title="Blinn-Phong光照模型"></a>Blinn-Phong光照模型</h1><p>就在在每个像素上把环境光，漫反射，高光加起来 </p>
+<p><img src="/images/image-20210630155803989.png" alt="image-20210630155803989"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/30/图形学基础-Phong和Blinn-Phong光照模型/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/30/图形学基础-Phong和Blinn-Phong光照模型/" class="post-title-link" itemprop="url">图形学基础-Phong和Blinn-Phong光照模型</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-06-30 11:33:52 / 修改时间：15:43:46" itemprop="dateCreated datePublished" datetime="2021-06-30T11:33:52+08:00">2021-06-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/图形学基础/" itemprop="url" rel="index"><span itemprop="name">图形学基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Phong和Blinn-Phong光照模型都是<strong>基于经验的渲染模型</strong>，都是高光反射模型</p>
+<p>Blinn-Phong 光照模型，又称为 Blinn-phong 反射模型（Blinn–Phong reflection model）或者 phong 修正模型（modified Phong reflection model），是由 Jim Blinn于 1977 年在文章“Models of light reflection for computer synthesized pictures”中对传统 phong 光照模型基础上进行修改提出的。</p>
+<p>和传统 phong 光照模型相比，Blinn-phong 光照模型混合了 Lambert 的漫射部分和标准的高光，渲染效果有时比 Phong 高光更柔和、更平滑，此外它在速度上相当快，因此成为许多 CG 软件中的默认光照渲染方法。此外它也集成在了大多数图形芯片中，用以产生实时快速的渲染。在 OpenGL 和 Direct3D 渲染管线中， Blinn-Phong 就是默认的渲染模型。</p>
+<h2 id="Phong不能处理的情况"><a href="#Phong不能处理的情况" class="headerlink" title="Phong不能处理的情况"></a>Phong不能处理的情况</h2><p>Phong模型在计算镜面光系数为:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span>   specFactor = <span class="built_in">pow</span>(max(dot(reflectDir, viewDir), <span class="number">0.0</span>), <span class="number">32</span>); <span class="comment">// 32为镜面高光系数</span></span><br><span class="line"><span class="comment">//其中viewDir是相机坐标和物体坐标之差，reflectDir是光照方向与物体法向的反射，如下图所示：</span></span><br></pre></td></tr></table></figure>
+<p>高光发射的值由 反射向量和观察向量决定. 当两者的夹角θ超过90时，截断为0.0.就没有高光反射分量了.因此Phong模型能处理的是下面的左图中(θ≤90)的情况,而对于右图中(θ&gt;90)的情况则镜面光成分计算为0.</p>
+<p>但是这种计算方式有一个问题，如右图所示：当相机和光照处于同一侧时，此时得到的反射向量reflectDir和视角的方向viewDir的夹角已经大于90度，因此通过dot计算得出的值为负数。表现在渲染结果中就是当相机转到某个角度的时候，高光反射会突然消失，显得很不自然：为了解决这个问题，James F.Blinn与1977年提出了Phong模型的改进算法：Blinn-Phong光照算法。该算法相比于Phong增加了HalfDir的概念</p>
+<p><img src="/images/20190420204310459.png" alt="在这里插入图片描述"></p>
+<p>而右图的这种情况实际上是存在的，将镜面光成分取为0，没有很好地体现实际光照情况。</p>
+<h2 id="Blinn-Phong"><a href="#Blinn-Phong" class="headerlink" title="Blinn-Phong"></a>Blinn-Phong</h2><p><img src="/images/20190420204343287.png" alt="在这里插入图片描述"></p>
+<p><strong>Blinn-Phong模型不再依赖于反射向量</strong>，而是采用了所谓的 <strong>半程向量(Halfway Vector)</strong>，即光线与视线夹角一半方向上的一个单位向量。当半程向量与法线向量越接近时，镜面光分量就越大。</p>
+<p><img src="/images/1332963-20180706004448932-420024011.png" alt="img"></p>
+<p>HalfDir是光照方向和视角方向的相加并归一化，最终比较的是它和normal的夹角。因为HalfDir和normal的夹角永远不会高于90度，因此不用担心dot值出现负数的情况。计算代码如下所示：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vec3 lightDir = normalize(lightPos - FragPos); </span><br><span class="line">vec3 viewDir = normalize(viewPos - FragPos);</span><br><span class="line">vec3 halfwayDir = normalize(lightDir + viewDir);</span><br><span class="line"><span class="keyword">float</span> spec = <span class="built_in">pow</span>(max(dot(normal, halfwayDir), <span class="number">0.0</span>), shininess);</span><br></pre></td></tr></table></figure>
+<p><img src="/images/20190420204433405.png" alt="在这里插入图片描述"> </p>
+<blockquote>
+<p>半角向量计算公式</p>
+</blockquote>
+<p><strong>当观察向量与反射向量越接近，那么半角向量与法向量N越接近，观察者看到的镜面光成分越强。</strong></p>
+<hr>
+<blockquote>
+<p>Blinn-Phong： ambientColor + diffColor<em>max(0,dot(n,l)) + specColor</em>max(0,dot(n,h))*shininess</p>
+</blockquote>
+<p>N：表面法向量</p>
+<p>H：光入射方向L和视点方向V的中间向量</p>
+<p>Shininess：高光系数</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/04/09/曼昆微观经济学笔记1-经济学十大原理/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/09/曼昆微观经济学笔记1-经济学十大原理/" class="post-title-link" itemprop="url">曼昆微观经济学笔记1-经济学十大原理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-04-09 20:35:14" itemprop="dateCreated datePublished" datetime="2021-04-09T20:35:14+08:00">2021-04-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-11 19:14:55" itemprop="dateModified" datetime="2021-04-11T19:14:55+08:00">2021-04-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/经济学/" itemprop="url" rel="index"><span itemprop="name">经济学</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="稀缺"><a href="#稀缺" class="headerlink" title="稀缺"></a>稀缺</h1><p>社会资源的管理非常重要，这是因为资源是稀缺的。稀缺（scarcity）是说社会的资源是有限的，从而无法生产出人们想要的所有商品和服务。</p>
+<h1 id="经济学"><a href="#经济学" class="headerlink" title="经济学"></a>经济学</h1><p>经济学 （Economics）研究的是社会如何管理它的稀缺资源。</p>
+<h1 id="原理-1：人们面临权衡"><a href="#原理-1：人们面临权衡" class="headerlink" title="原理 1：人们面临权衡"></a>原理 1：人们面临权衡</h1><h2 id="国防-与消费品"><a href="#国防-与消费品" class="headerlink" title="国防 与消费品"></a>国防 与消费品</h2><p>大炮用于保护自己的海岸不受外敌侵略，而黄油则可用于提高国内生活水平。一个社会在国防（大炮）上的花费越多，在消费品（黄油）上的花费就越少。</p>
+<h2 id="清洁环境和高收入水平"><a href="#清洁环境和高收入水平" class="headerlink" title="清洁环境和高收入水平"></a>清洁环境和高收入水平</h2><p>如果法律规定企业减少污染，企业生产商品和服务的成本就会增加。生产成本增加的后果是企业利润减少、工资降低、商品价格提高，或者是这些后果中的几种同时出现。</p>
+<p>污染管制的收益是更清洁的环境和由此导致的更高健康水平，</p>
+<p>污染管制的成本是使受管制企业的企业主、员工和消费者的收入减少。</p>
+<h2 id="效率和平等"><a href="#效率和平等" class="headerlink" title="效率和平等"></a>效率和平等</h2><p>社会面对的另一种权衡是效率和平等之间的取舍。</p>
+<p>效率（efficiency）是指社会从它的稀缺资源中获得最大收益。</p>
+<p>平等（equality）是说这些收益在社会成员之间平均分配。</p>
+<p>效率是指经济馅饼的大小，而公平是指如何将这个馅饼分成各个小块。</p>
+<h3 id="效率-饼的大小"><a href="#效率-饼的大小" class="headerlink" title="效率 饼的大小"></a>效率 饼的大小</h3><h3 id="公平-饼的分配"><a href="#公平-饼的分配" class="headerlink" title="公平 饼的分配"></a>公平 饼的分配</h3><p>当政府制定政策时，这两个目标通常是冲突的。例如，很多政策的目标是使经济财富分配更公平：其中的一些政策例如福利体系或失业保险的目的，是帮助最需要帮助的社会成员；</p>
+<p>个人所得税，要求财务成功人士比其他人缴纳更高的税。这些政策在实现更高公平性时的同时，降低了效率。</p>
+<p>当政府将收入从富人那里再分配给穷人时，这种政策减少了努力工作的回报；结果，人们工作得更少，商品和服务生产量减少。换句话说，当政府试图将经济馅饼切得更平均些时，馅饼本身变小了。</p>
+<h1 id="原理-2：某事的成本是为了得到它而放弃的其他东西"><a href="#原理-2：某事的成本是为了得到它而放弃的其他东西" class="headerlink" title="原理 2：某事的成本是为了得到它而放弃的其他东西"></a>原理 2：某事的成本是为了得到它而放弃的其他东西</h1><p>机会成本（opportunity cost）：某事的机会成本是为了得到它而放弃的其他 事的机会成本是为了得到它而放弃的其他 </p>
+<p>上大学的主要收益是智力水平的提高和一生都有更好的工作机会。</p>
+<p>上大学的成本</p>
+<p>时间成本。当你花费一年时间来听课、读书和写论文时，你就不能将这些时间用于工作。对于绝大部分学生来说，因上学而放弃的工作收入是教育的最大单项成本。</p>
+<p>机会成本。中的某些运动员知道自己上大学的机会成本很大，因为如果他们退学而去打职业比赛的话，能赚几百万元。所以，他们通常判定上大学的收益远小于其机会成本从而退学，这并不奇怪</p>
+<h1 id="边际收益和边际成本"><a href="#边际收益和边际成本" class="headerlink" title="边际收益和边际成本"></a>边际收益和边际成本</h1><p>现企业<br>为使利润最大化，它要决定雇佣工人数量以及决定生产和销售产品数量。你也会发现个人为<br>实现最高水平的满足程度，他要决定工作时间的长短，以及决定使用工作收入购买哪些商品<br>和服务。</p>
+<p>生活中的决策通常不是黑与白之间的选择，而是涉及灰色地带。吃午饭时，<br>你面对的决策不是一口不吃和大吃特吃之间的选择，而为是否再吃一口土豆泥。当考试临近<br>时，你的决策不是一点也不学和一天学 24 小时之间的选择，而是是否再多温习一小时的笔<br>记而不是看电视。经济学家使用术语边际（上的）变动（marginal change）来表示对某个<br>已存在方案的微小增量的调整。记住，边际边际边际边际（margin）表示“边缘”（edge）。因此，边际变<br>动表示在你所做事情的边缘处所做的微小调整。理性人在决策时通常要比较边际收益 边际收益<br>（marginal benefits）和边际成本 边际成本（marginal costs）。</p>
+<p>每位乘客的平均成本 平均成本 ．．．．（average cost）为 500 元，但增加一位乘客带来<br>的成本即边际成本 边际成本 ．．．．（marginal cost）仅为该乘客消费的一袋花生米和一罐苏打水的费用（航<br>空公司为每位乘客免费提供）。只要这样的乘客支付的价格大于边际成本，卖票给他对于航<br>空公司来说是有利可图的。</p>
+<h1 id="原理-4：人们对激励作出反应"><a href="#原理-4：人们对激励作出反应" class="headerlink" title="原理 4：人们对激励作出反应"></a>原理 4：人们对激励作出反应</h1><p>当苹果的价格上涨，人们决定少吃一些苹<br>果。与此同时，果园决定多雇佣一些工人、多摘一些苹果。换句话说，市场中某商品的较高<br>价格激励买方少消费、激励卖方多生产。我们将看到，价格对消费者和生产者行为的影响，<br>对于市场经济如何分配稀缺资源非常关键。</p>
+<p>公共政策制定者应该牢记激励做法：很多政策改变了人们面对的成本或收益，从而改变<br>了他们的行为。例如，对汽油消费征税鼓励人们购买更小、更节能的汽车。这是欧洲人开小<br>型汽车的原因之一，这是由于欧洲的汽油税税率较高而美国较低。汽油税也可以鼓励人们拼<br>车、坐公交以及住在工作地点附近。如果税率进一步提高，很多人将驾驶使用混合能源的汽<br>车，如果税率非常高，人们将转而购买电动汽车。</p>
+<p>政府出手的原因有两大类：促进效率或促进平等。也就是说大多数政策的目的，要么是扩大经济馅饼要么是改变馅饼的分割方法。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/04/06/Qt学习笔记-VisualStudio插件自动更新问题/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/06/Qt学习笔记-VisualStudio插件自动更新问题/" class="post-title-link" itemprop="url">Qt学习笔记-VisualStudio插件自动更新问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-04-06 09:45:50 / 修改时间：09:47:03" itemprop="dateCreated datePublished" datetime="2021-04-06T09:45:50+08:00">2021-04-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Qt图形化界面学习/" itemprop="url" rel="index"><span itemprop="name">Qt图形化界面学习</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>ERROR MSB4181 QtRunwork 返回了false，但未记录错误</strong></p>
+<p><strong>问题原因</strong>：Qt扩展版本自动更新，而新的Qt并不兼容；</p>
+<p><strong>解决方法</strong>：VS上方扩展 —&gt; 管理扩展 —&gt;卸载当前的Qt插件，再重新安装之前的Qt插件，记得<strong>关闭自动更新</strong>，以防再次出现同样的问题。</p>
+<p><a href="https://download.qt.io/official_releases/vsaddin/2.7.1/" target="_blank" rel="noopener">https://download.qt.io/official_releases/vsaddin/2.7.1/</a></p>
+<p>所以我才不想用QT这种傻逼GUI</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/23/绘画笔记-V大课程笔记-①-第一周-简介-认知与方法论-结构及人工网格/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/23/绘画笔记-V大课程笔记-①-第一周-简介-认知与方法论-结构及人工网格/" class="post-title-link" itemprop="url">绘画笔记-V大课程笔记-① 第一周 简介 认知与方法论 结构及人工网格</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-23 12:25:17 / 修改时间：12:27:03" itemprop="dateCreated datePublished" datetime="2021-02-23T12:25:17+08:00">2021-02-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/V大课程笔记/" itemprop="url" rel="index"><span itemprop="name">V大课程笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>基本几何体</strong> </p>
+<p><strong>最大转折</strong>:褶皱这类的概括使用最大转折来概括</p>
+<p><strong>形成方式:截面</strong></p>
+<p>1.结构</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/09/michael-hampton视频学习笔记/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/09/michael-hampton视频学习笔记/" class="post-title-link" itemprop="url">michael hampton视频学习笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-09 23:21:40" itemprop="dateCreated datePublished" datetime="2021-02-09T23:21:40+08:00">2021-02-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-10 01:40:34" itemprop="dateModified" datetime="2021-02-10T01:40:34+08:00">2021-02-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/绘画笔记/" itemprop="url" rel="index"><span itemprop="name">绘画笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/06/手记-可笑的畅想未来/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Molers">
+      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/06/手记-可笑的畅想未来/" class="post-title-link" itemprop="url">手记-可笑的畅想未来</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-06 17:23:13 / 修改时间：17:27:04" itemprop="dateCreated datePublished" datetime="2021-02-06T17:23:13+08:00">2021-02-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/手记/" itemprop="url" rel="index"><span itemprop="name">手记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre><code>く__,.ヘヽ.　　　　/　,ー､ 〉
+　　　　　＼ &apos;, !-─‐-i　/　/´
+　　　 　 ／｀ｰ&apos;　　　 L/／｀ヽ､           
+　　 　 /　 ／,　 /|　 ,　 ,　　　 &apos;,                                 
+　　　ｲ 　/ /-‐/　ｉ　L_ ﾊ ヽ!　 i                   
+　　　 ﾚ ﾍ 7ｲ｀ﾄ　 ﾚ&apos;ｧ-ﾄ､!ハ|　 |  
+　　　　 !,/7 &apos;0&apos;　　 ´0iソ| 　 |　　　
+　　　　 |.从&quot;　　_　　 ,,,, / |./ 　 |           
+　　　　 ﾚ&apos;| i＞.､,,__　_,.イ / 　.i 　|                   
+　　　　　 ﾚ&apos;| | / k_７_/ﾚ&apos;ヽ,　ﾊ.　|           
+　　　　　　 | |/i 〈|/　 i　,.ﾍ |　i　| 
+　　　　　　.|/ /　ｉ： 　 ﾍ!　　＼　|          
+　　　 　 　 kヽ&gt;､ﾊ 　 _,.ﾍ､ 　 /､!           
+　　　　　　 !&apos;〈//｀Ｔ´&apos;, ＼ ｀&apos;7&apos;ｰr&apos;          
+　　　　　　 ﾚ&apos;ヽL__|___i,___,ンﾚ|ノ
+　　　　　 　　　ﾄ-,/　|___./
+　　　　　 　　　&apos;ｰ&apos;　　!_,.:
+</code></pre><p>(1) 回顾你过去将近3年的学习经历</p>
+<p>当初你报考的时候，是真正喜欢计算机这个专业吗？</p>
+<p>并非如此，当时只是对其他的专业无感，没有太多的兴趣。</p>
+<p>你现在后悔选择了这个专业吗？</p>
+<p>并不后悔，当初填报志愿的时候选择了很多专业，最后觉得还是计算机比较适合，感觉几年前的自己对专业的理解太过狭隘，如今找到了自己想努力的方向还是非常开心的。</p>
+<p>你认为你现在最喜欢的领域是什么（可以是计算机的也可以是其它领域）？</p>
+<p>计算机图形学与3D技术，爱好绘画，热爱动漫文化。</p>
+<hr>
+<p>(2) 总结你现在已经掌握的知识</p>
+<p>你都具备了那些专业知识和能力？</p>
+<p>分析小问题和解决小问题，阅读文档，搜索资料，越是深入越觉得知识深似海底，自己不过是窥见了冰山一角，还有很多知识需要学习，列如UE4,Blender等3维软件的一些文档我如今还没看完。</p>
+<p>你认为你已经为成为一个合格的计算机软件工程是做好准备了吗？</p>
+<p>严格来说，思想准备倒是一直有，只不过目前深感技术和知识上的欠缺需要时间去弥补</p>
+<p>在专业技术、个人能力以及其它方面你还有那些欠缺？</p>
+<p>目前主要是阅读书籍和文档以及源代码，专业技术可能学的不太系统，打算之后有时间重新来一次，个人能力的话…我想想,欠缺的很多啊…</p>
+<hr>
+<p>(3) 畅想未来</p>
+<p>对照材料中前人的经历，你还准备从事计算机这个行业吗？</p>
+<p>未来的事情谁都说不定，但是目前是这样打算的。</p>
+<p>你认为与其它专业的同学相比，你的优势都有哪些？</p>
+<p>个人有个人努力的方向，朝着自己喜欢的方向前进就好了。</p>
+<p>对已经不远的将来，你的职涯规划是什么？</p>
+<p>有打算成为一名Computer Graphic Programmer。</p>
+<hr>
+<p>自嘲一般</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/21/色彩之路的两个选择/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -307,917 +986,10 @@
   
   
 
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/21/绘画笔记-厚涂/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/01/21/绘画笔记-厚涂/" class="post-title-link" itemprop="url">绘画笔记-厚涂就是赛璐璐</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-01-21 15:27:18 / 修改时间：16:16:57" itemprop="dateCreated datePublished" datetime="2021-01-21T15:27:18+08:00">2021-01-21</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/绘画笔记/" itemprop="url" rel="index"><span itemprop="name">绘画笔记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>先给出两个公式:厚涂公式和渐变公式</p>
-<h1 id="赛璐璐-弱对比-厚涂"><a href="#赛璐璐-弱对比-厚涂" class="headerlink" title="赛璐璐+弱对比=厚涂"></a>赛璐璐+弱对比=厚涂</h1><h1 id="渐变-弱对比面的衔接"><a href="#渐变-弱对比面的衔接" class="headerlink" title="渐变=弱对比面的衔接"></a>渐变=弱对比面的衔接</h1><h1 id="赛璐璐"><a href="#赛璐璐" class="headerlink" title="赛璐璐"></a>赛璐璐</h1><p><img src="/images/huihuabiji/image-20210121153048862.png" alt="image-20210121153048862"></p>
-<p>画师:米山舞</p>
-<h1 id="厚涂"><a href="#厚涂" class="headerlink" title="厚涂"></a>厚涂</h1><p><img src="/images/huihuabiji/image-20210121153127923.png" alt="image-20210121153127923"></p>
-<p>画师:HJL</p>
-<p><img src="/images/huihuabiji/image-20210121161645501.png" alt="image-20210121161645501"></p>
-<h1 id="弱对比"><a href="#弱对比" class="headerlink" title="弱对比"></a>弱对比</h1><p>按不科学的分类法，绘画似乎分为两个流派，分别是厚涂和赛璐璐，不过K在教导学生的时候明确指出厚涂就是赛璐璐。</p>
-<p><img src="/images/huihuabiji/image-20210121153312540.png" alt="image-20210121153312540"></p>
-<p>K大的解释是 <strong>1.二分切出一个比较明显的光影块面（赛璐璐） 2.在明和暗中各自进行弱对比的塑造(厚涂)</strong> ，那么如果封印喷枪使用硬色块来画的话，其边缘就会变得全是硬边，画家就不需要去考虑哪里需要用涂抹笔进行涂抹，从结构上来说，渐变形成的原因是因为有足够多的弱对比面，就像球体一样光滑的面也可以简化为低多边形。</p>
-<p><img src="/images/huihuabiji/image-20210121154415641.png" alt="image-20210121154415641"></p>
-<p><img src="/images/huihuabiji/image-20210121154449476.png" alt="image-20210121154449476"></p>
-<p>当然弱对比在k大的体系里算是塑造的一环，这就是后话了。</p>
-<h1 id="Blender-平直着色"><a href="#Blender-平直着色" class="headerlink" title="Blender 平直着色"></a>Blender 平直着色</h1><p><img src="/images/huihuabiji/image-20210121155243346.png" alt="image-20210121155243346"></p>
-<h1 id="Blender-平滑着色"><a href="#Blender-平滑着色" class="headerlink" title="Blender 平滑着色"></a>Blender 平滑着色</h1><p><img src="/images/huihuabiji/image-20210121155323276.png" alt="image-20210121155323276"></p>
-<h1 id="Low-Poly-低多边形"><a href="#Low-Poly-低多边形" class="headerlink" title="Low Poly 低多边形"></a><strong>Low Poly 低多边形</strong></h1><p>就如同<strong>Low Poly 低多边形</strong>的概念一样</p>
-<p><img src="/images/huihuabiji/image-20210121153526049.png" alt="image-20210121153526049"></p>
-<p>在这种概念下 ，渐变就是小的凹凸起伏导致的明度的微弱变化</p>
-<h1 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h1><p><strong>渐变=弱对比的块面衔接</strong></p>
-<p><img src="/images/huihuabiji/image-20210121154522857.png" alt="image-20210121154522857"></p>
-<p><img src="/images/huihuabiji/image-20210121154538122.png" alt="image-20210121154538122"></p>
-<p><img src="/images/huihuabiji/image-20210121154848141.png" alt="image-20210121154848141"></p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="赛璐璐-弱对比-厚涂-1"><a href="#赛璐璐-弱对比-厚涂-1" class="headerlink" title="赛璐璐+弱对比=厚涂"></a>赛璐璐+弱对比=厚涂</h2><h2 id="渐变-弱对比面的衔接-1"><a href="#渐变-弱对比面的衔接-1" class="headerlink" title="渐变=弱对比面的衔接"></a>渐变=弱对比面的衔接</h2>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/29/GAMES101-Lecture03-Transformation笔记/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/29/GAMES101-Lecture03-Transformation笔记/" class="post-title-link" itemprop="url">GAMES101-Lecture03-04-Transformation笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-11-29 17:53:30" itemprop="dateCreated datePublished" datetime="2020-11-29T17:53:30+08:00">2020-11-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-12-15 22:07:28" itemprop="dateModified" datetime="2020-12-15T22:07:28+08:00">2020-12-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Games101现代计算机图形学入门/" itemprop="url" rel="index"><span itemprop="name">Games101现代计算机图形学入门</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Transformation-变换"><a href="#Transformation-变换" class="headerlink" title="Transformation 变换"></a>Transformation 变换</h1><h2 id="rotation-旋转-反向动力学-IK"><a href="#rotation-旋转-反向动力学-IK" class="headerlink" title="rotation 旋转 反向动力学 IK"></a>rotation 旋转 反向动力学 IK</h2><p><img src="/images/Games101/image-20201129175509435.png" alt="image-20201129175509435"></p>
-<h3 id="旋转矩阵"><a href="#旋转矩阵" class="headerlink" title="旋转矩阵"></a>旋转矩阵</h3><p><img src="/images/Games101/image-20201211103954520.png" alt="image-20201211103954520"></p>
-<p><img src="/images/Games101/image-20201211203919064.png" alt="image-20201211203919064"></p>
-<h2 id="线性变化"><a href="#线性变化" class="headerlink" title="线性变化"></a>线性变化</h2><p><img src="/images/Games101/image-20201211204037574.png" alt="image-20201211204037574"></p>
-<h2 id="Scaling-缩放"><a href="#Scaling-缩放" class="headerlink" title="Scaling 缩放"></a>Scaling 缩放</h2><p><img src="/images/Games101/image-20201129175543153.png" alt="image-20201129175543153"></p>
-<p><img src="/images/Games101/image-20201129175803171.png" alt="image-20201129175803171"></p>
-<h3 id="非均匀缩放"><a href="#非均匀缩放" class="headerlink" title="非均匀缩放"></a>非均匀缩放</h3><p><img src="/images/Games101/image-20201129195657222.png" alt="image-20201129195657222"></p>
-<h2 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h2><p><img src="/images/Games101/image-20201129195759104.png" alt="image-20201129195759104"></p>
-<h2 id="剪切矩阵"><a href="#剪切矩阵" class="headerlink" title="剪切矩阵"></a>剪切矩阵</h2><p><img src="/images/Games101/image-20201129200344961.png" alt="image-20201129200344961"></p>
-<h2 id="Translation-平移"><a href="#Translation-平移" class="headerlink" title="Translation 平移"></a>Translation 平移</h2><p>齐次坐标 Why?</p>
-<p><img src="/images/Games101/image-20201211204132368.png" alt="image-20201211204132368"></p>
-<p>平移不是线性变换，我们不希望平移是一种特殊的变换</p>
-<p>引入齐次坐标的cost是什么？</p>
-<p><img src="/images/Games101/image-20201211204409652.png" alt="image-20201211204409652"></p>
-<p>增加维度w 引入齐次坐标</p>
-<p>向量具有平移不变性 What if you translate a vector?</p>
-<p><img src="/images/Games101/image-20201211204622144.png" alt="image-20201211204622144"></p>
-<blockquote>
-<p>《计算机图形学(OpenGL版)》的作者F.S. Hill Jr.曾说过一句话：</p>
-<p>齐次坐标表示是计算机图形学的重要手段之一,它既能够用来明确区分向量和点,同时也更易用于进行仿射（线性）几何变换</p>
-<p>于是我们知道，其重要性，主要有二，其一是区分向量和点，其二是易于进行仿射变化(Affine Transformation)</p>
-</blockquote>
-<p><img src="/images/Games101/image-20201211204944471.png" alt="image-20201211204944471"></p>
-<p>point+point = 齐次坐标系下 两点的中点</p>
-<h3 id="仿射变换"><a href="#仿射变换" class="headerlink" title="仿射变换"></a>仿射变换</h3><p><img src="/images/Games101/image-20201211205049558.png" alt="image-20201211205049558"></p>
-<h1 id="2D-Transformation"><a href="#2D-Transformation" class="headerlink" title="2D Transformation"></a>2D Transformation</h1><p>S(Sx,Sy) R(α) T(tx,ty)</p>
-<p><img src="/images/Games101/image-20201211205135924.png" alt="image-20201211205135924"></p>
-<h1 id="逆变换"><a href="#逆变换" class="headerlink" title="逆变换"></a>逆变换</h1><p><img src="/images/Games101/image-20201211205351457.png" alt="image-20201211205351457"></p>
-<h1 id="组合变换"><a href="#组合变换" class="headerlink" title="组合变换"></a>组合变换</h1><p><img src="/images/Games101/image-20201211205453540.png" alt="image-20201211205453540"></p>
-<p><img src="/images/Games101/image-20201211205504579.png" alt="image-20201211205504579"></p>
-<p>矩阵顺序：<br>$$<br>\begin{equation}<br>T_{(1,0)} \cdot R_{45} \cdot 矩阵<br>\end{equation}<br>$$<br><img src="/images/Games101/image-20201211225658072.png" alt="image-20201211225658072"></p>
-<h1 id="如果不以原点进行旋转呢？"><a href="#如果不以原点进行旋转呢？" class="headerlink" title="如果不以原点进行旋转呢？"></a>如果不以原点进行旋转呢？</h1><p>对矩阵进行分解</p>
-<p><img src="/images/Games101/image-20201211225924209.png" alt="image-20201211225924209"><br>$$<br>\begin{equation}<br>\mathbf{T}(\mathbf{c}) \cdot \mathbf{R}(\alpha) \cdot \mathbf{T}(-\mathbf{c})<br>\end{equation}<br>$$</p>
-<h1 id="3维变换"><a href="#3维变换" class="headerlink" title="3维变换"></a>3维变换</h1><p><img src="/images/Games101/image-20201212103907558.png" alt="image-20201212103907558"></p>
-<p>先线性变换-&gt;后平移 平移对形状影响不大 可以放在最后 也可以写在矩阵最后一列进行组合</p>
-<p><img src="/images/Games101/image-20201212104230401.png" alt="image-20201212104230401"></p>
-<p><img src="/images/Games101/image-20201212104119596.png" alt="image-20201212104119596"></p>
-<h1 id="Transformation-Cont"><a href="#Transformation-Cont" class="headerlink" title="Transformation Cont"></a>Transformation Cont</h1><p>旋转矩阵的逆等于其转置 正交矩阵</p>
-<h2 id="scale-translation"><a href="#scale-translation" class="headerlink" title="scale translation"></a>scale translation</h2><h2 id="rotarion-matrix"><a href="#rotarion-matrix" class="headerlink" title="rotarion matrix"></a>rotarion matrix</h2><h2 id="任意方向的旋转-欧拉角"><a href="#任意方向的旋转-欧拉角" class="headerlink" title="任意方向的旋转 欧拉角"></a>任意方向的旋转 欧拉角</h2><p><img src="/images/Games101/image-20201212110312557.png" alt="image-20201212110312557"></p>
-<h2 id="绕任意轴旋转-formula"><a href="#绕任意轴旋转-formula" class="headerlink" title="绕任意轴旋转 formula"></a>绕任意轴旋转 formula</h2><p><img src="/images/Games101/image-20201212110544269.png" alt="image-20201212110544269"><br>$$<br>\begin{equation}<br>\mathbf{R}(\mathbf{n}, \alpha)=\cos (\alpha) \mathbf{I}+(1-\cos (\alpha)) \mathbf{n} \mathbf{n}^{T}+\sin (\alpha) \underbrace{\left(\begin{array}{ccc}<br>0 &amp; -n_{z} &amp; n_{y} \<br>n_{z} &amp; 0 &amp; -n_{x} \<br>-n_{y} &amp; n_{x} &amp; 0<br>\end{array}\right)}_{\mathbf{N}}<br>\end{equation}<br>$$</p>
-<h2 id="View-Camera-tran-相机变换"><a href="#View-Camera-tran-相机变换" class="headerlink" title="View Camera tran. 相机变换"></a>View Camera tran. 相机变换</h2><p>MVP 三变换</p>
-<p>相机的三个属性</p>
-<p><img src="/images/Games101/image-20201212110856470.png" alt="image-20201212110856470"></p>
-<p>约定相机永远看向-Z方向，约定标准位置</p>
-<p><img src="/images/Games101/image-20201212111020189.png" alt="image-20201212111020189"></p>
-<p><img src="/images/Games101/image-20201215204522585.png" alt="image-20201215204522585"></p>
-<p>把相机的uvw移到xyz标准坐标去，朝向为-z轴</p>
-<p>平移矩阵 平移相机位置到原点上去  和旋转矩阵</p>
-<p><img src="/images/Games101/image-20201215205338308.png" alt="image-20201215205338308"></p>
-<p>原始的旋转 从相机到世界原点的矩阵不好的到，反过来求其逆，把坐标原点旋转到相机，求逆就是其转置，因为旋转矩阵是</p>
-<p>正交矩阵，就如同在blender里按下0到相机的视角。</p>
-<h2 id="Projection-tran-投影变换"><a href="#Projection-tran-投影变换" class="headerlink" title="Projection tran. 投影变换"></a>Projection tran. 投影变换</h2><p>正交投影Orthographic projection 和透视投影 Perspective projectivre</p>
-<p><img src="/images/Games101/image-20201215205832209.png" alt="image-20201215205832209"></p>
-<p>锥与正方体的区别,坐标标准化，正交投影直接把z坐标给扔掉就是正交投影的视图</p>
-<h3 id="正交投影"><a href="#正交投影" class="headerlink" title="正交投影"></a>正交投影</h3><p><img src="/images/Games101/image-20201215210343362.png" alt="image-20201215210343362"></p>
-<p>[left.right] [button,top] []</p>
-<p><img src="/images/Games101/image-20201215210526361.png" alt="image-20201215210526361"></p>
-<p>矩阵平移缩放标准化</p>
-<h3 id="透视投影"><a href="#透视投影" class="headerlink" title="透视投影"></a>透视投影</h3><p><img src="/images/Games101/image-20201215211402986.png" alt="image-20201215211402986"></p>
-<p>齐次坐标的缩放不变性</p>
-<p><img src="/images/Games101/image-20201215211745427.png" alt="image-20201215211745427"></p>
-<p>远平面到近平面的矩阵变换，从侧视图想起</p>
-<p><img src="/images/Games101/image-20201215211848174.png" alt="image-20201215211848174"></p>
-<p>一句逻辑推出x和y的解答 z的部分设为未知</p>
-<p><img src="/images/Games101/image-20201215212025039.png" alt="image-20201215212025039"></p>
-<p>推理出来矩阵的第1，2，4行只剩第3行的值</p>
-<p><img src="/images/Games101/image-20201215212124839.png" alt="image-20201215212124839"></p>
-<p>z用n代替 矩阵第三行乘原点得到n^2,但是A,B可能等于0，只有这一个条件还不行</p>
-<p><img src="/images/Games101/image-20201215212320440.png" alt="image-20201215212320440"></p>
-<p>使用<strong>原平面的中心点</strong>得到第二个约束条件</p>
-<p><img src="/images/Games101/image-20201215212523465.png" alt="image-20201215212523465"></p>
-<p>解的透视投影矩阵</p>
-<p><img src="/images/Games101/image-20201215212616234.png" alt="image-20201215212616234"></p>
-<h1 id="作业0"><a href="#作业0" class="headerlink" title="作业0:"></a>作业0:</h1><p>1.添加-&gt;正方体 </p>
-<p>2.面-&gt;交集(切割)</p>
-<p>3.网格-&gt;分离-&gt;按松散块</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/17/Krenz构成笔记-后知后觉的构成总结/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/17/Krenz构成笔记-后知后觉的构成总结/" class="post-title-link" itemprop="url">Krenz构成笔记-后知后觉的构成总结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-11-17 10:45:44 / 修改时间：11:57:30" itemprop="dateCreated datePublished" datetime="2020-11-17T10:45:44+08:00">2020-11-17</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/构成课/" itemprop="url" rel="index"><span itemprop="name">构成课</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="前言（Introduce）"><a href="#前言（Introduce）" class="headerlink" title="前言（Introduce）"></a>前言（Introduce）</h1><p>Krenz是我很喜欢的画师，其主要在台湾从事绘画教育活动，也是我绘画入门的老师，逻辑思维严谨，我个人觉得这和k大的性格和还有工学经历有关，其讲课的方式浅显易懂，容易让学生所接受，K大的课总是喜欢用类比的方法让一些比较难的概念变得浅显易懂，其价格也比较便宜实惠，和一些乱七八糟的教学相比拥有很高的性价比，其三门课循序渐进，让不会绘画，从零开始的初学者有了一个比较好的入手点，因为看了看K大的课件在电脑里堆得时间实在太长，因此想趁此机会做一下总结。</p>
-<p>我个人并非专业画师，只是基于业余爱好的经验来写这些东西，其中大部分总结也是看了k大课件里的部分总结来的，如果专业人士看了之后觉得哪里理解有误或者不妥的地方还请不吝指出。</p>
-<p>笔者所说的话可能不是特别正确，因为我个人也是一个嘴上的巨人，绘画群和老师经常称没画就一大堆问题的人叫嘴上的巨人，用嘴画画等等，因为绘画的主观性，导致所有观众都能插一嘴，也不像数学那样有门槛，因此请各位问老师问题的时候带着自己的画，这样一方面老师可以看出画中的错误对症下药，一方面不会因为理解有偏差导致隔空抓药。绘画一方面是实力的问题，另一方面你也得画啊() ，所以不要全相信我总结的东西。</p>
-<h1 id="第一章-主角-焦点Focus"><a href="#第一章-主角-焦点Focus" class="headerlink" title="第一章:主角(焦点Focus)"></a>第一章:主角(焦点Focus)</h1><p>一般来讲，绘画的画面所表示的必有一个(至少有一个)主题或者主角，就像写小说一样，要让别人(观众)的视线往主角看，那么画家面对一张白纸的时候就要考虑主角在白纸的哪个位置，之后的所有表现手法都是为了表现主角服务的，一般来讲，我们把画面中观众第一眼看到的事物作为主角，就如同刀剑神域动画开始的时候也是从主角桐人开始的，而不是从别的角色开始，但是这一部分并非是浑然天成的，动画有剧本的安排让主角第一个出场，所有作品的角色，其出场顺序是经过可以安排的，绘画也是同理，小说家写作的时候要确定下这部小说的背景历史作为框架(十字线)，剧本有着主线任务和支线任务，明线(十字线和集中线)和暗线(点景)，正面描写，集中线太过直白，我们需要一个隐晦的表达来让集中线表达出来，但又不让观众察觉出来，集中这个概念不一定要用直线。甚至不一定必须用线，使用几何图形暗示也可以。</p>
-<p>知道了这个概念就让我们看下面几幅画。</p>
-<p><img src="/images/huihuabiji/image-20201117111048806.png" alt="image-20201117111048806"></p>
-<p>看一下这个空白的长方形框，如果你不是闲的蛋疼，一般来讲不会多看它一眼，因为画面里什么都没有。</p>
-<p><img src="/images/huihuabiji/image-20201117111537712.png" alt="image-20201117111537712"></p>
-<p>试试放个点进去，我们的注意力会移动到右上角。</p>
-<p><img src="/images/huihuabiji/image-20201117111649608.png" alt="image-20201117111649608"></p>
-<p>再加个比他大的点进去，这回我们不会先看右上角,而会先看左下角之后才会注意到右上角，这个新来者(Focus2)胜过了前者(Focus1)，成了画面新的焦点(Focus)。</p>
-<p><img src="/images/huihuabiji/image-20201117111958956.png" alt="image-20201117111958956"></p>
-<p>再画一个比较大的点(Focus3)，你的眼睛会首先看更大的点，然后移动到第二大的点(Focus2)，紧接着是第三大的点(Focus1)。依据这个原理，画师可以四处移动他们的焦点，让你在画面中绕啊绕，就像在画面中旅行一样。</p>
-<h2 id="焦点非点"><a href="#焦点非点" class="headerlink" title="焦点非点"></a>焦点非点</h2><p><img src="/images/huihuabiji/image-20201117113751884.png" alt="image-20201117113751884"></p>
-<p>在一幅画中，任意一个眼神聚集的地方叫做“焦点”。每幅画都有一个或者多个焦点，或分散或集中，它们不一定是字面意义上的点，也可以是线条(图6)、二维的形状(图7)，或者是三维的立体结构(图8)，图8和图9中的<strong>“团”焦点</strong>是由暗色和淡色阶所表示的,当然它们也可以是彩色的。正确地处理这些焦点,不论是将其单独呈现还是合并使用,都会在创作优秀画作时起到重要作用。</p>
-<p><img src="/images/huihuabiji/image-20201117114100003.png" alt="image-20201117114100003"></p>
-<p><img src="/images/huihuabiji/image-20201117114153731.png" alt="image-20201117114153731"></p>
-<p>这是 <a href="https://www.pixiv.net/users/19389056" target="_blank" rel="noopener">XilmO@夕末</a>(PixivID=19389056)的两幅画，我觉得不用我说明，我们一眼就能看出来焦点是女孩，同时我们的视线也会朝向焦点。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/14/绘画笔记-漫画的势与集中线/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/14/绘画笔记-漫画的势与集中线/" class="post-title-link" itemprop="url">绘画笔记-漫画的势与集中线</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-11-14 20:13:18 / 修改时间：20:15:11" itemprop="dateCreated datePublished" datetime="2020-11-14T20:13:18+08:00">2020-11-14</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/绘画笔记/" itemprop="url" rel="index"><span itemprop="name">绘画笔记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="/images/huihuabiji/image-20201114201405568.png" alt="image-20201114201405568"></p>
-<p>怎么说呢。。</p>
-<p>这群漫画家真的是在那命换作品。</p>
-<p><img src="/images/huihuabiji/image-20201114201440869.png" alt="image-20201114201440869"></p>
-<p>势</p>
-<p><img src="/images/huihuabiji/image-20201114201456255.png" alt="image-20201114201456255"></p>
-<p>来自漫画<strong>镖人</strong></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/12/读书札记-镖人漫画/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/12/读书札记-镖人漫画/" class="post-title-link" itemprop="url">读书札记-镖人漫画</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-11-12 19:48:01 / 修改时间：19:53:59" itemprop="dateCreated datePublished" datetime="2020-11-12T19:48:01+08:00">2020-11-12</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/读书札记/" itemprop="url" rel="index"><span itemprop="name">读书札记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="/images/dushubiji/image-20201112194821041.png" alt="image-20201112194821041"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/12/重装系统软件备份/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/12/重装系统软件备份/" class="post-title-link" itemprop="url">重装系统软件备份</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-11-12 19:38:37" itemprop="dateCreated datePublished" datetime="2020-11-12T19:38:37+08:00">2020-11-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-12-23 20:47:00" itemprop="dateModified" datetime="2020-12-23T20:47:00+08:00">2020-12-23</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/杂/" itemprop="url" rel="index"><span itemprop="name">杂</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="系统重装要安装的软件"><a href="#系统重装要安装的软件" class="headerlink" title="系统重装要安装的软件:"></a>系统重装要安装的软件:</h1><p>驱动精灵 <a href="https://www.huorong.cn/" target="_blank" rel="noopener">火绒 </a> V2Ray-core 网易有道词典  向日葵</p>
-<p><a href="https://www.jianguoyun.com/s/downloads" target="_blank" rel="noopener">坚果云</a> <a href="https://pan.baidu.com/download" target="_blank" rel="noopener">百度网盘</a> MEGA 小米云服务 WPS office  <a href="http://www.potplayer.org/" target="_blank" rel="noopener">potplayer(网页)</a></p>
-<p><a href="https://www.typora.io/#windows" target="_blank" rel="noopener">typora</a> <a href="https://music.163.com/#/download" target="_blank" rel="noopener">网易云音乐</a> </p>
-<p><a href="https://cn.eagle.cool/" target="_blank" rel="noopener">Eagle</a> <a href="https://www.jam-software.com/treesize_free/" target="_blank" rel="noopener">Treesize free</a>  <a href="https://store.steampowered.com/about/" target="_blank" rel="noopener">Steam</a> blender Bandizip(类似的有Winrar)</p>
-<p> <a href="https://im.qq.com/pcqq/" target="_blank" rel="noopener">QQ(网页或者TIM)</a> <a href="https://weixin.qq.com/cgi-bin/readtemplate?uin=&amp;stype=&amp;promote=&amp;fr=&amp;lang=zh_CN&amp;ADTAG=&amp;check=false&amp;nav=download&amp;t=weixin_download_list&amp;loc=readtemplate,weixin,body,6" target="_blank" rel="noopener">微信</a> 腾讯文档 腾讯桌面整理Lite </p>
-<p>NVIDIA GEForce Expericence everything</p>
-<p><a href="https://visualstudio.microsoft.com/zh-hans/vs/" target="_blank" rel="noopener">VisualStudio</a> <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a> <a href="https://nodejs.org/en/" target="_blank" rel="noopener">Nodejs</a> <a href="https://desktop.github.com/" target="_blank" rel="noopener">Desktop Github</a> Cmake-gui </p>
-<p><a href="https://www.jijidown.com/" target="_blank" rel="noopener">bilibilijj</a>  <a href="http://www.internetdownloadmanager.com/download.html" target="_blank" rel="noopener">IDM</a> </p>
-<p>Anaconda（Python） 论文-Zotero</p>
-<h1 id="主机额外安装"><a href="#主机额外安装" class="headerlink" title="主机额外安装:"></a>主机额外安装:</h1><p><a href="http://hs.blizzard.cn/download" target="_blank" rel="noopener">炉石传说</a>以及官方插件 <a href="https://www.battlenet.com.cn/account/download/index.xml?show=bnetapp" target="_blank" rel="noopener">战网</a> <a href="http://lushi.163.com/" target="_blank" rel="noopener">炉石传说盒子</a></p>
-<p>Ubisoft Game Launcher Epic Game Launcher  <a href="https://www.unrealengine.com/zh-CN/feed?sessionInvalidated=true" target="_blank" rel="noopener">UE4</a></p>
-<p><a href="https://sai.yufan.me/" target="_blank" rel="noopener">SAI2破解</a></p>
-<h1 id="替代品"><a href="#替代品" class="headerlink" title="替代品"></a>替代品</h1><h2 id="下载器"><a href="#下载器" class="headerlink" title="下载器"></a>下载器</h2><table>
-<thead>
-<tr>
-<th>图片下载器</th>
-<th>文件下载器</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><em>[gitHub]</em>ArtStationDownloader 下载A站图片</td>
-<td>mangacon 漫画控 漫画下载器</td>
-</tr>
-<tr>
-<td>[gitHub]Pixivutil 下载P站图片</td>
-<td>Pinterst Downloaders</td>
-</tr>
-<tr>
-<td>Libgen Desktop 电子书英文书下载</td>
-</tr>
-</tbody>
-</table>
-<h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><table>
-<thead>
-<tr>
-<th><a href="https://code.visualstudio.com//" target="_blank" rel="noopener">Visual Studio Code</a></th>
-<th><a href="https://www.jetbrains.com/pycharm/download/#section=windows" target="_blank" rel="noopener">PyCharm Community Edition</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>codeblocks</td>
-<td><a href="https://www.jetbrains.com/clion/" target="_blank" rel="noopener">JetBrains Clion(C++IDE)(不用)</a></td>
-</tr>
-<tr>
-<td><a href="https://wingware.com/" target="_blank" rel="noopener">Wing IDE</a></td>
-<td><a href="https://www.jetbrains.com/phpstorm/" target="_blank" rel="noopener">JetBrains phpStorm(不用)</a></td>
-</tr>
-<tr>
-<td>(不用) <a href="https://ide.atom.io/" target="_blank" rel="noopener">Atom</a></td>
-<td><a href="https://www.perfare.net/1194.html" target="_blank" rel="noopener">AssetStudio</a> <a href="https://7daystodie.com/forums/showthread.php?22675-Unity-Assets-Bundle-Extractor" target="_blank" rel="noopener">Unity Assets Bundle Extractor</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="办公软件"><a href="#办公软件" class="headerlink" title="办公软件"></a>办公软件</h2><table>
-<thead>
-<tr>
-<th>局域网同步 goodsync</th>
-<th>数据库 Sybase PowerDesigner 生成ER图</th>
-<th><a href="https://otp.landian.vip/zh-cn/" target="_blank" rel="noopener">office tool</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>PSD Codec</td>
-<td><a href="https://dl.pconline.com.cn/download/1610934.html" target="_blank" rel="noopener">略缩图显示工具mysticthumbs</a></td>
-<td><a href="http://blog.sina.com.cn/s/blog_89a729a40102wjwk.html" target="_blank" rel="noopener">截图软件faststone</a></td>
-</tr>
-<tr>
-<td>Markdown <a href="https://maxiang.io/" target="_blank" rel="noopener">马克飞象(暂存)</a> <a href="https://pandoc.org/" target="_blank" rel="noopener">pandoc标记语言转换工具</a></td>
-<td>openoffice Xnview <a href="https://calibre-ebook.com/" target="_blank" rel="noopener">Calibre(阅读)</a> WinDjview</td>
-<td><a href="https://www.gimp.org/" target="_blank" rel="noopener">GIMP(网站备份)</a></td>
-</tr>
-<tr>
-<td><a href="https://obsproject.com/download" target="_blank" rel="noopener">OBS Studio(录屏不用)</a></td>
-<td>W3Cschool离线版</td>
-<td>Psiphon3</td>
-</tr>
-<tr>
-<td>笔记 wordpress 易码 Anki OCR</td>
-<td>虾米音乐 <a href="https://www.image-line.com/downloads/flstudiodownload.html" target="_blank" rel="noopener">FL</a></td>
-<td>mySpeed</td>
-</tr>
-<tr>
-<td>漫画 漫画控 Kindle Comic Converter</td>
-<td><a href="https://www.cctalk.com/download" target="_blank" rel="noopener">CCtalk</a> 哔哩哔哩压制工具</td>
-<td><a href="http://www.pcgeshi.com/" target="_blank" rel="noopener">格式工厂</a>(网页)</td>
-</tr>
-<tr>
-<td>RSS  Feed Demon mozilla thunder</td>
-<td>数学 MathType 7 Mathpix Snipping Tool Axmath</td>
-</tr>
-</tbody>
-</table>
-<h2 id="树莓派有关软件"><a href="#树莓派有关软件" class="headerlink" title="树莓派有关软件"></a>树莓派有关软件</h2><table>
-<thead>
-<tr>
-<th>SD card Formatter</th>
-<th><a href="https://www.netsarang.com/zh/xftp/" target="_blank" rel="noopener">Xftp</a></th>
-<th>MobaXterm</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>putty</td>
-<td><a href="https://www.realvnc.com/en/connect/download/viewer/" target="_blank" rel="noopener">vncviewer</a></td>
-<td><a href="http://shumeipai.nxez.com/2013/09/07/no-screen-unknow-ip-login-pi.html" target="_blank" rel="noopener">ipscanner</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="绘画软件"><a href="#绘画软件" class="headerlink" title="绘画软件"></a>绘画软件</h2><table>
-<thead>
-<tr>
-<th><a href="http://www.gfxcamp.com/photoshop-cc-2018/" target="_blank" rel="noopener">PS CC(网站备份)</a> PS CS6</th>
-<th><a href="https://saier.me/group-buy-sai/" target="_blank" rel="noopener">SAI2</a></th>
-<th><a href="http://www.dayanzai.me/pscs6.html" target="_blank" rel="noopener">PS精简版</a></th>
-<th>designdoll</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SAI2 茶绘 <a href="https://www.pureref.com/download.php" target="_blank" rel="noopener">pureref(网站)</a></td>
-<td>clip studio</td>
-<td>Pose studio</td>
-<td>恋活</td>
-</tr>
-</tbody>
-</table>
-<h1 id="3D软件"><a href="#3D软件" class="headerlink" title="3D软件"></a>3D软件</h1><table>
-<thead>
-<tr>
-<th><a href="http://www.gfxcamp.com/sketchup-pro-2017/" target="_blank" rel="noopener">Sketchup (MEGA/</a><a href="http://www.gfxcamp.com/maya-2018/" target="_blank" rel="noopener">3D软件安装包</a><a href="http://www.gfxcamp.com/sketchup-pro-2017/" target="_blank" rel="noopener">)</a></th>
-<th><a href="https://www.bilibili.com/video/av26974958?from=search&amp;seid=1692464848749500013" target="_blank" rel="noopener">daz STUDIO安装教程(哔哩哔哩MEGA/DAZ/附有基础包同步)</a></th>
-<th><a href="https://www.daz3d.com/customer/account/getstudio/" target="_blank" rel="noopener">DAZ官网安装包(MEGA)</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="http://www.gfxcamp.com/maya-2018/" target="_blank" rel="noopener">Maya (MEGA同步/3D软件安装包)</a></td>
-<td><a href="http://www.gfxcamp.com/marvelous-designer-7/" target="_blank" rel="noopener">marvelous-designer</a></td>
-<td>Substance Designer(MEGA)</td>
-</tr>
-<tr>
-<td>Substance Painter(未备份见官网)</td>
-<td>ZBrush 3DMax <a href="https://unity3d.com/cn/get-unity/download" target="_blank" rel="noopener">Unity</a></td>
-<td><a href="https://www.autodesk.com/products/fbx/fbx-review" target="_blank" rel="noopener">FBX Review(MEGA/小工具)</a></td>
-</tr>
-</tbody>
-</table>
-<h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><table>
-<thead>
-<tr>
-<th>Daz to Maya(MEGA/DAZ文件夹)</th>
-<th><a href="https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-zh-hans" target="_blank" rel="noopener">vscode-language-pack-zh-hans</a></th>
-<th>unity Hub</th>
-<th>xnormal(烘焙纹理贴图)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td>美食  美食天下 下厨房 网上厨房</td>
-<td>健康医学</td>
-<td>丁香医生 丁香智汇 用药助手</td>
-</tr>
-</tbody>
-</table>
-<h1 id="学习教育"><a href="#学习教育" class="headerlink" title="学习教育"></a>学习教育</h1><table>
-<thead>
-<tr>
-<th>网易云课堂</th>
-<th>网易公开课</th>
-<th>coursera</th>
-<th>codenza(编码学习 算法动画图解(简单易懂的算法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>公考通</td>
-<td>W3cschool</td>
-<td>Udemy</td>
-<td>Gitter( gitbook pocket</td>
-</tr>
-</tbody>
-</table>
-<h1 id="语言学习"><a href="#语言学习" class="headerlink" title="语言学习"></a>语言学习</h1><table>
-<thead>
-<tr>
-<th>Aboboo</th>
-<th>Anki划词助手</th>
-<th>简明日语</th>
-<th>NHK日本语</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Anki朗读器</td>
-<td>ankidroid</td>
-<td>可可英语</td>
-</tr>
-</tbody>
-</table>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/10/GAMES101-Lecture02-Review-of-Linear-Algebra笔记/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/10/GAMES101-Lecture02-Review-of-Linear-Algebra笔记/" class="post-title-link" itemprop="url">GAMES101-Lecture02 Review of Linear Algebra笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-11-10 11:20:29" itemprop="dateCreated datePublished" datetime="2020-11-10T11:20:29+08:00">2020-11-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-29 17:52:35" itemprop="dateModified" datetime="2020-11-29T17:52:35+08:00">2020-11-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Games101现代计算机图形学入门/" itemprop="url" rel="index"><span itemprop="name">Games101现代计算机图形学入门</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>旋转的例子</p>
-<p><img src="/images/Games101/image-20201111124722150.png" alt="image-20201111124722150"></p>
-<p>图形学中向量的默认形式是<strong>列向量</strong></p>
-<h1 id="叉乘公式"><a href="#叉乘公式" class="headerlink" title="叉乘公式"></a>叉乘公式</h1><p>$$<br>\vec{a} \times \vec{b}=\left(\begin{array}{l}<br>y_{a} z_{b}-y_{b} z_{a} \\<br>z_{a} x_{b}-x_{a} z_{b} \\<br>x_{a} y_{b}-y_{a} x_{b}<br>\end{array}\right)<br>$$</p>
-<p>$$<br>\vec{a} \times \vec{b}=A^{*} b=\left(\begin{array}{ccc}<br>0 &amp; -z_{a} &amp; y_{a} \\<br>z_{a} &amp; 0 &amp; -x_{a} \\<br>-y_{a} &amp; x_{a} &amp; 0<br>\end{array}\right)\left(\begin{array}{l}<br>x_{b} \\<br>y_{b} \\<br>z_{b}<br>\end{array}\right)<br>$$</p>
-<p>$$<br>\begin{array}{l}<br>\vec{x} \times \vec{y}=+\vec{z} \\<br>\vec{y} \times \vec{x}=-\vec{z} \\<br>\vec{y} \times \vec{z}=+\vec{x} \\<br>\vec{z} \times \vec{y}=-\vec{x} \quad \vec{a} \times(\vec{b}+\vec{c})=\vec{a} \times \vec{b}+\vec{a} \times \vec{c} \\<br>\vec{z} \times \vec{x}=+\vec{y} &amp; \vec{a} \times(k \vec{b})=k(\vec{a} \times \vec{b}) \\<br>\vec{x} \times \vec{z}=-\vec{y}<br>\end{array}<br>$$<br>叉乘可以定义左右和形状的内外两侧信息，起到定向的作用</p>
-<p><img src="/images/Games101/image-20201115202556394.png" alt="image-20201115202556394"><br>$$<br>\begin{array}{l}<br>\vec{a} \times \vec{b}=+\vec{z} \quad \quad a在b的左侧  \\<br>\vec{b} \times \vec{a}=-\vec{z} \quad \quad a在b的右侧\\<br>\vec{AB} \times \vec{AP}=+ \\<br>\vec{BC} \times \vec{BP}=+ \\<br>\vec{CA} \times \vec{CP}=+ \quad \quad 如P点在AC右侧,则\vec{CA} \times \vec{CP} 为负值 \\<br>如三角行逆时针,只要所有的叉乘值都为正值或都为负值就可判断在三角形内部，从而忽略给定的三角形的顺序 \\<br>在边上的情况被称为 corner case 这时候开发者自己说了算\<br>\\<br>\end{array}<br>$$</p>
-<h1 id="虚拟机安装问题"><a href="#虚拟机安装问题" class="headerlink" title="虚拟机安装问题"></a>虚拟机安装问题</h1><p>Not in a hypervisor partition (HVP=0) (VERR_NEM_NOT_AVAILABLE).</p>
-<p>AMD-V is disabled in the BIOS (or by the host OS) (VERR_SVM_DISABLED).</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>1.Windows设置 - 更新和安全 - 回复 - 立即重新启动</p>
-<p><strong>2.Troubleshoot -&gt; Advanced option – &gt; UEFI Firmware Settings -&gt; Restart</strong></p>
-<p>3.在<strong>BIOS</strong>中找到<strong>Virtualization</strong> 选项，它常位于<strong>Advanced 或 System Configuration</strong> 选项卡下</p>
-<p>4.设置<strong>Virtualization</strong> 的状态为<strong>Enabled。</strong></p>
-<p>AMD和Intel的设置不一样</p>
-<h1 id="Eigen库的使用问题"><a href="#Eigen库的使用问题" class="headerlink" title="Eigen库的使用问题"></a>Eigen库的使用问题</h1><p><img src="/images/Games101/image-20201121230206966.png" alt="image-20201121230206966"></p>
-<h2 id="Eigen库的使用用例"><a href="#Eigen库的使用用例" class="headerlink" title="Eigen库的使用用例"></a>Eigen库的使用用例</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"../../Eigen/Core"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"../../Eigen/Dense"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// Basic Example of cpp</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Example of cpp \n"</span>;</span><br><span class="line">    <span class="keyword">float</span> a = <span class="number">1.0</span>, b = <span class="number">2.0</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; a / b &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">sqrt</span>(b) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">acos</span>(<span class="number">-1</span>) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">sin</span>(<span class="number">30.0</span> / <span class="number">180.0</span> * <span class="built_in">acos</span>(<span class="number">-1</span>)) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Example of vector</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Example of vector \n"</span>;</span><br><span class="line">    <span class="comment">// 向量定义</span></span><br><span class="line">    Eigen::<span class="function">Vector3f <span class="title">v</span><span class="params">(<span class="number">1.0f</span>, <span class="number">2.0f</span>, <span class="number">3.0f</span>)</span></span>;</span><br><span class="line">    Eigen::<span class="function">Vector3f <span class="title">w</span><span class="params">(<span class="number">1.0f</span>, <span class="number">0.0f</span>, <span class="number">0.0f</span>)</span></span>;</span><br><span class="line">    <span class="comment">// 向量输出</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Example of output \n"</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; v &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">// 加法</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Example of add \n"</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; v + w &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">// 点成</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Example of scalar multiply \n"</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; v * <span class="number">3.0f</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="number">2.0f</span> * v &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Example of matrix</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Example of matrix \n"</span>;</span><br><span class="line">    <span class="comment">// 矩阵定义</span></span><br><span class="line">    Eigen::Matrix3f i, j;</span><br><span class="line">    i &lt;&lt; <span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">4.0</span>, <span class="number">5.0</span>, <span class="number">6.0</span>, <span class="number">7.0</span>, <span class="number">8.0</span>, <span class="number">9.0</span>;</span><br><span class="line">    j &lt;&lt; <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">1.0</span>, <span class="number">4.0</span>, <span class="number">6.0</span>, <span class="number">5.0</span>, <span class="number">9.0</span>, <span class="number">7.0</span>, <span class="number">8.0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 矩阵输出</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Example of output \n"</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; i  &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; j &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="comment">//矩阵加法</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">" matrix add matrix i + matrix j"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; i+j &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span> ;</span><br><span class="line">    <span class="comment">//矩阵点乘</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">" matrix scalar multiply i * 2.0"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; i*<span class="number">2.0</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//矩阵乘法</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"matrix multiply i * j"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; i * j &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"matrix multiply vector i * v"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; i * v &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; v.transpose()*i &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;<span class="comment">//reslut is different </span></span><br><span class="line">    <span class="comment">//14</span></span><br><span class="line">    <span class="comment">//32</span></span><br><span class="line">    <span class="comment">//50</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//Transpose result is 30 36 42</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/10/GAMES101-Lecture01-Overview-of-Computer-Graphics笔记/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/10/GAMES101-Lecture01-Overview-of-Computer-Graphics笔记/" class="post-title-link" itemprop="url">GAMES101-Lecture01 Overview of Computer Graphics笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-11-10 10:31:59 / 修改时间：11:16:32" itemprop="dateCreated datePublished" datetime="2020-11-10T10:31:59+08:00">2020-11-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Games101现代计算机图形学入门/" itemprop="url" rel="index"><span itemprop="name">Games101现代计算机图形学入门</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>判断渲染的一个简单标准:画面是否明亮</p>
-<h1 id="游戏-Video-Game"><a href="#游戏-Video-Game" class="headerlink" title="游戏(Video Game)"></a>游戏(Video Game)</h1><h2 id="只狼"><a href="#只狼" class="headerlink" title="只狼"></a>只狼</h2><p><img src="/images/Games101/image-20201110103745003.png" alt="image-20201110103745003"></p>
-<h2 id="卡通NPR——无主之地3"><a href="#卡通NPR——无主之地3" class="headerlink" title="卡通NPR——无主之地3"></a>卡通NPR——无主之地3</h2><p><img src="/images/Games101/image-20201110103820530.png" alt="image-20201110103820530"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/11/10/GAMES101-Lecture01-Overview-of-Computer-Graphics笔记/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1284,20 +1056,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-count">82</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">103</span>
+        <span class="site-state-item-count">115</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1386,61 +1158,6 @@
   
 
   
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-          load: ['[tex]/mhchem'],
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-          packages: {'[+]': ['mhchem']},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
 
   
 

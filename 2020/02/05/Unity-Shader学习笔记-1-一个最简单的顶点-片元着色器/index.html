@@ -20,18 +20,18 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="1234567891011121314151617181920212223Shader &quot;Custom/Chapter5-SimpleShader&quot; &amp;#123;    SubShader &amp;#123;        Pass&amp;#123;            CGPROGRAM      // 两条非常重要的编译指令            #pragma vertex vert // 定点着色器">
+  <meta name="description" content="Chapter5-SimpleShader-BaseShaderSV_POSITION SV_前缀的变量代表system value SV_POSTION一旦被作为vertex shader的输出,那么这个最终的顶点位置就被固定了(不能tensellate），直接进入光栅化处理。 1234567891011121314151617181920212223Shader &quot;Custom/Chapter">
 <meta name="keywords" content="基础,学习笔记,Shader,Unity">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Unity Shader学习笔记-1-一个最简单的顶点&#x2F;片元着色器">
 <meta property="og:url" content="http://yoursite.com/2020/02/05/Unity-Shader学习笔记-1-一个最简单的顶点-片元着色器/index.html">
 <meta property="og:site_name" content="Molers Blog">
-<meta property="og:description" content="1234567891011121314151617181920212223Shader &quot;Custom/Chapter5-SimpleShader&quot; &amp;#123;    SubShader &amp;#123;        Pass&amp;#123;            CGPROGRAM      // 两条非常重要的编译指令            #pragma vertex vert // 定点着色器">
+<meta property="og:description" content="Chapter5-SimpleShader-BaseShaderSV_POSITION SV_前缀的变量代表system value SV_POSTION一旦被作为vertex shader的输出,那么这个最终的顶点位置就被固定了(不能tensellate），直接进入光栅化处理。 1234567891011121314151617181920212223Shader &quot;Custom/Chapter">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-02-05T15:44:22.000Z">
+<meta property="og:updated_time" content="2021-01-25T15:03:30.333Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unity Shader学习笔记-1-一个最简单的顶点&#x2F;片元着色器">
-<meta name="twitter:description" content="1234567891011121314151617181920212223Shader &quot;Custom/Chapter5-SimpleShader&quot; &amp;#123;    SubShader &amp;#123;        Pass&amp;#123;            CGPROGRAM      // 两条非常重要的编译指令            #pragma vertex vert // 定点着色器">
+<meta name="twitter:description" content="Chapter5-SimpleShader-BaseShaderSV_POSITION SV_前缀的变量代表system value SV_POSTION一旦被作为vertex shader的输出,那么这个最终的顶点位置就被固定了(不能tensellate），直接进入光栅化处理。 1234567891011121314151617181920212223Shader &quot;Custom/Chapter">
 
 <link rel="canonical" href="http://yoursite.com/2020/02/05/Unity-Shader学习笔记-1-一个最简单的顶点-片元着色器/">
 
@@ -189,10 +189,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-02-05 23:42:57 / 修改时间：23:44:22" itemprop="dateCreated datePublished" datetime="2020-02-05T23:42:57+08:00">2020-02-05</time>
+              <time title="创建时间：2020-02-05 23:42:57" itemprop="dateCreated datePublished" datetime="2020-02-05T23:42:57+08:00">2020-02-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-25 23:03:30" itemprop="dateModified" datetime="2021-01-25T23:03:30+08:00">2021-01-25</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -214,13 +220,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Shader <span class="string">"Custom/Chapter5-SimpleShader"</span> &#123;</span><br><span class="line"></span><br><span class="line">    SubShader &#123;</span><br><span class="line">        Pass&#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 两条非常重要的编译指令</span></span><br><span class="line">            <span class="meta">#<span class="meta-keyword">pragma</span> vertex vert <span class="comment">// 定点着色器</span></span></span><br><span class="line">            <span class="meta">#<span class="meta-keyword">pragma</span> fragment frag <span class="comment">// 片元着色器</span></span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 这一步是把顶点坐标从模型空间转换到裁剪空间</span></span><br><span class="line">            float4 vert(float4 v : POSITION) : SV_POSITION &#123;</span><br><span class="line">                <span class="keyword">return</span> mul(UNITY_MATRIX_MVP, v);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            fixed4 frag() : SV_Target&#123;</span><br><span class="line">                <span class="keyword">return</span> fixed4(<span class="number">1.0</span>,<span class="number">1.0</span>,<span class="number">1.0</span>,<span class="number">1.0</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="Chapter5-SimpleShader-BaseShader"><a href="#Chapter5-SimpleShader-BaseShader" class="headerlink" title="Chapter5-SimpleShader-BaseShader"></a>Chapter5-SimpleShader-BaseShader</h1><p>SV_POSITION SV_前缀的变量代表system value SV_POSTION一旦被作为vertex shader的输出,那么这个最终的顶点位置就被固定了(不能tensellate），直接进入光栅化处理。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Shader <span class="string">"Custom/Chapter5-SimpleShader"</span> &#123;</span><br><span class="line"></span><br><span class="line">    SubShader &#123;</span><br><span class="line">        Pass&#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 两条非常重要的编译指令</span></span><br><span class="line">            <span class="meta">#<span class="meta-keyword">pragma</span> vertex vert <span class="comment">// 顶点着色器的名字 指明那个是顶点着色器</span></span></span><br><span class="line">            <span class="meta">#<span class="meta-keyword">pragma</span> fragment frag <span class="comment">// 片元着色器</span></span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 这一步是把顶点坐标从模型空间转换到裁剪空间</span></span><br><span class="line">            float4 vert(float4 v : POSITION) : SV_POSITION &#123;//裁剪空间坐标</span><br><span class="line">                <span class="keyword">return</span> mul(UNITY_MATRIX_MVP, v);<span class="comment">//MVP 是指Model模型 View观察(摄像机) Projection投影</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            fixed4 frag() : SV_Target&#123;</span><br><span class="line">                <span class="keyword">return</span> fixed4(<span class="number">1.0</span>,<span class="number">1.0</span>,<span class="number">1.0</span>,<span class="number">1.0</span>);<span class="comment">//白色 每个输出的顶点都会执行一次</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <ol>
 <li>vert , 顶点着色器代码, 逐顶点执行, 函数的输入 v 包含了这个顶点的位置, 返回值是该顶点在模型空间中的位置, POSITION : 把模型的顶点坐标填充到输入参数中, SV_POSITION : 顶点着色器的输出是裁剪空间中的顶点坐标</li>
 <li>frag , SV_Target : 把用户的输出颜色存储到一个渲染目标中, 这里将输出到默认的帧缓存中, 片元着色器输出的颜色的每个分量范围是[0,1].</li>
 </ol>
 </blockquote>
+<h1 id="Chapter-5-Simple-Shader"><a href="#Chapter-5-Simple-Shader" class="headerlink" title="Chapter 5/Simple Shader"></a>Chapter 5/Simple Shader</h1><p>加入模型数据</p>
+<p>材质的Mesh Render组件提供POSITION, TANGENT, NORMAL数据,在每帧调用Draw Call的时候, Mesh Render组件会把它负责渲染的模型数据发送给Unity Shader.</p>
+<figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">Shader "Unity Shaders Book/Chapter 5/Simple Shader" &#123;</span><br><span class="line">	Properties &#123;</span><br><span class="line">		_Color ("Color Tint", Color) = (1, 1, 1, 1)</span><br><span class="line">	&#125;</span><br><span class="line">	SubShader &#123;</span><br><span class="line">        Pass &#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line"></span><br><span class="line">            <span class="meta">#pragma vertex vert</span></span><br><span class="line">            <span class="meta">#pragma fragment frag</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">uniform</span> fixed4 _Color;</span><br><span class="line"></span><br><span class="line">			struct a2v &#123;<span class="comment">//Application to vertex shader 应用阶段到顶点着色器</span></span><br><span class="line">             	float4 vertex   : POSITION;</span><br><span class="line">			   float3 normal   : NORMAL;</span><br><span class="line">			   float4 texcoord : TEXCOORD0;</span><br><span class="line">            &#125;;</span><br><span class="line">            </span><br><span class="line">                </span><br><span class="line">            struct v2f &#123;</span><br><span class="line">                float4 pos : SV_POSITION;</span><br><span class="line">                fixed3 color : COLOR0;</span><br><span class="line">            &#125;;</span><br><span class="line">            </span><br><span class="line">            v2f vert(a2v v) &#123;</span><br><span class="line">            	v2f o;</span><br><span class="line">            	o.pos = mul(UNITY_MATRIX_MVP, v.vertex);</span><br><span class="line">            	o.color = v.normal * <span class="number">0.5</span> + fixed3(<span class="number">0.5</span>, <span class="number">0.5</span>, <span class="number">0.5</span>);</span><br><span class="line">                <span class="keyword">return</span> o;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            fixed4 frag(v2f i) : SV_Target &#123;</span><br><span class="line">            	fixed3 c = i.color;</span><br><span class="line">            	c *= _Color.rgb;</span><br><span class="line">                <span class="keyword">return</span> fixed4(c, <span class="number">1.0</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -307,6 +317,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter5-SimpleShader-BaseShader"><span class="nav-number">1.</span> <span class="nav-text">Chapter5-SimpleShader-BaseShader</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter-5-Simple-Shader"><span class="nav-number">2.</span> <span class="nav-text">Chapter 5/Simple Shader</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -321,20 +332,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-count">82</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">103</span>
+        <span class="site-state-item-count">115</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
