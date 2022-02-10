@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.8.0">
+<meta name="generator" content="Hexo 6.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -17,23 +17,27 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="1.WxApp每一个wxWidgets程序都需要定义一个wxApp类的子类,并且需要创建并且只能创建一个这个类的实例, 实例控制着整个程序的执行,这个继承自wxApp的子类至少需要定义一个OnInit函数, 当运行代码的时候,将会调用这个函数(和一个典型的Win32程序中的main函数或者WinMain函数类似)。 1.wxApp类定义这个子类及其OnInit函数的代码如下所示: 12345cla">
-<meta name="keywords" content="图形界面,GUI,C++,VisualStudio,WxWidgets">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WxWidgets学习笔记-2-应用程序类WxAPP和Frame窗口类学习">
-<meta property="og:url" content="http://yoursite.com/2020/01/28/WxWidgets学习笔记-2-应用程序类WxAPP和Frame窗口类学习/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/01/28/WxWidgets%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%B1%BBWxAPP%E5%92%8CFrame%E7%AA%97%E5%8F%A3%E7%B1%BB%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Molers Blog">
 <meta property="og:description" content="1.WxApp每一个wxWidgets程序都需要定义一个wxApp类的子类,并且需要创建并且只能创建一个这个类的实例, 实例控制着整个程序的执行,这个继承自wxApp的子类至少需要定义一个OnInit函数, 当运行代码的时候,将会调用这个函数(和一个典型的Win32程序中的main函数或者WinMain函数类似)。 1.wxApp类定义这个子类及其OnInit函数的代码如下所示: 12345cla">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-06-29T01:30:26.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-01-28T08:44:22.000Z">
+<meta property="article:modified_time" content="2020-06-29T01:30:26.000Z">
+<meta property="article:author" content="张文亮">
+<meta property="article:tag" content="图形界面">
+<meta property="article:tag" content="WxWidgets">
+<meta property="article:tag" content="GUI">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="VisualStudio">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WxWidgets学习笔记-2-应用程序类WxAPP和Frame窗口类学习">
-<meta name="twitter:description" content="1.WxApp每一个wxWidgets程序都需要定义一个wxApp类的子类,并且需要创建并且只能创建一个这个类的实例, 实例控制着整个程序的执行,这个继承自wxApp的子类至少需要定义一个OnInit函数, 当运行代码的时候,将会调用这个函数(和一个典型的Win32程序中的main函数或者WinMain函数类似)。 1.wxApp类定义这个子类及其OnInit函数的代码如下所示: 12345cla">
 
-<link rel="canonical" href="http://yoursite.com/2020/01/28/WxWidgets学习笔记-2-应用程序类WxAPP和Frame窗口类学习/">
+<link rel="canonical" href="http://yoursite.com/2020/01/28/WxWidgets%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%B1%BBWxAPP%E5%92%8CFrame%E7%AA%97%E5%8F%A3%E7%B1%BB%E5%AD%A6%E4%B9%A0/">
 
 
 <script id="page-configurations">
@@ -77,6 +81,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Molers Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -105,6 +110,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -139,11 +145,43 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-rss">
+
+    <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -166,16 +204,16 @@
     
   
   
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/28/WxWidgets学习笔记-2-应用程序类WxAPP和Frame窗口类学习/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/28/WxWidgets%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%B1%BBWxAPP%E5%92%8CFrame%E7%AA%97%E5%8F%A3%E7%B1%BB%E5%AD%A6%E4%B9%A0/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+      <meta itemprop="name" content="张文亮">
+      <meta itemprop="description" content="计算机CV与CG研究生,爱好绘画">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Molers Blog">
     </span>
       <header class="post-header">
@@ -204,8 +242,8 @@
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/WxWidgets图形化界面学习/" itemprop="url" rel="index"><span itemprop="name">WxWidgets图形化界面学习</span></a>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/WxWidgets%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%95%8C%E9%9D%A2%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">WxWidgets图形化界面学习</span></a>
                 </span>
             </span>
 
@@ -224,14 +262,17 @@
 <p>实例控制着整个程序的执行,这个继承自wxApp的子类至少需要定义一个<strong>OnInit</strong>函数,</p>
 <p>当运行代码的时候,将会调用这个函数(和一个典型的Win32程序中的main函数或者WinMain函数类似)。</p>
 <h3 id="1-wxApp类"><a href="#1-wxApp类" class="headerlink" title="1.wxApp类"></a>1.wxApp类</h3><p>定义这个子类及其OnInit函数的代码如下所示:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> :</span> <span class="keyword">public</span> wxApp</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">bool</span> <span class="title">OnInit</span><span class="params">()</span></span>;<span class="comment">//相当于Main函数 函数入口</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyApp</span> : <span class="keyword">public</span> wxApp</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">bool</span> <span class="title">OnInit</span><span class="params">()</span></span>;<span class="comment">//相当于Main函数 函数入口</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <p>在这个Onlnit函数中,通常应该作的事情包括:</p>
-<a id="more"></a>
+<span id="more"></span>
+
 <p>创建至少一个窗口实例(实例是C++中的关键词),对传入的命令行参数进行解析,为应用程序进行数据设置和其它的一些初始化的操作</p>
 <p>如果这个函数返回真, wxWidgets将开始事件循环用来接收用户输入并且在必要的情况下处理这些输入。</p>
 <p>如果OnInit函数返回假, wxWidgets将会释放它内部已经分配的资源,然后结束整个程序的运行。</p>
 <h3 id="2-OnInit函数的实现"><a href="#2-OnInit函数的实现" class="headerlink" title="2.OnInit函数的实现"></a>2.OnInit函数的实现</h3><p>看一个最简单的OnInit函数的实现:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> MyApp::OnInit()</span><br><span class="line">&#123;</span><br><span class="line">    MyFrame* frame = <span class="keyword">new</span> MyFrame(wxT(”Minimal wxWidgets App”)); <span class="comment">//实例化一个Frame</span></span><br><span class="line">    frame-&gt;Show(<span class="literal">true</span>);<span class="comment">//展示一个Frame</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">MyApp::OnInit</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    MyFrame* frame = <span class="keyword">new</span> <span class="built_in">MyFrame</span>(<span class="built_in">wxT</span>(”Minimal wxWidgets App”)); <span class="comment">//实例化一个Frame</span></span><br><span class="line">    frame-&gt;<span class="built_in">Show</span>(<span class="literal">true</span>);<span class="comment">//展示一个Frame</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="3-wXT宏"><a href="#3-wXT宏" class="headerlink" title="3.wXT宏"></a>3.wXT宏</h3><p>wxT这个宏,在接下来的例子中,这个宏还会被频繁用到。</p>
 <p>它的作用是让你的代码兼容Unicode模式。这个宏和另外一个T宏的作用是完全一样的。</p>
 <p>使用这个宏也不会带来运行期的性能损失。</p>
@@ -239,28 +280,37 @@
 <hr>
 <h3 id="4-IMPLEMENT-APP宏"><a href="#4-IMPLEMENT-APP宏" class="headerlink" title="4.IMPLEMENT_APP宏"></a>4.IMPLEMENT_APP宏</h3><p>那么创建MyApp的实例的代码在哪里呢?</p>
 <p>实际上,这是在wxWidgets内部实现的,不过你仍然需要告诉wxWidgets需要创建哪一个App类的实例,所以你还需要增加下面的一个宏:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wxIMPLEMENT_APP(MyApp);</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">wxIMPLEMENT_APP</span>(MyApp);</span><br></pre></td></tr></table></figure>
+
 <p>如果没有实现这个类, wxWidgets就不知道怎样创建一个新的应用程序对象。</p>
 <p>这个宏除了上述的功能以外,还会检查编译应用程序使用的库文件是否和当前的库文件相匹配(前面我们已经介绍了,你可以编译多个配置文件的wxWidgets库文件),如果没有这种检查,由此而产生的一些运行期的错误将很难被定位出原因。</p>
 <h3 id="5-DECLARE-APP-MyAPP-宏"><a href="#5-DECLARE-APP-MyAPP-宏" class="headerlink" title="5.DECLARE_APP(MyAPP)宏"></a>5.DECLARE_APP(MyAPP)宏</h3><p>当wxWidgets创建这个MyApp类的实例的时候,会将创建的结果赋值给一个全局变量wxTheApp.</p>
 <p>你当然可以在你的程序中使用这个变量,但是你可能不得不一遍又一遍的进行从wxApp到MyApp的类型强制转换。</p>
 <p>增加下面的这一行声明以后,你就可以调用wxGetApp()函数,这个函数会返回一个到这个MyApp实例的引用</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DECLARE_APP(MyApp)</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">DECLARE_APP</span>(MyApp)</span><br></pre></td></tr></table></figure>
+
 <h3 id="5-一点提示"><a href="#5-一点提示" class="headerlink" title="5.一点提示"></a>5.一点提示</h3><blockquote>
 <p>即使没有声明DECLARE-APP,你仍然可以不用进行类型强制转化就直接对wxTheApp变量调用wxApp(注意,不是MyApp而是wxApp,它是MyApp的基类的方法,这可以避免在所有的头文件中包含MyApp的头文件,这对于那些库中的代码(而不是应用程序的代码)来说也更有意义,而且还可以缩短编译的时间。</p>
 </blockquote>
 <h2 id="2-WxFrame"><a href="#2-WxFrame" class="headerlink" title="2.WxFrame"></a>2.WxFrame</h2><p>一个Frame窗口是一个可以容纳别的窗口的顶层窗口,通常拥有一个标题栏和一个菜单栏。Frame类的定义可以放在MyApp类后。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyFrame</span> :</span> <span class="keyword">public</span> wxFrame</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    MyFrame();</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">OnExit</span><span class="params">(wxCommandEvent&amp; event)</span></span>;<span class="comment">//退出事件</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">OnAbout</span><span class="params">(wxCommandEvent&amp; event)</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyFrame</span> : <span class="keyword">public</span> wxFrame</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">MyFrame</span>();</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">OnExit</span><span class="params">(wxCommandEvent&amp; event)</span></span>;<span class="comment">//退出事件</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">OnAbout</span><span class="params">(wxCommandEvent&amp; event)</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <p>这个窗口类有一个<strong>构造函数</strong>和两个用来把菜单命令和C++代码相连的<strong>事件处理函数</strong></p>
 <h2 id="3-事件处理函数"><a href="#3-事件处理函数" class="headerlink" title="3.事件处理函数"></a>3.事件处理函数</h2><h3 id="1-时间表EVENT-TABLE"><a href="#1-时间表EVENT-TABLE" class="headerlink" title="1.时间表EVENT TABLE"></a>1.时间表EVENT TABLE</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">BEGIN EVENT <span class="title">TABLE</span><span class="params">(MyFrame, wxFrame)</span> </span></span><br><span class="line"><span class="function">	EVT <span class="title">MENU</span><span class="params">(wxID_ABOUT, MyFrame::OnAbout)</span> </span></span><br><span class="line"><span class="function">	EVT <span class="title">MENU</span><span class="params">(wxID_EXIT, MyFrame::OnQuit)</span></span></span><br><span class="line"><span class="function">END EVENT <span class="title">TABLE</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+
 <p>​            所谓事件表,是一组位于类的实现文件(.cpp文件)中的宏,用来告诉wxWidgets来自用户或者其它地方的事件应该怎样和类的成员函数对应起来。</p>
 <p>​            前面展示的事件表表明,要把标识符分别为wxID_EXITwxID_ABOUT的菜单事件和MyFrame的成员函数OnAbout和OnQuit关联起来。这里的EVTMENU宏只是很多中事件宏中的一个,事件宏的作用是告诉wxWidgets哪种事件应该被关联到哪个成员函数。</p>
 <p>​            这里的两个标识wxID_ABOUT和wxID_EXIT是wxWidgets预定义的宏,通常应该通过枚举,常量或者宏定义的方式定义你自己的标识符，下边是一个例子。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span></span><br><span class="line">&#123;</span><br><span class="line">   Menu_File_Quit = <span class="number">100</span>,<span class="comment">//窗口退出ID=100 </span></span><br><span class="line">   Menu_File_Open,<span class="comment">//打开ID=101</span></span><br><span class="line">   Menu_File_Save,<span class="comment">//保存102</span></span><br><span class="line"></span><br><span class="line">   Menu_Render_Start,<span class="comment">//渲染开始103</span></span><br><span class="line">   Menu_Render_Pause,<span class="comment">//停止104</span></span><br><span class="line">   Menu_Render_Resume<span class="comment">//重新开始105</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//事件表 类和基类</span></span><br><span class="line">BEGIN_EVENT_TABLE( wxraytracerFrame, wxFrame )</span><br><span class="line">   EVT_MENU( Menu_Render_Start, wxraytracerFrame::OnRenderStart )</span><br><span class="line">   EVT_MENU( Menu_Render_Pause, wxraytracerFrame::OnRenderPause )</span><br><span class="line">   EVT_MENU( Menu_Render_Resume, wxraytracerFrame::OnRenderResume )</span><br><span class="line">   EVT_MENU( Menu_File_Save, wxraytracerFrame::OnSaveFile )</span><br><span class="line">   EVT_MENU( Menu_File_Open, wxraytracerFrame::OnOpenFile )</span><br><span class="line">   EVT_MENU( Menu_File_Quit, wxraytracerFrame::OnQuit )</span><br><span class="line">   EVT_COMMAND(ID_RENDER_COMPLETED, wxEVT_RENDER,</span><br><span class="line">                     wxraytracerFrame::OnRenderCompleted)</span><br><span class="line">END_EVENT_TABLE()</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span></span><br><span class="line">&#123;</span><br><span class="line">   Menu_File_Quit = <span class="number">100</span>,<span class="comment">//窗口退出ID=100 </span></span><br><span class="line">   Menu_File_Open,<span class="comment">//打开ID=101</span></span><br><span class="line">   Menu_File_Save,<span class="comment">//保存102</span></span><br><span class="line"></span><br><span class="line">   Menu_Render_Start,<span class="comment">//渲染开始103</span></span><br><span class="line">   Menu_Render_Pause,<span class="comment">//停止104</span></span><br><span class="line">   Menu_Render_Resume<span class="comment">//重新开始105</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//事件表 类和基类</span></span><br><span class="line"><span class="built_in">BEGIN_EVENT_TABLE</span>( wxraytracerFrame, wxFrame )</span><br><span class="line">   <span class="built_in">EVT_MENU</span>( Menu_Render_Start, wxraytracerFrame::OnRenderStart )</span><br><span class="line">   <span class="built_in">EVT_MENU</span>( Menu_Render_Pause, wxraytracerFrame::OnRenderPause )</span><br><span class="line">   <span class="built_in">EVT_MENU</span>( Menu_Render_Resume, wxraytracerFrame::OnRenderResume )</span><br><span class="line">   <span class="built_in">EVT_MENU</span>( Menu_File_Save, wxraytracerFrame::OnSaveFile )</span><br><span class="line">   <span class="built_in">EVT_MENU</span>( Menu_File_Open, wxraytracerFrame::OnOpenFile )</span><br><span class="line">   <span class="built_in">EVT_MENU</span>( Menu_File_Quit, wxraytracerFrame::OnQuit )</span><br><span class="line">   <span class="built_in">EVT_COMMAND</span>(ID_RENDER_COMPLETED, wxEVT_RENDER,</span><br><span class="line">                     wxraytracerFrame::OnRenderCompleted)</span><br><span class="line"><span class="built_in">END_EVENT_TABLE</span>()</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
+
+
 <p>​    用上面的方法定义的事件表是一种静态的事件表,不可以在运行期改变。</p>
-<h3 id="2-OnAbout和OnQuit函数"><a href="#2-OnAbout和OnQuit函数" class="headerlink" title="2.OnAbout和OnQuit函数"></a>2.OnAbout和OnQuit函数</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> MyFrame::OnAbout(wxCommandEvent&amp; event)</span><br><span class="line">&#123;</span><br><span class="line">	wxString msg; </span><br><span class="line">    msg.Printf(wxT(”Hello <span class="keyword">and</span> welcome to %s”), wxVERSION STRING);</span><br><span class="line">	wxMessageBox(msg, wxT(”About Minimal”), wxOK | wxICON INFORMATION, <span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> MyFrame::OnQuit(wxCommandEvent&amp; event) </span><br><span class="line">&#123;</span><br><span class="line">	Close(); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-OnAbout和OnQuit函数"><a href="#2-OnAbout和OnQuit函数" class="headerlink" title="2.OnAbout和OnQuit函数"></a>2.OnAbout和OnQuit函数</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">MyFrame::OnAbout</span><span class="params">(wxCommandEvent&amp; event)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	wxString msg; </span><br><span class="line">    msg.<span class="built_in">Printf</span>(<span class="built_in">wxT</span>(”Hello <span class="keyword">and</span> welcome to %s”), wxVERSION STRING);</span><br><span class="line">	<span class="built_in">wxMessageBox</span>(msg, <span class="built_in">wxT</span>(”About Minimal”), wxOK | wxICON INFORMATION, <span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">MyFrame::OnQuit</span><span class="params">(wxCommandEvent&amp; event)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">Close</span>(); </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>当用户点击关于菜单项的时候, MyFrame:OnAbout函数弹出一个消息框。这用到了wxWidgets提供的API wxMessageBox,它的四个参数分别代表消息内容,标题,窗口类型以及父窗口。</p>
-<h3 id="3-wxMessageBox消息框"><a href="#3-wxMessageBox消息框" class="headerlink" title="3.wxMessageBox消息框"></a>3.wxMessageBox消息框</h3><h5 id="使用规范"><a href="#使用规范" class="headerlink" title="使用规范:"></a>使用规范:</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wxMessageBox(msg, wxT(”About Minimal”), wxOK | wxICON INFORMATION, <span class="keyword">this</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="3-wxMessageBox消息框"><a href="#3-wxMessageBox消息框" class="headerlink" title="3.wxMessageBox消息框"></a>3.wxMessageBox消息框</h3><h5 id="使用规范"><a href="#使用规范" class="headerlink" title="使用规范:"></a>使用规范:</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">wxMessageBox</span>(msg, <span class="built_in">wxT</span>(”About Minimal”), wxOK | wxICON INFORMATION, <span class="keyword">this</span>);</span><br></pre></td></tr></table></figure>
+
 <h5 id="解释"><a href="#解释" class="headerlink" title="解释:"></a>解释:</h5><table>
 <thead>
 <tr>
@@ -271,29 +321,31 @@
 <th>父窗口</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td></td>
 <td>msg</td>
 <td>wxT(”About Minimal”)</td>
 <td>wxOK wxICON INFORMATION</td>
 <td>this</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="4-OnQuit的解释"><a href="#4-OnQuit的解释" class="headerlink" title="4.OnQuit的解释"></a>4.OnQuit的解释</h3><p>​        当用户点击退出菜单项的时候, MyFrame:OnQuit函数被调用(你已经意识到了,这是事件表的功劳) 。它调用wxFrame类的Close函数来释放frame窗口。因为没有别的窗口存在了,所以就触发了应用程序的退出,</p>
 <p>​        实际上, wxFrame类的Close函数并不直接关闭frame窗口,而是产生一个wxEVTCLOSE-WINDOW事件,这个事件默认的处理函数调用wxWindow:: Destroy函数释放了frame窗口。</p>
 <p>​        用户还可以通过别的方法关掉应用程序,比如通过点击标题栏上的关闭按钮或者是通过系统菜单中的关闭菜单,在这种情况下, OnQuit函数是怎样被调用的呢?事实上,在这种情况, OnQuit函数并没有被调用。这时, wxWidgets会通过Close函数 (象OnQuit中的那样) ,给frame窗口发送一个wxEVTCLOSEWINDOW事件,这个事件默认的处理函数会释放掉frame窗口。</p>
 <p>​        在你的应用程序中,可以通过拦截这个事件来改变这种默认的行为,比如有时候,你可能想问一问你的用户是不是真的要这样做.</p>
 <p>​        另外,大多数的应用程序类还应该重载(重载是C++的关键词)一个OnExit函数,以便在任何时候程序退出时,执行清理和资源回收的动作。需要注意的是,这个函数只有在Onlnit函数返回真的时候才会被执行。当然,在我们这个小例子中就用不着定义这个函数了。</p>
 <h2 id="4-Frame构造函数"><a href="#4-Frame构造函数" class="headerlink" title="4.Frame构造函数"></a>4.Frame构造函数</h2><p>最后,让我们来看看Frame窗口的构造函数,正是它实现了frame窗口的图标,菜单栏和状态条</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> ”mondrian.xpm” </span></span><br><span class="line">MyFrame::MyFrame(<span class="keyword">const</span> wxString&amp; title) </span><br><span class="line">	: wxFrame(<span class="literal">NULL</span>, wxID ANY, title)<span class="comment">//表1</span></span><br><span class="line">&#123;</span><br><span class="line">	SetIcon(wxIcon(mondrian xpm)); </span><br><span class="line">        </span><br><span class="line">	wxMenu ∗fileMenu = <span class="keyword">new</span> wxMenu; </span><br><span class="line">	wxMenu ∗helpMenu = <span class="keyword">new</span> wxMenu; </span><br><span class="line">		helpMenu−&gt;Append(wxID_ABOUT, wxT(”&amp;About...\tF1”), wxT(”Show about dialog”));</span><br><span class="line">		fileMenu−&gt;Append(wxID_EXIT, wxT(”E&amp;xit\tAlt−X”), wxT(”Quit <span class="keyword">this</span> program”));</span><br><span class="line">        </span><br><span class="line">	wxMenuBar ∗menuBar = <span class="keyword">new</span> wxMenuBar(); </span><br><span class="line">        menuBar−&gt;Append(fileMenu, wxT(”&amp;File”)); </span><br><span class="line">        menuBar−&gt;Append(helpMenu, wxT(”&amp;Help”)); </span><br><span class="line">        SetMenuBar(menuBar); </span><br><span class="line">        CreateStatusBar(<span class="number">2</span>); </span><br><span class="line">        SetStatusText(wxT(”Welcome to wxWidgets!”));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="1-MyFrame构造函数"><a href="#1-MyFrame构造函数" class="headerlink" title="1.MyFrame构造函数"></a>1.MyFrame构造函数</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MyFrame::MyFrame(<span class="keyword">const</span> wxString&amp; title) </span><br><span class="line">	: wxFrame(<span class="literal">NULL</span>, wxID ANY, title)</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> ”mondrian.xpm” </span></span><br><span class="line">MyFrame::<span class="built_in">MyFrame</span>(<span class="type">const</span> wxString&amp; title) </span><br><span class="line">	: <span class="built_in">wxFrame</span>(<span class="literal">NULL</span>, wxID ANY, title)<span class="comment">//表1</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">SetIcon</span>(<span class="built_in">wxIcon</span>(mondrian xpm)); </span><br><span class="line">        </span><br><span class="line">	wxMenu ∗fileMenu = <span class="keyword">new</span> wxMenu; </span><br><span class="line">	wxMenu ∗helpMenu = <span class="keyword">new</span> wxMenu; </span><br><span class="line">		helpMenu−&gt;<span class="built_in">Append</span>(wxID_ABOUT, <span class="built_in">wxT</span>(”&amp;About...\tF1”), <span class="built_in">wxT</span>(”Show about dialog”));</span><br><span class="line">		fileMenu−&gt;<span class="built_in">Append</span>(wxID_EXIT, <span class="built_in">wxT</span>(”E&amp;xit\tAlt−X”), <span class="built_in">wxT</span>(”Quit <span class="keyword">this</span> program”));</span><br><span class="line">        </span><br><span class="line">	wxMenuBar ∗menuBar = <span class="keyword">new</span> <span class="built_in">wxMenuBar</span>(); </span><br><span class="line">        menuBar−&gt;<span class="built_in">Append</span>(fileMenu, <span class="built_in">wxT</span>(”&amp;File”)); </span><br><span class="line">        menuBar−&gt;<span class="built_in">Append</span>(helpMenu, <span class="built_in">wxT</span>(”&amp;Help”)); </span><br><span class="line">        <span class="built_in">SetMenuBar</span>(menuBar); </span><br><span class="line">        <span class="built_in">CreateStatusBar</span>(<span class="number">2</span>); </span><br><span class="line">        <span class="built_in">SetStatusText</span>(<span class="built_in">wxT</span>(”Welcome to wxWidgets!”));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-MyFrame构造函数"><a href="#1-MyFrame构造函数" class="headerlink" title="1.MyFrame构造函数"></a>1.MyFrame构造函数</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MyFrame::<span class="built_in">MyFrame</span>(<span class="type">const</span> wxString&amp; title) </span><br><span class="line">	: <span class="built_in">wxFrame</span>(<span class="literal">NULL</span>, wxID ANY, title)</span><br></pre></td></tr></table></figure>
+
 <p>​    这个构造函数首先调用它的基类(wxFrame)的构造函数,使用的参数是父窗口(还没有父窗口,所以用NULL),窗口标识(wxIDANY标识让wxWidgets自己选择一个)和标题。这个基类的构造函数才真正创建了一个窗口的实例。</p>
 <p>除了这样的调用方法,还有另外一种方法是直接在构造函数里面显式调用基类默认的构造函数(就是指不带任何参数的构造函数),然后调用wxFrame:Create函数来创建一个frame窗口的实例。</p>
-<h3 id="2-SetIcon-图标设置"><a href="#2-SetIcon-图标设置" class="headerlink" title="2.SetIcon() 图标设置"></a>2.SetIcon() 图标设置</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SetIcon(wxIcon(mondrian xpm));</span><br></pre></td></tr></table></figure>
+<h3 id="2-SetIcon-图标设置"><a href="#2-SetIcon-图标设置" class="headerlink" title="2.SetIcon() 图标设置"></a>2.SetIcon() 图标设置</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">SetIcon</span>(<span class="built_in">wxIcon</span>(mondrian xpm)); </span><br></pre></td></tr></table></figure>
+
 <p>小图片或者是图标在所有的平台上都可以用XPM格式来表示。XPM文件其实是一个ASCI编码的完全符合C++语法的文本文件,所以可以直接用C++的方式包含到代码中,然后将这个图标和frame窗口关联。</p>
-<h2 id="5-WxMenu菜单栏和wxMenuBar菜单条"><a href="#5-WxMenu菜单栏和wxMenuBar菜单条" class="headerlink" title="5.WxMenu菜单栏和wxMenuBar菜单条"></a>5.WxMenu菜单栏和wxMenuBar菜单条</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">wxMenu ∗fileMenu = <span class="keyword">new</span> wxMenu; </span><br><span class="line">wxMenu ∗helpMenu = <span class="keyword">new</span> wxMenu; </span><br><span class="line">	helpMenu−&gt;Append(wxID_ABOUT, wxT(”&amp;About...\tF1”), wxT(”Show about dialog”));</span><br><span class="line">	fileMenu−&gt;Append(wxID_EXIT, wxT(”E&amp;xit\tAlt−X”), wxT(”Quit <span class="keyword">this</span> program”));</span><br><span class="line">       <span class="comment">//全局快捷键Alt−X</span></span><br><span class="line">wxMenuBar ∗menuBar = <span class="keyword">new</span> wxMenuBar(); <span class="comment">//菜单栏</span></span><br><span class="line">       menuBar−&gt;Append(fileMenu, wxT(”&amp;File”)); </span><br><span class="line">       menuBar−&gt;Append(helpMenu, wxT(”&amp;Help”)); </span><br><span class="line">       SetMenuBar(menuBar); </span><br><span class="line">       CreateStatusBar(<span class="number">2</span>); </span><br><span class="line">       SetStatusText(wxT(”Welcome to wxWidgets!”));</span><br></pre></td></tr></table></figure>
+<h2 id="5-WxMenu菜单栏和wxMenuBar菜单条"><a href="#5-WxMenu菜单栏和wxMenuBar菜单条" class="headerlink" title="5.WxMenu菜单栏和wxMenuBar菜单条"></a>5.WxMenu菜单栏和wxMenuBar菜单条</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">wxMenu ∗fileMenu = <span class="keyword">new</span> wxMenu; </span><br><span class="line">wxMenu ∗helpMenu = <span class="keyword">new</span> wxMenu; </span><br><span class="line">	helpMenu−&gt;<span class="built_in">Append</span>(wxID_ABOUT, <span class="built_in">wxT</span>(”&amp;About...\tF1”), <span class="built_in">wxT</span>(”Show about dialog”));</span><br><span class="line">	fileMenu−&gt;<span class="built_in">Append</span>(wxID_EXIT, <span class="built_in">wxT</span>(”E&amp;xit\tAlt−X”), <span class="built_in">wxT</span>(”Quit <span class="keyword">this</span> program”));</span><br><span class="line">       <span class="comment">//全局快捷键Alt−X</span></span><br><span class="line">wxMenuBar ∗menuBar = <span class="keyword">new</span> <span class="built_in">wxMenuBar</span>(); <span class="comment">//菜单栏</span></span><br><span class="line">       menuBar−&gt;<span class="built_in">Append</span>(fileMenu, <span class="built_in">wxT</span>(”&amp;File”)); </span><br><span class="line">       menuBar−&gt;<span class="built_in">Append</span>(helpMenu, <span class="built_in">wxT</span>(”&amp;Help”)); </span><br><span class="line">       <span class="built_in">SetMenuBar</span>(menuBar); </span><br><span class="line">       <span class="built_in">CreateStatusBar</span>(<span class="number">2</span>); </span><br><span class="line">       <span class="built_in">SetStatusText</span>(<span class="built_in">wxT</span>(”Welcome to wxWidgets!”));</span><br></pre></td></tr></table></figure>
+
 <p>​    接下来创建了菜单条。增加菜单项的Append函数的三个参数的意义分别为:菜单项标识,菜单上的文本以及一个稍微长一些的帮助字符串。这个帮助字符串会自动在菜单项被高亮显示的时候自动显示在状态栏上。菜单上的文本中由”&amp;”符号前导的字符将成为菜单的快捷操作符,在实际的显示中用下划线表示。而”\t”符号则前导一个全局的快捷键,这个快捷键可以在菜单项没有被打开的时候触发菜单功能。</p>
 <p>​    这个构造函数所做的最后一件事是创建一个由两个区域组成的状态条并且在状态条的第一个区域写上欢迎的字样。</p>
 <p>表1</p>
@@ -306,18 +358,20 @@
 <th>title</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td></td>
 <td>父窗口NULL</td>
 <td>窗口标识wxID_ANY让wxWidgets自己选择一个</td>
 <td>标题</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>表2</p>
-<h3 id="1-Append"><a href="#1-Append" class="headerlink" title="1.Append()"></a>1.Append()</h3><h4 id="wxMenu使用规范"><a href="#wxMenu使用规范" class="headerlink" title="wxMenu使用规范:"></a>wxMenu使用规范:</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wxMenu−&gt;Append(wxID_ABOUT(标识ID), wxT(”&amp;显示的名字...\t快捷键”), wxT(”帮助字符串”));</span><br></pre></td></tr></table></figure>
-<h5 id="wxMenuBar使用规范"><a href="#wxMenuBar使用规范" class="headerlink" title="wxMenuBar使用规范:"></a>wxMenuBar使用规范:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wxMenuBar ∗menuBar = new wxMenuBar(); //声明菜单栏</span><br><span class="line">menuBar−&gt;Append(wxMenu, wxT(”&amp;File”));</span><br></pre></td></tr></table></figure>
+<h3 id="1-Append"><a href="#1-Append" class="headerlink" title="1.Append()"></a>1.Append()</h3><h4 id="wxMenu使用规范"><a href="#wxMenu使用规范" class="headerlink" title="wxMenu使用规范:"></a>wxMenu使用规范:</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wxMenu−&gt;<span class="built_in">Append</span>(<span class="built_in">wxID_ABOUT</span>(标识ID), <span class="built_in">wxT</span>(”&amp;显示的名字...\t快捷键”), <span class="built_in">wxT</span>(”帮助字符串”));</span><br></pre></td></tr></table></figure>
+
+<h5 id="wxMenuBar使用规范"><a href="#wxMenuBar使用规范" class="headerlink" title="wxMenuBar使用规范:"></a>wxMenuBar使用规范:</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wxMenuBar ∗menuBar = new wxMenuBar(); //声明菜单栏</span><br><span class="line">menuBar−&gt;Append(wxMenu, wxT(”&amp;File”)); </span><br></pre></td></tr></table></figure>
+
+
+
 <p>wxMenu与wxMenuBar的附加函数</p>
 <table>
 <thead>
@@ -328,35 +382,86 @@
 <th>帮助字符串</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td></td>
 <td>wxID_ABOUT</td>
 <td>wxT(”&amp;About…\tF1”)</td>
 <td>wxT(”Show about dialog”)</td>
 </tr>
-</tbody>
-</table>
-<h2 id="6-全部代码"><a href="#6-全部代码" class="headerlink" title="6.全部代码"></a>6.全部代码</h2><h3 id="main-h"><a href="#main-h" class="headerlink" title="main.h"></a>main.h</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Name: minimal.cpp</span></span><br><span class="line"><span class="comment">// Purpose: Minimal wxWidgets sample </span></span><br><span class="line"><span class="comment">// Author:Julian Smart </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> ”wx/wx.h”</span></span><br><span class="line"><span class="comment">// 应用程序类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> :</span> <span class="keyword">public</span> wxApp </span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">public</span>: </span><br><span class="line">		<span class="function"><span class="keyword">virtual</span> <span class="keyword">bool</span> <span class="title">OnInit</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//主窗口</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyFrame</span> :</span> <span class="keyword">public</span> wxFrame</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="comment">//主窗口构造函数</span></span><br><span class="line">    	MyFrame(<span class="keyword">const</span> wxString&amp; title);</span><br><span class="line">    </span><br><span class="line">    	<span class="comment">//事件处理函数</span></span><br><span class="line">    	<span class="function"><span class="keyword">void</span> <span class="title">OnExit</span><span class="params">(wxCommandEvent&amp; event)</span></span>;</span><br><span class="line">    	<span class="function"><span class="keyword">void</span> <span class="title">OnAbout</span><span class="params">(wxCommandEvent&amp; event)</span></span>;</span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">    	<span class="comment">//声明事件表</span></span><br><span class="line">    	DECLARE_EVENT_TABLE()   	</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//宏定义	</span></span><br><span class="line">	DECLARE_APP(MyApp)<span class="comment">//有了这一行就可以使用MyApp&amp; wxGetApp()了</span></span><br><span class="line">	IMPLEMENT_APP(MyApp)<span class="comment">//告诉应用程序是哪个类wxWidgets</span></span><br></pre></td></tr></table></figure>
-<h3 id="main-cpp"><a href="#main-cpp" class="headerlink" title="main.cpp"></a>main.cpp</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始化程序</span></span><br><span class="line"><span class="keyword">bool</span> MyApp::OnInit()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//创建主窗口</span></span><br><span class="line">	MyFrame ∗frame = <span class="keyword">new</span> MyFrame(wxT(”Minimal wxWidgets App”));</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//显示主窗口</span></span><br><span class="line">	frame−&gt;Show(<span class="literal">true</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//开始事件处理循环</span></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//事件表</span></span><br><span class="line">	BEGIN_EVENT_TABLE(MyFrame, wxFrame) </span><br><span class="line">    	EVT_MENU(wxID_ABOUT, MyFrame::OnAbout) </span><br><span class="line">    	EVT_MENU(wxID_EXIT, MyFrame::OnExit)</span><br><span class="line">	END_EVENT_TABLE()</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"><span class="keyword">void</span> MyFrame::OnAbout(wxCommandEvent&amp; event) </span><br><span class="line">&#123;</span><br><span class="line">	wxString msg; </span><br><span class="line">	msg.Printf(wxT(”Hello <span class="keyword">and</span> welcome to %s”), </span><br><span class="line">               wxVERSION STRING);</span><br><span class="line">        </span><br><span class="line">	wxMessageBox(msg, wxT(”About Minimal”), </span><br><span class="line">                 wxOK | wxICON INFORMATION, <span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> MyFrame::OnExit(wxCommandEvent&amp; event) </span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">// 释放主窗口</span></span><br><span class="line">    Close();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//构造函数 最复杂的写最下边</span></span><br><span class="line">MyFrame::MyFrame(<span class="keyword">const</span> wxString&amp; title)</span><br><span class="line">       : wxFrame(<span class="literal">NULL</span>, wxID_ANY, title)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//设置窗口图标</span></span><br><span class="line">    SetIcon(wxIcon(mondrian_xpm));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 建菜单条</span></span><br><span class="line">    wxMenu *fileMenu = <span class="keyword">new</span> wxMenu;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 添加“关于”菜单项</span></span><br><span class="line">    wxMenu *helpMenu = <span class="keyword">new</span> wxMenu;</span><br><span class="line">    helpMenu-&gt;Append(wxID_ABOUT, wxT(<span class="string">"&amp;About...\tF1"</span>),</span><br><span class="line">                     wxT(<span class="string">"Show about dialog"</span>));</span><br><span class="line"></span><br><span class="line">    fileMenu-&gt;Append(wxID_EXIT, wxT(<span class="string">"E&amp;xit\tAlt-X"</span>),</span><br><span class="line">                     wxT(<span class="string">"Quit this program"</span>));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将菜单项添加到菜单条中</span></span><br><span class="line">    wxMenuBar *menuBar = <span class="keyword">new</span> wxMenuBar();</span><br><span class="line">    menuBar-&gt;Append(fileMenu, wxT(<span class="string">"&amp;File"</span>));</span><br><span class="line">    menuBar-&gt;Append(helpMenu, wxT(<span class="string">"&amp;Help"</span>));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 然后将菜单条放置在主窗口上.…</span></span><br><span class="line">    SetMenuBar(menuBar);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建一个状态条来让一切更有趣些。</span></span><br><span class="line">    CreateStatusBar(<span class="number">2</span>);</span><br><span class="line">    SetStatusText(wxT(<span class="string">"Welcome to wxWidgets!"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</tbody></table>
+<h2 id="6-全部代码"><a href="#6-全部代码" class="headerlink" title="6.全部代码"></a>6.全部代码</h2><h3 id="main-h"><a href="#main-h" class="headerlink" title="main.h"></a>main.h</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Name: minimal.cpp</span></span><br><span class="line"><span class="comment">// Purpose: Minimal wxWidgets sample </span></span><br><span class="line"><span class="comment">// Author:Julian Smart </span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> ”wx/wx.h”</span></span><br><span class="line"><span class="comment">// 应用程序类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyApp</span> : <span class="keyword">public</span> wxApp </span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">public</span>: </span><br><span class="line">		<span class="function"><span class="keyword">virtual</span> <span class="type">bool</span> <span class="title">OnInit</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//主窗口</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyFrame</span> : <span class="keyword">public</span> wxFrame</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="comment">//主窗口构造函数</span></span><br><span class="line">    	<span class="built_in">MyFrame</span>(<span class="type">const</span> wxString&amp; title);</span><br><span class="line">    </span><br><span class="line">    	<span class="comment">//事件处理函数</span></span><br><span class="line">    	<span class="function"><span class="type">void</span> <span class="title">OnExit</span><span class="params">(wxCommandEvent&amp; event)</span></span>;</span><br><span class="line">    	<span class="function"><span class="type">void</span> <span class="title">OnAbout</span><span class="params">(wxCommandEvent&amp; event)</span></span>;</span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">    	<span class="comment">//声明事件表</span></span><br><span class="line">    	<span class="built_in">DECLARE_EVENT_TABLE</span>()   	</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//宏定义	</span></span><br><span class="line">	<span class="built_in">DECLARE_APP</span>(MyApp)<span class="comment">//有了这一行就可以使用MyApp&amp; wxGetApp()了</span></span><br><span class="line">	<span class="built_in">IMPLEMENT_APP</span>(MyApp)<span class="comment">//告诉应用程序是哪个类wxWidgets      </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="main-cpp"><a href="#main-cpp" class="headerlink" title="main.cpp"></a>main.cpp</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//初始化程序</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">MyApp::OnInit</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//创建主窗口</span></span><br><span class="line">	MyFrame ∗frame = <span class="keyword">new</span> <span class="built_in">MyFrame</span>(<span class="built_in">wxT</span>(”Minimal wxWidgets App”));</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//显示主窗口</span></span><br><span class="line">	frame−&gt;<span class="built_in">Show</span>(<span class="literal">true</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//开始事件处理循环</span></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//事件表</span></span><br><span class="line">	<span class="built_in">BEGIN_EVENT_TABLE</span>(MyFrame, wxFrame) </span><br><span class="line">    	<span class="built_in">EVT_MENU</span>(wxID_ABOUT, MyFrame::OnAbout) </span><br><span class="line">    	<span class="built_in">EVT_MENU</span>(wxID_EXIT, MyFrame::OnExit)</span><br><span class="line">	<span class="built_in">END_EVENT_TABLE</span>()</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">MyFrame::OnAbout</span><span class="params">(wxCommandEvent&amp; event)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	wxString msg; </span><br><span class="line">	msg.<span class="built_in">Printf</span>(<span class="built_in">wxT</span>(”Hello <span class="keyword">and</span> welcome to %s”), </span><br><span class="line">               wxVERSION STRING);</span><br><span class="line">        </span><br><span class="line">	<span class="built_in">wxMessageBox</span>(msg, <span class="built_in">wxT</span>(”About Minimal”), </span><br><span class="line">                 wxOK | wxICON INFORMATION, <span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">MyFrame::OnExit</span><span class="params">(wxCommandEvent&amp; event)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 释放主窗口</span></span><br><span class="line">    <span class="built_in">Close</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//构造函数 最复杂的写最下边</span></span><br><span class="line">MyFrame::<span class="built_in">MyFrame</span>(<span class="type">const</span> wxString&amp; title)</span><br><span class="line">       : <span class="built_in">wxFrame</span>(<span class="literal">NULL</span>, wxID_ANY, title)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//设置窗口图标</span></span><br><span class="line">    <span class="built_in">SetIcon</span>(<span class="built_in">wxIcon</span>(mondrian_xpm));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 建菜单条</span></span><br><span class="line">    wxMenu *fileMenu = <span class="keyword">new</span> wxMenu;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 添加“关于”菜单项</span></span><br><span class="line">    wxMenu *helpMenu = <span class="keyword">new</span> wxMenu;</span><br><span class="line">    helpMenu-&gt;<span class="built_in">Append</span>(wxID_ABOUT, <span class="built_in">wxT</span>(<span class="string">&quot;&amp;About...\tF1&quot;</span>),</span><br><span class="line">                     <span class="built_in">wxT</span>(<span class="string">&quot;Show about dialog&quot;</span>));</span><br><span class="line"></span><br><span class="line">    fileMenu-&gt;<span class="built_in">Append</span>(wxID_EXIT, <span class="built_in">wxT</span>(<span class="string">&quot;E&amp;xit\tAlt-X&quot;</span>),</span><br><span class="line">                     <span class="built_in">wxT</span>(<span class="string">&quot;Quit this program&quot;</span>));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将菜单项添加到菜单条中</span></span><br><span class="line">    wxMenuBar *menuBar = <span class="keyword">new</span> <span class="built_in">wxMenuBar</span>();</span><br><span class="line">    menuBar-&gt;<span class="built_in">Append</span>(fileMenu, <span class="built_in">wxT</span>(<span class="string">&quot;&amp;File&quot;</span>));</span><br><span class="line">    menuBar-&gt;<span class="built_in">Append</span>(helpMenu, <span class="built_in">wxT</span>(<span class="string">&quot;&amp;Help&quot;</span>));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 然后将菜单条放置在主窗口上.…</span></span><br><span class="line">    <span class="built_in">SetMenuBar</span>(menuBar);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建一个状态条来让一切更有趣些。</span></span><br><span class="line">    <span class="built_in">CreateStatusBar</span>(<span class="number">2</span>);</span><br><span class="line">    <span class="built_in">SetStatusText</span>(<span class="built_in">wxT</span>(<span class="string">&quot;Welcome to wxWidgets!&quot;</span>));</span><br><span class="line">&#125;</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+
 <p>类比Qt的话感觉就是</p>
-<h2 id="2-Qt类比"><a href="#2-Qt类比" class="headerlink" title="2. Qt类比"></a>2. Qt类比</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyQtGuiApp</span> :</span> <span class="keyword">public</span> QMainWindow</span><br><span class="line">&#123;</span><br><span class="line">	Q_OBJECT</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		MyQtGuiApp(QWidget *parent = Q_NULLPTR);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		Ui::MyQtGuiApp ui;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-Qt类比"><a href="#2-Qt类比" class="headerlink" title="2. Qt类比"></a>2. Qt类比</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyQtGuiApp</span> : <span class="keyword">public</span> QMainWindow</span><br><span class="line">&#123;</span><br><span class="line">	Q_OBJECT</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="built_in">MyQtGuiApp</span>(QWidget *parent = Q_NULLPTR);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		Ui::MyQtGuiApp ui;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>MyQtGuiApp.cpp</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">QtGuiApp::QtGuiApp(QWidget *parent)</span><br><span class="line">	: QMainWindow(parent)</span><br><span class="line">	&#123;</span><br><span class="line">		ui.setupUi(<span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">QtGuiApp::<span class="built_in">QtGuiApp</span>(QWidget *parent)</span><br><span class="line">	: <span class="built_in">QMainWindow</span>(parent)</span><br><span class="line">	&#123;</span><br><span class="line">		ui.<span class="built_in">setupUi</span>(<span class="keyword">this</span>);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
     
     
     
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/s992545366">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://t.me/molers233">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
+
+            <span class="label">Telegram</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/图形界面/" rel="tag"># 图形界面</a>
+              <a href="/tags/%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2/" rel="tag"># 图形界面</a>
+              <a href="/tags/WxWidgets/" rel="tag"># WxWidgets</a>
               <a href="/tags/GUI/" rel="tag"># GUI</a>
               <a href="/tags/C/" rel="tag"># C++</a>
               <a href="/tags/VisualStudio/" rel="tag"># VisualStudio</a>
-              <a href="/tags/WxWidgets/" rel="tag"># WxWidgets</a>
           </div>
 
         
@@ -365,11 +470,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/01/28/WxWidgets学习笔记-1-环境搭建VisualStudio2019-WxWidgets/" rel="prev" title="WxWidgets学习笔记-1-环境搭建VisualStudio2019+WxWidgets">
+    <a href="/2020/01/28/WxWidgets%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAVisualStudio2019-WxWidgets/" rel="prev" title="WxWidgets学习笔记-1-环境搭建VisualStudio2019+WxWidgets">
       <i class="fa fa-chevron-left"></i> WxWidgets学习笔记-1-环境搭建VisualStudio2019+WxWidgets
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/01/28/读书札记-1-言语/" rel="next" title="读书札记-1-言语">
+    <a href="/2020/01/28/%E8%AF%BB%E4%B9%A6%E6%9C%AD%E8%AE%B0-1-%E8%A8%80%E8%AF%AD/" rel="next" title="读书札记-1-言语">
       读书札记-1-言语 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -384,6 +489,17 @@
 
           </div>
           
+    <div class="comments" id="comments">
+      
+    <script src="https://utteranc.es/client.js"
+    repo="Molers/BlogComment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+    </div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -430,48 +546,64 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-WxApp"><span class="nav-number">1.</span> <span class="nav-text">1.WxApp</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-wxApp类"><span class="nav-number">1.1.</span> <span class="nav-text">1.wxApp类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-OnInit函数的实现"><span class="nav-number">1.2.</span> <span class="nav-text">2.OnInit函数的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-wXT宏"><span class="nav-number">1.3.</span> <span class="nav-text">3.wXT宏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-IMPLEMENT-APP宏"><span class="nav-number">1.4.</span> <span class="nav-text">4.IMPLEMENT_APP宏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-DECLARE-APP-MyAPP-宏"><span class="nav-number">1.5.</span> <span class="nav-text">5.DECLARE_APP(MyAPP)宏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-一点提示"><span class="nav-number">1.6.</span> <span class="nav-text">5.一点提示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-WxFrame"><span class="nav-number">2.</span> <span class="nav-text">2.WxFrame</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-事件处理函数"><span class="nav-number">3.</span> <span class="nav-text">3.事件处理函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-时间表EVENT-TABLE"><span class="nav-number">3.1.</span> <span class="nav-text">1.时间表EVENT TABLE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-OnAbout和OnQuit函数"><span class="nav-number">3.2.</span> <span class="nav-text">2.OnAbout和OnQuit函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-wxMessageBox消息框"><span class="nav-number">3.3.</span> <span class="nav-text">3.wxMessageBox消息框</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用规范"><span class="nav-number">3.3.0.1.</span> <span class="nav-text">使用规范:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解释"><span class="nav-number">3.3.0.2.</span> <span class="nav-text">解释:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-OnQuit的解释"><span class="nav-number">3.4.</span> <span class="nav-text">4.OnQuit的解释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Frame构造函数"><span class="nav-number">4.</span> <span class="nav-text">4.Frame构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-MyFrame构造函数"><span class="nav-number">4.1.</span> <span class="nav-text">1.MyFrame构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-SetIcon-图标设置"><span class="nav-number">4.2.</span> <span class="nav-text">2.SetIcon() 图标设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-WxMenu菜单栏和wxMenuBar菜单条"><span class="nav-number">5.</span> <span class="nav-text">5.WxMenu菜单栏和wxMenuBar菜单条</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Append"><span class="nav-number">5.1.</span> <span class="nav-text">1.Append()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#wxMenu使用规范"><span class="nav-number">5.1.1.</span> <span class="nav-text">wxMenu使用规范:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#wxMenuBar使用规范"><span class="nav-number">5.1.1.1.</span> <span class="nav-text">wxMenuBar使用规范:</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-全部代码"><span class="nav-number">6.</span> <span class="nav-text">6.全部代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#main-h"><span class="nav-number">6.1.</span> <span class="nav-text">main.h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#main-cpp"><span class="nav-number">6.2.</span> <span class="nav-text">main.cpp</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Qt类比"><span class="nav-number">7.</span> <span class="nav-text">2. Qt类比</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-WxApp"><span class="nav-number">1.</span> <span class="nav-text">1.WxApp</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-wxApp%E7%B1%BB"><span class="nav-number">1.1.</span> <span class="nav-text">1.wxApp类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-OnInit%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.2.</span> <span class="nav-text">2.OnInit函数的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-wXT%E5%AE%8F"><span class="nav-number">1.3.</span> <span class="nav-text">3.wXT宏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-IMPLEMENT-APP%E5%AE%8F"><span class="nav-number">1.4.</span> <span class="nav-text">4.IMPLEMENT_APP宏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-DECLARE-APP-MyAPP-%E5%AE%8F"><span class="nav-number">1.5.</span> <span class="nav-text">5.DECLARE_APP(MyAPP)宏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E4%B8%80%E7%82%B9%E6%8F%90%E7%A4%BA"><span class="nav-number">1.6.</span> <span class="nav-text">5.一点提示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-WxFrame"><span class="nav-number">2.</span> <span class="nav-text">2.WxFrame</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">3.事件处理函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%97%B6%E9%97%B4%E8%A1%A8EVENT-TABLE"><span class="nav-number">3.1.</span> <span class="nav-text">1.时间表EVENT TABLE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-OnAbout%E5%92%8COnQuit%E5%87%BD%E6%95%B0"><span class="nav-number">3.2.</span> <span class="nav-text">2.OnAbout和OnQuit函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-wxMessageBox%E6%B6%88%E6%81%AF%E6%A1%86"><span class="nav-number">3.3.</span> <span class="nav-text">3.wxMessageBox消息框</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83"><span class="nav-number">3.3.0.1.</span> <span class="nav-text">使用规范:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A"><span class="nav-number">3.3.0.2.</span> <span class="nav-text">解释:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-OnQuit%E7%9A%84%E8%A7%A3%E9%87%8A"><span class="nav-number">3.4.</span> <span class="nav-text">4.OnQuit的解释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Frame%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="nav-number">4.</span> <span class="nav-text">4.Frame构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-MyFrame%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="nav-number">4.1.</span> <span class="nav-text">1.MyFrame构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-SetIcon-%E5%9B%BE%E6%A0%87%E8%AE%BE%E7%BD%AE"><span class="nav-number">4.2.</span> <span class="nav-text">2.SetIcon() 图标设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-WxMenu%E8%8F%9C%E5%8D%95%E6%A0%8F%E5%92%8CwxMenuBar%E8%8F%9C%E5%8D%95%E6%9D%A1"><span class="nav-number">5.</span> <span class="nav-text">5.WxMenu菜单栏和wxMenuBar菜单条</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Append"><span class="nav-number">5.1.</span> <span class="nav-text">1.Append()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#wxMenu%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83"><span class="nav-number">5.1.1.</span> <span class="nav-text">wxMenu使用规范:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#wxMenuBar%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83"><span class="nav-number">5.1.1.1.</span> <span class="nav-text">wxMenuBar使用规范:</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E5%85%A8%E9%83%A8%E4%BB%A3%E7%A0%81"><span class="nav-number">6.</span> <span class="nav-text">6.全部代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#main-h"><span class="nav-number">6.1.</span> <span class="nav-text">main.h</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#main-cpp"><span class="nav-number">6.2.</span> <span class="nav-text">main.cpp</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Qt%E7%B1%BB%E6%AF%94"><span class="nav-number">7.</span> <span class="nav-text">2. Qt类比</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Molers" src="/images/Avatar.jpg">
-  <p class="site-author-name" itemprop="name">Molers</p>
-  <div class="site-description" itemprop="description">计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing</div>
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="张文亮"
+      src="/images/Avatar.jpg">
+  <p class="site-author-name" itemprop="name">张文亮</p>
+  <div class="site-description" itemprop="description">计算机CV与CG研究生,爱好绘画</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">76</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">115</span>
+        <span class="site-state-item-count">122</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/Molers" title="GitHub → https://github.com/Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/Molers" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://weibo.com/3179969322" title="Weibo → https://weibo.com/3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+        <a href="/s992545366@qq.com" title="E-Mail → s992545366@qq.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/s992545366" title="Twitter → https://twitter.com/s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+        <a href="https://weibo.com/3179969322" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/s992545366" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pixiv.net/users/7480965" title="Pixiv → https:&#x2F;&#x2F;www.pixiv.net&#x2F;users&#x2F;7480965" rel="noopener" target="_blank"><i class="fas fa-paint-brush fa-fw"></i>Pixiv</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/zhang-wen-liang-32" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;zhang-wen-liang-32" rel="noopener" target="_blank"><i class="fas fa-book-open fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/1876807" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;1876807" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/weixin_37923383" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_37923383" rel="noopener" target="_blank"><i class="fas fa-laptop-code fa-fw"></i>CSDN</a>
       </span>
   </div>
 
@@ -496,13 +628,13 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Molers</span>
+  <span class="author" itemprop="copyrightHolder">张文亮</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -522,15 +654,27 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 

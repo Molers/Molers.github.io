@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.8.0">
+<meta name="generator" content="Hexo 6.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -17,23 +17,26 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Chapter5-SimpleShader-BaseShaderSV_POSITION SV_前缀的变量代表system value SV_POSTION一旦被作为vertex shader的输出,那么这个最终的顶点位置就被固定了(不能tensellate），直接进入光栅化处理。 1234567891011121314151617181920212223Shader &quot;Custom/Chapter">
-<meta name="keywords" content="基础,学习笔记,Shader,Unity">
+  <meta name="description" content="Chapter5-SimpleShader-BaseShaderSV_POSITION SV_前缀的变量代表system value SV_POSTION一旦被作为vertex shader的输出,那么这个最终的顶点位置就被固定了(不能tensellate），直接进入光栅化处理。 1234567891011121314151617181920212223Shader &quot;Custom&#x2F;Ch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Unity Shader学习笔记-1-一个最简单的顶点&#x2F;片元着色器">
-<meta property="og:url" content="http://yoursite.com/2020/02/05/Unity-Shader学习笔记-1-一个最简单的顶点-片元着色器/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/02/05/Unity-Shader%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1-%E4%B8%80%E4%B8%AA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E9%A1%B6%E7%82%B9-%E7%89%87%E5%85%83%E7%9D%80%E8%89%B2%E5%99%A8/index.html">
 <meta property="og:site_name" content="Molers Blog">
-<meta property="og:description" content="Chapter5-SimpleShader-BaseShaderSV_POSITION SV_前缀的变量代表system value SV_POSTION一旦被作为vertex shader的输出,那么这个最终的顶点位置就被固定了(不能tensellate），直接进入光栅化处理。 1234567891011121314151617181920212223Shader &quot;Custom/Chapter">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-01-25T15:03:30.333Z">
+<meta property="og:description" content="Chapter5-SimpleShader-BaseShaderSV_POSITION SV_前缀的变量代表system value SV_POSTION一旦被作为vertex shader的输出,那么这个最终的顶点位置就被固定了(不能tensellate），直接进入光栅化处理。 1234567891011121314151617181920212223Shader &quot;Custom&#x2F;Ch">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-05T15:42:57.000Z">
+<meta property="article:modified_time" content="2021-01-25T15:03:30.333Z">
+<meta property="article:author" content="张文亮">
+<meta property="article:tag" content="基础">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="Shader">
+<meta property="article:tag" content="Unity">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Unity Shader学习笔记-1-一个最简单的顶点&#x2F;片元着色器">
-<meta name="twitter:description" content="Chapter5-SimpleShader-BaseShaderSV_POSITION SV_前缀的变量代表system value SV_POSTION一旦被作为vertex shader的输出,那么这个最终的顶点位置就被固定了(不能tensellate），直接进入光栅化处理。 1234567891011121314151617181920212223Shader &quot;Custom/Chapter">
 
-<link rel="canonical" href="http://yoursite.com/2020/02/05/Unity-Shader学习笔记-1-一个最简单的顶点-片元着色器/">
+<link rel="canonical" href="http://yoursite.com/2020/02/05/Unity-Shader%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1-%E4%B8%80%E4%B8%AA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E9%A1%B6%E7%82%B9-%E7%89%87%E5%85%83%E7%9D%80%E8%89%B2%E5%99%A8/">
 
 
 <script id="page-configurations">
@@ -77,6 +80,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Molers Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -105,6 +109,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -139,11 +144,43 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-rss">
+
+    <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -166,16 +203,16 @@
     
   
   
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/05/Unity-Shader学习笔记-1-一个最简单的顶点-片元着色器/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/05/Unity-Shader%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1-%E4%B8%80%E4%B8%AA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E9%A1%B6%E7%82%B9-%E7%89%87%E5%85%83%E7%9D%80%E8%89%B2%E5%99%A8/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+      <meta itemprop="name" content="张文亮">
+      <meta itemprop="description" content="计算机CV与CG研究生,爱好绘画">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Molers Blog">
     </span>
       <header class="post-header">
@@ -204,7 +241,7 @@
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Unity-Shader/" itemprop="url" rel="index"><span itemprop="name">Unity Shader</span></a>
                 </span>
             </span>
@@ -221,27 +258,82 @@
 
       
         <h1 id="Chapter5-SimpleShader-BaseShader"><a href="#Chapter5-SimpleShader-BaseShader" class="headerlink" title="Chapter5-SimpleShader-BaseShader"></a>Chapter5-SimpleShader-BaseShader</h1><p>SV_POSITION SV_前缀的变量代表system value SV_POSTION一旦被作为vertex shader的输出,那么这个最终的顶点位置就被固定了(不能tensellate），直接进入光栅化处理。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Shader <span class="string">"Custom/Chapter5-SimpleShader"</span> &#123;</span><br><span class="line"></span><br><span class="line">    SubShader &#123;</span><br><span class="line">        Pass&#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 两条非常重要的编译指令</span></span><br><span class="line">            <span class="meta">#<span class="meta-keyword">pragma</span> vertex vert <span class="comment">// 顶点着色器的名字 指明那个是顶点着色器</span></span></span><br><span class="line">            <span class="meta">#<span class="meta-keyword">pragma</span> fragment frag <span class="comment">// 片元着色器</span></span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 这一步是把顶点坐标从模型空间转换到裁剪空间</span></span><br><span class="line">            float4 vert(float4 v : POSITION) : SV_POSITION &#123;//裁剪空间坐标</span><br><span class="line">                <span class="keyword">return</span> mul(UNITY_MATRIX_MVP, v);<span class="comment">//MVP 是指Model模型 View观察(摄像机) Projection投影</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            fixed4 frag() : SV_Target&#123;</span><br><span class="line">                <span class="keyword">return</span> fixed4(<span class="number">1.0</span>,<span class="number">1.0</span>,<span class="number">1.0</span>,<span class="number">1.0</span>);<span class="comment">//白色 每个输出的顶点都会执行一次</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Shader <span class="string">&quot;Custom/Chapter5-SimpleShader&quot;</span> &#123;</span><br><span class="line"></span><br><span class="line">    SubShader &#123;</span><br><span class="line">        Pass&#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 两条非常重要的编译指令</span></span><br><span class="line">            <span class="meta">#<span class="keyword">pragma</span> vertex vert <span class="comment">// 顶点着色器的名字 指明那个是顶点着色器</span></span></span><br><span class="line">            <span class="meta">#<span class="keyword">pragma</span> fragment frag <span class="comment">// 片元着色器</span></span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 这一步是把顶点坐标从模型空间转换到裁剪空间</span></span><br><span class="line">            float4 <span class="title function_">vert</span><span class="params">(float4 v : POSITION)</span> : SV_POSITION &#123;<span class="comment">//裁剪空间坐标</span></span><br><span class="line">                <span class="keyword">return</span> mul(UNITY_MATRIX_MVP, v);<span class="comment">//MVP 是指Model模型 View观察(摄像机) Projection投影</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            fixed4 <span class="title function_">frag</span><span class="params">()</span> : SV_Target&#123;</span><br><span class="line">                <span class="keyword">return</span> fixed4(<span class="number">1.0</span>,<span class="number">1.0</span>,<span class="number">1.0</span>,<span class="number">1.0</span>);<span class="comment">//白色 每个输出的顶点都会执行一次</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <ol>
 <li>vert , 顶点着色器代码, 逐顶点执行, 函数的输入 v 包含了这个顶点的位置, 返回值是该顶点在模型空间中的位置, POSITION : 把模型的顶点坐标填充到输入参数中, SV_POSITION : 顶点着色器的输出是裁剪空间中的顶点坐标</li>
 <li>frag , SV_Target : 把用户的输出颜色存储到一个渲染目标中, 这里将输出到默认的帧缓存中, 片元着色器输出的颜色的每个分量范围是[0,1].</li>
 </ol>
 </blockquote>
-<h1 id="Chapter-5-Simple-Shader"><a href="#Chapter-5-Simple-Shader" class="headerlink" title="Chapter 5/Simple Shader"></a>Chapter 5/Simple Shader</h1><p>加入模型数据</p>
+<h1 id="Chapter-5-x2F-Simple-Shader"><a href="#Chapter-5-x2F-Simple-Shader" class="headerlink" title="Chapter 5&#x2F;Simple Shader"></a>Chapter 5&#x2F;Simple Shader</h1><p>加入模型数据</p>
 <p>材质的Mesh Render组件提供POSITION, TANGENT, NORMAL数据,在每帧调用Draw Call的时候, Mesh Render组件会把它负责渲染的模型数据发送给Unity Shader.</p>
-<figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">Shader "Unity Shaders Book/Chapter 5/Simple Shader" &#123;</span><br><span class="line">	Properties &#123;</span><br><span class="line">		_Color ("Color Tint", Color) = (1, 1, 1, 1)</span><br><span class="line">	&#125;</span><br><span class="line">	SubShader &#123;</span><br><span class="line">        Pass &#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line"></span><br><span class="line">            <span class="meta">#pragma vertex vert</span></span><br><span class="line">            <span class="meta">#pragma fragment frag</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">uniform</span> fixed4 _Color;</span><br><span class="line"></span><br><span class="line">			struct a2v &#123;<span class="comment">//Application to vertex shader 应用阶段到顶点着色器</span></span><br><span class="line">             	float4 vertex   : POSITION;</span><br><span class="line">			   float3 normal   : NORMAL;</span><br><span class="line">			   float4 texcoord : TEXCOORD0;</span><br><span class="line">            &#125;;</span><br><span class="line">            </span><br><span class="line">                </span><br><span class="line">            struct v2f &#123;</span><br><span class="line">                float4 pos : SV_POSITION;</span><br><span class="line">                fixed3 color : COLOR0;</span><br><span class="line">            &#125;;</span><br><span class="line">            </span><br><span class="line">            v2f vert(a2v v) &#123;</span><br><span class="line">            	v2f o;</span><br><span class="line">            	o.pos = mul(UNITY_MATRIX_MVP, v.vertex);</span><br><span class="line">            	o.color = v.normal * <span class="number">0.5</span> + fixed3(<span class="number">0.5</span>, <span class="number">0.5</span>, <span class="number">0.5</span>);</span><br><span class="line">                <span class="keyword">return</span> o;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            fixed4 frag(v2f i) : SV_Target &#123;</span><br><span class="line">            	fixed3 c = i.color;</span><br><span class="line">            	c *= _Color.rgb;</span><br><span class="line">                <span class="keyword">return</span> fixed4(c, <span class="number">1.0</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">Shader &quot;Unity Shaders Book/Chapter <span class="number">5</span>/Simple Shader&quot; &#123;</span><br><span class="line">	Properties &#123;</span><br><span class="line">		_Color (&quot;Color Tint&quot;, Color) = (<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	SubShader &#123;</span><br><span class="line">        Pass &#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line"></span><br><span class="line">            <span class="meta">#pragma vertex vert</span></span><br><span class="line">            <span class="meta">#pragma fragment frag</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">uniform</span> fixed4 _Color;</span><br><span class="line"></span><br><span class="line">			struct a2v &#123;<span class="comment">//Application to vertex shader 应用阶段到顶点着色器</span></span><br><span class="line">             	float4 vertex   : POSITION;</span><br><span class="line">			   float3 normal   : NORMAL;</span><br><span class="line">			   float4 texcoord : TEXCOORD0;</span><br><span class="line">            &#125;;</span><br><span class="line">            </span><br><span class="line">                </span><br><span class="line">            struct v2f &#123;</span><br><span class="line">                float4 pos : SV_POSITION;</span><br><span class="line">                fixed3 color : COLOR0;</span><br><span class="line">            &#125;;</span><br><span class="line">            </span><br><span class="line">            v2f vert(a2v v) &#123;</span><br><span class="line">            	v2f o;</span><br><span class="line">            	o.pos = mul(UNITY_MATRIX_MVP, v.vertex);</span><br><span class="line">            	o.color = v.normal * <span class="number">0.5</span> + fixed3(<span class="number">0.5</span>, <span class="number">0.5</span>, <span class="number">0.5</span>);</span><br><span class="line">                <span class="keyword">return</span> o;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            fixed4 frag(v2f i) : SV_Target &#123;</span><br><span class="line">            	fixed3 c = i.color;</span><br><span class="line">            	c *= _Color.rgb;</span><br><span class="line">                <span class="keyword">return</span> fixed4(c, <span class="number">1.0</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
 
     </div>
 
     
     
     
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/s992545366">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://t.me/molers233">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
+
+            <span class="label">Telegram</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/基础/" rel="tag"># 基础</a>
-              <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+              <a href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag"># 基础</a>
+              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># 学习笔记</a>
               <a href="/tags/Shader/" rel="tag"># Shader</a>
               <a href="/tags/Unity/" rel="tag"># Unity</a>
           </div>
@@ -252,11 +344,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/02/05/unity学习笔记-脚本的开发学习/" rel="prev" title="unity学习笔记- -脚本的开发学习">
-      <i class="fa fa-chevron-left"></i> unity学习笔记- -脚本的开发学习
+    <a href="/2020/02/04/VisualStudio%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-VisualZStudio%E7%BC%96%E8%AF%91%E5%99%A8%E5%8F%8A%E5%85%B6%E7%89%88%E6%9C%AC%E7%9A%84%E9%97%AE%E9%A2%98/" rel="prev" title="VisualStudio学习笔记-VisualZStudio编译器及其版本的问题">
+      <i class="fa fa-chevron-left"></i> VisualStudio学习笔记-VisualZStudio编译器及其版本的问题
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/04/21/色彩知识点-藏色/" rel="next" title="色彩知识点-藏色">
+    <a href="/2020/04/21/%E8%89%B2%E5%BD%A9%E7%9F%A5%E8%AF%86%E7%82%B9-%E8%97%8F%E8%89%B2/" rel="next" title="色彩知识点-藏色">
       色彩知识点-藏色 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -271,6 +363,17 @@
 
           </div>
           
+    <div class="comments" id="comments">
+      
+    <script src="https://utteranc.es/client.js"
+    repo="Molers/BlogComment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+    </div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -317,48 +420,64 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter5-SimpleShader-BaseShader"><span class="nav-number">1.</span> <span class="nav-text">Chapter5-SimpleShader-BaseShader</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter-5-Simple-Shader"><span class="nav-number">2.</span> <span class="nav-text">Chapter 5/Simple Shader</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter5-SimpleShader-BaseShader"><span class="nav-number">1.</span> <span class="nav-text">Chapter5-SimpleShader-BaseShader</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter-5-x2F-Simple-Shader"><span class="nav-number">2.</span> <span class="nav-text">Chapter 5&#x2F;Simple Shader</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Molers" src="/images/Avatar.jpg">
-  <p class="site-author-name" itemprop="name">Molers</p>
-  <div class="site-description" itemprop="description">计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing</div>
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="张文亮"
+      src="/images/Avatar.jpg">
+  <p class="site-author-name" itemprop="name">张文亮</p>
+  <div class="site-description" itemprop="description">计算机CV与CG研究生,爱好绘画</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">76</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">115</span>
+        <span class="site-state-item-count">122</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/Molers" title="GitHub → https://github.com/Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/Molers" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://weibo.com/3179969322" title="Weibo → https://weibo.com/3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+        <a href="/s992545366@qq.com" title="E-Mail → s992545366@qq.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/s992545366" title="Twitter → https://twitter.com/s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+        <a href="https://weibo.com/3179969322" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/s992545366" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pixiv.net/users/7480965" title="Pixiv → https:&#x2F;&#x2F;www.pixiv.net&#x2F;users&#x2F;7480965" rel="noopener" target="_blank"><i class="fas fa-paint-brush fa-fw"></i>Pixiv</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/zhang-wen-liang-32" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;zhang-wen-liang-32" rel="noopener" target="_blank"><i class="fas fa-book-open fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/1876807" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;1876807" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/weixin_37923383" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_37923383" rel="noopener" target="_blank"><i class="fas fa-laptop-code fa-fw"></i>CSDN</a>
       </span>
   </div>
 
@@ -383,13 +502,13 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Molers</span>
+  <span class="author" itemprop="copyrightHolder">张文亮</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -409,15 +528,27 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 

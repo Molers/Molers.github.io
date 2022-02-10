@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.8.0">
+<meta name="generator" content="Hexo 6.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -17,27 +17,29 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="旋转的例子  图形学中向量的默认形式是列向量 叉乘公式$$\vec{a} \times \vec{b}=\left(\begin{array}{l}y_{a} z_{b}-y_{b} z_{a} \\z_{a} x_{b}-x_{a} z_{b} \\x_{a} y_{b}-y_{a} x_{b}\end{array}\right)$$ $$\vec{a} \times \vec{b}=A^{*}">
-<meta name="keywords" content="计算机图形学,闫令琪,线性代数">
+  <meta name="description" content="旋转的例子  图形学中向量的默认形式是列向量 叉乘公式$$\vec{a} \times \vec{b}&#x3D;\left(\begin{array}{l}y_{a} z_{b}-y_{b} z_{a} \\z_{a} x_{b}-x_{a} z_{b} \\x_{a} y_{b}-y_{a} x_{b}\end{array}\right)$$ $$\vec{a} \times \vec{b}&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GAMES101-Lecture02 Review of Linear Algebra笔记">
-<meta property="og:url" content="http://yoursite.com/2020/11/10/GAMES101-Lecture02-Review-of-Linear-Algebra笔记/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/11/10/GAMES101-Lecture02-Review-of-Linear-Algebra%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Molers Blog">
-<meta property="og:description" content="旋转的例子  图形学中向量的默认形式是列向量 叉乘公式$$\vec{a} \times \vec{b}=\left(\begin{array}{l}y_{a} z_{b}-y_{b} z_{a} \\z_{a} x_{b}-x_{a} z_{b} \\x_{a} y_{b}-y_{a} x_{b}\end{array}\right)$$ $$\vec{a} \times \vec{b}=A^{*}">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:description" content="旋转的例子  图形学中向量的默认形式是列向量 叉乘公式$$\vec{a} \times \vec{b}&#x3D;\left(\begin{array}{l}y_{a} z_{b}-y_{b} z_{a} \\z_{a} x_{b}-x_{a} z_{b} \\x_{a} y_{b}-y_{a} x_{b}\end{array}\right)$$ $$\vec{a} \times \vec{b}&amp;">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/Games101/image-20201111124722150.png">
 <meta property="og:image" content="http://yoursite.com/images/Games101/image-20201115202556394.png">
 <meta property="og:image" content="http://yoursite.com/images/Games101/image-20201121230206966.png">
-<meta property="og:updated_time" content="2020-11-29T09:52:35.437Z">
+<meta property="article:published_time" content="2020-11-10T03:20:29.000Z">
+<meta property="article:modified_time" content="2020-11-29T09:52:35.437Z">
+<meta property="article:author" content="张文亮">
+<meta property="article:tag" content="计算机图形学">
+<meta property="article:tag" content="闫令琪">
+<meta property="article:tag" content="线性代数">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GAMES101-Lecture02 Review of Linear Algebra笔记">
-<meta name="twitter:description" content="旋转的例子  图形学中向量的默认形式是列向量 叉乘公式$$\vec{a} \times \vec{b}=\left(\begin{array}{l}y_{a} z_{b}-y_{b} z_{a} \\z_{a} x_{b}-x_{a} z_{b} \\x_{a} y_{b}-y_{a} x_{b}\end{array}\right)$$ $$\vec{a} \times \vec{b}=A^{*}">
 <meta name="twitter:image" content="http://yoursite.com/images/Games101/image-20201111124722150.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/11/10/GAMES101-Lecture02-Review-of-Linear-Algebra笔记/">
+<link rel="canonical" href="http://yoursite.com/2020/11/10/GAMES101-Lecture02-Review-of-Linear-Algebra%E7%AC%94%E8%AE%B0/">
 
 
 <script id="page-configurations">
@@ -81,6 +83,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Molers Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -109,6 +112,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -143,11 +147,43 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-rss">
+
+    <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -170,16 +206,16 @@
     
   
   
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/10/GAMES101-Lecture02-Review-of-Linear-Algebra笔记/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/10/GAMES101-Lecture02-Review-of-Linear-Algebra%E7%AC%94%E8%AE%B0/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+      <meta itemprop="name" content="张文亮">
+      <meta itemprop="description" content="计算机CV与CG研究生,爱好绘画">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Molers Blog">
     </span>
       <header class="post-header">
@@ -208,8 +244,8 @@
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Games101现代计算机图形学入门/" itemprop="url" rel="index"><span itemprop="name">Games101现代计算机图形学入门</span></a>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Games101%E7%8E%B0%E4%BB%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%85%A5%E9%97%A8/" itemprop="url" rel="index"><span itemprop="name">Games101现代计算机图形学入门</span></a>
                 </span>
             </span>
 
@@ -227,11 +263,11 @@
         <p>旋转的例子</p>
 <p><img src="/images/Games101/image-20201111124722150.png" alt="image-20201111124722150"></p>
 <p>图形学中向量的默认形式是<strong>列向量</strong></p>
-<h1 id="叉乘公式"><a href="#叉乘公式" class="headerlink" title="叉乘公式"></a>叉乘公式</h1><p>$$<br>\vec{a} \times \vec{b}=\left(\begin{array}{l}<br>y_{a} z_{b}-y_{b} z_{a} \\<br>z_{a} x_{b}-x_{a} z_{b} \\<br>x_{a} y_{b}-y_{a} x_{b}<br>\end{array}\right)<br>$$</p>
-<p>$$<br>\vec{a} \times \vec{b}=A^{*} b=\left(\begin{array}{ccc}<br>0 &amp; -z_{a} &amp; y_{a} \\<br>z_{a} &amp; 0 &amp; -x_{a} \\<br>-y_{a} &amp; x_{a} &amp; 0<br>\end{array}\right)\left(\begin{array}{l}<br>x_{b} \\<br>y_{b} \\<br>z_{b}<br>\end{array}\right)<br>$$</p>
-<p>$$<br>\begin{array}{l}<br>\vec{x} \times \vec{y}=+\vec{z} \\<br>\vec{y} \times \vec{x}=-\vec{z} \\<br>\vec{y} \times \vec{z}=+\vec{x} \\<br>\vec{z} \times \vec{y}=-\vec{x} \quad \vec{a} \times(\vec{b}+\vec{c})=\vec{a} \times \vec{b}+\vec{a} \times \vec{c} \\<br>\vec{z} \times \vec{x}=+\vec{y} &amp; \vec{a} \times(k \vec{b})=k(\vec{a} \times \vec{b}) \\<br>\vec{x} \times \vec{z}=-\vec{y}<br>\end{array}<br>$$<br>叉乘可以定义左右和形状的内外两侧信息，起到定向的作用</p>
-<p><img src="/images/Games101/image-20201115202556394.png" alt="image-20201115202556394"><br>$$<br>\begin{array}{l}<br>\vec{a} \times \vec{b}=+\vec{z} \quad \quad a在b的左侧  \\<br>\vec{b} \times \vec{a}=-\vec{z} \quad \quad a在b的右侧\\<br>\vec{AB} \times \vec{AP}=+ \\<br>\vec{BC} \times \vec{BP}=+ \\<br>\vec{CA} \times \vec{CP}=+ \quad \quad 如P点在AC右侧,则\vec{CA} \times \vec{CP} 为负值 \\<br>如三角行逆时针,只要所有的叉乘值都为正值或都为负值就可判断在三角形内部，从而忽略给定的三角形的顺序 \\<br>在边上的情况被称为 corner case 这时候开发者自己说了算\<br>\\<br>\end{array}<br>$$</p>
-<h1 id="虚拟机安装问题"><a href="#虚拟机安装问题" class="headerlink" title="虚拟机安装问题"></a>虚拟机安装问题</h1><p>Not in a hypervisor partition (HVP=0) (VERR_NEM_NOT_AVAILABLE).</p>
+<h1 id="叉乘公式"><a href="#叉乘公式" class="headerlink" title="叉乘公式"></a>叉乘公式</h1><p>$$<br>\vec{a} \times \vec{b}&#x3D;\left(\begin{array}{l}<br>y_{a} z_{b}-y_{b} z_{a} \\<br>z_{a} x_{b}-x_{a} z_{b} \\<br>x_{a} y_{b}-y_{a} x_{b}<br>\end{array}\right)<br>$$</p>
+<p>$$<br>\vec{a} \times \vec{b}&#x3D;A^{*} b&#x3D;\left(\begin{array}{ccc}<br>0 &amp; -z_{a} &amp; y_{a} \\<br>z_{a} &amp; 0 &amp; -x_{a} \\<br>-y_{a} &amp; x_{a} &amp; 0<br>\end{array}\right)\left(\begin{array}{l}<br>x_{b} \\<br>y_{b} \\<br>z_{b}<br>\end{array}\right)<br>$$</p>
+<p>$$<br>\begin{array}{l}<br>\vec{x} \times \vec{y}&#x3D;+\vec{z} \\<br>\vec{y} \times \vec{x}&#x3D;-\vec{z} \\<br>\vec{y} \times \vec{z}&#x3D;+\vec{x} \\<br>\vec{z} \times \vec{y}&#x3D;-\vec{x} \quad \vec{a} \times(\vec{b}+\vec{c})&#x3D;\vec{a} \times \vec{b}+\vec{a} \times \vec{c} \\<br>\vec{z} \times \vec{x}&#x3D;+\vec{y} &amp; \vec{a} \times(k \vec{b})&#x3D;k(\vec{a} \times \vec{b}) \\<br>\vec{x} \times \vec{z}&#x3D;-\vec{y}<br>\end{array}<br>$$<br>叉乘可以定义左右和形状的内外两侧信息，起到定向的作用</p>
+<p><img src="/images/Games101/image-20201115202556394.png" alt="image-20201115202556394"><br>$$<br>\begin{array}{l}<br>\vec{a} \times \vec{b}&#x3D;+\vec{z} \quad \quad a在b的左侧  \\<br>\vec{b} \times \vec{a}&#x3D;-\vec{z} \quad \quad a在b的右侧\\<br>\vec{AB} \times \vec{AP}&#x3D;+ \\<br>\vec{BC} \times \vec{BP}&#x3D;+ \\<br>\vec{CA} \times \vec{CP}&#x3D;+ \quad \quad 如P点在AC右侧,则\vec{CA} \times \vec{CP} 为负值 \\<br>如三角行逆时针,只要所有的叉乘值都为正值或都为负值就可判断在三角形内部，从而忽略给定的三角形的顺序 \\<br>在边上的情况被称为 corner case 这时候开发者自己说了算\<br>\\<br>\end{array}<br>$$</p>
+<h1 id="虚拟机安装问题"><a href="#虚拟机安装问题" class="headerlink" title="虚拟机安装问题"></a>虚拟机安装问题</h1><p>Not in a hypervisor partition (HVP&#x3D;0) (VERR_NEM_NOT_AVAILABLE).</p>
 <p>AMD-V is disabled in the BIOS (or by the host OS) (VERR_SVM_DISABLED).</p>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>1.Windows设置 - 更新和安全 - 回复 - 立即重新启动</p>
 <p><strong>2.Troubleshoot -&gt; Advanced option – &gt; UEFI Firmware Settings -&gt; Restart</strong></p>
@@ -239,19 +275,69 @@
 <p>4.设置<strong>Virtualization</strong> 的状态为<strong>Enabled。</strong></p>
 <p>AMD和Intel的设置不一样</p>
 <h1 id="Eigen库的使用问题"><a href="#Eigen库的使用问题" class="headerlink" title="Eigen库的使用问题"></a>Eigen库的使用问题</h1><p><img src="/images/Games101/image-20201121230206966.png" alt="image-20201121230206966"></p>
-<h2 id="Eigen库的使用用例"><a href="#Eigen库的使用用例" class="headerlink" title="Eigen库的使用用例"></a>Eigen库的使用用例</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"../../Eigen/Core"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"../../Eigen/Dense"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// Basic Example of cpp</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Example of cpp \n"</span>;</span><br><span class="line">    <span class="keyword">float</span> a = <span class="number">1.0</span>, b = <span class="number">2.0</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; a / b &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">sqrt</span>(b) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">acos</span>(<span class="number">-1</span>) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">sin</span>(<span class="number">30.0</span> / <span class="number">180.0</span> * <span class="built_in">acos</span>(<span class="number">-1</span>)) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Example of vector</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Example of vector \n"</span>;</span><br><span class="line">    <span class="comment">// 向量定义</span></span><br><span class="line">    Eigen::<span class="function">Vector3f <span class="title">v</span><span class="params">(<span class="number">1.0f</span>, <span class="number">2.0f</span>, <span class="number">3.0f</span>)</span></span>;</span><br><span class="line">    Eigen::<span class="function">Vector3f <span class="title">w</span><span class="params">(<span class="number">1.0f</span>, <span class="number">0.0f</span>, <span class="number">0.0f</span>)</span></span>;</span><br><span class="line">    <span class="comment">// 向量输出</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Example of output \n"</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; v &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">// 加法</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Example of add \n"</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; v + w &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">// 点成</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Example of scalar multiply \n"</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; v * <span class="number">3.0f</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="number">2.0f</span> * v &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Example of matrix</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Example of matrix \n"</span>;</span><br><span class="line">    <span class="comment">// 矩阵定义</span></span><br><span class="line">    Eigen::Matrix3f i, j;</span><br><span class="line">    i &lt;&lt; <span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">4.0</span>, <span class="number">5.0</span>, <span class="number">6.0</span>, <span class="number">7.0</span>, <span class="number">8.0</span>, <span class="number">9.0</span>;</span><br><span class="line">    j &lt;&lt; <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">1.0</span>, <span class="number">4.0</span>, <span class="number">6.0</span>, <span class="number">5.0</span>, <span class="number">9.0</span>, <span class="number">7.0</span>, <span class="number">8.0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 矩阵输出</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Example of output \n"</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; i  &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; j &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">	<span class="comment">//矩阵加法</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">" matrix add matrix i + matrix j"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; i+j &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span> ;</span><br><span class="line">    <span class="comment">//矩阵点乘</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">" matrix scalar multiply i * 2.0"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; i*<span class="number">2.0</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//矩阵乘法</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"matrix multiply i * j"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; i * j &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"matrix multiply vector i * v"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; i * v &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; v.transpose()*i &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;<span class="comment">//reslut is different </span></span><br><span class="line">    <span class="comment">//14</span></span><br><span class="line">    <span class="comment">//32</span></span><br><span class="line">    <span class="comment">//50</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//Transpose result is 30 36 42</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Eigen库的使用用例"><a href="#Eigen库的使用用例" class="headerlink" title="Eigen库的使用用例"></a>Eigen库的使用用例</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;../../Eigen/Core&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;../../Eigen/Dense&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// Basic Example of cpp</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Example of cpp \n&quot;</span>;</span><br><span class="line">    <span class="type">float</span> a = <span class="number">1.0</span>, b = <span class="number">2.0</span>;</span><br><span class="line">    std::cout &lt;&lt; a &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; a / b &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; std::<span class="built_in">sqrt</span>(b) &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; std::<span class="built_in">acos</span>(<span class="number">-1</span>) &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; std::<span class="built_in">sin</span>(<span class="number">30.0</span> / <span class="number">180.0</span> * <span class="built_in">acos</span>(<span class="number">-1</span>)) &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Example of vector</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Example of vector \n&quot;</span>;</span><br><span class="line">    <span class="comment">// 向量定义</span></span><br><span class="line">    <span class="function">Eigen::Vector3f <span class="title">v</span><span class="params">(<span class="number">1.0f</span>, <span class="number">2.0f</span>, <span class="number">3.0f</span>)</span></span>;</span><br><span class="line">    <span class="function">Eigen::Vector3f <span class="title">w</span><span class="params">(<span class="number">1.0f</span>, <span class="number">0.0f</span>, <span class="number">0.0f</span>)</span></span>;</span><br><span class="line">    <span class="comment">// 向量输出</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Example of output \n&quot;</span>;</span><br><span class="line">    std::cout &lt;&lt; v &lt;&lt; std::endl;</span><br><span class="line">    <span class="comment">// 加法</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Example of add \n&quot;</span>;</span><br><span class="line">    std::cout &lt;&lt; v + w &lt;&lt; std::endl;</span><br><span class="line">    <span class="comment">// 点成</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Example of scalar multiply \n&quot;</span>;</span><br><span class="line">    std::cout &lt;&lt; v * <span class="number">3.0f</span> &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="number">2.0f</span> * v &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Example of matrix</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Example of matrix \n&quot;</span>;</span><br><span class="line">    <span class="comment">// 矩阵定义</span></span><br><span class="line">    Eigen::Matrix3f i, j;</span><br><span class="line">    i &lt;&lt; <span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">4.0</span>, <span class="number">5.0</span>, <span class="number">6.0</span>, <span class="number">7.0</span>, <span class="number">8.0</span>, <span class="number">9.0</span>;</span><br><span class="line">    j &lt;&lt; <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">1.0</span>, <span class="number">4.0</span>, <span class="number">6.0</span>, <span class="number">5.0</span>, <span class="number">9.0</span>, <span class="number">7.0</span>, <span class="number">8.0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 矩阵输出</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Example of output \n&quot;</span>;</span><br><span class="line">    std::cout &lt;&lt; i  &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; j &lt;&lt; std::endl;</span><br><span class="line">	<span class="comment">//矩阵加法</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot; matrix add matrix i + matrix j&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; i+j &lt;&lt; std::endl ;</span><br><span class="line">    <span class="comment">//矩阵点乘</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot; matrix scalar multiply i * 2.0&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; i*<span class="number">2.0</span> &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//矩阵乘法</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;matrix multiply i * j&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; i * j &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;matrix multiply vector i * v&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; i * v &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; v.<span class="built_in">transpose</span>()*i &lt;&lt; std::endl;<span class="comment">//reslut is different </span></span><br><span class="line">    <span class="comment">//14</span></span><br><span class="line">    <span class="comment">//32</span></span><br><span class="line">    <span class="comment">//50</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//Transpose result is 30 36 42</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
     
     
     
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/s992545366">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://t.me/molers233">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
+
+            <span class="label">Telegram</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/计算机图形学/" rel="tag"># 计算机图形学</a>
-              <a href="/tags/闫令琪/" rel="tag"># 闫令琪</a>
-              <a href="/tags/线性代数/" rel="tag"># 线性代数</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" rel="tag"># 计算机图形学</a>
+              <a href="/tags/%E9%97%AB%E4%BB%A4%E7%90%AA/" rel="tag"># 闫令琪</a>
+              <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag"># 线性代数</a>
           </div>
 
         
@@ -260,11 +346,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/11/10/GAMES101-Lecture01-Overview-of-Computer-Graphics笔记/" rel="prev" title="GAMES101-Lecture01 Overview of Computer Graphics笔记">
+    <a href="/2020/11/10/GAMES101-Lecture01-Overview-of-Computer-Graphics%E7%AC%94%E8%AE%B0/" rel="prev" title="GAMES101-Lecture01 Overview of Computer Graphics笔记">
       <i class="fa fa-chevron-left"></i> GAMES101-Lecture01 Overview of Computer Graphics笔记
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/11/12/重装系统软件备份/" rel="next" title="重装系统软件备份">
+    <a href="/2020/11/12/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6%E5%A4%87%E4%BB%BD/" rel="next" title="重装系统软件备份">
       重装系统软件备份 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -279,6 +365,17 @@
 
           </div>
           
+    <div class="comments" id="comments">
+      
+    <script src="https://utteranc.es/client.js"
+    repo="Molers/BlogComment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+    </div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -325,48 +422,64 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#叉乘公式"><span class="nav-number">1.</span> <span class="nav-text">叉乘公式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#虚拟机安装问题"><span class="nav-number">2.</span> <span class="nav-text">虚拟机安装问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方法"><span class="nav-number">2.1.</span> <span class="nav-text">解决方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Eigen库的使用问题"><span class="nav-number">3.</span> <span class="nav-text">Eigen库的使用问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Eigen库的使用用例"><span class="nav-number">3.1.</span> <span class="nav-text">Eigen库的使用用例</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%89%E4%B9%98%E5%85%AC%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">叉乘公式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">虚拟机安装问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="nav-number">2.1.</span> <span class="nav-text">解决方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Eigen%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">Eigen库的使用问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Eigen%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E7%94%A8%E4%BE%8B"><span class="nav-number">3.1.</span> <span class="nav-text">Eigen库的使用用例</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Molers" src="/images/Avatar.jpg">
-  <p class="site-author-name" itemprop="name">Molers</p>
-  <div class="site-description" itemprop="description">计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing</div>
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="张文亮"
+      src="/images/Avatar.jpg">
+  <p class="site-author-name" itemprop="name">张文亮</p>
+  <div class="site-description" itemprop="description">计算机CV与CG研究生,爱好绘画</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">76</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">115</span>
+        <span class="site-state-item-count">122</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/Molers" title="GitHub → https://github.com/Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/Molers" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://weibo.com/3179969322" title="Weibo → https://weibo.com/3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+        <a href="/s992545366@qq.com" title="E-Mail → s992545366@qq.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/s992545366" title="Twitter → https://twitter.com/s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+        <a href="https://weibo.com/3179969322" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/s992545366" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pixiv.net/users/7480965" title="Pixiv → https:&#x2F;&#x2F;www.pixiv.net&#x2F;users&#x2F;7480965" rel="noopener" target="_blank"><i class="fas fa-paint-brush fa-fw"></i>Pixiv</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/zhang-wen-liang-32" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;zhang-wen-liang-32" rel="noopener" target="_blank"><i class="fas fa-book-open fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/1876807" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;1876807" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/weixin_37923383" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_37923383" rel="noopener" target="_blank"><i class="fas fa-laptop-code fa-fw"></i>CSDN</a>
       </span>
   </div>
 
@@ -391,13 +504,13 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Molers</span>
+  <span class="author" itemprop="copyrightHolder">张文亮</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -417,15 +530,27 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 

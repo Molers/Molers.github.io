@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.8.0">
+<meta name="generator" content="Hexo 6.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -17,17 +17,16 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="1.射影平面定义">
-<meta name="keywords" content="拓扑,射影平面">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基础拓扑学笔记(6)--射影平面">
-<meta property="og:url" content="http://yoursite.com/2020/09/20/基础拓扑学笔记-6-射影平面/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/09/20/%E5%9F%BA%E7%A1%80%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0-6-%E5%B0%84%E5%BD%B1%E5%B9%B3%E9%9D%A2/index.html">
 <meta property="og:site_name" content="Molers Blog">
 <meta property="og:description" content="1.射影平面定义">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/2020091817210749.png">
 <meta property="og:image" content="http://yoursite.com/images/20200918172127605.png">
 <meta property="og:image" content="http://yoursite.com/images/20200918172138658.png">
@@ -41,13 +40,15 @@
 <meta property="og:image" content="http://yoursite.com/images/20200919220800878.png">
 <meta property="og:image" content="http://yoursite.com/images/20200919220839855.png">
 <meta property="og:image" content="http://yoursite.com/images/20200919220848956.png">
-<meta property="og:updated_time" content="2020-09-20T08:30:56.632Z">
+<meta property="article:published_time" content="2020-09-20T08:10:24.000Z">
+<meta property="article:modified_time" content="2020-09-20T08:30:56.632Z">
+<meta property="article:author" content="张文亮">
+<meta property="article:tag" content="拓扑">
+<meta property="article:tag" content="射影平面">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基础拓扑学笔记(6)--射影平面">
-<meta name="twitter:description" content="1.射影平面定义">
 <meta name="twitter:image" content="http://yoursite.com/images/2020091817210749.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/09/20/基础拓扑学笔记-6-射影平面/">
+<link rel="canonical" href="http://yoursite.com/2020/09/20/%E5%9F%BA%E7%A1%80%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0-6-%E5%B0%84%E5%BD%B1%E5%B9%B3%E9%9D%A2/">
 
 
 <script id="page-configurations">
@@ -91,6 +92,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Molers Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -119,6 +121,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -153,11 +156,43 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-rss">
+
+    <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -180,16 +215,16 @@
     
   
   
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/20/基础拓扑学笔记-6-射影平面/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/20/%E5%9F%BA%E7%A1%80%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0-6-%E5%B0%84%E5%BD%B1%E5%B9%B3%E9%9D%A2/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+      <meta itemprop="name" content="张文亮">
+      <meta itemprop="description" content="计算机CV与CG研究生,爱好绘画">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Molers Blog">
     </span>
       <header class="post-header">
@@ -212,8 +247,8 @@
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/拓扑学/" itemprop="url" rel="index"><span itemprop="name">拓扑学</span></a>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8B%93%E6%89%91%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">拓扑学</span></a>
                 </span>
             </span>
 
@@ -229,8 +264,9 @@
 
       
         <h2 id="1-射影平面定义"><a href="#1-射影平面定义" class="headerlink" title="1.射影平面定义"></a>1.射影平面定义</h2><p><img src="/images/2020091817210749.png" alt="在这里插入图片描述"></p>
-<a id="more"></a>
-<h2 id="2-摄像机与地面上的三角形"><a href="#2-摄像机与地面上的三角形" class="headerlink" title="2.摄像机与地面上的三角形"></a>2.摄像机与地面上的三角形</h2><p>图1。摄像机为投影中心，在地面上拍摄三角形ABC。这个地面是一个完美的平面。淡绿色的区域是从相机上看到的。从相机发出的黑色光线表示取景器的立体区域(金字塔)。在黑色光线上安装的方形板是为了显示我们可以通过相机看到的东西。让我们把这个正方形的板子叫做屏幕。三角形ABC在地面上的照片被拍成屏幕上的三角形A’ b ’ c`。白光是三角形顶点的投影线。<br><img src="/images/20200918172127605.png" alt="在这里插入图片描述"><br>依旧，图2是俯视图的情况，而图3是侧视图。<br>图4是拍摄视角的试视图，而根据图可以看出经过射影变换之后的直线是不变的。虽然经过射影变换之后三角形的形状和大小会变化，但是直线依旧是直线。<br><img src="/images/20200918172138658.png" alt="在这里插入图片描述"><br>图6是平行线的投影。面板屏幕上的平行线看起来有端点，并在地平线上相遇。<br>图7画了两对平行线，将它们投射到面板屏幕上。同时，蓝色平行直线也在水平线上相交。</p>
+<span id="more"></span>
+
+<h2 id="2-摄像机与地面上的三角形"><a href="#2-摄像机与地面上的三角形" class="headerlink" title="2.摄像机与地面上的三角形"></a>2.摄像机与地面上的三角形</h2><p>图1。摄像机为投影中心，在地面上拍摄三角形ABC。这个地面是一个完美的平面。淡绿色的区域是从相机上看到的。从相机发出的黑色光线表示取景器的立体区域(金字塔)。在黑色光线上安装的方形板是为了显示我们可以通过相机看到的东西。让我们把这个正方形的板子叫做屏幕。三角形ABC在地面上的照片被拍成屏幕上的三角形A’ b ’ c&#96;。白光是三角形顶点的投影线。<br><img src="/images/20200918172127605.png" alt="在这里插入图片描述"><br>依旧，图2是俯视图的情况，而图3是侧视图。<br>图4是拍摄视角的试视图，而根据图可以看出经过射影变换之后的直线是不变的。虽然经过射影变换之后三角形的形状和大小会变化，但是直线依旧是直线。<br><img src="/images/20200918172138658.png" alt="在这里插入图片描述"><br>图6是平行线的投影。面板屏幕上的平行线看起来有端点，并在地平线上相遇。<br>图7画了两对平行线，将它们投射到面板屏幕上。同时，蓝色平行直线也在水平线上相交。</p>
 <h2 id="3-摄影机视角的平行线"><a href="#3-摄影机视角的平行线" class="headerlink" title="3.摄影机视角的平行线"></a>3.摄影机视角的平行线</h2><p><img src="/images/20200918172158706.png" alt="在这里插入图片描述"><br>图8显示了面板屏幕上的两对平行线。右下角是它们构成的平行四边形。数学家把平板屏幕上的视界称为<strong>无穷远处的一条线</strong>。然而，没有这样的物理线存在。这个名字很不合适。它混淆了初学者。它不是一条无限远的直线。我们只能在面板屏幕上捕捉到它作为地面和天空的边界。换句话说，<strong>无穷远处的线是人造的</strong>，那条线其实在现实中并不存在。</p>
 <h2 id="4-180°摄影机"><a href="#4-180°摄影机" class="headerlink" title="4.180°摄影机"></a>4.180°摄影机</h2><p><img src="/images/20200918173812224.png" alt="在这里插入图片描述"><br>图9显示了180°相机与矩形平面的拍摄。平面形成半圆柱体。帮助我们得到整个平行线范围的全图。地面上的平行线看起来像铁路，但在屏幕上则不然。</p>
 <p>图10显示了图9的展开面板屏幕。点P和P’在无穷远处(视界)线上。面板屏幕是全景的，很好的看到一对平行线。但对于平行线间距大的情况就不方便了。它不能覆盖不同方向的直线。</p>
@@ -239,18 +275,67 @@
 <h2 id="5-莫比乌斯环-Mobius-Strip"><a href="#5-莫比乌斯环-Mobius-Strip" class="headerlink" title="5.莫比乌斯环( Mobius Strip)"></a>5.莫比乌斯环( Mobius Strip)</h2><p>球面直径两端相对的两点称为对跖点。在一个半球的边缘有无数对映点。所有由地面中心投影形成的半球边缘对映点都必须被识别出来。也就是说，无限展开的地面有一些类似于对映点的东西。这个平面就是射影平面。<br><img src="/images/20200919220216702.png" alt="在这里插入图片描述"><br><img src="/images/20200919220254308.png" alt="在这里插入图片描述"><br>其经过变化<br><img src="/images/20200919220625321.png" alt="在这里插入图片描述"><br>经过简化<br><img src="/images/20200919220715596.png" alt="在这里插入图片描述"><br><img src="/images/20200919220810582.png" alt="在这里插入图片描述"></p>
 <h2 id="6-不可定向曲面包含莫比乌斯环"><a href="#6-不可定向曲面包含莫比乌斯环" class="headerlink" title="6.不可定向曲面包含莫比乌斯环"></a>6.不可定向曲面包含莫比乌斯环</h2><p><img src="/images/20200919220800878.png" alt="在这里插入图片描述"></p>
 <h2 id="7-投影平面上的线与莫比乌斯环的比较"><a href="#7-投影平面上的线与莫比乌斯环的比较" class="headerlink" title="7.投影平面上的线与莫比乌斯环的比较"></a>7.投影平面上的线与莫比乌斯环的比较</h2><p><img src="/images/20200919220839855.png" alt="在这里插入图片描述"><br><img src="/images/20200919220848956.png" alt="在这里插入图片描述"></p>
-<p>参考:<br><a href="http://web1.kcn.jp/hp28ah77/us27_infi.htm" target="_blank" rel="noopener">Projective Geometry (1)</a><br>M335 TV3 The Projective Plane RP2 (with Colin Rourke) (Geometric Topology)</p>
+<p>参考:<br><a target="_blank" rel="noopener" href="http://web1.kcn.jp/hp28ah77/us27_infi.htm">Projective Geometry (1)</a><br>M335 TV3 The Projective Plane RP2 (with Colin Rourke) (Geometric Topology)</p>
 
     </div>
 
     
     
     
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/s992545366">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://t.me/molers233">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
+
+            <span class="label">Telegram</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/拓扑/" rel="tag"># 拓扑</a>
-              <a href="/tags/射影平面/" rel="tag"># 射影平面</a>
+              <a href="/tags/%E6%8B%93%E6%89%91/" rel="tag"># 拓扑</a>
+              <a href="/tags/%E5%B0%84%E5%BD%B1%E5%B9%B3%E9%9D%A2/" rel="tag"># 射影平面</a>
           </div>
 
         
@@ -259,11 +344,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/09/20/基础拓扑学笔记-5-欧拉示性数/" rel="prev" title="基础拓扑学笔记(5)--欧拉示性数">
+    <a href="/2020/09/20/%E5%9F%BA%E7%A1%80%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0-5-%E6%AC%A7%E6%8B%89%E7%A4%BA%E6%80%A7%E6%95%B0/" rel="prev" title="基础拓扑学笔记(5)--欧拉示性数">
       <i class="fa fa-chevron-left"></i> 基础拓扑学笔记(5)--欧拉示性数
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/09/20/点集拓扑学-1-度量空间/" rel="next" title="点集拓扑学(1)--度量空间">
+    <a href="/2020/09/20/%E7%82%B9%E9%9B%86%E6%8B%93%E6%89%91%E5%AD%A6-1-%E5%BA%A6%E9%87%8F%E7%A9%BA%E9%97%B4/" rel="next" title="点集拓扑学(1)--度量空间">
       点集拓扑学(1)--度量空间 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -278,6 +363,17 @@
 
           </div>
           
+    <div class="comments" id="comments">
+      
+    <script src="https://utteranc.es/client.js"
+    repo="Molers/BlogComment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+    </div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -324,48 +420,64 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-射影平面定义"><span class="nav-number">1.</span> <span class="nav-text">1.射影平面定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-摄像机与地面上的三角形"><span class="nav-number">2.</span> <span class="nav-text">2.摄像机与地面上的三角形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-摄影机视角的平行线"><span class="nav-number">3.</span> <span class="nav-text">3.摄影机视角的平行线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-180°摄影机"><span class="nav-number">4.</span> <span class="nav-text">4.180°摄影机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-莫比乌斯环-Mobius-Strip"><span class="nav-number">5.</span> <span class="nav-text">5.莫比乌斯环( Mobius Strip)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-不可定向曲面包含莫比乌斯环"><span class="nav-number">6.</span> <span class="nav-text">6.不可定向曲面包含莫比乌斯环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-投影平面上的线与莫比乌斯环的比较"><span class="nav-number">7.</span> <span class="nav-text">7.投影平面上的线与莫比乌斯环的比较</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%B0%84%E5%BD%B1%E5%B9%B3%E9%9D%A2%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">1.射影平面定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%91%84%E5%83%8F%E6%9C%BA%E4%B8%8E%E5%9C%B0%E9%9D%A2%E4%B8%8A%E7%9A%84%E4%B8%89%E8%A7%92%E5%BD%A2"><span class="nav-number">2.</span> <span class="nav-text">2.摄像机与地面上的三角形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%91%84%E5%BD%B1%E6%9C%BA%E8%A7%86%E8%A7%92%E7%9A%84%E5%B9%B3%E8%A1%8C%E7%BA%BF"><span class="nav-number">3.</span> <span class="nav-text">3.摄影机视角的平行线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-180%C2%B0%E6%91%84%E5%BD%B1%E6%9C%BA"><span class="nav-number">4.</span> <span class="nav-text">4.180°摄影机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E7%8E%AF-Mobius-Strip"><span class="nav-number">5.</span> <span class="nav-text">5.莫比乌斯环( Mobius Strip)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E4%B8%8D%E5%8F%AF%E5%AE%9A%E5%90%91%E6%9B%B2%E9%9D%A2%E5%8C%85%E5%90%AB%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E7%8E%AF"><span class="nav-number">6.</span> <span class="nav-text">6.不可定向曲面包含莫比乌斯环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E6%8A%95%E5%BD%B1%E5%B9%B3%E9%9D%A2%E4%B8%8A%E7%9A%84%E7%BA%BF%E4%B8%8E%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E7%8E%AF%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-number">7.</span> <span class="nav-text">7.投影平面上的线与莫比乌斯环的比较</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Molers" src="/images/Avatar.jpg">
-  <p class="site-author-name" itemprop="name">Molers</p>
-  <div class="site-description" itemprop="description">计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing</div>
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="张文亮"
+      src="/images/Avatar.jpg">
+  <p class="site-author-name" itemprop="name">张文亮</p>
+  <div class="site-description" itemprop="description">计算机CV与CG研究生,爱好绘画</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">76</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">115</span>
+        <span class="site-state-item-count">122</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/Molers" title="GitHub → https://github.com/Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/Molers" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://weibo.com/3179969322" title="Weibo → https://weibo.com/3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+        <a href="/s992545366@qq.com" title="E-Mail → s992545366@qq.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/s992545366" title="Twitter → https://twitter.com/s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+        <a href="https://weibo.com/3179969322" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/s992545366" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pixiv.net/users/7480965" title="Pixiv → https:&#x2F;&#x2F;www.pixiv.net&#x2F;users&#x2F;7480965" rel="noopener" target="_blank"><i class="fas fa-paint-brush fa-fw"></i>Pixiv</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/zhang-wen-liang-32" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;zhang-wen-liang-32" rel="noopener" target="_blank"><i class="fas fa-book-open fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/1876807" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;1876807" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/weixin_37923383" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_37923383" rel="noopener" target="_blank"><i class="fas fa-laptop-code fa-fw"></i>CSDN</a>
       </span>
   </div>
 
@@ -390,13 +502,13 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Molers</span>
+  <span class="author" itemprop="copyrightHolder">张文亮</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -416,15 +528,27 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 

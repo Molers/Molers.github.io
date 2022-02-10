@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="运行之后 1hexo clean &amp;&amp; hexo deploy  之后出现的问题 The mode argument must be integer. Received an instance of Object  网上说Hexo -v查看一下Hexo的版本 因为node.js和hexo存在版本适配的关系，所以当可能是一个版本过高一个版本过低导致的出现问题。 解决这个问题可以将he">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【hexo】【问题】The mode argument must be integer. Received an instance of Object">
+<meta property="og:url" content="http://yoursite.com/2022/02/09/%E3%80%90hexo%E3%80%91%E3%80%90%E9%97%AE%E9%A2%98%E3%80%91The-mode-argument-must-be-integer-Received-an-instance-of-Object/index.html">
+<meta property="og:site_name" content="Molers Blog">
+<meta property="og:description" content="运行之后 1hexo clean &amp;&amp; hexo deploy  之后出现的问题 The mode argument must be integer. Received an instance of Object  网上说Hexo -v查看一下Hexo的版本 因为node.js和hexo存在版本适配的关系，所以当可能是一个版本过高一个版本过低导致的出现问题。 解决这个问题可以将he">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/%5Cimages%5CHexo%5Cimage-20220209145022563.png">
+<meta property="article:published_time" content="2022-02-09T06:48:26.000Z">
+<meta property="article:modified_time" content="2022-02-09T12:31:55.108Z">
+<meta property="article:author" content="张文亮">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="github">
+<meta property="article:tag" content="博客">
+<meta property="article:tag" content="部署">
+<meta property="article:tag" content="Blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/%5Cimages%5CHexo%5Cimage-20220209145022563.png">
+
+<link rel="canonical" href="http://yoursite.com/2022/02/09/%E3%80%90hexo%E3%80%91%E3%80%90%E9%97%AE%E9%A2%98%E3%80%91The-mode-argument-must-be-integer-Received-an-instance-of-Object/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>【hexo】【问题】The mode argument must be integer. Received an instance of Object | Molers Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Molers Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Molers Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">饱腹的鼹鼠</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-rss">
+
+    <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/02/09/%E3%80%90hexo%E3%80%91%E3%80%90%E9%97%AE%E9%A2%98%E3%80%91The-mode-argument-must-be-integer-Received-an-instance-of-Object/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="张文亮">
+      <meta itemprop="description" content="计算机CV与CG研究生,爱好绘画">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【hexo】【问题】The mode argument must be integer. Received an instance of Object
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-02-09 14:48:26 / 修改时间：20:31:55" itemprop="dateCreated datePublished" datetime="2022-02-09T14:48:26+08:00">2022-02-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>运行之后</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>之后出现的问题</p>
+<p>The mode argument must be integer. Received an instance of Object</p>
+<p><img src="/%5Cimages%5CHexo%5Cimage-20220209145022563.png" alt="image-20220209145022563"></p>
+<p>网上说Hexo -v查看一下Hexo的版本</p>
+<p>因为node.js和hexo存在版本适配的关系，所以当可能是一个版本过高一个版本过低导致的出现问题。</p>
+<p>解决这个问题可以将hexo更新至高版本，也可以重新安装一个低版本的node。</p>
+<h1 id="hexo升级"><a href="#hexo升级" class="headerlink" title="hexo升级"></a>hexo升级</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br><span class="line"></span><br><span class="line">hexo: 3.8.0</span><br><span class="line">hexo-cli: 4.3.0</span><br><span class="line">os: win32 10.0.19043</span><br><span class="line">node: 16.13.2</span><br><span class="line">v8: 9.4.146.24-node.14</span><br><span class="line">uv: 1.42.0</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">brotli: 1.0.9</span><br><span class="line">ares: 1.18.1</span><br><span class="line">modules: 93</span><br><span class="line">nghttp2: 1.45.1</span><br><span class="line">napi: 8</span><br><span class="line">llhttp: 6.0.4</span><br><span class="line">openssl: 1.1.1l+quic</span><br><span class="line">cldr: 39.0</span><br><span class="line">icu: 69.1</span><br><span class="line">tz: 2021a</span><br><span class="line">unicode: 13.0</span><br><span class="line">ngtcp2: 0.1.0-DEV</span><br><span class="line">nghttp3: 0.1.0-DEV</span><br></pre></td></tr></table></figure>
+
+<p>全局升级hexo-cli，先hexo version查看当前版本，然后npm install -g hexo-cli，再次hexo version查看是否升级成功。如果hexo不能直接识别运行，改为npx hexo。</p>
+<p>使用npm-check，检查系统中的插件是否有升级的。</p>
+<p>使用npm-upgrade，升级系统中的相关插件。</p>
+<p>npm update -g，检查升级npm本身。</p>
+<ol>
+<li><p>全局升级 hexo-cli</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>检查系统中的插件是否有升级的，可以看到自己前面都安装了那些插件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g npm-check</span><br><span class="line">npm-check</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>升级系统中的插件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g npm-upgrade</span><br><span class="line">npm-upgrade</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新全局包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update -g</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新生产环境依赖包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update --save</span><br></pre></td></tr></table></figure></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli #全局升级hexo</span><br><span class="line">hexo version  //查看当前版本，判断是否需要升级</span><br><span class="line"></span><br><span class="line">npm install -g npm-check //安装npm-check</span><br><span class="line">npm-check //查看系统插件是否需要升级</span><br><span class="line"></span><br><span class="line">npm install -g npm-upgrade //安装npm-upgrade</span><br><span class="line">npm-upgrade //更新package.json</span><br><span class="line">//在执行npm-upgrade命令后会要求输入yes或者no，直接输入Yes或Y即可</span><br><span class="line">npm update -g  //更新全局插件</span><br><span class="line">npm install -g npm //更新系统插件</span><br><span class="line"></span><br><span class="line">hexo clean #清理hexo数据并重新生成页面并部署</span><br><span class="line">hexo g -s</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line">hexo                      😎  MAJOR UP  Major update available. https://hexo.io/</span><br><span class="line">                                       npm install --save hexo@6.0.0 to go from 3.8.0 to 6.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo&#x27;) or import from &#x27;hexo&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo</span><br><span class="line"></span><br><span class="line">hexo-algolia              😟  MISSING!  Not installed.</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-algolia?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-algolia&#x27;) or import from &#x27;hexo-algolia&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-algolia</span><br><span class="line"></span><br><span class="line">hexo-deployer-git         😎  MAJOR UP  Major update available. https://hexo.io/</span><br><span class="line">                                       npm install --save hexo-deployer-git@3.0.0 to go from 0.3.1 to 3.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-deployer-git?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-deployer-git&#x27;) or import from &#x27;hexo-deployer-git&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-deployer-git</span><br><span class="line"></span><br><span class="line">hexo-generator-archive    😎  MAJOR UP  Major update available. http://hexo.io/</span><br><span class="line">                                       npm install --save hexo-generator-archive@1.0.0 to go from 0.1.5 to 1.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-generator-archive?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-generator-archive&#x27;) or import from &#x27;hexo-generator-archive&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-generator-archive</span><br><span class="line"></span><br><span class="line">hexo-generator-category   😎  MAJOR UP  Major update available. https://hexo.io/</span><br><span class="line">                                       npm install --save hexo-generator-category@1.0.0 to go from 0.1.3 to 1.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-generator-category?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-generator-category&#x27;) or import from &#x27;hexo-generator-category&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-generator-category</span><br><span class="line"></span><br><span class="line">hexo-generator-index      😎  MAJOR UP  Major update available. http://hexo.io/</span><br><span class="line">                                       npm install --save hexo-generator-index@2.0.0 to go from 0.2.1 to 2.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-generator-index?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-generator-index&#x27;) or import from &#x27;hexo-generator-index&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-generator-index</span><br><span class="line"></span><br><span class="line">hexo-generator-searchdb   😍  UPDATE!   Your local install is out of date. https://github.com/next-theme/hexo-generator-searchdb#readme</span><br><span class="line">                                       npm install --save hexo-generator-searchdb@1.4.0 to go from 1.2.0 to 1.4.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-generator-searchdb?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-generator-searchdb&#x27;) or import from &#x27;hexo-generator-searchdb&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-generator-searchdb</span><br><span class="line"></span><br><span class="line">hexo-generator-tag        😎  MAJOR UP  Major update available. http://hexo.io/</span><br><span class="line">                                       npm install --save hexo-generator-tag@1.0.0 to go from 0.2.0 to 1.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-generator-tag?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-generator-tag&#x27;) or import from &#x27;hexo-generator-tag&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-generator-tag</span><br><span class="line"></span><br><span class="line">hexo-pagination           😎  MAJOR UP  Major update available. https://hexo.io/</span><br><span class="line">                                       npm install --save hexo-pagination@2.0.0 to go from 0.1.0 to 2.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-pagination?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-pagination&#x27;) or import from &#x27;hexo-pagination&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-pagination</span><br><span class="line"></span><br><span class="line">hexo-renderer-ejs         😎  MAJOR UP  Major update available. https://github.com/hexojs/hexo-renderer-ejs#readme</span><br><span class="line">                                       npm install --save hexo-renderer-ejs@2.0.0 to go from 0.3.1 to 2.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-renderer-ejs?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-renderer-ejs&#x27;) or import from &#x27;hexo-renderer-ejs&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-renderer-ejs</span><br><span class="line"></span><br><span class="line">hexo-renderer-less        😎  MAJOR UP  Major update available. https://github.com/hexojs/hexo-renderer-less#readme</span><br><span class="line">                                       npm install --save hexo-renderer-less@4.0.0 to go from 0.2.0 to 4.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-renderer-less?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-renderer-less&#x27;) or import from &#x27;hexo-renderer-less&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-renderer-less</span><br><span class="line"></span><br><span class="line">hexo-renderer-marked      😎  MAJOR UP  Major update available. https://github.com/hexojs/hexo-renderer-marked#readme</span><br><span class="line">                                       npm install --save hexo-renderer-marked@5.0.0 to go from 0.3.2 to 5.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-renderer-marked?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-renderer-marked&#x27;) or import from &#x27;hexo-renderer-marked&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-renderer-marked</span><br><span class="line"></span><br><span class="line">hexo-renderer-stylus      😎  MAJOR UP  Major update available. https://github.com/hexojs/hexo-renderer-stylus#readme</span><br><span class="line">                                       npm install --save hexo-renderer-stylus@2.0.1 to go from 0.3.3 to 2.0.1</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-renderer-stylus?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-renderer-stylus&#x27;) or import from &#x27;hexo-renderer-stylus&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-renderer-stylus</span><br><span class="line"></span><br><span class="line">hexo-server               😎  MAJOR UP  Major update available. http://hexo.io/</span><br><span class="line">                                       npm install --save hexo-server@3.0.0 to go from 0.3.3 to 3.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-server?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-server&#x27;) or import from &#x27;hexo-server&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-server</span><br><span class="line"></span><br><span class="line">gulp                      😟  MISSING!  Not installed.</span><br><span class="line">                          😟  PKG ERR!  Not in the package.json. Found in: \themes\themes\next\gulpfile.coffee</span><br><span class="line"></span><br><span class="line">jshint-stylish            😟  MISSING!  Not installed.</span><br><span class="line">                          😟  PKG ERR!  Not in the package.json. Found in: \themes\themes\next\gulpfile.coffee</span><br><span class="line"></span><br><span class="line">js-yaml                   😟  PKG ERR!  Not in the package.json. Found in: \themes\themes\next\gulpfile.coffee</span><br><span class="line">                          😎  MAJOR UP  Major update available. https://github.com/nodeca/js-yaml#readme</span><br><span class="line">                                       npm install --save js-yaml@4.1.0 to go from 3.12.0 to 4.1.0</span><br><span class="line"></span><br><span class="line">hexo-util                 😟  PKG ERR!  Not in the package.json. Found in: \themes\themes\next\scripts\tags\exturl.js</span><br><span class="line">                          😎  MAJOR UP  Major update available. https://hexo.io/</span><br><span class="line">                                       npm install --save hexo-util@2.6.0 to go from 0.6.3 to 2.6.0</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/s992545366">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://t.me/molers233">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
+
+            <span class="label">Telegram</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/github/" rel="tag"># github</a>
+              <a href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag"># 博客</a>
+              <a href="/tags/%E9%83%A8%E7%BD%B2/" rel="tag"># 部署</a>
+              <a href="/tags/Blog/" rel="tag"># Blog</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/01/23/%E3%80%90%E7%90%86%E8%B4%A2%E3%80%91%E3%80%9030%E5%B2%81%E5%90%8E%EF%BC%8C%E6%88%91%E9%9D%A0%E6%8A%95%E8%B5%84%E7%94%9F%E6%B4%BB2%E3%80%91%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-1/" rel="prev" title="【理财】【30岁后，我靠投资生活2】读书笔记-1">
+      <i class="fa fa-chevron-left"></i> 【理财】【30岁后，我靠投资生活2】读书笔记-1
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/02/10/%E3%80%90hexo%E3%80%91%E3%80%90%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E3%80%91%E3%80%90utterance%E3%80%91-hexo-next%E6%90%AD%E5%BB%BAutterance%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" rel="next" title="【hexo】【评论系统】【utterance】-hexo next搭建utterance评论系统">
+      【hexo】【评论系统】【utterance】-hexo next搭建utterance评论系统 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="comments">
+      
+    <script src="https://utteranc.es/client.js"
+    repo="Molers/BlogComment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+    </div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo%E5%8D%87%E7%BA%A7"><span class="nav-number">1.</span> <span class="nav-text">hexo升级</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="张文亮"
+      src="/images/Avatar.jpg">
+  <p class="site-author-name" itemprop="name">张文亮</p>
+  <div class="site-description" itemprop="description">计算机CV与CG研究生,爱好绘画</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">76</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">122</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Molers" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/s992545366@qq.com" title="E-Mail → s992545366@qq.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/3179969322" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/s992545366" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pixiv.net/users/7480965" title="Pixiv → https:&#x2F;&#x2F;www.pixiv.net&#x2F;users&#x2F;7480965" rel="noopener" target="_blank"><i class="fas fa-paint-brush fa-fw"></i>Pixiv</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/zhang-wen-liang-32" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;zhang-wen-liang-32" rel="noopener" target="_blank"><i class="fas fa-book-open fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/1876807" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;1876807" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/weixin_37923383" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_37923383" rel="noopener" target="_blank"><i class="fas fa-laptop-code fa-fw"></i>CSDN</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张文亮</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

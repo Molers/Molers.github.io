@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Molers Blog</title>
+  <icon>http://yoursite.com/icon.png</icon>
+  <subtitle>饱腹的鼹鼠</subtitle>
+  <link href="http://yoursite.com/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2022-02-10T08:27:10.662Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>张文亮</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【hexo】【评论系统】【utterance】-hexo next搭建utterance评论系统</title>
+    <link href="http://yoursite.com/2022/02/10/%E3%80%90hexo%E3%80%91%E3%80%90%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E3%80%91%E3%80%90utterance%E3%80%91-hexo-next%E6%90%AD%E5%BB%BAutterance%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://yoursite.com/2022/02/10/%E3%80%90hexo%E3%80%91%E3%80%90%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E3%80%91%E3%80%90utterance%E3%80%91-hexo-next%E6%90%AD%E5%BB%BAutterance%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</id>
+    <published>2022-02-10T07:07:52.000Z</published>
+    <updated>2022-02-10T08:27:10.662Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Hexo的Next主题搭建的博客内置了很多种评论系统，如：gitalk，changyan等。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;utterance&lt;/code&gt;（&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+    
+    
+    <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+    <category term="github" scheme="http://yoursite.com/tags/github/"/>
+    
+    <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="部署" scheme="http://yoursite.com/tags/%E9%83%A8%E7%BD%B2/"/>
+    
+    <category term="Blog" scheme="http://yoursite.com/tags/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【hexo】【问题】The mode argument must be integer. Received an instance of Object</title>
+    <link href="http://yoursite.com/2022/02/09/%E3%80%90hexo%E3%80%91%E3%80%90%E9%97%AE%E9%A2%98%E3%80%91The-mode-argument-must-be-integer-Received-an-instance-of-Object/"/>
+    <id>http://yoursite.com/2022/02/09/%E3%80%90hexo%E3%80%91%E3%80%90%E9%97%AE%E9%A2%98%E3%80%91The-mode-argument-must-be-integer-Received-an-instance-of-Object/</id>
+    <published>2022-02-09T06:48:26.000Z</published>
+    <updated>2022-02-09T12:31:55.108Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;运行之后&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+    
+    
+    <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+    <category term="github" scheme="http://yoursite.com/tags/github/"/>
+    
+    <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="部署" scheme="http://yoursite.com/tags/%E9%83%A8%E7%BD%B2/"/>
+    
+    <category term="Blog" scheme="http://yoursite.com/tags/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【理财】【30岁后，我靠投资生活2】读书笔记-1</title>
+    <link href="http://yoursite.com/2022/01/23/%E3%80%90%E7%90%86%E8%B4%A2%E3%80%91%E3%80%9030%E5%B2%81%E5%90%8E%EF%BC%8C%E6%88%91%E9%9D%A0%E6%8A%95%E8%B5%84%E7%94%9F%E6%B4%BB2%E3%80%91%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-1/"/>
+    <id>http://yoursite.com/2022/01/23/%E3%80%90%E7%90%86%E8%B4%A2%E3%80%91%E3%80%9030%E5%B2%81%E5%90%8E%EF%BC%8C%E6%88%91%E9%9D%A0%E6%8A%95%E8%B5%84%E7%94%9F%E6%B4%BB2%E3%80%91%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-1/</id>
+    <published>2022-01-23T14:50:15.000Z</published>
+    <updated>2022-02-09T06:39:44.406Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;1-关于钱&quot;&gt;&lt;a href=&quot;#1-关于钱&quot; class=&quot;headerlink&quot; title=&quot;1.关于钱&quot;&gt;&lt;/a&gt;1.关于钱&lt;/h1&gt;&lt;p&gt;传统行业与新兴行业、穷人与富人之间的财富差距越来越大,金融、IT从业高管一年赚的钱,制造业工人一辈子都赚不来。 &lt;/p&gt;
+&lt;p&gt;劳动可以解决温饱,而积累财富得靠理财&lt;/p&gt;
+&lt;p&gt;财富规则对每个人不太一样,但作为一门学科或者说科学来讲,财富运作的本源是不会有太大变化的,变化的只是运作的形式。&lt;/p&gt;
+&lt;p&gt;理财虽然不能彻底改变现状,却可以慢慢由体力赚钱上升到钱生钱,至少能让你抛弃一些错误的理念。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="理财" scheme="http://yoursite.com/categories/%E7%90%86%E8%B4%A2/"/>
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="理财" scheme="http://yoursite.com/tags/%E7%90%86%E8%B4%A2/"/>
+    
+    <category term="投资与投资" scheme="http://yoursite.com/tags/%E6%8A%95%E8%B5%84%E4%B8%8E%E6%8A%95%E8%B5%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【绘画】【林冉】-1.光影造型笔记</title>
+    <link href="http://yoursite.com/2022/01/21/%E3%80%90%E7%BB%98%E7%94%BB%E3%80%91%E3%80%90%E6%9E%97%E5%86%89%E3%80%91-1-%E5%85%89%E5%BD%B1%E9%80%A0%E5%9E%8B%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2022/01/21/%E3%80%90%E7%BB%98%E7%94%BB%E3%80%91%E3%80%90%E6%9E%97%E5%86%89%E3%80%91-1-%E5%85%89%E5%BD%B1%E9%80%A0%E5%9E%8B%E7%AC%94%E8%AE%B0/</id>
+    <published>2022-01-21T08:19:04.000Z</published>
+    <updated>2022-02-09T06:39:58.790Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;林冉的课B站就有录屏，信息量比较大，对我这种不是科班的绘画爱好者来说还挺有意思的，开阔眼界，做些笔记。&lt;/p&gt;
+&lt;h1 id=&quot;空间暗示-写实绘画的核心&quot;&gt;&lt;a href=&quot;#空间暗示-写实绘画的核心&quot; class=&quot;headerlink&quot; title=&quot;空间暗示(写实绘画的核心)&quot;&gt;&lt;/a&gt;空间暗示(写实绘画的核心)&lt;/h1&gt;&lt;p&gt;相比素描和水粉，水彩更能建立&lt;strong&gt;空间意识&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;对于写实绘画来说，空间的暗示是最重要的，空间的暗示越好，写实越成功。&lt;/p&gt;
+&lt;p&gt;质感，光，体积都要存在在体系下面，空间的真实是前提的前提&lt;/p&gt;
+&lt;p&gt;写实绘画的空间幻觉如果没有第一时间被认同，那么这张画很可能是一种强调平面的(没画好)。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/%5Cimages%5Clinran%5C2-%E7%BA%A6%E7%91%9F%E5%A4%AB%E6%B0%B4%E5%BD%A9.png&quot; alt=&quot;2-约瑟夫水彩&quot;&gt;&lt;/p&gt;
+&lt;p&gt;对于绘画，分清那些是捷径，那些是要下功夫的。&lt;/p&gt;
+&lt;p&gt;约瑟夫水彩的风格 连贯 概括省略 真实 代表了水彩最大的特点，有那么多相似的挑一个最具有代表性的人去学习，&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/%5Cimages%5Clinran%5C3.png&quot; alt=&quot;3&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="绘画笔记" scheme="http://yoursite.com/categories/%E7%BB%98%E7%94%BB%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="绘画" scheme="http://yoursite.com/tags/%E7%BB%98%E7%94%BB/"/>
+    
+    <category term="林冉" scheme="http://yoursite.com/tags/%E6%9E%97%E5%86%89/"/>
+    
+    <category term="光影" scheme="http://yoursite.com/tags/%E5%85%89%E5%BD%B1/"/>
+    
+    <category term="水彩" scheme="http://yoursite.com/tags/%E6%B0%B4%E5%BD%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【UE4】【蓝图】-UE4蓝图可视化编程1-蓝图介绍</title>
+    <link href="http://yoursite.com/2022/01/21/%E3%80%90UE4%E3%80%91%E3%80%90%E8%93%9D%E5%9B%BE%E3%80%91-UE4%E8%93%9D%E5%9B%BE%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BC%96%E7%A8%8B1-%E8%93%9D%E5%9B%BE%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://yoursite.com/2022/01/21/%E3%80%90UE4%E3%80%91%E3%80%90%E8%93%9D%E5%9B%BE%E3%80%91-UE4%E8%93%9D%E5%9B%BE%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BC%96%E7%A8%8B1-%E8%93%9D%E5%9B%BE%E4%BB%8B%E7%BB%8D/</id>
+    <published>2022-01-21T07:43:25.000Z</published>
+    <updated>2022-02-09T06:41:06.759Z</updated>
+    
+    
+    
+    
+    <category term="UE4" scheme="http://yoursite.com/categories/UE4/"/>
+    
+    
+    <category term="蓝图" scheme="http://yoursite.com/tags/%E8%93%9D%E5%9B%BE/"/>
+    
+    <category term="UE4" scheme="http://yoursite.com/tags/UE4/"/>
+    
+    <category term="可视化" scheme="http://yoursite.com/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【绘画】【排线】【结构】-排线中隐藏的秩序与结构</title>
+    <link href="http://yoursite.com/2022/01/20/%E3%80%90%E7%BB%98%E7%94%BB%E3%80%91%E3%80%90%E6%8E%92%E7%BA%BF%E3%80%91%E3%80%90%E7%BB%93%E6%9E%84%E3%80%91-%E6%8E%92%E7%BA%BF%E4%B8%AD%E9%9A%90%E8%97%8F%E7%9A%84%E7%A7%A9%E5%BA%8F%E4%B8%8E%E7%BB%93%E6%9E%84/"/>
+    <id>http://yoursite.com/2022/01/20/%E3%80%90%E7%BB%98%E7%94%BB%E3%80%91%E3%80%90%E6%8E%92%E7%BA%BF%E3%80%91%E3%80%90%E7%BB%93%E6%9E%84%E3%80%91-%E6%8E%92%E7%BA%BF%E4%B8%AD%E9%9A%90%E8%97%8F%E7%9A%84%E7%A7%A9%E5%BA%8F%E4%B8%8E%E7%BB%93%E6%9E%84/</id>
+    <published>2022-01-20T09:34:00.000Z</published>
+    <updated>2022-01-20T09:34:32.501Z</updated>
+    
+    
+    
+    
+    <category term="绘画笔记" scheme="http://yoursite.com/categories/%E7%BB%98%E7%94%BB%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="排线" scheme="http://yoursite.com/tags/%E6%8E%92%E7%BA%BF/"/>
+    
+    <category term="结构" scheme="http://yoursite.com/tags/%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Junc视频笔记-1</title>
+    <link href="http://yoursite.com/2022/01/20/Junc%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0-1/"/>
+    <id>http://yoursite.com/2022/01/20/Junc%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0-1/</id>
+    <published>2022-01-20T06:27:29.000Z</published>
+    <updated>2022-01-20T07:21:25.313Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;找了个视频看，记录一下有些意思的部分&lt;/p&gt;
+&lt;h1 id=&quot;手是第二张脸&quot;&gt;&lt;a href=&quot;#手是第二张脸&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="绘画笔记" scheme="http://yoursite.com/categories/%E7%BB%98%E7%94%BB%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="junc" scheme="http://yoursite.com/tags/junc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>K大贴褶皱的魔法-照片褶皱负型用于日系明暗</title>
+    <link href="http://yoursite.com/2022/01/18/K%E5%A4%A7%E8%B4%B4%E8%A4%B6%E7%9A%B1%E7%9A%84%E9%AD%94%E6%B3%95-%E7%85%A7%E7%89%87%E8%A4%B6%E7%9A%B1%E8%B4%9F%E5%9E%8B%E7%94%A8%E4%BA%8E%E6%97%A5%E7%B3%BB%E6%98%8E%E6%9A%97/"/>
+    <id>http://yoursite.com/2022/01/18/K%E5%A4%A7%E8%B4%B4%E8%A4%B6%E7%9A%B1%E7%9A%84%E9%AD%94%E6%B3%95-%E7%85%A7%E7%89%87%E8%A4%B6%E7%9A%B1%E8%B4%9F%E5%9E%8B%E7%94%A8%E4%BA%8E%E6%97%A5%E7%B3%BB%E6%98%8E%E6%9A%97/</id>
+    <published>2022-01-18T14:06:05.000Z</published>
+    <updated>2022-01-18T14:38:09.723Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;首先照一张照片调成2阶黑白的调子，&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/KdaTieZheZhou/image-20220118220644791.png&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="褶皱" scheme="http://yoursite.com/categories/%E8%A4%B6%E7%9A%B1/"/>
+    
+    
+    <category term="构成课" scheme="http://yoursite.com/tags/%E6%9E%84%E6%88%90%E8%AF%BE/"/>
+    
+    <category term="Krenz" scheme="http://yoursite.com/tags/Krenz/"/>
+    
+    <category term="褶皱" scheme="http://yoursite.com/tags/%E8%A4%B6%E7%9A%B1/"/>
+    
+    <category term="负型" scheme="http://yoursite.com/tags/%E8%B4%9F%E5%9E%8B/"/>
+    
+    <category term="照片" scheme="http://yoursite.com/tags/%E7%85%A7%E7%89%87/"/>
+    
+    <category term="贴图" scheme="http://yoursite.com/tags/%E8%B4%B4%E5%9B%BE/"/>
+    
+    <category term="技巧" scheme="http://yoursite.com/tags/%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>虚幻4学习的方法和网站</title>
+    <link href="http://yoursite.com/2021/08/12/%E8%99%9A%E5%B9%BB4%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%96%B9%E6%B3%95%E5%92%8C%E7%BD%91%E7%AB%99/"/>
+    <id>http://yoursite.com/2021/08/12/%E8%99%9A%E5%B9%BB4%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%96%B9%E6%B3%95%E5%92%8C%E7%BD%91%E7%AB%99/</id>
+    <published>2021-08-12T12:08:05.000Z</published>
+    <updated>2021-08-12T12:08:55.357Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;虚幻4的一些学习渠道&quot;&gt;&lt;a href=&quot;#虚幻4的一些学习渠道&quot; class=&quot;headerlink&quot; title=&quot;虚幻4的一些学习渠道&quot;&gt;&lt;/a&gt;虚幻4的一些学习渠道&lt;/h1&gt;&lt;p&gt;官方网站 &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="虚幻4" scheme="http://yoursite.com/categories/%E8%99%9A%E5%B9%BB4/"/>
+    
+    
+    <category term="虚幻" scheme="http://yoursite.com/tags/%E8%99%9A%E5%B9%BB/"/>
+    
+    <category term="引擎" scheme="http://yoursite.com/tags/%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="学习网站" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>三渲二优秀作品收藏</title>
+    <link href="http://yoursite.com/2021/08/03/%E4%B8%89%E6%B8%B2%E4%BA%8C%E4%BC%98%E7%A7%80%E4%BD%9C%E5%93%81%E6%94%B6%E8%97%8F/"/>
+    <id>http://yoursite.com/2021/08/03/%E4%B8%89%E6%B8%B2%E4%BA%8C%E4%BC%98%E7%A7%80%E4%BD%9C%E5%93%81%E6%94%B6%E8%97%8F/</id>
+    <published>2021-08-03T09:29:55.000Z</published>
+    <updated>2021-08-03T09:33:43.336Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;崩坏3一系列动画短片&quot;&gt;&lt;a href=&quot;#崩坏3一系列动画短片&quot; class=&quot;headerlink&quot; title=&quot;崩坏3一系列动画短片&quot;&gt;&lt;/a&gt;崩坏3一系列动画短片&lt;/h1&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="卡通渲染" scheme="http://yoursite.com/categories/%E5%8D%A1%E9%80%9A%E6%B8%B2%E6%9F%93/"/>
+    
+    
+    <category term="卡通渲染" scheme="http://yoursite.com/tags/%E5%8D%A1%E9%80%9A%E6%B8%B2%E6%9F%93/"/>
+    
+    <category term="三渲二" scheme="http://yoursite.com/tags/%E4%B8%89%E6%B8%B2%E4%BA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GAMES101-Lecture05 Rasterization1(Triangles)笔记</title>
+    <link href="http://yoursite.com/2021/07/17/GAMES101-Lecture05-Rasterization1-Triangles-%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2021/07/17/GAMES101-Lecture05-Rasterization1-Triangles-%E7%AC%94%E8%AE%B0/</id>
+    <published>2021-07-17T02:28:13.000Z</published>
+    <updated>2021-07-17T02:28:29.478Z</updated>
+    
+    
+    
+    
+    <category term="Games101现代计算机图形学入门" scheme="http://yoursite.com/categories/Games101%E7%8E%B0%E4%BB%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%85%A5%E9%97%A8/"/>
+    
+    
+    <category term="计算机图形学" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
+    
+    <category term="闫令琪" scheme="http://yoursite.com/tags/%E9%97%AB%E4%BB%A4%E7%90%AA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Fundamentals of Computer Graphics-Fourth Edition-1</title>
+    <link href="http://yoursite.com/2021/07/17/Fundamentals-of-Computer-Graphics-Fourth-Edition-1/"/>
+    <id>http://yoursite.com/2021/07/17/Fundamentals-of-Computer-Graphics-Fourth-Edition-1/</id>
+    <published>2021-07-17T02:15:24.000Z</published>
+    <updated>2021-07-17T02:15:24.126Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>图形学基础-辐射度方法</title>
+    <link href="http://yoursite.com/2021/07/03/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E8%BE%90%E5%B0%84%E5%BA%A6%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2021/07/03/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E8%BE%90%E5%B0%84%E5%BA%A6%E6%96%B9%E6%B3%95/</id>
+    <published>2021-07-03T11:32:46.000Z</published>
+    <updated>2021-07-03T11:38:58.279Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;蒙特卡洛方法的缺点&quot;&gt;&lt;a href=&quot;#蒙特卡洛方法的缺点&quot; class=&quot;headerlink&quot; title=&quot;蒙特卡洛方法的缺点&quot;&gt;&lt;/a&gt;蒙特卡洛方法的缺点&lt;/h1&gt;&lt;p&gt;全局光照技术都是基于蒙特卡洛方法的算法，</summary>
+        
+      
+    
+    
+    
+    <category term="图形学" scheme="http://yoursite.com/categories/%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
+    
+    
+    <category term="图形学" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
+    
+    <category term="辐射度学" scheme="http://yoursite.com/tags/%E8%BE%90%E5%B0%84%E5%BA%A6%E5%AD%A6/"/>
+    
+    <category term="蒙特卡洛" scheme="http://yoursite.com/tags/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GAMES102-Lecture01-高质量实时渲染介绍</title>
+    <link href="http://yoursite.com/2021/07/03/GAMES102-Lecture01-%E9%AB%98%E8%B4%A8%E9%87%8F%E5%AE%9E%E6%97%B6%E6%B8%B2%E6%9F%93%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://yoursite.com/2021/07/03/GAMES102-Lecture01-%E9%AB%98%E8%B4%A8%E9%87%8F%E5%AE%9E%E6%97%B6%E6%B8%B2%E6%9F%93%E4%BB%8B%E7%BB%8D/</id>
+    <published>2021-07-03T10:59:49.000Z</published>
+    <updated>2021-07-03T11:24:35.246Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Real-Time&quot;&gt;&lt;a href=&quot;#Real-Time&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Games102高质量实时渲染" scheme="http://yoursite.com/categories/Games102%E9%AB%98%E8%B4%A8%E9%87%8F%E5%AE%9E%E6%97%B6%E6%B8%B2%E6%9F%93/"/>
+    
+    
+    <category term="计算机图形学" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
+    
+    <category term="闫令琪" scheme="http://yoursite.com/tags/%E9%97%AB%E4%BB%A4%E7%90%AA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pbrt-v3-第一章介绍</title>
+    <link href="http://yoursite.com/2021/06/30/pbrt-v3-%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://yoursite.com/2021/06/30/pbrt-v3-%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%BB%8B%E7%BB%8D/</id>
+    <published>2021-06-30T08:25:10.000Z</published>
+    <updated>2021-07-03T10:24:48.962Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;虽然基于物理的方法似乎是最明显的渲染方法，但它只是在过去10年左右的实践中才被广泛采用。本章末尾的第1.7节简要介绍了基于物理的渲染，以及它最近被用于电影的离线渲染和游戏的交互式渲染。&lt;/p&gt;
+&lt;p&gt;pbrt，一个基于&lt;strong&gt;光线追踪算法&lt;/strong&gt;的&lt;str</summary>
+        
+      
+    
+    
+    
+    <category term="图形学基础" scheme="http://yoursite.com/categories/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="图形学" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
+    
+    <category term="PBR" scheme="http://yoursite.com/tags/PBR/"/>
+    
+    <category term="真实感渲染" scheme="http://yoursite.com/tags/%E7%9C%9F%E5%AE%9E%E6%84%9F%E6%B8%B2%E6%9F%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>图形学基础-漫反射，高光，环境光</title>
+    <link href="http://yoursite.com/2021/06/30/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E6%BC%AB%E5%8F%8D%E5%B0%84%EF%BC%8C%E9%AB%98%E5%85%89%EF%BC%8C%E7%8E%AF%E5%A2%83%E5%85%89/"/>
+    <id>http://yoursite.com/2021/06/30/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E6%BC%AB%E5%8F%8D%E5%B0%84%EF%BC%8C%E9%AB%98%E5%85%89%EF%BC%8C%E7%8E%AF%E5%A2%83%E5%85%89/</id>
+    <published>2021-06-30T07:52:48.000Z</published>
+    <updated>2021-06-30T07:58:08.326Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;光的能量衰减&quot;&gt;&lt;a href=&quot;#光的能量衰减&quot; class=&quot;headerlink&quot; title=&quot;光的能量衰减&quot;&gt;&lt;/a&gt;光的能量衰减&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/images/image-20210630155513283.png&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="图形学基础" scheme="http://yoursite.com/categories/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="图形学" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
+    
+    <category term="Phong" scheme="http://yoursite.com/tags/Phong/"/>
+    
+    <category term="Blinn-Phong" scheme="http://yoursite.com/tags/Blinn-Phong/"/>
+    
+    <category term="光照模型" scheme="http://yoursite.com/tags/%E5%85%89%E7%85%A7%E6%A8%A1%E5%9E%8B/"/>
+    
+    <category term="漫反射" scheme="http://yoursite.com/tags/%E6%BC%AB%E5%8F%8D%E5%B0%84/"/>
+    
+    <category term="高光" scheme="http://yoursite.com/tags/%E9%AB%98%E5%85%89/"/>
+    
+    <category term="环境光" scheme="http://yoursite.com/tags/%E7%8E%AF%E5%A2%83%E5%85%89/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>图形学基础-Phong和Blinn-Phong光照模型</title>
+    <link href="http://yoursite.com/2021/06/30/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-Phong%E5%92%8CBlinn-Phong%E5%85%89%E7%85%A7%E6%A8%A1%E5%9E%8B/"/>
+    <id>http://yoursite.com/2021/06/30/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-Phong%E5%92%8CBlinn-Phong%E5%85%89%E7%85%A7%E6%A8%A1%E5%9E%8B/</id>
+    <published>2021-06-30T03:33:52.000Z</published>
+    <updated>2021-06-30T07:43:46.293Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Phong和Blinn-Phong光照模型都是&lt;strong&gt;基于经验的渲染模型&lt;/strong&gt;，都是高光反射模型&lt;/p&gt;
+&lt;p&gt;Blinn-Phong 光照模型，又称为 Blinn-phong 反射模型（Blinn–Phong reflection model）或者</summary>
+        
+      
+    
+    
+    
+    <category term="图形学基础" scheme="http://yoursite.com/categories/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="图形学" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/"/>
+    
+    <category term="Phong" scheme="http://yoursite.com/tags/Phong/"/>
+    
+    <category term="Blinn-Phong" scheme="http://yoursite.com/tags/Blinn-Phong/"/>
+    
+    <category term="光照模型" scheme="http://yoursite.com/tags/%E5%85%89%E7%85%A7%E6%A8%A1%E5%9E%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>曼昆微观经济学笔记1-经济学十大原理</title>
+    <link href="http://yoursite.com/2021/04/09/%E6%9B%BC%E6%98%86%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%94%E8%AE%B01-%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%8D%81%E5%A4%A7%E5%8E%9F%E7%90%86/"/>
+    <id>http://yoursite.com/2021/04/09/%E6%9B%BC%E6%98%86%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%94%E8%AE%B01-%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%8D%81%E5%A4%A7%E5%8E%9F%E7%90%86/</id>
+    <published>2021-04-09T12:35:14.000Z</published>
+    <updated>2021-04-11T11:14:55.643Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;稀缺&quot;&gt;&lt;a href=&quot;#稀缺&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="经济学" scheme="http://yoursite.com/categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
+    
+    
+    <category term="曼昆" scheme="http://yoursite.com/tags/%E6%9B%BC%E6%98%86/"/>
+    
+    <category term="经济学" scheme="http://yoursite.com/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>绘画笔记-V大课程笔记-① 第一周 简介 认知与方法论 结构及人工网格</title>
+    <link href="http://yoursite.com/2021/02/23/%E7%BB%98%E7%94%BB%E7%AC%94%E8%AE%B0-V%E5%A4%A7%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0-%E2%91%A0-%E7%AC%AC%E4%B8%80%E5%91%A8-%E7%AE%80%E4%BB%8B-%E8%AE%A4%E7%9F%A5%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA-%E7%BB%93%E6%9E%84%E5%8F%8A%E4%BA%BA%E5%B7%A5%E7%BD%91%E6%A0%BC/"/>
+    <id>http://yoursite.com/2021/02/23/%E7%BB%98%E7%94%BB%E7%AC%94%E8%AE%B0-V%E5%A4%A7%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0-%E2%91%A0-%E7%AC%AC%E4%B8%80%E5%91%A8-%E7%AE%80%E4%BB%8B-%E8%AE%A4%E7%9F%A5%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA-%E7%BB%93%E6%9E%84%E5%8F%8A%E4%BA%BA%E5%B7%A5%E7%BD%91%E6%A0%BC/</id>
+    <published>2021-02-23T04:25:17.000Z</published>
+    <updated>2021-02-23T04:27:03.095Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;基本几何体&lt;/strong&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="V大课程笔记" scheme="http://yoursite.com/categories/V%E5%A4%A7%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="绘画" scheme="http://yoursite.com/tags/%E7%BB%98%E7%94%BB/"/>
+    
+    <category term="思考" scheme="http://yoursite.com/tags/%E6%80%9D%E8%80%83/"/>
+    
+    <category term="V大" scheme="http://yoursite.com/tags/V%E5%A4%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>michael hampton视频学习笔记</title>
+    <link href="http://yoursite.com/2021/02/09/michael-hampton%E8%A7%86%E9%A2%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2021/02/09/michael-hampton%E8%A7%86%E9%A2%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2021-02-09T15:21:40.000Z</published>
+    <updated>2021-02-09T17:40:34.277Z</updated>
+    
+    
+    
+    
+    <category term="绘画笔记" scheme="http://yoursite.com/categories/%E7%BB%98%E7%94%BB%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+</feed>

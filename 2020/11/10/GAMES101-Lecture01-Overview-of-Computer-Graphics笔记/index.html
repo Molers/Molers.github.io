@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.8.0">
+<meta name="generator" content="Hexo 6.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -17,17 +17,16 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="判断渲染的一个简单标准:画面是否明亮 游戏(Video Game)只狼 卡通NPR——无主之地3">
-<meta name="keywords" content="计算机图形学,闫令琪">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GAMES101-Lecture01 Overview of Computer Graphics笔记">
-<meta property="og:url" content="http://yoursite.com/2020/11/10/GAMES101-Lecture01-Overview-of-Computer-Graphics笔记/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/11/10/GAMES101-Lecture01-Overview-of-Computer-Graphics%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Molers Blog">
 <meta property="og:description" content="判断渲染的一个简单标准:画面是否明亮 游戏(Video Game)只狼 卡通NPR——无主之地3">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/Games101/image-20201110103745003.png">
 <meta property="og:image" content="http://yoursite.com/images/Games101/image-20201110103820530.png">
 <meta property="og:image" content="http://yoursite.com/images/Games101/image-20201110103859699.png">
@@ -50,13 +49,15 @@
 <meta property="og:image" content="http://yoursite.com/images/Games101/image-20201110110905088.png">
 <meta property="og:image" content="http://yoursite.com/images/Games101/image-20201110110922567.png">
 <meta property="og:image" content="http://yoursite.com/images/Games101/image-20201110111020693.png">
-<meta property="og:updated_time" content="2021-06-30T07:47:36.165Z">
+<meta property="article:published_time" content="2020-11-10T02:31:59.000Z">
+<meta property="article:modified_time" content="2021-06-30T07:47:36.165Z">
+<meta property="article:author" content="张文亮">
+<meta property="article:tag" content="计算机图形学">
+<meta property="article:tag" content="闫令琪">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GAMES101-Lecture01 Overview of Computer Graphics笔记">
-<meta name="twitter:description" content="判断渲染的一个简单标准:画面是否明亮 游戏(Video Game)只狼 卡通NPR——无主之地3">
 <meta name="twitter:image" content="http://yoursite.com/images/Games101/image-20201110103745003.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/11/10/GAMES101-Lecture01-Overview-of-Computer-Graphics笔记/">
+<link rel="canonical" href="http://yoursite.com/2020/11/10/GAMES101-Lecture01-Overview-of-Computer-Graphics%E7%AC%94%E8%AE%B0/">
 
 
 <script id="page-configurations">
@@ -100,6 +101,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Molers Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -128,6 +130,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -162,11 +165,43 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-rss">
+
+    <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -189,16 +224,16 @@
     
   
   
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/10/GAMES101-Lecture01-Overview-of-Computer-Graphics笔记/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/10/GAMES101-Lecture01-Overview-of-Computer-Graphics%E7%AC%94%E8%AE%B0/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+      <meta itemprop="name" content="张文亮">
+      <meta itemprop="description" content="计算机CV与CG研究生,爱好绘画">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Molers Blog">
     </span>
       <header class="post-header">
@@ -227,8 +262,8 @@
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Games101现代计算机图形学入门/" itemprop="url" rel="index"><span itemprop="name">Games101现代计算机图形学入门</span></a>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Games101%E7%8E%B0%E4%BB%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%85%A5%E9%97%A8/" itemprop="url" rel="index"><span itemprop="name">Games101现代计算机图形学入门</span></a>
                 </span>
             </span>
 
@@ -246,7 +281,8 @@
         <p>判断渲染的一个简单标准:画面是否明亮</p>
 <h1 id="游戏-Video-Game"><a href="#游戏-Video-Game" class="headerlink" title="游戏(Video Game)"></a>游戏(Video Game)</h1><h2 id="只狼"><a href="#只狼" class="headerlink" title="只狼"></a>只狼</h2><p><img src="/images/Games101/image-20201110103745003.png" alt="image-20201110103745003"></p>
 <h2 id="卡通NPR——无主之地3"><a href="#卡通NPR——无主之地3" class="headerlink" title="卡通NPR——无主之地3"></a>卡通NPR——无主之地3</h2><p><img src="/images/Games101/image-20201110103820530.png" alt="image-20201110103820530"></p>
-<a id="more"></a>
+<span id="more"></span>
+
 <h1 id="电影-Movie"><a href="#电影-Movie" class="headerlink" title="电影(Movie)"></a>电影(Movie)</h1><h2 id="特效"><a href="#特效" class="headerlink" title="特效"></a>特效</h2><p><img src="/images/Games101/image-20201110103859699.png" alt="image-20201110103859699"></p>
 <h2 id="动作捕捉-阿凡达"><a href="#动作捕捉-阿凡达" class="headerlink" title="动作捕捉:阿凡达"></a>动作捕捉:阿凡达</h2><p><img src="/images/Games101/image-20201110103340277.png" alt="image-20201110103340277"></p>
 <h1 id="动画-Animation"><a href="#动画-Animation" class="headerlink" title="动画(Animation)"></a>动画(Animation)</h1><h2 id="疯狂动物城"><a href="#疯狂动物城" class="headerlink" title="疯狂动物城"></a>疯狂动物城</h2><p><img src="/images/Games101/image-20201110103413753.png" alt="image-20201110103413753"></p>
@@ -268,7 +304,7 @@
 <h1 id="课程主题-主要四部分"><a href="#课程主题-主要四部分" class="headerlink" title="课程主题(主要四部分)"></a>课程主题(主要四部分)</h1><p>-光栅化(Rasterization) 栅格化</p>
 <p>-曲线和网格(Curves and Meshes)</p>
 <p>-光线追踪(Ray Tracing)</p>
-<p>-动画/模拟(Animation / Simulation)</p>
+<p>-动画&#x2F;模拟(Animation &#x2F; Simulation)</p>
 <h2 id="光栅化-Rasterization"><a href="#光栅化-Rasterization" class="headerlink" title="光栅化(Rasterization)"></a>光栅化(Rasterization)</h2><p>课外补充:</p>
 <p>光栅化就是把矢量图形转化成像素点儿的过程。我们屏幕上显示的画面都是由像素组成，而三维物体都是点线面构成的。要让点线面，变成能在屏幕上显示的像素，就需要Rasterize这个过程。就是从矢量的点线面的描述，变成像素的描述，这个过程就是Rasterize。</p>
 <p>有点像是模拟信号转化为数字信号的过程，路由器？</p>
@@ -288,11 +324,60 @@
     
     
     
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/s992545366">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://t.me/molers233">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
+
+            <span class="label">Telegram</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/计算机图形学/" rel="tag"># 计算机图形学</a>
-              <a href="/tags/闫令琪/" rel="tag"># 闫令琪</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" rel="tag"># 计算机图形学</a>
+              <a href="/tags/%E9%97%AB%E4%BB%A4%E7%90%AA/" rel="tag"># 闫令琪</a>
           </div>
 
         
@@ -301,11 +386,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/11/09/绘画笔记-透视课的思考/" rel="prev" title="绘画笔记-透视课的思考">
+    <a href="/2020/11/09/%E7%BB%98%E7%94%BB%E7%AC%94%E8%AE%B0-%E9%80%8F%E8%A7%86%E8%AF%BE%E7%9A%84%E6%80%9D%E8%80%83/" rel="prev" title="绘画笔记-透视课的思考">
       <i class="fa fa-chevron-left"></i> 绘画笔记-透视课的思考
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/11/10/GAMES101-Lecture02-Review-of-Linear-Algebra笔记/" rel="next" title="GAMES101-Lecture02 Review of Linear Algebra笔记">
+    <a href="/2020/11/10/GAMES101-Lecture02-Review-of-Linear-Algebra%E7%AC%94%E8%AE%B0/" rel="next" title="GAMES101-Lecture02 Review of Linear Algebra笔记">
       GAMES101-Lecture02 Review of Linear Algebra笔记 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -320,6 +405,17 @@
 
           </div>
           
+    <div class="comments" id="comments">
+      
+    <script src="https://utteranc.es/client.js"
+    repo="Molers/BlogComment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+    </div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -366,48 +462,64 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#游戏-Video-Game"><span class="nav-number">1.</span> <span class="nav-text">游戏(Video Game)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#只狼"><span class="nav-number">1.1.</span> <span class="nav-text">只狼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卡通NPR——无主之地3"><span class="nav-number">1.2.</span> <span class="nav-text">卡通NPR——无主之地3</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#电影-Movie"><span class="nav-number">2.</span> <span class="nav-text">电影(Movie)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特效"><span class="nav-number">2.1.</span> <span class="nav-text">特效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动作捕捉-阿凡达"><span class="nav-number">2.2.</span> <span class="nav-text">动作捕捉:阿凡达</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动画-Animation"><span class="nav-number">3.</span> <span class="nav-text">动画(Animation)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#疯狂动物城"><span class="nav-number">3.1.</span> <span class="nav-text">疯狂动物城</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冰雪奇缘——模拟simulation"><span class="nav-number">3.2.</span> <span class="nav-text">冰雪奇缘——模拟simulation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#工业设计（Design）"><span class="nav-number">4.</span> <span class="nav-text">工业设计（Design）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特斯拉车子的渲染效果"><span class="nav-number">4.1.</span> <span class="nav-text">特斯拉车子的渲染效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#室内装修"><span class="nav-number">4.2.</span> <span class="nav-text">室内装修</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#可视化（Visualization）"><span class="nav-number">5.</span> <span class="nav-text">可视化（Visualization）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#虚拟现实（Virtual-Reality）"><span class="nav-number">6.</span> <span class="nav-text">虚拟现实（Virtual Reality）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数字绘画（Digital-Illustration）"><span class="nav-number">7.</span> <span class="nav-text">数字绘画（Digital Illustration）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模拟-Simulation"><span class="nav-number">8.</span> <span class="nav-text">模拟(Simulation)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GUI-Graphical-User-Interfaces"><span class="nav-number">9.</span> <span class="nav-text">GUI(Graphical User Interfaces)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Typography（排版）"><span class="nav-number">10.</span> <span class="nav-text">Typography（排版）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#课程主题-主要四部分"><span class="nav-number">11.</span> <span class="nav-text">课程主题(主要四部分)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#光栅化-Rasterization"><span class="nav-number">11.1.</span> <span class="nav-text">光栅化(Rasterization)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#曲线和网格-Curves-and-Meshes"><span class="nav-number">11.2.</span> <span class="nav-text">曲线和网格(Curves and Meshes)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#光线追踪-Ray-Tracing"><span class="nav-number">11.3.</span> <span class="nav-text">光线追踪(Ray Tracing)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Not-About"><span class="nav-number">12.</span> <span class="nav-text">Not About</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机建模软件"><span class="nav-number">12.1.</span> <span class="nav-text">计算机建模软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机视觉"><span class="nav-number">12.2.</span> <span class="nav-text">计算机视觉</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Differences-between-CG-amp-CV"><span class="nav-number">13.</span> <span class="nav-text">Differences between CG&amp;CV</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Final-Project"><span class="nav-number">14.</span> <span class="nav-text">Final Project</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B8%B8%E6%88%8F-Video-Game"><span class="nav-number">1.</span> <span class="nav-text">游戏(Video Game)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AA%E7%8B%BC"><span class="nav-number">1.1.</span> <span class="nav-text">只狼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%A1%E9%80%9ANPR%E2%80%94%E2%80%94%E6%97%A0%E4%B8%BB%E4%B9%8B%E5%9C%B03"><span class="nav-number">1.2.</span> <span class="nav-text">卡通NPR——无主之地3</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%B5%E5%BD%B1-Movie"><span class="nav-number">2.</span> <span class="nav-text">电影(Movie)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%95%88"><span class="nav-number">2.1.</span> <span class="nav-text">特效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E4%BD%9C%E6%8D%95%E6%8D%89-%E9%98%BF%E5%87%A1%E8%BE%BE"><span class="nav-number">2.2.</span> <span class="nav-text">动作捕捉:阿凡达</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8A%A8%E7%94%BB-Animation"><span class="nav-number">3.</span> <span class="nav-text">动画(Animation)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%96%AF%E7%8B%82%E5%8A%A8%E7%89%A9%E5%9F%8E"><span class="nav-number">3.1.</span> <span class="nav-text">疯狂动物城</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%B0%E9%9B%AA%E5%A5%87%E7%BC%98%E2%80%94%E2%80%94%E6%A8%A1%E6%8B%9Fsimulation"><span class="nav-number">3.2.</span> <span class="nav-text">冰雪奇缘——模拟simulation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E4%B8%9A%E8%AE%BE%E8%AE%A1%EF%BC%88Design%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">工业设计（Design）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%96%AF%E6%8B%89%E8%BD%A6%E5%AD%90%E7%9A%84%E6%B8%B2%E6%9F%93%E6%95%88%E6%9E%9C"><span class="nav-number">4.1.</span> <span class="nav-text">特斯拉车子的渲染效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A4%E5%86%85%E8%A3%85%E4%BF%AE"><span class="nav-number">4.2.</span> <span class="nav-text">室内装修</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96%EF%BC%88Visualization%EF%BC%89"><span class="nav-number">5.</span> <span class="nav-text">可视化（Visualization）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E7%8E%B0%E5%AE%9E%EF%BC%88Virtual-Reality%EF%BC%89"><span class="nav-number">6.</span> <span class="nav-text">虚拟现实（Virtual Reality）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E7%BB%98%E7%94%BB%EF%BC%88Digital-Illustration%EF%BC%89"><span class="nav-number">7.</span> <span class="nav-text">数字绘画（Digital Illustration）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E6%8B%9F-Simulation"><span class="nav-number">8.</span> <span class="nav-text">模拟(Simulation)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GUI-Graphical-User-Interfaces"><span class="nav-number">9.</span> <span class="nav-text">GUI(Graphical User Interfaces)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Typography%EF%BC%88%E6%8E%92%E7%89%88%EF%BC%89"><span class="nav-number">10.</span> <span class="nav-text">Typography（排版）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%BE%E7%A8%8B%E4%B8%BB%E9%A2%98-%E4%B8%BB%E8%A6%81%E5%9B%9B%E9%83%A8%E5%88%86"><span class="nav-number">11.</span> <span class="nav-text">课程主题(主要四部分)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%89%E6%A0%85%E5%8C%96-Rasterization"><span class="nav-number">11.1.</span> <span class="nav-text">光栅化(Rasterization)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E7%BA%BF%E5%92%8C%E7%BD%91%E6%A0%BC-Curves-and-Meshes"><span class="nav-number">11.2.</span> <span class="nav-text">曲线和网格(Curves and Meshes)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%89%E7%BA%BF%E8%BF%BD%E8%B8%AA-Ray-Tracing"><span class="nav-number">11.3.</span> <span class="nav-text">光线追踪(Ray Tracing)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Not-About"><span class="nav-number">12.</span> <span class="nav-text">Not About</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BB%BA%E6%A8%A1%E8%BD%AF%E4%BB%B6"><span class="nav-number">12.1.</span> <span class="nav-text">计算机建模软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89"><span class="nav-number">12.2.</span> <span class="nav-text">计算机视觉</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Differences-between-CG-amp-CV"><span class="nav-number">13.</span> <span class="nav-text">Differences between CG&amp;CV</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Final-Project"><span class="nav-number">14.</span> <span class="nav-text">Final Project</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Molers" src="/images/Avatar.jpg">
-  <p class="site-author-name" itemprop="name">Molers</p>
-  <div class="site-description" itemprop="description">计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing</div>
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="张文亮"
+      src="/images/Avatar.jpg">
+  <p class="site-author-name" itemprop="name">张文亮</p>
+  <div class="site-description" itemprop="description">计算机CV与CG研究生,爱好绘画</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">76</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">115</span>
+        <span class="site-state-item-count">122</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/Molers" title="GitHub → https://github.com/Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/Molers" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://weibo.com/3179969322" title="Weibo → https://weibo.com/3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+        <a href="/s992545366@qq.com" title="E-Mail → s992545366@qq.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/s992545366" title="Twitter → https://twitter.com/s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+        <a href="https://weibo.com/3179969322" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/s992545366" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pixiv.net/users/7480965" title="Pixiv → https:&#x2F;&#x2F;www.pixiv.net&#x2F;users&#x2F;7480965" rel="noopener" target="_blank"><i class="fas fa-paint-brush fa-fw"></i>Pixiv</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/zhang-wen-liang-32" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;zhang-wen-liang-32" rel="noopener" target="_blank"><i class="fas fa-book-open fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/1876807" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;1876807" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/weixin_37923383" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_37923383" rel="noopener" target="_blank"><i class="fas fa-laptop-code fa-fw"></i>CSDN</a>
       </span>
   </div>
 
@@ -432,13 +544,13 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Molers</span>
+  <span class="author" itemprop="copyrightHolder">张文亮</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -458,15 +570,27 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 

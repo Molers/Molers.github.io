@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.8.0">
+<meta name="generator" content="Hexo 6.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -17,25 +17,28 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="相关书籍C++ :  光线跟踪V1(版本①):最简单的框架根据书的顺序把源程序列出来，一个光线跟踪最简单最基本的场景  Ray.h 光线_工具类123456789101112131415161718192021#ifndef _RAY_#define _RAY_#include&quot;Point3D.h&quot;#include&quot;Vector3D.h&quot;class Ray &amp;#123;	public:		Poin">
-<meta name="keywords" content="程序设计,阅读笔记,命名规范,光线跟踪器">
+  <meta name="description" content="相关书籍C++ :  光线跟踪V1(版本①):最简单的框架根据书的顺序把源程序列出来，一个光线跟踪最简单最基本的场景  Ray.h 光线_工具类123456789101112131415161718192021#ifndef _RAY_#define _RAY_#include&quot;Point3D.h&quot;#include&quot;Vector3D.h&quot;class Ray">
 <meta property="og:type" content="article">
 <meta property="og:title" content="光线跟踪算法技术阅读笔记-一.光线跟踪器和程序设计">
-<meta property="og:url" content="http://yoursite.com/2019/12/25/光线跟踪算法技术阅读笔记-一-光跟踪器和程序设计/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/12/25/%E5%85%89%E7%BA%BF%E8%B7%9F%E8%B8%AA%E7%AE%97%E6%B3%95%E6%8A%80%E6%9C%AF%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0-%E4%B8%80-%E5%85%89%E8%B7%9F%E8%B8%AA%E5%99%A8%E5%92%8C%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/index.html">
 <meta property="og:site_name" content="Molers Blog">
-<meta property="og:description" content="相关书籍C++ :  光线跟踪V1(版本①):最简单的框架根据书的顺序把源程序列出来，一个光线跟踪最简单最基本的场景  Ray.h 光线_工具类123456789101112131415161718192021#ifndef _RAY_#define _RAY_#include&quot;Point3D.h&quot;#include&quot;Vector3D.h&quot;class Ray &amp;#123;	public:		Poin">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/光线跟踪最基本场景.png">
-<meta property="og:updated_time" content="2020-01-06T07:20:38.000Z">
+<meta property="og:description" content="相关书籍C++ :  光线跟踪V1(版本①):最简单的框架根据书的顺序把源程序列出来，一个光线跟踪最简单最基本的场景  Ray.h 光线_工具类123456789101112131415161718192021#ifndef _RAY_#define _RAY_#include&quot;Point3D.h&quot;#include&quot;Vector3D.h&quot;class Ray">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/%E5%85%89%E7%BA%BF%E8%B7%9F%E8%B8%AA%E6%9C%80%E5%9F%BA%E6%9C%AC%E5%9C%BA%E6%99%AF.png">
+<meta property="article:published_time" content="2019-12-25T07:09:29.000Z">
+<meta property="article:modified_time" content="2020-01-06T07:20:38.000Z">
+<meta property="article:author" content="张文亮">
+<meta property="article:tag" content="程序设计">
+<meta property="article:tag" content="阅读笔记">
+<meta property="article:tag" content="命名规范">
+<meta property="article:tag" content="光线跟踪器">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="光线跟踪算法技术阅读笔记-一.光线跟踪器和程序设计">
-<meta name="twitter:description" content="相关书籍C++ :  光线跟踪V1(版本①):最简单的框架根据书的顺序把源程序列出来，一个光线跟踪最简单最基本的场景  Ray.h 光线_工具类123456789101112131415161718192021#ifndef _RAY_#define _RAY_#include&quot;Point3D.h&quot;#include&quot;Vector3D.h&quot;class Ray &amp;#123;	public:		Poin">
-<meta name="twitter:image" content="http://yoursite.com/images/光线跟踪最基本场景.png">
+<meta name="twitter:image" content="http://yoursite.com/images/%E5%85%89%E7%BA%BF%E8%B7%9F%E8%B8%AA%E6%9C%80%E5%9F%BA%E6%9C%AC%E5%9C%BA%E6%99%AF.png">
 
-<link rel="canonical" href="http://yoursite.com/2019/12/25/光线跟踪算法技术阅读笔记-一-光跟踪器和程序设计/">
+<link rel="canonical" href="http://yoursite.com/2019/12/25/%E5%85%89%E7%BA%BF%E8%B7%9F%E8%B8%AA%E7%AE%97%E6%B3%95%E6%8A%80%E6%9C%AF%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0-%E4%B8%80-%E5%85%89%E8%B7%9F%E8%B8%AA%E5%99%A8%E5%92%8C%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
 
 
 <script id="page-configurations">
@@ -79,6 +82,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Molers Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -107,6 +111,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -141,11 +146,43 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-rss">
+
+    <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -168,16 +205,16 @@
     
   
   
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/25/光线跟踪算法技术阅读笔记-一-光跟踪器和程序设计/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/25/%E5%85%89%E7%BA%BF%E8%B7%9F%E8%B8%AA%E7%AE%97%E6%B3%95%E6%8A%80%E6%9C%AF%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0-%E4%B8%80-%E5%85%89%E8%B7%9F%E8%B8%AA%E5%99%A8%E5%92%8C%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+      <meta itemprop="name" content="张文亮">
+      <meta itemprop="description" content="计算机CV与CG研究生,爱好绘画">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Molers Blog">
     </span>
       <header class="post-header">
@@ -206,8 +243,8 @@
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/光线跟踪/" itemprop="url" rel="index"><span itemprop="name">光线跟踪</span></a>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%85%89%E7%BA%BF%E8%B7%9F%E8%B8%AA/" itemprop="url" rel="index"><span itemprop="name">光线跟踪</span></a>
                 </span>
             </span>
 
@@ -224,21 +261,71 @@
       
         <h2 id="相关书籍"><a href="#相关书籍" class="headerlink" title="相关书籍"></a>相关书籍</h2><p>C++ : </p>
 <h2 id="光线跟踪V1-版本①-最简单的框架"><a href="#光线跟踪V1-版本①-最简单的框架" class="headerlink" title="光线跟踪V1(版本①):最简单的框架"></a>光线跟踪V1(版本①):最简单的框架</h2><p>根据书的顺序把源程序列出来，一个光线跟踪最简单最基本的场景</p>
-<p><img src="/images/光线跟踪最基本场景.png" alt="光线跟踪最基本场景"></p>
-<h3 id="Ray-h-光线-工具类"><a href="#Ray-h-光线-工具类" class="headerlink" title="Ray.h 光线_工具类"></a>Ray.h 光线_工具类</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> _RAY_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _RAY_</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">"Point3D.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">"Vector3D.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Ray</span> &#123;</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		Point3D o;<span class="comment">//origin 光线发射点</span></span><br><span class="line">		Vector3D d;<span class="comment">// direction 朝向 用向量定义 </span></span><br><span class="line">		Ray(<span class="keyword">void</span>); <span class="comment">//default constructor  默认构造函数 </span></span><br><span class="line">		Ray(<span class="keyword">const</span> Point3D &amp;origin, <span class="keyword">const</span> Vector3D &amp;dir);<span class="comment">//constructor 构造函数重写 </span></span><br><span class="line">		Ray(<span class="keyword">const</span> Ray&amp; ray);<span class="comment">// copy constructor //复制构造函数</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		Ray&amp;<span class="comment">//assignment operator 赋值运算符</span></span><br><span class="line">			<span class="keyword">operator</span>=(<span class="keyword">const</span> Ray&amp; rhs);</span><br><span class="line">		~Ray(<span class="keyword">void</span>);<span class="comment">//destructor 析构函数</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<p><img src="/images/%E5%85%89%E7%BA%BF%E8%B7%9F%E8%B8%AA%E6%9C%80%E5%9F%BA%E6%9C%AC%E5%9C%BA%E6%99%AF.png" alt="光线跟踪最基本场景"></p>
+<h3 id="Ray-h-光线-工具类"><a href="#Ray-h-光线-工具类" class="headerlink" title="Ray.h 光线_工具类"></a>Ray.h 光线_工具类</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> _RAY_</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _RAY_</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;Point3D.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;Vector3D.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Ray</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		Point3D o;<span class="comment">//origin 光线发射点</span></span><br><span class="line">		Vector3D d;<span class="comment">// direction 朝向 用向量定义 </span></span><br><span class="line">		<span class="built_in">Ray</span>(<span class="type">void</span>); <span class="comment">//default constructor  默认构造函数 </span></span><br><span class="line">		<span class="built_in">Ray</span>(<span class="type">const</span> Point3D &amp;origin, <span class="type">const</span> Vector3D &amp;dir);<span class="comment">//constructor 构造函数重写 </span></span><br><span class="line">		<span class="built_in">Ray</span>(<span class="type">const</span> Ray&amp; ray);<span class="comment">// copy constructor //复制构造函数</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		Ray&amp;<span class="comment">//assignment operator 赋值运算符</span></span><br><span class="line">			<span class="keyword">operator</span>=(<span class="type">const</span> Ray&amp; rhs);</span><br><span class="line">		~<span class="built_in">Ray</span>(<span class="type">void</span>);<span class="comment">//destructor 析构函数</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
 
     </div>
 
     
     
     
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/s992545366">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://t.me/molers233">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
+
+            <span class="label">Telegram</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/程序设计/" rel="tag"># 程序设计</a>
-              <a href="/tags/阅读笔记/" rel="tag"># 阅读笔记</a>
-              <a href="/tags/命名规范/" rel="tag"># 命名规范</a>
-              <a href="/tags/光线跟踪器/" rel="tag"># 光线跟踪器</a>
+              <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" rel="tag"># 程序设计</a>
+              <a href="/tags/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" rel="tag"># 阅读笔记</a>
+              <a href="/tags/%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/" rel="tag"># 命名规范</a>
+              <a href="/tags/%E5%85%89%E7%BA%BF%E8%B7%9F%E8%B8%AA%E5%99%A8/" rel="tag"># 光线跟踪器</a>
           </div>
 
         
@@ -247,12 +334,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/12/24/Unity-Shader入门精要一书中的扩展阅读网址/" rel="prev" title="Unity_Shader入门精要一书中的扩展阅读网址">
+    <a href="/2019/12/24/Unity-Shader%E5%85%A5%E9%97%A8%E7%B2%BE%E8%A6%81%E4%B8%80%E4%B9%A6%E4%B8%AD%E7%9A%84%E6%89%A9%E5%B1%95%E9%98%85%E8%AF%BB%E7%BD%91%E5%9D%80/" rel="prev" title="Unity_Shader入门精要一书中的扩展阅读网址">
       <i class="fa fa-chevron-left"></i> Unity_Shader入门精要一书中的扩展阅读网址
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/01/26/Qt学习笔记-4-Qt状态栏-statusBar/" rel="next" title="Qt学习笔记(4)--Qt状态栏--statusBar()">
-      Qt学习笔记(4)--Qt状态栏--statusBar() <i class="fa fa-chevron-right"></i>
+    <a href="/2020/01/26/hexo%E9%83%A8%E7%BD%B2%E5%88%B0github%E5%87%BA%E7%8E%B0Host-key-verification-failed%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="next" title="hexo部署到github出现Host key verification failed的解决方案">
+      hexo部署到github出现Host key verification failed的解决方案 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -266,6 +353,17 @@
 
           </div>
           
+    <div class="comments" id="comments">
+      
+    <script src="https://utteranc.es/client.js"
+    repo="Molers/BlogComment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+    </div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -312,48 +410,64 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#相关书籍"><span class="nav-number">1.</span> <span class="nav-text">相关书籍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#光线跟踪V1-版本①-最简单的框架"><span class="nav-number">2.</span> <span class="nav-text">光线跟踪V1(版本①):最简单的框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ray-h-光线-工具类"><span class="nav-number">2.1.</span> <span class="nav-text">Ray.h 光线_工具类</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E4%B9%A6%E7%B1%8D"><span class="nav-number">1.</span> <span class="nav-text">相关书籍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%89%E7%BA%BF%E8%B7%9F%E8%B8%AAV1-%E7%89%88%E6%9C%AC%E2%91%A0-%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E6%A1%86%E6%9E%B6"><span class="nav-number">2.</span> <span class="nav-text">光线跟踪V1(版本①):最简单的框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ray-h-%E5%85%89%E7%BA%BF-%E5%B7%A5%E5%85%B7%E7%B1%BB"><span class="nav-number">2.1.</span> <span class="nav-text">Ray.h 光线_工具类</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Molers" src="/images/Avatar.jpg">
-  <p class="site-author-name" itemprop="name">Molers</p>
-  <div class="site-description" itemprop="description">计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing</div>
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="张文亮"
+      src="/images/Avatar.jpg">
+  <p class="site-author-name" itemprop="name">张文亮</p>
+  <div class="site-description" itemprop="description">计算机CV与CG研究生,爱好绘画</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">76</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">115</span>
+        <span class="site-state-item-count">122</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/Molers" title="GitHub → https://github.com/Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/Molers" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://weibo.com/3179969322" title="Weibo → https://weibo.com/3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+        <a href="/s992545366@qq.com" title="E-Mail → s992545366@qq.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/s992545366" title="Twitter → https://twitter.com/s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+        <a href="https://weibo.com/3179969322" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/s992545366" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pixiv.net/users/7480965" title="Pixiv → https:&#x2F;&#x2F;www.pixiv.net&#x2F;users&#x2F;7480965" rel="noopener" target="_blank"><i class="fas fa-paint-brush fa-fw"></i>Pixiv</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/zhang-wen-liang-32" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;zhang-wen-liang-32" rel="noopener" target="_blank"><i class="fas fa-book-open fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/1876807" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;1876807" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/weixin_37923383" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_37923383" rel="noopener" target="_blank"><i class="fas fa-laptop-code fa-fw"></i>CSDN</a>
       </span>
   </div>
 
@@ -378,13 +492,13 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Molers</span>
+  <span class="author" itemprop="copyrightHolder">张文亮</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -404,15 +518,27 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 

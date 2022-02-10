@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.8.0">
+<meta name="generator" content="Hexo 6.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -17,17 +17,16 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="Transformation 变换rotation 旋转 反向动力学 IK 旋转矩阵  线性变化 Scaling 缩放  非均匀缩放 镜像 剪切矩阵 Translation 平移齐次坐标 Why?  平移不是线性变换，我们不希望平移是一种特殊的变换 引入齐次坐标的cost是什么？  增加维度w 引入齐次坐标 向量具有平移不变性 What if you translate a vector?   《">
-<meta name="keywords" content="计算机图形学,闫令琪,线性代数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GAMES101-Lecture03-04-Transformation笔记">
-<meta property="og:url" content="http://yoursite.com/2020/11/29/GAMES101-Lecture03-Transformation笔记/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/11/29/GAMES101-Lecture03-Transformation%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Molers Blog">
 <meta property="og:description" content="Transformation 变换rotation 旋转 反向动力学 IK 旋转矩阵  线性变化 Scaling 缩放  非均匀缩放 镜像 剪切矩阵 Translation 平移齐次坐标 Why?  平移不是线性变换，我们不希望平移是一种特殊的变换 引入齐次坐标的cost是什么？  增加维度w 引入齐次坐标 向量具有平移不变性 What if you translate a vector?   《">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/Games101/image-20201129175509435.png">
 <meta property="og:image" content="http://yoursite.com/images/Games101/image-20201211103954520.png">
 <meta property="og:image" content="http://yoursite.com/images/Games101/image-20201211203919064.png">
@@ -53,6 +52,9 @@
 <meta property="og:image" content="http://yoursite.com/images/Games101/image-20201212104119596.png">
 <meta property="og:image" content="http://yoursite.com/images/Games101/image-20201212110312557.png">
 <meta property="og:image" content="http://yoursite.com/images/Games101/image-20201212110544269.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20210722223258090.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20210722223548161.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20210722223616101.png">
 <meta property="og:image" content="http://yoursite.com/images/Games101/image-20201212110856470.png">
 <meta property="og:image" content="http://yoursite.com/images/Games101/image-20201212111020189.png">
 <meta property="og:image" content="http://yoursite.com/images/Games101/image-20201215204522585.png">
@@ -68,13 +70,16 @@
 <meta property="og:image" content="http://yoursite.com/images/Games101/image-20201215212320440.png">
 <meta property="og:image" content="http://yoursite.com/images/Games101/image-20201215212523465.png">
 <meta property="og:image" content="http://yoursite.com/images/Games101/image-20201215212616234.png">
-<meta property="og:updated_time" content="2020-12-15T14:07:28.898Z">
+<meta property="article:published_time" content="2020-11-29T09:53:30.000Z">
+<meta property="article:modified_time" content="2021-07-22T14:38:12.626Z">
+<meta property="article:author" content="张文亮">
+<meta property="article:tag" content="计算机图形学">
+<meta property="article:tag" content="闫令琪">
+<meta property="article:tag" content="线性代数">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GAMES101-Lecture03-04-Transformation笔记">
-<meta name="twitter:description" content="Transformation 变换rotation 旋转 反向动力学 IK 旋转矩阵  线性变化 Scaling 缩放  非均匀缩放 镜像 剪切矩阵 Translation 平移齐次坐标 Why?  平移不是线性变换，我们不希望平移是一种特殊的变换 引入齐次坐标的cost是什么？  增加维度w 引入齐次坐标 向量具有平移不变性 What if you translate a vector?   《">
 <meta name="twitter:image" content="http://yoursite.com/images/Games101/image-20201129175509435.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/11/29/GAMES101-Lecture03-Transformation笔记/">
+<link rel="canonical" href="http://yoursite.com/2020/11/29/GAMES101-Lecture03-Transformation%E7%AC%94%E8%AE%B0/">
 
 
 <script id="page-configurations">
@@ -118,6 +123,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Molers Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -146,6 +152,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -180,11 +187,43 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-rss">
+
+    <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -207,16 +246,16 @@
     
   
   
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/29/GAMES101-Lecture03-Transformation笔记/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/29/GAMES101-Lecture03-Transformation%E7%AC%94%E8%AE%B0/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+      <meta itemprop="name" content="张文亮">
+      <meta itemprop="description" content="计算机CV与CG研究生,爱好绘画">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Molers Blog">
     </span>
       <header class="post-header">
@@ -238,15 +277,15 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-12-15 22:07:28" itemprop="dateModified" datetime="2020-12-15T22:07:28+08:00">2020-12-15</time>
+                <time title="修改时间：2021-07-22 22:38:12" itemprop="dateModified" datetime="2021-07-22T22:38:12+08:00">2021-07-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Games101现代计算机图形学入门/" itemprop="url" rel="index"><span itemprop="name">Games101现代计算机图形学入门</span></a>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Games101%E7%8E%B0%E4%BB%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%85%A5%E9%97%A8/" itemprop="url" rel="index"><span itemprop="name">Games101现代计算机图形学入门</span></a>
                 </span>
             </span>
 
@@ -284,7 +323,7 @@
 <p>于是我们知道，其重要性，主要有二，其一是区分向量和点，其二是易于进行仿射变化(Affine Transformation)</p>
 </blockquote>
 <p><img src="/images/Games101/image-20201211204944471.png" alt="image-20201211204944471"></p>
-<p>point+point = 齐次坐标系下 两点的中点</p>
+<p>point+point &#x3D; 齐次坐标系下 两点的中点</p>
 <h3 id="仿射变换"><a href="#仿射变换" class="headerlink" title="仿射变换"></a>仿射变换</h3><p><img src="/images/Games101/image-20201211205049558.png" alt="image-20201211205049558"></p>
 <h1 id="2D-Transformation"><a href="#2D-Transformation" class="headerlink" title="2D Transformation"></a>2D Transformation</h1><p>S(Sx,Sy) R(α) T(tx,ty)</p>
 <p><img src="/images/Games101/image-20201211205135924.png" alt="image-20201211205135924"></p>
@@ -300,9 +339,23 @@
 <p><img src="/images/Games101/image-20201212104119596.png" alt="image-20201212104119596"></p>
 <h1 id="Transformation-Cont"><a href="#Transformation-Cont" class="headerlink" title="Transformation Cont"></a>Transformation Cont</h1><p>旋转矩阵的逆等于其转置 正交矩阵</p>
 <h2 id="scale-translation"><a href="#scale-translation" class="headerlink" title="scale translation"></a>scale translation</h2><h2 id="rotarion-matrix"><a href="#rotarion-matrix" class="headerlink" title="rotarion matrix"></a>rotarion matrix</h2><h2 id="任意方向的旋转-欧拉角"><a href="#任意方向的旋转-欧拉角" class="headerlink" title="任意方向的旋转 欧拉角"></a>任意方向的旋转 欧拉角</h2><p><img src="/images/Games101/image-20201212110312557.png" alt="image-20201212110312557"></p>
-<h2 id="绕任意轴旋转-formula"><a href="#绕任意轴旋转-formula" class="headerlink" title="绕任意轴旋转 formula"></a>绕任意轴旋转 formula</h2><p><img src="/images/Games101/image-20201212110544269.png" alt="image-20201212110544269"><br>$$<br>\begin{equation}<br>\mathbf{R}(\mathbf{n}, \alpha)=\cos (\alpha) \mathbf{I}+(1-\cos (\alpha)) \mathbf{n} \mathbf{n}^{T}+\sin (\alpha) \underbrace{\left(\begin{array}{ccc}<br>0 &amp; -n_{z} &amp; n_{y} \<br>n_{z} &amp; 0 &amp; -n_{x} \<br>-n_{y} &amp; n_{x} &amp; 0<br>\end{array}\right)}_{\mathbf{N}}<br>\end{equation}<br>$$</p>
-<h2 id="View-Camera-tran-相机变换"><a href="#View-Camera-tran-相机变换" class="headerlink" title="View Camera tran. 相机变换"></a>View Camera tran. 相机变换</h2><p>MVP 三变换</p>
+<h2 id="绕任意轴旋转-formula"><a href="#绕任意轴旋转-formula" class="headerlink" title="绕任意轴旋转 formula"></a>绕任意轴旋转 formula</h2><p><img src="/images/Games101/image-20201212110544269.png" alt="image-20201212110544269"><br>$$<br>\begin{equation}<br>\mathbf{R}(\mathbf{n}, \alpha)&#x3D;\cos (\alpha) \mathbf{I}+(1-\cos (\alpha)) \mathbf{n} \mathbf{n}^{T}+\sin (\alpha) \underbrace{\left(\begin{array}{ccc}<br>0 &amp; -n_{z} &amp; n_{y} \<br>n_{z} &amp; 0 &amp; -n_{x} \<br>-n_{y} &amp; n_{x} &amp; 0<br>\end{array}\right)}_{\mathbf{N}}<br>\end{equation}<br>$$</p>
+<h1 id="视图变换"><a href="#视图变换" class="headerlink" title="视图变换"></a>视图变换</h1><p><img src="/images/image-20210722223258090.png" alt="image-20210722223258090"></p>
+<h2 id="modeling-tranformation-模型变换"><a href="#modeling-tranformation-模型变换" class="headerlink" title="modeling tranformation 模型变换"></a>modeling tranformation 模型变换</h2><p>将虚拟世界中或者更具体点，游戏场景中的物体调整至他们应该在的位置</p>
+<h2 id="View-Camera-tran-相机变换"><a href="#View-Camera-tran-相机变换" class="headerlink" title="View Camera tran. 相机变换"></a>View Camera tran. 相机变换</h2><p>MVP 三变换 得到物体与摄像机的相对位置</p>
+<p>摄像机变换的目的是得到所有可视物体与摄像机的相对位置，把物体和摄像机一起做移动，如果能够把摄像机的坐标轴(假设为u,v,w 分别对应原世界空间中的x,y,z)移动到标准的x，y，z轴，那么此时物体的坐标自然是相对坐标。</p>
+<p>因此核心问题就变成了如何表示或者说如何将camera的坐标系与原世界坐标系重合</p>
+<p>定义3个东西</p>
+<ul>
+<li>相机或眼睛位置 (eye postion) e</li>
+<li>观察方向 (gaze postion) g</li>
+<li>视点正上方向 (view-up vector ) t</li>
+</ul>
 <p>相机的三个属性</p>
+<p><img src="/images/image-20210722223548161.png" alt="image-20210722223548161"></p>
+<p>其中u，v，w分别对应标准坐标系下的x，y，z，示意图如下：</p>
+<p><img src="/images/image-20210722223616101.png" alt="image-20210722223616101"></p>
+<p>不直接拿 t 当做基底向量是因为摄像机的头可能是歪着看的</p>
 <p><img src="/images/Games101/image-20201212110856470.png" alt="image-20201212110856470"></p>
 <p>约定相机永远看向-Z方向，约定标准位置</p>
 <p><img src="/images/Games101/image-20201212111020189.png" alt="image-20201212111020189"></p>
@@ -343,12 +396,61 @@
     
     
     
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/s992545366">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://t.me/molers233">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
+
+            <span class="label">Telegram</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/计算机图形学/" rel="tag"># 计算机图形学</a>
-              <a href="/tags/闫令琪/" rel="tag"># 闫令琪</a>
-              <a href="/tags/线性代数/" rel="tag"># 线性代数</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" rel="tag"># 计算机图形学</a>
+              <a href="/tags/%E9%97%AB%E4%BB%A4%E7%90%AA/" rel="tag"># 闫令琪</a>
+              <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag"># 线性代数</a>
           </div>
 
         
@@ -357,11 +459,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/11/17/Krenz构成笔记-后知后觉的构成总结/" rel="prev" title="Krenz构成笔记-后知后觉的构成总结">
+    <a href="/2020/11/17/Krenz%E6%9E%84%E6%88%90%E7%AC%94%E8%AE%B0-%E5%90%8E%E7%9F%A5%E5%90%8E%E8%A7%89%E7%9A%84%E6%9E%84%E6%88%90%E6%80%BB%E7%BB%93/" rel="prev" title="Krenz构成笔记-后知后觉的构成总结">
       <i class="fa fa-chevron-left"></i> Krenz构成笔记-后知后觉的构成总结
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/01/21/绘画笔记-厚涂/" rel="next" title="绘画笔记-厚涂就是赛璐璐">
+    <a href="/2021/01/21/%E7%BB%98%E7%94%BB%E7%AC%94%E8%AE%B0-%E5%8E%9A%E6%B6%82/" rel="next" title="绘画笔记-厚涂就是赛璐璐">
       绘画笔记-厚涂就是赛璐璐 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -376,6 +478,17 @@
 
           </div>
           
+    <div class="comments" id="comments">
+      
+    <script src="https://utteranc.es/client.js"
+    repo="Molers/BlogComment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+    </div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -422,48 +535,64 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Transformation-变换"><span class="nav-number">1.</span> <span class="nav-text">Transformation 变换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#rotation-旋转-反向动力学-IK"><span class="nav-number">1.1.</span> <span class="nav-text">rotation 旋转 反向动力学 IK</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#旋转矩阵"><span class="nav-number">1.1.1.</span> <span class="nav-text">旋转矩阵</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性变化"><span class="nav-number">1.2.</span> <span class="nav-text">线性变化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scaling-缩放"><span class="nav-number">1.3.</span> <span class="nav-text">Scaling 缩放</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#非均匀缩放"><span class="nav-number">1.3.1.</span> <span class="nav-text">非均匀缩放</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#镜像"><span class="nav-number">1.4.</span> <span class="nav-text">镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#剪切矩阵"><span class="nav-number">1.5.</span> <span class="nav-text">剪切矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Translation-平移"><span class="nav-number">1.6.</span> <span class="nav-text">Translation 平移</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#仿射变换"><span class="nav-number">1.6.1.</span> <span class="nav-text">仿射变换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2D-Transformation"><span class="nav-number">2.</span> <span class="nav-text">2D Transformation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#逆变换"><span class="nav-number">3.</span> <span class="nav-text">逆变换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#组合变换"><span class="nav-number">4.</span> <span class="nav-text">组合变换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如果不以原点进行旋转呢？"><span class="nav-number">5.</span> <span class="nav-text">如果不以原点进行旋转呢？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3维变换"><span class="nav-number">6.</span> <span class="nav-text">3维变换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Transformation-Cont"><span class="nav-number">7.</span> <span class="nav-text">Transformation Cont</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#scale-translation"><span class="nav-number">7.1.</span> <span class="nav-text">scale translation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rotarion-matrix"><span class="nav-number">7.2.</span> <span class="nav-text">rotarion matrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#任意方向的旋转-欧拉角"><span class="nav-number">7.3.</span> <span class="nav-text">任意方向的旋转 欧拉角</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绕任意轴旋转-formula"><span class="nav-number">7.4.</span> <span class="nav-text">绕任意轴旋转 formula</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View-Camera-tran-相机变换"><span class="nav-number">7.5.</span> <span class="nav-text">View Camera tran. 相机变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Projection-tran-投影变换"><span class="nav-number">7.6.</span> <span class="nav-text">Projection tran. 投影变换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#正交投影"><span class="nav-number">7.6.1.</span> <span class="nav-text">正交投影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透视投影"><span class="nav-number">7.6.2.</span> <span class="nav-text">透视投影</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作业0"><span class="nav-number">8.</span> <span class="nav-text">作业0:</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Transformation-%E5%8F%98%E6%8D%A2"><span class="nav-number">1.</span> <span class="nav-text">Transformation 变换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#rotation-%E6%97%8B%E8%BD%AC-%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6-IK"><span class="nav-number">1.1.</span> <span class="nav-text">rotation 旋转 反向动力学 IK</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5"><span class="nav-number">1.1.1.</span> <span class="nav-text">旋转矩阵</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%98%E5%8C%96"><span class="nav-number">1.2.</span> <span class="nav-text">线性变化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scaling-%E7%BC%A9%E6%94%BE"><span class="nav-number">1.3.</span> <span class="nav-text">Scaling 缩放</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E5%9D%87%E5%8C%80%E7%BC%A9%E6%94%BE"><span class="nav-number">1.3.1.</span> <span class="nav-text">非均匀缩放</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%95%9C%E5%83%8F"><span class="nav-number">1.4.</span> <span class="nav-text">镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%AA%E5%88%87%E7%9F%A9%E9%98%B5"><span class="nav-number">1.5.</span> <span class="nav-text">剪切矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Translation-%E5%B9%B3%E7%A7%BB"><span class="nav-number">1.6.</span> <span class="nav-text">Translation 平移</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%BF%E5%B0%84%E5%8F%98%E6%8D%A2"><span class="nav-number">1.6.1.</span> <span class="nav-text">仿射变换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2D-Transformation"><span class="nav-number">2.</span> <span class="nav-text">2D Transformation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%86%E5%8F%98%E6%8D%A2"><span class="nav-number">3.</span> <span class="nav-text">逆变换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%84%E5%90%88%E5%8F%98%E6%8D%A2"><span class="nav-number">4.</span> <span class="nav-text">组合变换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E4%B8%8D%E4%BB%A5%E5%8E%9F%E7%82%B9%E8%BF%9B%E8%A1%8C%E6%97%8B%E8%BD%AC%E5%91%A2%EF%BC%9F"><span class="nav-number">5.</span> <span class="nav-text">如果不以原点进行旋转呢？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3%E7%BB%B4%E5%8F%98%E6%8D%A2"><span class="nav-number">6.</span> <span class="nav-text">3维变换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Transformation-Cont"><span class="nav-number">7.</span> <span class="nav-text">Transformation Cont</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#scale-translation"><span class="nav-number">7.1.</span> <span class="nav-text">scale translation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rotarion-matrix"><span class="nav-number">7.2.</span> <span class="nav-text">rotarion matrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%BB%E6%84%8F%E6%96%B9%E5%90%91%E7%9A%84%E6%97%8B%E8%BD%AC-%E6%AC%A7%E6%8B%89%E8%A7%92"><span class="nav-number">7.3.</span> <span class="nav-text">任意方向的旋转 欧拉角</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%95%E4%BB%BB%E6%84%8F%E8%BD%B4%E6%97%8B%E8%BD%AC-formula"><span class="nav-number">7.4.</span> <span class="nav-text">绕任意轴旋转 formula</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%86%E5%9B%BE%E5%8F%98%E6%8D%A2"><span class="nav-number">8.</span> <span class="nav-text">视图变换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#modeling-tranformation-%E6%A8%A1%E5%9E%8B%E5%8F%98%E6%8D%A2"><span class="nav-number">8.1.</span> <span class="nav-text">modeling tranformation 模型变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View-Camera-tran-%E7%9B%B8%E6%9C%BA%E5%8F%98%E6%8D%A2"><span class="nav-number">8.2.</span> <span class="nav-text">View Camera tran. 相机变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Projection-tran-%E6%8A%95%E5%BD%B1%E5%8F%98%E6%8D%A2"><span class="nav-number">8.3.</span> <span class="nav-text">Projection tran. 投影变换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E4%BA%A4%E6%8A%95%E5%BD%B1"><span class="nav-number">8.3.1.</span> <span class="nav-text">正交投影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%8F%E8%A7%86%E6%8A%95%E5%BD%B1"><span class="nav-number">8.3.2.</span> <span class="nav-text">透视投影</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%9C%E4%B8%9A0"><span class="nav-number">9.</span> <span class="nav-text">作业0:</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Molers" src="/images/Avatar.jpg">
-  <p class="site-author-name" itemprop="name">Molers</p>
-  <div class="site-description" itemprop="description">计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing</div>
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="张文亮"
+      src="/images/Avatar.jpg">
+  <p class="site-author-name" itemprop="name">张文亮</p>
+  <div class="site-description" itemprop="description">计算机CV与CG研究生,爱好绘画</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">76</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">115</span>
+        <span class="site-state-item-count">122</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/Molers" title="GitHub → https://github.com/Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/Molers" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://weibo.com/3179969322" title="Weibo → https://weibo.com/3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+        <a href="/s992545366@qq.com" title="E-Mail → s992545366@qq.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/s992545366" title="Twitter → https://twitter.com/s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+        <a href="https://weibo.com/3179969322" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/s992545366" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pixiv.net/users/7480965" title="Pixiv → https:&#x2F;&#x2F;www.pixiv.net&#x2F;users&#x2F;7480965" rel="noopener" target="_blank"><i class="fas fa-paint-brush fa-fw"></i>Pixiv</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/zhang-wen-liang-32" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;zhang-wen-liang-32" rel="noopener" target="_blank"><i class="fas fa-book-open fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/1876807" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;1876807" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/weixin_37923383" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_37923383" rel="noopener" target="_blank"><i class="fas fa-laptop-code fa-fw"></i>CSDN</a>
       </span>
   </div>
 
@@ -488,13 +617,13 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Molers</span>
+  <span class="author" itemprop="copyrightHolder">张文亮</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -514,15 +643,27 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 

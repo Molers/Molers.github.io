@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.8.0">
+<meta name="generator" content="Hexo 6.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -17,28 +17,31 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="Phong和Blinn-Phong光照模型都是基于经验的渲染模型，都是高光反射模型 Blinn-Phong 光照模型，又称为 Blinn-phong 反射模型（Blinn–Phong reflection model）或者 phong 修正模型（modified Phong reflection model），是由 Jim Blinn于 1977 年在文章“Models of light refl">
-<meta name="keywords" content="图形学,Phong,Blinn-Phong,光照模型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图形学基础-Phong和Blinn-Phong光照模型">
-<meta property="og:url" content="http://yoursite.com/2021/06/30/图形学基础-Phong和Blinn-Phong光照模型/index.html">
+<meta property="og:url" content="http://yoursite.com/2021/06/30/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-Phong%E5%92%8CBlinn-Phong%E5%85%89%E7%85%A7%E6%A8%A1%E5%9E%8B/index.html">
 <meta property="og:site_name" content="Molers Blog">
 <meta property="og:description" content="Phong和Blinn-Phong光照模型都是基于经验的渲染模型，都是高光反射模型 Blinn-Phong 光照模型，又称为 Blinn-phong 反射模型（Blinn–Phong reflection model）或者 phong 修正模型（modified Phong reflection model），是由 Jim Blinn于 1977 年在文章“Models of light refl">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/20190420204310459.png">
 <meta property="og:image" content="http://yoursite.com/images/20190420204343287.png">
 <meta property="og:image" content="http://yoursite.com/images/1332963-20180706004448932-420024011.png">
 <meta property="og:image" content="http://yoursite.com/images/20190420204433405.png">
-<meta property="og:updated_time" content="2021-06-30T07:43:46.293Z">
+<meta property="article:published_time" content="2021-06-30T03:33:52.000Z">
+<meta property="article:modified_time" content="2021-06-30T07:43:46.293Z">
+<meta property="article:author" content="张文亮">
+<meta property="article:tag" content="图形学">
+<meta property="article:tag" content="Phong">
+<meta property="article:tag" content="Blinn-Phong">
+<meta property="article:tag" content="光照模型">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="图形学基础-Phong和Blinn-Phong光照模型">
-<meta name="twitter:description" content="Phong和Blinn-Phong光照模型都是基于经验的渲染模型，都是高光反射模型 Blinn-Phong 光照模型，又称为 Blinn-phong 反射模型（Blinn–Phong reflection model）或者 phong 修正模型（modified Phong reflection model），是由 Jim Blinn于 1977 年在文章“Models of light refl">
 <meta name="twitter:image" content="http://yoursite.com/images/20190420204310459.png">
 
-<link rel="canonical" href="http://yoursite.com/2021/06/30/图形学基础-Phong和Blinn-Phong光照模型/">
+<link rel="canonical" href="http://yoursite.com/2021/06/30/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-Phong%E5%92%8CBlinn-Phong%E5%85%89%E7%85%A7%E6%A8%A1%E5%9E%8B/">
 
 
 <script id="page-configurations">
@@ -82,6 +85,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Molers Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -110,6 +114,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -144,11 +149,43 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-rss">
+
+    <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -171,16 +208,16 @@
     
   
   
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/30/图形学基础-Phong和Blinn-Phong光照模型/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/30/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-Phong%E5%92%8CBlinn-Phong%E5%85%89%E7%85%A7%E6%A8%A1%E5%9E%8B/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+      <meta itemprop="name" content="张文亮">
+      <meta itemprop="description" content="计算机CV与CG研究生,爱好绘画">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Molers Blog">
     </span>
       <header class="post-header">
@@ -203,8 +240,8 @@
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/图形学基础/" itemprop="url" rel="index"><span itemprop="name">图形学基础</span></a>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">图形学基础</span></a>
                 </span>
             </span>
 
@@ -223,16 +260,18 @@
 <p>Blinn-Phong 光照模型，又称为 Blinn-phong 反射模型（Blinn–Phong reflection model）或者 phong 修正模型（modified Phong reflection model），是由 Jim Blinn于 1977 年在文章“Models of light reflection for computer synthesized pictures”中对传统 phong 光照模型基础上进行修改提出的。</p>
 <p>和传统 phong 光照模型相比，Blinn-phong 光照模型混合了 Lambert 的漫射部分和标准的高光，渲染效果有时比 Phong 高光更柔和、更平滑，此外它在速度上相当快，因此成为许多 CG 软件中的默认光照渲染方法。此外它也集成在了大多数图形芯片中，用以产生实时快速的渲染。在 OpenGL 和 Direct3D 渲染管线中， Blinn-Phong 就是默认的渲染模型。</p>
 <h2 id="Phong不能处理的情况"><a href="#Phong不能处理的情况" class="headerlink" title="Phong不能处理的情况"></a>Phong不能处理的情况</h2><p>Phong模型在计算镜面光系数为:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span>   specFactor = <span class="built_in">pow</span>(max(dot(reflectDir, viewDir), <span class="number">0.0</span>), <span class="number">32</span>); <span class="comment">// 32为镜面高光系数</span></span><br><span class="line"><span class="comment">//其中viewDir是相机坐标和物体坐标之差，reflectDir是光照方向与物体法向的反射，如下图所示：</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">float</span>   specFactor = <span class="built_in">pow</span>(<span class="built_in">max</span>(<span class="built_in">dot</span>(reflectDir, viewDir), <span class="number">0.0</span>), <span class="number">32</span>); <span class="comment">// 32为镜面高光系数</span></span><br><span class="line"><span class="comment">//其中viewDir是相机坐标和物体坐标之差，reflectDir是光照方向与物体法向的反射，如下图所示：</span></span><br></pre></td></tr></table></figure>
+
 <p>高光发射的值由 反射向量和观察向量决定. 当两者的夹角θ超过90时，截断为0.0.就没有高光反射分量了.因此Phong模型能处理的是下面的左图中(θ≤90)的情况,而对于右图中(θ&gt;90)的情况则镜面光成分计算为0.</p>
 <p>但是这种计算方式有一个问题，如右图所示：当相机和光照处于同一侧时，此时得到的反射向量reflectDir和视角的方向viewDir的夹角已经大于90度，因此通过dot计算得出的值为负数。表现在渲染结果中就是当相机转到某个角度的时候，高光反射会突然消失，显得很不自然：为了解决这个问题，James F.Blinn与1977年提出了Phong模型的改进算法：Blinn-Phong光照算法。该算法相比于Phong增加了HalfDir的概念</p>
 <p><img src="/images/20190420204310459.png" alt="在这里插入图片描述"></p>
 <p>而右图的这种情况实际上是存在的，将镜面光成分取为0，没有很好地体现实际光照情况。</p>
 <h2 id="Blinn-Phong"><a href="#Blinn-Phong" class="headerlink" title="Blinn-Phong"></a>Blinn-Phong</h2><p><img src="/images/20190420204343287.png" alt="在这里插入图片描述"></p>
-<p><strong>Blinn-Phong模型不再依赖于反射向量</strong>，而是采用了所谓的 <strong>半程向量(Halfway Vector)</strong>，即光线与视线夹角一半方向上的一个单位向量。当半程向量与法线向量越接近时，镜面光分量就越大。</p>
+<p><strong>Blinn-Phong模型不再依赖于反射向量</strong>，而是采用了所谓的 **半程向量(Halfway Vector)**，即光线与视线夹角一半方向上的一个单位向量。当半程向量与法线向量越接近时，镜面光分量就越大。</p>
 <p><img src="/images/1332963-20180706004448932-420024011.png" alt="img"></p>
 <p>HalfDir是光照方向和视角方向的相加并归一化，最终比较的是它和normal的夹角。因为HalfDir和normal的夹角永远不会高于90度，因此不用担心dot值出现负数的情况。计算代码如下所示：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vec3 lightDir = normalize(lightPos - FragPos); </span><br><span class="line">vec3 viewDir = normalize(viewPos - FragPos);</span><br><span class="line">vec3 halfwayDir = normalize(lightDir + viewDir);</span><br><span class="line"><span class="keyword">float</span> spec = <span class="built_in">pow</span>(max(dot(normal, halfwayDir), <span class="number">0.0</span>), shininess);</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vec3 lightDir = <span class="built_in">normalize</span>(lightPos - FragPos); </span><br><span class="line">vec3 viewDir = <span class="built_in">normalize</span>(viewPos - FragPos);</span><br><span class="line">vec3 halfwayDir = <span class="built_in">normalize</span>(lightDir + viewDir);</span><br><span class="line"><span class="type">float</span> spec = <span class="built_in">pow</span>(<span class="built_in">max</span>(<span class="built_in">dot</span>(normal, halfwayDir), <span class="number">0.0</span>), shininess); </span><br></pre></td></tr></table></figure>
+
 <p><img src="/images/20190420204433405.png" alt="在这里插入图片描述"> </p>
 <blockquote>
 <p>半角向量计算公式</p>
@@ -251,13 +290,62 @@
     
     
     
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/s992545366">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://t.me/molers233">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
+
+            <span class="label">Telegram</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/图形学/" rel="tag"># 图形学</a>
+              <a href="/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/" rel="tag"># 图形学</a>
               <a href="/tags/Phong/" rel="tag"># Phong</a>
               <a href="/tags/Blinn-Phong/" rel="tag"># Blinn-Phong</a>
-              <a href="/tags/光照模型/" rel="tag"># 光照模型</a>
+              <a href="/tags/%E5%85%89%E7%85%A7%E6%A8%A1%E5%9E%8B/" rel="tag"># 光照模型</a>
           </div>
 
         
@@ -266,11 +354,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/04/09/曼昆微观经济学笔记1-经济学十大原理/" rel="prev" title="曼昆微观经济学笔记1-经济学十大原理">
+    <a href="/2021/04/09/%E6%9B%BC%E6%98%86%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%94%E8%AE%B01-%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%8D%81%E5%A4%A7%E5%8E%9F%E7%90%86/" rel="prev" title="曼昆微观经济学笔记1-经济学十大原理">
       <i class="fa fa-chevron-left"></i> 曼昆微观经济学笔记1-经济学十大原理
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/06/30/图形学基础-漫反射，高光，环境光/" rel="next" title="图形学基础-漫反射，高光，环境光">
+    <a href="/2021/06/30/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E6%BC%AB%E5%8F%8D%E5%B0%84%EF%BC%8C%E9%AB%98%E5%85%89%EF%BC%8C%E7%8E%AF%E5%A2%83%E5%85%89/" rel="next" title="图形学基础-漫反射，高光，环境光">
       图形学基础-漫反射，高光，环境光 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -285,6 +373,17 @@
 
           </div>
           
+    <div class="comments" id="comments">
+      
+    <script src="https://utteranc.es/client.js"
+    repo="Molers/BlogComment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+    </div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -331,48 +430,64 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Phong不能处理的情况"><span class="nav-number">1.</span> <span class="nav-text">Phong不能处理的情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Blinn-Phong"><span class="nav-number">2.</span> <span class="nav-text">Blinn-Phong</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Phong%E4%B8%8D%E8%83%BD%E5%A4%84%E7%90%86%E7%9A%84%E6%83%85%E5%86%B5"><span class="nav-number">1.</span> <span class="nav-text">Phong不能处理的情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Blinn-Phong"><span class="nav-number">2.</span> <span class="nav-text">Blinn-Phong</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Molers" src="/images/Avatar.jpg">
-  <p class="site-author-name" itemprop="name">Molers</p>
-  <div class="site-description" itemprop="description">计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing</div>
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="张文亮"
+      src="/images/Avatar.jpg">
+  <p class="site-author-name" itemprop="name">张文亮</p>
+  <div class="site-description" itemprop="description">计算机CV与CG研究生,爱好绘画</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">76</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">115</span>
+        <span class="site-state-item-count">122</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/Molers" title="GitHub → https://github.com/Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/Molers" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://weibo.com/3179969322" title="Weibo → https://weibo.com/3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+        <a href="/s992545366@qq.com" title="E-Mail → s992545366@qq.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/s992545366" title="Twitter → https://twitter.com/s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+        <a href="https://weibo.com/3179969322" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/s992545366" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pixiv.net/users/7480965" title="Pixiv → https:&#x2F;&#x2F;www.pixiv.net&#x2F;users&#x2F;7480965" rel="noopener" target="_blank"><i class="fas fa-paint-brush fa-fw"></i>Pixiv</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/zhang-wen-liang-32" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;zhang-wen-liang-32" rel="noopener" target="_blank"><i class="fas fa-book-open fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/1876807" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;1876807" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/weixin_37923383" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_37923383" rel="noopener" target="_blank"><i class="fas fa-laptop-code fa-fw"></i>CSDN</a>
       </span>
   </div>
 
@@ -397,13 +512,13 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Molers</span>
+  <span class="author" itemprop="copyrightHolder">张文亮</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -423,15 +538,27 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 

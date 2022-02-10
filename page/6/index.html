@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.8.0">
+<meta name="generator" content="Hexo 6.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -17,19 +17,19 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+  <meta name="description" content="计算机CV与CG研究生,爱好绘画">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Molers Blog">
 <meta property="og:url" content="http://yoursite.com/page/6/index.html">
 <meta property="og:site_name" content="Molers Blog">
-<meta property="og:description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:description" content="计算机CV与CG研究生,爱好绘画">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="张文亮">
+<meta property="article:tag" content="绘画,计算机图形学,C++,CV,CG,计算机视觉">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Molers Blog">
-<meta name="twitter:description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
 
 <link rel="canonical" href="http://yoursite.com/page/6/">
 
@@ -75,6 +75,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Molers Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -103,6 +104,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -137,11 +139,43 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-rss">
+
+    <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -163,22 +197,486 @@
       
   
   
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/04/VisualStudio学习笔记-VisualZStudio编译器及其版本的问题/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/29/%E6%9E%84%E6%88%90%E8%AF%BE%E4%BD%9C%E4%B8%9A%E5%AD%98%E6%A1%A3/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+      <meta itemprop="name" content="张文亮">
+      <meta itemprop="description" content="计算机CV与CG研究生,爱好绘画">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Molers Blog">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/04/VisualStudio学习笔记-VisualZStudio编译器及其版本的问题/" class="post-title-link" itemprop="url">VisualStudio学习笔记-VisualZStudio编译器及其版本的问题</a>
+            <a href="/2020/04/29/%E6%9E%84%E6%88%90%E8%AF%BE%E4%BD%9C%E4%B8%9A%E5%AD%98%E6%A1%A3/" class="post-title-link" itemprop="url">构成课作业存档</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-29 15:05:39 / 修改时间：15:07:35" itemprop="dateCreated datePublished" datetime="2020-04-29T15:05:39+08:00">2020-04-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9E%84%E6%88%90%E8%AF%BE/" itemprop="url" rel="index"><span itemprop="name">构成课</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="第一堂-飞行道具"><a href="#第一堂-飞行道具" class="headerlink" title="第一堂:飞行道具"></a>第一堂:飞行道具</h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/22/%E7%BB%98%E7%94%BB%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%80%9D%E8%80%83-%E5%8E%A8%E6%88%BF%E7%9A%84%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="张文亮">
+      <meta itemprop="description" content="计算机CV与CG研究生,爱好绘画">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/22/%E7%BB%98%E7%94%BB%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%80%9D%E8%80%83-%E5%8E%A8%E6%88%BF%E7%9A%84%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">绘画过程与思考-厨房的过程记录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-22 23:36:01" itemprop="dateCreated datePublished" datetime="2020-04-22T23:36:01+08:00">2020-04-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-15 09:58:54" itemprop="dateModified" datetime="2020-09-15T09:58:54+08:00">2020-09-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BB%98%E7%94%BB%E8%BF%87%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">绘画过程</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="四叶妹妹厨房"><a href="#四叶妹妹厨房" class="headerlink" title="四叶妹妹厨房"></a>四叶妹妹厨房</h2><p><img src="/images/TouShi/siyemeimei/siyemeimei.png"></p>
+<p>这线条我画的好认真啊…</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/04/22/%E7%BB%98%E7%94%BB%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%80%9D%E8%80%83-%E5%8E%A8%E6%88%BF%E7%9A%84%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/22/Krenz%E9%80%8F%E8%A7%86%E8%AF%BE%E7%9F%A5%E8%AF%86%E7%82%B9%E6%88%AA%E5%9B%BE%E6%B1%87%E6%80%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="张文亮">
+      <meta itemprop="description" content="计算机CV与CG研究生,爱好绘画">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/22/Krenz%E9%80%8F%E8%A7%86%E8%AF%BE%E7%9F%A5%E8%AF%86%E7%82%B9%E6%88%AA%E5%9B%BE%E6%B1%87%E6%80%BB/" class="post-title-link" itemprop="url">Krenz透视课知识点截图汇总</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-22 13:19:29" itemprop="dateCreated datePublished" datetime="2020-04-22T13:19:29+08:00">2020-04-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-02 13:06:13" itemprop="dateModified" datetime="2020-05-02T13:06:13+08:00">2020-05-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%80%8F%E8%A7%86%E8%AF%BE/" itemprop="url" rel="index"><span itemprop="name">透视课</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="大透视"><a href="#大透视" class="headerlink" title="大透视"></a>大透视</h1><h2 id="K大谈大透视创作"><a href="#K大谈大透视创作" class="headerlink" title="K大谈大透视创作"></a>K大谈大透视创作</h2><p>![](&#x2F;images&#x2F;TouShi&#x2F;KnowLedge&#x2F;200222 K大答疑：大透视创作.jpg)</p>
+<h1 id="摄影机与角度控制"><a href="#摄影机与角度控制" class="headerlink" title="摄影机与角度控制"></a>摄影机与角度控制</h1><h2 id="透视第一堂"><a href="#透视第一堂" class="headerlink" title="透视第一堂"></a>透视第一堂</h2><p><img src="/images/TouShi/KnowLedge/150704%E9%80%8F%E8%A7%86%E7%AC%AC%E4%B8%80%E5%A0%82.jpg"></p>
+<h2 id="角度控制和摄影机-refs"><a href="#角度控制和摄影机-refs" class="headerlink" title="角度控制和摄影机_refs"></a>角度控制和摄影机_refs</h2><p><img src="/images/TouShi/KnowLedge/2.%E8%A7%92%E5%BA%A6%E6%8E%A7%E5%88%B6%E5%92%8C%E6%91%84%E5%BD%B1%E6%9C%BA_refs.jpg"></p>
+<h2 id="角度控制和摄影机"><a href="#角度控制和摄影机" class="headerlink" title="角度控制和摄影机"></a>角度控制和摄影机</h2><p><img src="/images/TouShi/KnowLedge/2.%E8%A7%92%E5%BA%A6%E6%8E%A7%E5%88%B6%E5%92%8C%E6%91%84%E5%BD%B1%E6%9C%BA.jpg"></p>
+<h1 id="安全距离与取景框"><a href="#安全距离与取景框" class="headerlink" title="安全距离与取景框"></a>安全距离与取景框</h1><h2 id="K大说安全的透视距离"><a href="#K大说安全的透视距离" class="headerlink" title="K大说安全的透视距离"></a>K大说安全的透视距离</h2><p><img src="/images/TouShi/KnowLedge/K%E5%A4%A7%E8%AF%B4%E5%AE%89%E5%85%A8%E7%9A%84%E9%80%8F%E8%A7%86%E8%B7%9D%E7%A6%BB.png"></p>
+<h2 id="画方块时消失点抓多远的安全参考范围"><a href="#画方块时消失点抓多远的安全参考范围" class="headerlink" title="画方块时消失点抓多远的安全参考范围"></a>画方块时消失点抓多远的安全参考范围</h2><p><img src="/images/TouShi/KnowLedge/%E7%94%BB%E6%96%B9%E5%9D%97%E6%97%B6%E6%B6%88%E5%A4%B1%E7%82%B9%E6%8A%93%E5%A4%9A%E8%BF%9C%E7%9A%84%E5%AE%89%E5%85%A8%E5%8F%82%E8%80%83%E8%8C%83%E5%9B%B4.jpg"></p>
+<h2 id="K大说取景框"><a href="#K大说取景框" class="headerlink" title="K大说取景框"></a>K大说取景框</h2><p><img src="/images/TouShi/KnowLedge/K%E5%A4%A7%E8%AF%B4%E5%8F%96%E6%99%AF%E6%A1%86-1.jpg"></p>
+<h1 id="分法"><a href="#分法" class="headerlink" title="分法"></a>分法</h1><h2 id="三分法"><a href="#三分法" class="headerlink" title="三分法"></a>三分法</h2><p>![](&#x2F;images&#x2F;TouShi&#x2F;KnowLedge&#x2F;三分法 boss助教.PNG)</p>
+<h2 id="五分之一分段画法"><a href="#五分之一分段画法" class="headerlink" title="五分之一分段画法"></a>五分之一分段画法</h2><p><img src="/images/TouShi/KnowLedge/%E4%BA%94%E5%88%86%E4%B9%8B%E4%B8%80%E5%88%86%E6%AE%B5%E7%94%BB%E6%B3%95.jpg.png"></p>
+<h2 id="七分之一分段画法"><a href="#七分之一分段画法" class="headerlink" title="七分之一分段画法"></a>七分之一分段画法</h2><p><img src="/images/TouShi/KnowLedge/%E4%B8%83%E5%88%86%E4%B9%8B%E4%B8%80%E5%88%86%E6%AE%B5%E7%94%BB%E6%B3%95.jpg"></p>
+<h1 id="16个方块"><a href="#16个方块" class="headerlink" title="16个方块"></a>16个方块</h1><p><img src="/images/TouShi/KnowLedge/%E6%96%B9%E5%9D%971.png"></p>
+<p><img src="/images/TouShi/KnowLedge/%E6%96%B9%E5%9D%972.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/21/%E8%89%B2%E5%BD%A9%E8%AF%BE%E5%BF%83%E6%99%BA%E5%9B%BE-%E6%96%87%E5%AD%97%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="张文亮">
+      <meta itemprop="description" content="计算机CV与CG研究生,爱好绘画">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/21/%E8%89%B2%E5%BD%A9%E8%AF%BE%E5%BF%83%E6%99%BA%E5%9B%BE-%E6%96%87%E5%AD%97%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">色彩课心智图-文字总结</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-21 23:16:50 / 修改时间：23:23:57" itemprop="dateCreated datePublished" datetime="2020-04-21T23:16:50+08:00">2020-04-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%89%B2%E5%BD%A9%E8%AF%BE/" itemprop="url" rel="index"><span itemprop="name">色彩课</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="L1知识点"><a href="#L1知识点" class="headerlink" title="L1知识点"></a>L1知识点</h2><h3 id="1-焦点"><a href="#1-焦点" class="headerlink" title="1.焦点"></a>1.焦点</h3><p>一張作品中想表現的重點區域，我們在構圖&#x2F;配色&#x2F;打光所做的各種安排多是為了突顯焦點</p>
+<p>突顯焦點的方法：①灰純對比     ②冷暖(色相)對比    ③邊緣虚實對比    </p>
+<p>​                            ④明度对比      ⑤疏密對比              ⑥視覺導引</p>
+<h3 id="2-权利游戏-权重"><a href="#2-权利游戏-权重" class="headerlink" title="2.权利游戏(权重)"></a>2.权利游戏(权重)</h3><p>就像三國志的勢力圖,我們每下一筆色彩&#x2F;光影&#x2F;形狀,都會造成圖面上的勢力波動，要保持焦點擁有較好&#x2F;較稀缺的資源(較顯眼)</p>
+<h3 id="3-固有色配色"><a href="#3-固有色配色" class="headerlink" title="3.固有色配色"></a>3.固有色配色</h3><h4 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想:"></a>核心思想:</h4><p>高富帥主角-確認焦點處的重要地位，給予高純度&#x2F;特殊色相&#x2F;高明度差等等強烈對比，人物畫來說,通常是瞳孔&#x2F;髮飾&#x2F;首飾等等區域，高純度&#x2F;冷暖明顯的這個色彩又常被說是提神色</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/21/%E8%89%B2%E5%BD%A9%E7%9F%A5%E8%AF%86%E7%82%B9-%E8%97%8F%E8%89%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="张文亮">
+      <meta itemprop="description" content="计算机CV与CG研究生,爱好绘画">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/21/%E8%89%B2%E5%BD%A9%E7%9F%A5%E8%AF%86%E7%82%B9-%E8%97%8F%E8%89%B2/" class="post-title-link" itemprop="url">色彩知识点-藏色</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-21 23:04:31 / 修改时间：23:10:44" itemprop="dateCreated datePublished" datetime="2020-04-21T23:04:31+08:00">2020-04-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%89%B2%E5%BD%A9%E8%AF%BE/" itemprop="url" rel="index"><span itemprop="name">色彩课</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1-藏色的逻辑"><a href="#1-藏色的逻辑" class="headerlink" title="1.藏色的逻辑"></a>1.藏色的逻辑</h2><p><img src="/images/cangse/L4_LogicOfCangSe-Krenz.jpg" alt="藏色的逻辑"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/05/Unity-Shader%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1-%E4%B8%80%E4%B8%AA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E9%A1%B6%E7%82%B9-%E7%89%87%E5%85%83%E7%9D%80%E8%89%B2%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="张文亮">
+      <meta itemprop="description" content="计算机CV与CG研究生,爱好绘画">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/05/Unity-Shader%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1-%E4%B8%80%E4%B8%AA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E9%A1%B6%E7%82%B9-%E7%89%87%E5%85%83%E7%9D%80%E8%89%B2%E5%99%A8/" class="post-title-link" itemprop="url">Unity Shader学习笔记-1-一个最简单的顶点/片元着色器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-05 23:42:57" itemprop="dateCreated datePublished" datetime="2020-02-05T23:42:57+08:00">2020-02-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-25 23:03:30" itemprop="dateModified" datetime="2021-01-25T23:03:30+08:00">2021-01-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Unity-Shader/" itemprop="url" rel="index"><span itemprop="name">Unity Shader</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Chapter5-SimpleShader-BaseShader"><a href="#Chapter5-SimpleShader-BaseShader" class="headerlink" title="Chapter5-SimpleShader-BaseShader"></a>Chapter5-SimpleShader-BaseShader</h1><p>SV_POSITION SV_前缀的变量代表system value SV_POSTION一旦被作为vertex shader的输出,那么这个最终的顶点位置就被固定了(不能tensellate），直接进入光栅化处理。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Shader <span class="string">&quot;Custom/Chapter5-SimpleShader&quot;</span> &#123;</span><br><span class="line"></span><br><span class="line">    SubShader &#123;</span><br><span class="line">        Pass&#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 两条非常重要的编译指令</span></span><br><span class="line">            <span class="meta">#<span class="keyword">pragma</span> vertex vert <span class="comment">// 顶点着色器的名字 指明那个是顶点着色器</span></span></span><br><span class="line">            <span class="meta">#<span class="keyword">pragma</span> fragment frag <span class="comment">// 片元着色器</span></span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 这一步是把顶点坐标从模型空间转换到裁剪空间</span></span><br><span class="line">            float4 <span class="title function_">vert</span><span class="params">(float4 v : POSITION)</span> : SV_POSITION &#123;<span class="comment">//裁剪空间坐标</span></span><br><span class="line">                <span class="keyword">return</span> mul(UNITY_MATRIX_MVP, v);<span class="comment">//MVP 是指Model模型 View观察(摄像机) Projection投影</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            fixed4 <span class="title function_">frag</span><span class="params">()</span> : SV_Target&#123;</span><br><span class="line">                <span class="keyword">return</span> fixed4(<span class="number">1.0</span>,<span class="number">1.0</span>,<span class="number">1.0</span>,<span class="number">1.0</span>);<span class="comment">//白色 每个输出的顶点都会执行一次</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>vert , 顶点着色器代码, 逐顶点执行, 函数的输入 v 包含了这个顶点的位置, 返回值是该顶点在模型空间中的位置, POSITION : 把模型的顶点坐标填充到输入参数中, SV_POSITION : 顶点着色器的输出是裁剪空间中的顶点坐标</li>
+<li>frag , SV_Target : 把用户的输出颜色存储到一个渲染目标中, 这里将输出到默认的帧缓存中, 片元着色器输出的颜色的每个分量范围是[0,1].</li>
+</ol>
+</blockquote>
+<h1 id="Chapter-5-x2F-Simple-Shader"><a href="#Chapter-5-x2F-Simple-Shader" class="headerlink" title="Chapter 5&#x2F;Simple Shader"></a>Chapter 5&#x2F;Simple Shader</h1><p>加入模型数据</p>
+<p>材质的Mesh Render组件提供POSITION, TANGENT, NORMAL数据,在每帧调用Draw Call的时候, Mesh Render组件会把它负责渲染的模型数据发送给Unity Shader.</p>
+<figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">Shader &quot;Unity Shaders Book/Chapter <span class="number">5</span>/Simple Shader&quot; &#123;</span><br><span class="line">	Properties &#123;</span><br><span class="line">		_Color (&quot;Color Tint&quot;, Color) = (<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	SubShader &#123;</span><br><span class="line">        Pass &#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line"></span><br><span class="line">            <span class="meta">#pragma vertex vert</span></span><br><span class="line">            <span class="meta">#pragma fragment frag</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">uniform</span> fixed4 _Color;</span><br><span class="line"></span><br><span class="line">			struct a2v &#123;<span class="comment">//Application to vertex shader 应用阶段到顶点着色器</span></span><br><span class="line">             	float4 vertex   : POSITION;</span><br><span class="line">			   float3 normal   : NORMAL;</span><br><span class="line">			   float4 texcoord : TEXCOORD0;</span><br><span class="line">            &#125;;</span><br><span class="line">            </span><br><span class="line">                </span><br><span class="line">            struct v2f &#123;</span><br><span class="line">                float4 pos : SV_POSITION;</span><br><span class="line">                fixed3 color : COLOR0;</span><br><span class="line">            &#125;;</span><br><span class="line">            </span><br><span class="line">            v2f vert(a2v v) &#123;</span><br><span class="line">            	v2f o;</span><br><span class="line">            	o.pos = mul(UNITY_MATRIX_MVP, v.vertex);</span><br><span class="line">            	o.color = v.normal * <span class="number">0.5</span> + fixed3(<span class="number">0.5</span>, <span class="number">0.5</span>, <span class="number">0.5</span>);</span><br><span class="line">                <span class="keyword">return</span> o;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            fixed4 frag(v2f i) : SV_Target &#123;</span><br><span class="line">            	fixed3 c = i.color;</span><br><span class="line">            	c *= _Color.rgb;</span><br><span class="line">                <span class="keyword">return</span> fixed4(c, <span class="number">1.0</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/04/VisualStudio%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-VisualZStudio%E7%BC%96%E8%AF%91%E5%99%A8%E5%8F%8A%E5%85%B6%E7%89%88%E6%9C%AC%E7%9A%84%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="张文亮">
+      <meta itemprop="description" content="计算机CV与CG研究生,爱好绘画">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Molers Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/04/VisualStudio%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-VisualZStudio%E7%BC%96%E8%AF%91%E5%99%A8%E5%8F%8A%E5%85%B6%E7%89%88%E6%9C%AC%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">VisualStudio学习笔记-VisualZStudio编译器及其版本的问题</a>
         </h2>
 
         <div class="post-meta">
@@ -196,7 +694,7 @@
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/VisualStudio/" itemprop="url" rel="index"><span itemprop="name">VisualStudio</span></a>
                 </span>
             </span>
@@ -214,82 +712,13 @@
       
           <p>一些编译器版本的_MSC_VER值</p>
 <h2 id="VC-编译器的版本号"><a href="#VC-编译器的版本号" class="headerlink" title="VC++编译器的版本号"></a>VC++编译器的版本号</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">MS VC++ <span class="number">15.0</span> _MSC_VER = <span class="number">1910</span> (Visual Studio <span class="number">2017</span>)</span><br><span class="line">MS VC++ <span class="number">14.0</span> _MSC_VER = <span class="number">1900</span> (Visual Studio <span class="number">2015</span>)</span><br><span class="line">MSVC++ <span class="number">12.0</span> _MSC_VER == <span class="number">1800</span> (Visual Studio <span class="number">2013</span>)</span><br><span class="line">MSVC++ <span class="number">11.0</span> _MSC_VER == <span class="number">1700</span> (Visual Studio <span class="number">2012</span>)</span><br><span class="line">MSVC++ <span class="number">10.0</span> _MSC_VER == <span class="number">1600</span> (Visual Studio <span class="number">2010</span>)</span><br><span class="line">MSVC++ <span class="number">9.0</span>  _MSC_VER == <span class="number">1500</span> (Visual Studio <span class="number">2008</span>)</span><br><span class="line">MSVC++ <span class="number">8.0</span>  _MSC_VER == <span class="number">1400</span> (Visual Studio <span class="number">2005</span>)</span><br><span class="line">MSVC++ <span class="number">7.1</span>  _MSC_VER == <span class="number">1310</span> (Visual Studio <span class="number">2003</span>)</span><br><span class="line">MSVC++ <span class="number">7.0</span>  _MSC_VER == <span class="number">1300</span> (VisualStudio .NET)</span><br><span class="line">MSVC++ <span class="number">6.0</span>  _MSC_VER == <span class="number">1200</span> (VisualStudio  <span class="number">98</span>)</span><br><span class="line">MSVC++ <span class="number">5.0</span>  _MSC_VER == <span class="number">1100</span> (VisualStudio  <span class="number">97</span>)</span><br></pre></td></tr></table></figure>
-<p>关于编译器版本号的查看，需要说名的是：这里的版本号并不是指在“Microsoft Visual Studio——Help——About”里的“Version”的值，这个版本号是指Visual Studio的版本号，而不是VC++编译器的版本号，VC++编译器在Visual Studio里面是指“<a href="https://baike.baidu.com/item/cl.exe/9443290" target="_blank" rel="noopener">cl.exe</a>”程序，该程序才是编译C++代码的真正编译器，如查看“cl.exe”的版本号，以在WIndows 7查看VC 2005的“cl.exe”的版本号为例，“开始——所有程序——Microsoft Visual Studio 2005——Visual Studio Tools——Visual Studio 2005 Command Prompt”进入<a href="https://baike.baidu.com/item/VC%2B%2B/2668342" target="_blank" rel="noopener">VC++</a> 2005命令行，运行“<strong>cl /?</strong>”，将会看到如下的信息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 14.00.50727.762 for 80x86</span><br><span class="line">Copyright (C) Microsoft Corporation. All rights reserved.</span><br></pre></td></tr></table></figure>
-<p><a href="https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering" target="_blank" rel="noopener">Microsoft Visual C++</a>可查看全部的版本号</p>
+
+<p>关于编译器版本号的查看，需要说名的是：这里的版本号并不是指在“Microsoft Visual Studio——Help——About”里的“Version”的值，这个版本号是指Visual Studio的版本号，而不是VC++编译器的版本号，VC++编译器在Visual Studio里面是指“<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/cl.exe/9443290">cl.exe</a>”程序，该程序才是编译C++代码的真正编译器，如查看“cl.exe”的版本号，以在WIndows 7查看VC 2005的“cl.exe”的版本号为例，“开始——所有程序——Microsoft Visual Studio 2005——Visual Studio Tools——Visual Studio 2005 Command Prompt”进入<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/VC%2B%2B/2668342">VC++</a> 2005命令行，运行“**cl &#x2F;?**”，将会看到如下的信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 14.00.50727.762 for 80x86</span><br><span class="line">Copyright (C) Microsoft Corporation. All rights reserved.</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering">Microsoft Visual C++</a>可查看全部的版本号</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">MSC    <span class="number">2.0</span>   _MSC_VER == <span class="number">200</span></span><br><span class="line">MSC    <span class="number">3.0</span>   _MSC_VER == <span class="number">300</span></span><br><span class="line">MSC    <span class="number">4.0</span>   _MSC_VER == <span class="number">400</span></span><br><span class="line">MSC    <span class="number">5.0</span>   _MSC_VER == <span class="number">500</span></span><br><span class="line">MSC    <span class="number">6.0</span>   _MSC_VER == <span class="number">600</span></span><br><span class="line">MSC    <span class="number">7.0</span>   _MSC_VER == <span class="number">700</span></span><br><span class="line">MSVC++ <span class="number">1.0</span>   _MSC_VER == <span class="number">800</span></span><br><span class="line">MSVC++ <span class="number">2.0</span>   _MSC_VER == <span class="number">900</span></span><br><span class="line">MSVC++ <span class="number">4.0</span>   _MSC_VER == <span class="number">1000</span> (Developer Studio <span class="number">4.0</span>)</span><br><span class="line">MSVC++ <span class="number">4.2</span>   _MSC_VER == <span class="number">1020</span> (Developer Studio <span class="number">4.2</span>)</span><br><span class="line">MSVC++ <span class="number">5.0</span>   _MSC_VER == <span class="number">1100</span> (Visual Studio <span class="number">97</span> version <span class="number">5.0</span>)</span><br><span class="line">MSVC++ <span class="number">6.0</span>   _MSC_VER == <span class="number">1200</span> (Visual Studio <span class="number">6.0</span> version <span class="number">6.0</span>)</span><br><span class="line">MSVC++ <span class="number">7.0</span>   _MSC_VER == <span class="number">1300</span> (Visual Studio .NET <span class="number">2002</span> version <span class="number">7.0</span>)</span><br><span class="line">MSVC++ <span class="number">7.1</span>   _MSC_VER == <span class="number">1310</span> (Visual Studio .NET <span class="number">2003</span> version <span class="number">7.1</span>)</span><br><span class="line">MSVC++ <span class="number">8.0</span>   _MSC_VER == <span class="number">1400</span> (Visual Studio <span class="number">2005</span> version <span class="number">8.0</span>)</span><br><span class="line">MSVC++ <span class="number">9.0</span>   _MSC_VER == <span class="number">1500</span> (Visual Studio <span class="number">2008</span> version <span class="number">9.0</span>)</span><br><span class="line">MSVC++ <span class="number">10.0</span>  _MSC_VER == <span class="number">1600</span> (Visual Studio <span class="number">2010</span> version <span class="number">10.0</span>)</span><br><span class="line">MSVC++ <span class="number">11.0</span>  _MSC_VER == <span class="number">1700</span> (Visual Studio <span class="number">2012</span> version <span class="number">11.0</span>)</span><br><span class="line">MSVC++ <span class="number">12.0</span>  _MSC_VER == <span class="number">1800</span> (Visual Studio <span class="number">2013</span> version <span class="number">12.0</span>)</span><br><span class="line">MSVC++ <span class="number">14.0</span>  _MSC_VER == <span class="number">1900</span> (Visual Studio <span class="number">2015</span> version <span class="number">14.0</span>)</span><br><span class="line">MSVC++ <span class="number">14.1</span>  _MSC_VER == <span class="number">1910</span> (Visual Studio <span class="number">2017</span> version <span class="number">15.0</span>)</span><br><span class="line">MSVC++ <span class="number">14.11</span> _MSC_VER == <span class="number">1911</span> (Visual Studio <span class="number">2017</span> version <span class="number">15.3</span>)</span><br><span class="line">MSVC++ <span class="number">14.12</span> _MSC_VER == <span class="number">1912</span> (Visual Studio <span class="number">2017</span> version <span class="number">15.5</span>)</span><br><span class="line">MSVC++ <span class="number">14.13</span> _MSC_VER == <span class="number">1913</span> (Visual Studio <span class="number">2017</span> version <span class="number">15.6</span>)</span><br><span class="line">MSVC++ <span class="number">14.14</span> _MSC_VER == <span class="number">1914</span> (Visual Studio <span class="number">2017</span> version <span class="number">15.7</span>)</span><br><span class="line">MSVC++ <span class="number">14.15</span> _MSC_VER == <span class="number">1915</span> (Visual Studio <span class="number">2017</span> version <span class="number">15.8</span>)</span><br><span class="line">MSVC++ <span class="number">14.16</span> _MSC_VER == <span class="number">1916</span> (Visual Studio <span class="number">2017</span> version <span class="number">15.9</span>)</span><br><span class="line">MSVC++ <span class="number">14.2</span>  _MSC_VER == <span class="number">1920</span> (Visual Studio <span class="number">2019</span> Version <span class="number">16.0</span>)</span><br><span class="line">MSVC++ <span class="number">14.21</span> _MSC_VER == <span class="number">1921</span> (Visual Studio <span class="number">2019</span> Version <span class="number">16.1</span>)</span><br><span class="line">MSVC++ <span class="number">14.22</span> _MSC_VER == <span class="number">1922</span> (Visual Studio <span class="number">2019</span> Version <span class="number">16.2</span>)</span><br><span class="line">MSVC++ <span class="number">14.23</span> _MSC_VER == <span class="number">1923</span> (Visual Studio <span class="number">2019</span> Version <span class="number">16.3</span>)</span><br><span class="line">MSVC++ <span class="number">14.24</span> _MSC_VER == <span class="number">1924</span> (Visual Studio <span class="number">2019</span> Version <span class="number">16.4</span>)</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/04/杂-虚拟机的配置和使用/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/04/杂-虚拟机的配置和使用/" class="post-title-link" itemprop="url">杂-虚拟机的配置和使用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-02-04 00:09:28 / 修改时间：00:22:10" itemprop="dateCreated datePublished" datetime="2020-02-04T00:09:28+08:00">2020-02-04</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/杂/" itemprop="url" rel="index"><span itemprop="name">杂</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>最近终于在安装开发环境的途中崩溃了，也用上了虚拟机，啊<del>~</del><del>~</del><del>~</del>~ ~~~~(风扇)</p>
-<p>每次构建一个东西啊<del>~ ~</del>  ~~~         ~~</p>
-<p>~~   都会报错啊~~  ~   ~~~ </p>
-<p>用了虚拟机<del>~     啊    ~</del>   一个顶俩啊 <del>~</del>   草  这就是传说中的windows-vmware虚拟机-windows结构套娃？</p>
-<p>还好 只装个Codeblock和wxWidgets开发环境的话应该还可以</p>
 
       
     </div>
@@ -308,79 +737,22 @@
       
   
   
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/03/Qt学习笔记-1-QtCreator和QtDesigner的安装与配置/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/03/VisualStudio%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8A%A5%E9%94%99-include-stdio-h%E7%9A%84%E6%8A%A5%E9%94%99%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+      <meta itemprop="name" content="张文亮">
+      <meta itemprop="description" content="计算机CV与CG研究生,爱好绘画">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Molers Blog">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/03/Qt学习笔记-1-QtCreator和QtDesigner的安装与配置/" class="post-title-link" itemprop="url">Qt学习笔记-1-QtCreator和QtDesigner的安装与配置</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-03 23:23:40" itemprop="dateCreated datePublished" datetime="2020-02-03T23:23:40+08:00">2020-02-03</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/03/VisualStudio学习笔记-报错-include-stdio-h的报错安全问题/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/03/VisualStudio学习笔记-报错-include-stdio-h的报错安全问题/" class="post-title-link" itemprop="url">VisualStudio学习笔记-报错-#include stdio.h的报错安全问题</a>
+            <a href="/2020/02/03/VisualStudio%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8A%A5%E9%94%99-include-stdio-h%E7%9A%84%E6%8A%A5%E9%94%99%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">VisualStudio学习笔记-报错-#include stdio.h的报错安全问题</a>
         </h2>
 
         <div class="post-meta">
@@ -398,7 +770,7 @@
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/VisualStudio/" itemprop="url" rel="index"><span itemprop="name">VisualStudio</span></a>
                 </span>
             </span>
@@ -415,12 +787,14 @@
 
       
           <p>由于高版本的visual studio默认不让使用scanf等函数，认为这些函数不够安全，而其相对应的代替函数为scanf_s等。如果在visual studio中使用scanf等那些visual studio认为不安全的函数，就会报错。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;scanf&apos;: This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;scanf&#x27;: This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.</span><br></pre></td></tr></table></figure>
+
 <p>以下几种方法可以解决该问题：</p>
 <p>1.在文件开头添加 #define _CRT_SECURE_NO_WARNINGS</p>
 <p>例如</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="comment">//添加到头行,添加到stdio.h等头文件后还是会出警告的</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> str[<span class="number">256</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%255s"</span>,str);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Hello World!\n"</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,str);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>2.在 项目-&gt;属性-&gt;C/C++-&gt;预处理器-&gt;预处理器定义中添加_CRT_SECURE_NO_WARNINGS</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="comment">//添加到头行,添加到stdio.h等头文件后还是会出警告的</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> str[<span class="number">256</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%255s&quot;</span>,str);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello World!\n&quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>,str);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.在 项目-&gt;属性-&gt;C&#x2F;C++-&gt;预处理器-&gt;预处理器定义中添加_CRT_SECURE_NO_WARNINGS</p>
 <p><img src="https://i.loli.net/2020/02/03/jA5Dc8NHRmSyntQ.png" alt="image.png"></p>
 <p><img src="https://i.loli.net/2020/02/03/djZsWhQHSpPoEAF.png" alt="image.png"></p>
 
@@ -441,22 +815,22 @@
       
   
   
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/03/WxWidgets学习笔记-Tips-Makefile理念学习/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/03/WxWidgets%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-Tips-Makefile%E7%90%86%E5%BF%B5%E5%AD%A6%E4%B9%A0/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+      <meta itemprop="name" content="张文亮">
+      <meta itemprop="description" content="计算机CV与CG研究生,爱好绘画">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Molers Blog">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/03/WxWidgets学习笔记-Tips-Makefile理念学习/" class="post-title-link" itemprop="url">WxWidgets学习笔记-Tips-Makefile理念学习</a>
+            <a href="/2020/02/03/WxWidgets%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-Tips-Makefile%E7%90%86%E5%BF%B5%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">WxWidgets学习笔记-Tips-Makefile理念学习</a>
         </h2>
 
         <div class="post-meta">
@@ -474,8 +848,8 @@
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/WxWidgets图形化界面学习/" itemprop="url" rel="index"><span itemprop="name">WxWidgets图形化界面学习</span></a>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/WxWidgets%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%95%8C%E9%9D%A2%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">WxWidgets图形化界面学习</span></a>
                 </span>
             </span>
 
@@ -511,126 +885,22 @@
       
   
   
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/03/WxWidgets学习笔记-1-1-环境搭建Codeblocks-WxWidgets/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/31/Hexo%E5%8F%8C%E7%BA%BF%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%8F%8CSSH%E8%AE%BE%E7%BD%AE/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+      <meta itemprop="name" content="张文亮">
+      <meta itemprop="description" content="计算机CV与CG研究生,爱好绘画">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Molers Blog">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/03/WxWidgets学习笔记-1-1-环境搭建Codeblocks-WxWidgets/" class="post-title-link" itemprop="url">WxWidgets学习笔记-1.1-环境搭建Codeblocks-WxWidgets</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-03 18:10:16" itemprop="dateCreated datePublished" datetime="2020-02-03T18:10:16+08:00">2020-02-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-04 00:54:36" itemprop="dateModified" datetime="2020-02-04T00:54:36+08:00">2020-02-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/WxWidgets图形化界面学习/" itemprop="url" rel="index"><span itemprop="name">WxWidgets图形化界面学习</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="方法1-自己编译"><a href="#方法1-自己编译" class="headerlink" title="方法1:自己编译"></a>方法1:自己编译</h2><p><img src="https://i.loli.net/2020/02/03/wTn5JElicHfN8yV.png" alt="image.png"></p>
-<p><img src="https://i.loli.net/2020/02/03/ANKWxL7H53pR9SG.png" alt="image.png"></p>
-<p><img src="https://i.loli.net/2020/02/03/uklxfGRBAdjH846.png" alt="image.png"></p>
-<p><img src="/images/986259-20160830144920371-1144319313.png" alt="img"></p>
-<p><img src="https://i.loli.net/2020/02/03/liTDBtmNkyeP2bC.png" alt="image.png"></p>
-<p><img src="https://i.loli.net/2020/02/03/LqU3OhF4CVBtSwu.png" alt="image.png"></p>
-<p>记得用管理员打开CMD或者PowerShell</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mingw32-make -f makefile.gcc clean</span><br><span class="line">mingw32-make -f makefile.gcc MONOLITHIC=<span class="number">0</span> SHARED=<span class="number">1</span> UNICODE=<span class="number">1</span> BUILD=release</span><br><span class="line">mingw32-make -f makefile.gcc MONOLITHIC=<span class="number">0</span> SHARED=<span class="number">1</span> UNICODE=<span class="number">1</span> BUILD=debug</span><br></pre></td></tr></table></figure>
-<p>SHARED控制wxWidgets是构建DLL（SHARED=1）还是静态库（SHARED=0）。上面构建DLL，是因为动态库较小   且加载比较快。</p>
-<p>  MONOLITHIC控制是构建一个单一的库（MONOLITHIC=1）还是多个组件库（MONOLITHIC=0）。</p>
-<p>  UNICODE控制wxWidgets以及你的程序是否使用支持Unicode的宽字符串。</p>
-<p>  *关于参数的详细解释可以参照<a href="http://blog.csdn[.NET](http://lib.csdn.net/base/dotnet)/longzuyuan/article/details/22382131中写的，在此不再赘余。" target="_blank" rel="noopener">http://blog.csdn[.NET](http://lib.csdn.net/base/dotnet)/longzuyuan/article/details/22382131中写的，在此不再赘余。</a></p>
-<p><img src="https://i.loli.net/2020/02/03/KjdXfs2qPYnL65c.png" alt="image.png"></p>
-<p><img src="https://i.loli.net/2020/02/03/fC15pjQadwSiYEe.png" alt="image.png"></p>
-<p><img src="https://i.loli.net/2020/02/03/fkYvsnabXVMWLP3.png" alt="image.png"></p>
-<h2 id="codeblocks全局环境配置"><a href="#codeblocks全局环境配置" class="headerlink" title="codeblocks全局环境配置"></a>codeblocks全局环境配置</h2><p> 1、打开codeblocks，点击菜单栏的settings-&gt;Global variables…出现下图：</p>
-<p><img src="https://i.loli.net/2020/02/04/DI57Ta2UmbHL6Be.png" alt="image.png"></p>
-<h3 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h3><p>坑1：每个不同版本的wxWidgets都需要指定的WinGW版本才可以编译，如wxWidgets 3.1.0需要TDM-GCC 4.9 and 5.1版才可以编译，wxWidgets 3.0.2需要TDM-GCC 4.7 and 4.8 才可以编译，一开始没注意到这个问题，用了CodeBlocks中自带的4.9.1去编译wxWidgets 3.0.2，结果自然是中途出错，被坑死了。</p>
-<h3 id="参考视频"><a href="#参考视频" class="headerlink" title="参考视频:"></a>参考视频:</h3><iframe width="560" height="315" src="https://www.youtube.com/embed/FgAaiBg4wEE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PlOhu1KkTZw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<h2 id="方法2-下载"><a href="#方法2-下载" class="headerlink" title="方法2:下载"></a>方法2:下载</h2><h3 id="1-查看gcc和g-的版本"><a href="#1-查看gcc和g-的版本" class="headerlink" title="1.查看gcc和g++的版本"></a>1.查看gcc和g++的版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -v</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ -v</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc version 5.1.0 (tdm-1)</span><br></pre></td></tr></table></figure>
-<p>直接找到Gcc相同的版本，这里是<a href="https://github.com/wxWidgets/wxWidgets/releases/tag/v3.0.4" target="_blank" rel="noopener">3.0.4</a></p>
-<p><img src="https://i.loli.net/2020/02/04/Zjr29nvHPItWGYS.png" alt="image.png"></p>
-<p>下载下来解压</p>
-<p><img src="https://i.loli.net/2020/02/04/Ux5zsL9vtOkKMjb.png" alt="image.png"></p>
-<p>相当于构建完了</p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接:"></a>参考链接:</h2><p><a href="https://jingyan.baidu.com/article/eae0782742ba9d1fec54853f.html" target="_blank" rel="noopener">windowns下查看CodeBlocks中MinGW的gcc版本信息</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/31/Hexo双线部署与双SSH设置/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/31/Hexo双线部署与双SSH设置/" class="post-title-link" itemprop="url">Hexo双线部署与双SSH设置</a>
+            <a href="/2020/01/31/Hexo%E5%8F%8C%E7%BA%BF%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%8F%8CSSH%E8%AE%BE%E7%BD%AE/" class="post-title-link" itemprop="url">Hexo双线部署与双SSH设置</a>
         </h2>
 
         <div class="post-meta">
@@ -654,7 +924,7 @@
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a>
                 </span>
             </span>
@@ -671,276 +941,52 @@
 
       
           <h2 id="1-SSH配置"><a href="#1-SSH配置" class="headerlink" title="1.SSH配置"></a>1.SSH配置</h2><p>Hexo博客要同时在github和coding上发布，两端同时需要提交代码，这个时候就需要电脑配置多个ssh</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">进入~/.ssh目录</span><br><span class="line"></span><br><span class="line">ssh-keygen -t rsa -C &quot;你的邮箱&quot; </span><br><span class="line"></span><br><span class="line">SSH命名为Coding 按回车</span><br><span class="line"></span><br><span class="line">生成ssh成功，会生成coding和Coding.pub文件</span><br><span class="line"></span><br><span class="line">同样的操作，再创建Github ssh</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">进入~/.ssh目录</span><br><span class="line"></span><br><span class="line">ssh-keygen -t rsa -C &quot;你的邮箱&quot; </span><br><span class="line"></span><br><span class="line">SSH命名为Coding 按回车</span><br><span class="line"></span><br><span class="line">生成ssh成功，会生成coding和Coding.pub文件</span><br><span class="line"></span><br><span class="line">同样的操作，再创建Github ssh</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://i.loli.net/2020/01/31/wE8H9QyiRZzLSAf.png" alt="92SZ_NP3XFQGJG4_5BXP5MH.png"></p>
 <p><img src="https://i.loli.net/2020/01/31/Sr8wWBPVNIMqU54.png" alt="H~4FLTAPS_8_@A_2PS_WFG3.png"></p>
-<p><img src="https://i.loli.net/2020/01/31/upcFLNHEPMqf75W.png" alt="2B_5Z_BO12L`YFF1_UB~__1.png"></p>
-<h2 id="2-添加和编辑配置文件config"><a href="#2-添加和编辑配置文件config" class="headerlink" title="2.添加和编辑配置文件config"></a>2.添加和编辑配置文件config</h2><p>在 ~/.ssh 目录下新建一个config文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch ~/.ssh/config</span><br></pre></td></tr></table></figure>
+<p>![2B_5Z_BO12L&#96;YFF1_UB~__1.png](<a target="_blank" rel="noopener" href="https://i.loli.net/2020/01/31/upcFLNHEPMqf75W.png">https://i.loli.net/2020/01/31/upcFLNHEPMqf75W.png</a>)</p>
+<h2 id="2-添加和编辑配置文件config"><a href="#2-添加和编辑配置文件config" class="headerlink" title="2.添加和编辑配置文件config"></a>2.添加和编辑配置文件config</h2><p>在 ~&#x2F;.ssh 目录下新建一个config文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch ~/.ssh/config</span><br></pre></td></tr></table></figure>
+
 <p>添加如下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># github 个人的GitHub公钥</span><br><span class="line">Host Github</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/Github  # 指定特定的ssh私钥文件</span><br><span class="line">User git</span><br><span class="line"></span><br><span class="line"># Coding 个人的Coding公钥</span><br><span class="line">Host Coding</span><br><span class="line">HostName git.coding.net</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/Coding  # 指定特定的ssh私钥文件</span><br><span class="line">User git</span><br></pre></td></tr></table></figure>
-<h2 id="3-绑定github和coding的ssh"><a href="#3-绑定github和coding的ssh" class="headerlink" title="3.绑定github和coding的ssh"></a>3.绑定github和coding的ssh</h2><p><img src="https://i.loli.net/2020/01/31/PL4h13yFRjEGzAc.png" alt="LJV5`2OC4BO4_~_2R@LXXWO.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># github 个人的GitHub公钥</span><br><span class="line">Host Github</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/Github  # 指定特定的ssh私钥文件</span><br><span class="line">User git</span><br><span class="line"></span><br><span class="line"># Coding 个人的Coding公钥</span><br><span class="line">Host Coding</span><br><span class="line">HostName git.coding.net</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/Coding  # 指定特定的ssh私钥文件</span><br><span class="line">User git</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-绑定github和coding的ssh"><a href="#3-绑定github和coding的ssh" class="headerlink" title="3.绑定github和coding的ssh"></a>3.绑定github和coding的ssh</h2><p>![LJV5&#96;2OC4BO4_~<a href="mailto:&#x5f;&#x32;&#x52;&#x40;&#76;&#x58;&#x58;&#x57;&#79;&#46;&#112;&#x6e;&#103;">&#x5f;&#x32;&#x52;&#x40;&#76;&#x58;&#x58;&#x57;&#79;&#46;&#112;&#x6e;&#103;</a>](<a target="_blank" rel="noopener" href="https://i.loli.net/2020/01/31/PL4h13yFRjEGzAc.png">https://i.loli.net/2020/01/31/PL4h13yFRjEGzAc.png</a>)</p>
 <p><img src="https://i.loli.net/2020/01/31/S83piQJfCOlRtes.png" alt="KA__X~H9S38VCXDWZU2_G0L.png"></p>
 <h2 id="4-ssh-add"><a href="#4-ssh-add" class="headerlink" title="4.ssh-add"></a>4.ssh-add</h2><p>手动开启ssh</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eval `ssh-agent -s`</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eval `ssh-agent -s`</span><br></pre></td></tr></table></figure>
+
 <p>执行ssh-add </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-add Coding</span><br><span class="line">ssh-add Github</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;ssh-add -K 私钥&apos; 这个命令可以永久生效.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-add Coding</span><br><span class="line">ssh-add Github</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;ssh-add -K 私钥&#x27; 这个命令可以永久生效.</span><br></pre></td></tr></table></figure>
+
 <p>ssh-add -l查看</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-add -l</span><br><span class="line">2048 SHA256:**********************（一长串) Coding (RSA)</span><br><span class="line">2048 SHA256:******************(一长串) Github (RSA)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-add -l</span><br><span class="line">2048 SHA256:**********************（一长串) Coding (RSA)</span><br><span class="line">2048 SHA256:******************(一长串) Github (RSA)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <h3 id="关于windows下ssh-add失败的解决办法"><a href="#关于windows下ssh-add失败的解决办法" class="headerlink" title="关于windows下ssh-add失败的解决办法"></a>关于windows下ssh-add失败的解决办法</h3><p>打开git Bash命令行,依次执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exec ssh-agent bash</span><br><span class="line">eval ssh-agent -s</span><br><span class="line">ssh-add &quot;XXX\.ssh\id_rsa&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exec ssh-agent bash</span><br><span class="line">eval ssh-agent -s</span><br><span class="line">ssh-add &quot;XXX\.ssh\id_rsa&quot;</span><br></pre></td></tr></table></figure>
+
 <p>**引号中的路径就是你私钥文件的路径</p>
-<h2 id="5-测试"><a href="#5-测试" class="headerlink" title="5.测试"></a>5.测试</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<h2 id="5-测试"><a href="#5-测试" class="headerlink" title="5.测试"></a>5.测试</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
 <p>出现</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi ! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi ! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+
 <p>成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T  git@git.coding.net</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T  git@git.coding.net</span><br></pre></td></tr></table></figure>
+
 <p>出现</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Coding 提示: Hello *****, You&apos;ve connected to Coding.net via SSH. This is a personal key.</span><br><span class="line">*****，你好，你已经通过 SSH 协议认证 Coding.net 服务，这是一个个人公钥</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Coding 提示: Hello *****, You&#x27;ve connected to Coding.net via SSH. This is a personal key.</span><br><span class="line">*****，你好，你已经通过 SSH 协议认证 Coding.net 服务，这是一个个人公钥</span><br></pre></td></tr></table></figure>
+
 <p>成功</p>
-<h2 id="hexo下的设置"><a href="#hexo下的设置" class="headerlink" title="hexo下的设置"></a>hexo下的设置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: </span><br><span class="line">     github: git@github.com:Molers/Molers.github.io.git,master</span><br><span class="line">     coding: git@git.dev.tencent.com:molers233/molers233.git,master</span><br></pre></td></tr></table></figure>
+<h2 id="hexo下的设置"><a href="#hexo下的设置" class="headerlink" title="hexo下的设置"></a>hexo下的设置</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: </span><br><span class="line">     github: git@github.com:Molers/Molers.github.io.git,master</span><br><span class="line">     coding: git@git.dev.tencent.com:molers233/molers233.git,master</span><br></pre></td></tr></table></figure>
+
 <h2 id="遗留问题"><a href="#遗留问题" class="headerlink" title="遗留问题"></a>遗留问题</h2><p>貌似每一次开启都需要ssh-add</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add Coding Github</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add Coding Github</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/29/WxWidgets学习笔记-3-多线程编程/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/29/WxWidgets学习笔记-3-多线程编程/" class="post-title-link" itemprop="url">WxWidgets学习笔记-3-多线程编程</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-29 23:23:32" itemprop="dateCreated datePublished" datetime="2020-01-29T23:23:32+08:00">2020-01-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-31 17:45:38" itemprop="dateModified" datetime="2020-01-31T17:45:38+08:00">2020-01-31</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/WxWidgets图形化界面学习/" itemprop="url" rel="index"><span itemprop="name">WxWidgets图形化界面学习</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>​    大多数时候,事件驱动的GUI程序可以给你造成一个很好的假象:多个任务在同时的运行这是因为,重绘窗口通常只占用很少的时间,用户输入也被很快的进行了处理.然后,有时候,有些任务很难将其分割成足够小的让人难以察觉的小块来运行,这时候就要使用多线程编程了，本章我们来介绍一下在wxWidgets中怎样实现多线程编程在本章的最后,我们将介绍一下多线程编程的一些替代解决方案..</p>
-<p>## </p>
-<h2 id="1-使用wxThread"><a href="#1-使用wxThread" class="headerlink" title="1.使用wxThread"></a>1.使用wxThread</h2><p>如果你要在你的代码中使用线程,首先要实现一个wxThread的派生类,并且至少要重载其虚函数Entry,这个函数包含了线程要做的主要的事情举例来说,比如我们要用一个单独的线程来计算图片中颜色的数目,下面是我们的派生类的声明:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> :</span> <span class="keyword">public</span> wxThread </span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	MyThread(wxImage∗ image, <span class="keyword">int</span>∗ count): </span><br><span class="line">	m image(image), m count(count) &#123;&#125;</span><br><span class="line">	<span class="keyword">virtual</span> <span class="keyword">void</span> ∗Entry(); 、</span><br><span class="line"><span class="keyword">private</span> :</span><br><span class="line">	wxImage∗ m image; </span><br><span class="line">	<span class="keyword">int</span>∗ m count;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//一个标识符用来在线程工作完成的时候通知应用程序</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ID_COUNTED_COLORS_100</span></span><br></pre></td></tr></table></figure>
-<p>Entry函数用来进行计算工作并且返回一个返回值(对于联合线程(即将介绍),Wait函数将返回这个值),下面是我们的Entry函数:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void ∗MyThread::Entry() &#123;</span><br><span class="line">(∗ m count) = m image−&gt;CountColours(); </span><br><span class="line">// . wxCommandEvent event(wxEVT COMMAND MENU SELECTED, ID COUNTED COLORS);</span><br><span class="line">wxGetApp().AddPendingEvent(event); return NULL;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/29/东馆艺术课-色彩-1-开场/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/29/东馆艺术课-色彩-1-开场/" class="post-title-link" itemprop="url">东馆艺术课-色彩-1-开场</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-01-29 14:49:00 / 修改时间：23:26:51" itemprop="dateCreated datePublished" datetime="2020-01-29T14:49:00+08:00">2020-01-29</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/色彩/" itemprop="url" rel="index"><span itemprop="name">色彩</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="/images/image-20200129145223137.png" alt="image-20200129145223137"></p>
-<p>学院派和CG插画实际上并不一样，设计色彩有问题，去练习写生的话什么也解决不了，其目标完全不一样</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/29/东馆艺术课-色彩-1-开场/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/29/东馆方案学习笔记-2-素描-1几何-意义与调子/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Molers Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/29/东馆方案学习笔记-2-素描-1几何-意义与调子/" class="post-title-link" itemprop="url">东馆方案学习笔记-2-素描-1几何-意义与调子</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-01-29 14:42:04" itemprop="dateCreated datePublished" datetime="2020-01-29T14:42:04+08:00">2020-01-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-01 14:51:31" itemprop="dateModified" datetime="2020-02-01T14:51:31+08:00">2020-02-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/东馆方案/" itemprop="url" rel="index"><span itemprop="name">东馆方案</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="1-几何形体的意义"><a href="#1-几何形体的意义" class="headerlink" title="1.几何形体的意义"></a>1.几何形体的意义</h2><p>几何形体其实是一种思维方式，思考能力，有这种意识其实几何并不一定要练习</p>
-<p><img src="/images/image-20200129144527247.png" alt="image-20200129144527247"></p>
-<p>真正要思考的是如何<strong>把物体归纳为几何形体的能力</strong>，这才是练习几何形体的意义所在，其练习意义并不在于正方形和长方形的本身</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/29/东馆方案学习笔记-2-素描-1几何-意义与调子/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
       
     </div>
 
@@ -958,7 +1004,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1015,43 +1061,59 @@
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Molers" src="/images/Avatar.jpg">
-  <p class="site-author-name" itemprop="name">Molers</p>
-  <div class="site-description" itemprop="description">计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing</div>
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="张文亮"
+      src="/images/Avatar.jpg">
+  <p class="site-author-name" itemprop="name">张文亮</p>
+  <div class="site-description" itemprop="description">计算机CV与CG研究生,爱好绘画</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">76</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">115</span>
+        <span class="site-state-item-count">122</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/Molers" title="GitHub → https://github.com/Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/Molers" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://weibo.com/3179969322" title="Weibo → https://weibo.com/3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+        <a href="/s992545366@qq.com" title="E-Mail → s992545366@qq.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/s992545366" title="Twitter → https://twitter.com/s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+        <a href="https://weibo.com/3179969322" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/s992545366" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pixiv.net/users/7480965" title="Pixiv → https:&#x2F;&#x2F;www.pixiv.net&#x2F;users&#x2F;7480965" rel="noopener" target="_blank"><i class="fas fa-paint-brush fa-fw"></i>Pixiv</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/zhang-wen-liang-32" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;zhang-wen-liang-32" rel="noopener" target="_blank"><i class="fas fa-book-open fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/1876807" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;1876807" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/weixin_37923383" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_37923383" rel="noopener" target="_blank"><i class="fas fa-laptop-code fa-fw"></i>CSDN</a>
       </span>
   </div>
 
@@ -1076,13 +1138,13 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Molers</span>
+  <span class="author" itemprop="copyrightHolder">张文亮</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -1102,15 +1164,27 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 

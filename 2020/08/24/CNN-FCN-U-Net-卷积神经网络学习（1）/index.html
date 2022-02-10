@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.8.0">
+<meta name="generator" content="Hexo 6.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -17,17 +17,16 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="前馈神经网络图像的表示和数字长方体图像在计算机中是一堆按顺序排列的数字,数值为0到255,0表示最暗, 255表示最亮。你可以把这堆数字用一个长长的向量来表示。然而这样会失去平面结构的信息,为保留该结构信息,通常选择矩阵的表示方式: 28x28的矩阵。 上图是只有黑白颜色的灰度图,而更普遍的图片表达方式是RGB颜色模型,即红(Red)、绿(Green) 、蓝(Blue)三原色的色光以不同的比例相加">
-<meta name="keywords" content="CNN,前馈神经网络,图像识别">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CNN FCN U-Net 卷积神经网络学习（1）">
-<meta property="og:url" content="http://yoursite.com/2020/08/24/CNN-FCN-U-Net-卷积神经网络学习（1）/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/08/24/CNN-FCN-U-Net-%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89/index.html">
 <meta property="og:site_name" content="Molers Blog">
 <meta property="og:description" content="前馈神经网络图像的表示和数字长方体图像在计算机中是一堆按顺序排列的数字,数值为0到255,0表示最暗, 255表示最亮。你可以把这堆数字用一个长长的向量来表示。然而这样会失去平面结构的信息,为保留该结构信息,通常选择矩阵的表示方式: 28x28的矩阵。 上图是只有黑白颜色的灰度图,而更普遍的图片表达方式是RGB颜色模型,即红(Red)、绿(Green) 、蓝(Blue)三原色的色光以不同的比例相加">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/image-20200824172554595.png">
 <meta property="og:image" content="http://yoursite.com/images/image-20200824172638285.png">
 <meta property="og:image" content="http://yoursite.com/images/image-20200824172855849.png">
@@ -84,13 +83,16 @@
 <meta property="og:image" content="http://yoursite.com/images/image-20200825160228037.png">
 <meta property="og:image" content="http://yoursite.com/images/image-20200825160259976.png">
 <meta property="og:image" content="http://yoursite.com/images/image-20200825160334846.png">
-<meta property="og:updated_time" content="2020-09-15T01:59:34.652Z">
+<meta property="article:published_time" content="2020-08-24T08:35:34.000Z">
+<meta property="article:modified_time" content="2020-09-15T01:59:34.652Z">
+<meta property="article:author" content="张文亮">
+<meta property="article:tag" content="CNN">
+<meta property="article:tag" content="前馈神经网络">
+<meta property="article:tag" content="图像识别">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CNN FCN U-Net 卷积神经网络学习（1）">
-<meta name="twitter:description" content="前馈神经网络图像的表示和数字长方体图像在计算机中是一堆按顺序排列的数字,数值为0到255,0表示最暗, 255表示最亮。你可以把这堆数字用一个长长的向量来表示。然而这样会失去平面结构的信息,为保留该结构信息,通常选择矩阵的表示方式: 28x28的矩阵。 上图是只有黑白颜色的灰度图,而更普遍的图片表达方式是RGB颜色模型,即红(Red)、绿(Green) 、蓝(Blue)三原色的色光以不同的比例相加">
 <meta name="twitter:image" content="http://yoursite.com/images/image-20200824172554595.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/08/24/CNN-FCN-U-Net-卷积神经网络学习（1）/">
+<link rel="canonical" href="http://yoursite.com/2020/08/24/CNN-FCN-U-Net-%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89/">
 
 
 <script id="page-configurations">
@@ -134,6 +136,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Molers Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -162,6 +165,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -196,11 +200,43 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-rss">
+
+    <a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -223,16 +259,16 @@
     
   
   
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/24/CNN-FCN-U-Net-卷积神经网络学习（1）/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/24/CNN-FCN-U-Net-%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/Avatar.jpg">
-      <meta itemprop="name" content="Molers">
-      <meta itemprop="description" content="计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing">
+      <meta itemprop="name" content="张文亮">
+      <meta itemprop="description" content="计算机CV与CG研究生,爱好绘画">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Molers Blog">
     </span>
       <header class="post-header">
@@ -261,8 +297,8 @@
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/神经网络/" itemprop="url" rel="index"><span itemprop="name">神经网络</span></a>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">神经网络</span></a>
                 </span>
             </span>
 
@@ -385,7 +421,7 @@
 <p>这些抽象特征对物体的大小、位置和方向等敏感性更低，从而有助于分类性能的提高。这些抽象的特征对分类很有帮助，可以很好地判断出一幅图像中包含什么类别的物体。<strong>图像分类是图像级别的！</strong></p>
 <p><img src="/images/image-20200824181810618.png" alt="image-20200824181810618"></p>
 <p>与分类不同的是，语义分割需要判断图像每个像素点的类别，进行精确分割。<strong>图像语义分割是像素级别的！</strong>但是由于CNN在进行convolution和pooling过程中丢失了图像细节，即feature map size逐渐变小，所以不能很好地指出物体的具体轮廓、指出每个像素具体属于哪个物体，无法做到精确的分割。</p>
-<p>针对这个问题，<a href="https://link.zhihu.com/?target=http%3A//people.eecs.berkeley.edu/~jonlong/" target="_blank" rel="noopener">Jonathan Long</a>等人提出了<strong>Fully Convolutional Networks（FCN）</strong>用于图像语义分割。自从提出后，FCN已经成为语义分割的基本框架，后续算法其实都是在这个框架中改进而来。</p>
+<p>针对这个问题，<a href="https://link.zhihu.com/?target=http://people.eecs.berkeley.edu/~jonlong/">Jonathan Long</a>等人提出了<strong>Fully Convolutional Networks（FCN）</strong>用于图像语义分割。自从提出后，FCN已经成为语义分割的基本框架，后续算法其实都是在这个框架中改进而来。</p>
 <h2 id="FCN与CNN区别"><a href="#FCN与CNN区别" class="headerlink" title="FCN与CNN区别"></a>FCN与CNN区别</h2><p>对于一般的分类CNN网络，如VGG和Resnet，都会在网络的最后加入一些全连接层，经过softmax后就可以获得类别概率信息。但是这个概率信息是1维的，即只能标识整个图片的类别，不能标识每个像素点的类别，所以这种全连接方法不适用于图像分割。</p>
 <p><img src="/images/image-20200824181946499.png" alt="image-20200824181946499"></p>
 <p>而FCN提出可以把后面几个全连接都换成卷积，这样就可以获得一张2维的feature map，后接softmax获得每个像素点的分类信息，从而解决了分割问题，如图4。</p>
@@ -396,9 +432,9 @@
 <li>Resize，如双线性插值直接缩放，类似于图像缩放</li>
 <li>Deconvolution，也叫Transposed Convolution</li>
 </ol>
-<p>对于一般卷积，输入蓝色4x4矩阵，卷积核大小3x3。当设置卷积参数pad=0，stride=1时，卷积输出绿色2x2矩阵，如图6。</p>
+<p>对于一般卷积，输入蓝色4x4矩阵，卷积核大小3x3。当设置卷积参数pad&#x3D;0，stride&#x3D;1时，卷积输出绿色2x2矩阵，如图6。</p>
 <p><img src="/images/image-20200824182236071.png" alt="image-20200824182236071"></p>
-<p>而对于反卷积，相当于把普通卷积反过来，输入蓝色2x2矩阵（周围填0变成6x6），卷积核大小还是3x3。当设置反卷积参数pad=0，stride=1时输出绿色4x4矩阵，如图7，这相当于完全将图4倒过来</p>
+<p>而对于反卷积，相当于把普通卷积反过来，输入蓝色2x2矩阵（周围填0变成6x6），卷积核大小还是3x3。当设置反卷积参数pad&#x3D;0，stride&#x3D;1时输出绿色4x4矩阵，如图7，这相当于完全将图4倒过来</p>
 <p><img src="/images/image-20200824182254014.png" alt="image-20200824182254014"></p>
 <p>传统的网络是subsampling的，对应的输出尺寸会降低；<strong>upsampling的意义在于将小尺寸的高维度feature map恢复回去</strong>，以便做pixelwise prediction，获得每个点的分类信息。</p>
 <p><img src="/images/image-20200824182310073.png" alt="image-20200824182310073"></p>
@@ -412,7 +448,7 @@
 <h1 id="U-Net"><a href="#U-Net" class="headerlink" title="U-Net"></a>U-Net</h1><p>U-Net是一种分割网络，能够适应很小的训练集（大约30张图）。</p>
 <p><img src="/images/image-20200824182811504.png" alt="image-20200824182811504"></p>
 <p>整个U-Net网络结构如图9，类似于一个大大的U字母：首先进行Conv+Pooling下采样；然后Deconv反卷积进行上采样，crop之前的低层feature map，进行融合；然后再次上采样。重复这个过程，直到获得输出388x388x2的feature map，最后经过softmax获得output segment map。总体来说与FCN思路非常类似。</p>
-<p>Unet 网络结构是对称的，形似英文字母 U 所以被称为 Unet。整张图都是由蓝/白色框与各种颜色的箭头组成，其中，<strong>蓝/白色框表示 feature map；蓝色箭头表示 3x3 卷积，用于特征提取；灰色箭头表示 skip-connection，用于特征融合；红色箭头表示池化 pooling，用于降低维度；绿色箭头表示上采样 upsample，用于恢复维度；青色箭头表示 1x1 卷积，用于输出结果</strong>。</p>
+<p>Unet 网络结构是对称的，形似英文字母 U 所以被称为 Unet。整张图都是由蓝&#x2F;白色框与各种颜色的箭头组成，其中，<strong>蓝&#x2F;白色框表示 feature map；蓝色箭头表示 3x3 卷积，用于特征提取；灰色箭头表示 skip-connection，用于特征融合；红色箭头表示池化 pooling，用于降低维度；绿色箭头表示上采样 upsample，用于恢复维度；青色箭头表示 1x1 卷积，用于输出结果</strong>。</p>
 <p><strong>U-Net采用了与FCN完全不同的特征融合方式：拼接！</strong></p>
 <p><img src="/images/image-20200824182930397.png" alt="image-20200824182930397"></p>
 <p>与FCN逐点相加不同，U-Net采用将特征在channel维度拼接在一起，形成更“厚”的特征。所以：</p>
@@ -474,37 +510,86 @@
 <p>后来图割方法从MRF发展到CRF，也就是条件随机场。它通常包含两个优化目标，一个是区域的相似度，被称为区域能量项，即piecewise能量。一个是被切断边的相似度，被称为边缘能量项，即pairwise能量。它追求区域能量项的最大化以及边缘能量的最小化，也就是<strong>区域内部越相似越好，区域间相似度越低越好。</strong></p>
 <p>图割方法很通用，对于纹理比较复杂的图像分割效果也不错。缺点是时间复杂度和空间复杂度较高，所以通常使用超像素进行加速计算，上面的分水岭算法就可以拿来用用。</p>
 <p><img src="/images/image-20200825160228037.png" alt="image-20200825160228037"></p>
-<p>graphcut的迭代版本，也就是grabcut【5】更好用，它的基本思路是；使用混合高斯<strong>模型(Gaussian Mixture Model，GMM)</strong>替代了graphcut基于灰度的模型，初始的混合高斯模型的构建，通过用户交互来指定，只需要指定确定性的背景像素区域即可，通常是画一个框。</p>
+<p>graphcut的迭代版本，也就是grabcut【5】更好用，它的基本思路是；使用混合高斯**模型(Gaussian Mixture Model，GMM)**替代了graphcut基于灰度的模型，初始的混合高斯模型的构建，通过用户交互来指定，只需要指定确定性的背景像素区域即可，通常是画一个框。</p>
 <p>多年以后再看下面这张图，效果依然是惊艳的，边缘很不错。不像上面的几个方法，图割方法仍然被广泛使用，deeplab系列的前几篇文章就用到了全连接的crf，它与mrf的区别可以参考这篇文章【Discriminative fields for modeling spatial dependencies in natural images】。</p>
 <p><img src="/images/image-20200825160259976.png" alt="image-20200825160259976"></p>
 <h2 id="轮廓模型"><a href="#轮廓模型" class="headerlink" title="轮廓模型"></a>轮廓模型</h2><p>轮廓模型大部分人可能不知道，它的<strong>基本思想是使用连续曲线来表达目标轮廓，并定义一个能量泛函，其自变量为曲线，将分割过程转变为求解能量泛函的最小值的过程。</strong>数值实现可通过求解函数对应的欧拉(Euler-Lagrange)方程来实现。包括以snake模型为代表的参数活动轮廓模型和以水平集方法为代表的几何活动轮廓模型。</p>
 <p><strong>当能量达到最小时的，曲线位置就处于正确的目标轮廓。</strong></p>
-<p>该类分割方法具有几个显著的特点：(1)由于能量泛函是在连续状态下实现，所以最终得到的图像轮廓可以达到较高的精度；(2)通过约束目标轮廓为光滑，同时融入其它关于目标形状的先验信息，算法可以具有较强的鲁棒性；(3)使用光滑的闭合曲线表示物体的轮廓，可获取完整的轮廓，从而避免传统图像分割方法中的预/后处理过程。</p>
+<p>该类分割方法具有几个显著的特点：(1)由于能量泛函是在连续状态下实现，所以最终得到的图像轮廓可以达到较高的精度；(2)通过约束目标轮廓为光滑，同时融入其它关于目标形状的先验信息，算法可以具有较强的鲁棒性；(3)使用光滑的闭合曲线表示物体的轮廓，可获取完整的轮廓，从而避免传统图像分割方法中的预&#x2F;后处理过程。</p>
 <p>不过，缺点也很明显，比较敏感，容易陷入局部极值。</p>
 <p>下面是我的硕士论文【6】中采用水平集方法分割出的肿瘤，就是白色那一块。这个方法的数学味有点浓，考虑到咱们是闲聊，就不摆公式了，毕竟后面还有很多事。</p>
 <p><img src="/images/image-20200825160334846.png" alt="image-20200825160334846"></p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.zhihu.com/question/52668301" target="_blank" rel="noopener">CNN（卷积神经网络）是什么？有何入门简介或文章吗？</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzA3NDIyMjM1NA==&amp;mid=2649032348&amp;idx=1&amp;sn=80825e10fcfd502e2145ed9ce8e6b430&amp;chksm=8712b8e1b06531f7723c37851204ccea66b212b24cf36315a2859aec07dbe0938c9a6bfe59fb&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">【图像分割模型】编解码结构SegNet</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzA3NDIyMjM1NA==&amp;mid=2649032209&amp;idx=2&amp;sn=ee63ef7fc1ac163cea8277b9a1dcaf84&amp;chksm=8712b86cb065317aa4a79c774614965318a95333952ef31d9b6aaddfae0666d714bc0026cb8f&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">【图像分割模型】从FCN说起</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzA3NDIyMjM1NA==&amp;mid=2649029723&amp;idx=1&amp;sn=555a2d45fa210a1c5c5c703de54899a4&amp;chksm=87134226b064cb30f070ea5a2368f1c5bb6679d0f13e7e84b3f6374be33c549ce81a665d6e25&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">【技术综述】闲聊图像分割这件事儿</a></p>
-<p><a href="https://zhuanlan.zhihu.com/c_151876233" target="_blank" rel="noopener">有三AI学院</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/72691417" target="_blank" rel="noopener">图像分割之UNet++ 论文笔记</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/43927696" target="_blank" rel="noopener">图像分割之U-Net</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/118540575" target="_blank" rel="noopener">U-Net+与FCN的区别+医学表现+网络详解+创新</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/159173338" target="_blank" rel="noopener">FCN、Unet、Unet++医学图像分割那点事儿</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/79204199" target="_blank" rel="noopener">语义分割网络 U-Net 详解</a></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/52668301">CNN（卷积神经网络）是什么？有何入门简介或文章吗？</a></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzA3NDIyMjM1NA==&mid=2649032348&idx=1&sn=80825e10fcfd502e2145ed9ce8e6b430&chksm=8712b8e1b06531f7723c37851204ccea66b212b24cf36315a2859aec07dbe0938c9a6bfe59fb&scene=21#wechat_redirect">【图像分割模型】编解码结构SegNet</a></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzA3NDIyMjM1NA==&mid=2649032209&idx=2&sn=ee63ef7fc1ac163cea8277b9a1dcaf84&chksm=8712b86cb065317aa4a79c774614965318a95333952ef31d9b6aaddfae0666d714bc0026cb8f&scene=21#wechat_redirect">【图像分割模型】从FCN说起</a></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzA3NDIyMjM1NA==&mid=2649029723&idx=1&sn=555a2d45fa210a1c5c5c703de54899a4&chksm=87134226b064cb30f070ea5a2368f1c5bb6679d0f13e7e84b3f6374be33c549ce81a665d6e25&scene=21#wechat_redirect">【技术综述】闲聊图像分割这件事儿</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/c_151876233">有三AI学院</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/72691417">图像分割之UNet++ 论文笔记</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/43927696">图像分割之U-Net</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/118540575">U-Net+与FCN的区别+医学表现+网络详解+创新</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/159173338">FCN、Unet、Unet++医学图像分割那点事儿</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/79204199">语义分割网络 U-Net 详解</a></p>
 
     </div>
 
     
     
     
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://twitter.com/s992545366">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+
+            <span class="label">Twitter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://t.me/molers233">
+            <span class="icon">
+              <i class="fab fa-telegram"></i>
+            </span>
+
+            <span class="label">Telegram</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
 
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/CNN/" rel="tag"># CNN</a>
-              <a href="/tags/前馈神经网络/" rel="tag"># 前馈神经网络</a>
-              <a href="/tags/图像识别/" rel="tag"># 图像识别</a>
+              <a href="/tags/%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" rel="tag"># 前馈神经网络</a>
+              <a href="/tags/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/" rel="tag"># 图像识别</a>
           </div>
 
         
@@ -513,12 +598,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/08/14/共形几何第四节-不动点，庞加莱-霍普斯定理/" rel="prev" title="共形几何第四节-不动点，庞加莱-霍普斯定理">
+    <a href="/2020/08/14/%E5%85%B1%E5%BD%A2%E5%87%A0%E4%BD%95%E7%AC%AC%E5%9B%9B%E8%8A%82-%E4%B8%8D%E5%8A%A8%E7%82%B9%EF%BC%8C%E5%BA%9E%E5%8A%A0%E8%8E%B1-%E9%9C%8D%E6%99%AE%E6%96%AF%E5%AE%9A%E7%90%86/" rel="prev" title="共形几何第四节-不动点，庞加莱-霍普斯定理">
       <i class="fa fa-chevron-left"></i> 共形几何第四节-不动点，庞加莱-霍普斯定理
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/08/29/U-Net与胰腺分割学习（1）/" rel="next" title="U-Net与胰腺分割学习（1）">
-      U-Net与胰腺分割学习（1） <i class="fa fa-chevron-right"></i>
+    <a href="/2020/09/20/%E5%9F%BA%E7%A1%80%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0-1-%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/" rel="next" title="基础拓扑学笔记(1)--欧拉定理">
+      基础拓扑学笔记(1)--欧拉定理 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -532,6 +617,17 @@
 
           </div>
           
+    <div class="comments" id="comments">
+      
+    <script src="https://utteranc.es/client.js"
+    repo="Molers/BlogComment"
+    issue-term="pathname"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+    </div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -578,48 +674,64 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前馈神经网络"><span class="nav-number">1.</span> <span class="nav-text">前馈神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#图像的表示和数字长方体"><span class="nav-number">1.1.</span> <span class="nav-text">图像的表示和数字长方体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#画面不变性"><span class="nav-number">1.2.</span> <span class="nav-text">画面不变性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前馈神经网络的图像识别"><span class="nav-number">1.3.</span> <span class="nav-text">前馈神经网络的图像识别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前馈神经网络的缺点"><span class="nav-number">1.4.</span> <span class="nav-text">前馈神经网络的缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CNN的局部扫描"><span class="nav-number">1.5.</span> <span class="nav-text">CNN的局部扫描</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CNN的输出"><span class="nav-number">1.6.</span> <span class="nav-text">CNN的输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深度为复数的情况"><span class="nav-number">1.7.</span> <span class="nav-text">深度为复数的情况</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CNN（卷积神经网络）"><span class="nav-number">2.</span> <span class="nav-text">CNN（卷积神经网络）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#卷积层"><span class="nav-number">2.1.</span> <span class="nav-text">卷积层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过滤器"><span class="nav-number">2.2.</span> <span class="nav-text">过滤器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#形状的抓取"><span class="nav-number">2.2.1.</span> <span class="nav-text">形状的抓取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多个过滤器"><span class="nav-number">2.2.2.</span> <span class="nav-text">多个过滤器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加入非线性"><span class="nav-number">2.2.3.</span> <span class="nav-text">加入非线性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完全连接层"><span class="nav-number">2.3.</span> <span class="nav-text">完全连接层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步幅和填充"><span class="nav-number">2.4.</span> <span class="nav-text">步幅和填充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步长"><span class="nav-number">2.4.1.</span> <span class="nav-text">步长</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#填充"><span class="nav-number">2.4.2.</span> <span class="nav-text">填充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#池化层"><span class="nav-number">2.5.</span> <span class="nav-text">池化层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据增强技术"><span class="nav-number">2.6.</span> <span class="nav-text">数据增强技术</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FCN-全卷积网络-Fully-Convolutional-Network"><span class="nav-number">3.</span> <span class="nav-text">FCN(全卷积网络)(Fully Convolutional Network)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分割-语义，实例，全景分割"><span class="nav-number">3.1.</span> <span class="nav-text">分割(语义，实例，全景分割)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语义分割"><span class="nav-number">3.2.</span> <span class="nav-text">语义分割</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FCN与CNN区别"><span class="nav-number">3.3.</span> <span class="nav-text">FCN与CNN区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反卷积与上采样"><span class="nav-number">3.4.</span> <span class="nav-text">反卷积与上采样</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FCN的缺陷"><span class="nav-number">3.5.</span> <span class="nav-text">FCN的缺陷</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#U-Net"><span class="nav-number">4.</span> <span class="nav-text">U-Net</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#两种特征融合方法"><span class="nav-number">4.1.</span> <span class="nav-text">两种特征融合方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#U-Net为何适用于医学图像"><span class="nav-number">4.2.</span> <span class="nav-text">U-Net为何适用于医学图像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#医学图像特点"><span class="nav-number">4.3.</span> <span class="nav-text">医学图像特点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Seg-Net"><span class="nav-number">5.</span> <span class="nav-text">Seg-Net</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解码器"><span class="nav-number">5.1.</span> <span class="nav-text">解码器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Seg-Net与FCN解码方式的不同"><span class="nav-number">5.2.</span> <span class="nav-text">Seg-Net与FCN解码方式的不同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改变解码器的参数"><span class="nav-number">5.3.</span> <span class="nav-text">改变解码器的参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解码器总结"><span class="nav-number">5.4.</span> <span class="nav-text">解码器总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图像处理的非深度学习方法"><span class="nav-number">6.</span> <span class="nav-text">图像处理的非深度学习方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#边缘与阈值法"><span class="nav-number">6.1.</span> <span class="nav-text">边缘与阈值法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区域增长，分裂"><span class="nav-number">6.2.</span> <span class="nav-text">区域增长，分裂</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图割"><span class="nav-number">6.3.</span> <span class="nav-text">图割</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#轮廓模型"><span class="nav-number">6.4.</span> <span class="nav-text">轮廓模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="nav-number">1.</span> <span class="nav-text">前馈神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E6%95%B0%E5%AD%97%E9%95%BF%E6%96%B9%E4%BD%93"><span class="nav-number">1.1.</span> <span class="nav-text">图像的表示和数字长方体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%BB%E9%9D%A2%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="nav-number">1.2.</span> <span class="nav-text">画面不变性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB"><span class="nav-number">1.3.</span> <span class="nav-text">前馈神经网络的图像识别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="nav-number">1.4.</span> <span class="nav-text">前馈神经网络的缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CNN%E7%9A%84%E5%B1%80%E9%83%A8%E6%89%AB%E6%8F%8F"><span class="nav-number">1.5.</span> <span class="nav-text">CNN的局部扫描</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CNN%E7%9A%84%E8%BE%93%E5%87%BA"><span class="nav-number">1.6.</span> <span class="nav-text">CNN的输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E4%B8%BA%E5%A4%8D%E6%95%B0%E7%9A%84%E6%83%85%E5%86%B5"><span class="nav-number">1.7.</span> <span class="nav-text">深度为复数的情况</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CNN%EF%BC%88%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">CNN（卷积神经网络）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B7%E7%A7%AF%E5%B1%82"><span class="nav-number">2.1.</span> <span class="nav-text">卷积层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="nav-number">2.2.</span> <span class="nav-text">过滤器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%A2%E7%8A%B6%E7%9A%84%E6%8A%93%E5%8F%96"><span class="nav-number">2.2.1.</span> <span class="nav-text">形状的抓取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E4%B8%AA%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="nav-number">2.2.2.</span> <span class="nav-text">多个过滤器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E5%85%A5%E9%9D%9E%E7%BA%BF%E6%80%A7"><span class="nav-number">2.2.3.</span> <span class="nav-text">加入非线性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E5%85%A8%E8%BF%9E%E6%8E%A5%E5%B1%82"><span class="nav-number">2.3.</span> <span class="nav-text">完全连接层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A5%E5%B9%85%E5%92%8C%E5%A1%AB%E5%85%85"><span class="nav-number">2.4.</span> <span class="nav-text">步幅和填充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%95%BF"><span class="nav-number">2.4.1.</span> <span class="nav-text">步长</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%AB%E5%85%85"><span class="nav-number">2.4.2.</span> <span class="nav-text">填充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%A0%E5%8C%96%E5%B1%82"><span class="nav-number">2.5.</span> <span class="nav-text">池化层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA%E6%8A%80%E6%9C%AF"><span class="nav-number">2.6.</span> <span class="nav-text">数据增强技术</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FCN-%E5%85%A8%E5%8D%B7%E7%A7%AF%E7%BD%91%E7%BB%9C-Fully-Convolutional-Network"><span class="nav-number">3.</span> <span class="nav-text">FCN(全卷积网络)(Fully Convolutional Network)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%89%B2-%E8%AF%AD%E4%B9%89%EF%BC%8C%E5%AE%9E%E4%BE%8B%EF%BC%8C%E5%85%A8%E6%99%AF%E5%88%86%E5%89%B2"><span class="nav-number">3.1.</span> <span class="nav-text">分割(语义，实例，全景分割)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2"><span class="nav-number">3.2.</span> <span class="nav-text">语义分割</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FCN%E4%B8%8ECNN%E5%8C%BA%E5%88%AB"><span class="nav-number">3.3.</span> <span class="nav-text">FCN与CNN区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8D%E5%8D%B7%E7%A7%AF%E4%B8%8E%E4%B8%8A%E9%87%87%E6%A0%B7"><span class="nav-number">3.4.</span> <span class="nav-text">反卷积与上采样</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FCN%E7%9A%84%E7%BC%BA%E9%99%B7"><span class="nav-number">3.5.</span> <span class="nav-text">FCN的缺陷</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#U-Net"><span class="nav-number">4.</span> <span class="nav-text">U-Net</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E7%A7%8D%E7%89%B9%E5%BE%81%E8%9E%8D%E5%90%88%E6%96%B9%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">两种特征融合方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#U-Net%E4%B8%BA%E4%BD%95%E9%80%82%E7%94%A8%E4%BA%8E%E5%8C%BB%E5%AD%A6%E5%9B%BE%E5%83%8F"><span class="nav-number">4.2.</span> <span class="nav-text">U-Net为何适用于医学图像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BB%E5%AD%A6%E5%9B%BE%E5%83%8F%E7%89%B9%E7%82%B9"><span class="nav-number">4.3.</span> <span class="nav-text">医学图像特点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Seg-Net"><span class="nav-number">5.</span> <span class="nav-text">Seg-Net</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%A0%81%E5%99%A8"><span class="nav-number">5.1.</span> <span class="nav-text">解码器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Seg-Net%E4%B8%8EFCN%E8%A7%A3%E7%A0%81%E6%96%B9%E5%BC%8F%E7%9A%84%E4%B8%8D%E5%90%8C"><span class="nav-number">5.2.</span> <span class="nav-text">Seg-Net与FCN解码方式的不同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B9%E5%8F%98%E8%A7%A3%E7%A0%81%E5%99%A8%E7%9A%84%E5%8F%82%E6%95%B0"><span class="nav-number">5.3.</span> <span class="nav-text">改变解码器的参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E7%A0%81%E5%99%A8%E6%80%BB%E7%BB%93"><span class="nav-number">5.4.</span> <span class="nav-text">解码器总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E7%9A%84%E9%9D%9E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95"><span class="nav-number">6.</span> <span class="nav-text">图像处理的非深度学习方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%B9%E7%BC%98%E4%B8%8E%E9%98%88%E5%80%BC%E6%B3%95"><span class="nav-number">6.1.</span> <span class="nav-text">边缘与阈值法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BA%E5%9F%9F%E5%A2%9E%E9%95%BF%EF%BC%8C%E5%88%86%E8%A3%82"><span class="nav-number">6.2.</span> <span class="nav-text">区域增长，分裂</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%89%B2"><span class="nav-number">6.3.</span> <span class="nav-text">图割</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AE%E5%BB%93%E6%A8%A1%E5%9E%8B"><span class="nav-number">6.4.</span> <span class="nav-text">轮廓模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Molers" src="/images/Avatar.jpg">
-  <p class="site-author-name" itemprop="name">Molers</p>
-  <div class="site-description" itemprop="description">计算机专业,本科大学生,喜欢图形,爱好绘画和3D,学习ing</div>
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="张文亮"
+      src="/images/Avatar.jpg">
+  <p class="site-author-name" itemprop="name">张文亮</p>
+  <div class="site-description" itemprop="description">计算机CV与CG研究生,爱好绘画</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">76</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">115</span>
+        <span class="site-state-item-count">122</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/Molers" title="GitHub → https://github.com/Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/Molers" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Molers" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://weibo.com/3179969322" title="Weibo → https://weibo.com/3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+        <a href="/s992545366@qq.com" title="E-Mail → s992545366@qq.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/s992545366" title="Twitter → https://twitter.com/s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+        <a href="https://weibo.com/3179969322" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;3179969322" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/s992545366" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;s992545366" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pixiv.net/users/7480965" title="Pixiv → https:&#x2F;&#x2F;www.pixiv.net&#x2F;users&#x2F;7480965" rel="noopener" target="_blank"><i class="fas fa-paint-brush fa-fw"></i>Pixiv</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/zhang-wen-liang-32" title="知乎 → https:&#x2F;&#x2F;www.zhihu.com&#x2F;people&#x2F;zhang-wen-liang-32" rel="noopener" target="_blank"><i class="fas fa-book-open fa-fw"></i>知乎</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/1876807" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;1876807" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/weixin_37923383" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_37923383" rel="noopener" target="_blank"><i class="fas fa-laptop-code fa-fw"></i>CSDN</a>
       </span>
   </div>
 
@@ -644,13 +756,13 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Molers</span>
+  <span class="author" itemprop="copyrightHolder">张文亮</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -670,15 +782,27 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
