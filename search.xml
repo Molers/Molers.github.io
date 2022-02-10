@@ -6,58 +6,6 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>GAMES101-Lecture01 Overview of Computer Graphics笔记</title>
-    <url>/2020/11/10/GAMES101-Lecture01-Overview-of-Computer-Graphics%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>判断渲染的一个简单标准:画面是否明亮</p>
-<h1 id="游戏-Video-Game"><a href="#游戏-Video-Game" class="headerlink" title="游戏(Video Game)"></a>游戏(Video Game)</h1><h2 id="只狼"><a href="#只狼" class="headerlink" title="只狼"></a>只狼</h2><p><img src="/images/Games101/image-20201110103745003.png" alt="image-20201110103745003"></p>
-<h2 id="卡通NPR——无主之地3"><a href="#卡通NPR——无主之地3" class="headerlink" title="卡通NPR——无主之地3"></a>卡通NPR——无主之地3</h2><p><img src="/images/Games101/image-20201110103820530.png" alt="image-20201110103820530"></p>
-<span id="more"></span>
-
-<h1 id="电影-Movie"><a href="#电影-Movie" class="headerlink" title="电影(Movie)"></a>电影(Movie)</h1><h2 id="特效"><a href="#特效" class="headerlink" title="特效"></a>特效</h2><p><img src="/images/Games101/image-20201110103859699.png" alt="image-20201110103859699"></p>
-<h2 id="动作捕捉-阿凡达"><a href="#动作捕捉-阿凡达" class="headerlink" title="动作捕捉:阿凡达"></a>动作捕捉:阿凡达</h2><p><img src="/images/Games101/image-20201110103340277.png" alt="image-20201110103340277"></p>
-<h1 id="动画-Animation"><a href="#动画-Animation" class="headerlink" title="动画(Animation)"></a>动画(Animation)</h1><h2 id="疯狂动物城"><a href="#疯狂动物城" class="headerlink" title="疯狂动物城"></a>疯狂动物城</h2><p><img src="/images/Games101/image-20201110103413753.png" alt="image-20201110103413753"></p>
-<p>毛发的渲染和显示，复杂的过程如何去显示几何和计算光线的传播</p>
-<h2 id="冰雪奇缘——模拟simulation"><a href="#冰雪奇缘——模拟simulation" class="headerlink" title="冰雪奇缘——模拟simulation"></a>冰雪奇缘——模拟simulation</h2><p><img src="/images/Games101/image-20201110103514682.png" alt="image-20201110103514682"></p>
-<p>头发的渲染（头发的执念），发光粒子</p>
-<h1 id="工业设计（Design）"><a href="#工业设计（Design）" class="headerlink" title="工业设计（Design）"></a>工业设计（Design）</h1><h2 id="特斯拉车子的渲染效果"><a href="#特斯拉车子的渲染效果" class="headerlink" title="特斯拉车子的渲染效果"></a>特斯拉车子的渲染效果</h2><p><img src="/images/Games101/image-20201110103953593.png" alt="image-20201110103953593"></p>
-<p>虚拟世界模拟车的碰撞检测</p>
-<h2 id="室内装修"><a href="#室内装修" class="headerlink" title="室内装修"></a>室内装修</h2><p><img src="/images/Games101/image-20201110104126551.png" alt="image-20201110104126551"></p>
-<h1 id="可视化（Visualization）"><a href="#可视化（Visualization）" class="headerlink" title="可视化（Visualization）"></a>可视化（Visualization）</h1><p><img src="/images/Games101/image-20201110104225900.png" alt="image-20201110104225900"></p>
-<p>医学</p>
-<h1 id="虚拟现实（Virtual-Reality）"><a href="#虚拟现实（Virtual-Reality）" class="headerlink" title="虚拟现实（Virtual Reality）"></a>虚拟现实（Virtual Reality）</h1><p><img src="/images/Games101/image-20201110104311033.png" alt="image-20201110104311033"></p>
-<p>可交互的虚拟现实</p>
-<h1 id="数字绘画（Digital-Illustration）"><a href="#数字绘画（Digital-Illustration）" class="headerlink" title="数字绘画（Digital Illustration）"></a>数字绘画（Digital Illustration）</h1><p><img src="/images/Games101/image-20201110104430115.png" alt="image-20201110104430115"></p>
-<h1 id="模拟-Simulation"><a href="#模拟-Simulation" class="headerlink" title="模拟(Simulation)"></a>模拟(Simulation)</h1><p><img src="/images/Games101/image-20201110104509808.png" alt="image-20201110104509808"></p>
-<p>风，黑洞，沙尘暴物理模拟的效果</p>
-<h1 id="GUI-Graphical-User-Interfaces"><a href="#GUI-Graphical-User-Interfaces" class="headerlink" title="GUI(Graphical User Interfaces)"></a>GUI(Graphical User Interfaces)</h1><p><img src="/images/Games101/image-20201110104621919.png" alt="image-20201110104621919"></p>
-<h1 id="Typography（排版）"><a href="#Typography（排版）" class="headerlink" title="Typography（排版）"></a>Typography（排版）</h1><p><img src="/images/Games101/image-20201110104654967.png" alt="image-20201110104654967"></p>
-<h1 id="课程主题-主要四部分"><a href="#课程主题-主要四部分" class="headerlink" title="课程主题(主要四部分)"></a>课程主题(主要四部分)</h1><p>-光栅化(Rasterization) 栅格化</p>
-<p>-曲线和网格(Curves and Meshes)</p>
-<p>-光线追踪(Ray Tracing)</p>
-<p>-动画&#x2F;模拟(Animation &#x2F; Simulation)</p>
-<h2 id="光栅化-Rasterization"><a href="#光栅化-Rasterization" class="headerlink" title="光栅化(Rasterization)"></a>光栅化(Rasterization)</h2><p>课外补充:</p>
-<p>光栅化就是把矢量图形转化成像素点儿的过程。我们屏幕上显示的画面都是由像素组成，而三维物体都是点线面构成的。要让点线面，变成能在屏幕上显示的像素，就需要Rasterize这个过程。就是从矢量的点线面的描述，变成像素的描述，这个过程就是Rasterize。</p>
-<p>有点像是模拟信号转化为数字信号的过程，路由器？</p>
-<p><img src="/images/Games101/image-20201110105739804.png" alt="image-20201110105739804"></p>
-<p><img src="/images/Games101/image-20201110105754703.png" alt="image-20201110105754703"></p>
-<h2 id="曲线和网格-Curves-and-Meshes"><a href="#曲线和网格-Curves-and-Meshes" class="headerlink" title="曲线和网格(Curves and Meshes)"></a>曲线和网格(Curves and Meshes)</h2><p>如何在计算机中表示曲面与曲线</p>
-<p><img src="/images/Games101/image-20201110105829046.png" alt="image-20201110105829046"></p>
-<h2 id="光线追踪-Ray-Tracing"><a href="#光线追踪-Ray-Tracing" class="headerlink" title="光线追踪(Ray Tracing)"></a>光线追踪(Ray Tracing)</h2><p><img src="/images/Games101/image-20201110105905968.png" alt="image-20201110105905968"></p>
-<p><img src="/images/Games101/image-20201110105941599.png" alt="image-20201110105941599"></p>
-<h1 id="Not-About"><a href="#Not-About" class="headerlink" title="Not About"></a>Not About</h1><h2 id="计算机建模软件"><a href="#计算机建模软件" class="headerlink" title="计算机建模软件"></a>计算机建模软件</h2><p><img src="/images/Games101/image-20201110110905088.png" alt="image-20201110110905088"></p>
-<h2 id="计算机视觉"><a href="#计算机视觉" class="headerlink" title="计算机视觉"></a>计算机视觉</h2><p><img src="/images/Games101/image-20201110110922567.png" alt="image-20201110110922567"></p>
-<h1 id="Differences-between-CG-amp-CV"><a href="#Differences-between-CG-amp-CV" class="headerlink" title="Differences between CG&amp;CV"></a>Differences between CG&amp;CV</h1><p><img src="/images/Games101/image-20201110111020693.png" alt="image-20201110111020693"></p>
-<h1 id="Final-Project"><a href="#Final-Project" class="headerlink" title="Final Project"></a>Final Project</h1><p>最后的大作业是最有精华的部分</p>
-]]></content>
-      <categories>
-        <category>Games101现代计算机图形学入门</category>
-      </categories>
-      <tags>
-        <tag>计算机图形学</tag>
-        <tag>闫令琪</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CNN FCN U-Net 卷积神经网络学习（1）</title>
     <url>/2020/08/24/CNN-FCN-U-Net-%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%EF%BC%881%EF%BC%89/</url>
     <content><![CDATA[<h1 id="前馈神经网络"><a href="#前馈神经网络" class="headerlink" title="前馈神经网络"></a>前馈神经网络</h1><h2 id="图像的表示和数字长方体"><a href="#图像的表示和数字长方体" class="headerlink" title="图像的表示和数字长方体"></a>图像的表示和数字长方体</h2><p>图像在计算机中是一堆按顺序排列的数字,数值为0到255,0表示最暗, 255表示最亮。你可以把这堆数字用一个长长的向量来表示。然而这样会失去平面结构的信息,为保留该结构信息,通常选择矩阵的表示方式: 28x28的矩阵。</p>
@@ -287,6 +235,58 @@
       </tags>
   </entry>
   <entry>
+    <title>GAMES101-Lecture01 Overview of Computer Graphics笔记</title>
+    <url>/2020/11/10/GAMES101-Lecture01-Overview-of-Computer-Graphics%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>判断渲染的一个简单标准:画面是否明亮</p>
+<h1 id="游戏-Video-Game"><a href="#游戏-Video-Game" class="headerlink" title="游戏(Video Game)"></a>游戏(Video Game)</h1><h2 id="只狼"><a href="#只狼" class="headerlink" title="只狼"></a>只狼</h2><p><img src="/images/Games101/image-20201110103745003.png" alt="image-20201110103745003"></p>
+<h2 id="卡通NPR——无主之地3"><a href="#卡通NPR——无主之地3" class="headerlink" title="卡通NPR——无主之地3"></a>卡通NPR——无主之地3</h2><p><img src="/images/Games101/image-20201110103820530.png" alt="image-20201110103820530"></p>
+<span id="more"></span>
+
+<h1 id="电影-Movie"><a href="#电影-Movie" class="headerlink" title="电影(Movie)"></a>电影(Movie)</h1><h2 id="特效"><a href="#特效" class="headerlink" title="特效"></a>特效</h2><p><img src="/images/Games101/image-20201110103859699.png" alt="image-20201110103859699"></p>
+<h2 id="动作捕捉-阿凡达"><a href="#动作捕捉-阿凡达" class="headerlink" title="动作捕捉:阿凡达"></a>动作捕捉:阿凡达</h2><p><img src="/images/Games101/image-20201110103340277.png" alt="image-20201110103340277"></p>
+<h1 id="动画-Animation"><a href="#动画-Animation" class="headerlink" title="动画(Animation)"></a>动画(Animation)</h1><h2 id="疯狂动物城"><a href="#疯狂动物城" class="headerlink" title="疯狂动物城"></a>疯狂动物城</h2><p><img src="/images/Games101/image-20201110103413753.png" alt="image-20201110103413753"></p>
+<p>毛发的渲染和显示，复杂的过程如何去显示几何和计算光线的传播</p>
+<h2 id="冰雪奇缘——模拟simulation"><a href="#冰雪奇缘——模拟simulation" class="headerlink" title="冰雪奇缘——模拟simulation"></a>冰雪奇缘——模拟simulation</h2><p><img src="/images/Games101/image-20201110103514682.png" alt="image-20201110103514682"></p>
+<p>头发的渲染（头发的执念），发光粒子</p>
+<h1 id="工业设计（Design）"><a href="#工业设计（Design）" class="headerlink" title="工业设计（Design）"></a>工业设计（Design）</h1><h2 id="特斯拉车子的渲染效果"><a href="#特斯拉车子的渲染效果" class="headerlink" title="特斯拉车子的渲染效果"></a>特斯拉车子的渲染效果</h2><p><img src="/images/Games101/image-20201110103953593.png" alt="image-20201110103953593"></p>
+<p>虚拟世界模拟车的碰撞检测</p>
+<h2 id="室内装修"><a href="#室内装修" class="headerlink" title="室内装修"></a>室内装修</h2><p><img src="/images/Games101/image-20201110104126551.png" alt="image-20201110104126551"></p>
+<h1 id="可视化（Visualization）"><a href="#可视化（Visualization）" class="headerlink" title="可视化（Visualization）"></a>可视化（Visualization）</h1><p><img src="/images/Games101/image-20201110104225900.png" alt="image-20201110104225900"></p>
+<p>医学</p>
+<h1 id="虚拟现实（Virtual-Reality）"><a href="#虚拟现实（Virtual-Reality）" class="headerlink" title="虚拟现实（Virtual Reality）"></a>虚拟现实（Virtual Reality）</h1><p><img src="/images/Games101/image-20201110104311033.png" alt="image-20201110104311033"></p>
+<p>可交互的虚拟现实</p>
+<h1 id="数字绘画（Digital-Illustration）"><a href="#数字绘画（Digital-Illustration）" class="headerlink" title="数字绘画（Digital Illustration）"></a>数字绘画（Digital Illustration）</h1><p><img src="/images/Games101/image-20201110104430115.png" alt="image-20201110104430115"></p>
+<h1 id="模拟-Simulation"><a href="#模拟-Simulation" class="headerlink" title="模拟(Simulation)"></a>模拟(Simulation)</h1><p><img src="/images/Games101/image-20201110104509808.png" alt="image-20201110104509808"></p>
+<p>风，黑洞，沙尘暴物理模拟的效果</p>
+<h1 id="GUI-Graphical-User-Interfaces"><a href="#GUI-Graphical-User-Interfaces" class="headerlink" title="GUI(Graphical User Interfaces)"></a>GUI(Graphical User Interfaces)</h1><p><img src="/images/Games101/image-20201110104621919.png" alt="image-20201110104621919"></p>
+<h1 id="Typography（排版）"><a href="#Typography（排版）" class="headerlink" title="Typography（排版）"></a>Typography（排版）</h1><p><img src="/images/Games101/image-20201110104654967.png" alt="image-20201110104654967"></p>
+<h1 id="课程主题-主要四部分"><a href="#课程主题-主要四部分" class="headerlink" title="课程主题(主要四部分)"></a>课程主题(主要四部分)</h1><p>-光栅化(Rasterization) 栅格化</p>
+<p>-曲线和网格(Curves and Meshes)</p>
+<p>-光线追踪(Ray Tracing)</p>
+<p>-动画&#x2F;模拟(Animation &#x2F; Simulation)</p>
+<h2 id="光栅化-Rasterization"><a href="#光栅化-Rasterization" class="headerlink" title="光栅化(Rasterization)"></a>光栅化(Rasterization)</h2><p>课外补充:</p>
+<p>光栅化就是把矢量图形转化成像素点儿的过程。我们屏幕上显示的画面都是由像素组成，而三维物体都是点线面构成的。要让点线面，变成能在屏幕上显示的像素，就需要Rasterize这个过程。就是从矢量的点线面的描述，变成像素的描述，这个过程就是Rasterize。</p>
+<p>有点像是模拟信号转化为数字信号的过程，路由器？</p>
+<p><img src="/images/Games101/image-20201110105739804.png" alt="image-20201110105739804"></p>
+<p><img src="/images/Games101/image-20201110105754703.png" alt="image-20201110105754703"></p>
+<h2 id="曲线和网格-Curves-and-Meshes"><a href="#曲线和网格-Curves-and-Meshes" class="headerlink" title="曲线和网格(Curves and Meshes)"></a>曲线和网格(Curves and Meshes)</h2><p>如何在计算机中表示曲面与曲线</p>
+<p><img src="/images/Games101/image-20201110105829046.png" alt="image-20201110105829046"></p>
+<h2 id="光线追踪-Ray-Tracing"><a href="#光线追踪-Ray-Tracing" class="headerlink" title="光线追踪(Ray Tracing)"></a>光线追踪(Ray Tracing)</h2><p><img src="/images/Games101/image-20201110105905968.png" alt="image-20201110105905968"></p>
+<p><img src="/images/Games101/image-20201110105941599.png" alt="image-20201110105941599"></p>
+<h1 id="Not-About"><a href="#Not-About" class="headerlink" title="Not About"></a>Not About</h1><h2 id="计算机建模软件"><a href="#计算机建模软件" class="headerlink" title="计算机建模软件"></a>计算机建模软件</h2><p><img src="/images/Games101/image-20201110110905088.png" alt="image-20201110110905088"></p>
+<h2 id="计算机视觉"><a href="#计算机视觉" class="headerlink" title="计算机视觉"></a>计算机视觉</h2><p><img src="/images/Games101/image-20201110110922567.png" alt="image-20201110110922567"></p>
+<h1 id="Differences-between-CG-amp-CV"><a href="#Differences-between-CG-amp-CV" class="headerlink" title="Differences between CG&amp;CV"></a>Differences between CG&amp;CV</h1><p><img src="/images/Games101/image-20201110111020693.png" alt="image-20201110111020693"></p>
+<h1 id="Final-Project"><a href="#Final-Project" class="headerlink" title="Final Project"></a>Final Project</h1><p>最后的大作业是最有精华的部分</p>
+]]></content>
+      <categories>
+        <category>Games101现代计算机图形学入门</category>
+      </categories>
+      <tags>
+        <tag>计算机图形学</tag>
+        <tag>闫令琪</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GAMES101-Lecture03-04-Transformation笔记</title>
     <url>/2020/11/29/GAMES101-Lecture03-Transformation%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="Transformation-变换"><a href="#Transformation-变换" class="headerlink" title="Transformation 变换"></a>Transformation 变换</h1><h2 id="rotation-旋转-反向动力学-IK"><a href="#rotation-旋转-反向动力学-IK" class="headerlink" title="rotation 旋转 反向动力学 IK"></a>rotation 旋转 反向动力学 IK</h2><p><img src="/images/Games101/image-20201129175509435.png" alt="image-20201129175509435"></p>
@@ -390,18 +390,6 @@
       </tags>
   </entry>
   <entry>
-    <title>GAMES101-Lecture05 Rasterization1(Triangles)笔记</title>
-    <url>/2021/07/17/GAMES101-Lecture05-Rasterization1-Triangles-%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Games101现代计算机图形学入门</category>
-      </categories>
-      <tags>
-        <tag>计算机图形学</tag>
-        <tag>闫令琪</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>GAMES101-Lecture02 Review of Linear Algebra笔记</title>
     <url>/2020/11/10/GAMES101-Lecture02-Review-of-Linear-Algebra%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>旋转的例子</p>
@@ -429,6 +417,18 @@
         <tag>计算机图形学</tag>
         <tag>闫令琪</tag>
         <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GAMES101-Lecture05 Rasterization1(Triangles)笔记</title>
+    <url>/2021/07/17/GAMES101-Lecture05-Rasterization1-Triangles-%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Games101现代计算机图形学入门</category>
+      </categories>
+      <tags>
+        <tag>计算机图形学</tag>
+        <tag>闫令琪</tag>
       </tags>
   </entry>
   <entry>
@@ -474,34 +474,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Junc视频笔记-1</title>
-    <url>/2022/01/20/Junc%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0-1/</url>
-    <content><![CDATA[<p>找了个视频看，记录一下有些意思的部分</p>
-<h1 id="手是第二张脸"><a href="#手是第二张脸" class="headerlink" title="手是第二张脸"></a>手是第二张脸</h1><p>日系或者二次元绘画中，手是第二张脸的说法真有趣</p>
-<p>众所周知，日系绘画中的焦点就是脸部，在整幅绘画中是T0级别，而其手是第二张脸的说法等于是把手的地位顺位到了T1。</p>
-<p>如果用游戏排行的角度来划分的话</p>
-<p>T0 -脸部</p>
-<p>T1-手 腿</p>
-<p>T2-褶皱</p>
-<p>T3-背景</p>
-<p><img src="/%5Cimages%5Chuihuabiji%5Cjunc%5Cimage-20220120143947254.png" alt="image-20220120143947254"></p>
-<h1 id="骨点与冷暖"><a href="#骨点与冷暖" class="headerlink" title="骨点与冷暖"></a>骨点与冷暖</h1><p>皮肤的冷暖对比，日系绘画会在肘部和肩膀做一点皮肤上的红色，如果纠结的话，原因就是因为骨头处皮肤下的血管暴漏的比较多，而其他地方大多是冷色，因为血管在皮下大概这个意思，但是这个知识点只是说.没什么用,知道逻辑就好,皮肤薄的地方偏红，厚的地方偏冷。</p>
-<p><img src="/%5Cimages%5Chuihuabiji%5Cjunc%5Cimage-20220120145920130.png" alt="image-20220120145920130"></p>
-<p>属于是可做可不做的塑造内容，如果整幅图里缺少暖色，可以试着多做一点，冷暖对比</p>
-<p><img src="/%5Cimages%5Chuihuabiji%5Cjunc%5Cimage-20220120151113269.png" alt="image-20220120151113269"></p>
-<p>像上图这种纯色的图比较缺少暖色，就会在一些地方补做一些暖色使得整幅图的冷暖不至于失调同时突出焦点，如果不是从写实的角度来讲，这些暖色其实在哪里加都可以，比如上图中阴影中的暖色和腿部阴影的暖色，这方面我感觉画在哪里是没什么限制，也不用介意骨点什么的。</p>
-<h1 id="冷暖与油画"><a href="#冷暖与油画" class="headerlink" title="冷暖与油画"></a>冷暖与油画</h1><p>刚好找到一张K大关于冷暖的讨论串，整理一下。</p>
-<p>油画画家是做冷暖的高手</p>
-]]></content>
-      <categories>
-        <category>绘画笔记</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>junc</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo双线部署与双SSH设置</title>
     <url>/2020/01/31/Hexo%E5%8F%8C%E7%BA%BF%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%8F%8CSSH%E8%AE%BE%E7%BD%AE/</url>
     <content><![CDATA[<h2 id="1-SSH配置"><a href="#1-SSH配置" class="headerlink" title="1.SSH配置"></a>1.SSH配置</h2><p>Hexo博客要同时在github和coding上发布，两端同时需要提交代码，这个时候就需要电脑配置多个ssh</p>
@@ -516,7 +488,7 @@
 <p>添加如下内容：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># github 个人的GitHub公钥</span><br><span class="line">Host Github</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/Github  # 指定特定的ssh私钥文件</span><br><span class="line">User git</span><br><span class="line"></span><br><span class="line"># Coding 个人的Coding公钥</span><br><span class="line">Host Coding</span><br><span class="line">HostName git.coding.net</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/Coding  # 指定特定的ssh私钥文件</span><br><span class="line">User git</span><br></pre></td></tr></table></figure>
 
-<h2 id="3-绑定github和coding的ssh"><a href="#3-绑定github和coding的ssh" class="headerlink" title="3.绑定github和coding的ssh"></a>3.绑定github和coding的ssh</h2><p>![LJV5&#96;2OC4BO4_~<a href="mailto:&#x5f;&#50;&#82;&#64;&#76;&#88;&#88;&#87;&#79;&#x2e;&#112;&#x6e;&#x67;">&#x5f;&#50;&#82;&#64;&#76;&#88;&#88;&#87;&#79;&#x2e;&#112;&#x6e;&#x67;</a>](<a href="https://i.loli.net/2020/01/31/PL4h13yFRjEGzAc.png">https://i.loli.net/2020/01/31/PL4h13yFRjEGzAc.png</a>)</p>
+<h2 id="3-绑定github和coding的ssh"><a href="#3-绑定github和coding的ssh" class="headerlink" title="3.绑定github和coding的ssh"></a>3.绑定github和coding的ssh</h2><p>![LJV5&#96;2OC4BO4_~<a href="mailto:&#x5f;&#x32;&#82;&#x40;&#76;&#88;&#x58;&#87;&#x4f;&#46;&#x70;&#110;&#103;">&#x5f;&#x32;&#82;&#x40;&#76;&#88;&#x58;&#87;&#x4f;&#46;&#x70;&#110;&#103;</a>](<a href="https://i.loli.net/2020/01/31/PL4h13yFRjEGzAc.png">https://i.loli.net/2020/01/31/PL4h13yFRjEGzAc.png</a>)</p>
 <p><img src="https://i.loli.net/2020/01/31/S83piQJfCOlRtes.png" alt="KA__X~H9S38VCXDWZU2_G0L.png"></p>
 <h2 id="4-ssh-add"><a href="#4-ssh-add" class="headerlink" title="4.ssh-add"></a>4.ssh-add</h2><p>手动开启ssh</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">eval `ssh-agent -s`</span><br></pre></td></tr></table></figure>
@@ -560,6 +532,34 @@
         <tag>博客</tag>
         <tag>部署</tag>
         <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Junc视频笔记-1</title>
+    <url>/2022/01/20/Junc%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0-1/</url>
+    <content><![CDATA[<p>找了个视频看，记录一下有些意思的部分</p>
+<h1 id="手是第二张脸"><a href="#手是第二张脸" class="headerlink" title="手是第二张脸"></a>手是第二张脸</h1><p>日系或者二次元绘画中，手是第二张脸的说法真有趣</p>
+<p>众所周知，日系绘画中的焦点就是脸部，在整幅绘画中是T0级别，而其手是第二张脸的说法等于是把手的地位顺位到了T1。</p>
+<p>如果用游戏排行的角度来划分的话</p>
+<p>T0 -脸部</p>
+<p>T1-手 腿</p>
+<p>T2-褶皱</p>
+<p>T3-背景</p>
+<p><img src="/%5Cimages%5Chuihuabiji%5Cjunc%5Cimage-20220120143947254.png" alt="image-20220120143947254"></p>
+<h1 id="骨点与冷暖"><a href="#骨点与冷暖" class="headerlink" title="骨点与冷暖"></a>骨点与冷暖</h1><p>皮肤的冷暖对比，日系绘画会在肘部和肩膀做一点皮肤上的红色，如果纠结的话，原因就是因为骨头处皮肤下的血管暴漏的比较多，而其他地方大多是冷色，因为血管在皮下大概这个意思，但是这个知识点只是说.没什么用,知道逻辑就好,皮肤薄的地方偏红，厚的地方偏冷。</p>
+<p><img src="/%5Cimages%5Chuihuabiji%5Cjunc%5Cimage-20220120145920130.png" alt="image-20220120145920130"></p>
+<p>属于是可做可不做的塑造内容，如果整幅图里缺少暖色，可以试着多做一点，冷暖对比</p>
+<p><img src="/%5Cimages%5Chuihuabiji%5Cjunc%5Cimage-20220120151113269.png" alt="image-20220120151113269"></p>
+<p>像上图这种纯色的图比较缺少暖色，就会在一些地方补做一些暖色使得整幅图的冷暖不至于失调同时突出焦点，如果不是从写实的角度来讲，这些暖色其实在哪里加都可以，比如上图中阴影中的暖色和腿部阴影的暖色，这方面我感觉画在哪里是没什么限制，也不用介意骨点什么的。</p>
+<h1 id="冷暖与油画"><a href="#冷暖与油画" class="headerlink" title="冷暖与油画"></a>冷暖与油画</h1><p>刚好找到一张K大关于冷暖的讨论串，整理一下。</p>
+<p>油画画家是做冷暖的高手</p>
+]]></content>
+      <categories>
+        <category>绘画笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>junc</tag>
       </tags>
   </entry>
   <entry>
@@ -625,6 +625,84 @@
       </tags>
   </entry>
   <entry>
+    <title>Krenz透视课作业汇总</title>
+    <url>/2020/01/28/Krenz%E9%80%8F%E8%A7%86%E8%AF%BE%E7%AC%94%E8%AE%B0-1/</url>
+    <content><![CDATA[<p>​    之前就喜欢胡思乱写一些东西，记笔记也是常态，从大四开始因为要准备考研就没有摸过画板了，之后放假半年再摸起画笔找状态说实话也费了不少时间，而且在K大那里学的东西基本忘的差不多了，又看到家里的旧电脑上残留有之前上透视课的画作业，还有聊天记录和一些自己无聊的时候思考的笔记，想了想就整理在这里，再抄一下K大微博发的课堂笔记和同学的心得再过一遍，也算是重新学习了一遍。</p>
+<h2 id="第一堂-房子临摹-透视比例与结构-perspective-proportion-and-structure"><a href="#第一堂-房子临摹-透视比例与结构-perspective-proportion-and-structure" class="headerlink" title="第一堂:房子临摹(透视比例与结构) perspective, proportion and structure"></a>第一堂:房子临摹(透视比例与结构) perspective, proportion and structure</h2><h3 id="作业1-临摹"><a href="#作业1-临摹" class="headerlink" title="作业1:临摹"></a>作业1:临摹</h3><p><img src="/images/image-20200128223330037.png" alt="image-20200128223330037"></p>
+<span id="more"></span>
+
+<h3 id="作业2-转角度"><a href="#作业2-转角度" class="headerlink" title="作业2:转角度"></a>作业2:转角度</h3><p><img src="/images/image-20200128223344971.png" alt="image-20200128223344971"></p>
+<h3 id="作业提示"><a href="#作业提示" class="headerlink" title="作业提示"></a>作业提示</h3><p><img src="/images/image-20200128223438447.png" alt="image-20200128223438447"></p>
+<p>有句话叫做什么来着，眼高手低，不做这作业还以为自己很厉害，等到自己画的时候那个苦头吃的真心难受。</p>
+<p>实际执行起来才深刻理解什么叫做真正的眼高手低，不过认识到也是后话了，当时啊，是第一次接触绘画，纯小白，非常</p>
+<p>纯那种，作业留完大部分时间倒不是在画作业，而是摸索软件…后来有了意识就能分辨小白和有经验的人就是看线条，当</p>
+<p>时也没啥注意事项之类的</p>
+<p><img src="/images/image-20200128223916982.png" alt="image-20200128223916982"></p>
+<p><img src="/images/image-20200128223929540.png" alt="image-20200128223929540"></p>
+<p><img src="/images/image-20200128223949965.png" alt="image-20200128223949965"></p>
+<p><img src="/images/image-20200128224005785.png" alt="image-20200128224005785"></p>
+<h3 id="合格作业模范"><a href="#合格作业模范" class="headerlink" title="合格作业模范:"></a>合格作业模范:</h3><p><img src="/images/image-20200128224031926.png" alt="image-20200128224031926"></p>
+<p>图片来自K大透视课的L1基础作业汇总说明，</p>
+<h2 id="第二堂-简单室内场景-大熊与哆啦A梦"><a href="#第二堂-简单室内场景-大熊与哆啦A梦" class="headerlink" title="第二堂:简单室内场景 -大熊与哆啦A梦"></a>第二堂:简单室内场景 -大熊与哆啦A梦</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L2%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
+<h2 id="第三堂-简单室外场景与椅子-四叶妹妹"><a href="#第三堂-简单室外场景与椅子-四叶妹妹" class="headerlink" title="第三堂:简单室外场景与椅子-四叶妹妹"></a>第三堂:简单室外场景与椅子-四叶妹妹</h2><p> <img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L3%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
+<h2 id="第四堂-城镇场景"><a href="#第四堂-城镇场景" class="headerlink" title="第四堂:城镇场景"></a>第四堂:城镇场景</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L4%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
+<h2 id="第五堂-鞋子-学生鞋（各个角度与变形"><a href="#第五堂-鞋子-学生鞋（各个角度与变形" class="headerlink" title="第五堂:鞋子-学生鞋（各个角度与变形"></a>第五堂:鞋子-学生鞋（各个角度与变形</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L5%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
+<h2 id="第六堂-Q版人物-林克（各个角度"><a href="#第六堂-Q版人物-林克（各个角度" class="headerlink" title="第六堂:Q版人物-林克（各个角度"></a>第六堂:Q版人物-林克（各个角度</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L6%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
+<h2 id="第七堂-16格（用正方体画各种简单物体的各个角度"><a href="#第七堂-16格（用正方体画各种简单物体的各个角度" class="headerlink" title="第七堂:16格（用正方体画各种简单物体的各个角度"></a>第七堂:16格（用正方体画各种简单物体的各个角度</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L7%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
+<h2 id="第八堂-带景人物"><a href="#第八堂-带景人物" class="headerlink" title="第八堂:带景人物"></a>第八堂:带景人物</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L8%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
+<h2 id="DLC作业"><a href="#DLC作业" class="headerlink" title="DLC作业"></a>DLC作业</h2><h3 id="1-钢弹车"><a href="#1-钢弹车" class="headerlink" title="1.钢弹车"></a>1.钢弹车</h3><p><img src="/images/TouShi/DLC/%E9%92%A2%E5%BC%B9%E8%BD%A6.jpg"></p>
+]]></content>
+      <categories>
+        <category>透视课</category>
+      </categories>
+      <tags>
+        <tag>Krenz</tag>
+        <tag>透视课</tag>
+        <tag>DLC</tag>
+        <tag>homework</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>K大贴褶皱的魔法-照片褶皱负型用于日系明暗</title>
+    <url>/2022/01/18/K%E5%A4%A7%E8%B4%B4%E8%A4%B6%E7%9A%B1%E7%9A%84%E9%AD%94%E6%B3%95-%E7%85%A7%E7%89%87%E8%A4%B6%E7%9A%B1%E8%B4%9F%E5%9E%8B%E7%94%A8%E4%BA%8E%E6%97%A5%E7%B3%BB%E6%98%8E%E6%9A%97/</url>
+    <content><![CDATA[<p>首先照一张照片调成2阶黑白的调子，</p>
+<p><img src="/images/KdaTieZheZhou/image-20220118220644791.png" alt="image-20220118220644791"></p>
+<p>随便取一部分，画上线稿与轮廓(练习轮廓的目的)</p>
+<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118220905794.png" alt="image-20220118220905794"></p>
+<p>在对形状进行概括</p>
+<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118220947231.png" alt="image-20220118220947231"></p>
+<p>看一下形状的光照方向方向(如果是飘动的褶皱的话)</p>
+<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118221328313.png" alt="image-20220118221328313"></p>
+<p>找张图看一下这个轮廓能用在哪里</p>
+<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118221406455.png" alt="image-20220118221406455"></p>
+<p>看了一下马尾的轮廓和光照的方向差不多，可以试着贴上看看，还可以，之后就可以参考着细化明暗了。</p>
+<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118221437293.png" alt="image-20220118221437293"></p>
+<p>以上就是照片的负型形状用于日系绘画的技巧。</p>
+<h2 id="动画的思维-褶皱的负型简化与轮廓简化-2"><a href="#动画的思维-褶皱的负型简化与轮廓简化-2" class="headerlink" title="动画的思维-褶皱的负型简化与轮廓简化-2"></a>动画的思维-褶皱的负型简化与轮廓简化-2</h2><p>同学的褶皱负型往写实走，导致的结果是形状会过于碎，细节太多。</p>
+<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118222447467.png" alt="image-20220118222447467"></p>
+<p>K大就举了画动画的例子，因为动画一般要求简洁明了的概括明暗。</p>
+<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118222706110.png" alt="image-20220118222706110"></p>
+<p>这是负型概括，负型概括之后我们有了明暗的形状，需要对外形的轮廓进行概括，回忆一下动画的线稿一般都比较简单，一般都是用CSI 曲线 直线 S线构成的轮廓。</p>
+<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118223002453.png" alt="image-20220118223002453"></p>
+<p>褶皱的轮廓做简化之后其明暗的块面也要做减法，结构明确的物体其明暗比较确定我们不用自己做简化，而像有些写实的图其褶皱明暗的形状在构成上看过于碎，没有大中小的对比和疏密对比，我们需要自己做减法。</p>
+<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118223325524.png" alt="image-20220118223325524"></p>
+<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118223622975.png" alt="image-20220118223622975"></p>
+<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118223642157.png" alt="image-20220118223642157"></p>
+]]></content>
+      <categories>
+        <category>褶皱</category>
+      </categories>
+      <tags>
+        <tag>构成课</tag>
+        <tag>Krenz</tag>
+        <tag>褶皱</tag>
+        <tag>负型</tag>
+        <tag>照片</tag>
+        <tag>贴图</tag>
+        <tag>技巧</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Unity Shader 学习笔记-基础篇-1</title>
     <url>/2019/12/24/Unity%20Shader%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80%E7%AF%87-1/</url>
     <content><![CDATA[<h2 id="1-一个基础的Unity-Shader结构"><a href="#1-一个基础的Unity-Shader结构" class="headerlink" title="1.一个基础的Unity Shader结构"></a>1.一个基础的Unity Shader结构</h2><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">//起名与控制出现的位置 Shader-&gt;Unlit-&gt;S1</span></span><br><span class="line">Shader <span class="string">&quot;Unlit/S1&quot;</span></span><br><span class="line">&#123;	</span><br><span class="line">    <span class="comment">/**************************************************************/</span></span><br><span class="line">    Properties</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//属性的变量名字 (&quot;显示在面板上的名字&quot;，类型)= 值</span></span><br><span class="line">        _MainTex (<span class="string">&quot;Texture&quot;</span>, <span class="number">2</span>D) = <span class="string">&quot;white&quot;</span> &#123;&#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//所有属性的例子</span></span><br><span class="line">        <span class="comment">// Numbers and sliders</span></span><br><span class="line">        _Int (<span class="string">&quot; Int&quot;</span>, Int)= <span class="number">2</span> <span class="comment">//整形</span></span><br><span class="line">        _Float (<span class="string">&quot;Float&quot;</span>, Float)=<span class="number">1.5</span> <span class="comment">//浮点数</span></span><br><span class="line">        _Range(<span class="string">&quot;Range&quot;</span>, Range(<span class="number">0.0</span>, <span class="number">5.0</span>))=<span class="number">3.0</span> <span class="comment">//范围</span></span><br><span class="line">        <span class="comment">// Colors and Vectors</span></span><br><span class="line">        _Color (<span class="string">&quot;Color&quot;</span>, Color)=(<span class="number">1</span>, <span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>) <span class="comment">//颜色</span></span><br><span class="line">        _Vector (<span class="string">&quot;Vector&quot;</span>, Vector)=(<span class="number">2</span>,<span class="number">3</span>,<span class="number">6</span>, <span class="number">1</span>)<span class="comment">//向量</span></span><br><span class="line">        <span class="comment">// Textures</span></span><br><span class="line">        _2D(<span class="string">&quot;2D&quot;</span>,<span class="number">2</span>D)=<span class="string">&quot;&quot;</span>&#123;&#125; </span><br><span class="line">        _Cube (<span class="string">&quot;Cube&quot;</span>, Cube)=<span class="string">&quot;white&quot;</span>&#123;&#125;<span class="comment">//内置纹理</span></span><br><span class="line">        _3D(<span class="string">&quot;3D&quot;</span>,<span class="number">3</span>D)=<span class="string">&quot;back&quot;</span>&#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/************************************************************/</span></span><br><span class="line">    </span><br><span class="line">    SubShader</span><br><span class="line">    &#123;</span><br><span class="line">        </span><br><span class="line">        Tags &#123; <span class="string">&quot;RenderType&quot;</span>=<span class="string">&quot;Opaque&quot;</span> &#125;</span><br><span class="line">        <span class="comment">/*一些Pass</span></span><br><span class="line"><span class="comment">        </span></span><br><span class="line"><span class="comment">        </span></span><br><span class="line"><span class="comment">        </span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        LOD <span class="number">100</span></span><br><span class="line">	    <span class="comment">//pass过多会影响性能</span></span><br><span class="line">        Pass</span><br><span class="line">        &#123;	<span class="comment">//定义名称提高复用性 UsePass&quot;MyShader/MYPASSNAME&quot; Unity会把Pass名称转为大写</span></span><br><span class="line">            Name <span class="string">&quot;MyPassName&quot;</span></span><br><span class="line">            CGPROGRAM</span><br><span class="line">            <span class="meta">#<span class="keyword">pragma</span> vertex vert</span></span><br><span class="line">            <span class="meta">#<span class="keyword">pragma</span> fragment frag</span></span><br><span class="line">            <span class="comment">// make fog work</span></span><br><span class="line">            <span class="meta">#<span class="keyword">pragma</span> multi_compile_fog</span></span><br><span class="line"></span><br><span class="line">            <span class="meta">#include &quot;UnityCG.cginc&quot;</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">struct</span> appdata</span><br><span class="line">            &#123;</span><br><span class="line">                float4 vertex : POSITION;</span><br><span class="line">                float2 uv : TEXCOORD0;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">struct</span> v2f</span><br><span class="line">            &#123;</span><br><span class="line">                float2 uv : TEXCOORD0;</span><br><span class="line">                UNITY_FOG_COORDS(<span class="number">1</span>)</span><br><span class="line">                float4 vertex : SV_POSITION;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            sampler2D _MainTex;</span><br><span class="line">            float4 _MainTex_ST;</span><br><span class="line"></span><br><span class="line">            <span class="function">v2f <span class="title">vert</span> (<span class="params">appdata v</span>)</span></span><br><span class="line">            &#123;</span><br><span class="line">                v2f o;</span><br><span class="line">                o.vertex = UnityObjectToClipPos(v.vertex);</span><br><span class="line">                o.uv = TRANSFORM_TEX(v.uv, _MainTex);</span><br><span class="line">                UNITY_TRANSFER_FOG(o,o.vertex);</span><br><span class="line">                <span class="keyword">return</span> o;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="function">fixed4 <span class="title">frag</span> (<span class="params">v2f i</span>) : SV_Target</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// sample the texture</span></span><br><span class="line">                fixed4 col = tex2D(_MainTex, i.uv);</span><br><span class="line">                <span class="comment">// apply fog</span></span><br><span class="line">                UNITY_APPLY_FOG(i.fogCoord, col);</span><br><span class="line">                <span class="keyword">return</span> col;</span><br><span class="line">            &#125;</span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -676,44 +754,6 @@
         <tag>学习笔记</tag>
         <tag>Shader</tag>
         <tag>Unity</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Krenz透视课作业汇总</title>
-    <url>/2020/01/28/Krenz%E9%80%8F%E8%A7%86%E8%AF%BE%E7%AC%94%E8%AE%B0-1/</url>
-    <content><![CDATA[<p>​    之前就喜欢胡思乱写一些东西，记笔记也是常态，从大四开始因为要准备考研就没有摸过画板了，之后放假半年再摸起画笔找状态说实话也费了不少时间，而且在K大那里学的东西基本忘的差不多了，又看到家里的旧电脑上残留有之前上透视课的画作业，还有聊天记录和一些自己无聊的时候思考的笔记，想了想就整理在这里，再抄一下K大微博发的课堂笔记和同学的心得再过一遍，也算是重新学习了一遍。</p>
-<h2 id="第一堂-房子临摹-透视比例与结构-perspective-proportion-and-structure"><a href="#第一堂-房子临摹-透视比例与结构-perspective-proportion-and-structure" class="headerlink" title="第一堂:房子临摹(透视比例与结构) perspective, proportion and structure"></a>第一堂:房子临摹(透视比例与结构) perspective, proportion and structure</h2><h3 id="作业1-临摹"><a href="#作业1-临摹" class="headerlink" title="作业1:临摹"></a>作业1:临摹</h3><p><img src="/images/image-20200128223330037.png" alt="image-20200128223330037"></p>
-<span id="more"></span>
-
-<h3 id="作业2-转角度"><a href="#作业2-转角度" class="headerlink" title="作业2:转角度"></a>作业2:转角度</h3><p><img src="/images/image-20200128223344971.png" alt="image-20200128223344971"></p>
-<h3 id="作业提示"><a href="#作业提示" class="headerlink" title="作业提示"></a>作业提示</h3><p><img src="/images/image-20200128223438447.png" alt="image-20200128223438447"></p>
-<p>有句话叫做什么来着，眼高手低，不做这作业还以为自己很厉害，等到自己画的时候那个苦头吃的真心难受。</p>
-<p>实际执行起来才深刻理解什么叫做真正的眼高手低，不过认识到也是后话了，当时啊，是第一次接触绘画，纯小白，非常</p>
-<p>纯那种，作业留完大部分时间倒不是在画作业，而是摸索软件…后来有了意识就能分辨小白和有经验的人就是看线条，当</p>
-<p>时也没啥注意事项之类的</p>
-<p><img src="/images/image-20200128223916982.png" alt="image-20200128223916982"></p>
-<p><img src="/images/image-20200128223929540.png" alt="image-20200128223929540"></p>
-<p><img src="/images/image-20200128223949965.png" alt="image-20200128223949965"></p>
-<p><img src="/images/image-20200128224005785.png" alt="image-20200128224005785"></p>
-<h3 id="合格作业模范"><a href="#合格作业模范" class="headerlink" title="合格作业模范:"></a>合格作业模范:</h3><p><img src="/images/image-20200128224031926.png" alt="image-20200128224031926"></p>
-<p>图片来自K大透视课的L1基础作业汇总说明，</p>
-<h2 id="第二堂-简单室内场景-大熊与哆啦A梦"><a href="#第二堂-简单室内场景-大熊与哆啦A梦" class="headerlink" title="第二堂:简单室内场景 -大熊与哆啦A梦"></a>第二堂:简单室内场景 -大熊与哆啦A梦</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L2%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
-<h2 id="第三堂-简单室外场景与椅子-四叶妹妹"><a href="#第三堂-简单室外场景与椅子-四叶妹妹" class="headerlink" title="第三堂:简单室外场景与椅子-四叶妹妹"></a>第三堂:简单室外场景与椅子-四叶妹妹</h2><p> <img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L3%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
-<h2 id="第四堂-城镇场景"><a href="#第四堂-城镇场景" class="headerlink" title="第四堂:城镇场景"></a>第四堂:城镇场景</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L4%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
-<h2 id="第五堂-鞋子-学生鞋（各个角度与变形"><a href="#第五堂-鞋子-学生鞋（各个角度与变形" class="headerlink" title="第五堂:鞋子-学生鞋（各个角度与变形"></a>第五堂:鞋子-学生鞋（各个角度与变形</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L5%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
-<h2 id="第六堂-Q版人物-林克（各个角度"><a href="#第六堂-Q版人物-林克（各个角度" class="headerlink" title="第六堂:Q版人物-林克（各个角度"></a>第六堂:Q版人物-林克（各个角度</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L6%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
-<h2 id="第七堂-16格（用正方体画各种简单物体的各个角度"><a href="#第七堂-16格（用正方体画各种简单物体的各个角度" class="headerlink" title="第七堂:16格（用正方体画各种简单物体的各个角度"></a>第七堂:16格（用正方体画各种简单物体的各个角度</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L7%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
-<h2 id="第八堂-带景人物"><a href="#第八堂-带景人物" class="headerlink" title="第八堂:带景人物"></a>第八堂:带景人物</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L8%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
-<h2 id="DLC作业"><a href="#DLC作业" class="headerlink" title="DLC作业"></a>DLC作业</h2><h3 id="1-钢弹车"><a href="#1-钢弹车" class="headerlink" title="1.钢弹车"></a>1.钢弹车</h3><p><img src="/images/TouShi/DLC/%E9%92%A2%E5%BC%B9%E8%BD%A6.jpg"></p>
-]]></content>
-      <categories>
-        <category>透视课</category>
-      </categories>
-      <tags>
-        <tag>Krenz</tag>
-        <tag>透视课</tag>
-        <tag>DLC</tag>
-        <tag>homework</tag>
       </tags>
   </entry>
   <entry>
@@ -771,43 +811,25 @@
       </tags>
   </entry>
   <entry>
-    <title>K大贴褶皱的魔法-照片褶皱负型用于日系明暗</title>
-    <url>/2022/01/18/K%E5%A4%A7%E8%B4%B4%E8%A4%B6%E7%9A%B1%E7%9A%84%E9%AD%94%E6%B3%95-%E7%85%A7%E7%89%87%E8%A4%B6%E7%9A%B1%E8%B4%9F%E5%9E%8B%E7%94%A8%E4%BA%8E%E6%97%A5%E7%B3%BB%E6%98%8E%E6%9A%97/</url>
-    <content><![CDATA[<p>首先照一张照片调成2阶黑白的调子，</p>
-<p><img src="/images/KdaTieZheZhou/image-20220118220644791.png" alt="image-20220118220644791"></p>
-<p>随便取一部分，画上线稿与轮廓(练习轮廓的目的)</p>
-<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118220905794.png" alt="image-20220118220905794"></p>
-<p>在对形状进行概括</p>
-<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118220947231.png" alt="image-20220118220947231"></p>
-<p>看一下形状的光照方向方向(如果是飘动的褶皱的话)</p>
-<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118221328313.png" alt="image-20220118221328313"></p>
-<p>找张图看一下这个轮廓能用在哪里</p>
-<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118221406455.png" alt="image-20220118221406455"></p>
-<p>看了一下马尾的轮廓和光照的方向差不多，可以试着贴上看看，还可以，之后就可以参考着细化明暗了。</p>
-<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118221437293.png" alt="image-20220118221437293"></p>
-<p>以上就是照片的负型形状用于日系绘画的技巧。</p>
-<h2 id="动画的思维-褶皱的负型简化与轮廓简化-2"><a href="#动画的思维-褶皱的负型简化与轮廓简化-2" class="headerlink" title="动画的思维-褶皱的负型简化与轮廓简化-2"></a>动画的思维-褶皱的负型简化与轮廓简化-2</h2><p>同学的褶皱负型往写实走，导致的结果是形状会过于碎，细节太多。</p>
-<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118222447467.png" alt="image-20220118222447467"></p>
-<p>K大就举了画动画的例子，因为动画一般要求简洁明了的概括明暗。</p>
-<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118222706110.png" alt="image-20220118222706110"></p>
-<p>这是负型概括，负型概括之后我们有了明暗的形状，需要对外形的轮廓进行概括，回忆一下动画的线稿一般都比较简单，一般都是用CSI 曲线 直线 S线构成的轮廓。</p>
-<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118223002453.png" alt="image-20220118223002453"></p>
-<p>褶皱的轮廓做简化之后其明暗的块面也要做减法，结构明确的物体其明暗比较确定我们不用自己做简化，而像有些写实的图其褶皱明暗的形状在构成上看过于碎，没有大中小的对比和疏密对比，我们需要自己做减法。</p>
-<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118223325524.png" alt="image-20220118223325524"></p>
-<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118223622975.png" alt="image-20220118223622975"></p>
-<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118223642157.png" alt="image-20220118223642157"></p>
+    <title>VisualStudio学习笔记-报错-#include stdio.h的报错安全问题</title>
+    <url>/2020/02/03/VisualStudio%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8A%A5%E9%94%99-include-stdio-h%E7%9A%84%E6%8A%A5%E9%94%99%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>由于高版本的visual studio默认不让使用scanf等函数，认为这些函数不够安全，而其相对应的代替函数为scanf_s等。如果在visual studio中使用scanf等那些visual studio认为不安全的函数，就会报错。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;scanf&#x27;: This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.</span><br></pre></td></tr></table></figure>
+
+<p>以下几种方法可以解决该问题：</p>
+<p>1.在文件开头添加 #define _CRT_SECURE_NO_WARNINGS</p>
+<p>例如</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="comment">//添加到头行,添加到stdio.h等头文件后还是会出警告的</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> str[<span class="number">256</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%255s&quot;</span>,str);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello World!\n&quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>,str);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.在 项目-&gt;属性-&gt;C&#x2F;C++-&gt;预处理器-&gt;预处理器定义中添加_CRT_SECURE_NO_WARNINGS</p>
+<p><img src="https://i.loli.net/2020/02/03/jA5Dc8NHRmSyntQ.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2020/02/03/djZsWhQHSpPoEAF.png" alt="image.png"></p>
 ]]></content>
       <categories>
-        <category>褶皱</category>
+        <category>VisualStudio</category>
       </categories>
       <tags>
-        <tag>构成课</tag>
-        <tag>Krenz</tag>
-        <tag>褶皱</tag>
-        <tag>负型</tag>
-        <tag>照片</tag>
-        <tag>贴图</tag>
-        <tag>技巧</tag>
+        <tag>VisualStudio</tag>
       </tags>
   </entry>
   <entry>
@@ -874,28 +896,6 @@
         <tag>WxWidgets</tag>
         <tag>GUI</tag>
         <tag>C++</tag>
-        <tag>VisualStudio</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VisualStudio学习笔记-报错-#include stdio.h的报错安全问题</title>
-    <url>/2020/02/03/VisualStudio%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8A%A5%E9%94%99-include-stdio-h%E7%9A%84%E6%8A%A5%E9%94%99%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>由于高版本的visual studio默认不让使用scanf等函数，认为这些函数不够安全，而其相对应的代替函数为scanf_s等。如果在visual studio中使用scanf等那些visual studio认为不安全的函数，就会报错。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;scanf&#x27;: This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.</span><br></pre></td></tr></table></figure>
-
-<p>以下几种方法可以解决该问题：</p>
-<p>1.在文件开头添加 #define _CRT_SECURE_NO_WARNINGS</p>
-<p>例如</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="comment">//添加到头行,添加到stdio.h等头文件后还是会出警告的</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> str[<span class="number">256</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%255s&quot;</span>,str);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello World!\n&quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>,str);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>2.在 项目-&gt;属性-&gt;C&#x2F;C++-&gt;预处理器-&gt;预处理器定义中添加_CRT_SECURE_NO_WARNINGS</p>
-<p><img src="https://i.loli.net/2020/02/03/jA5Dc8NHRmSyntQ.png" alt="image.png"></p>
-<p><img src="https://i.loli.net/2020/02/03/djZsWhQHSpPoEAF.png" alt="image.png"></p>
-]]></content>
-      <categories>
-        <category>VisualStudio</category>
-      </categories>
-      <tags>
         <tag>VisualStudio</tag>
       </tags>
   </entry>
@@ -1247,6 +1247,99 @@
       </tags>
   </entry>
   <entry>
+    <title>【hexo】【评论系统】【utterance】-hexo next搭建utterance评论系统</title>
+    <url>/2022/02/10/%E3%80%90hexo%E3%80%91%E3%80%90%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E3%80%91%E3%80%90utterance%E3%80%91-hexo-next%E6%90%AD%E5%BB%BAutterance%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<p>Hexo的Next主题搭建的博客内置了很多种评论系统，如：gitalk，changyan等。</p>
+<p><code>utterance</code>（<a href="https://utteranc.es/%EF%BC%89">https://utteranc.es/）</a></p>
+<p>支持Github账号登录后才能评论，原理就是使用了Github的Issues功能来保存评论。</p>
+<h2 id="1-创建GITHUB仓库"><a href="#1-创建GITHUB仓库" class="headerlink" title="1.创建GITHUB仓库"></a>1.创建GITHUB仓库</h2><p>utterance使用Github保存评论，那我们就需要创建一个<code>repository</code>专门保存评论</p>
+<h2 id="2-授权"><a href="#2-授权" class="headerlink" title="2.授权"></a>2.授权</h2><p>在博客页面上输入评论，utterance拿到这个评论后，自动的提交到上面刚创建仓库的Issues里。</p>
+<p>所以我们需要授权utterance应用能访问仓库的Issues。</p>
+<p>点击链接： <a href="https://github.com/apps/utterances">https://github.com/apps/utterances</a> ，如下图所示：</p>
+<p><img src="/images/Hexo/image-20220210150951212.png" alt="image-20220210150951212"></p>
+<h2 id="3-主题配置"><a href="#3-主题配置" class="headerlink" title="3.主题配置"></a>3.主题配置</h2><p>1.在主题的配置文件<code>_config.yml</code>文件中，加入如下配置</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 整合utterance评论</span></span><br><span class="line"><span class="attr">utterance:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment">#仓库名字，格式：你的用户ID/仓库名称，如：zhangsan/utterance_repo 下面是我的地址</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">Molers/BlogComment</span></span><br><span class="line">  <span class="comment">#主题</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="string">github-light</span></span><br><span class="line">  <span class="comment">#映射配置</span></span><br><span class="line">  <span class="attr">issue_term:</span> <span class="string">pathname</span></span><br></pre></td></tr></table></figure>
+
+<p>同时Comments的active项设置为utterance</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Multiple Comment System Support</span></span><br><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="comment"># Available values: tabs | buttons</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">tabs</span></span><br><span class="line">  <span class="comment"># Choose a comment system to be displayed by default.</span></span><br><span class="line">  <span class="comment"># Available values: changyan | disqus | disqusjs | gitalk | livere | valine</span></span><br><span class="line">  <span class="attr">active:</span> <span class="string">utterance</span></span><br></pre></td></tr></table></figure>
+
+<p>2.在主题的<code>layout\_third-party\comments</code>文件夹下，创建<code>utterance.swig</code>文件，添加如下内容：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> theme.<span class="property">utterance</span>.<span class="property">enable</span> %&#125;</span><br><span class="line">  &lt;script src=<span class="string">&quot;https://utteranc.es/client.js&quot;</span></span><br><span class="line">    repo=<span class="string">&quot;&#123;&#123; theme.utterance.repo &#125;&#125;&quot;</span></span><br><span class="line">    issue-term=<span class="string">&quot;&#123;&#123; theme.utterance.issue_term &#125;&#125;&quot;</span></span><br><span class="line">    theme=<span class="string">&quot;&#123;&#123; theme.utterance.theme &#125;&#125;&quot;</span></span><br><span class="line">    crossorigin=<span class="string">&quot;anonymous&quot;</span></span><br><span class="line">    <span class="keyword">async</span>&gt;</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> theme.<span class="property">utterance</span>.<span class="property">enable</span> %&#125;</span><br><span class="line">    &lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">        (<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="comment">// 匿名函数，防止污染全局变量</span></span><br><span class="line">            <span class="keyword">var</span> e = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;script&#x27;</span>);</span><br><span class="line">            e.<span class="property">type</span> = <span class="string">&#x27;text/javascript&#x27;</span>;</span><br><span class="line">            e.<span class="property">async</span> = <span class="literal">true</span>;</span><br><span class="line">            e.<span class="title function_">setAttribute</span>(<span class="string">&#x27;issue-term&#x27;</span>,<span class="string">&#x27;&#123;&#123; theme.utterance.issue_term &#125;&#125;&#x27;</span>)</span><br><span class="line">            e.<span class="title function_">setAttribute</span>(<span class="string">&#x27;theme&#x27;</span>,<span class="string">&#x27;&#123;&#123; theme.utterance.theme &#125;&#125;&#x27;</span>)</span><br><span class="line">            e.<span class="title function_">setAttribute</span>(<span class="string">&#x27;repo&#x27;</span>,<span class="string">&#x27;&#123;&#123; theme.utterance.repo &#125;&#125;&#x27;</span>)</span><br><span class="line">            e.<span class="property">crossorigin</span> = <span class="string">&#x27;anonymous&#x27;</span>;</span><br><span class="line">            e.<span class="property">src</span> = <span class="string">&#x27;https://utteranc.es/client.js&#x27;</span>;</span><br><span class="line">            <span class="comment">// content 是要插入评论的地方</span></span><br><span class="line">            <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;utterance-container&#x27;</span>).<span class="title function_">appendChild</span>(e);</span><br><span class="line">        &#125;)();</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3.编辑 <code>layout/_third-party/comments/index.swig</code>，添加以下配置加入 <code>utterance.swig</code> 文件：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;% include <span class="string">&#x27;utterance.swig&#x27;</span> %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4.编辑 <code>layout/_partials/comments.swig</code> 文件，加入以下内容：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&#123;% elseif theme.utterance.enable %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;comments&quot;</span> <span class="attr">id</span>=<span class="string">&quot;comments&quot;</span>&gt;</span></span><br><span class="line">      &#123;% include &#x27;../_third-party/comments/utterance.swig&#x27; %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/Hexo/image-20220210162522643.png" alt="image-20220210162522643"></p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>配置完成后，使用 <code>hexo clean &amp;&amp; hexo g</code> 重新生成页面。效果图如下：</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>github</tag>
+        <tag>博客</tag>
+        <tag>部署</tag>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【hexo】【问题】The mode argument must be integer. Received an instance of Object</title>
+    <url>/2022/02/09/%E3%80%90hexo%E3%80%91%E3%80%90%E9%97%AE%E9%A2%98%E3%80%91The-mode-argument-must-be-integer-Received-an-instance-of-Object/</url>
+    <content><![CDATA[<p>运行之后</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>之后出现的问题</p>
+<p>The mode argument must be integer. Received an instance of Object</p>
+<p><img src="/%5Cimages%5CHexo%5Cimage-20220209145022563.png" alt="image-20220209145022563"></p>
+<p>网上说Hexo -v查看一下Hexo的版本</p>
+<p>因为node.js和hexo存在版本适配的关系，所以当可能是一个版本过高一个版本过低导致的出现问题。</p>
+<p>解决这个问题可以将hexo更新至高版本，也可以重新安装一个低版本的node。</p>
+<h1 id="hexo升级"><a href="#hexo升级" class="headerlink" title="hexo升级"></a>hexo升级</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br><span class="line"></span><br><span class="line">hexo: 3.8.0</span><br><span class="line">hexo-cli: 4.3.0</span><br><span class="line">os: win32 10.0.19043</span><br><span class="line">node: 16.13.2</span><br><span class="line">v8: 9.4.146.24-node.14</span><br><span class="line">uv: 1.42.0</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">brotli: 1.0.9</span><br><span class="line">ares: 1.18.1</span><br><span class="line">modules: 93</span><br><span class="line">nghttp2: 1.45.1</span><br><span class="line">napi: 8</span><br><span class="line">llhttp: 6.0.4</span><br><span class="line">openssl: 1.1.1l+quic</span><br><span class="line">cldr: 39.0</span><br><span class="line">icu: 69.1</span><br><span class="line">tz: 2021a</span><br><span class="line">unicode: 13.0</span><br><span class="line">ngtcp2: 0.1.0-DEV</span><br><span class="line">nghttp3: 0.1.0-DEV</span><br></pre></td></tr></table></figure>
+
+<p>全局升级hexo-cli，先hexo version查看当前版本，然后npm install -g hexo-cli，再次hexo version查看是否升级成功。如果hexo不能直接识别运行，改为npx hexo。</p>
+<p>使用npm-check，检查系统中的插件是否有升级的。</p>
+<p>使用npm-upgrade，升级系统中的相关插件。</p>
+<p>npm update -g，检查升级npm本身。</p>
+<ol>
+<li><p>全局升级 hexo-cli</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>检查系统中的插件是否有升级的，可以看到自己前面都安装了那些插件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g npm-check</span><br><span class="line">npm-check</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>升级系统中的插件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g npm-upgrade</span><br><span class="line">npm-upgrade</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新全局包</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm update -g</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新生产环境依赖包</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm update --save</span><br></pre></td></tr></table></figure></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli #全局升级hexo</span><br><span class="line">hexo version  //查看当前版本，判断是否需要升级</span><br><span class="line"></span><br><span class="line">npm install -g npm-check //安装npm-check</span><br><span class="line">npm-check //查看系统插件是否需要升级</span><br><span class="line"></span><br><span class="line">npm install -g npm-upgrade //安装npm-upgrade</span><br><span class="line">npm-upgrade //更新package.json</span><br><span class="line">//在执行npm-upgrade命令后会要求输入yes或者no，直接输入Yes或Y即可</span><br><span class="line">npm update -g  //更新全局插件</span><br><span class="line">npm install -g npm //更新系统插件</span><br><span class="line"></span><br><span class="line">hexo clean #清理hexo数据并重新生成页面并部署</span><br><span class="line">hexo g -s</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo                      😎  MAJOR UP  Major update available. https://hexo.io/</span><br><span class="line">                                       npm install --save hexo@6.0.0 to go from 3.8.0 to 6.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo&#x27;) or import from &#x27;hexo&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo</span><br><span class="line"></span><br><span class="line">hexo-algolia              😟  MISSING!  Not installed.</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-algolia?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-algolia&#x27;) or import from &#x27;hexo-algolia&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-algolia</span><br><span class="line"></span><br><span class="line">hexo-deployer-git         😎  MAJOR UP  Major update available. https://hexo.io/</span><br><span class="line">                                       npm install --save hexo-deployer-git@3.0.0 to go from 0.3.1 to 3.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-deployer-git?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-deployer-git&#x27;) or import from &#x27;hexo-deployer-git&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-deployer-git</span><br><span class="line"></span><br><span class="line">hexo-generator-archive    😎  MAJOR UP  Major update available. http://hexo.io/</span><br><span class="line">                                       npm install --save hexo-generator-archive@1.0.0 to go from 0.1.5 to 1.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-generator-archive?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-generator-archive&#x27;) or import from &#x27;hexo-generator-archive&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-generator-archive</span><br><span class="line"></span><br><span class="line">hexo-generator-category   😎  MAJOR UP  Major update available. https://hexo.io/</span><br><span class="line">                                       npm install --save hexo-generator-category@1.0.0 to go from 0.1.3 to 1.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-generator-category?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-generator-category&#x27;) or import from &#x27;hexo-generator-category&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-generator-category</span><br><span class="line"></span><br><span class="line">hexo-generator-index      😎  MAJOR UP  Major update available. http://hexo.io/</span><br><span class="line">                                       npm install --save hexo-generator-index@2.0.0 to go from 0.2.1 to 2.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-generator-index?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-generator-index&#x27;) or import from &#x27;hexo-generator-index&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-generator-index</span><br><span class="line"></span><br><span class="line">hexo-generator-searchdb   😍  UPDATE!   Your local install is out of date. https://github.com/next-theme/hexo-generator-searchdb#readme</span><br><span class="line">                                       npm install --save hexo-generator-searchdb@1.4.0 to go from 1.2.0 to 1.4.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-generator-searchdb?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-generator-searchdb&#x27;) or import from &#x27;hexo-generator-searchdb&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-generator-searchdb</span><br><span class="line"></span><br><span class="line">hexo-generator-tag        😎  MAJOR UP  Major update available. http://hexo.io/</span><br><span class="line">                                       npm install --save hexo-generator-tag@1.0.0 to go from 0.2.0 to 1.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-generator-tag?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-generator-tag&#x27;) or import from &#x27;hexo-generator-tag&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-generator-tag</span><br><span class="line"></span><br><span class="line">hexo-pagination           😎  MAJOR UP  Major update available. https://hexo.io/</span><br><span class="line">                                       npm install --save hexo-pagination@2.0.0 to go from 0.1.0 to 2.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-pagination?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-pagination&#x27;) or import from &#x27;hexo-pagination&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-pagination</span><br><span class="line"></span><br><span class="line">hexo-renderer-ejs         😎  MAJOR UP  Major update available. https://github.com/hexojs/hexo-renderer-ejs#readme</span><br><span class="line">                                       npm install --save hexo-renderer-ejs@2.0.0 to go from 0.3.1 to 2.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-renderer-ejs?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-renderer-ejs&#x27;) or import from &#x27;hexo-renderer-ejs&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-renderer-ejs</span><br><span class="line"></span><br><span class="line">hexo-renderer-less        😎  MAJOR UP  Major update available. https://github.com/hexojs/hexo-renderer-less#readme</span><br><span class="line">                                       npm install --save hexo-renderer-less@4.0.0 to go from 0.2.0 to 4.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-renderer-less?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-renderer-less&#x27;) or import from &#x27;hexo-renderer-less&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-renderer-less</span><br><span class="line"></span><br><span class="line">hexo-renderer-marked      😎  MAJOR UP  Major update available. https://github.com/hexojs/hexo-renderer-marked#readme</span><br><span class="line">                                       npm install --save hexo-renderer-marked@5.0.0 to go from 0.3.2 to 5.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-renderer-marked?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-renderer-marked&#x27;) or import from &#x27;hexo-renderer-marked&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-renderer-marked</span><br><span class="line"></span><br><span class="line">hexo-renderer-stylus      😎  MAJOR UP  Major update available. https://github.com/hexojs/hexo-renderer-stylus#readme</span><br><span class="line">                                       npm install --save hexo-renderer-stylus@2.0.1 to go from 0.3.3 to 2.0.1</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-renderer-stylus?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-renderer-stylus&#x27;) or import from &#x27;hexo-renderer-stylus&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-renderer-stylus</span><br><span class="line"></span><br><span class="line">hexo-server               😎  MAJOR UP  Major update available. http://hexo.io/</span><br><span class="line">                                       npm install --save hexo-server@3.0.0 to go from 0.3.3 to 3.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-server?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-server&#x27;) or import from &#x27;hexo-server&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-server</span><br><span class="line"></span><br><span class="line">gulp                      😟  MISSING!  Not installed.</span><br><span class="line">                          😟  PKG ERR!  Not in the package.json. Found in: \themes\themes\next\gulpfile.coffee</span><br><span class="line"></span><br><span class="line">jshint-stylish            😟  MISSING!  Not installed.</span><br><span class="line">                          😟  PKG ERR!  Not in the package.json. Found in: \themes\themes\next\gulpfile.coffee</span><br><span class="line"></span><br><span class="line">js-yaml                   😟  PKG ERR!  Not in the package.json. Found in: \themes\themes\next\gulpfile.coffee</span><br><span class="line">                          😎  MAJOR UP  Major update available. https://github.com/nodeca/js-yaml#readme</span><br><span class="line">                                       npm install --save js-yaml@4.1.0 to go from 3.12.0 to 4.1.0</span><br><span class="line"></span><br><span class="line">hexo-util                 😟  PKG ERR!  Not in the package.json. Found in: \themes\themes\next\scripts\tags\exturl.js</span><br><span class="line">                          😎  MAJOR UP  Major update available. https://hexo.io/</span><br><span class="line">                                       npm install --save hexo-util@2.6.0 to go from 0.6.3 to 2.6.0</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>github</tag>
+        <tag>博客</tag>
+        <tag>部署</tag>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【理财】【30岁后，我靠投资生活2】读书笔记-1</title>
     <url>/2022/01/23/%E3%80%90%E7%90%86%E8%B4%A2%E3%80%91%E3%80%9030%E5%B2%81%E5%90%8E%EF%BC%8C%E6%88%91%E9%9D%A0%E6%8A%95%E8%B5%84%E7%94%9F%E6%B4%BB2%E3%80%91%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-1/</url>
     <content><![CDATA[<h1 id="1-关于钱"><a href="#1-关于钱" class="headerlink" title="1.关于钱"></a>1.关于钱</h1><p>传统行业与新兴行业、穷人与富人之间的财富差距越来越大,金融、IT从业高管一年赚的钱,制造业工人一辈子都赚不来。 </p>
@@ -1324,99 +1417,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【hexo】【评论系统】【utterance】-hexo next搭建utterance评论系统</title>
-    <url>/2022/02/10/%E3%80%90hexo%E3%80%91%E3%80%90%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E3%80%91%E3%80%90utterance%E3%80%91-hexo-next%E6%90%AD%E5%BB%BAutterance%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p>Hexo的Next主题搭建的博客内置了很多种评论系统，如：gitalk，changyan等。</p>
-<p><code>utterance</code>（<a href="https://utteranc.es/%EF%BC%89">https://utteranc.es/）</a></p>
-<p>支持Github账号登录后才能评论，原理就是使用了Github的Issues功能来保存评论。</p>
-<h2 id="1-创建GITHUB仓库"><a href="#1-创建GITHUB仓库" class="headerlink" title="1.创建GITHUB仓库"></a>1.创建GITHUB仓库</h2><p>utterance使用Github保存评论，那我们就需要创建一个<code>repository</code>专门保存评论</p>
-<h2 id="2-授权"><a href="#2-授权" class="headerlink" title="2.授权"></a>2.授权</h2><p>在博客页面上输入评论，utterance拿到这个评论后，自动的提交到上面刚创建仓库的Issues里。</p>
-<p>所以我们需要授权utterance应用能访问仓库的Issues。</p>
-<p>点击链接： <a href="https://github.com/apps/utterances">https://github.com/apps/utterances</a> ，如下图所示：</p>
-<p><img src="/%5Cimages%5CHexo%5Cimage-20220210150951212.png" alt="image-20220210150951212"></p>
-<h2 id="3-主题配置"><a href="#3-主题配置" class="headerlink" title="3.主题配置"></a>3.主题配置</h2><p>1.在主题的配置文件<code>_config.yml</code>文件中，加入如下配置</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 整合utterance评论</span></span><br><span class="line"><span class="attr">utterance:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment">#仓库名字，格式：你的用户ID/仓库名称，如：zhangsan/utterance_repo 下面是我的地址</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">Molers/BlogComment</span></span><br><span class="line">  <span class="comment">#主题</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="string">github-light</span></span><br><span class="line">  <span class="comment">#映射配置</span></span><br><span class="line">  <span class="attr">issue_term:</span> <span class="string">pathname</span></span><br></pre></td></tr></table></figure>
-
-<p>同时Comments的active项设置为utterance</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Multiple Comment System Support</span></span><br><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="comment"># Available values: tabs | buttons</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">tabs</span></span><br><span class="line">  <span class="comment"># Choose a comment system to be displayed by default.</span></span><br><span class="line">  <span class="comment"># Available values: changyan | disqus | disqusjs | gitalk | livere | valine</span></span><br><span class="line">  <span class="attr">active:</span> <span class="string">utterance</span></span><br></pre></td></tr></table></figure>
-
-<p>2.在主题的<code>layout\_third-party\comments</code>文件夹下，创建<code>utterance.swig</code>文件，添加如下内容：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> theme.<span class="property">utterance</span>.<span class="property">enable</span> %&#125;</span><br><span class="line">  &lt;script src=<span class="string">&quot;https://utteranc.es/client.js&quot;</span></span><br><span class="line">    repo=<span class="string">&quot;&#123;&#123; theme.utterance.repo &#125;&#125;&quot;</span></span><br><span class="line">    issue-term=<span class="string">&quot;&#123;&#123; theme.utterance.issue_term &#125;&#125;&quot;</span></span><br><span class="line">    theme=<span class="string">&quot;&#123;&#123; theme.utterance.theme &#125;&#125;&quot;</span></span><br><span class="line">    crossorigin=<span class="string">&quot;anonymous&quot;</span></span><br><span class="line">    <span class="keyword">async</span>&gt;</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>或者</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> theme.<span class="property">utterance</span>.<span class="property">enable</span> %&#125;</span><br><span class="line">    &lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">        (<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="comment">// 匿名函数，防止污染全局变量</span></span><br><span class="line">            <span class="keyword">var</span> e = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;script&#x27;</span>);</span><br><span class="line">            e.<span class="property">type</span> = <span class="string">&#x27;text/javascript&#x27;</span>;</span><br><span class="line">            e.<span class="property">async</span> = <span class="literal">true</span>;</span><br><span class="line">            e.<span class="title function_">setAttribute</span>(<span class="string">&#x27;issue-term&#x27;</span>,<span class="string">&#x27;&#123;&#123; theme.utterance.issue_term &#125;&#125;&#x27;</span>)</span><br><span class="line">            e.<span class="title function_">setAttribute</span>(<span class="string">&#x27;theme&#x27;</span>,<span class="string">&#x27;&#123;&#123; theme.utterance.theme &#125;&#125;&#x27;</span>)</span><br><span class="line">            e.<span class="title function_">setAttribute</span>(<span class="string">&#x27;repo&#x27;</span>,<span class="string">&#x27;&#123;&#123; theme.utterance.repo &#125;&#125;&#x27;</span>)</span><br><span class="line">            e.<span class="property">crossorigin</span> = <span class="string">&#x27;anonymous&#x27;</span>;</span><br><span class="line">            e.<span class="property">src</span> = <span class="string">&#x27;https://utteranc.es/client.js&#x27;</span>;</span><br><span class="line">            <span class="comment">// content 是要插入评论的地方</span></span><br><span class="line">            <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;utterance-container&#x27;</span>).<span class="title function_">appendChild</span>(e);</span><br><span class="line">        &#125;)();</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>3.编辑 <code>layout/_third-party/comments/index.swig</code>，添加以下配置加入 <code>utterance.swig</code> 文件：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;% include <span class="string">&#x27;utterance.swig&#x27;</span> %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>4.编辑 <code>layout/_partials/comments.swig</code> 文件，加入以下内容：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">&#123;% elseif theme.utterance.enable %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;comments&quot;</span> <span class="attr">id</span>=<span class="string">&quot;comments&quot;</span>&gt;</span></span><br><span class="line">      &#123;% include &#x27;../_third-party/comments/utterance.swig&#x27; %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/%5Cimages%5CHexo%5Cimage-20220210162522643.png" alt="image-20220210162522643"></p>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>配置完成后，使用 <code>hexo clean &amp;&amp; hexo g</code> 重新生成页面。效果图如下：</p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>github</tag>
-        <tag>博客</tag>
-        <tag>部署</tag>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【hexo】【问题】The mode argument must be integer. Received an instance of Object</title>
-    <url>/2022/02/09/%E3%80%90hexo%E3%80%91%E3%80%90%E9%97%AE%E9%A2%98%E3%80%91The-mode-argument-must-be-integer-Received-an-instance-of-Object/</url>
-    <content><![CDATA[<p>运行之后</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>之后出现的问题</p>
-<p>The mode argument must be integer. Received an instance of Object</p>
-<p><img src="/%5Cimages%5CHexo%5Cimage-20220209145022563.png" alt="image-20220209145022563"></p>
-<p>网上说Hexo -v查看一下Hexo的版本</p>
-<p>因为node.js和hexo存在版本适配的关系，所以当可能是一个版本过高一个版本过低导致的出现问题。</p>
-<p>解决这个问题可以将hexo更新至高版本，也可以重新安装一个低版本的node。</p>
-<h1 id="hexo升级"><a href="#hexo升级" class="headerlink" title="hexo升级"></a>hexo升级</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br><span class="line"></span><br><span class="line">hexo: 3.8.0</span><br><span class="line">hexo-cli: 4.3.0</span><br><span class="line">os: win32 10.0.19043</span><br><span class="line">node: 16.13.2</span><br><span class="line">v8: 9.4.146.24-node.14</span><br><span class="line">uv: 1.42.0</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">brotli: 1.0.9</span><br><span class="line">ares: 1.18.1</span><br><span class="line">modules: 93</span><br><span class="line">nghttp2: 1.45.1</span><br><span class="line">napi: 8</span><br><span class="line">llhttp: 6.0.4</span><br><span class="line">openssl: 1.1.1l+quic</span><br><span class="line">cldr: 39.0</span><br><span class="line">icu: 69.1</span><br><span class="line">tz: 2021a</span><br><span class="line">unicode: 13.0</span><br><span class="line">ngtcp2: 0.1.0-DEV</span><br><span class="line">nghttp3: 0.1.0-DEV</span><br></pre></td></tr></table></figure>
-
-<p>全局升级hexo-cli，先hexo version查看当前版本，然后npm install -g hexo-cli，再次hexo version查看是否升级成功。如果hexo不能直接识别运行，改为npx hexo。</p>
-<p>使用npm-check，检查系统中的插件是否有升级的。</p>
-<p>使用npm-upgrade，升级系统中的相关插件。</p>
-<p>npm update -g，检查升级npm本身。</p>
-<ol>
-<li><p>全局升级 hexo-cli</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>检查系统中的插件是否有升级的，可以看到自己前面都安装了那些插件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g npm-check</span><br><span class="line">npm-check</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>升级系统中的插件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g npm-upgrade</span><br><span class="line">npm-upgrade</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>更新全局包</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm update -g</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>更新生产环境依赖包</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm update --save</span><br></pre></td></tr></table></figure></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli #全局升级hexo</span><br><span class="line">hexo version  //查看当前版本，判断是否需要升级</span><br><span class="line"></span><br><span class="line">npm install -g npm-check //安装npm-check</span><br><span class="line">npm-check //查看系统插件是否需要升级</span><br><span class="line"></span><br><span class="line">npm install -g npm-upgrade //安装npm-upgrade</span><br><span class="line">npm-upgrade //更新package.json</span><br><span class="line">//在执行npm-upgrade命令后会要求输入yes或者no，直接输入Yes或Y即可</span><br><span class="line">npm update -g  //更新全局插件</span><br><span class="line">npm install -g npm //更新系统插件</span><br><span class="line"></span><br><span class="line">hexo clean #清理hexo数据并重新生成页面并部署</span><br><span class="line">hexo g -s</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo                      😎  MAJOR UP  Major update available. https://hexo.io/</span><br><span class="line">                                       npm install --save hexo@6.0.0 to go from 3.8.0 to 6.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo&#x27;) or import from &#x27;hexo&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo</span><br><span class="line"></span><br><span class="line">hexo-algolia              😟  MISSING!  Not installed.</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-algolia?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-algolia&#x27;) or import from &#x27;hexo-algolia&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-algolia</span><br><span class="line"></span><br><span class="line">hexo-deployer-git         😎  MAJOR UP  Major update available. https://hexo.io/</span><br><span class="line">                                       npm install --save hexo-deployer-git@3.0.0 to go from 0.3.1 to 3.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-deployer-git?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-deployer-git&#x27;) or import from &#x27;hexo-deployer-git&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-deployer-git</span><br><span class="line"></span><br><span class="line">hexo-generator-archive    😎  MAJOR UP  Major update available. http://hexo.io/</span><br><span class="line">                                       npm install --save hexo-generator-archive@1.0.0 to go from 0.1.5 to 1.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-generator-archive?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-generator-archive&#x27;) or import from &#x27;hexo-generator-archive&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-generator-archive</span><br><span class="line"></span><br><span class="line">hexo-generator-category   😎  MAJOR UP  Major update available. https://hexo.io/</span><br><span class="line">                                       npm install --save hexo-generator-category@1.0.0 to go from 0.1.3 to 1.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-generator-category?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-generator-category&#x27;) or import from &#x27;hexo-generator-category&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-generator-category</span><br><span class="line"></span><br><span class="line">hexo-generator-index      😎  MAJOR UP  Major update available. http://hexo.io/</span><br><span class="line">                                       npm install --save hexo-generator-index@2.0.0 to go from 0.2.1 to 2.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-generator-index?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-generator-index&#x27;) or import from &#x27;hexo-generator-index&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-generator-index</span><br><span class="line"></span><br><span class="line">hexo-generator-searchdb   😍  UPDATE!   Your local install is out of date. https://github.com/next-theme/hexo-generator-searchdb#readme</span><br><span class="line">                                       npm install --save hexo-generator-searchdb@1.4.0 to go from 1.2.0 to 1.4.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-generator-searchdb?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-generator-searchdb&#x27;) or import from &#x27;hexo-generator-searchdb&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-generator-searchdb</span><br><span class="line"></span><br><span class="line">hexo-generator-tag        😎  MAJOR UP  Major update available. http://hexo.io/</span><br><span class="line">                                       npm install --save hexo-generator-tag@1.0.0 to go from 0.2.0 to 1.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-generator-tag?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-generator-tag&#x27;) or import from &#x27;hexo-generator-tag&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-generator-tag</span><br><span class="line"></span><br><span class="line">hexo-pagination           😎  MAJOR UP  Major update available. https://hexo.io/</span><br><span class="line">                                       npm install --save hexo-pagination@2.0.0 to go from 0.1.0 to 2.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-pagination?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-pagination&#x27;) or import from &#x27;hexo-pagination&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-pagination</span><br><span class="line"></span><br><span class="line">hexo-renderer-ejs         😎  MAJOR UP  Major update available. https://github.com/hexojs/hexo-renderer-ejs#readme</span><br><span class="line">                                       npm install --save hexo-renderer-ejs@2.0.0 to go from 0.3.1 to 2.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-renderer-ejs?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-renderer-ejs&#x27;) or import from &#x27;hexo-renderer-ejs&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-renderer-ejs</span><br><span class="line"></span><br><span class="line">hexo-renderer-less        😎  MAJOR UP  Major update available. https://github.com/hexojs/hexo-renderer-less#readme</span><br><span class="line">                                       npm install --save hexo-renderer-less@4.0.0 to go from 0.2.0 to 4.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-renderer-less?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-renderer-less&#x27;) or import from &#x27;hexo-renderer-less&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-renderer-less</span><br><span class="line"></span><br><span class="line">hexo-renderer-marked      😎  MAJOR UP  Major update available. https://github.com/hexojs/hexo-renderer-marked#readme</span><br><span class="line">                                       npm install --save hexo-renderer-marked@5.0.0 to go from 0.3.2 to 5.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-renderer-marked?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-renderer-marked&#x27;) or import from &#x27;hexo-renderer-marked&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-renderer-marked</span><br><span class="line"></span><br><span class="line">hexo-renderer-stylus      😎  MAJOR UP  Major update available. https://github.com/hexojs/hexo-renderer-stylus#readme</span><br><span class="line">                                       npm install --save hexo-renderer-stylus@2.0.1 to go from 0.3.3 to 2.0.1</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-renderer-stylus?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-renderer-stylus&#x27;) or import from &#x27;hexo-renderer-stylus&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-renderer-stylus</span><br><span class="line"></span><br><span class="line">hexo-server               😎  MAJOR UP  Major update available. http://hexo.io/</span><br><span class="line">                                       npm install --save hexo-server@3.0.0 to go from 0.3.3 to 3.0.0</span><br><span class="line">                          😕  NOTUSED?  Still using hexo-server?</span><br><span class="line">                                       Depcheck did not find code similar to require(&#x27;hexo-server&#x27;) or import from &#x27;hexo-server&#x27;.</span><br><span class="line">                                       Check your code before removing as depcheck isn&#x27;t able to foresee all ways dependencies can be used.</span><br><span class="line">                                       Use --skip-unused to skip this check.</span><br><span class="line">                                       To remove this package: npm uninstall --save hexo-server</span><br><span class="line"></span><br><span class="line">gulp                      😟  MISSING!  Not installed.</span><br><span class="line">                          😟  PKG ERR!  Not in the package.json. Found in: \themes\themes\next\gulpfile.coffee</span><br><span class="line"></span><br><span class="line">jshint-stylish            😟  MISSING!  Not installed.</span><br><span class="line">                          😟  PKG ERR!  Not in the package.json. Found in: \themes\themes\next\gulpfile.coffee</span><br><span class="line"></span><br><span class="line">js-yaml                   😟  PKG ERR!  Not in the package.json. Found in: \themes\themes\next\gulpfile.coffee</span><br><span class="line">                          😎  MAJOR UP  Major update available. https://github.com/nodeca/js-yaml#readme</span><br><span class="line">                                       npm install --save js-yaml@4.1.0 to go from 3.12.0 to 4.1.0</span><br><span class="line"></span><br><span class="line">hexo-util                 😟  PKG ERR!  Not in the package.json. Found in: \themes\themes\next\scripts\tags\exturl.js</span><br><span class="line">                          😎  MAJOR UP  Major update available. https://hexo.io/</span><br><span class="line">                                       npm install --save hexo-util@2.6.0 to go from 0.6.3 to 2.6.0</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>github</tag>
-        <tag>博客</tag>
-        <tag>部署</tag>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【绘画】【排线】【结构】-排线中隐藏的秩序与结构</title>
     <url>/2022/01/20/%E3%80%90%E7%BB%98%E7%94%BB%E3%80%91%E3%80%90%E6%8E%92%E7%BA%BF%E3%80%91%E3%80%90%E7%BB%93%E6%9E%84%E3%80%91-%E6%8E%92%E7%BA%BF%E4%B8%AD%E9%9A%90%E8%97%8F%E7%9A%84%E7%A7%A9%E5%BA%8F%E4%B8%8E%E7%BB%93%E6%9E%84/</url>
     <content><![CDATA[]]></content>
@@ -1427,6 +1427,75 @@
         <tag>笔记</tag>
         <tag>排线</tag>
         <tag>结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【绘画】【林冉】-1.光影造型笔记</title>
+    <url>/2022/01/21/%E3%80%90%E7%BB%98%E7%94%BB%E3%80%91%E3%80%90%E6%9E%97%E5%86%89%E3%80%91-1-%E5%85%89%E5%BD%B1%E9%80%A0%E5%9E%8B%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>林冉的课B站就有录屏，信息量比较大，对我这种不是科班的绘画爱好者来说还挺有意思的，开阔眼界，做些笔记。</p>
+<h1 id="空间暗示-写实绘画的核心"><a href="#空间暗示-写实绘画的核心" class="headerlink" title="空间暗示(写实绘画的核心)"></a>空间暗示(写实绘画的核心)</h1><p>相比素描和水粉，水彩更能建立<strong>空间意识</strong>。</p>
+<p>对于写实绘画来说，空间的暗示是最重要的，空间的暗示越好，写实越成功。</p>
+<p>质感，光，体积都要存在在体系下面，空间的真实是前提的前提</p>
+<p>写实绘画的空间幻觉如果没有第一时间被认同，那么这张画很可能是一种强调平面的(没画好)。</p>
+<p><img src="/images/linran/2-%E7%BA%A6%E7%91%9F%E5%A4%AB%E6%B0%B4%E5%BD%A9.png" alt="2-约瑟夫水彩"></p>
+<p>对于绘画，分清那些是捷径，那些是要下功夫的。</p>
+<p>约瑟夫水彩的风格 连贯 概括省略 真实 代表了水彩最大的特点，有那么多相似的挑一个最具有代表性的人去学习，</p>
+<p><img src="/images/linran/3.png" alt="3"></p>
+<span id="more"></span>
+
+<h1 id="媒介本身的特性"><a href="#媒介本身的特性" class="headerlink" title="媒介本身的特性"></a>媒介本身的特性</h1><p>媒介本身尤其优点也有其缺点，比如铅笔擅长刻画结构和转折，不擅长渐变和铺大面积的调子</p>
+<p>水粉的优势是笔触和块面，用笔触去塑造块面和形体，笔触的堆叠向垒墙一样稳固，不足就是不够流动，不擅长描绘轻松的气氛</p>
+<h2 id="1-铅笔-捕捉物体的边缘-刻画细腻和颗粒的质感"><a href="#1-铅笔-捕捉物体的边缘-刻画细腻和颗粒的质感" class="headerlink" title="1.铅笔 捕捉物体的边缘 刻画细腻和颗粒的质感"></a>1.铅笔 捕捉物体的边缘 刻画细腻和颗粒的质感</h2><p>不足不善于大面积的调子和空间的渐变 很费力做出衰减</p>
+<h2 id="2-水粉-注重结构-擅长表现体积感，不擅长表现光感，油光的变化产生的气氛变化和空间的推移"><a href="#2-水粉-注重结构-擅长表现体积感，不擅长表现光感，油光的变化产生的气氛变化和空间的推移" class="headerlink" title="2.水粉(注重结构,擅长表现体积感，不擅长表现光感，油光的变化产生的气氛变化和空间的推移)"></a>2.水粉(注重结构,擅长表现体积感，不擅长表现光感，油光的变化产生的气氛变化和空间的推移)</h2><p>块面 用块面去塑造形体会很<strong>扎实</strong>，笔触的堆叠像垒砖块一样稳固</p>
+<p>中国高考和美院练习大多注重素描和水粉的体系，这就使得国内的大部分练习有别于欧美的水彩体系的画家</p>
+<p>媒介本身对于空间的表达至关重要，<strong>有善于表现空间的媒介，也有不善于表现空间的媒介</strong></p>
+<h1 id="宣传画与国内的美术教育-对形体的要求盖过了对色彩-空间的变化"><a href="#宣传画与国内的美术教育-对形体的要求盖过了对色彩-空间的变化" class="headerlink" title="宣传画与国内的美术教育(对形体的要求盖过了对色彩 空间的变化)"></a>宣传画与国内的美术教育(对形体的要求盖过了对色彩 空间的变化)</h1><p>建国之初需要很多宣传画，在宣传层面，苏联很有经验，建国之初引入了苏式教育的体系，培养自己宣传画的画家，因为宣传画需要画的很大，占满一大面墙等，因此很难顾及全局，因此宣传画的重点放到了人物上，也就是首先把人画对，人画扎实就算完成任务，没有经历去考虑十几米的空间推移，也就比较难以顾及色彩的冷暖渐变。</p>
+<p><img src="/images/linran/image-20220121164128788.png" alt="image-20220121164128788"></p>
+<p><img src="/images/linran/image-20220121164208705.png" alt="image-20220121164208705"></p>
+<p><img src="/images/linran/image-20220121164458708.png" alt="image-20220121164458708"></p>
+<p>宣传画的局部都很扎实，稳稳当当。</p>
+<p>苏派宣传画太大了，<strong>对形体的强调远远的盖过了色彩变化和气氛的讲究</strong>，历史某个时期某个原因的结果，早应该被改善</p>
+<h1 id="水粉体系和水彩体系-冷暖暗示空间"><a href="#水粉体系和水彩体系-冷暖暗示空间" class="headerlink" title="水粉体系和水彩体系(冷暖暗示空间)"></a>水粉体系和水彩体系(冷暖暗示空间)</h1><p>固有色的冷暖本身可以暗示空间，冷暖对于空间的暗示来讲是非常关键的</p>
+<p><img src="/%5Cimages%5Clinran%5Cimage-20220121164837878.png" alt="image-20220121164837878"></p>
+<p>左图中的形体和素描都很扎实，也有些微的冷暖变化，问题在于对于空间的暗示不足，左边的固有色“站”在原地，前后的距离感不强，像是平面画，固有色相似的物体，尽管在不同的前后位置，但是固有色的冷暖没有跟着空间变化，眯着眼抽象着看这些苹果像是在同一个平面上，没有空间的幻觉进而观众认为不太写实，简单来讲就是对于空间的暗示没有右图的水彩出色，失败点就在于观众的平面感&gt;空间感。</p>
+<p>![5-1 固有色的冷暖本身可以暗示空间](\images\linran\5-1 固有色的冷暖本身可以暗示空间.png)</p>
+<p>左图的水粉和右图的水彩就像是，说明文与散文的区别-水粉没有固有色的渐变，没有纵深感和冷暖的渐变</p>
+<p><img src="/%5Cimages%5Clinran%5Cimage-20220122163704201.png" alt="image-20220122163704201"></p>
+<p>而水彩使用冷暖表现空间，近处的暖色和远处的冷色的对比暗示了空间，不过比较微妙，只要有轮廓和转折的暗示，体积感就跃然纸上。</p>
+]]></content>
+      <categories>
+        <category>绘画笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>绘画</tag>
+        <tag>林冉</tag>
+        <tag>光影</tag>
+        <tag>水彩</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>三渲二优秀作品收藏</title>
+    <url>/2021/08/03/%E4%B8%89%E6%B8%B2%E4%BA%8C%E4%BC%98%E7%A7%80%E4%BD%9C%E5%93%81%E6%94%B6%E8%97%8F/</url>
+    <content><![CDATA[<h1 id="崩坏3一系列动画短片"><a href="#崩坏3一系列动画短片" class="headerlink" title="崩坏3一系列动画短片"></a>崩坏3一系列动画短片</h1><p><a href="https://www.bilibili.com/video/BV1b44y1q7Cb">《崩坏3》动画短片「薪炎永燃」</a></p>
+<p><a href="https://www.bilibili.com/video/BV1UT4y1J7xN">《崩坏3》动画短片「罪人挽歌」</a></p>
+<p>…</p>
+<p><a href="https://www.bilibili.com/video/av14899926/?spm_id_from=333.788.videocard.2">崩坏3 Reburn</a> </p>
+<p><a href="https://www.bilibili.com/video/av24149246?from=search&seid=1440576926855279637">《崩坏3》动画短片「女王降临」</a></p>
+<p><a href="https://www.bilibili.com/video/av38096452?from=search&seid=1440576926855279637">《崩坏3》动画短片「最后一课」</a></p>
+<h1 id="荼荼丸"><a href="#荼荼丸" class="headerlink" title="荼荼丸"></a><a href="https://space.bilibili.com/16#/album">荼荼丸</a></h1><p><a href="https://www.bilibili.com/video/av3905532">站娘Collection(上) </a>  <a href="https://www.bilibili.com/video/av8508056">站娘Collection(下)</a></p>
+<h1 id="暴雪-炉石传说"><a href="#暴雪-炉石传说" class="headerlink" title="暴雪:炉石传说"></a>暴雪:炉石传说</h1><p><a href="https://www.bilibili.com/video/av13737346">《炉石传说》动画短片：炉石与家</a></p>
+<h1 id="P9"><a href="#P9" class="headerlink" title="P9"></a>P9</h1><p><a href="https://www.bilibili.com/video/av20827366?from=search&seid=2021541699441635620">【2K&#x2F;60fps】这可能是我做过最美的miku了【boomclap布料解算版】</a></p>
+<h1 id="Mekia-水雾轻"><a href="#Mekia-水雾轻" class="headerlink" title="Mekia_水雾轻"></a><a href="https://space.bilibili.com/4899781">Mekia_水雾轻</a></h1><p><a href="https://www.bilibili.com/video/av34418604">【同人动画】车万雨中尬舞【还原向】</a> (鬼知道大佬到底在干什么系列</p>
+<h1 id="初音ミクMV"><a href="#初音ミクMV" class="headerlink" title="初音ミクMV"></a>初音ミクMV</h1><p><a href="https://www.bilibili.com/video/av3870978?from=search&seid=6804579639263412100">初音ミクlivetune feat「Redial」Music Video</a></p>
+<p><a href="https://www.bilibili.com/video/BV1Rs411i74e?from=search&seid=5595053105539732901">【初音ミク】随心所欲Mercy【八王子P】</a></p>
+]]></content>
+      <categories>
+        <category>卡通渲染</category>
+      </categories>
+      <tags>
+        <tag>卡通渲染</tag>
+        <tag>三渲二</tag>
       </tags>
   </entry>
   <entry>
@@ -1479,75 +1548,6 @@
       </categories>
       <tags>
         <tag>图像处理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【绘画】【林冉】-1.光影造型笔记</title>
-    <url>/2022/01/21/%E3%80%90%E7%BB%98%E7%94%BB%E3%80%91%E3%80%90%E6%9E%97%E5%86%89%E3%80%91-1-%E5%85%89%E5%BD%B1%E9%80%A0%E5%9E%8B%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>林冉的课B站就有录屏，信息量比较大，对我这种不是科班的绘画爱好者来说还挺有意思的，开阔眼界，做些笔记。</p>
-<h1 id="空间暗示-写实绘画的核心"><a href="#空间暗示-写实绘画的核心" class="headerlink" title="空间暗示(写实绘画的核心)"></a>空间暗示(写实绘画的核心)</h1><p>相比素描和水粉，水彩更能建立<strong>空间意识</strong>。</p>
-<p>对于写实绘画来说，空间的暗示是最重要的，空间的暗示越好，写实越成功。</p>
-<p>质感，光，体积都要存在在体系下面，空间的真实是前提的前提</p>
-<p>写实绘画的空间幻觉如果没有第一时间被认同，那么这张画很可能是一种强调平面的(没画好)。</p>
-<p><img src="/%5Cimages%5Clinran%5C2-%E7%BA%A6%E7%91%9F%E5%A4%AB%E6%B0%B4%E5%BD%A9.png" alt="2-约瑟夫水彩"></p>
-<p>对于绘画，分清那些是捷径，那些是要下功夫的。</p>
-<p>约瑟夫水彩的风格 连贯 概括省略 真实 代表了水彩最大的特点，有那么多相似的挑一个最具有代表性的人去学习，</p>
-<p><img src="/%5Cimages%5Clinran%5C3.png" alt="3"></p>
-<span id="more"></span>
-
-<h1 id="媒介本身的特性"><a href="#媒介本身的特性" class="headerlink" title="媒介本身的特性"></a>媒介本身的特性</h1><p>媒介本身尤其优点也有其缺点，比如铅笔擅长刻画结构和转折，不擅长渐变和铺大面积的调子</p>
-<p>水粉的优势是笔触和块面，用笔触去塑造块面和形体，笔触的堆叠向垒墙一样稳固，不足就是不够流动，不擅长描绘轻松的气氛</p>
-<h2 id="1-铅笔-捕捉物体的边缘-刻画细腻和颗粒的质感"><a href="#1-铅笔-捕捉物体的边缘-刻画细腻和颗粒的质感" class="headerlink" title="1.铅笔 捕捉物体的边缘 刻画细腻和颗粒的质感"></a>1.铅笔 捕捉物体的边缘 刻画细腻和颗粒的质感</h2><p>不足不善于大面积的调子和空间的渐变 很费力做出衰减</p>
-<h2 id="2-水粉-注重结构-擅长表现体积感，不擅长表现光感，油光的变化产生的气氛变化和空间的推移"><a href="#2-水粉-注重结构-擅长表现体积感，不擅长表现光感，油光的变化产生的气氛变化和空间的推移" class="headerlink" title="2.水粉(注重结构,擅长表现体积感，不擅长表现光感，油光的变化产生的气氛变化和空间的推移)"></a>2.水粉(注重结构,擅长表现体积感，不擅长表现光感，油光的变化产生的气氛变化和空间的推移)</h2><p>块面 用块面去塑造形体会很<strong>扎实</strong>，笔触的堆叠像垒砖块一样稳固</p>
-<p>中国高考和美院练习大多注重素描和水粉的体系，这就使得国内的大部分练习有别于欧美的水彩体系的画家</p>
-<p>媒介本身对于空间的表达至关重要，<strong>有善于表现空间的媒介，也有不善于表现空间的媒介</strong></p>
-<h1 id="宣传画与国内的美术教育-对形体的要求盖过了对色彩-空间的变化"><a href="#宣传画与国内的美术教育-对形体的要求盖过了对色彩-空间的变化" class="headerlink" title="宣传画与国内的美术教育(对形体的要求盖过了对色彩 空间的变化)"></a>宣传画与国内的美术教育(对形体的要求盖过了对色彩 空间的变化)</h1><p>建国之初需要很多宣传画，在宣传层面，苏联很有经验，建国之初引入了苏式教育的体系，培养自己宣传画的画家，因为宣传画需要画的很大，占满一大面墙等，因此很难顾及全局，因此宣传画的重点放到了人物上，也就是首先把人画对，人画扎实就算完成任务，没有经历去考虑十几米的空间推移，也就比较难以顾及色彩的冷暖渐变。</p>
-<p><img src="/%5Cimages%5Clinran%5Cimage-20220121164128788.png" alt="image-20220121164128788"></p>
-<p><img src="/%5Cimages%5Clinran%5Cimage-20220121164208705.png" alt="image-20220121164208705"></p>
-<p><img src="/%5Cimages%5Clinran%5Cimage-20220121164458708.png" alt="image-20220121164458708"></p>
-<p>宣传画的局部都很扎实，稳稳当当。</p>
-<p>苏派宣传画太大了，<strong>对形体的强调远远的盖过了色彩变化和气氛的讲究</strong>，历史某个时期某个原因的结果，早应该被改善</p>
-<h1 id="水粉体系和水彩体系-冷暖暗示空间"><a href="#水粉体系和水彩体系-冷暖暗示空间" class="headerlink" title="水粉体系和水彩体系(冷暖暗示空间)"></a>水粉体系和水彩体系(冷暖暗示空间)</h1><p>固有色的冷暖本身可以暗示空间，冷暖对于空间的暗示来讲是非常关键的</p>
-<p><img src="/%5Cimages%5Clinran%5Cimage-20220121164837878.png" alt="image-20220121164837878"></p>
-<p>左图中的形体和素描都很扎实，也有些微的冷暖变化，问题在于对于空间的暗示不足，左边的固有色“站”在原地，前后的距离感不强，像是平面画，固有色相似的物体，尽管在不同的前后位置，但是固有色的冷暖没有跟着空间变化，眯着眼抽象着看这些苹果像是在同一个平面上，没有空间的幻觉进而观众认为不太写实，简单来讲就是对于空间的暗示没有右图的水彩出色，失败点就在于观众的平面感&gt;空间感。</p>
-<p>![5-1 固有色的冷暖本身可以暗示空间](\images\linran\5-1 固有色的冷暖本身可以暗示空间.png)</p>
-<p>左图的水粉和右图的水彩就像是，说明文与散文的区别-水粉没有固有色的渐变，没有纵深感和冷暖的渐变</p>
-<p><img src="/%5Cimages%5Clinran%5Cimage-20220122163704201.png" alt="image-20220122163704201"></p>
-<p>而水彩使用冷暖表现空间，近处的暖色和远处的冷色的对比暗示了空间，不过比较微妙，只要有轮廓和转折的暗示，体积感就跃然纸上。</p>
-]]></content>
-      <categories>
-        <category>绘画笔记</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>绘画</tag>
-        <tag>林冉</tag>
-        <tag>光影</tag>
-        <tag>水彩</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>三渲二优秀作品收藏</title>
-    <url>/2021/08/03/%E4%B8%89%E6%B8%B2%E4%BA%8C%E4%BC%98%E7%A7%80%E4%BD%9C%E5%93%81%E6%94%B6%E8%97%8F/</url>
-    <content><![CDATA[<h1 id="崩坏3一系列动画短片"><a href="#崩坏3一系列动画短片" class="headerlink" title="崩坏3一系列动画短片"></a>崩坏3一系列动画短片</h1><p><a href="https://www.bilibili.com/video/BV1b44y1q7Cb">《崩坏3》动画短片「薪炎永燃」</a></p>
-<p><a href="https://www.bilibili.com/video/BV1UT4y1J7xN">《崩坏3》动画短片「罪人挽歌」</a></p>
-<p>…</p>
-<p><a href="https://www.bilibili.com/video/av14899926/?spm_id_from=333.788.videocard.2">崩坏3 Reburn</a> </p>
-<p><a href="https://www.bilibili.com/video/av24149246?from=search&seid=1440576926855279637">《崩坏3》动画短片「女王降临」</a></p>
-<p><a href="https://www.bilibili.com/video/av38096452?from=search&seid=1440576926855279637">《崩坏3》动画短片「最后一课」</a></p>
-<h1 id="荼荼丸"><a href="#荼荼丸" class="headerlink" title="荼荼丸"></a><a href="https://space.bilibili.com/16#/album">荼荼丸</a></h1><p><a href="https://www.bilibili.com/video/av3905532">站娘Collection(上) </a>  <a href="https://www.bilibili.com/video/av8508056">站娘Collection(下)</a></p>
-<h1 id="暴雪-炉石传说"><a href="#暴雪-炉石传说" class="headerlink" title="暴雪:炉石传说"></a>暴雪:炉石传说</h1><p><a href="https://www.bilibili.com/video/av13737346">《炉石传说》动画短片：炉石与家</a></p>
-<h1 id="P9"><a href="#P9" class="headerlink" title="P9"></a>P9</h1><p><a href="https://www.bilibili.com/video/av20827366?from=search&seid=2021541699441635620">【2K&#x2F;60fps】这可能是我做过最美的miku了【boomclap布料解算版】</a></p>
-<h1 id="Mekia-水雾轻"><a href="#Mekia-水雾轻" class="headerlink" title="Mekia_水雾轻"></a><a href="https://space.bilibili.com/4899781">Mekia_水雾轻</a></h1><p><a href="https://www.bilibili.com/video/av34418604">【同人动画】车万雨中尬舞【还原向】</a> (鬼知道大佬到底在干什么系列</p>
-<h1 id="初音ミクMV"><a href="#初音ミクMV" class="headerlink" title="初音ミクMV"></a>初音ミクMV</h1><p><a href="https://www.bilibili.com/video/av3870978?from=search&seid=6804579639263412100">初音ミクlivetune feat「Redial」Music Video</a></p>
-<p><a href="https://www.bilibili.com/video/BV1Rs411i74e?from=search&seid=5595053105539732901">【初音ミク】随心所欲Mercy【八王子P】</a></p>
-]]></content>
-      <categories>
-        <category>卡通渲染</category>
-      </categories>
-      <tags>
-        <tag>卡通渲染</tag>
-        <tag>三渲二</tag>
       </tags>
   </entry>
   <entry>
@@ -1684,7 +1684,7 @@
 <p>纯测光一般出现在室内的窗户 烛光</p>
 <p>顶光:正顶光，侧顶光  45度之上的光，45度以下为正面光，会照到人脸</p>
 <p><img src="https://i.loli.net/2020/02/01/iDSKt86MPgeZRsX.png" alt="AGA5`DL_J_FV`_NH7P70OUE.png"></p>
-<p>![&#96;@710CD27@<a href="mailto:&#95;&#53;&#x4f;&#x58;&#80;&#64;&#x5f;&#x46;&#55;&#x4c;&#x4c;&#84;&#85;&#x2e;&#112;&#110;&#x67;">&#95;&#53;&#x4f;&#x58;&#80;&#64;&#x5f;&#x46;&#55;&#x4c;&#x4c;&#84;&#85;&#x2e;&#112;&#110;&#x67;</a>](<a href="https://i.loli.net/2020/02/01/PxYeXIEkfaHRchA.png">https://i.loli.net/2020/02/01/PxYeXIEkfaHRchA.png</a>)</p>
+<p>![&#96;@710CD27@<a href="mailto:&#x5f;&#53;&#x4f;&#x58;&#x50;&#64;&#95;&#70;&#x37;&#x4c;&#76;&#84;&#85;&#46;&#112;&#110;&#x67;">&#x5f;&#53;&#x4f;&#x58;&#x50;&#64;&#95;&#70;&#x37;&#x4c;&#76;&#84;&#85;&#46;&#112;&#110;&#x67;</a>](<a href="https://i.loli.net/2020/02/01/PxYeXIEkfaHRchA.png">https://i.loli.net/2020/02/01/PxYeXIEkfaHRchA.png</a>)</p>
 <p>顶光-神秘感，庄严，一般不用</p>
 <p>正顶光:详细表现一个角色，一般立绘用这种光，只画投影，韩系，说明性光源</p>
 <p>顶光</p>
@@ -1784,48 +1784,22 @@
       </tags>
   </entry>
   <entry>
-    <title>共形几何第四节-不动点，庞加莱-霍普斯定理</title>
-    <url>/2020/08/14/%E5%85%B1%E5%BD%A2%E5%87%A0%E4%BD%95%E7%AC%AC%E5%9B%9B%E8%8A%82-%E4%B8%8D%E5%8A%A8%E7%82%B9%EF%BC%8C%E5%BA%9E%E5%8A%A0%E8%8E%B1-%E9%9C%8D%E6%99%AE%E6%96%AF%E5%AE%9A%E7%90%86/</url>
-    <content><![CDATA[<h2 id="布劳威尔-Brouwer-不动点理论"><a href="#布劳威尔-Brouwer-不动点理论" class="headerlink" title="布劳威尔(Brouwer)不动点理论"></a>布劳威尔(Brouwer)不动点理论</h2><p><img src="/images/image-20200814210228342.png" alt="image-20200814210228342"></p>
-<p><strong>对于一个拓扑空间中满足一定条件的连续函数f，存在一个点x0，使得f(x0) &#x3D; x0。</strong></p>
-<p>这个定理可以通过很实际的例子来理解。比如：取两张一样大小的白纸，在上面画好垂直的坐标系以及纵横的方格。将一张纸平铺在桌面，而另外一张随意揉成一个形状（但不能撕裂），放在第一张白纸之上，不超出第一张的边界。那么第二张纸上一定有一点正好就在第一张纸的对应点的正上方。一个更简单的说法是：将一张白纸平铺在桌面上，再将它揉成一团（不撕裂），放在原来白纸所在的地方，那么只要它不超出原来白纸平铺时的边界，那么白纸上一定有一点在水平方向上没有移动过。</p>
-<p>这个断言的根据就是布劳威尔不动点定理在二维欧几里得空间（欧几里得平面）的情况，因为把纸揉皱是一个连续的变换过程。</p>
-<p>另一个例子是大商场等地方可以看到的平面地图，上面标有“您在此处”的红点。如果标注足够精确，那么这个点就是把实际地形射到地图的连续函数的不动点。</p>
-<p>地球绕着它的自转轴自转。自转轴在自转过程中是不变的，也就是自转运动的不动点</p>
-<p>如果我们用一个密封的锅子煮水，那么总有一个水分子在煮开前的某一刻和煮开后的某一刻处于同样的位置。</p>
-<span id="more"></span>
+    <title>光线跟踪算法技术阅读笔记-一.光线跟踪器和程序设计</title>
+    <url>/2019/12/25/%E5%85%89%E7%BA%BF%E8%B7%9F%E8%B8%AA%E7%AE%97%E6%B3%95%E6%8A%80%E6%9C%AF%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0-%E4%B8%80-%E5%85%89%E8%B7%9F%E8%B8%AA%E5%99%A8%E5%92%8C%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/</url>
+    <content><![CDATA[<h2 id="相关书籍"><a href="#相关书籍" class="headerlink" title="相关书籍"></a>相关书籍</h2><p>C++ : </p>
+<h2 id="光线跟踪V1-版本①-最简单的框架"><a href="#光线跟踪V1-版本①-最简单的框架" class="headerlink" title="光线跟踪V1(版本①):最简单的框架"></a>光线跟踪V1(版本①):最简单的框架</h2><p>根据书的顺序把源程序列出来，一个光线跟踪最简单最基本的场景</p>
+<p><img src="/images/%E5%85%89%E7%BA%BF%E8%B7%9F%E8%B8%AA%E6%9C%80%E5%9F%BA%E6%9C%AC%E5%9C%BA%E6%99%AF.png" alt="光线跟踪最基本场景"></p>
+<h3 id="Ray-h-光线-工具类"><a href="#Ray-h-光线-工具类" class="headerlink" title="Ray.h 光线_工具类"></a>Ray.h 光线_工具类</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> _RAY_</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _RAY_</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;Point3D.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;Vector3D.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Ray</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		Point3D o;<span class="comment">//origin 光线发射点</span></span><br><span class="line">		Vector3D d;<span class="comment">// direction 朝向 用向量定义 </span></span><br><span class="line">		<span class="built_in">Ray</span>(<span class="type">void</span>); <span class="comment">//default constructor  默认构造函数 </span></span><br><span class="line">		<span class="built_in">Ray</span>(<span class="type">const</span> Point3D &amp;origin, <span class="type">const</span> Vector3D &amp;dir);<span class="comment">//constructor 构造函数重写 </span></span><br><span class="line">		<span class="built_in">Ray</span>(<span class="type">const</span> Ray&amp; ray);<span class="comment">// copy constructor //复制构造函数</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		Ray&amp;<span class="comment">//assignment operator 赋值运算符</span></span><br><span class="line">			<span class="keyword">operator</span>=(<span class="type">const</span> Ray&amp; rhs);</span><br><span class="line">		~<span class="built_in">Ray</span>(<span class="type">void</span>);<span class="comment">//destructor 析构函数</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
 
-
-
-<p><a href="https://www.youtube.com/watch?v=tN5VHfu0Svg">拓扑学，布劳威尔不动点定理得直观和直接的证明</a></p>
-<h2 id="Lefschetz-莱夫谢茨不动点定理"><a href="#Lefschetz-莱夫谢茨不动点定理" class="headerlink" title="(Lefschetz)莱夫谢茨不动点定理"></a>(Lefschetz)莱夫谢茨不动点定理</h2><p>布劳威尔不动点定理是莱夫谢茨不动点定理的特例。</p>
-<p>莱夫谢茨不动点定理是布劳威尔不动点定理的推广。</p>
-<p><strong>设|K|为有限多面体，f:|K|→|K|为<a href="https://baike.baidu.com/item/%E8%BF%9E%E7%BB%AD%E6%98%A0%E5%B0%84/18916806">连续映射</a>，若f的莱夫谢茨数L(f)≠0，则f有不动点。</strong></p>
-<p><img src="/images/image-20200814212216708.png" alt="image-20200814212216708"></p>
-<h2 id="孤立零点"><a href="#孤立零点" class="headerlink" title="孤立零点"></a>孤立零点</h2><p><img src="/images/image-20200814215147535.png" alt="image-20200814215147535"></p>
-<h2 id="零点的指标"><a href="#零点的指标" class="headerlink" title="零点的指标"></a>零点的指标</h2><p><img src="/images/image-20200814215339484.png" alt="image-20200814215339484"></p>
-<p><img src="/images/image-20200814215849072.png" alt="image-20200814215849072"></p>
-<h2 id="庞加莱-霍普夫-Poincare-Hopf-定理"><a href="#庞加莱-霍普夫-Poincare-Hopf-定理" class="headerlink" title="**庞加莱-霍普夫(Poincaré-Hopf)**定理"></a>**庞加莱-霍普夫(Poincaré-Hopf)**定理</h2><p><strong>庞加莱-霍普夫(Poincaré-Hopf)<strong>定理(也称为</strong>庞加莱-霍普夫指标定理</strong>，<strong>庞加莱-霍普夫指标公式</strong>，或<strong>霍普夫指标定理</strong>)是<a href="http://www.wanweibaike.com/wiki-%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91">微分拓扑</a>的重要定理。</p>
-<p><img src="/images/image-20200817154608848.png" alt="image-20200817154608848"></p>
-<p><img src="/images/image-20200817154717789.png" alt="image-20200817154717789"></p>
-<p><img src="/images/image-20200817154728479.png" alt="image-20200817154728479"></p>
-<p><img src="/images/image-20200817154838430.png" alt="image-20200817154838430"></p>
-<p><img src="/images/image-20200817154846239.png" alt="image-20200817154846239"></p>
-<p><img src="/images/image-20200817160912089.png" alt="image-20200817160912089"></p>
-<h2 id="流形"><a href="#流形" class="headerlink" title="流形"></a>流形</h2><p><img src="/images/image-20200817161215934.png" alt="image-20200817161215934"></p>
-<p><img src="/images/image-20200817165012506.png" alt="image-20200817165012506"></p>
-<p><img src="/images/image-20200817165036534.png" alt="image-20200817165036534"></p>
-<p><img src="/images/image-20200817165115345.png" alt="image-20200817165115345"></p>
-<p><img src="/images/image-20200817165341939.png" alt="image-20200817165341939"></p>
-<p><img src="/images/image-20200817170346054.png" alt="image-20200817170346054"></p>
 ]]></content>
       <categories>
-        <category>共形几何</category>
+        <category>光线跟踪</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>共形几何</tag>
-        <tag>微分流形</tag>
+        <tag>程序设计</tag>
+        <tag>阅读笔记</tag>
+        <tag>命名规范</tag>
+        <tag>光线跟踪器</tag>
       </tags>
   </entry>
   <entry>
@@ -1979,22 +1953,48 @@
       </tags>
   </entry>
   <entry>
-    <title>光线跟踪算法技术阅读笔记-一.光线跟踪器和程序设计</title>
-    <url>/2019/12/25/%E5%85%89%E7%BA%BF%E8%B7%9F%E8%B8%AA%E7%AE%97%E6%B3%95%E6%8A%80%E6%9C%AF%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0-%E4%B8%80-%E5%85%89%E8%B7%9F%E8%B8%AA%E5%99%A8%E5%92%8C%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/</url>
-    <content><![CDATA[<h2 id="相关书籍"><a href="#相关书籍" class="headerlink" title="相关书籍"></a>相关书籍</h2><p>C++ : </p>
-<h2 id="光线跟踪V1-版本①-最简单的框架"><a href="#光线跟踪V1-版本①-最简单的框架" class="headerlink" title="光线跟踪V1(版本①):最简单的框架"></a>光线跟踪V1(版本①):最简单的框架</h2><p>根据书的顺序把源程序列出来，一个光线跟踪最简单最基本的场景</p>
-<p><img src="/images/%E5%85%89%E7%BA%BF%E8%B7%9F%E8%B8%AA%E6%9C%80%E5%9F%BA%E6%9C%AC%E5%9C%BA%E6%99%AF.png" alt="光线跟踪最基本场景"></p>
-<h3 id="Ray-h-光线-工具类"><a href="#Ray-h-光线-工具类" class="headerlink" title="Ray.h 光线_工具类"></a>Ray.h 光线_工具类</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> _RAY_</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _RAY_</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;Point3D.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;Vector3D.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Ray</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		Point3D o;<span class="comment">//origin 光线发射点</span></span><br><span class="line">		Vector3D d;<span class="comment">// direction 朝向 用向量定义 </span></span><br><span class="line">		<span class="built_in">Ray</span>(<span class="type">void</span>); <span class="comment">//default constructor  默认构造函数 </span></span><br><span class="line">		<span class="built_in">Ray</span>(<span class="type">const</span> Point3D &amp;origin, <span class="type">const</span> Vector3D &amp;dir);<span class="comment">//constructor 构造函数重写 </span></span><br><span class="line">		<span class="built_in">Ray</span>(<span class="type">const</span> Ray&amp; ray);<span class="comment">// copy constructor //复制构造函数</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		Ray&amp;<span class="comment">//assignment operator 赋值运算符</span></span><br><span class="line">			<span class="keyword">operator</span>=(<span class="type">const</span> Ray&amp; rhs);</span><br><span class="line">		~<span class="built_in">Ray</span>(<span class="type">void</span>);<span class="comment">//destructor 析构函数</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+    <title>共形几何第四节-不动点，庞加莱-霍普斯定理</title>
+    <url>/2020/08/14/%E5%85%B1%E5%BD%A2%E5%87%A0%E4%BD%95%E7%AC%AC%E5%9B%9B%E8%8A%82-%E4%B8%8D%E5%8A%A8%E7%82%B9%EF%BC%8C%E5%BA%9E%E5%8A%A0%E8%8E%B1-%E9%9C%8D%E6%99%AE%E6%96%AF%E5%AE%9A%E7%90%86/</url>
+    <content><![CDATA[<h2 id="布劳威尔-Brouwer-不动点理论"><a href="#布劳威尔-Brouwer-不动点理论" class="headerlink" title="布劳威尔(Brouwer)不动点理论"></a>布劳威尔(Brouwer)不动点理论</h2><p><img src="/images/image-20200814210228342.png" alt="image-20200814210228342"></p>
+<p><strong>对于一个拓扑空间中满足一定条件的连续函数f，存在一个点x0，使得f(x0) &#x3D; x0。</strong></p>
+<p>这个定理可以通过很实际的例子来理解。比如：取两张一样大小的白纸，在上面画好垂直的坐标系以及纵横的方格。将一张纸平铺在桌面，而另外一张随意揉成一个形状（但不能撕裂），放在第一张白纸之上，不超出第一张的边界。那么第二张纸上一定有一点正好就在第一张纸的对应点的正上方。一个更简单的说法是：将一张白纸平铺在桌面上，再将它揉成一团（不撕裂），放在原来白纸所在的地方，那么只要它不超出原来白纸平铺时的边界，那么白纸上一定有一点在水平方向上没有移动过。</p>
+<p>这个断言的根据就是布劳威尔不动点定理在二维欧几里得空间（欧几里得平面）的情况，因为把纸揉皱是一个连续的变换过程。</p>
+<p>另一个例子是大商场等地方可以看到的平面地图，上面标有“您在此处”的红点。如果标注足够精确，那么这个点就是把实际地形射到地图的连续函数的不动点。</p>
+<p>地球绕着它的自转轴自转。自转轴在自转过程中是不变的，也就是自转运动的不动点</p>
+<p>如果我们用一个密封的锅子煮水，那么总有一个水分子在煮开前的某一刻和煮开后的某一刻处于同样的位置。</p>
+<span id="more"></span>
 
+
+
+<p><a href="https://www.youtube.com/watch?v=tN5VHfu0Svg">拓扑学，布劳威尔不动点定理得直观和直接的证明</a></p>
+<h2 id="Lefschetz-莱夫谢茨不动点定理"><a href="#Lefschetz-莱夫谢茨不动点定理" class="headerlink" title="(Lefschetz)莱夫谢茨不动点定理"></a>(Lefschetz)莱夫谢茨不动点定理</h2><p>布劳威尔不动点定理是莱夫谢茨不动点定理的特例。</p>
+<p>莱夫谢茨不动点定理是布劳威尔不动点定理的推广。</p>
+<p><strong>设|K|为有限多面体，f:|K|→|K|为<a href="https://baike.baidu.com/item/%E8%BF%9E%E7%BB%AD%E6%98%A0%E5%B0%84/18916806">连续映射</a>，若f的莱夫谢茨数L(f)≠0，则f有不动点。</strong></p>
+<p><img src="/images/image-20200814212216708.png" alt="image-20200814212216708"></p>
+<h2 id="孤立零点"><a href="#孤立零点" class="headerlink" title="孤立零点"></a>孤立零点</h2><p><img src="/images/image-20200814215147535.png" alt="image-20200814215147535"></p>
+<h2 id="零点的指标"><a href="#零点的指标" class="headerlink" title="零点的指标"></a>零点的指标</h2><p><img src="/images/image-20200814215339484.png" alt="image-20200814215339484"></p>
+<p><img src="/images/image-20200814215849072.png" alt="image-20200814215849072"></p>
+<h2 id="庞加莱-霍普夫-Poincare-Hopf-定理"><a href="#庞加莱-霍普夫-Poincare-Hopf-定理" class="headerlink" title="**庞加莱-霍普夫(Poincaré-Hopf)**定理"></a>**庞加莱-霍普夫(Poincaré-Hopf)**定理</h2><p><strong>庞加莱-霍普夫(Poincaré-Hopf)<strong>定理(也称为</strong>庞加莱-霍普夫指标定理</strong>，<strong>庞加莱-霍普夫指标公式</strong>，或<strong>霍普夫指标定理</strong>)是<a href="http://www.wanweibaike.com/wiki-%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91">微分拓扑</a>的重要定理。</p>
+<p><img src="/images/image-20200817154608848.png" alt="image-20200817154608848"></p>
+<p><img src="/images/image-20200817154717789.png" alt="image-20200817154717789"></p>
+<p><img src="/images/image-20200817154728479.png" alt="image-20200817154728479"></p>
+<p><img src="/images/image-20200817154838430.png" alt="image-20200817154838430"></p>
+<p><img src="/images/image-20200817154846239.png" alt="image-20200817154846239"></p>
+<p><img src="/images/image-20200817160912089.png" alt="image-20200817160912089"></p>
+<h2 id="流形"><a href="#流形" class="headerlink" title="流形"></a>流形</h2><p><img src="/images/image-20200817161215934.png" alt="image-20200817161215934"></p>
+<p><img src="/images/image-20200817165012506.png" alt="image-20200817165012506"></p>
+<p><img src="/images/image-20200817165036534.png" alt="image-20200817165036534"></p>
+<p><img src="/images/image-20200817165115345.png" alt="image-20200817165115345"></p>
+<p><img src="/images/image-20200817165341939.png" alt="image-20200817165341939"></p>
+<p><img src="/images/image-20200817170346054.png" alt="image-20200817170346054"></p>
 ]]></content>
       <categories>
-        <category>光线跟踪</category>
+        <category>共形几何</category>
       </categories>
       <tags>
-        <tag>程序设计</tag>
-        <tag>阅读笔记</tag>
-        <tag>命名规范</tag>
-        <tag>光线跟踪器</tag>
+        <tag>笔记</tag>
+        <tag>共形几何</tag>
+        <tag>微分流形</tag>
       </tags>
   </entry>
   <entry>
@@ -2037,6 +2037,51 @@
         <tag>Phong</tag>
         <tag>Blinn-Phong</tag>
         <tag>光照模型</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图形学基础-漫反射，高光，环境光</title>
+    <url>/2021/06/30/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E6%BC%AB%E5%8F%8D%E5%B0%84%EF%BC%8C%E9%AB%98%E5%85%89%EF%BC%8C%E7%8E%AF%E5%A2%83%E5%85%89/</url>
+    <content><![CDATA[<h1 id="光的能量衰减"><a href="#光的能量衰减" class="headerlink" title="光的能量衰减"></a>光的能量衰减</h1><p><img src="/images/image-20210630155513283.png" alt="image-20210630155513283"></p>
+<h1 id="漫反射计算公式"><a href="#漫反射计算公式" class="headerlink" title="漫反射计算公式"></a>漫反射计算公式</h1><p><img src="/images/image-20210630155610575.png" alt="image-20210630155610575"></p>
+<h1 id="高光：观测所得，观测方向接近反射方向"><a href="#高光：观测所得，观测方向接近反射方向" class="headerlink" title="高光：观测所得，观测方向接近反射方向"></a>高光：观测所得，观测方向接近反射方向</h1><p>半程向量h接近于法线方向也是  点乘（两个向量点乘为1的时候接近）越大，说明夹角越小（反射光越接近光的颜色） </p>
+<p><img src="/images/image-20210630155637670.png" alt="image-20210630155637670"></p>
+<p>这里指数p一般在100到200，因为高光只有一点点 </p>
+<p><img src="/images/image-20210630155650578.png" alt="image-20210630155650578"></p>
+<h1 id="环境光"><a href="#环境光" class="headerlink" title="环境光"></a>环境光</h1><p>简化为环境光都是一样的，即 </p>
+<p><img src="/images/image-20210630155718178.png" alt="image-20210630155718178"></p>
+<h1 id="Blinn-Phong光照模型"><a href="#Blinn-Phong光照模型" class="headerlink" title="Blinn-Phong光照模型"></a>Blinn-Phong光照模型</h1><p>就在在每个像素上把环境光，漫反射，高光加起来 </p>
+<p><img src="/images/image-20210630155803989.png" alt="image-20210630155803989"></p>
+]]></content>
+      <categories>
+        <category>图形学基础</category>
+      </categories>
+      <tags>
+        <tag>图形学</tag>
+        <tag>Phong</tag>
+        <tag>Blinn-Phong</tag>
+        <tag>光照模型</tag>
+        <tag>漫反射</tag>
+        <tag>高光</tag>
+        <tag>环境光</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图形学基础-辐射度方法</title>
+    <url>/2021/07/03/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E8%BE%90%E5%B0%84%E5%BA%A6%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="蒙特卡洛方法的缺点"><a href="#蒙特卡洛方法的缺点" class="headerlink" title="蒙特卡洛方法的缺点"></a>蒙特卡洛方法的缺点</h1><p>全局光照技术都是基于蒙特卡洛方法的算法， 不同的是三种方法路径追踪，光子映射，梅特波利斯光照传输，使用不同的概率密度函数，但是缺点是</p>
+<p>1.蒙特卡洛方法存在<strong>严重的噪点</strong></p>
+<p>2.需要有<strong>大量的样本</strong>来收敛到真实值</p>
+<p>其结果就导致蒙特卡洛基于概率计算的收敛方法<strong>时间成本非常高</strong></p>
+<h1 id="近似模型与近似方法"><a href="#近似模型与近似方法" class="headerlink" title="近似模型与近似方法"></a>近似模型与近似方法</h1><p>对于近似方法，需要分析其忽略了哪些因素，以及对那一部分进行了优化，这些近似和忽略的部分也是变种算法需要改进的地方。</p>
+]]></content>
+      <categories>
+        <category>图形学</category>
+      </categories>
+      <tags>
+        <tag>图形学</tag>
+        <tag>辐射度学</tag>
+        <tag>蒙特卡洛</tag>
       </tags>
   </entry>
   <entry>
@@ -2096,51 +2141,6 @@
       </tags>
   </entry>
   <entry>
-    <title>图形学基础-辐射度方法</title>
-    <url>/2021/07/03/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E8%BE%90%E5%B0%84%E5%BA%A6%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="蒙特卡洛方法的缺点"><a href="#蒙特卡洛方法的缺点" class="headerlink" title="蒙特卡洛方法的缺点"></a>蒙特卡洛方法的缺点</h1><p>全局光照技术都是基于蒙特卡洛方法的算法， 不同的是三种方法路径追踪，光子映射，梅特波利斯光照传输，使用不同的概率密度函数，但是缺点是</p>
-<p>1.蒙特卡洛方法存在<strong>严重的噪点</strong></p>
-<p>2.需要有<strong>大量的样本</strong>来收敛到真实值</p>
-<p>其结果就导致蒙特卡洛基于概率计算的收敛方法<strong>时间成本非常高</strong></p>
-<h1 id="近似模型与近似方法"><a href="#近似模型与近似方法" class="headerlink" title="近似模型与近似方法"></a>近似模型与近似方法</h1><p>对于近似方法，需要分析其忽略了哪些因素，以及对那一部分进行了优化，这些近似和忽略的部分也是变种算法需要改进的地方。</p>
-]]></content>
-      <categories>
-        <category>图形学</category>
-      </categories>
-      <tags>
-        <tag>图形学</tag>
-        <tag>辐射度学</tag>
-        <tag>蒙特卡洛</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图形学基础-漫反射，高光，环境光</title>
-    <url>/2021/06/30/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E6%BC%AB%E5%8F%8D%E5%B0%84%EF%BC%8C%E9%AB%98%E5%85%89%EF%BC%8C%E7%8E%AF%E5%A2%83%E5%85%89/</url>
-    <content><![CDATA[<h1 id="光的能量衰减"><a href="#光的能量衰减" class="headerlink" title="光的能量衰减"></a>光的能量衰减</h1><p><img src="/images/image-20210630155513283.png" alt="image-20210630155513283"></p>
-<h1 id="漫反射计算公式"><a href="#漫反射计算公式" class="headerlink" title="漫反射计算公式"></a>漫反射计算公式</h1><p><img src="/images/image-20210630155610575.png" alt="image-20210630155610575"></p>
-<h1 id="高光：观测所得，观测方向接近反射方向"><a href="#高光：观测所得，观测方向接近反射方向" class="headerlink" title="高光：观测所得，观测方向接近反射方向"></a>高光：观测所得，观测方向接近反射方向</h1><p>半程向量h接近于法线方向也是  点乘（两个向量点乘为1的时候接近）越大，说明夹角越小（反射光越接近光的颜色） </p>
-<p><img src="/images/image-20210630155637670.png" alt="image-20210630155637670"></p>
-<p>这里指数p一般在100到200，因为高光只有一点点 </p>
-<p><img src="/images/image-20210630155650578.png" alt="image-20210630155650578"></p>
-<h1 id="环境光"><a href="#环境光" class="headerlink" title="环境光"></a>环境光</h1><p>简化为环境光都是一样的，即 </p>
-<p><img src="/images/image-20210630155718178.png" alt="image-20210630155718178"></p>
-<h1 id="Blinn-Phong光照模型"><a href="#Blinn-Phong光照模型" class="headerlink" title="Blinn-Phong光照模型"></a>Blinn-Phong光照模型</h1><p>就在在每个像素上把环境光，漫反射，高光加起来 </p>
-<p><img src="/images/image-20210630155803989.png" alt="image-20210630155803989"></p>
-]]></content>
-      <categories>
-        <category>图形学基础</category>
-      </categories>
-      <tags>
-        <tag>图形学</tag>
-        <tag>Phong</tag>
-        <tag>Blinn-Phong</tag>
-        <tag>光照模型</tag>
-        <tag>漫反射</tag>
-        <tag>高光</tag>
-        <tag>环境光</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>基础拓扑学笔记(1)--欧拉定理</title>
     <url>/2020/09/20/%E5%9F%BA%E7%A1%80%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0-1-%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/</url>
     <content><![CDATA[<p>基本拓扑学&#x3D;1&#x2F;3点集拓扑+2&#x2F;3 代数拓扑<br>微分几何 微分流形</p>
@@ -2178,31 +2178,6 @@
       </tags>
   </entry>
   <entry>
-    <title>基础拓扑学笔记(3)--连续映像</title>
-    <url>/2020/09/20/%E5%9F%BA%E7%A1%80%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0-3-%E8%BF%9E%E7%BB%AD%E6%98%A0%E5%83%8F/</url>
-    <content><![CDATA[<h2 id="1-问题-什么叫连续？什么叫连续映射，研究拓扑为什么需要连续映射？"><a href="#1-问题-什么叫连续？什么叫连续映射，研究拓扑为什么需要连续映射？" class="headerlink" title="1.问题:什么叫连续？什么叫连续映射，研究拓扑为什么需要连续映射？"></a>1.问题:什么叫连续？什么叫连续映射，研究拓扑为什么需要连续映射？</h2><p>每门学科都建立在一些基础概念上，而拓扑学中贯穿着一个概念，就是<strong>连续性</strong>的概念。</p>
-<p><img src="/images/20200916205900761.png" alt="在这里插入图片描述"><br>要说明连续的概念，要从函数连续的概念类比。</p>
-<span id="more"></span>
-
-<h2 id="2-函数-x3D-一个量依赖于另一个量"><a href="#2-函数-x3D-一个量依赖于另一个量" class="headerlink" title="2.函数&#x3D;一个量依赖于另一个量"></a>2.函数&#x3D;一个量依赖于另一个量</h2><p><img src="/images/20200916210124992.png" alt="在这里插入图片描述"></p>
-<h2 id="3-量的取值要有意义"><a href="#3-量的取值要有意义" class="headerlink" title="3.量的取值要有意义"></a>3.量的取值要有意义</h2><p>这些有意义的所有值的集合起了个名字叫做<strong>定义域</strong><br><img src="/images/20200916210208393.png" alt="在这里插入图片描述"><br><img src="/images/20200916210247760.png" alt="在这里插入图片描述"><br><img src="/images/20200916210302261.png" alt="在这里插入图片描述"></p>
-<h2 id="4-集合并非只有实数组成"><a href="#4-集合并非只有实数组成" class="headerlink" title="4.集合并非只有实数组成"></a>4.集合并非只有实数组成</h2><p><img src="/images/20200916210436861.png" alt="在这里插入图片描述"></p>
-<h2 id="5-f-x-在x0处连续"><a href="#5-f-x-在x0处连续" class="headerlink" title="5.f(x)在x0处连续"></a>5.f(x)在x0处连续</h2><p><img src="/images/20200916210611617.png" alt="在这里插入图片描述"><br>连续的定义表达需要用到极限，极限需要用到距离的概念，也就是说只有先定义了距离，才能有极限，才能定义连续，连续可以用极限来表示，也可以用文本的概念来表述。</p>
-<h4 id="极限定义的连续如下"><a href="#极限定义的连续如下" class="headerlink" title="极限定义的连续如下:"></a>极限定义的连续如下:</h4><p><img src="/images/2020091621073340.png" alt="在这里插入图片描述"><br><img src="/images/20200916210854280.png" alt="在这里插入图片描述"></p>
-<h2 id="6-由距离引出邻域的概念"><a href="#6-由距离引出邻域的概念" class="headerlink" title="6.由距离引出邻域的概念"></a>6.由距离引出邻域的概念</h2><p><img src="/images/20200916211039750.png" alt="在这里插入图片描述"><br><img src="/images/20200916211426343.png" alt="在这里插入图片描述"></p>
-<h2 id="7-邻域引出连续映射的概念"><a href="#7-邻域引出连续映射的概念" class="headerlink" title="7.邻域引出连续映射的概念"></a>7.邻域引出连续映射的概念</h2><p>将邻域从实数域扩展出来，邻域概念是连续映射概念的基础，就如同只有定义了距离才能定义连续函数一样。<br><img src="/images/2020091621175450.png" alt="在这里插入图片描述"><br>对比之前函数连续的定义，将函数域中的距离概念用邻域来替代，范围更加广阔，距离是邻域概念在实数域的一个小名，对于实数域来说，邻域就是距离概念，距离就是邻域，而现在要扩展到更广阔的空间，而这个空间没有距离的概念。<br><img src="/images/20200916211810190.png" alt="在这里插入图片描述"></p>
-<h2 id="8-不是函数但是是映射"><a href="#8-不是函数但是是映射" class="headerlink" title="8.不是函数但是是映射"></a>8.不是函数但是是映射</h2><p>函数是一一对应的，但是映射并不一定。<br>下面是连续映像出现叠合的情况。</p>
-<p><img src="/images/20200916212133216.png" alt="在这里插入图片描述"><br><img src="/images/20200916213305325.png" alt="在这里插入图片描述"><br><img src="/images/2020091621331782.png" alt="在这里插入图片描述"></p>
-]]></content>
-      <categories>
-        <category>拓扑学</category>
-      </categories>
-      <tags>
-        <tag>拓扑</tag>
-        <tag>连续</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>基础拓扑学笔记(2)--拓扑不变量</title>
     <url>/2020/09/20/%E5%9F%BA%E7%A1%80%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0-2-%E6%8B%93%E6%89%91%E4%B8%8D%E5%8F%98%E9%87%8F/</url>
     <content><![CDATA[<h2 id="1-拓扑是一门怎么样的学科"><a href="#1-拓扑是一门怎么样的学科" class="headerlink" title="1.拓扑是一门怎么样的学科"></a>1.拓扑是一门怎么样的学科</h2><p><img src="/images/20200916183934174.png" alt="在这里插入图片描述"><br>拓扑学本质来讲是<strong>分类学</strong></p>
@@ -2228,6 +2203,31 @@
       </tags>
   </entry>
   <entry>
+    <title>基础拓扑学笔记(3)--连续映像</title>
+    <url>/2020/09/20/%E5%9F%BA%E7%A1%80%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0-3-%E8%BF%9E%E7%BB%AD%E6%98%A0%E5%83%8F/</url>
+    <content><![CDATA[<h2 id="1-问题-什么叫连续？什么叫连续映射，研究拓扑为什么需要连续映射？"><a href="#1-问题-什么叫连续？什么叫连续映射，研究拓扑为什么需要连续映射？" class="headerlink" title="1.问题:什么叫连续？什么叫连续映射，研究拓扑为什么需要连续映射？"></a>1.问题:什么叫连续？什么叫连续映射，研究拓扑为什么需要连续映射？</h2><p>每门学科都建立在一些基础概念上，而拓扑学中贯穿着一个概念，就是<strong>连续性</strong>的概念。</p>
+<p><img src="/images/20200916205900761.png" alt="在这里插入图片描述"><br>要说明连续的概念，要从函数连续的概念类比。</p>
+<span id="more"></span>
+
+<h2 id="2-函数-x3D-一个量依赖于另一个量"><a href="#2-函数-x3D-一个量依赖于另一个量" class="headerlink" title="2.函数&#x3D;一个量依赖于另一个量"></a>2.函数&#x3D;一个量依赖于另一个量</h2><p><img src="/images/20200916210124992.png" alt="在这里插入图片描述"></p>
+<h2 id="3-量的取值要有意义"><a href="#3-量的取值要有意义" class="headerlink" title="3.量的取值要有意义"></a>3.量的取值要有意义</h2><p>这些有意义的所有值的集合起了个名字叫做<strong>定义域</strong><br><img src="/images/20200916210208393.png" alt="在这里插入图片描述"><br><img src="/images/20200916210247760.png" alt="在这里插入图片描述"><br><img src="/images/20200916210302261.png" alt="在这里插入图片描述"></p>
+<h2 id="4-集合并非只有实数组成"><a href="#4-集合并非只有实数组成" class="headerlink" title="4.集合并非只有实数组成"></a>4.集合并非只有实数组成</h2><p><img src="/images/20200916210436861.png" alt="在这里插入图片描述"></p>
+<h2 id="5-f-x-在x0处连续"><a href="#5-f-x-在x0处连续" class="headerlink" title="5.f(x)在x0处连续"></a>5.f(x)在x0处连续</h2><p><img src="/images/20200916210611617.png" alt="在这里插入图片描述"><br>连续的定义表达需要用到极限，极限需要用到距离的概念，也就是说只有先定义了距离，才能有极限，才能定义连续，连续可以用极限来表示，也可以用文本的概念来表述。</p>
+<h4 id="极限定义的连续如下"><a href="#极限定义的连续如下" class="headerlink" title="极限定义的连续如下:"></a>极限定义的连续如下:</h4><p><img src="/images/2020091621073340.png" alt="在这里插入图片描述"><br><img src="/images/20200916210854280.png" alt="在这里插入图片描述"></p>
+<h2 id="6-由距离引出邻域的概念"><a href="#6-由距离引出邻域的概念" class="headerlink" title="6.由距离引出邻域的概念"></a>6.由距离引出邻域的概念</h2><p><img src="/images/20200916211039750.png" alt="在这里插入图片描述"><br><img src="/images/20200916211426343.png" alt="在这里插入图片描述"></p>
+<h2 id="7-邻域引出连续映射的概念"><a href="#7-邻域引出连续映射的概念" class="headerlink" title="7.邻域引出连续映射的概念"></a>7.邻域引出连续映射的概念</h2><p>将邻域从实数域扩展出来，邻域概念是连续映射概念的基础，就如同只有定义了距离才能定义连续函数一样。<br><img src="/images/2020091621175450.png" alt="在这里插入图片描述"><br>对比之前函数连续的定义，将函数域中的距离概念用邻域来替代，范围更加广阔，距离是邻域概念在实数域的一个小名，对于实数域来说，邻域就是距离概念，距离就是邻域，而现在要扩展到更广阔的空间，而这个空间没有距离的概念。<br><img src="/images/20200916211810190.png" alt="在这里插入图片描述"></p>
+<h2 id="8-不是函数但是是映射"><a href="#8-不是函数但是是映射" class="headerlink" title="8.不是函数但是是映射"></a>8.不是函数但是是映射</h2><p>函数是一一对应的，但是映射并不一定。<br>下面是连续映像出现叠合的情况。</p>
+<p><img src="/images/20200916212133216.png" alt="在这里插入图片描述"><br><img src="/images/20200916213305325.png" alt="在这里插入图片描述"><br><img src="/images/2020091621331782.png" alt="在这里插入图片描述"></p>
+]]></content>
+      <categories>
+        <category>拓扑学</category>
+      </categories>
+      <tags>
+        <tag>拓扑</tag>
+        <tag>连续</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基础拓扑学笔记(4)--同胚映像</title>
     <url>/2020/09/20/%E5%9F%BA%E7%A1%80%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0-4-%E5%90%8C%E8%83%9A%E6%98%A0%E5%83%8F/</url>
     <content><![CDATA[<h2 id="1-”叠合”映射"><a href="#1-”叠合”映射" class="headerlink" title="1.”叠合”映射"></a>1.”叠合”映射</h2><p><img src="/images/20200916213946626.png" alt="在这里插入图片描述"><br><img src="/images/20200916214007860.png" alt="在这里插入图片描述"></p>
@@ -2246,6 +2246,23 @@
       <tags>
         <tag>拓扑</tag>
         <tag>同胚</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基础拓扑学笔记(5)--欧拉示性数</title>
+    <url>/2020/09/20/%E5%9F%BA%E7%A1%80%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0-5-%E6%AC%A7%E6%8B%89%E7%A4%BA%E6%80%A7%E6%95%B0/</url>
+    <content><![CDATA[<h2 id="1-欧拉示性数与剖分无关，因此可以随意选择剖分"><a href="#1-欧拉示性数与剖分无关，因此可以随意选择剖分" class="headerlink" title="1.欧拉示性数与剖分无关，因此可以随意选择剖分"></a>1.欧拉示性数与剖分无关，因此可以随意选择剖分</h2><p><img src="/images/20200917211859895.png" alt="在这里插入图片描述"><br><img src="/images/20200917211917737.png" alt="在这里插入图片描述"></p>
+<span id="more"></span>
+
+<p><img src="/images/20200917211941733.png" alt="在这里插入图片描述"><br><img src="/images/20200917211953545.png" alt="在这里插入图片描述"></p>
+<h2 id="2-计算欧拉示性数"><a href="#2-计算欧拉示性数" class="headerlink" title="2.计算欧拉示性数"></a>2.计算欧拉示性数</h2><p><img src="/images/20200917212147758.png" alt="在这里插入图片描述"><br><img src="/images/20200917212244772.png" alt="在这里插入图片描述"><br><img src="/images/20200917212300374.png" alt="在这里插入图片描述"><br><img src="/images/20200917212310334.png" alt="在这里插入图片描述"><br>2-2*洞的个数<br><img src="/images/20200917212337358.png" alt="在这里插入图片描述"></p>
+]]></content>
+      <categories>
+        <category>拓扑学</category>
+      </categories>
+      <tags>
+        <tag>拓扑</tag>
+        <tag>欧拉示性数</tag>
       </tags>
   </entry>
   <entry>
@@ -2328,23 +2345,6 @@
       </tags>
   </entry>
   <entry>
-    <title>基础拓扑学笔记(5)--欧拉示性数</title>
-    <url>/2020/09/20/%E5%9F%BA%E7%A1%80%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0-5-%E6%AC%A7%E6%8B%89%E7%A4%BA%E6%80%A7%E6%95%B0/</url>
-    <content><![CDATA[<h2 id="1-欧拉示性数与剖分无关，因此可以随意选择剖分"><a href="#1-欧拉示性数与剖分无关，因此可以随意选择剖分" class="headerlink" title="1.欧拉示性数与剖分无关，因此可以随意选择剖分"></a>1.欧拉示性数与剖分无关，因此可以随意选择剖分</h2><p><img src="/images/20200917211859895.png" alt="在这里插入图片描述"><br><img src="/images/20200917211917737.png" alt="在这里插入图片描述"></p>
-<span id="more"></span>
-
-<p><img src="/images/20200917211941733.png" alt="在这里插入图片描述"><br><img src="/images/20200917211953545.png" alt="在这里插入图片描述"></p>
-<h2 id="2-计算欧拉示性数"><a href="#2-计算欧拉示性数" class="headerlink" title="2.计算欧拉示性数"></a>2.计算欧拉示性数</h2><p><img src="/images/20200917212147758.png" alt="在这里插入图片描述"><br><img src="/images/20200917212244772.png" alt="在这里插入图片描述"><br><img src="/images/20200917212300374.png" alt="在这里插入图片描述"><br><img src="/images/20200917212310334.png" alt="在这里插入图片描述"><br>2-2*洞的个数<br><img src="/images/20200917212337358.png" alt="在这里插入图片描述"></p>
-]]></content>
-      <categories>
-        <category>拓扑学</category>
-      </categories>
-      <tags>
-        <tag>拓扑</tag>
-        <tag>欧拉示性数</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>曼昆微观经济学笔记1-经济学十大原理</title>
     <url>/2021/04/09/%E6%9B%BC%E6%98%86%E5%BE%AE%E8%A7%82%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%94%E8%AE%B01-%E7%BB%8F%E6%B5%8E%E5%AD%A6%E5%8D%81%E5%A4%A7%E5%8E%9F%E7%90%86/</url>
     <content><![CDATA[<h1 id="稀缺"><a href="#稀缺" class="headerlink" title="稀缺"></a>稀缺</h1><p>社会资源的管理非常重要，这是因为资源是稀缺的。稀缺（scarcity）是说社会的资源是有限的，从而无法生产出人们想要的所有商品和服务。</p>
@@ -2381,21 +2381,17 @@
       </tags>
   </entry>
   <entry>
-    <title>绘画笔记-V大课程笔记-① 第一周 简介 认知与方法论 结构及人工网格</title>
-    <url>/2021/02/23/%E7%BB%98%E7%94%BB%E7%AC%94%E8%AE%B0-V%E5%A4%A7%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0-%E2%91%A0-%E7%AC%AC%E4%B8%80%E5%91%A8-%E7%AE%80%E4%BB%8B-%E8%AE%A4%E7%9F%A5%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA-%E7%BB%93%E6%9E%84%E5%8F%8A%E4%BA%BA%E5%B7%A5%E7%BD%91%E6%A0%BC/</url>
-    <content><![CDATA[<p><strong>基本几何体</strong> </p>
-<p><strong>最大转折</strong>:褶皱这类的概括使用最大转折来概括</p>
-<p><strong>形成方式:截面</strong></p>
-<p>1.结构</p>
-]]></content>
+    <title>构成课作业存档</title>
+    <url>/2020/04/29/%E6%9E%84%E6%88%90%E8%AF%BE%E4%BD%9C%E4%B8%9A%E5%AD%98%E6%A1%A3/</url>
+    <content><![CDATA[<h1 id="第一堂-飞行道具"><a href="#第一堂-飞行道具" class="headerlink" title="第一堂:飞行道具"></a>第一堂:飞行道具</h1>]]></content>
       <categories>
-        <category>V大课程笔记</category>
+        <category>构成课</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>绘画</tag>
-        <tag>思考</tag>
-        <tag>V大</tag>
+        <tag>构成课</tag>
+        <tag>Krenz</tag>
+        <tag>DLC</tag>
+        <tag>基础作业</tag>
       </tags>
   </entry>
   <entry>
@@ -2422,17 +2418,21 @@
       </tags>
   </entry>
   <entry>
-    <title>构成课作业存档</title>
-    <url>/2020/04/29/%E6%9E%84%E6%88%90%E8%AF%BE%E4%BD%9C%E4%B8%9A%E5%AD%98%E6%A1%A3/</url>
-    <content><![CDATA[<h1 id="第一堂-飞行道具"><a href="#第一堂-飞行道具" class="headerlink" title="第一堂:飞行道具"></a>第一堂:飞行道具</h1>]]></content>
+    <title>绘画笔记-V大课程笔记-① 第一周 简介 认知与方法论 结构及人工网格</title>
+    <url>/2021/02/23/%E7%BB%98%E7%94%BB%E7%AC%94%E8%AE%B0-V%E5%A4%A7%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0-%E2%91%A0-%E7%AC%AC%E4%B8%80%E5%91%A8-%E7%AE%80%E4%BB%8B-%E8%AE%A4%E7%9F%A5%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA-%E7%BB%93%E6%9E%84%E5%8F%8A%E4%BA%BA%E5%B7%A5%E7%BD%91%E6%A0%BC/</url>
+    <content><![CDATA[<p><strong>基本几何体</strong> </p>
+<p><strong>最大转折</strong>:褶皱这类的概括使用最大转折来概括</p>
+<p><strong>形成方式:截面</strong></p>
+<p>1.结构</p>
+]]></content>
       <categories>
-        <category>构成课</category>
+        <category>V大课程笔记</category>
       </categories>
       <tags>
-        <tag>构成课</tag>
-        <tag>Krenz</tag>
-        <tag>DLC</tag>
-        <tag>基础作业</tag>
+        <tag>笔记</tag>
+        <tag>绘画</tag>
+        <tag>思考</tag>
+        <tag>V大</tag>
       </tags>
   </entry>
   <entry>
@@ -2637,6 +2637,20 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>色彩课作业存档</title>
+    <url>/2019/02/11/%E8%89%B2%E5%BD%A9%E8%AF%BE%E4%BD%9C%E4%B8%9A%E5%AD%98%E6%A1%A3/</url>
+    <content><![CDATA[<h1 id="相对明度练习-纸雕"><a href="#相对明度练习-纸雕" class="headerlink" title="相对明度练习-纸雕"></a>相对明度练习-纸雕</h1>]]></content>
+      <categories>
+        <category>色彩课</category>
+      </categories>
+      <tags>
+        <tag>Krenz</tag>
+        <tag>DLC</tag>
+        <tag>homework</tag>
+        <tag>色彩课</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>色彩知识点-藏色</title>
     <url>/2020/04/21/%E8%89%B2%E5%BD%A9%E7%9F%A5%E8%AF%86%E7%82%B9-%E8%97%8F%E8%89%B2/</url>
     <content><![CDATA[<h2 id="1-藏色的逻辑"><a href="#1-藏色的逻辑" class="headerlink" title="1.藏色的逻辑"></a>1.藏色的逻辑</h2><p><img src="/images/cangse/L4_LogicOfCangSe-Krenz.jpg" alt="藏色的逻辑"></p>
@@ -2656,16 +2670,21 @@
       </tags>
   </entry>
   <entry>
-    <title>色彩课作业存档</title>
-    <url>/2019/02/11/%E8%89%B2%E5%BD%A9%E8%AF%BE%E4%BD%9C%E4%B8%9A%E5%AD%98%E6%A1%A3/</url>
-    <content><![CDATA[<h1 id="相对明度练习-纸雕"><a href="#相对明度练习-纸雕" class="headerlink" title="相对明度练习-纸雕"></a>相对明度练习-纸雕</h1>]]></content>
+    <title>色彩课心智图-文字总结</title>
+    <url>/2020/04/21/%E8%89%B2%E5%BD%A9%E8%AF%BE%E5%BF%83%E6%99%BA%E5%9B%BE-%E6%96%87%E5%AD%97%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h2 id="L1知识点"><a href="#L1知识点" class="headerlink" title="L1知识点"></a>L1知识点</h2><h3 id="1-焦点"><a href="#1-焦点" class="headerlink" title="1.焦点"></a>1.焦点</h3><p>一張作品中想表現的重點區域，我們在構圖&#x2F;配色&#x2F;打光所做的各種安排多是為了突顯焦點</p>
+<p>突顯焦點的方法：①灰純對比     ②冷暖(色相)對比    ③邊緣虚實對比    </p>
+<p>​                            ④明度对比      ⑤疏密對比              ⑥視覺導引</p>
+<h3 id="2-权利游戏-权重"><a href="#2-权利游戏-权重" class="headerlink" title="2.权利游戏(权重)"></a>2.权利游戏(权重)</h3><p>就像三國志的勢力圖,我們每下一筆色彩&#x2F;光影&#x2F;形狀,都會造成圖面上的勢力波動，要保持焦點擁有較好&#x2F;較稀缺的資源(較顯眼)</p>
+<h3 id="3-固有色配色"><a href="#3-固有色配色" class="headerlink" title="3.固有色配色"></a>3.固有色配色</h3><h4 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想:"></a>核心思想:</h4><p>高富帥主角-確認焦點處的重要地位，給予高純度&#x2F;特殊色相&#x2F;高明度差等等強烈對比，人物畫來說,通常是瞳孔&#x2F;髮飾&#x2F;首飾等等區域，高純度&#x2F;冷暖明顯的這個色彩又常被說是提神色</p>
+]]></content>
       <categories>
         <category>色彩课</category>
       </categories>
       <tags>
         <tag>Krenz</tag>
-        <tag>DLC</tag>
-        <tag>homework</tag>
+        <tag>知识点</tag>
+        <tag>色彩</tag>
         <tag>色彩课</tag>
       </tags>
   </entry>
@@ -3021,25 +3040,6 @@
         <tag>透视课</tag>
         <tag>DLC</tag>
         <tag>homework</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>色彩课心智图-文字总结</title>
-    <url>/2020/04/21/%E8%89%B2%E5%BD%A9%E8%AF%BE%E5%BF%83%E6%99%BA%E5%9B%BE-%E6%96%87%E5%AD%97%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h2 id="L1知识点"><a href="#L1知识点" class="headerlink" title="L1知识点"></a>L1知识点</h2><h3 id="1-焦点"><a href="#1-焦点" class="headerlink" title="1.焦点"></a>1.焦点</h3><p>一張作品中想表現的重點區域，我們在構圖&#x2F;配色&#x2F;打光所做的各種安排多是為了突顯焦點</p>
-<p>突顯焦點的方法：①灰純對比     ②冷暖(色相)對比    ③邊緣虚實對比    </p>
-<p>​                            ④明度对比      ⑤疏密對比              ⑥視覺導引</p>
-<h3 id="2-权利游戏-权重"><a href="#2-权利游戏-权重" class="headerlink" title="2.权利游戏(权重)"></a>2.权利游戏(权重)</h3><p>就像三國志的勢力圖,我們每下一筆色彩&#x2F;光影&#x2F;形狀,都會造成圖面上的勢力波動，要保持焦點擁有較好&#x2F;較稀缺的資源(較顯眼)</p>
-<h3 id="3-固有色配色"><a href="#3-固有色配色" class="headerlink" title="3.固有色配色"></a>3.固有色配色</h3><h4 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想:"></a>核心思想:</h4><p>高富帥主角-確認焦點處的重要地位，給予高純度&#x2F;特殊色相&#x2F;高明度差等等強烈對比，人物畫來說,通常是瞳孔&#x2F;髮飾&#x2F;首飾等等區域，高純度&#x2F;冷暖明顯的這個色彩又常被說是提神色</p>
-]]></content>
-      <categories>
-        <category>色彩课</category>
-      </categories>
-      <tags>
-        <tag>Krenz</tag>
-        <tag>知识点</tag>
-        <tag>色彩</tag>
-        <tag>色彩课</tag>
       </tags>
   </entry>
   <entry>

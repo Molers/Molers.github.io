@@ -223,7 +223,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-02-10 15:07:52 / 修改时间：16:27:10" itemprop="dateCreated datePublished" datetime="2022-02-10T15:07:52+08:00">2022-02-10</time>
+              <time title="创建时间：2022-02-10 15:07:52 / 修改时间：19:15:47" itemprop="dateCreated datePublished" datetime="2022-02-10T15:07:52+08:00">2022-02-10</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -253,7 +253,7 @@
 <h2 id="2-授权"><a href="#2-授权" class="headerlink" title="2.授权"></a>2.授权</h2><p>在博客页面上输入评论，utterance拿到这个评论后，自动的提交到上面刚创建仓库的Issues里。</p>
 <p>所以我们需要授权utterance应用能访问仓库的Issues。</p>
 <p>点击链接： <a target="_blank" rel="noopener" href="https://github.com/apps/utterances">https://github.com/apps/utterances</a> ，如下图所示：</p>
-<p><img src="/%5Cimages%5CHexo%5Cimage-20220210150951212.png" alt="image-20220210150951212"></p>
+<p><img src="/images/Hexo/image-20220210150951212.png" alt="image-20220210150951212"></p>
 <h2 id="3-主题配置"><a href="#3-主题配置" class="headerlink" title="3.主题配置"></a>3.主题配置</h2><p>1.在主题的配置文件<code>_config.yml</code>文件中，加入如下配置</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 整合utterance评论</span></span><br><span class="line"><span class="attr">utterance:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment">#仓库名字，格式：你的用户ID/仓库名称，如：zhangsan/utterance_repo 下面是我的地址</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">Molers/BlogComment</span></span><br><span class="line">  <span class="comment">#主题</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="string">github-light</span></span><br><span class="line">  <span class="comment">#映射配置</span></span><br><span class="line">  <span class="attr">issue_term:</span> <span class="string">pathname</span></span><br></pre></td></tr></table></figure>
 
@@ -272,7 +272,7 @@
 <p>4.编辑 <code>layout/_partials/comments.swig</code> 文件，加入以下内容：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% elseif theme.utterance.enable %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;comments&quot;</span> <span class="attr">id</span>=<span class="string">&quot;comments&quot;</span>&gt;</span></span><br><span class="line">      &#123;% include &#x27;../_third-party/comments/utterance.swig&#x27; %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="/%5Cimages%5CHexo%5Cimage-20220210162522643.png" alt="image-20220210162522643"></p>
+<p><img src="/images/Hexo/image-20220210162522643.png" alt="image-20220210162522643"></p>
 <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>配置完成后，使用 <code>hexo clean &amp;&amp; hexo g</code> 重新生成页面。效果图如下：</p>
 
       
@@ -510,7 +510,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-02-09 14:39:58" itemprop="dateModified" datetime="2022-02-09T14:39:58+08:00">2022-02-09</time>
+                <time title="修改时间：2022-02-10 19:15:10" itemprop="dateModified" datetime="2022-02-10T19:15:10+08:00">2022-02-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -538,10 +538,10 @@
 <p>对于写实绘画来说，空间的暗示是最重要的，空间的暗示越好，写实越成功。</p>
 <p>质感，光，体积都要存在在体系下面，空间的真实是前提的前提</p>
 <p>写实绘画的空间幻觉如果没有第一时间被认同，那么这张画很可能是一种强调平面的(没画好)。</p>
-<p><img src="/%5Cimages%5Clinran%5C2-%E7%BA%A6%E7%91%9F%E5%A4%AB%E6%B0%B4%E5%BD%A9.png" alt="2-约瑟夫水彩"></p>
+<p><img src="/images/linran/2-%E7%BA%A6%E7%91%9F%E5%A4%AB%E6%B0%B4%E5%BD%A9.png" alt="2-约瑟夫水彩"></p>
 <p>对于绘画，分清那些是捷径，那些是要下功夫的。</p>
 <p>约瑟夫水彩的风格 连贯 概括省略 真实 代表了水彩最大的特点，有那么多相似的挑一个最具有代表性的人去学习，</p>
-<p><img src="/%5Cimages%5Clinran%5C3.png" alt="3"></p>
+<p><img src="/images/linran/3.png" alt="3"></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/01/21/%E3%80%90%E7%BB%98%E7%94%BB%E3%80%91%E3%80%90%E6%9E%97%E5%86%89%E3%80%91-1-%E5%85%89%E5%BD%B1%E9%80%A0%E5%9E%8B%E7%AC%94%E8%AE%B0/#more" rel="contents">
