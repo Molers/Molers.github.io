@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="1.几何形体的意义几何形体其实是一种思维方式，思考能力，有这种意识其实几何并不一定要练习  真正要思考的是如何把物体归纳为几何形体的能力，这才是练习几何形体的意义所在，其练习意义并不在于正方形和长方形的本身">
@@ -293,7 +293,7 @@
 <p>纯测光一般出现在室内的窗户 烛光</p>
 <p>顶光:正顶光，侧顶光  45度之上的光，45度以下为正面光，会照到人脸</p>
 <p><img src="https://i.loli.net/2020/02/01/iDSKt86MPgeZRsX.png" alt="AGA5`DL_J_FV`_NH7P70OUE.png"></p>
-<p>![&#96;@710CD27@<a href="mailto:&#x5f;&#x35;&#79;&#x58;&#x50;&#x40;&#x5f;&#x46;&#55;&#x4c;&#76;&#84;&#85;&#46;&#112;&#110;&#x67;">&#x5f;&#x35;&#79;&#x58;&#x50;&#x40;&#x5f;&#x46;&#55;&#x4c;&#76;&#84;&#85;&#46;&#112;&#110;&#x67;</a>](<a target="_blank" rel="noopener" href="https://i.loli.net/2020/02/01/PxYeXIEkfaHRchA.png">https://i.loli.net/2020/02/01/PxYeXIEkfaHRchA.png</a>)</p>
+<p>![&#96;@710CD27@<a href="mailto:&#95;&#53;&#x4f;&#x58;&#80;&#64;&#x5f;&#x46;&#55;&#x4c;&#x4c;&#84;&#85;&#x2e;&#112;&#110;&#x67;">&#95;&#53;&#x4f;&#x58;&#80;&#64;&#x5f;&#x46;&#55;&#x4c;&#x4c;&#84;&#85;&#x2e;&#112;&#110;&#x67;</a>](<a target="_blank" rel="noopener" href="https://i.loli.net/2020/02/01/PxYeXIEkfaHRchA.png">https://i.loli.net/2020/02/01/PxYeXIEkfaHRchA.png</a>)</p>
 <p>顶光-神秘感，庄严，一般不用</p>
 <p>正顶光:详细表现一个角色，一般立绘用这种光，只画投影，韩系，说明性光源</p>
 <p>顶光</p>
@@ -391,17 +391,7 @@
 
           </div>
           
-    <div class="comments" id="comments">
-      
-    <script src="https://utteranc.es/client.js"
-    repo="Molers/BlogComment"
-    issue-term="pathname"
-    theme="github-light"
-    crossorigin="anonymous"
-    async>
-  </script>
-
-    </div>
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -595,6 +585,26 @@
   
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '5cced7ca00cb0c106488',
+      clientSecret: '8dba81c2f89d921d1c1d870ad14d3473b7d95dc5',
+      repo        : 'BlogComment',
+      owner       : 'Molers',
+      admin       : ['Molers'],
+      id          : '42110c644308c8daf6484d169e3abfa1',
+        language: 'zh-CN',
+      distractionFreeMode: false
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>

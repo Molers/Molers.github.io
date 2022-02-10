@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterance","storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="1.SSH配置Hexo博客要同时在github和coding上发布，两端同时需要提交代码，这个时候就需要电脑配置多个ssh 123456789进入~&#x2F;.ssh目录ssh-keygen -t rsa -C &quot;你的邮箱&quot; SSH命名为Coding 按回车生成ssh成功，会生成coding和Coding.pub文件同样的操作，再创建Github ssh    ![2B_5Z_BO12">
@@ -274,7 +274,7 @@
 <p>添加如下内容：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># github 个人的GitHub公钥</span><br><span class="line">Host Github</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/Github  # 指定特定的ssh私钥文件</span><br><span class="line">User git</span><br><span class="line"></span><br><span class="line"># Coding 个人的Coding公钥</span><br><span class="line">Host Coding</span><br><span class="line">HostName git.coding.net</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/Coding  # 指定特定的ssh私钥文件</span><br><span class="line">User git</span><br></pre></td></tr></table></figure>
 
-<h2 id="3-绑定github和coding的ssh"><a href="#3-绑定github和coding的ssh" class="headerlink" title="3.绑定github和coding的ssh"></a>3.绑定github和coding的ssh</h2><p>![LJV5&#96;2OC4BO4_~<a href="mailto:&#95;&#x32;&#x52;&#64;&#x4c;&#88;&#88;&#x57;&#79;&#46;&#112;&#110;&#x67;">&#95;&#x32;&#x52;&#64;&#x4c;&#88;&#88;&#x57;&#79;&#46;&#112;&#110;&#x67;</a>](<a target="_blank" rel="noopener" href="https://i.loli.net/2020/01/31/PL4h13yFRjEGzAc.png">https://i.loli.net/2020/01/31/PL4h13yFRjEGzAc.png</a>)</p>
+<h2 id="3-绑定github和coding的ssh"><a href="#3-绑定github和coding的ssh" class="headerlink" title="3.绑定github和coding的ssh"></a>3.绑定github和coding的ssh</h2><p>![LJV5&#96;2OC4BO4_~<a href="mailto:&#x5f;&#50;&#82;&#64;&#76;&#88;&#88;&#87;&#79;&#x2e;&#112;&#x6e;&#x67;">&#x5f;&#50;&#82;&#64;&#76;&#88;&#88;&#87;&#79;&#x2e;&#112;&#x6e;&#x67;</a>](<a target="_blank" rel="noopener" href="https://i.loli.net/2020/01/31/PL4h13yFRjEGzAc.png">https://i.loli.net/2020/01/31/PL4h13yFRjEGzAc.png</a>)</p>
 <p><img src="https://i.loli.net/2020/01/31/S83piQJfCOlRtes.png" alt="KA__X~H9S38VCXDWZU2_G0L.png"></p>
 <h2 id="4-ssh-add"><a href="#4-ssh-add" class="headerlink" title="4.ssh-add"></a>4.ssh-add</h2><p>手动开启ssh</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eval `ssh-agent -s`</span><br></pre></td></tr></table></figure>
@@ -398,17 +398,7 @@
 
           </div>
           
-    <div class="comments" id="comments">
-      
-    <script src="https://utteranc.es/client.js"
-    repo="Molers/BlogComment"
-    issue-term="pathname"
-    theme="github-light"
-    crossorigin="anonymous"
-    async>
-  </script>
-
-    </div>
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -602,6 +592,26 @@
   
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '5cced7ca00cb0c106488',
+      clientSecret: '8dba81c2f89d921d1c1d870ad14d3473b7d95dc5',
+      repo        : 'BlogComment',
+      owner       : 'Molers',
+      admin       : ['Molers'],
+      id          : '83d0abf0b9e98a060d74723b94837a71',
+        language: 'zh-CN',
+      distractionFreeMode: false
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>

@@ -6,25 +6,48 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>GAMES101-Lecture02 Review of Linear Algebra笔记</title>
-    <url>/2020/11/10/GAMES101-Lecture02-Review-of-Linear-Algebra%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>旋转的例子</p>
-<p><img src="/images/Games101/image-20201111124722150.png" alt="image-20201111124722150"></p>
-<p>图形学中向量的默认形式是<strong>列向量</strong></p>
-<h1 id="叉乘公式"><a href="#叉乘公式" class="headerlink" title="叉乘公式"></a>叉乘公式</h1><p>$$<br>\vec{a} \times \vec{b}&#x3D;\left(\begin{array}{l}<br>y_{a} z_{b}-y_{b} z_{a} \\<br>z_{a} x_{b}-x_{a} z_{b} \\<br>x_{a} y_{b}-y_{a} x_{b}<br>\end{array}\right)<br>$$</p>
-<p>$$<br>\vec{a} \times \vec{b}&#x3D;A^{*} b&#x3D;\left(\begin{array}{ccc}<br>0 &amp; -z_{a} &amp; y_{a} \\<br>z_{a} &amp; 0 &amp; -x_{a} \\<br>-y_{a} &amp; x_{a} &amp; 0<br>\end{array}\right)\left(\begin{array}{l}<br>x_{b} \\<br>y_{b} \\<br>z_{b}<br>\end{array}\right)<br>$$</p>
-<p>$$<br>\begin{array}{l}<br>\vec{x} \times \vec{y}&#x3D;+\vec{z} \\<br>\vec{y} \times \vec{x}&#x3D;-\vec{z} \\<br>\vec{y} \times \vec{z}&#x3D;+\vec{x} \\<br>\vec{z} \times \vec{y}&#x3D;-\vec{x} \quad \vec{a} \times(\vec{b}+\vec{c})&#x3D;\vec{a} \times \vec{b}+\vec{a} \times \vec{c} \\<br>\vec{z} \times \vec{x}&#x3D;+\vec{y} &amp; \vec{a} \times(k \vec{b})&#x3D;k(\vec{a} \times \vec{b}) \\<br>\vec{x} \times \vec{z}&#x3D;-\vec{y}<br>\end{array}<br>$$<br>叉乘可以定义左右和形状的内外两侧信息，起到定向的作用</p>
-<p><img src="/images/Games101/image-20201115202556394.png" alt="image-20201115202556394"><br>$$<br>\begin{array}{l}<br>\vec{a} \times \vec{b}&#x3D;+\vec{z} \quad \quad a在b的左侧  \\<br>\vec{b} \times \vec{a}&#x3D;-\vec{z} \quad \quad a在b的右侧\\<br>\vec{AB} \times \vec{AP}&#x3D;+ \\<br>\vec{BC} \times \vec{BP}&#x3D;+ \\<br>\vec{CA} \times \vec{CP}&#x3D;+ \quad \quad 如P点在AC右侧,则\vec{CA} \times \vec{CP} 为负值 \\<br>如三角行逆时针,只要所有的叉乘值都为正值或都为负值就可判断在三角形内部，从而忽略给定的三角形的顺序 \\<br>在边上的情况被称为 corner case 这时候开发者自己说了算\<br>\\<br>\end{array}<br>$$</p>
-<h1 id="虚拟机安装问题"><a href="#虚拟机安装问题" class="headerlink" title="虚拟机安装问题"></a>虚拟机安装问题</h1><p>Not in a hypervisor partition (HVP&#x3D;0) (VERR_NEM_NOT_AVAILABLE).</p>
-<p>AMD-V is disabled in the BIOS (or by the host OS) (VERR_SVM_DISABLED).</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>1.Windows设置 - 更新和安全 - 回复 - 立即重新启动</p>
-<p><strong>2.Troubleshoot -&gt; Advanced option – &gt; UEFI Firmware Settings -&gt; Restart</strong></p>
-<p>3.在<strong>BIOS</strong>中找到<strong>Virtualization</strong> 选项，它常位于<strong>Advanced 或 System Configuration</strong> 选项卡下</p>
-<p>4.设置<strong>Virtualization</strong> 的状态为<strong>Enabled。</strong></p>
-<p>AMD和Intel的设置不一样</p>
-<h1 id="Eigen库的使用问题"><a href="#Eigen库的使用问题" class="headerlink" title="Eigen库的使用问题"></a>Eigen库的使用问题</h1><p><img src="/images/Games101/image-20201121230206966.png" alt="image-20201121230206966"></p>
-<h2 id="Eigen库的使用用例"><a href="#Eigen库的使用用例" class="headerlink" title="Eigen库的使用用例"></a>Eigen库的使用用例</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;../../Eigen/Core&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;../../Eigen/Dense&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// Basic Example of cpp</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Example of cpp \n&quot;</span>;</span><br><span class="line">    <span class="type">float</span> a = <span class="number">1.0</span>, b = <span class="number">2.0</span>;</span><br><span class="line">    std::cout &lt;&lt; a &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; a / b &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; std::<span class="built_in">sqrt</span>(b) &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; std::<span class="built_in">acos</span>(<span class="number">-1</span>) &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; std::<span class="built_in">sin</span>(<span class="number">30.0</span> / <span class="number">180.0</span> * <span class="built_in">acos</span>(<span class="number">-1</span>)) &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Example of vector</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Example of vector \n&quot;</span>;</span><br><span class="line">    <span class="comment">// 向量定义</span></span><br><span class="line">    <span class="function">Eigen::Vector3f <span class="title">v</span><span class="params">(<span class="number">1.0f</span>, <span class="number">2.0f</span>, <span class="number">3.0f</span>)</span></span>;</span><br><span class="line">    <span class="function">Eigen::Vector3f <span class="title">w</span><span class="params">(<span class="number">1.0f</span>, <span class="number">0.0f</span>, <span class="number">0.0f</span>)</span></span>;</span><br><span class="line">    <span class="comment">// 向量输出</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Example of output \n&quot;</span>;</span><br><span class="line">    std::cout &lt;&lt; v &lt;&lt; std::endl;</span><br><span class="line">    <span class="comment">// 加法</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Example of add \n&quot;</span>;</span><br><span class="line">    std::cout &lt;&lt; v + w &lt;&lt; std::endl;</span><br><span class="line">    <span class="comment">// 点成</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Example of scalar multiply \n&quot;</span>;</span><br><span class="line">    std::cout &lt;&lt; v * <span class="number">3.0f</span> &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="number">2.0f</span> * v &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Example of matrix</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Example of matrix \n&quot;</span>;</span><br><span class="line">    <span class="comment">// 矩阵定义</span></span><br><span class="line">    Eigen::Matrix3f i, j;</span><br><span class="line">    i &lt;&lt; <span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">4.0</span>, <span class="number">5.0</span>, <span class="number">6.0</span>, <span class="number">7.0</span>, <span class="number">8.0</span>, <span class="number">9.0</span>;</span><br><span class="line">    j &lt;&lt; <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">1.0</span>, <span class="number">4.0</span>, <span class="number">6.0</span>, <span class="number">5.0</span>, <span class="number">9.0</span>, <span class="number">7.0</span>, <span class="number">8.0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 矩阵输出</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Example of output \n&quot;</span>;</span><br><span class="line">    std::cout &lt;&lt; i  &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; j &lt;&lt; std::endl;</span><br><span class="line">	<span class="comment">//矩阵加法</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot; matrix add matrix i + matrix j&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; i+j &lt;&lt; std::endl ;</span><br><span class="line">    <span class="comment">//矩阵点乘</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot; matrix scalar multiply i * 2.0&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; i*<span class="number">2.0</span> &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//矩阵乘法</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;matrix multiply i * j&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; i * j &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;matrix multiply vector i * v&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; i * v &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; v.<span class="built_in">transpose</span>()*i &lt;&lt; std::endl;<span class="comment">//reslut is different </span></span><br><span class="line">    <span class="comment">//14</span></span><br><span class="line">    <span class="comment">//32</span></span><br><span class="line">    <span class="comment">//50</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//Transpose result is 30 36 42</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>GAMES101-Lecture01 Overview of Computer Graphics笔记</title>
+    <url>/2020/11/10/GAMES101-Lecture01-Overview-of-Computer-Graphics%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>判断渲染的一个简单标准:画面是否明亮</p>
+<h1 id="游戏-Video-Game"><a href="#游戏-Video-Game" class="headerlink" title="游戏(Video Game)"></a>游戏(Video Game)</h1><h2 id="只狼"><a href="#只狼" class="headerlink" title="只狼"></a>只狼</h2><p><img src="/images/Games101/image-20201110103745003.png" alt="image-20201110103745003"></p>
+<h2 id="卡通NPR——无主之地3"><a href="#卡通NPR——无主之地3" class="headerlink" title="卡通NPR——无主之地3"></a>卡通NPR——无主之地3</h2><p><img src="/images/Games101/image-20201110103820530.png" alt="image-20201110103820530"></p>
+<span id="more"></span>
 
+<h1 id="电影-Movie"><a href="#电影-Movie" class="headerlink" title="电影(Movie)"></a>电影(Movie)</h1><h2 id="特效"><a href="#特效" class="headerlink" title="特效"></a>特效</h2><p><img src="/images/Games101/image-20201110103859699.png" alt="image-20201110103859699"></p>
+<h2 id="动作捕捉-阿凡达"><a href="#动作捕捉-阿凡达" class="headerlink" title="动作捕捉:阿凡达"></a>动作捕捉:阿凡达</h2><p><img src="/images/Games101/image-20201110103340277.png" alt="image-20201110103340277"></p>
+<h1 id="动画-Animation"><a href="#动画-Animation" class="headerlink" title="动画(Animation)"></a>动画(Animation)</h1><h2 id="疯狂动物城"><a href="#疯狂动物城" class="headerlink" title="疯狂动物城"></a>疯狂动物城</h2><p><img src="/images/Games101/image-20201110103413753.png" alt="image-20201110103413753"></p>
+<p>毛发的渲染和显示，复杂的过程如何去显示几何和计算光线的传播</p>
+<h2 id="冰雪奇缘——模拟simulation"><a href="#冰雪奇缘——模拟simulation" class="headerlink" title="冰雪奇缘——模拟simulation"></a>冰雪奇缘——模拟simulation</h2><p><img src="/images/Games101/image-20201110103514682.png" alt="image-20201110103514682"></p>
+<p>头发的渲染（头发的执念），发光粒子</p>
+<h1 id="工业设计（Design）"><a href="#工业设计（Design）" class="headerlink" title="工业设计（Design）"></a>工业设计（Design）</h1><h2 id="特斯拉车子的渲染效果"><a href="#特斯拉车子的渲染效果" class="headerlink" title="特斯拉车子的渲染效果"></a>特斯拉车子的渲染效果</h2><p><img src="/images/Games101/image-20201110103953593.png" alt="image-20201110103953593"></p>
+<p>虚拟世界模拟车的碰撞检测</p>
+<h2 id="室内装修"><a href="#室内装修" class="headerlink" title="室内装修"></a>室内装修</h2><p><img src="/images/Games101/image-20201110104126551.png" alt="image-20201110104126551"></p>
+<h1 id="可视化（Visualization）"><a href="#可视化（Visualization）" class="headerlink" title="可视化（Visualization）"></a>可视化（Visualization）</h1><p><img src="/images/Games101/image-20201110104225900.png" alt="image-20201110104225900"></p>
+<p>医学</p>
+<h1 id="虚拟现实（Virtual-Reality）"><a href="#虚拟现实（Virtual-Reality）" class="headerlink" title="虚拟现实（Virtual Reality）"></a>虚拟现实（Virtual Reality）</h1><p><img src="/images/Games101/image-20201110104311033.png" alt="image-20201110104311033"></p>
+<p>可交互的虚拟现实</p>
+<h1 id="数字绘画（Digital-Illustration）"><a href="#数字绘画（Digital-Illustration）" class="headerlink" title="数字绘画（Digital Illustration）"></a>数字绘画（Digital Illustration）</h1><p><img src="/images/Games101/image-20201110104430115.png" alt="image-20201110104430115"></p>
+<h1 id="模拟-Simulation"><a href="#模拟-Simulation" class="headerlink" title="模拟(Simulation)"></a>模拟(Simulation)</h1><p><img src="/images/Games101/image-20201110104509808.png" alt="image-20201110104509808"></p>
+<p>风，黑洞，沙尘暴物理模拟的效果</p>
+<h1 id="GUI-Graphical-User-Interfaces"><a href="#GUI-Graphical-User-Interfaces" class="headerlink" title="GUI(Graphical User Interfaces)"></a>GUI(Graphical User Interfaces)</h1><p><img src="/images/Games101/image-20201110104621919.png" alt="image-20201110104621919"></p>
+<h1 id="Typography（排版）"><a href="#Typography（排版）" class="headerlink" title="Typography（排版）"></a>Typography（排版）</h1><p><img src="/images/Games101/image-20201110104654967.png" alt="image-20201110104654967"></p>
+<h1 id="课程主题-主要四部分"><a href="#课程主题-主要四部分" class="headerlink" title="课程主题(主要四部分)"></a>课程主题(主要四部分)</h1><p>-光栅化(Rasterization) 栅格化</p>
+<p>-曲线和网格(Curves and Meshes)</p>
+<p>-光线追踪(Ray Tracing)</p>
+<p>-动画&#x2F;模拟(Animation &#x2F; Simulation)</p>
+<h2 id="光栅化-Rasterization"><a href="#光栅化-Rasterization" class="headerlink" title="光栅化(Rasterization)"></a>光栅化(Rasterization)</h2><p>课外补充:</p>
+<p>光栅化就是把矢量图形转化成像素点儿的过程。我们屏幕上显示的画面都是由像素组成，而三维物体都是点线面构成的。要让点线面，变成能在屏幕上显示的像素，就需要Rasterize这个过程。就是从矢量的点线面的描述，变成像素的描述，这个过程就是Rasterize。</p>
+<p>有点像是模拟信号转化为数字信号的过程，路由器？</p>
+<p><img src="/images/Games101/image-20201110105739804.png" alt="image-20201110105739804"></p>
+<p><img src="/images/Games101/image-20201110105754703.png" alt="image-20201110105754703"></p>
+<h2 id="曲线和网格-Curves-and-Meshes"><a href="#曲线和网格-Curves-and-Meshes" class="headerlink" title="曲线和网格(Curves and Meshes)"></a>曲线和网格(Curves and Meshes)</h2><p>如何在计算机中表示曲面与曲线</p>
+<p><img src="/images/Games101/image-20201110105829046.png" alt="image-20201110105829046"></p>
+<h2 id="光线追踪-Ray-Tracing"><a href="#光线追踪-Ray-Tracing" class="headerlink" title="光线追踪(Ray Tracing)"></a>光线追踪(Ray Tracing)</h2><p><img src="/images/Games101/image-20201110105905968.png" alt="image-20201110105905968"></p>
+<p><img src="/images/Games101/image-20201110105941599.png" alt="image-20201110105941599"></p>
+<h1 id="Not-About"><a href="#Not-About" class="headerlink" title="Not About"></a>Not About</h1><h2 id="计算机建模软件"><a href="#计算机建模软件" class="headerlink" title="计算机建模软件"></a>计算机建模软件</h2><p><img src="/images/Games101/image-20201110110905088.png" alt="image-20201110110905088"></p>
+<h2 id="计算机视觉"><a href="#计算机视觉" class="headerlink" title="计算机视觉"></a>计算机视觉</h2><p><img src="/images/Games101/image-20201110110922567.png" alt="image-20201110110922567"></p>
+<h1 id="Differences-between-CG-amp-CV"><a href="#Differences-between-CG-amp-CV" class="headerlink" title="Differences between CG&amp;CV"></a>Differences between CG&amp;CV</h1><p><img src="/images/Games101/image-20201110111020693.png" alt="image-20201110111020693"></p>
+<h1 id="Final-Project"><a href="#Final-Project" class="headerlink" title="Final Project"></a>Final Project</h1><p>最后的大作业是最有精华的部分</p>
 ]]></content>
       <categories>
         <category>Games101现代计算机图形学入门</category>
@@ -32,7 +55,6 @@
       <tags>
         <tag>计算机图形学</tag>
         <tag>闫令琪</tag>
-        <tag>线性代数</tag>
       </tags>
   </entry>
   <entry>
@@ -265,58 +287,6 @@
       </tags>
   </entry>
   <entry>
-    <title>GAMES101-Lecture01 Overview of Computer Graphics笔记</title>
-    <url>/2020/11/10/GAMES101-Lecture01-Overview-of-Computer-Graphics%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>判断渲染的一个简单标准:画面是否明亮</p>
-<h1 id="游戏-Video-Game"><a href="#游戏-Video-Game" class="headerlink" title="游戏(Video Game)"></a>游戏(Video Game)</h1><h2 id="只狼"><a href="#只狼" class="headerlink" title="只狼"></a>只狼</h2><p><img src="/images/Games101/image-20201110103745003.png" alt="image-20201110103745003"></p>
-<h2 id="卡通NPR——无主之地3"><a href="#卡通NPR——无主之地3" class="headerlink" title="卡通NPR——无主之地3"></a>卡通NPR——无主之地3</h2><p><img src="/images/Games101/image-20201110103820530.png" alt="image-20201110103820530"></p>
-<span id="more"></span>
-
-<h1 id="电影-Movie"><a href="#电影-Movie" class="headerlink" title="电影(Movie)"></a>电影(Movie)</h1><h2 id="特效"><a href="#特效" class="headerlink" title="特效"></a>特效</h2><p><img src="/images/Games101/image-20201110103859699.png" alt="image-20201110103859699"></p>
-<h2 id="动作捕捉-阿凡达"><a href="#动作捕捉-阿凡达" class="headerlink" title="动作捕捉:阿凡达"></a>动作捕捉:阿凡达</h2><p><img src="/images/Games101/image-20201110103340277.png" alt="image-20201110103340277"></p>
-<h1 id="动画-Animation"><a href="#动画-Animation" class="headerlink" title="动画(Animation)"></a>动画(Animation)</h1><h2 id="疯狂动物城"><a href="#疯狂动物城" class="headerlink" title="疯狂动物城"></a>疯狂动物城</h2><p><img src="/images/Games101/image-20201110103413753.png" alt="image-20201110103413753"></p>
-<p>毛发的渲染和显示，复杂的过程如何去显示几何和计算光线的传播</p>
-<h2 id="冰雪奇缘——模拟simulation"><a href="#冰雪奇缘——模拟simulation" class="headerlink" title="冰雪奇缘——模拟simulation"></a>冰雪奇缘——模拟simulation</h2><p><img src="/images/Games101/image-20201110103514682.png" alt="image-20201110103514682"></p>
-<p>头发的渲染（头发的执念），发光粒子</p>
-<h1 id="工业设计（Design）"><a href="#工业设计（Design）" class="headerlink" title="工业设计（Design）"></a>工业设计（Design）</h1><h2 id="特斯拉车子的渲染效果"><a href="#特斯拉车子的渲染效果" class="headerlink" title="特斯拉车子的渲染效果"></a>特斯拉车子的渲染效果</h2><p><img src="/images/Games101/image-20201110103953593.png" alt="image-20201110103953593"></p>
-<p>虚拟世界模拟车的碰撞检测</p>
-<h2 id="室内装修"><a href="#室内装修" class="headerlink" title="室内装修"></a>室内装修</h2><p><img src="/images/Games101/image-20201110104126551.png" alt="image-20201110104126551"></p>
-<h1 id="可视化（Visualization）"><a href="#可视化（Visualization）" class="headerlink" title="可视化（Visualization）"></a>可视化（Visualization）</h1><p><img src="/images/Games101/image-20201110104225900.png" alt="image-20201110104225900"></p>
-<p>医学</p>
-<h1 id="虚拟现实（Virtual-Reality）"><a href="#虚拟现实（Virtual-Reality）" class="headerlink" title="虚拟现实（Virtual Reality）"></a>虚拟现实（Virtual Reality）</h1><p><img src="/images/Games101/image-20201110104311033.png" alt="image-20201110104311033"></p>
-<p>可交互的虚拟现实</p>
-<h1 id="数字绘画（Digital-Illustration）"><a href="#数字绘画（Digital-Illustration）" class="headerlink" title="数字绘画（Digital Illustration）"></a>数字绘画（Digital Illustration）</h1><p><img src="/images/Games101/image-20201110104430115.png" alt="image-20201110104430115"></p>
-<h1 id="模拟-Simulation"><a href="#模拟-Simulation" class="headerlink" title="模拟(Simulation)"></a>模拟(Simulation)</h1><p><img src="/images/Games101/image-20201110104509808.png" alt="image-20201110104509808"></p>
-<p>风，黑洞，沙尘暴物理模拟的效果</p>
-<h1 id="GUI-Graphical-User-Interfaces"><a href="#GUI-Graphical-User-Interfaces" class="headerlink" title="GUI(Graphical User Interfaces)"></a>GUI(Graphical User Interfaces)</h1><p><img src="/images/Games101/image-20201110104621919.png" alt="image-20201110104621919"></p>
-<h1 id="Typography（排版）"><a href="#Typography（排版）" class="headerlink" title="Typography（排版）"></a>Typography（排版）</h1><p><img src="/images/Games101/image-20201110104654967.png" alt="image-20201110104654967"></p>
-<h1 id="课程主题-主要四部分"><a href="#课程主题-主要四部分" class="headerlink" title="课程主题(主要四部分)"></a>课程主题(主要四部分)</h1><p>-光栅化(Rasterization) 栅格化</p>
-<p>-曲线和网格(Curves and Meshes)</p>
-<p>-光线追踪(Ray Tracing)</p>
-<p>-动画&#x2F;模拟(Animation &#x2F; Simulation)</p>
-<h2 id="光栅化-Rasterization"><a href="#光栅化-Rasterization" class="headerlink" title="光栅化(Rasterization)"></a>光栅化(Rasterization)</h2><p>课外补充:</p>
-<p>光栅化就是把矢量图形转化成像素点儿的过程。我们屏幕上显示的画面都是由像素组成，而三维物体都是点线面构成的。要让点线面，变成能在屏幕上显示的像素，就需要Rasterize这个过程。就是从矢量的点线面的描述，变成像素的描述，这个过程就是Rasterize。</p>
-<p>有点像是模拟信号转化为数字信号的过程，路由器？</p>
-<p><img src="/images/Games101/image-20201110105739804.png" alt="image-20201110105739804"></p>
-<p><img src="/images/Games101/image-20201110105754703.png" alt="image-20201110105754703"></p>
-<h2 id="曲线和网格-Curves-and-Meshes"><a href="#曲线和网格-Curves-and-Meshes" class="headerlink" title="曲线和网格(Curves and Meshes)"></a>曲线和网格(Curves and Meshes)</h2><p>如何在计算机中表示曲面与曲线</p>
-<p><img src="/images/Games101/image-20201110105829046.png" alt="image-20201110105829046"></p>
-<h2 id="光线追踪-Ray-Tracing"><a href="#光线追踪-Ray-Tracing" class="headerlink" title="光线追踪(Ray Tracing)"></a>光线追踪(Ray Tracing)</h2><p><img src="/images/Games101/image-20201110105905968.png" alt="image-20201110105905968"></p>
-<p><img src="/images/Games101/image-20201110105941599.png" alt="image-20201110105941599"></p>
-<h1 id="Not-About"><a href="#Not-About" class="headerlink" title="Not About"></a>Not About</h1><h2 id="计算机建模软件"><a href="#计算机建模软件" class="headerlink" title="计算机建模软件"></a>计算机建模软件</h2><p><img src="/images/Games101/image-20201110110905088.png" alt="image-20201110110905088"></p>
-<h2 id="计算机视觉"><a href="#计算机视觉" class="headerlink" title="计算机视觉"></a>计算机视觉</h2><p><img src="/images/Games101/image-20201110110922567.png" alt="image-20201110110922567"></p>
-<h1 id="Differences-between-CG-amp-CV"><a href="#Differences-between-CG-amp-CV" class="headerlink" title="Differences between CG&amp;CV"></a>Differences between CG&amp;CV</h1><p><img src="/images/Games101/image-20201110111020693.png" alt="image-20201110111020693"></p>
-<h1 id="Final-Project"><a href="#Final-Project" class="headerlink" title="Final Project"></a>Final Project</h1><p>最后的大作业是最有精华的部分</p>
-]]></content>
-      <categories>
-        <category>Games101现代计算机图形学入门</category>
-      </categories>
-      <tags>
-        <tag>计算机图形学</tag>
-        <tag>闫令琪</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>GAMES101-Lecture03-04-Transformation笔记</title>
     <url>/2020/11/29/GAMES101-Lecture03-Transformation%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="Transformation-变换"><a href="#Transformation-变换" class="headerlink" title="Transformation 变换"></a>Transformation 变换</h1><h2 id="rotation-旋转-反向动力学-IK"><a href="#rotation-旋转-反向动力学-IK" class="headerlink" title="rotation 旋转 反向动力学 IK"></a>rotation 旋转 反向动力学 IK</h2><p><img src="/images/Games101/image-20201129175509435.png" alt="image-20201129175509435"></p>
@@ -432,6 +402,36 @@
       </tags>
   </entry>
   <entry>
+    <title>GAMES101-Lecture02 Review of Linear Algebra笔记</title>
+    <url>/2020/11/10/GAMES101-Lecture02-Review-of-Linear-Algebra%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>旋转的例子</p>
+<p><img src="/images/Games101/image-20201111124722150.png" alt="image-20201111124722150"></p>
+<p>图形学中向量的默认形式是<strong>列向量</strong></p>
+<h1 id="叉乘公式"><a href="#叉乘公式" class="headerlink" title="叉乘公式"></a>叉乘公式</h1><p>$$<br>\vec{a} \times \vec{b}&#x3D;\left(\begin{array}{l}<br>y_{a} z_{b}-y_{b} z_{a} \\<br>z_{a} x_{b}-x_{a} z_{b} \\<br>x_{a} y_{b}-y_{a} x_{b}<br>\end{array}\right)<br>$$</p>
+<p>$$<br>\vec{a} \times \vec{b}&#x3D;A^{*} b&#x3D;\left(\begin{array}{ccc}<br>0 &amp; -z_{a} &amp; y_{a} \\<br>z_{a} &amp; 0 &amp; -x_{a} \\<br>-y_{a} &amp; x_{a} &amp; 0<br>\end{array}\right)\left(\begin{array}{l}<br>x_{b} \\<br>y_{b} \\<br>z_{b}<br>\end{array}\right)<br>$$</p>
+<p>$$<br>\begin{array}{l}<br>\vec{x} \times \vec{y}&#x3D;+\vec{z} \\<br>\vec{y} \times \vec{x}&#x3D;-\vec{z} \\<br>\vec{y} \times \vec{z}&#x3D;+\vec{x} \\<br>\vec{z} \times \vec{y}&#x3D;-\vec{x} \quad \vec{a} \times(\vec{b}+\vec{c})&#x3D;\vec{a} \times \vec{b}+\vec{a} \times \vec{c} \\<br>\vec{z} \times \vec{x}&#x3D;+\vec{y} &amp; \vec{a} \times(k \vec{b})&#x3D;k(\vec{a} \times \vec{b}) \\<br>\vec{x} \times \vec{z}&#x3D;-\vec{y}<br>\end{array}<br>$$<br>叉乘可以定义左右和形状的内外两侧信息，起到定向的作用</p>
+<p><img src="/images/Games101/image-20201115202556394.png" alt="image-20201115202556394"><br>$$<br>\begin{array}{l}<br>\vec{a} \times \vec{b}&#x3D;+\vec{z} \quad \quad a在b的左侧  \\<br>\vec{b} \times \vec{a}&#x3D;-\vec{z} \quad \quad a在b的右侧\\<br>\vec{AB} \times \vec{AP}&#x3D;+ \\<br>\vec{BC} \times \vec{BP}&#x3D;+ \\<br>\vec{CA} \times \vec{CP}&#x3D;+ \quad \quad 如P点在AC右侧,则\vec{CA} \times \vec{CP} 为负值 \\<br>如三角行逆时针,只要所有的叉乘值都为正值或都为负值就可判断在三角形内部，从而忽略给定的三角形的顺序 \\<br>在边上的情况被称为 corner case 这时候开发者自己说了算\<br>\\<br>\end{array}<br>$$</p>
+<h1 id="虚拟机安装问题"><a href="#虚拟机安装问题" class="headerlink" title="虚拟机安装问题"></a>虚拟机安装问题</h1><p>Not in a hypervisor partition (HVP&#x3D;0) (VERR_NEM_NOT_AVAILABLE).</p>
+<p>AMD-V is disabled in the BIOS (or by the host OS) (VERR_SVM_DISABLED).</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>1.Windows设置 - 更新和安全 - 回复 - 立即重新启动</p>
+<p><strong>2.Troubleshoot -&gt; Advanced option – &gt; UEFI Firmware Settings -&gt; Restart</strong></p>
+<p>3.在<strong>BIOS</strong>中找到<strong>Virtualization</strong> 选项，它常位于<strong>Advanced 或 System Configuration</strong> 选项卡下</p>
+<p>4.设置<strong>Virtualization</strong> 的状态为<strong>Enabled。</strong></p>
+<p>AMD和Intel的设置不一样</p>
+<h1 id="Eigen库的使用问题"><a href="#Eigen库的使用问题" class="headerlink" title="Eigen库的使用问题"></a>Eigen库的使用问题</h1><p><img src="/images/Games101/image-20201121230206966.png" alt="image-20201121230206966"></p>
+<h2 id="Eigen库的使用用例"><a href="#Eigen库的使用用例" class="headerlink" title="Eigen库的使用用例"></a>Eigen库的使用用例</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;../../Eigen/Core&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;../../Eigen/Dense&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// Basic Example of cpp</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Example of cpp \n&quot;</span>;</span><br><span class="line">    <span class="type">float</span> a = <span class="number">1.0</span>, b = <span class="number">2.0</span>;</span><br><span class="line">    std::cout &lt;&lt; a &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; a / b &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; std::<span class="built_in">sqrt</span>(b) &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; std::<span class="built_in">acos</span>(<span class="number">-1</span>) &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; std::<span class="built_in">sin</span>(<span class="number">30.0</span> / <span class="number">180.0</span> * <span class="built_in">acos</span>(<span class="number">-1</span>)) &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Example of vector</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Example of vector \n&quot;</span>;</span><br><span class="line">    <span class="comment">// 向量定义</span></span><br><span class="line">    <span class="function">Eigen::Vector3f <span class="title">v</span><span class="params">(<span class="number">1.0f</span>, <span class="number">2.0f</span>, <span class="number">3.0f</span>)</span></span>;</span><br><span class="line">    <span class="function">Eigen::Vector3f <span class="title">w</span><span class="params">(<span class="number">1.0f</span>, <span class="number">0.0f</span>, <span class="number">0.0f</span>)</span></span>;</span><br><span class="line">    <span class="comment">// 向量输出</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Example of output \n&quot;</span>;</span><br><span class="line">    std::cout &lt;&lt; v &lt;&lt; std::endl;</span><br><span class="line">    <span class="comment">// 加法</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Example of add \n&quot;</span>;</span><br><span class="line">    std::cout &lt;&lt; v + w &lt;&lt; std::endl;</span><br><span class="line">    <span class="comment">// 点成</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Example of scalar multiply \n&quot;</span>;</span><br><span class="line">    std::cout &lt;&lt; v * <span class="number">3.0f</span> &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="number">2.0f</span> * v &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Example of matrix</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Example of matrix \n&quot;</span>;</span><br><span class="line">    <span class="comment">// 矩阵定义</span></span><br><span class="line">    Eigen::Matrix3f i, j;</span><br><span class="line">    i &lt;&lt; <span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">4.0</span>, <span class="number">5.0</span>, <span class="number">6.0</span>, <span class="number">7.0</span>, <span class="number">8.0</span>, <span class="number">9.0</span>;</span><br><span class="line">    j &lt;&lt; <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">1.0</span>, <span class="number">4.0</span>, <span class="number">6.0</span>, <span class="number">5.0</span>, <span class="number">9.0</span>, <span class="number">7.0</span>, <span class="number">8.0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 矩阵输出</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Example of output \n&quot;</span>;</span><br><span class="line">    std::cout &lt;&lt; i  &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; j &lt;&lt; std::endl;</span><br><span class="line">	<span class="comment">//矩阵加法</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot; matrix add matrix i + matrix j&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; i+j &lt;&lt; std::endl ;</span><br><span class="line">    <span class="comment">//矩阵点乘</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot; matrix scalar multiply i * 2.0&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; i*<span class="number">2.0</span> &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//矩阵乘法</span></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;matrix multiply i * j&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; i * j &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;matrix multiply vector i * v&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; i * v &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; v.<span class="built_in">transpose</span>()*i &lt;&lt; std::endl;<span class="comment">//reslut is different </span></span><br><span class="line">    <span class="comment">//14</span></span><br><span class="line">    <span class="comment">//32</span></span><br><span class="line">    <span class="comment">//50</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//Transpose result is 30 36 42</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Games101现代计算机图形学入门</category>
+      </categories>
+      <tags>
+        <tag>计算机图形学</tag>
+        <tag>闫令琪</tag>
+        <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GAMES102-Lecture01-高质量实时渲染介绍</title>
     <url>/2021/07/03/GAMES102-Lecture01-%E9%AB%98%E8%B4%A8%E9%87%8F%E5%AE%9E%E6%97%B6%E6%B8%B2%E6%9F%93%E4%BB%8B%E7%BB%8D/</url>
     <content><![CDATA[<h1 id="Real-Time"><a href="#Real-Time" class="headerlink" title="Real-Time"></a>Real-Time</h1><p>一般来说达到30FPS（每秒生成图片数量）就算是实时渲染，在VR和AR领域要达到90FPS.略低于30FPS但也不会太慢的渲染属于interactive rendering。</p>
@@ -474,6 +474,34 @@
       </tags>
   </entry>
   <entry>
+    <title>Junc视频笔记-1</title>
+    <url>/2022/01/20/Junc%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0-1/</url>
+    <content><![CDATA[<p>找了个视频看，记录一下有些意思的部分</p>
+<h1 id="手是第二张脸"><a href="#手是第二张脸" class="headerlink" title="手是第二张脸"></a>手是第二张脸</h1><p>日系或者二次元绘画中，手是第二张脸的说法真有趣</p>
+<p>众所周知，日系绘画中的焦点就是脸部，在整幅绘画中是T0级别，而其手是第二张脸的说法等于是把手的地位顺位到了T1。</p>
+<p>如果用游戏排行的角度来划分的话</p>
+<p>T0 -脸部</p>
+<p>T1-手 腿</p>
+<p>T2-褶皱</p>
+<p>T3-背景</p>
+<p><img src="/%5Cimages%5Chuihuabiji%5Cjunc%5Cimage-20220120143947254.png" alt="image-20220120143947254"></p>
+<h1 id="骨点与冷暖"><a href="#骨点与冷暖" class="headerlink" title="骨点与冷暖"></a>骨点与冷暖</h1><p>皮肤的冷暖对比，日系绘画会在肘部和肩膀做一点皮肤上的红色，如果纠结的话，原因就是因为骨头处皮肤下的血管暴漏的比较多，而其他地方大多是冷色，因为血管在皮下大概这个意思，但是这个知识点只是说.没什么用,知道逻辑就好,皮肤薄的地方偏红，厚的地方偏冷。</p>
+<p><img src="/%5Cimages%5Chuihuabiji%5Cjunc%5Cimage-20220120145920130.png" alt="image-20220120145920130"></p>
+<p>属于是可做可不做的塑造内容，如果整幅图里缺少暖色，可以试着多做一点，冷暖对比</p>
+<p><img src="/%5Cimages%5Chuihuabiji%5Cjunc%5Cimage-20220120151113269.png" alt="image-20220120151113269"></p>
+<p>像上图这种纯色的图比较缺少暖色，就会在一些地方补做一些暖色使得整幅图的冷暖不至于失调同时突出焦点，如果不是从写实的角度来讲，这些暖色其实在哪里加都可以，比如上图中阴影中的暖色和腿部阴影的暖色，这方面我感觉画在哪里是没什么限制，也不用介意骨点什么的。</p>
+<h1 id="冷暖与油画"><a href="#冷暖与油画" class="headerlink" title="冷暖与油画"></a>冷暖与油画</h1><p>刚好找到一张K大关于冷暖的讨论串，整理一下。</p>
+<p>油画画家是做冷暖的高手</p>
+]]></content>
+      <categories>
+        <category>绘画笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>junc</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo双线部署与双SSH设置</title>
     <url>/2020/01/31/Hexo%E5%8F%8C%E7%BA%BF%E9%83%A8%E7%BD%B2%E4%B8%8E%E5%8F%8CSSH%E8%AE%BE%E7%BD%AE/</url>
     <content><![CDATA[<h2 id="1-SSH配置"><a href="#1-SSH配置" class="headerlink" title="1.SSH配置"></a>1.SSH配置</h2><p>Hexo博客要同时在github和coding上发布，两端同时需要提交代码，这个时候就需要电脑配置多个ssh</p>
@@ -488,7 +516,7 @@
 <p>添加如下内容：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># github 个人的GitHub公钥</span><br><span class="line">Host Github</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/Github  # 指定特定的ssh私钥文件</span><br><span class="line">User git</span><br><span class="line"></span><br><span class="line"># Coding 个人的Coding公钥</span><br><span class="line">Host Coding</span><br><span class="line">HostName git.coding.net</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/Coding  # 指定特定的ssh私钥文件</span><br><span class="line">User git</span><br></pre></td></tr></table></figure>
 
-<h2 id="3-绑定github和coding的ssh"><a href="#3-绑定github和coding的ssh" class="headerlink" title="3.绑定github和coding的ssh"></a>3.绑定github和coding的ssh</h2><p>![LJV5&#96;2OC4BO4_~<a href="mailto:&#95;&#x32;&#x52;&#64;&#x4c;&#88;&#88;&#x57;&#79;&#46;&#112;&#110;&#x67;">&#95;&#x32;&#x52;&#64;&#x4c;&#88;&#88;&#x57;&#79;&#46;&#112;&#110;&#x67;</a>](<a href="https://i.loli.net/2020/01/31/PL4h13yFRjEGzAc.png">https://i.loli.net/2020/01/31/PL4h13yFRjEGzAc.png</a>)</p>
+<h2 id="3-绑定github和coding的ssh"><a href="#3-绑定github和coding的ssh" class="headerlink" title="3.绑定github和coding的ssh"></a>3.绑定github和coding的ssh</h2><p>![LJV5&#96;2OC4BO4_~<a href="mailto:&#x5f;&#50;&#82;&#64;&#76;&#88;&#88;&#87;&#79;&#x2e;&#112;&#x6e;&#x67;">&#x5f;&#50;&#82;&#64;&#76;&#88;&#88;&#87;&#79;&#x2e;&#112;&#x6e;&#x67;</a>](<a href="https://i.loli.net/2020/01/31/PL4h13yFRjEGzAc.png">https://i.loli.net/2020/01/31/PL4h13yFRjEGzAc.png</a>)</p>
 <p><img src="https://i.loli.net/2020/01/31/S83piQJfCOlRtes.png" alt="KA__X~H9S38VCXDWZU2_G0L.png"></p>
 <h2 id="4-ssh-add"><a href="#4-ssh-add" class="headerlink" title="4.ssh-add"></a>4.ssh-add</h2><p>手动开启ssh</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">eval `ssh-agent -s`</span><br></pre></td></tr></table></figure>
@@ -532,34 +560,6 @@
         <tag>博客</tag>
         <tag>部署</tag>
         <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Junc视频笔记-1</title>
-    <url>/2022/01/20/Junc%E8%A7%86%E9%A2%91%E7%AC%94%E8%AE%B0-1/</url>
-    <content><![CDATA[<p>找了个视频看，记录一下有些意思的部分</p>
-<h1 id="手是第二张脸"><a href="#手是第二张脸" class="headerlink" title="手是第二张脸"></a>手是第二张脸</h1><p>日系或者二次元绘画中，手是第二张脸的说法真有趣</p>
-<p>众所周知，日系绘画中的焦点就是脸部，在整幅绘画中是T0级别，而其手是第二张脸的说法等于是把手的地位顺位到了T1。</p>
-<p>如果用游戏排行的角度来划分的话</p>
-<p>T0 -脸部</p>
-<p>T1-手 腿</p>
-<p>T2-褶皱</p>
-<p>T3-背景</p>
-<p><img src="/%5Cimages%5Chuihuabiji%5Cjunc%5Cimage-20220120143947254.png" alt="image-20220120143947254"></p>
-<h1 id="骨点与冷暖"><a href="#骨点与冷暖" class="headerlink" title="骨点与冷暖"></a>骨点与冷暖</h1><p>皮肤的冷暖对比，日系绘画会在肘部和肩膀做一点皮肤上的红色，如果纠结的话，原因就是因为骨头处皮肤下的血管暴漏的比较多，而其他地方大多是冷色，因为血管在皮下大概这个意思，但是这个知识点只是说.没什么用,知道逻辑就好,皮肤薄的地方偏红，厚的地方偏冷。</p>
-<p><img src="/%5Cimages%5Chuihuabiji%5Cjunc%5Cimage-20220120145920130.png" alt="image-20220120145920130"></p>
-<p>属于是可做可不做的塑造内容，如果整幅图里缺少暖色，可以试着多做一点，冷暖对比</p>
-<p><img src="/%5Cimages%5Chuihuabiji%5Cjunc%5Cimage-20220120151113269.png" alt="image-20220120151113269"></p>
-<p>像上图这种纯色的图比较缺少暖色，就会在一些地方补做一些暖色使得整幅图的冷暖不至于失调同时突出焦点，如果不是从写实的角度来讲，这些暖色其实在哪里加都可以，比如上图中阴影中的暖色和腿部阴影的暖色，这方面我感觉画在哪里是没什么限制，也不用介意骨点什么的。</p>
-<h1 id="冷暖与油画"><a href="#冷暖与油画" class="headerlink" title="冷暖与油画"></a>冷暖与油画</h1><p>刚好找到一张K大关于冷暖的讨论串，整理一下。</p>
-<p>油画画家是做冷暖的高手</p>
-]]></content>
-      <categories>
-        <category>绘画笔记</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>junc</tag>
       </tags>
   </entry>
   <entry>
@@ -625,44 +625,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Krenz透视课作业汇总</title>
-    <url>/2020/01/28/Krenz%E9%80%8F%E8%A7%86%E8%AF%BE%E7%AC%94%E8%AE%B0-1/</url>
-    <content><![CDATA[<p>​    之前就喜欢胡思乱写一些东西，记笔记也是常态，从大四开始因为要准备考研就没有摸过画板了，之后放假半年再摸起画笔找状态说实话也费了不少时间，而且在K大那里学的东西基本忘的差不多了，又看到家里的旧电脑上残留有之前上透视课的画作业，还有聊天记录和一些自己无聊的时候思考的笔记，想了想就整理在这里，再抄一下K大微博发的课堂笔记和同学的心得再过一遍，也算是重新学习了一遍。</p>
-<h2 id="第一堂-房子临摹-透视比例与结构-perspective-proportion-and-structure"><a href="#第一堂-房子临摹-透视比例与结构-perspective-proportion-and-structure" class="headerlink" title="第一堂:房子临摹(透视比例与结构) perspective, proportion and structure"></a>第一堂:房子临摹(透视比例与结构) perspective, proportion and structure</h2><h3 id="作业1-临摹"><a href="#作业1-临摹" class="headerlink" title="作业1:临摹"></a>作业1:临摹</h3><p><img src="/images/image-20200128223330037.png" alt="image-20200128223330037"></p>
-<span id="more"></span>
-
-<h3 id="作业2-转角度"><a href="#作业2-转角度" class="headerlink" title="作业2:转角度"></a>作业2:转角度</h3><p><img src="/images/image-20200128223344971.png" alt="image-20200128223344971"></p>
-<h3 id="作业提示"><a href="#作业提示" class="headerlink" title="作业提示"></a>作业提示</h3><p><img src="/images/image-20200128223438447.png" alt="image-20200128223438447"></p>
-<p>有句话叫做什么来着，眼高手低，不做这作业还以为自己很厉害，等到自己画的时候那个苦头吃的真心难受。</p>
-<p>实际执行起来才深刻理解什么叫做真正的眼高手低，不过认识到也是后话了，当时啊，是第一次接触绘画，纯小白，非常</p>
-<p>纯那种，作业留完大部分时间倒不是在画作业，而是摸索软件…后来有了意识就能分辨小白和有经验的人就是看线条，当</p>
-<p>时也没啥注意事项之类的</p>
-<p><img src="/images/image-20200128223916982.png" alt="image-20200128223916982"></p>
-<p><img src="/images/image-20200128223929540.png" alt="image-20200128223929540"></p>
-<p><img src="/images/image-20200128223949965.png" alt="image-20200128223949965"></p>
-<p><img src="/images/image-20200128224005785.png" alt="image-20200128224005785"></p>
-<h3 id="合格作业模范"><a href="#合格作业模范" class="headerlink" title="合格作业模范:"></a>合格作业模范:</h3><p><img src="/images/image-20200128224031926.png" alt="image-20200128224031926"></p>
-<p>图片来自K大透视课的L1基础作业汇总说明，</p>
-<h2 id="第二堂-简单室内场景-大熊与哆啦A梦"><a href="#第二堂-简单室内场景-大熊与哆啦A梦" class="headerlink" title="第二堂:简单室内场景 -大熊与哆啦A梦"></a>第二堂:简单室内场景 -大熊与哆啦A梦</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L2%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
-<h2 id="第三堂-简单室外场景与椅子-四叶妹妹"><a href="#第三堂-简单室外场景与椅子-四叶妹妹" class="headerlink" title="第三堂:简单室外场景与椅子-四叶妹妹"></a>第三堂:简单室外场景与椅子-四叶妹妹</h2><p> <img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L3%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
-<h2 id="第四堂-城镇场景"><a href="#第四堂-城镇场景" class="headerlink" title="第四堂:城镇场景"></a>第四堂:城镇场景</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L4%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
-<h2 id="第五堂-鞋子-学生鞋（各个角度与变形"><a href="#第五堂-鞋子-学生鞋（各个角度与变形" class="headerlink" title="第五堂:鞋子-学生鞋（各个角度与变形"></a>第五堂:鞋子-学生鞋（各个角度与变形</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L5%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
-<h2 id="第六堂-Q版人物-林克（各个角度"><a href="#第六堂-Q版人物-林克（各个角度" class="headerlink" title="第六堂:Q版人物-林克（各个角度"></a>第六堂:Q版人物-林克（各个角度</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L6%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
-<h2 id="第七堂-16格（用正方体画各种简单物体的各个角度"><a href="#第七堂-16格（用正方体画各种简单物体的各个角度" class="headerlink" title="第七堂:16格（用正方体画各种简单物体的各个角度"></a>第七堂:16格（用正方体画各种简单物体的各个角度</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L7%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
-<h2 id="第八堂-带景人物"><a href="#第八堂-带景人物" class="headerlink" title="第八堂:带景人物"></a>第八堂:带景人物</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L8%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
-<h2 id="DLC作业"><a href="#DLC作业" class="headerlink" title="DLC作业"></a>DLC作业</h2><h3 id="1-钢弹车"><a href="#1-钢弹车" class="headerlink" title="1.钢弹车"></a>1.钢弹车</h3><p><img src="/images/TouShi/DLC/%E9%92%A2%E5%BC%B9%E8%BD%A6.jpg"></p>
-]]></content>
-      <categories>
-        <category>透视课</category>
-      </categories>
-      <tags>
-        <tag>Krenz</tag>
-        <tag>透视课</tag>
-        <tag>DLC</tag>
-        <tag>homework</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Unity Shader 学习笔记-基础篇-1</title>
     <url>/2019/12/24/Unity%20Shader%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80%E7%AF%87-1/</url>
     <content><![CDATA[<h2 id="1-一个基础的Unity-Shader结构"><a href="#1-一个基础的Unity-Shader结构" class="headerlink" title="1.一个基础的Unity Shader结构"></a>1.一个基础的Unity Shader结构</h2><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">//起名与控制出现的位置 Shader-&gt;Unlit-&gt;S1</span></span><br><span class="line">Shader <span class="string">&quot;Unlit/S1&quot;</span></span><br><span class="line">&#123;	</span><br><span class="line">    <span class="comment">/**************************************************************/</span></span><br><span class="line">    Properties</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//属性的变量名字 (&quot;显示在面板上的名字&quot;，类型)= 值</span></span><br><span class="line">        _MainTex (<span class="string">&quot;Texture&quot;</span>, <span class="number">2</span>D) = <span class="string">&quot;white&quot;</span> &#123;&#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//所有属性的例子</span></span><br><span class="line">        <span class="comment">// Numbers and sliders</span></span><br><span class="line">        _Int (<span class="string">&quot; Int&quot;</span>, Int)= <span class="number">2</span> <span class="comment">//整形</span></span><br><span class="line">        _Float (<span class="string">&quot;Float&quot;</span>, Float)=<span class="number">1.5</span> <span class="comment">//浮点数</span></span><br><span class="line">        _Range(<span class="string">&quot;Range&quot;</span>, Range(<span class="number">0.0</span>, <span class="number">5.0</span>))=<span class="number">3.0</span> <span class="comment">//范围</span></span><br><span class="line">        <span class="comment">// Colors and Vectors</span></span><br><span class="line">        _Color (<span class="string">&quot;Color&quot;</span>, Color)=(<span class="number">1</span>, <span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>) <span class="comment">//颜色</span></span><br><span class="line">        _Vector (<span class="string">&quot;Vector&quot;</span>, Vector)=(<span class="number">2</span>,<span class="number">3</span>,<span class="number">6</span>, <span class="number">1</span>)<span class="comment">//向量</span></span><br><span class="line">        <span class="comment">// Textures</span></span><br><span class="line">        _2D(<span class="string">&quot;2D&quot;</span>,<span class="number">2</span>D)=<span class="string">&quot;&quot;</span>&#123;&#125; </span><br><span class="line">        _Cube (<span class="string">&quot;Cube&quot;</span>, Cube)=<span class="string">&quot;white&quot;</span>&#123;&#125;<span class="comment">//内置纹理</span></span><br><span class="line">        _3D(<span class="string">&quot;3D&quot;</span>,<span class="number">3</span>D)=<span class="string">&quot;back&quot;</span>&#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/************************************************************/</span></span><br><span class="line">    </span><br><span class="line">    SubShader</span><br><span class="line">    &#123;</span><br><span class="line">        </span><br><span class="line">        Tags &#123; <span class="string">&quot;RenderType&quot;</span>=<span class="string">&quot;Opaque&quot;</span> &#125;</span><br><span class="line">        <span class="comment">/*一些Pass</span></span><br><span class="line"><span class="comment">        </span></span><br><span class="line"><span class="comment">        </span></span><br><span class="line"><span class="comment">        </span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        LOD <span class="number">100</span></span><br><span class="line">	    <span class="comment">//pass过多会影响性能</span></span><br><span class="line">        Pass</span><br><span class="line">        &#123;	<span class="comment">//定义名称提高复用性 UsePass&quot;MyShader/MYPASSNAME&quot; Unity会把Pass名称转为大写</span></span><br><span class="line">            Name <span class="string">&quot;MyPassName&quot;</span></span><br><span class="line">            CGPROGRAM</span><br><span class="line">            <span class="meta">#<span class="keyword">pragma</span> vertex vert</span></span><br><span class="line">            <span class="meta">#<span class="keyword">pragma</span> fragment frag</span></span><br><span class="line">            <span class="comment">// make fog work</span></span><br><span class="line">            <span class="meta">#<span class="keyword">pragma</span> multi_compile_fog</span></span><br><span class="line"></span><br><span class="line">            <span class="meta">#include &quot;UnityCG.cginc&quot;</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">struct</span> appdata</span><br><span class="line">            &#123;</span><br><span class="line">                float4 vertex : POSITION;</span><br><span class="line">                float2 uv : TEXCOORD0;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">struct</span> v2f</span><br><span class="line">            &#123;</span><br><span class="line">                float2 uv : TEXCOORD0;</span><br><span class="line">                UNITY_FOG_COORDS(<span class="number">1</span>)</span><br><span class="line">                float4 vertex : SV_POSITION;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            sampler2D _MainTex;</span><br><span class="line">            float4 _MainTex_ST;</span><br><span class="line"></span><br><span class="line">            <span class="function">v2f <span class="title">vert</span> (<span class="params">appdata v</span>)</span></span><br><span class="line">            &#123;</span><br><span class="line">                v2f o;</span><br><span class="line">                o.vertex = UnityObjectToClipPos(v.vertex);</span><br><span class="line">                o.uv = TRANSFORM_TEX(v.uv, _MainTex);</span><br><span class="line">                UNITY_TRANSFER_FOG(o,o.vertex);</span><br><span class="line">                <span class="keyword">return</span> o;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="function">fixed4 <span class="title">frag</span> (<span class="params">v2f i</span>) : SV_Target</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">// sample the texture</span></span><br><span class="line">                fixed4 col = tex2D(_MainTex, i.uv);</span><br><span class="line">                <span class="comment">// apply fog</span></span><br><span class="line">                UNITY_APPLY_FOG(i.fogCoord, col);</span><br><span class="line">                <span class="keyword">return</span> col;</span><br><span class="line">            &#125;</span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -717,43 +679,41 @@
       </tags>
   </entry>
   <entry>
-    <title>K大贴褶皱的魔法-照片褶皱负型用于日系明暗</title>
-    <url>/2022/01/18/K%E5%A4%A7%E8%B4%B4%E8%A4%B6%E7%9A%B1%E7%9A%84%E9%AD%94%E6%B3%95-%E7%85%A7%E7%89%87%E8%A4%B6%E7%9A%B1%E8%B4%9F%E5%9E%8B%E7%94%A8%E4%BA%8E%E6%97%A5%E7%B3%BB%E6%98%8E%E6%9A%97/</url>
-    <content><![CDATA[<p>首先照一张照片调成2阶黑白的调子，</p>
-<p><img src="/images/KdaTieZheZhou/image-20220118220644791.png" alt="image-20220118220644791"></p>
-<p>随便取一部分，画上线稿与轮廓(练习轮廓的目的)</p>
-<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118220905794.png" alt="image-20220118220905794"></p>
-<p>在对形状进行概括</p>
-<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118220947231.png" alt="image-20220118220947231"></p>
-<p>看一下形状的光照方向方向(如果是飘动的褶皱的话)</p>
-<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118221328313.png" alt="image-20220118221328313"></p>
-<p>找张图看一下这个轮廓能用在哪里</p>
-<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118221406455.png" alt="image-20220118221406455"></p>
-<p>看了一下马尾的轮廓和光照的方向差不多，可以试着贴上看看，还可以，之后就可以参考着细化明暗了。</p>
-<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118221437293.png" alt="image-20220118221437293"></p>
-<p>以上就是照片的负型形状用于日系绘画的技巧。</p>
-<h2 id="动画的思维-褶皱的负型简化与轮廓简化-2"><a href="#动画的思维-褶皱的负型简化与轮廓简化-2" class="headerlink" title="动画的思维-褶皱的负型简化与轮廓简化-2"></a>动画的思维-褶皱的负型简化与轮廓简化-2</h2><p>同学的褶皱负型往写实走，导致的结果是形状会过于碎，细节太多。</p>
-<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118222447467.png" alt="image-20220118222447467"></p>
-<p>K大就举了画动画的例子，因为动画一般要求简洁明了的概括明暗。</p>
-<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118222706110.png" alt="image-20220118222706110"></p>
-<p>这是负型概括，负型概括之后我们有了明暗的形状，需要对外形的轮廓进行概括，回忆一下动画的线稿一般都比较简单，一般都是用CSI 曲线 直线 S线构成的轮廓。</p>
-<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118223002453.png" alt="image-20220118223002453"></p>
-<p>褶皱的轮廓做简化之后其明暗的块面也要做减法，结构明确的物体其明暗比较确定我们不用自己做简化，而像有些写实的图其褶皱明暗的形状在构成上看过于碎，没有大中小的对比和疏密对比，我们需要自己做减法。</p>
-<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118223325524.png" alt="image-20220118223325524"></p>
-<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118223622975.png" alt="image-20220118223622975"></p>
-<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118223642157.png" alt="image-20220118223642157"></p>
+    <title>Krenz透视课作业汇总</title>
+    <url>/2020/01/28/Krenz%E9%80%8F%E8%A7%86%E8%AF%BE%E7%AC%94%E8%AE%B0-1/</url>
+    <content><![CDATA[<p>​    之前就喜欢胡思乱写一些东西，记笔记也是常态，从大四开始因为要准备考研就没有摸过画板了，之后放假半年再摸起画笔找状态说实话也费了不少时间，而且在K大那里学的东西基本忘的差不多了，又看到家里的旧电脑上残留有之前上透视课的画作业，还有聊天记录和一些自己无聊的时候思考的笔记，想了想就整理在这里，再抄一下K大微博发的课堂笔记和同学的心得再过一遍，也算是重新学习了一遍。</p>
+<h2 id="第一堂-房子临摹-透视比例与结构-perspective-proportion-and-structure"><a href="#第一堂-房子临摹-透视比例与结构-perspective-proportion-and-structure" class="headerlink" title="第一堂:房子临摹(透视比例与结构) perspective, proportion and structure"></a>第一堂:房子临摹(透视比例与结构) perspective, proportion and structure</h2><h3 id="作业1-临摹"><a href="#作业1-临摹" class="headerlink" title="作业1:临摹"></a>作业1:临摹</h3><p><img src="/images/image-20200128223330037.png" alt="image-20200128223330037"></p>
+<span id="more"></span>
+
+<h3 id="作业2-转角度"><a href="#作业2-转角度" class="headerlink" title="作业2:转角度"></a>作业2:转角度</h3><p><img src="/images/image-20200128223344971.png" alt="image-20200128223344971"></p>
+<h3 id="作业提示"><a href="#作业提示" class="headerlink" title="作业提示"></a>作业提示</h3><p><img src="/images/image-20200128223438447.png" alt="image-20200128223438447"></p>
+<p>有句话叫做什么来着，眼高手低，不做这作业还以为自己很厉害，等到自己画的时候那个苦头吃的真心难受。</p>
+<p>实际执行起来才深刻理解什么叫做真正的眼高手低，不过认识到也是后话了，当时啊，是第一次接触绘画，纯小白，非常</p>
+<p>纯那种，作业留完大部分时间倒不是在画作业，而是摸索软件…后来有了意识就能分辨小白和有经验的人就是看线条，当</p>
+<p>时也没啥注意事项之类的</p>
+<p><img src="/images/image-20200128223916982.png" alt="image-20200128223916982"></p>
+<p><img src="/images/image-20200128223929540.png" alt="image-20200128223929540"></p>
+<p><img src="/images/image-20200128223949965.png" alt="image-20200128223949965"></p>
+<p><img src="/images/image-20200128224005785.png" alt="image-20200128224005785"></p>
+<h3 id="合格作业模范"><a href="#合格作业模范" class="headerlink" title="合格作业模范:"></a>合格作业模范:</h3><p><img src="/images/image-20200128224031926.png" alt="image-20200128224031926"></p>
+<p>图片来自K大透视课的L1基础作业汇总说明，</p>
+<h2 id="第二堂-简单室内场景-大熊与哆啦A梦"><a href="#第二堂-简单室内场景-大熊与哆啦A梦" class="headerlink" title="第二堂:简单室内场景 -大熊与哆啦A梦"></a>第二堂:简单室内场景 -大熊与哆啦A梦</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L2%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
+<h2 id="第三堂-简单室外场景与椅子-四叶妹妹"><a href="#第三堂-简单室外场景与椅子-四叶妹妹" class="headerlink" title="第三堂:简单室外场景与椅子-四叶妹妹"></a>第三堂:简单室外场景与椅子-四叶妹妹</h2><p> <img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L3%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
+<h2 id="第四堂-城镇场景"><a href="#第四堂-城镇场景" class="headerlink" title="第四堂:城镇场景"></a>第四堂:城镇场景</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L4%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
+<h2 id="第五堂-鞋子-学生鞋（各个角度与变形"><a href="#第五堂-鞋子-学生鞋（各个角度与变形" class="headerlink" title="第五堂:鞋子-学生鞋（各个角度与变形"></a>第五堂:鞋子-学生鞋（各个角度与变形</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L5%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
+<h2 id="第六堂-Q版人物-林克（各个角度"><a href="#第六堂-Q版人物-林克（各个角度" class="headerlink" title="第六堂:Q版人物-林克（各个角度"></a>第六堂:Q版人物-林克（各个角度</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L6%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
+<h2 id="第七堂-16格（用正方体画各种简单物体的各个角度"><a href="#第七堂-16格（用正方体画各种简单物体的各个角度" class="headerlink" title="第七堂:16格（用正方体画各种简单物体的各个角度"></a>第七堂:16格（用正方体画各种简单物体的各个角度</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L7%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
+<h2 id="第八堂-带景人物"><a href="#第八堂-带景人物" class="headerlink" title="第八堂:带景人物"></a>第八堂:带景人物</h2><p><img src="/images/TouShi/HomeWork/Krenz-%E9%80%8F%E8%A7%86L8%E5%9F%BA%E7%A1%80%E4%BD%9C%E4%B8%9A%E6%B1%87%E6%80%BB%E8%AF%B4%E6%98%8E.jpg"></p>
+<h2 id="DLC作业"><a href="#DLC作业" class="headerlink" title="DLC作业"></a>DLC作业</h2><h3 id="1-钢弹车"><a href="#1-钢弹车" class="headerlink" title="1.钢弹车"></a>1.钢弹车</h3><p><img src="/images/TouShi/DLC/%E9%92%A2%E5%BC%B9%E8%BD%A6.jpg"></p>
 ]]></content>
       <categories>
-        <category>褶皱</category>
+        <category>透视课</category>
       </categories>
       <tags>
-        <tag>构成课</tag>
         <tag>Krenz</tag>
-        <tag>褶皱</tag>
-        <tag>负型</tag>
-        <tag>照片</tag>
-        <tag>贴图</tag>
-        <tag>技巧</tag>
+        <tag>透视课</tag>
+        <tag>DLC</tag>
+        <tag>homework</tag>
       </tags>
   </entry>
   <entry>
@@ -811,6 +771,46 @@
       </tags>
   </entry>
   <entry>
+    <title>K大贴褶皱的魔法-照片褶皱负型用于日系明暗</title>
+    <url>/2022/01/18/K%E5%A4%A7%E8%B4%B4%E8%A4%B6%E7%9A%B1%E7%9A%84%E9%AD%94%E6%B3%95-%E7%85%A7%E7%89%87%E8%A4%B6%E7%9A%B1%E8%B4%9F%E5%9E%8B%E7%94%A8%E4%BA%8E%E6%97%A5%E7%B3%BB%E6%98%8E%E6%9A%97/</url>
+    <content><![CDATA[<p>首先照一张照片调成2阶黑白的调子，</p>
+<p><img src="/images/KdaTieZheZhou/image-20220118220644791.png" alt="image-20220118220644791"></p>
+<p>随便取一部分，画上线稿与轮廓(练习轮廓的目的)</p>
+<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118220905794.png" alt="image-20220118220905794"></p>
+<p>在对形状进行概括</p>
+<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118220947231.png" alt="image-20220118220947231"></p>
+<p>看一下形状的光照方向方向(如果是飘动的褶皱的话)</p>
+<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118221328313.png" alt="image-20220118221328313"></p>
+<p>找张图看一下这个轮廓能用在哪里</p>
+<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118221406455.png" alt="image-20220118221406455"></p>
+<p>看了一下马尾的轮廓和光照的方向差不多，可以试着贴上看看，还可以，之后就可以参考着细化明暗了。</p>
+<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118221437293.png" alt="image-20220118221437293"></p>
+<p>以上就是照片的负型形状用于日系绘画的技巧。</p>
+<h2 id="动画的思维-褶皱的负型简化与轮廓简化-2"><a href="#动画的思维-褶皱的负型简化与轮廓简化-2" class="headerlink" title="动画的思维-褶皱的负型简化与轮廓简化-2"></a>动画的思维-褶皱的负型简化与轮廓简化-2</h2><p>同学的褶皱负型往写实走，导致的结果是形状会过于碎，细节太多。</p>
+<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118222447467.png" alt="image-20220118222447467"></p>
+<p>K大就举了画动画的例子，因为动画一般要求简洁明了的概括明暗。</p>
+<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118222706110.png" alt="image-20220118222706110"></p>
+<p>这是负型概括，负型概括之后我们有了明暗的形状，需要对外形的轮廓进行概括，回忆一下动画的线稿一般都比较简单，一般都是用CSI 曲线 直线 S线构成的轮廓。</p>
+<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118223002453.png" alt="image-20220118223002453"></p>
+<p>褶皱的轮廓做简化之后其明暗的块面也要做减法，结构明确的物体其明暗比较确定我们不用自己做简化，而像有些写实的图其褶皱明暗的形状在构成上看过于碎，没有大中小的对比和疏密对比，我们需要自己做减法。</p>
+<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118223325524.png" alt="image-20220118223325524"></p>
+<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118223622975.png" alt="image-20220118223622975"></p>
+<p><img src="/%5Cimages%5CKdaTieZheZhou%5Cimage-20220118223642157.png" alt="image-20220118223642157"></p>
+]]></content>
+      <categories>
+        <category>褶皱</category>
+      </categories>
+      <tags>
+        <tag>构成课</tag>
+        <tag>Krenz</tag>
+        <tag>褶皱</tag>
+        <tag>负型</tag>
+        <tag>照片</tag>
+        <tag>贴图</tag>
+        <tag>技巧</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>VisualStudio学习笔记-VisualZStudio编译器及其版本的问题</title>
     <url>/2020/02/04/VisualStudio%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-VisualZStudio%E7%BC%96%E8%AF%91%E5%99%A8%E5%8F%8A%E5%85%B6%E7%89%88%E6%9C%AC%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<p>一些编译器版本的_MSC_VER值</p>
@@ -822,28 +822,6 @@
 <p><a href="https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering">Microsoft Visual C++</a>可查看全部的版本号</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">MSC    <span class="number">2.0</span>   _MSC_VER == <span class="number">200</span></span><br><span class="line">MSC    <span class="number">3.0</span>   _MSC_VER == <span class="number">300</span></span><br><span class="line">MSC    <span class="number">4.0</span>   _MSC_VER == <span class="number">400</span></span><br><span class="line">MSC    <span class="number">5.0</span>   _MSC_VER == <span class="number">500</span></span><br><span class="line">MSC    <span class="number">6.0</span>   _MSC_VER == <span class="number">600</span></span><br><span class="line">MSC    <span class="number">7.0</span>   _MSC_VER == <span class="number">700</span></span><br><span class="line">MSVC++ <span class="number">1.0</span>   _MSC_VER == <span class="number">800</span></span><br><span class="line">MSVC++ <span class="number">2.0</span>   _MSC_VER == <span class="number">900</span></span><br><span class="line">MSVC++ <span class="number">4.0</span>   _MSC_VER == <span class="number">1000</span> (Developer Studio <span class="number">4.0</span>)</span><br><span class="line">MSVC++ <span class="number">4.2</span>   _MSC_VER == <span class="number">1020</span> (Developer Studio <span class="number">4.2</span>)</span><br><span class="line">MSVC++ <span class="number">5.0</span>   _MSC_VER == <span class="number">1100</span> (Visual Studio <span class="number">97</span> version <span class="number">5.0</span>)</span><br><span class="line">MSVC++ <span class="number">6.0</span>   _MSC_VER == <span class="number">1200</span> (Visual Studio <span class="number">6.0</span> version <span class="number">6.0</span>)</span><br><span class="line">MSVC++ <span class="number">7.0</span>   _MSC_VER == <span class="number">1300</span> (Visual Studio .NET <span class="number">2002</span> version <span class="number">7.0</span>)</span><br><span class="line">MSVC++ <span class="number">7.1</span>   _MSC_VER == <span class="number">1310</span> (Visual Studio .NET <span class="number">2003</span> version <span class="number">7.1</span>)</span><br><span class="line">MSVC++ <span class="number">8.0</span>   _MSC_VER == <span class="number">1400</span> (Visual Studio <span class="number">2005</span> version <span class="number">8.0</span>)</span><br><span class="line">MSVC++ <span class="number">9.0</span>   _MSC_VER == <span class="number">1500</span> (Visual Studio <span class="number">2008</span> version <span class="number">9.0</span>)</span><br><span class="line">MSVC++ <span class="number">10.0</span>  _MSC_VER == <span class="number">1600</span> (Visual Studio <span class="number">2010</span> version <span class="number">10.0</span>)</span><br><span class="line">MSVC++ <span class="number">11.0</span>  _MSC_VER == <span class="number">1700</span> (Visual Studio <span class="number">2012</span> version <span class="number">11.0</span>)</span><br><span class="line">MSVC++ <span class="number">12.0</span>  _MSC_VER == <span class="number">1800</span> (Visual Studio <span class="number">2013</span> version <span class="number">12.0</span>)</span><br><span class="line">MSVC++ <span class="number">14.0</span>  _MSC_VER == <span class="number">1900</span> (Visual Studio <span class="number">2015</span> version <span class="number">14.0</span>)</span><br><span class="line">MSVC++ <span class="number">14.1</span>  _MSC_VER == <span class="number">1910</span> (Visual Studio <span class="number">2017</span> version <span class="number">15.0</span>)</span><br><span class="line">MSVC++ <span class="number">14.11</span> _MSC_VER == <span class="number">1911</span> (Visual Studio <span class="number">2017</span> version <span class="number">15.3</span>)</span><br><span class="line">MSVC++ <span class="number">14.12</span> _MSC_VER == <span class="number">1912</span> (Visual Studio <span class="number">2017</span> version <span class="number">15.5</span>)</span><br><span class="line">MSVC++ <span class="number">14.13</span> _MSC_VER == <span class="number">1913</span> (Visual Studio <span class="number">2017</span> version <span class="number">15.6</span>)</span><br><span class="line">MSVC++ <span class="number">14.14</span> _MSC_VER == <span class="number">1914</span> (Visual Studio <span class="number">2017</span> version <span class="number">15.7</span>)</span><br><span class="line">MSVC++ <span class="number">14.15</span> _MSC_VER == <span class="number">1915</span> (Visual Studio <span class="number">2017</span> version <span class="number">15.8</span>)</span><br><span class="line">MSVC++ <span class="number">14.16</span> _MSC_VER == <span class="number">1916</span> (Visual Studio <span class="number">2017</span> version <span class="number">15.9</span>)</span><br><span class="line">MSVC++ <span class="number">14.2</span>  _MSC_VER == <span class="number">1920</span> (Visual Studio <span class="number">2019</span> Version <span class="number">16.0</span>)</span><br><span class="line">MSVC++ <span class="number">14.21</span> _MSC_VER == <span class="number">1921</span> (Visual Studio <span class="number">2019</span> Version <span class="number">16.1</span>)</span><br><span class="line">MSVC++ <span class="number">14.22</span> _MSC_VER == <span class="number">1922</span> (Visual Studio <span class="number">2019</span> Version <span class="number">16.2</span>)</span><br><span class="line">MSVC++ <span class="number">14.23</span> _MSC_VER == <span class="number">1923</span> (Visual Studio <span class="number">2019</span> Version <span class="number">16.3</span>)</span><br><span class="line">MSVC++ <span class="number">14.24</span> _MSC_VER == <span class="number">1924</span> (Visual Studio <span class="number">2019</span> Version <span class="number">16.4</span>)</span><br></pre></td></tr></table></figure>
 
-]]></content>
-      <categories>
-        <category>VisualStudio</category>
-      </categories>
-      <tags>
-        <tag>VisualStudio</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VisualStudio学习笔记-报错-#include stdio.h的报错安全问题</title>
-    <url>/2020/02/03/VisualStudio%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8A%A5%E9%94%99-include-stdio-h%E7%9A%84%E6%8A%A5%E9%94%99%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>由于高版本的visual studio默认不让使用scanf等函数，认为这些函数不够安全，而其相对应的代替函数为scanf_s等。如果在visual studio中使用scanf等那些visual studio认为不安全的函数，就会报错。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;scanf&#x27;: This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.</span><br></pre></td></tr></table></figure>
-
-<p>以下几种方法可以解决该问题：</p>
-<p>1.在文件开头添加 #define _CRT_SECURE_NO_WARNINGS</p>
-<p>例如</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="comment">//添加到头行,添加到stdio.h等头文件后还是会出警告的</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> str[<span class="number">256</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%255s&quot;</span>,str);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello World!\n&quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>,str);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>2.在 项目-&gt;属性-&gt;C&#x2F;C++-&gt;预处理器-&gt;预处理器定义中添加_CRT_SECURE_NO_WARNINGS</p>
-<p><img src="https://i.loli.net/2020/02/03/jA5Dc8NHRmSyntQ.png" alt="image.png"></p>
-<p><img src="https://i.loli.net/2020/02/03/djZsWhQHSpPoEAF.png" alt="image.png"></p>
 ]]></content>
       <categories>
         <category>VisualStudio</category>
@@ -888,6 +866,50 @@
 
 <p><img src="/images/image-20200626160448956.png" alt="image-20200626160448956"></p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/EI2taYkErRg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]]></content>
+      <categories>
+        <category>WxWidgets图形化界面学习</category>
+      </categories>
+      <tags>
+        <tag>图形界面</tag>
+        <tag>WxWidgets</tag>
+        <tag>GUI</tag>
+        <tag>C++</tag>
+        <tag>VisualStudio</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VisualStudio学习笔记-报错-#include stdio.h的报错安全问题</title>
+    <url>/2020/02/03/VisualStudio%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8A%A5%E9%94%99-include-stdio-h%E7%9A%84%E6%8A%A5%E9%94%99%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>由于高版本的visual studio默认不让使用scanf等函数，认为这些函数不够安全，而其相对应的代替函数为scanf_s等。如果在visual studio中使用scanf等那些visual studio认为不安全的函数，就会报错。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;scanf&#x27;: This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.</span><br></pre></td></tr></table></figure>
+
+<p>以下几种方法可以解决该问题：</p>
+<p>1.在文件开头添加 #define _CRT_SECURE_NO_WARNINGS</p>
+<p>例如</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="comment">//添加到头行,添加到stdio.h等头文件后还是会出警告的</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> str[<span class="number">256</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%255s&quot;</span>,str);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello World!\n&quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>,str);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.在 项目-&gt;属性-&gt;C&#x2F;C++-&gt;预处理器-&gt;预处理器定义中添加_CRT_SECURE_NO_WARNINGS</p>
+<p><img src="https://i.loli.net/2020/02/03/jA5Dc8NHRmSyntQ.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2020/02/03/djZsWhQHSpPoEAF.png" alt="image.png"></p>
+]]></content>
+      <categories>
+        <category>VisualStudio</category>
+      </categories>
+      <tags>
+        <tag>VisualStudio</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WxWidgets学习笔记-3-多线程编程</title>
+    <url>/2020/01/29/WxWidgets%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-3-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/</url>
+    <content><![CDATA[<p>​    大多数时候,事件驱动的GUI程序可以给你造成一个很好的假象:多个任务在同时的运行这是因为,重绘窗口通常只占用很少的时间,用户输入也被很快的进行了处理.然后,有时候,有些任务很难将其分割成足够小的让人难以察觉的小块来运行,这时候就要使用多线程编程了，本章我们来介绍一下在wxWidgets中怎样实现多线程编程在本章的最后,我们将介绍一下多线程编程的一些替代解决方案..</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="1-使用wxThread"><a href="#1-使用wxThread" class="headerlink" title="1.使用wxThread"></a>1.使用wxThread</h2><p>如果你要在你的代码中使用线程,首先要实现一个wxThread的派生类,并且至少要重载其虚函数Entry,这个函数包含了线程要做的主要的事情举例来说,比如我们要用一个单独的线程来计算图片中颜色的数目,下面是我们的派生类的声明:</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyThread</span> : <span class="keyword">public</span> wxThread </span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">MyThread</span>(wxImage∗ image, <span class="type">int</span>∗ count): </span><br><span class="line">	<span class="function">m <span class="title">image</span><span class="params">(image)</span>, m <span class="title">count</span><span class="params">(count)</span> </span>&#123;&#125;</span><br><span class="line">	<span class="keyword">virtual</span> <span class="type">void</span> ∗<span class="built_in">Entry</span>(); 、</span><br><span class="line"><span class="keyword">private</span> :</span><br><span class="line">	wxImage∗ m image; </span><br><span class="line">	<span class="type">int</span>∗ m count;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//一个标识符用来在线程工作完成的时候通知应用程序</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ID_COUNTED_COLORS_100</span></span><br></pre></td></tr></table></figure>
+
+<p>Entry函数用来进行计算工作并且返回一个返回值(对于联合线程(即将介绍),Wait函数将返回这个值),下面是我们的Entry函数:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">void ∗MyThread::Entry() &#123;</span><br><span class="line">(∗ m count) = m image−&gt;CountColours(); </span><br><span class="line">// . wxCommandEvent event(wxEVT COMMAND MENU SELECTED, ID COUNTED COLORS);</span><br><span class="line">wxGetApp().AddPendingEvent(event); return NULL;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
       <categories>
         <category>WxWidgets图形化界面学习</category>
       </categories>
@@ -1074,28 +1096,6 @@
       </tags>
   </entry>
   <entry>
-    <title>WxWidgets学习笔记-3-多线程编程</title>
-    <url>/2020/01/29/WxWidgets%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-3-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<p>​    大多数时候,事件驱动的GUI程序可以给你造成一个很好的假象:多个任务在同时的运行这是因为,重绘窗口通常只占用很少的时间,用户输入也被很快的进行了处理.然后,有时候,有些任务很难将其分割成足够小的让人难以察觉的小块来运行,这时候就要使用多线程编程了，本章我们来介绍一下在wxWidgets中怎样实现多线程编程在本章的最后,我们将介绍一下多线程编程的一些替代解决方案..</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="1-使用wxThread"><a href="#1-使用wxThread" class="headerlink" title="1.使用wxThread"></a>1.使用wxThread</h2><p>如果你要在你的代码中使用线程,首先要实现一个wxThread的派生类,并且至少要重载其虚函数Entry,这个函数包含了线程要做的主要的事情举例来说,比如我们要用一个单独的线程来计算图片中颜色的数目,下面是我们的派生类的声明:</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyThread</span> : <span class="keyword">public</span> wxThread </span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">MyThread</span>(wxImage∗ image, <span class="type">int</span>∗ count): </span><br><span class="line">	<span class="function">m <span class="title">image</span><span class="params">(image)</span>, m <span class="title">count</span><span class="params">(count)</span> </span>&#123;&#125;</span><br><span class="line">	<span class="keyword">virtual</span> <span class="type">void</span> ∗<span class="built_in">Entry</span>(); 、</span><br><span class="line"><span class="keyword">private</span> :</span><br><span class="line">	wxImage∗ m image; </span><br><span class="line">	<span class="type">int</span>∗ m count;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//一个标识符用来在线程工作完成的时候通知应用程序</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ID_COUNTED_COLORS_100</span></span><br></pre></td></tr></table></figure>
-
-<p>Entry函数用来进行计算工作并且返回一个返回值(对于联合线程(即将介绍),Wait函数将返回这个值),下面是我们的Entry函数:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">void ∗MyThread::Entry() &#123;</span><br><span class="line">(∗ m count) = m image−&gt;CountColours(); </span><br><span class="line">// . wxCommandEvent event(wxEVT COMMAND MENU SELECTED, ID COUNTED COLORS);</span><br><span class="line">wxGetApp().AddPendingEvent(event); return NULL;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>WxWidgets图形化界面学习</category>
-      </categories>
-      <tags>
-        <tag>图形界面</tag>
-        <tag>WxWidgets</tag>
-        <tag>GUI</tag>
-        <tag>C++</tag>
-        <tag>VisualStudio</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexoNext的设置备份</title>
     <url>/2020/11/08/hexoNext%E7%9A%84%E8%AE%BE%E7%BD%AE%E5%A4%87%E4%BB%BD/</url>
     <content><![CDATA[<h1 id="base-styl设置字体大小"><a href="#base-styl设置字体大小" class="headerlink" title="base.styl设置字体大小"></a>base.styl设置字体大小</h1><p>在 <code>themes\next\source\css\_variables\base.styl</code> 中修改</p>
@@ -1168,30 +1168,6 @@
       </tags>
   </entry>
   <entry>
-    <title>michael hampton视频学习笔记</title>
-    <url>/2021/02/09/michael-hampton%E8%A7%86%E9%A2%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>绘画笔记</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【UE4】【蓝图】-UE4蓝图可视化编程1-蓝图介绍</title>
-    <url>/2022/01/21/%E3%80%90UE4%E3%80%91%E3%80%90%E8%93%9D%E5%9B%BE%E3%80%91-UE4%E8%93%9D%E5%9B%BE%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BC%96%E7%A8%8B1-%E8%93%9D%E5%9B%BE%E4%BB%8B%E7%BB%8D/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>UE4</category>
-      </categories>
-      <tags>
-        <tag>蓝图</tag>
-        <tag>UE4</tag>
-        <tag>可视化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ligal High杂感</title>
     <url>/2020/11/09/ligal-High%E6%9D%82%E6%84%9F/</url>
     <content><![CDATA[<p>今天突然想起了lagel high 里有一集是讲新旧世纪交替时候的人们的</p>
@@ -1209,6 +1185,17 @@
       </categories>
       <tags>
         <tag>杂感</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>michael hampton视频学习笔记</title>
+    <url>/2021/02/09/michael-hampton%E8%A7%86%E9%A2%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>绘画笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -1244,6 +1231,96 @@
         <tag>图形学</tag>
         <tag>PBR</tag>
         <tag>真实感渲染</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【UE4】【蓝图】-UE4蓝图可视化编程1-蓝图介绍</title>
+    <url>/2022/01/21/%E3%80%90UE4%E3%80%91%E3%80%90%E8%93%9D%E5%9B%BE%E3%80%91-UE4%E8%93%9D%E5%9B%BE%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BC%96%E7%A8%8B1-%E8%93%9D%E5%9B%BE%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>UE4</category>
+      </categories>
+      <tags>
+        <tag>蓝图</tag>
+        <tag>UE4</tag>
+        <tag>可视化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【理财】【30岁后，我靠投资生活2】读书笔记-1</title>
+    <url>/2022/01/23/%E3%80%90%E7%90%86%E8%B4%A2%E3%80%91%E3%80%9030%E5%B2%81%E5%90%8E%EF%BC%8C%E6%88%91%E9%9D%A0%E6%8A%95%E8%B5%84%E7%94%9F%E6%B4%BB2%E3%80%91%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-1/</url>
+    <content><![CDATA[<h1 id="1-关于钱"><a href="#1-关于钱" class="headerlink" title="1.关于钱"></a>1.关于钱</h1><p>传统行业与新兴行业、穷人与富人之间的财富差距越来越大,金融、IT从业高管一年赚的钱,制造业工人一辈子都赚不来。 </p>
+<p>劳动可以解决温饱,而积累财富得靠理财</p>
+<p>财富规则对每个人不太一样,但作为一门学科或者说科学来讲,财富运作的本源是不会有太大变化的,变化的只是运作的形式。</p>
+<p>理财虽然不能彻底改变现状,却可以慢慢由体力赚钱上升到钱生钱,至少能让你抛弃一些错误的理念。</p>
+<span id="more"></span> 
+
+<h1 id="2-市场有且只有“投机”"><a href="#2-市场有且只有“投机”" class="headerlink" title="2.市场有且只有“投机”"></a>2.市场有且只有“投机”</h1><p>市场价格反映一切信息</p>
+<p>前一个交易日(可以类推到周线、月线)的最低价就是今天的买入价,而最高价就是卖出价。</p>
+<h1 id="3-市场道-非常道"><a href="#3-市场道-非常道" class="headerlink" title="3.市场道,非常道"></a>3.市场道,非常道</h1><h2 id="1-做熟不做生"><a href="#1-做熟不做生" class="headerlink" title="(1)做熟不做生"></a>(1)做熟不做生</h2><h2 id="2-目标明确-知足常赚"><a href="#2-目标明确-知足常赚" class="headerlink" title="(2)目标明确,知足常赚"></a>(2)目标明确,知足常赚</h2><p>一旦到了目标位,就坚决兑现利润, “弱水三千只取一瓢”,即使兑现利润后有再大的涨幅也不会后悔,继续按照自己的目标和节奏做下一只。</p>
+<p>对于中国股民来说, 目标没必要设立的太大、太远,首先的目标应该是不亏钱?</p>
+<p>要实现这个目标很简单,开始交易时,把资金分成十份,每次拿出总资金的十分之一交易,除非你点特别背,每次都错,否则你永远不会亏很多(当然,赚的也不会很多,你一定要有耐心) </p>
+<p>目标的设定一定要切合实际具体化,比如每周赚1%、每两周赚1%这样以时间为标准的目标,或者一只股票赚3% (假设这样一个数字)就出局这样以个股和盈利比例为标准的目标,总之目标越具体越好,实现了一定要知足,及时兑现利润。</p>
+<p>除了目标明确以外,还要有明确的止损,只有明确的止损才能控制风险,使自己不至于遭到大的损失。 </p>
+<h2 id="3-忌用杠杆，投资用闲钱"><a href="#3-忌用杠杆，投资用闲钱" class="headerlink" title="(3)忌用杠杆，投资用闲钱"></a>(3)忌用杠杆，投资用闲钱</h2><p>股市有风险,入市需谨慎，金融市场是一项高风险聚集的场所,在这玩一定要用”闲钱”,加杠杆在这玩耍大刀之类的高级游戏,一不留神就会削掉自己的脑袋。</p>
+<p>用闲钱投资,设置这样的一个前提,就是为了不让投资结果影响你的生活。如果连最基本的生存都是问题,妄图想通过投资解决目前的温饱、甚至一夜暴富,那简直是痴心妄想。抱着背水一战的想法投入到股市,最终的结果十有八九连底牌都会输掉。要知道,市场永远比你想象的艰难,这里更多的是尸骸遍地,不是阳春三月。 </p>
+<p>闲钱投资股票,不管盈亏都不会对自己的生活质量有太大的影响,即使全部亏掉也能继续生活。在这样的状态下投资,会有一个宽松的心态,对风险和价格波动会有一个比较清醒的认识,不会纠结一时的涨跌,这样心理上已经占据了优势,再去投资往往事倍功半,也比较容易获得意外的收获。 </p>
+<h2 id="4-策略万岁-技术分析要精"><a href="#4-策略万岁-技术分析要精" class="headerlink" title="(4)策略万岁-技术分析要精"></a>(4)策略万岁-技术分析要精</h2><p>炒股的技术只占三分之一,另外三分之二是心态和资金,单纯从技术面,你“懂”的太多、考虑的太多,但没有一个是真正精,通的。这也学、那也学,到头来哪个都会一点,哪个都没学精,到运用的时候不亏损才怪。</p>
+<p>“一招鲜吃遍天”,任何一种技术分析方法都可以达到稳定盈利的状态。</p>
+<p>是否盈利不在于技术分析方法会的多少,而在于对方法的理解、掌握、运用程度。</p>
+<p>为了能够盈利赚钱,咱就简单点儿,只学习一种技术分析方法,正所谓一招鲜吃遍天。什么时候你真正把这一招吃透了,再用同样的过程学习另一招,等你把所有招式都吃透,就可以忘记所有招式,从而融会贯通、在市场中游刃有余了。 </p>
+<h2 id="5-划定底线-拒绝深入伤害-止损-画线"><a href="#5-划定底线-拒绝深入伤害-止损-画线" class="headerlink" title="(5)划定底线,拒绝深入伤害 止损-画线"></a>(5)划定底线,拒绝深入伤害 止损-画线</h2><p>如果说在市场盈利是每一位投资者的终极目标,那么如何防止被套、控制风险、保住利润就是维持交易生命、获得盈利的基础和前提。</p>
+<p>做股票和做人一样,如果你知道如何避免被一个人反复、深入的伤害,那你肯定明白如何避免股票深套。在生活中,不管是你的同事还是家人、同学、朋友,如果你总是为了一个人毫无限制的打破自己的底线,有时候你甚至会觉得这样的自己已经不是真正的自己了。</p>
+<p>如何避免被一个人反复、深入的伤害?最简单的办法,划定一条底线,给出任何人不允许突破的原则,不允许任何人越过雷池,一旦越过要不给他严重的惩罚,要不马上转身离开(俗话说:惹不起还躲不起么) 。</p>
+<p>做股票也如此,买入任何股票之前先划定一条底线,一旦到达预设的亏损,无论任何情况,立马手起刀落出局,之后即使万丈深渊,也不会伤你半丝毫毛。 </p>
+<p>给股票预先划定一条底线其实就是风险控制,一旦战局已定立马认赔出局。不要认为认赔就是什么丢面子的事,即便诸如索罗斯这样的金融大鳄,在1997年败给港府不也是某种意义上的认赔出局么?如果一味地死扛,他的亏损也许会更多。索罗斯云云都如此,咱就别抱有什么幻想,去当车前那只伸手的螳螂了。 </p>
+<p>如果你到现在还不明白做人设定一个原则和做股票划一条底线之间的联系,那么你可能还缺少对生活的感悟。既然如此,也别炒什么股票了,先去感受一下生活带给你的酸甜苦辣吧!</p>
+<h1 id="4-顺势而为，只做强势股"><a href="#4-顺势而为，只做强势股" class="headerlink" title="4.顺势而为，只做强势股"></a>4.顺势而为，只做强势股</h1><p>上升途中一定要买,在趋势形成之后,除非是顶部,其他点位买进都是对的。在下跌途中一定要卖,除非是底部,否则任何位置买进都是错的。</p>
+<p>这个道理其实很简单,更常见的是,上升途中你不敢买,买了之后不敢拿;下降途中心存侥幸,被套后又不舍得止损。人们总是想贪便宜,觉得股票跌了很久了,就可以追了。有人更是在大牛市中四处寻找低价或者还未涨起来的股票。 </p>
+<p>无论市场还是人生,最重要的是当下!当下的趋势都出来了,你这儿非要去反着做,怎么可能赚钱!趋势一旦形成就难以改变,只有顺应趋势才能如鱼得水,才能走上正道、修得正果。强势上涨的股票必定有强势的原因,弱势的股票也必定有弱势的理由,股票投资要选强弃弱。 </p>
+<p>形成上涨趋势的股票,上涨的力量强、动力足,后期可以涨得更高、涨得更快,即使上涨结束,也会有惯性上冲动作,给你足够的出逃时间和空间。这就像一辆高速行驶的汽车,跑得快,本身就说明汽车的性能好,能够行驶的更快、更远,即使要停下来,你也要踩几次刹车,资金即使流出,股价也还要向上行进一段距离。 </p>
+<p>很多人不愿选择顺势而为,不去买那些强势上涨的股票,他们说这些股票价格已经很高了,宁愿去选择一些更便宜的股票,起码这样很安全。又是一个错误的想法!</p>
+<p>说直白点,股票不也是一种商品吗?买商品时知道一分钱一分·货,怎么买股票时偏偏要拣便宜货呢?同样的商品价格差异很大,差异最终不都体现到商品的品质上么?</p>
+<p>两支球队打比赛,一味地防守最终肯定会让对手破门而入。两队对垒,这是十分危险且愚蠢的战术,再低级的教练也知道只要球队实力允许,进攻才是最好的防守,以攻为守才是最优的战术。这不和做股票一样吗,顺势而为买上涨的股票就是最好的进攻,这种以攻为守的策略就是最好的策略。 </p>
+<h1 id="最大的金融市场是银行"><a href="#最大的金融市场是银行" class="headerlink" title="最大的金融市场是银行"></a>最大的金融市场是银行</h1><p>华尔街在中国以金融市场著称,但金融市场的真谛远远不是股市、期市,在全世界任何一个国家最大的金融市场都是银行,所以,在和你聊完股票之后我将带你进入真正的理财。借钱,才是真正实现财务自由的康庄大道。</p>
+<h1 id="理财第一要务-学会借钱"><a href="#理财第一要务-学会借钱" class="headerlink" title="理财第一要务:学会借钱"></a>理财第一要务:学会借钱</h1><p>勤俭节约不过是一句鬼话,是一句把人送到鬼门关的鬼话。如果30年前放弃消费那1万元,相当于放弃了对商品和服务的使用权和拥有权,随着时间的流逝,财富彻底与你渐行渐远。</p>
+<p>货币不是财富,货币也留不住财富。货币只是代表你对商品和服务的使用权,对世界上任何一个人来说,留钱、存钱,都相当于放弃财富、相当于自杀,留住了使用权才真正留住了财富。你手里那两钱儿根本不是钱,不要攥在手里舍不得花,孩子要这个不给买,老婆要那个不给买,你跟一堆废纸去过好了! </p>
+<h2 id="借钱才是硬道理-靠收入是不可能有车有房的"><a href="#借钱才是硬道理-靠收入是不可能有车有房的" class="headerlink" title="借钱才是硬道理,靠收入是不可能有车有房的"></a>借钱才是硬道理,靠收入是不可能有车有房的</h2><p>投资第一真谛,最重要的是永远当下!</p>
+<p>;买房必须用你爹的钱,除非爹妈真的没钱给你用。</p>
+<p>道理很多简单:一个年轻人初出茅庐,没人脉、没能力、没积蓄,要熬到买房起码十年以后,还得是优秀的。真到买房的时候,银行的钱都要借,亲爹的钱不用,难道要等到房价涨上去之后再奋斗十年?</p>
+<p>理财,最重要的永远是当下,在投资方面,无论中西古今这都是亘古不变的真理:有多大胆、借多少钱;借多少钱,发多大财;发多少财,有多大产!</p>
+<p>在一个家庭的生命周期里,从刚刚组建家庭到孩子工作之前没有多少剩余资金进行理财。请记住,在这段时期里一定要尽量借钱发展自己,主要是借钱购置房产,尤其是第一套住房。</p>
+<p>早借钱,早买房,早获益!</p>
+<p>千万可别听什么所谓专家说的房价要下降之流的鬼话!</p>
+<p>没错,刚刚成家立业的时候工资收入很低、没有多少积蓄,但是,这个时候最需要借钱购房,千万可别手软,千万不要算计一个月的工资都不够还利息的,这么算下来这辈子就完蛋了!</p>
+<p>这是人生和家庭走向社会的第一步,购房越晚、后期成本就会越高,所以,绝不能犹豫!在第一时间就应该借款购置第一套住房,借的越多越好,买的越大越好,不要犹豫、更不用手软!一定要对自己的人生充满信心!当你完成第一步,此后几十年都会很轻松,不然,房子始终是一座压得你抬不起头的大山。</p>
+<p>不要被现阶段的高房价所吓倒,更不要琢磨房价下跌如何如何。房价确实有下跌的可能,但是,对普通人来说房地产投资既是一生最大的财富,也是唯一的房产,不可能出售换取现金流。 </p>
+<p>请注意,这句话的潜台词:大部分人的房产是为了自己居住或者换购更大的房子,而不是获取投资收益。人们关注的并不是绝对数,而是,这个房产价值在个人财富中占比有多少比重。这个比例越高,对生活造成的压力就会越大。咱们假设房价真的下跌了,卖房换购价格同样下降,房产价值在个人财富中的总价只有下降、不会上升。</p>
+<p>所以,勇敢去借钱,不用怕!别人的钱尚且要借,你爹的钱就根本不能客气!客气就是坑爹。</p>
+<p>2002之后的时间,全世界(不仅仅是中国)没有任何一种投资品收益增速能超过房地产。更重要的,你看到的只是房价增速,你没有看到的是房地产的杠杆!大家都知道买房是可以贷款的,贷款就是房地产的杠杆。融资融券,通常情况下是1 : 1融资, 1:1融资只是房地产融资的起步价。房地产贷款,现在是首套是三成首付,也就是说杠杆是1 :3,如果房价每年增长10%,那每年的投资收益就是30% !</p>
+<p>如果仅仅是追求资本收益,贷款买房绝对是收益超高!有什么投资能到达每年30% 的收益率?哪怕按1:1 融资,即使房价每年只上涨10%,本金收益率也是20%。</p>
+<p>年收益率30%的理财产品,高利贷或许有可能,合法途径你见过？</p>
+<p>房地产投资之下一切收益率皆有可能!</p>
+<p>只是,这种收益是有代价的,会从根本伤伤及年轻人的未来。任何时代未来都是属于年轻人,如果年轻人尤其是无依无靠单枪匹马闯入城市的年轻人被如此巨大的压力搞得无暇分身追求理想.与这种观点相互配合的一个问题,房价还能如此涨下去吗?</p>
+<p>关于买房理财,我只能跟您说一件事:<strong>对绝大多数人来说,您的房子是用来住的,不是用来炒的!所以,房价涨了也别高兴,房价跌了也别哭鼻子。至于买房,还是能早买就早买,无论将来房价涨跌,您的房子即使卖掉,这笔钱也会再次用来买房子,所以,房价涨跌只是一个数字游戏,对您来说只是增量变化,存量根本没有任何影响。</strong></p>
+<p>资产部分与企业一样,一个家庭有多少财产可以动用:存款、股票、房产、黄金、外币、债权(基本可以忽略不计,根据现在的情况,借给亲友的钱不要指望能收回来。)以及各种可以变卖的财产…..债部分主要是房贷、车贷、信用卡等等。</p>
+<p>资产与负债轧差的结果就是净资产。</p>
+<p>资产、负债、净资产,对一个家庭来说到底哪个更重要?有人回答一定是净资产,净资产才能说明一个人有多少钱。我要告诉你,这是错的,应该是资产总额,是一个人、一个家庭可以动用的资源总量。真正到花钱的时候,没人会问你的钱是借来的还是自己的,敢花钱把事儿办利索,办成了事儿的收获一定大于成本,否则,花钱的人就是脑残!</p>
+<p>当一个人的资产远远高于负债,富得流油,有一辈子都花不完的钱。那么这个家庭的理财重点就由创造更多资产变为财富传承,如何将大量财产转移给下一代。尽管我们的国家没有遗产税,实际上一个富有的家庭绝不只是房产、现金,而一定是投资性收益(比如企业股权)将投资性收益转移给下一代可不是现金和房产,是一定会有税收的。这个时候,理财目标不应追求高风险、高收益,而是调整财产结果,适当节税、稳健投资。</p>
+<p>如果恰恰相反,负债远远高于净资产,那么这个家庭的财务状况堪忧,最重要的事儿是想办法增加收入,而不是把目标放到理财上。</p>
+<p>资产略高于负债。理财的重点不是财产转移和节税,甚至不是赚钱,毕竟那点净资产是一生的积蓄,而是靠有限的资源平衡一生现金流需要,应付家庭各种需要和资产负债的变化,并提前做好准备。</p>
+<p>有了报表,下面我们就必须设置好理财的目标,这个目标必须是明确的、量化的、可以达到的,起码听起来比较靠谱。每个进入理财期的家庭都是上有老下有小,需要延续家庭、需要买房让子女结婚、需要更多钱让父母养老、需要面对退休后生活的压力,理财目标更要有明确的时限、金额和回报。</p>
+<p>成长期家庭理财目标主要是:购房、换房、租房;购车,买新车、换旧车;子女教育,从现阶段的情况来看,这绝对是一笔很大的支出,且需要在现期支付,不存在拖延的可能;对普通人来说,养老比较简单,主要就是退休后生活来源等等。</p>
+<p>所有目标中,三个目标最重要:子女教育、房产、养老!我们有人,将之称呼为“三座大山”,实际上,在任何一个国家、任何一个人,这都是三件最重要的事儿,都要做好,没有最好只有更好。</p>
+<p>P274页</p>
+]]></content>
+      <categories>
+        <category>理财</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>理财</tag>
+        <tag>投资与投资</tag>
       </tags>
   </entry>
   <entry>
@@ -1353,80 +1430,55 @@
       </tags>
   </entry>
   <entry>
-    <title>【理财】【30岁后，我靠投资生活2】读书笔记-1</title>
-    <url>/2022/01/23/%E3%80%90%E7%90%86%E8%B4%A2%E3%80%91%E3%80%9030%E5%B2%81%E5%90%8E%EF%BC%8C%E6%88%91%E9%9D%A0%E6%8A%95%E8%B5%84%E7%94%9F%E6%B4%BB2%E3%80%91%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-1/</url>
-    <content><![CDATA[<h1 id="1-关于钱"><a href="#1-关于钱" class="headerlink" title="1.关于钱"></a>1.关于钱</h1><p>传统行业与新兴行业、穷人与富人之间的财富差距越来越大,金融、IT从业高管一年赚的钱,制造业工人一辈子都赚不来。 </p>
-<p>劳动可以解决温饱,而积累财富得靠理财</p>
-<p>财富规则对每个人不太一样,但作为一门学科或者说科学来讲,财富运作的本源是不会有太大变化的,变化的只是运作的形式。</p>
-<p>理财虽然不能彻底改变现状,却可以慢慢由体力赚钱上升到钱生钱,至少能让你抛弃一些错误的理念。</p>
-<span id="more"></span> 
-
-<h1 id="2-市场有且只有“投机”"><a href="#2-市场有且只有“投机”" class="headerlink" title="2.市场有且只有“投机”"></a>2.市场有且只有“投机”</h1><p>市场价格反映一切信息</p>
-<p>前一个交易日(可以类推到周线、月线)的最低价就是今天的买入价,而最高价就是卖出价。</p>
-<h1 id="3-市场道-非常道"><a href="#3-市场道-非常道" class="headerlink" title="3.市场道,非常道"></a>3.市场道,非常道</h1><h2 id="1-做熟不做生"><a href="#1-做熟不做生" class="headerlink" title="(1)做熟不做生"></a>(1)做熟不做生</h2><h2 id="2-目标明确-知足常赚"><a href="#2-目标明确-知足常赚" class="headerlink" title="(2)目标明确,知足常赚"></a>(2)目标明确,知足常赚</h2><p>一旦到了目标位,就坚决兑现利润, “弱水三千只取一瓢”,即使兑现利润后有再大的涨幅也不会后悔,继续按照自己的目标和节奏做下一只。</p>
-<p>对于中国股民来说, 目标没必要设立的太大、太远,首先的目标应该是不亏钱?</p>
-<p>要实现这个目标很简单,开始交易时,把资金分成十份,每次拿出总资金的十分之一交易,除非你点特别背,每次都错,否则你永远不会亏很多(当然,赚的也不会很多,你一定要有耐心) </p>
-<p>目标的设定一定要切合实际具体化,比如每周赚1%、每两周赚1%这样以时间为标准的目标,或者一只股票赚3% (假设这样一个数字)就出局这样以个股和盈利比例为标准的目标,总之目标越具体越好,实现了一定要知足,及时兑现利润。</p>
-<p>除了目标明确以外,还要有明确的止损,只有明确的止损才能控制风险,使自己不至于遭到大的损失。 </p>
-<h2 id="3-忌用杠杆，投资用闲钱"><a href="#3-忌用杠杆，投资用闲钱" class="headerlink" title="(3)忌用杠杆，投资用闲钱"></a>(3)忌用杠杆，投资用闲钱</h2><p>股市有风险,入市需谨慎，金融市场是一项高风险聚集的场所,在这玩一定要用”闲钱”,加杠杆在这玩耍大刀之类的高级游戏,一不留神就会削掉自己的脑袋。</p>
-<p>用闲钱投资,设置这样的一个前提,就是为了不让投资结果影响你的生活。如果连最基本的生存都是问题,妄图想通过投资解决目前的温饱、甚至一夜暴富,那简直是痴心妄想。抱着背水一战的想法投入到股市,最终的结果十有八九连底牌都会输掉。要知道,市场永远比你想象的艰难,这里更多的是尸骸遍地,不是阳春三月。 </p>
-<p>闲钱投资股票,不管盈亏都不会对自己的生活质量有太大的影响,即使全部亏掉也能继续生活。在这样的状态下投资,会有一个宽松的心态,对风险和价格波动会有一个比较清醒的认识,不会纠结一时的涨跌,这样心理上已经占据了优势,再去投资往往事倍功半,也比较容易获得意外的收获。 </p>
-<h2 id="4-策略万岁-技术分析要精"><a href="#4-策略万岁-技术分析要精" class="headerlink" title="(4)策略万岁-技术分析要精"></a>(4)策略万岁-技术分析要精</h2><p>炒股的技术只占三分之一,另外三分之二是心态和资金,单纯从技术面,你“懂”的太多、考虑的太多,但没有一个是真正精,通的。这也学、那也学,到头来哪个都会一点,哪个都没学精,到运用的时候不亏损才怪。</p>
-<p>“一招鲜吃遍天”,任何一种技术分析方法都可以达到稳定盈利的状态。</p>
-<p>是否盈利不在于技术分析方法会的多少,而在于对方法的理解、掌握、运用程度。</p>
-<p>为了能够盈利赚钱,咱就简单点儿,只学习一种技术分析方法,正所谓一招鲜吃遍天。什么时候你真正把这一招吃透了,再用同样的过程学习另一招,等你把所有招式都吃透,就可以忘记所有招式,从而融会贯通、在市场中游刃有余了。 </p>
-<h2 id="5-划定底线-拒绝深入伤害-止损-画线"><a href="#5-划定底线-拒绝深入伤害-止损-画线" class="headerlink" title="(5)划定底线,拒绝深入伤害 止损-画线"></a>(5)划定底线,拒绝深入伤害 止损-画线</h2><p>如果说在市场盈利是每一位投资者的终极目标,那么如何防止被套、控制风险、保住利润就是维持交易生命、获得盈利的基础和前提。</p>
-<p>做股票和做人一样,如果你知道如何避免被一个人反复、深入的伤害,那你肯定明白如何避免股票深套。在生活中,不管是你的同事还是家人、同学、朋友,如果你总是为了一个人毫无限制的打破自己的底线,有时候你甚至会觉得这样的自己已经不是真正的自己了。</p>
-<p>如何避免被一个人反复、深入的伤害?最简单的办法,划定一条底线,给出任何人不允许突破的原则,不允许任何人越过雷池,一旦越过要不给他严重的惩罚,要不马上转身离开(俗话说:惹不起还躲不起么) 。</p>
-<p>做股票也如此,买入任何股票之前先划定一条底线,一旦到达预设的亏损,无论任何情况,立马手起刀落出局,之后即使万丈深渊,也不会伤你半丝毫毛。 </p>
-<p>给股票预先划定一条底线其实就是风险控制,一旦战局已定立马认赔出局。不要认为认赔就是什么丢面子的事,即便诸如索罗斯这样的金融大鳄,在1997年败给港府不也是某种意义上的认赔出局么?如果一味地死扛,他的亏损也许会更多。索罗斯云云都如此,咱就别抱有什么幻想,去当车前那只伸手的螳螂了。 </p>
-<p>如果你到现在还不明白做人设定一个原则和做股票划一条底线之间的联系,那么你可能还缺少对生活的感悟。既然如此,也别炒什么股票了,先去感受一下生活带给你的酸甜苦辣吧!</p>
-<h1 id="4-顺势而为，只做强势股"><a href="#4-顺势而为，只做强势股" class="headerlink" title="4.顺势而为，只做强势股"></a>4.顺势而为，只做强势股</h1><p>上升途中一定要买,在趋势形成之后,除非是顶部,其他点位买进都是对的。在下跌途中一定要卖,除非是底部,否则任何位置买进都是错的。</p>
-<p>这个道理其实很简单,更常见的是,上升途中你不敢买,买了之后不敢拿;下降途中心存侥幸,被套后又不舍得止损。人们总是想贪便宜,觉得股票跌了很久了,就可以追了。有人更是在大牛市中四处寻找低价或者还未涨起来的股票。 </p>
-<p>无论市场还是人生,最重要的是当下!当下的趋势都出来了,你这儿非要去反着做,怎么可能赚钱!趋势一旦形成就难以改变,只有顺应趋势才能如鱼得水,才能走上正道、修得正果。强势上涨的股票必定有强势的原因,弱势的股票也必定有弱势的理由,股票投资要选强弃弱。 </p>
-<p>形成上涨趋势的股票,上涨的力量强、动力足,后期可以涨得更高、涨得更快,即使上涨结束,也会有惯性上冲动作,给你足够的出逃时间和空间。这就像一辆高速行驶的汽车,跑得快,本身就说明汽车的性能好,能够行驶的更快、更远,即使要停下来,你也要踩几次刹车,资金即使流出,股价也还要向上行进一段距离。 </p>
-<p>很多人不愿选择顺势而为,不去买那些强势上涨的股票,他们说这些股票价格已经很高了,宁愿去选择一些更便宜的股票,起码这样很安全。又是一个错误的想法!</p>
-<p>说直白点,股票不也是一种商品吗?买商品时知道一分钱一分·货,怎么买股票时偏偏要拣便宜货呢?同样的商品价格差异很大,差异最终不都体现到商品的品质上么?</p>
-<p>两支球队打比赛,一味地防守最终肯定会让对手破门而入。两队对垒,这是十分危险且愚蠢的战术,再低级的教练也知道只要球队实力允许,进攻才是最好的防守,以攻为守才是最优的战术。这不和做股票一样吗,顺势而为买上涨的股票就是最好的进攻,这种以攻为守的策略就是最好的策略。 </p>
-<h1 id="最大的金融市场是银行"><a href="#最大的金融市场是银行" class="headerlink" title="最大的金融市场是银行"></a>最大的金融市场是银行</h1><p>华尔街在中国以金融市场著称,但金融市场的真谛远远不是股市、期市,在全世界任何一个国家最大的金融市场都是银行,所以,在和你聊完股票之后我将带你进入真正的理财。借钱,才是真正实现财务自由的康庄大道。</p>
-<h1 id="理财第一要务-学会借钱"><a href="#理财第一要务-学会借钱" class="headerlink" title="理财第一要务:学会借钱"></a>理财第一要务:学会借钱</h1><p>勤俭节约不过是一句鬼话,是一句把人送到鬼门关的鬼话。如果30年前放弃消费那1万元,相当于放弃了对商品和服务的使用权和拥有权,随着时间的流逝,财富彻底与你渐行渐远。</p>
-<p>货币不是财富,货币也留不住财富。货币只是代表你对商品和服务的使用权,对世界上任何一个人来说,留钱、存钱,都相当于放弃财富、相当于自杀,留住了使用权才真正留住了财富。你手里那两钱儿根本不是钱,不要攥在手里舍不得花,孩子要这个不给买,老婆要那个不给买,你跟一堆废纸去过好了! </p>
-<h2 id="借钱才是硬道理-靠收入是不可能有车有房的"><a href="#借钱才是硬道理-靠收入是不可能有车有房的" class="headerlink" title="借钱才是硬道理,靠收入是不可能有车有房的"></a>借钱才是硬道理,靠收入是不可能有车有房的</h2><p>投资第一真谛,最重要的是永远当下!</p>
-<p>;买房必须用你爹的钱,除非爹妈真的没钱给你用。</p>
-<p>道理很多简单:一个年轻人初出茅庐,没人脉、没能力、没积蓄,要熬到买房起码十年以后,还得是优秀的。真到买房的时候,银行的钱都要借,亲爹的钱不用,难道要等到房价涨上去之后再奋斗十年?</p>
-<p>理财,最重要的永远是当下,在投资方面,无论中西古今这都是亘古不变的真理:有多大胆、借多少钱;借多少钱,发多大财;发多少财,有多大产!</p>
-<p>在一个家庭的生命周期里,从刚刚组建家庭到孩子工作之前没有多少剩余资金进行理财。请记住,在这段时期里一定要尽量借钱发展自己,主要是借钱购置房产,尤其是第一套住房。</p>
-<p>早借钱,早买房,早获益!</p>
-<p>千万可别听什么所谓专家说的房价要下降之流的鬼话!</p>
-<p>没错,刚刚成家立业的时候工资收入很低、没有多少积蓄,但是,这个时候最需要借钱购房,千万可别手软,千万不要算计一个月的工资都不够还利息的,这么算下来这辈子就完蛋了!</p>
-<p>这是人生和家庭走向社会的第一步,购房越晚、后期成本就会越高,所以,绝不能犹豫!在第一时间就应该借款购置第一套住房,借的越多越好,买的越大越好,不要犹豫、更不用手软!一定要对自己的人生充满信心!当你完成第一步,此后几十年都会很轻松,不然,房子始终是一座压得你抬不起头的大山。</p>
-<p>不要被现阶段的高房价所吓倒,更不要琢磨房价下跌如何如何。房价确实有下跌的可能,但是,对普通人来说房地产投资既是一生最大的财富,也是唯一的房产,不可能出售换取现金流。 </p>
-<p>请注意,这句话的潜台词:大部分人的房产是为了自己居住或者换购更大的房子,而不是获取投资收益。人们关注的并不是绝对数,而是,这个房产价值在个人财富中占比有多少比重。这个比例越高,对生活造成的压力就会越大。咱们假设房价真的下跌了,卖房换购价格同样下降,房产价值在个人财富中的总价只有下降、不会上升。</p>
-<p>所以,勇敢去借钱,不用怕!别人的钱尚且要借,你爹的钱就根本不能客气!客气就是坑爹。</p>
-<p>2002之后的时间,全世界(不仅仅是中国)没有任何一种投资品收益增速能超过房地产。更重要的,你看到的只是房价增速,你没有看到的是房地产的杠杆!大家都知道买房是可以贷款的,贷款就是房地产的杠杆。融资融券,通常情况下是1 : 1融资, 1:1融资只是房地产融资的起步价。房地产贷款,现在是首套是三成首付,也就是说杠杆是1 :3,如果房价每年增长10%,那每年的投资收益就是30% !</p>
-<p>如果仅仅是追求资本收益,贷款买房绝对是收益超高!有什么投资能到达每年30% 的收益率?哪怕按1:1 融资,即使房价每年只上涨10%,本金收益率也是20%。</p>
-<p>年收益率30%的理财产品,高利贷或许有可能,合法途径你见过？</p>
-<p>房地产投资之下一切收益率皆有可能!</p>
-<p>只是,这种收益是有代价的,会从根本伤伤及年轻人的未来。任何时代未来都是属于年轻人,如果年轻人尤其是无依无靠单枪匹马闯入城市的年轻人被如此巨大的压力搞得无暇分身追求理想.与这种观点相互配合的一个问题,房价还能如此涨下去吗?</p>
-<p>关于买房理财,我只能跟您说一件事:<strong>对绝大多数人来说,您的房子是用来住的,不是用来炒的!所以,房价涨了也别高兴,房价跌了也别哭鼻子。至于买房,还是能早买就早买,无论将来房价涨跌,您的房子即使卖掉,这笔钱也会再次用来买房子,所以,房价涨跌只是一个数字游戏,对您来说只是增量变化,存量根本没有任何影响。</strong></p>
-<p>资产部分与企业一样,一个家庭有多少财产可以动用:存款、股票、房产、黄金、外币、债权(基本可以忽略不计,根据现在的情况,借给亲友的钱不要指望能收回来。)以及各种可以变卖的财产…..债部分主要是房贷、车贷、信用卡等等。</p>
-<p>资产与负债轧差的结果就是净资产。</p>
-<p>资产、负债、净资产,对一个家庭来说到底哪个更重要?有人回答一定是净资产,净资产才能说明一个人有多少钱。我要告诉你,这是错的,应该是资产总额,是一个人、一个家庭可以动用的资源总量。真正到花钱的时候,没人会问你的钱是借来的还是自己的,敢花钱把事儿办利索,办成了事儿的收获一定大于成本,否则,花钱的人就是脑残!</p>
-<p>当一个人的资产远远高于负债,富得流油,有一辈子都花不完的钱。那么这个家庭的理财重点就由创造更多资产变为财富传承,如何将大量财产转移给下一代。尽管我们的国家没有遗产税,实际上一个富有的家庭绝不只是房产、现金,而一定是投资性收益(比如企业股权)将投资性收益转移给下一代可不是现金和房产,是一定会有税收的。这个时候,理财目标不应追求高风险、高收益,而是调整财产结果,适当节税、稳健投资。</p>
-<p>如果恰恰相反,负债远远高于净资产,那么这个家庭的财务状况堪忧,最重要的事儿是想办法增加收入,而不是把目标放到理财上。</p>
-<p>资产略高于负债。理财的重点不是财产转移和节税,甚至不是赚钱,毕竟那点净资产是一生的积蓄,而是靠有限的资源平衡一生现金流需要,应付家庭各种需要和资产负债的变化,并提前做好准备。</p>
-<p>有了报表,下面我们就必须设置好理财的目标,这个目标必须是明确的、量化的、可以达到的,起码听起来比较靠谱。每个进入理财期的家庭都是上有老下有小,需要延续家庭、需要买房让子女结婚、需要更多钱让父母养老、需要面对退休后生活的压力,理财目标更要有明确的时限、金额和回报。</p>
-<p>成长期家庭理财目标主要是:购房、换房、租房;购车,买新车、换旧车;子女教育,从现阶段的情况来看,这绝对是一笔很大的支出,且需要在现期支付,不存在拖延的可能;对普通人来说,养老比较简单,主要就是退休后生活来源等等。</p>
-<p>所有目标中,三个目标最重要:子女教育、房产、养老!我们有人,将之称呼为“三座大山”,实际上,在任何一个国家、任何一个人,这都是三件最重要的事儿,都要做好,没有最好只有更好。</p>
-<p>P274页</p>
+    <title>三维重建学习-1</title>
+    <url>/2020/07/04/%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA%E5%AD%A6%E4%B9%A0-1/</url>
+    <content><![CDATA[<p>想养成个习惯，学什么东西，比如深度学习什么的类别，在知乎上搜搜有没有前人的学习路线，在google,baidu上搜索看有没有书，在Youtube上搜搜有没有教程和介绍，在Coursera和Mooc，bilibili上看看有没有相关的课，youtube用英文搜索，在github上看看有没有相关开源框架，在淘宝上搜搜有没有相关的课程和书之类的，大致就是这几个方面。</p>
+<h1 id="1-图像处理基础概论"><a href="#1-图像处理基础概论" class="headerlink" title="1.图像处理基础概论"></a>1.图像处理基础概论</h1><p><img src="/images/image-20200705204141625.png" alt="image-20200705204141625"></p>
+<p>计算机的图像识别能力比人眼范围多</p>
+<p>人眼的识别能力受主观限制，但是人眼对图像的理解能力很强</p>
+<p><img src="/images/image-20200705204507215.png" alt="image-20200705204507215"></p>
+<h2 id="1-1图像处理的目的"><a href="#1-1图像处理的目的" class="headerlink" title="1.1图像处理的目的"></a>1.1图像处理的目的</h2><p><img src="/images/image-20200705204555327.png" alt="image-20200705204555327"></p>
+<p><img src="/images/image-20200705204651436.png" alt="image-20200705204651436"></p>
+<h2 id="1-2-图像处理简史"><a href="#1-2-图像处理简史" class="headerlink" title="1.2 图像处理简史"></a>1.2 图像处理简史</h2><p><img src="/images/image-20200705204924732.png" alt="image-20200705204924732"></p>
+<p><img src="/images/image-20200705205036043.png" alt="image-20200705205036043"></p>
+<h2 id="1-3-图像处理应用"><a href="#1-3-图像处理应用" class="headerlink" title="1.3 图像处理应用"></a>1.3 图像处理应用</h2><p><img src="/images/image-20200705205208297.png" alt="image-20200705205208297"></p>
+<h2 id="1-4-图像处理内容"><a href="#1-4-图像处理内容" class="headerlink" title="1.4 图像处理内容"></a>1.4 图像处理内容</h2><p><img src="/images/image-20200705205447511.png" alt="image-20200705205447511"></p>
+<p>图像增强：直观理解应该是马赛克模糊和美颜什么的</p>
+<h2 id="1-5-图像处理构成"><a href="#1-5-图像处理构成" class="headerlink" title="1.5 图像处理构成"></a>1.5 图像处理构成</h2><p><img src="/images/image-20200705205835929.png" alt="image-20200705205835929"></p>
+<h1 id="2-图像处理概念"><a href="#2-图像处理概念" class="headerlink" title="2.图像处理概念"></a>2.图像处理概念</h1><p>坐标和幅值，图像的概念</p>
+<p><img src="/images/image-20200705205927169.png" alt="image-20200705205927169"></p>
+<h2 id="数字图像"><a href="#数字图像" class="headerlink" title="数字图像"></a>数字图像</h2><p><img src="/images/image-20200705210158208.png" alt="image-20200705205959426"></p>
+<h2 id="灰度图像，彩色图像，二值图像"><a href="#灰度图像，彩色图像，二值图像" class="headerlink" title="灰度图像，彩色图像，二值图像"></a>灰度图像，彩色图像，二值图像</h2><p><img src="/images/image-20200705210342616.png" alt="image-20200705210342616"></p>
+<p>。。。这也太。不行学过画画想笑。。</p>
+<h2 id="采样"><a href="#采样" class="headerlink" title="采样"></a>采样</h2><p><img src="/images/image-20200705210534413.png" alt="image-20200705210534413"></p>
+<p>采样有点像绘画里的最小笔触。。</p>
+<h2 id="采样对图像的影响"><a href="#采样对图像的影响" class="headerlink" title="采样对图像的影响"></a>采样对图像的影响</h2><p><img src="/images/image-20200705210633781.png" alt="image-20200705210633781"></p>
+<p><img src="/images/image-20200705210912698.png" alt="image-20200705210912698"></p>
+<p>缩小的时候要取的像素颜色值，近邻的颜色值</p>
+<h2 id="量化对图像的影响，灰度的级别"><a href="#量化对图像的影响，灰度的级别" class="headerlink" title="量化对图像的影响，灰度的级别"></a>量化对图像的影响，灰度的级别</h2><p><img src="/images/image-20200705211037649.png" alt="image-20200705211037649"></p>
+<p>细节量</p>
+<h2 id="影响图像质量的因素"><a href="#影响图像质量的因素" class="headerlink" title="影响图像质量的因素"></a>影响图像质量的因素</h2><h3 id="层次（灰度？"><a href="#层次（灰度？" class="headerlink" title="层次（灰度？"></a>层次（灰度？</h3><p><img src="/images/image-20200705211210183.png" alt="image-20200705211210183"></p>
+<h3 id="对比度"><a href="#对比度" class="headerlink" title="对比度"></a>对比度</h3><p><img src="/images/image-20200705211228655.png" alt="image-20200705211228655"></p>
+<h3 id="亮度-明度"><a href="#亮度-明度" class="headerlink" title="亮度(明度)"></a>亮度(明度)</h3><p><img src="/images/image-20200705211256646.png" alt="image-20200705211256646"></p>
+<h3 id="尺寸"><a href="#尺寸" class="headerlink" title="尺寸"></a>尺寸</h3><p><img src="/images/image-20200705211424148.png" alt="image-20200705211424148"></p>
+<h3 id="细节-像素大小"><a href="#细节-像素大小" class="headerlink" title="细节(像素大小)"></a>细节(像素大小)</h3><p><img src="/images/image-20200705211518629.png" alt="image-20200705211518629"></p>
+<h3 id="饱和度"><a href="#饱和度" class="headerlink" title="饱和度"></a>饱和度</h3><p><img src="/images/image-20200705211541549.png" alt="image-20200705211541549"></p>
+<h2 id="像素之间的关系"><a href="#像素之间的关系" class="headerlink" title="像素之间的关系"></a>像素之间的关系</h2><h3 id="4近邻"><a href="#4近邻" class="headerlink" title="4近邻"></a>4近邻</h3><p><img src="/images/image-20200705211624822.png" alt="image-20200705211624822"></p>
+<h3 id="8近邻"><a href="#8近邻" class="headerlink" title="8近邻"></a>8近邻</h3><p><img src="/images/image-20200705211755641.png" alt="image-20200705211755641"></p>
+<h3 id="连通"><a href="#连通" class="headerlink" title="连通"></a>连通</h3><p><img src="/images/image-20200705211828649.png" alt="image-20200705211828649"></p>
+<p>灰度值相等或者差值在某个范围内</p>
+<p><img src="/images/image-20200705211927016.png" alt="image-20200705211927016"></p>
+<p><img src="/images/image-20200705211959672.png" alt="image-20200705211959672"></p>
+<p><img src="/images/image-20200705212102159.png" alt="image-20200705212102159"></p>
+<h3 id="通路"><a href="#通路" class="headerlink" title="通路"></a>通路</h3><p><img src="/images/image-20200706191409359.png" alt="image-20200706191409359"></p>
+<h3 id="距离"><a href="#距离" class="headerlink" title="距离"></a>距离</h3><p><img src="/images/image-20200706191601356.png" alt="image-20200706191601356"></p>
+<p><img src="/images/image-20200706191746275.png" alt="image-20200706191746275"></p>
 ]]></content>
       <categories>
-        <category>理财</category>
+        <category>图像处理</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>理财</tag>
-        <tag>投资与投资</tag>
+        <tag>图像处理</tag>
       </tags>
   </entry>
   <entry>
@@ -1496,58 +1548,6 @@
       <tags>
         <tag>卡通渲染</tag>
         <tag>三渲二</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>三维重建学习-1</title>
-    <url>/2020/07/04/%E4%B8%89%E7%BB%B4%E9%87%8D%E5%BB%BA%E5%AD%A6%E4%B9%A0-1/</url>
-    <content><![CDATA[<p>想养成个习惯，学什么东西，比如深度学习什么的类别，在知乎上搜搜有没有前人的学习路线，在google,baidu上搜索看有没有书，在Youtube上搜搜有没有教程和介绍，在Coursera和Mooc，bilibili上看看有没有相关的课，youtube用英文搜索，在github上看看有没有相关开源框架，在淘宝上搜搜有没有相关的课程和书之类的，大致就是这几个方面。</p>
-<h1 id="1-图像处理基础概论"><a href="#1-图像处理基础概论" class="headerlink" title="1.图像处理基础概论"></a>1.图像处理基础概论</h1><p><img src="/images/image-20200705204141625.png" alt="image-20200705204141625"></p>
-<p>计算机的图像识别能力比人眼范围多</p>
-<p>人眼的识别能力受主观限制，但是人眼对图像的理解能力很强</p>
-<p><img src="/images/image-20200705204507215.png" alt="image-20200705204507215"></p>
-<h2 id="1-1图像处理的目的"><a href="#1-1图像处理的目的" class="headerlink" title="1.1图像处理的目的"></a>1.1图像处理的目的</h2><p><img src="/images/image-20200705204555327.png" alt="image-20200705204555327"></p>
-<p><img src="/images/image-20200705204651436.png" alt="image-20200705204651436"></p>
-<h2 id="1-2-图像处理简史"><a href="#1-2-图像处理简史" class="headerlink" title="1.2 图像处理简史"></a>1.2 图像处理简史</h2><p><img src="/images/image-20200705204924732.png" alt="image-20200705204924732"></p>
-<p><img src="/images/image-20200705205036043.png" alt="image-20200705205036043"></p>
-<h2 id="1-3-图像处理应用"><a href="#1-3-图像处理应用" class="headerlink" title="1.3 图像处理应用"></a>1.3 图像处理应用</h2><p><img src="/images/image-20200705205208297.png" alt="image-20200705205208297"></p>
-<h2 id="1-4-图像处理内容"><a href="#1-4-图像处理内容" class="headerlink" title="1.4 图像处理内容"></a>1.4 图像处理内容</h2><p><img src="/images/image-20200705205447511.png" alt="image-20200705205447511"></p>
-<p>图像增强：直观理解应该是马赛克模糊和美颜什么的</p>
-<h2 id="1-5-图像处理构成"><a href="#1-5-图像处理构成" class="headerlink" title="1.5 图像处理构成"></a>1.5 图像处理构成</h2><p><img src="/images/image-20200705205835929.png" alt="image-20200705205835929"></p>
-<h1 id="2-图像处理概念"><a href="#2-图像处理概念" class="headerlink" title="2.图像处理概念"></a>2.图像处理概念</h1><p>坐标和幅值，图像的概念</p>
-<p><img src="/images/image-20200705205927169.png" alt="image-20200705205927169"></p>
-<h2 id="数字图像"><a href="#数字图像" class="headerlink" title="数字图像"></a>数字图像</h2><p><img src="/images/image-20200705210158208.png" alt="image-20200705205959426"></p>
-<h2 id="灰度图像，彩色图像，二值图像"><a href="#灰度图像，彩色图像，二值图像" class="headerlink" title="灰度图像，彩色图像，二值图像"></a>灰度图像，彩色图像，二值图像</h2><p><img src="/images/image-20200705210342616.png" alt="image-20200705210342616"></p>
-<p>。。。这也太。不行学过画画想笑。。</p>
-<h2 id="采样"><a href="#采样" class="headerlink" title="采样"></a>采样</h2><p><img src="/images/image-20200705210534413.png" alt="image-20200705210534413"></p>
-<p>采样有点像绘画里的最小笔触。。</p>
-<h2 id="采样对图像的影响"><a href="#采样对图像的影响" class="headerlink" title="采样对图像的影响"></a>采样对图像的影响</h2><p><img src="/images/image-20200705210633781.png" alt="image-20200705210633781"></p>
-<p><img src="/images/image-20200705210912698.png" alt="image-20200705210912698"></p>
-<p>缩小的时候要取的像素颜色值，近邻的颜色值</p>
-<h2 id="量化对图像的影响，灰度的级别"><a href="#量化对图像的影响，灰度的级别" class="headerlink" title="量化对图像的影响，灰度的级别"></a>量化对图像的影响，灰度的级别</h2><p><img src="/images/image-20200705211037649.png" alt="image-20200705211037649"></p>
-<p>细节量</p>
-<h2 id="影响图像质量的因素"><a href="#影响图像质量的因素" class="headerlink" title="影响图像质量的因素"></a>影响图像质量的因素</h2><h3 id="层次（灰度？"><a href="#层次（灰度？" class="headerlink" title="层次（灰度？"></a>层次（灰度？</h3><p><img src="/images/image-20200705211210183.png" alt="image-20200705211210183"></p>
-<h3 id="对比度"><a href="#对比度" class="headerlink" title="对比度"></a>对比度</h3><p><img src="/images/image-20200705211228655.png" alt="image-20200705211228655"></p>
-<h3 id="亮度-明度"><a href="#亮度-明度" class="headerlink" title="亮度(明度)"></a>亮度(明度)</h3><p><img src="/images/image-20200705211256646.png" alt="image-20200705211256646"></p>
-<h3 id="尺寸"><a href="#尺寸" class="headerlink" title="尺寸"></a>尺寸</h3><p><img src="/images/image-20200705211424148.png" alt="image-20200705211424148"></p>
-<h3 id="细节-像素大小"><a href="#细节-像素大小" class="headerlink" title="细节(像素大小)"></a>细节(像素大小)</h3><p><img src="/images/image-20200705211518629.png" alt="image-20200705211518629"></p>
-<h3 id="饱和度"><a href="#饱和度" class="headerlink" title="饱和度"></a>饱和度</h3><p><img src="/images/image-20200705211541549.png" alt="image-20200705211541549"></p>
-<h2 id="像素之间的关系"><a href="#像素之间的关系" class="headerlink" title="像素之间的关系"></a>像素之间的关系</h2><h3 id="4近邻"><a href="#4近邻" class="headerlink" title="4近邻"></a>4近邻</h3><p><img src="/images/image-20200705211624822.png" alt="image-20200705211624822"></p>
-<h3 id="8近邻"><a href="#8近邻" class="headerlink" title="8近邻"></a>8近邻</h3><p><img src="/images/image-20200705211755641.png" alt="image-20200705211755641"></p>
-<h3 id="连通"><a href="#连通" class="headerlink" title="连通"></a>连通</h3><p><img src="/images/image-20200705211828649.png" alt="image-20200705211828649"></p>
-<p>灰度值相等或者差值在某个范围内</p>
-<p><img src="/images/image-20200705211927016.png" alt="image-20200705211927016"></p>
-<p><img src="/images/image-20200705211959672.png" alt="image-20200705211959672"></p>
-<p><img src="/images/image-20200705212102159.png" alt="image-20200705212102159"></p>
-<h3 id="通路"><a href="#通路" class="headerlink" title="通路"></a>通路</h3><p><img src="/images/image-20200706191409359.png" alt="image-20200706191409359"></p>
-<h3 id="距离"><a href="#距离" class="headerlink" title="距离"></a>距离</h3><p><img src="/images/image-20200706191601356.png" alt="image-20200706191601356"></p>
-<p><img src="/images/image-20200706191746275.png" alt="image-20200706191746275"></p>
-]]></content>
-      <categories>
-        <category>图像处理</category>
-      </categories>
-      <tags>
-        <tag>图像处理</tag>
       </tags>
   </entry>
   <entry>
@@ -1684,7 +1684,7 @@
 <p>纯测光一般出现在室内的窗户 烛光</p>
 <p>顶光:正顶光，侧顶光  45度之上的光，45度以下为正面光，会照到人脸</p>
 <p><img src="https://i.loli.net/2020/02/01/iDSKt86MPgeZRsX.png" alt="AGA5`DL_J_FV`_NH7P70OUE.png"></p>
-<p>![&#96;@710CD27@<a href="mailto:&#x5f;&#x35;&#79;&#x58;&#x50;&#x40;&#x5f;&#x46;&#55;&#x4c;&#76;&#84;&#85;&#46;&#112;&#110;&#x67;">&#x5f;&#x35;&#79;&#x58;&#x50;&#x40;&#x5f;&#x46;&#55;&#x4c;&#76;&#84;&#85;&#46;&#112;&#110;&#x67;</a>](<a href="https://i.loli.net/2020/02/01/PxYeXIEkfaHRchA.png">https://i.loli.net/2020/02/01/PxYeXIEkfaHRchA.png</a>)</p>
+<p>![&#96;@710CD27@<a href="mailto:&#95;&#53;&#x4f;&#x58;&#80;&#64;&#x5f;&#x46;&#55;&#x4c;&#x4c;&#84;&#85;&#x2e;&#112;&#110;&#x67;">&#95;&#53;&#x4f;&#x58;&#80;&#64;&#x5f;&#x46;&#55;&#x4c;&#x4c;&#84;&#85;&#x2e;&#112;&#110;&#x67;</a>](<a href="https://i.loli.net/2020/02/01/PxYeXIEkfaHRchA.png">https://i.loli.net/2020/02/01/PxYeXIEkfaHRchA.png</a>)</p>
 <p>顶光-神秘感，庄严，一般不用</p>
 <p>正顶光:详细表现一个角色，一般立绘用这种光，只画投影，韩系，说明性光源</p>
 <p>顶光</p>
@@ -1784,22 +1784,48 @@
       </tags>
   </entry>
   <entry>
-    <title>光线跟踪算法技术阅读笔记-一.光线跟踪器和程序设计</title>
-    <url>/2019/12/25/%E5%85%89%E7%BA%BF%E8%B7%9F%E8%B8%AA%E7%AE%97%E6%B3%95%E6%8A%80%E6%9C%AF%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0-%E4%B8%80-%E5%85%89%E8%B7%9F%E8%B8%AA%E5%99%A8%E5%92%8C%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/</url>
-    <content><![CDATA[<h2 id="相关书籍"><a href="#相关书籍" class="headerlink" title="相关书籍"></a>相关书籍</h2><p>C++ : </p>
-<h2 id="光线跟踪V1-版本①-最简单的框架"><a href="#光线跟踪V1-版本①-最简单的框架" class="headerlink" title="光线跟踪V1(版本①):最简单的框架"></a>光线跟踪V1(版本①):最简单的框架</h2><p>根据书的顺序把源程序列出来，一个光线跟踪最简单最基本的场景</p>
-<p><img src="/images/%E5%85%89%E7%BA%BF%E8%B7%9F%E8%B8%AA%E6%9C%80%E5%9F%BA%E6%9C%AC%E5%9C%BA%E6%99%AF.png" alt="光线跟踪最基本场景"></p>
-<h3 id="Ray-h-光线-工具类"><a href="#Ray-h-光线-工具类" class="headerlink" title="Ray.h 光线_工具类"></a>Ray.h 光线_工具类</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> _RAY_</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _RAY_</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;Point3D.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;Vector3D.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Ray</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		Point3D o;<span class="comment">//origin 光线发射点</span></span><br><span class="line">		Vector3D d;<span class="comment">// direction 朝向 用向量定义 </span></span><br><span class="line">		<span class="built_in">Ray</span>(<span class="type">void</span>); <span class="comment">//default constructor  默认构造函数 </span></span><br><span class="line">		<span class="built_in">Ray</span>(<span class="type">const</span> Point3D &amp;origin, <span class="type">const</span> Vector3D &amp;dir);<span class="comment">//constructor 构造函数重写 </span></span><br><span class="line">		<span class="built_in">Ray</span>(<span class="type">const</span> Ray&amp; ray);<span class="comment">// copy constructor //复制构造函数</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		Ray&amp;<span class="comment">//assignment operator 赋值运算符</span></span><br><span class="line">			<span class="keyword">operator</span>=(<span class="type">const</span> Ray&amp; rhs);</span><br><span class="line">		~<span class="built_in">Ray</span>(<span class="type">void</span>);<span class="comment">//destructor 析构函数</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+    <title>共形几何第四节-不动点，庞加莱-霍普斯定理</title>
+    <url>/2020/08/14/%E5%85%B1%E5%BD%A2%E5%87%A0%E4%BD%95%E7%AC%AC%E5%9B%9B%E8%8A%82-%E4%B8%8D%E5%8A%A8%E7%82%B9%EF%BC%8C%E5%BA%9E%E5%8A%A0%E8%8E%B1-%E9%9C%8D%E6%99%AE%E6%96%AF%E5%AE%9A%E7%90%86/</url>
+    <content><![CDATA[<h2 id="布劳威尔-Brouwer-不动点理论"><a href="#布劳威尔-Brouwer-不动点理论" class="headerlink" title="布劳威尔(Brouwer)不动点理论"></a>布劳威尔(Brouwer)不动点理论</h2><p><img src="/images/image-20200814210228342.png" alt="image-20200814210228342"></p>
+<p><strong>对于一个拓扑空间中满足一定条件的连续函数f，存在一个点x0，使得f(x0) &#x3D; x0。</strong></p>
+<p>这个定理可以通过很实际的例子来理解。比如：取两张一样大小的白纸，在上面画好垂直的坐标系以及纵横的方格。将一张纸平铺在桌面，而另外一张随意揉成一个形状（但不能撕裂），放在第一张白纸之上，不超出第一张的边界。那么第二张纸上一定有一点正好就在第一张纸的对应点的正上方。一个更简单的说法是：将一张白纸平铺在桌面上，再将它揉成一团（不撕裂），放在原来白纸所在的地方，那么只要它不超出原来白纸平铺时的边界，那么白纸上一定有一点在水平方向上没有移动过。</p>
+<p>这个断言的根据就是布劳威尔不动点定理在二维欧几里得空间（欧几里得平面）的情况，因为把纸揉皱是一个连续的变换过程。</p>
+<p>另一个例子是大商场等地方可以看到的平面地图，上面标有“您在此处”的红点。如果标注足够精确，那么这个点就是把实际地形射到地图的连续函数的不动点。</p>
+<p>地球绕着它的自转轴自转。自转轴在自转过程中是不变的，也就是自转运动的不动点</p>
+<p>如果我们用一个密封的锅子煮水，那么总有一个水分子在煮开前的某一刻和煮开后的某一刻处于同样的位置。</p>
+<span id="more"></span>
 
+
+
+<p><a href="https://www.youtube.com/watch?v=tN5VHfu0Svg">拓扑学，布劳威尔不动点定理得直观和直接的证明</a></p>
+<h2 id="Lefschetz-莱夫谢茨不动点定理"><a href="#Lefschetz-莱夫谢茨不动点定理" class="headerlink" title="(Lefschetz)莱夫谢茨不动点定理"></a>(Lefschetz)莱夫谢茨不动点定理</h2><p>布劳威尔不动点定理是莱夫谢茨不动点定理的特例。</p>
+<p>莱夫谢茨不动点定理是布劳威尔不动点定理的推广。</p>
+<p><strong>设|K|为有限多面体，f:|K|→|K|为<a href="https://baike.baidu.com/item/%E8%BF%9E%E7%BB%AD%E6%98%A0%E5%B0%84/18916806">连续映射</a>，若f的莱夫谢茨数L(f)≠0，则f有不动点。</strong></p>
+<p><img src="/images/image-20200814212216708.png" alt="image-20200814212216708"></p>
+<h2 id="孤立零点"><a href="#孤立零点" class="headerlink" title="孤立零点"></a>孤立零点</h2><p><img src="/images/image-20200814215147535.png" alt="image-20200814215147535"></p>
+<h2 id="零点的指标"><a href="#零点的指标" class="headerlink" title="零点的指标"></a>零点的指标</h2><p><img src="/images/image-20200814215339484.png" alt="image-20200814215339484"></p>
+<p><img src="/images/image-20200814215849072.png" alt="image-20200814215849072"></p>
+<h2 id="庞加莱-霍普夫-Poincare-Hopf-定理"><a href="#庞加莱-霍普夫-Poincare-Hopf-定理" class="headerlink" title="**庞加莱-霍普夫(Poincaré-Hopf)**定理"></a>**庞加莱-霍普夫(Poincaré-Hopf)**定理</h2><p><strong>庞加莱-霍普夫(Poincaré-Hopf)<strong>定理(也称为</strong>庞加莱-霍普夫指标定理</strong>，<strong>庞加莱-霍普夫指标公式</strong>，或<strong>霍普夫指标定理</strong>)是<a href="http://www.wanweibaike.com/wiki-%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91">微分拓扑</a>的重要定理。</p>
+<p><img src="/images/image-20200817154608848.png" alt="image-20200817154608848"></p>
+<p><img src="/images/image-20200817154717789.png" alt="image-20200817154717789"></p>
+<p><img src="/images/image-20200817154728479.png" alt="image-20200817154728479"></p>
+<p><img src="/images/image-20200817154838430.png" alt="image-20200817154838430"></p>
+<p><img src="/images/image-20200817154846239.png" alt="image-20200817154846239"></p>
+<p><img src="/images/image-20200817160912089.png" alt="image-20200817160912089"></p>
+<h2 id="流形"><a href="#流形" class="headerlink" title="流形"></a>流形</h2><p><img src="/images/image-20200817161215934.png" alt="image-20200817161215934"></p>
+<p><img src="/images/image-20200817165012506.png" alt="image-20200817165012506"></p>
+<p><img src="/images/image-20200817165036534.png" alt="image-20200817165036534"></p>
+<p><img src="/images/image-20200817165115345.png" alt="image-20200817165115345"></p>
+<p><img src="/images/image-20200817165341939.png" alt="image-20200817165341939"></p>
+<p><img src="/images/image-20200817170346054.png" alt="image-20200817170346054"></p>
 ]]></content>
       <categories>
-        <category>光线跟踪</category>
+        <category>共形几何</category>
       </categories>
       <tags>
-        <tag>程序设计</tag>
-        <tag>阅读笔记</tag>
-        <tag>命名规范</tag>
-        <tag>光线跟踪器</tag>
+        <tag>笔记</tag>
+        <tag>共形几何</tag>
+        <tag>微分流形</tag>
       </tags>
   </entry>
   <entry>
@@ -1953,48 +1979,22 @@
       </tags>
   </entry>
   <entry>
-    <title>共形几何第四节-不动点，庞加莱-霍普斯定理</title>
-    <url>/2020/08/14/%E5%85%B1%E5%BD%A2%E5%87%A0%E4%BD%95%E7%AC%AC%E5%9B%9B%E8%8A%82-%E4%B8%8D%E5%8A%A8%E7%82%B9%EF%BC%8C%E5%BA%9E%E5%8A%A0%E8%8E%B1-%E9%9C%8D%E6%99%AE%E6%96%AF%E5%AE%9A%E7%90%86/</url>
-    <content><![CDATA[<h2 id="布劳威尔-Brouwer-不动点理论"><a href="#布劳威尔-Brouwer-不动点理论" class="headerlink" title="布劳威尔(Brouwer)不动点理论"></a>布劳威尔(Brouwer)不动点理论</h2><p><img src="/images/image-20200814210228342.png" alt="image-20200814210228342"></p>
-<p><strong>对于一个拓扑空间中满足一定条件的连续函数f，存在一个点x0，使得f(x0) &#x3D; x0。</strong></p>
-<p>这个定理可以通过很实际的例子来理解。比如：取两张一样大小的白纸，在上面画好垂直的坐标系以及纵横的方格。将一张纸平铺在桌面，而另外一张随意揉成一个形状（但不能撕裂），放在第一张白纸之上，不超出第一张的边界。那么第二张纸上一定有一点正好就在第一张纸的对应点的正上方。一个更简单的说法是：将一张白纸平铺在桌面上，再将它揉成一团（不撕裂），放在原来白纸所在的地方，那么只要它不超出原来白纸平铺时的边界，那么白纸上一定有一点在水平方向上没有移动过。</p>
-<p>这个断言的根据就是布劳威尔不动点定理在二维欧几里得空间（欧几里得平面）的情况，因为把纸揉皱是一个连续的变换过程。</p>
-<p>另一个例子是大商场等地方可以看到的平面地图，上面标有“您在此处”的红点。如果标注足够精确，那么这个点就是把实际地形射到地图的连续函数的不动点。</p>
-<p>地球绕着它的自转轴自转。自转轴在自转过程中是不变的，也就是自转运动的不动点</p>
-<p>如果我们用一个密封的锅子煮水，那么总有一个水分子在煮开前的某一刻和煮开后的某一刻处于同样的位置。</p>
-<span id="more"></span>
+    <title>光线跟踪算法技术阅读笔记-一.光线跟踪器和程序设计</title>
+    <url>/2019/12/25/%E5%85%89%E7%BA%BF%E8%B7%9F%E8%B8%AA%E7%AE%97%E6%B3%95%E6%8A%80%E6%9C%AF%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0-%E4%B8%80-%E5%85%89%E8%B7%9F%E8%B8%AA%E5%99%A8%E5%92%8C%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/</url>
+    <content><![CDATA[<h2 id="相关书籍"><a href="#相关书籍" class="headerlink" title="相关书籍"></a>相关书籍</h2><p>C++ : </p>
+<h2 id="光线跟踪V1-版本①-最简单的框架"><a href="#光线跟踪V1-版本①-最简单的框架" class="headerlink" title="光线跟踪V1(版本①):最简单的框架"></a>光线跟踪V1(版本①):最简单的框架</h2><p>根据书的顺序把源程序列出来，一个光线跟踪最简单最基本的场景</p>
+<p><img src="/images/%E5%85%89%E7%BA%BF%E8%B7%9F%E8%B8%AA%E6%9C%80%E5%9F%BA%E6%9C%AC%E5%9C%BA%E6%99%AF.png" alt="光线跟踪最基本场景"></p>
+<h3 id="Ray-h-光线-工具类"><a href="#Ray-h-光线-工具类" class="headerlink" title="Ray.h 光线_工具类"></a>Ray.h 光线_工具类</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> _RAY_</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _RAY_</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;Point3D.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&quot;Vector3D.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Ray</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		Point3D o;<span class="comment">//origin 光线发射点</span></span><br><span class="line">		Vector3D d;<span class="comment">// direction 朝向 用向量定义 </span></span><br><span class="line">		<span class="built_in">Ray</span>(<span class="type">void</span>); <span class="comment">//default constructor  默认构造函数 </span></span><br><span class="line">		<span class="built_in">Ray</span>(<span class="type">const</span> Point3D &amp;origin, <span class="type">const</span> Vector3D &amp;dir);<span class="comment">//constructor 构造函数重写 </span></span><br><span class="line">		<span class="built_in">Ray</span>(<span class="type">const</span> Ray&amp; ray);<span class="comment">// copy constructor //复制构造函数</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		Ray&amp;<span class="comment">//assignment operator 赋值运算符</span></span><br><span class="line">			<span class="keyword">operator</span>=(<span class="type">const</span> Ray&amp; rhs);</span><br><span class="line">		~<span class="built_in">Ray</span>(<span class="type">void</span>);<span class="comment">//destructor 析构函数</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
 
-
-
-<p><a href="https://www.youtube.com/watch?v=tN5VHfu0Svg">拓扑学，布劳威尔不动点定理得直观和直接的证明</a></p>
-<h2 id="Lefschetz-莱夫谢茨不动点定理"><a href="#Lefschetz-莱夫谢茨不动点定理" class="headerlink" title="(Lefschetz)莱夫谢茨不动点定理"></a>(Lefschetz)莱夫谢茨不动点定理</h2><p>布劳威尔不动点定理是莱夫谢茨不动点定理的特例。</p>
-<p>莱夫谢茨不动点定理是布劳威尔不动点定理的推广。</p>
-<p><strong>设|K|为有限多面体，f:|K|→|K|为<a href="https://baike.baidu.com/item/%E8%BF%9E%E7%BB%AD%E6%98%A0%E5%B0%84/18916806">连续映射</a>，若f的莱夫谢茨数L(f)≠0，则f有不动点。</strong></p>
-<p><img src="/images/image-20200814212216708.png" alt="image-20200814212216708"></p>
-<h2 id="孤立零点"><a href="#孤立零点" class="headerlink" title="孤立零点"></a>孤立零点</h2><p><img src="/images/image-20200814215147535.png" alt="image-20200814215147535"></p>
-<h2 id="零点的指标"><a href="#零点的指标" class="headerlink" title="零点的指标"></a>零点的指标</h2><p><img src="/images/image-20200814215339484.png" alt="image-20200814215339484"></p>
-<p><img src="/images/image-20200814215849072.png" alt="image-20200814215849072"></p>
-<h2 id="庞加莱-霍普夫-Poincare-Hopf-定理"><a href="#庞加莱-霍普夫-Poincare-Hopf-定理" class="headerlink" title="**庞加莱-霍普夫(Poincaré-Hopf)**定理"></a>**庞加莱-霍普夫(Poincaré-Hopf)**定理</h2><p><strong>庞加莱-霍普夫(Poincaré-Hopf)<strong>定理(也称为</strong>庞加莱-霍普夫指标定理</strong>，<strong>庞加莱-霍普夫指标公式</strong>，或<strong>霍普夫指标定理</strong>)是<a href="http://www.wanweibaike.com/wiki-%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91">微分拓扑</a>的重要定理。</p>
-<p><img src="/images/image-20200817154608848.png" alt="image-20200817154608848"></p>
-<p><img src="/images/image-20200817154717789.png" alt="image-20200817154717789"></p>
-<p><img src="/images/image-20200817154728479.png" alt="image-20200817154728479"></p>
-<p><img src="/images/image-20200817154838430.png" alt="image-20200817154838430"></p>
-<p><img src="/images/image-20200817154846239.png" alt="image-20200817154846239"></p>
-<p><img src="/images/image-20200817160912089.png" alt="image-20200817160912089"></p>
-<h2 id="流形"><a href="#流形" class="headerlink" title="流形"></a>流形</h2><p><img src="/images/image-20200817161215934.png" alt="image-20200817161215934"></p>
-<p><img src="/images/image-20200817165012506.png" alt="image-20200817165012506"></p>
-<p><img src="/images/image-20200817165036534.png" alt="image-20200817165036534"></p>
-<p><img src="/images/image-20200817165115345.png" alt="image-20200817165115345"></p>
-<p><img src="/images/image-20200817165341939.png" alt="image-20200817165341939"></p>
-<p><img src="/images/image-20200817170346054.png" alt="image-20200817170346054"></p>
 ]]></content>
       <categories>
-        <category>共形几何</category>
+        <category>光线跟踪</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>共形几何</tag>
-        <tag>微分流形</tag>
+        <tag>程序设计</tag>
+        <tag>阅读笔记</tag>
+        <tag>命名规范</tag>
+        <tag>光线跟踪器</tag>
       </tags>
   </entry>
   <entry>
@@ -2037,51 +2037,6 @@
         <tag>Phong</tag>
         <tag>Blinn-Phong</tag>
         <tag>光照模型</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图形学基础-漫反射，高光，环境光</title>
-    <url>/2021/06/30/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E6%BC%AB%E5%8F%8D%E5%B0%84%EF%BC%8C%E9%AB%98%E5%85%89%EF%BC%8C%E7%8E%AF%E5%A2%83%E5%85%89/</url>
-    <content><![CDATA[<h1 id="光的能量衰减"><a href="#光的能量衰减" class="headerlink" title="光的能量衰减"></a>光的能量衰减</h1><p><img src="/images/image-20210630155513283.png" alt="image-20210630155513283"></p>
-<h1 id="漫反射计算公式"><a href="#漫反射计算公式" class="headerlink" title="漫反射计算公式"></a>漫反射计算公式</h1><p><img src="/images/image-20210630155610575.png" alt="image-20210630155610575"></p>
-<h1 id="高光：观测所得，观测方向接近反射方向"><a href="#高光：观测所得，观测方向接近反射方向" class="headerlink" title="高光：观测所得，观测方向接近反射方向"></a>高光：观测所得，观测方向接近反射方向</h1><p>半程向量h接近于法线方向也是  点乘（两个向量点乘为1的时候接近）越大，说明夹角越小（反射光越接近光的颜色） </p>
-<p><img src="/images/image-20210630155637670.png" alt="image-20210630155637670"></p>
-<p>这里指数p一般在100到200，因为高光只有一点点 </p>
-<p><img src="/images/image-20210630155650578.png" alt="image-20210630155650578"></p>
-<h1 id="环境光"><a href="#环境光" class="headerlink" title="环境光"></a>环境光</h1><p>简化为环境光都是一样的，即 </p>
-<p><img src="/images/image-20210630155718178.png" alt="image-20210630155718178"></p>
-<h1 id="Blinn-Phong光照模型"><a href="#Blinn-Phong光照模型" class="headerlink" title="Blinn-Phong光照模型"></a>Blinn-Phong光照模型</h1><p>就在在每个像素上把环境光，漫反射，高光加起来 </p>
-<p><img src="/images/image-20210630155803989.png" alt="image-20210630155803989"></p>
-]]></content>
-      <categories>
-        <category>图形学基础</category>
-      </categories>
-      <tags>
-        <tag>图形学</tag>
-        <tag>Phong</tag>
-        <tag>Blinn-Phong</tag>
-        <tag>光照模型</tag>
-        <tag>漫反射</tag>
-        <tag>高光</tag>
-        <tag>环境光</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图形学基础-辐射度方法</title>
-    <url>/2021/07/03/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E8%BE%90%E5%B0%84%E5%BA%A6%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="蒙特卡洛方法的缺点"><a href="#蒙特卡洛方法的缺点" class="headerlink" title="蒙特卡洛方法的缺点"></a>蒙特卡洛方法的缺点</h1><p>全局光照技术都是基于蒙特卡洛方法的算法， 不同的是三种方法路径追踪，光子映射，梅特波利斯光照传输，使用不同的概率密度函数，但是缺点是</p>
-<p>1.蒙特卡洛方法存在<strong>严重的噪点</strong></p>
-<p>2.需要有<strong>大量的样本</strong>来收敛到真实值</p>
-<p>其结果就导致蒙特卡洛基于概率计算的收敛方法<strong>时间成本非常高</strong></p>
-<h1 id="近似模型与近似方法"><a href="#近似模型与近似方法" class="headerlink" title="近似模型与近似方法"></a>近似模型与近似方法</h1><p>对于近似方法，需要分析其忽略了哪些因素，以及对那一部分进行了优化，这些近似和忽略的部分也是变种算法需要改进的地方。</p>
-]]></content>
-      <categories>
-        <category>图形学</category>
-      </categories>
-      <tags>
-        <tag>图形学</tag>
-        <tag>辐射度学</tag>
-        <tag>蒙特卡洛</tag>
       </tags>
   </entry>
   <entry>
@@ -2141,6 +2096,51 @@
       </tags>
   </entry>
   <entry>
+    <title>图形学基础-辐射度方法</title>
+    <url>/2021/07/03/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E8%BE%90%E5%B0%84%E5%BA%A6%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="蒙特卡洛方法的缺点"><a href="#蒙特卡洛方法的缺点" class="headerlink" title="蒙特卡洛方法的缺点"></a>蒙特卡洛方法的缺点</h1><p>全局光照技术都是基于蒙特卡洛方法的算法， 不同的是三种方法路径追踪，光子映射，梅特波利斯光照传输，使用不同的概率密度函数，但是缺点是</p>
+<p>1.蒙特卡洛方法存在<strong>严重的噪点</strong></p>
+<p>2.需要有<strong>大量的样本</strong>来收敛到真实值</p>
+<p>其结果就导致蒙特卡洛基于概率计算的收敛方法<strong>时间成本非常高</strong></p>
+<h1 id="近似模型与近似方法"><a href="#近似模型与近似方法" class="headerlink" title="近似模型与近似方法"></a>近似模型与近似方法</h1><p>对于近似方法，需要分析其忽略了哪些因素，以及对那一部分进行了优化，这些近似和忽略的部分也是变种算法需要改进的地方。</p>
+]]></content>
+      <categories>
+        <category>图形学</category>
+      </categories>
+      <tags>
+        <tag>图形学</tag>
+        <tag>辐射度学</tag>
+        <tag>蒙特卡洛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图形学基础-漫反射，高光，环境光</title>
+    <url>/2021/06/30/%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80-%E6%BC%AB%E5%8F%8D%E5%B0%84%EF%BC%8C%E9%AB%98%E5%85%89%EF%BC%8C%E7%8E%AF%E5%A2%83%E5%85%89/</url>
+    <content><![CDATA[<h1 id="光的能量衰减"><a href="#光的能量衰减" class="headerlink" title="光的能量衰减"></a>光的能量衰减</h1><p><img src="/images/image-20210630155513283.png" alt="image-20210630155513283"></p>
+<h1 id="漫反射计算公式"><a href="#漫反射计算公式" class="headerlink" title="漫反射计算公式"></a>漫反射计算公式</h1><p><img src="/images/image-20210630155610575.png" alt="image-20210630155610575"></p>
+<h1 id="高光：观测所得，观测方向接近反射方向"><a href="#高光：观测所得，观测方向接近反射方向" class="headerlink" title="高光：观测所得，观测方向接近反射方向"></a>高光：观测所得，观测方向接近反射方向</h1><p>半程向量h接近于法线方向也是  点乘（两个向量点乘为1的时候接近）越大，说明夹角越小（反射光越接近光的颜色） </p>
+<p><img src="/images/image-20210630155637670.png" alt="image-20210630155637670"></p>
+<p>这里指数p一般在100到200，因为高光只有一点点 </p>
+<p><img src="/images/image-20210630155650578.png" alt="image-20210630155650578"></p>
+<h1 id="环境光"><a href="#环境光" class="headerlink" title="环境光"></a>环境光</h1><p>简化为环境光都是一样的，即 </p>
+<p><img src="/images/image-20210630155718178.png" alt="image-20210630155718178"></p>
+<h1 id="Blinn-Phong光照模型"><a href="#Blinn-Phong光照模型" class="headerlink" title="Blinn-Phong光照模型"></a>Blinn-Phong光照模型</h1><p>就在在每个像素上把环境光，漫反射，高光加起来 </p>
+<p><img src="/images/image-20210630155803989.png" alt="image-20210630155803989"></p>
+]]></content>
+      <categories>
+        <category>图形学基础</category>
+      </categories>
+      <tags>
+        <tag>图形学</tag>
+        <tag>Phong</tag>
+        <tag>Blinn-Phong</tag>
+        <tag>光照模型</tag>
+        <tag>漫反射</tag>
+        <tag>高光</tag>
+        <tag>环境光</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基础拓扑学笔记(1)--欧拉定理</title>
     <url>/2020/09/20/%E5%9F%BA%E7%A1%80%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0-1-%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/</url>
     <content><![CDATA[<p>基本拓扑学&#x3D;1&#x2F;3点集拓扑+2&#x2F;3 代数拓扑<br>微分几何 微分流形</p>
@@ -2178,31 +2178,6 @@
       </tags>
   </entry>
   <entry>
-    <title>基础拓扑学笔记(2)--拓扑不变量</title>
-    <url>/2020/09/20/%E5%9F%BA%E7%A1%80%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0-2-%E6%8B%93%E6%89%91%E4%B8%8D%E5%8F%98%E9%87%8F/</url>
-    <content><![CDATA[<h2 id="1-拓扑是一门怎么样的学科"><a href="#1-拓扑是一门怎么样的学科" class="headerlink" title="1.拓扑是一门怎么样的学科"></a>1.拓扑是一门怎么样的学科</h2><p><img src="/images/20200916183934174.png" alt="在这里插入图片描述"><br>拓扑学本质来讲是<strong>分类学</strong></p>
-<span id="more"></span>
-
-<h2 id="2-如何分类，标准是什么"><a href="#2-如何分类，标准是什么" class="headerlink" title="2.如何分类，标准是什么?"></a>2.如何分类，标准是什么?</h2><p><img src="/images/20200916184033120.png" alt="在这里插入图片描述"><br>日常生活中，一般通过对比两个事物来辨别两个物体是否是同一类，如水果和香蕉都属于水果，而电脑属于电子产品。</p>
-<p>数学中要说明事物相同则需要满足所有条件，而证明不同则只需要提出一个条件，也就是说证明相同困难，而判断不同比较容易。</p>
-<h2 id="3-使用拓扑不变量作为标准进行分类"><a href="#3-使用拓扑不变量作为标准进行分类" class="headerlink" title="3.使用拓扑不变量作为标准进行分类"></a>3.使用拓扑不变量作为标准进行分类</h2><p><img src="/images/20200916184854732.png" alt="在这里插入图片描述"><br><img src="/images/20200916184917682.png" alt="在这里插入图片描述"><br><img src="/images/20200916184937481.png" alt="在这里插入图片描述"><br><img src="/images/2020091622061225.png" alt="在这里插入图片描述"><br><img src="/images/20200916220619163.png" alt="在这里插入图片描述"><br>定点数并不是不变量，拓扑学不研究。</p>
-<p><img src="/images/20200917094830126.png" alt="在这里插入图片描述"></p>
-<h2 id="4-一些拓扑不变量"><a href="#4-一些拓扑不变量" class="headerlink" title="4.一些拓扑不变量"></a>4.一些拓扑不变量</h2><h3 id="4-1联通区数目"><a href="#4-1联通区数目" class="headerlink" title="4.1联通区数目"></a>4.1联通区数目</h3><p><img src="/images/20200917165940385.png" alt="在这里插入图片描述"></p>
-<h3 id="4-2-分点"><a href="#4-2-分点" class="headerlink" title="4.2 分点"></a>4.2 分点</h3><p><img src="/images/20200917170012245.png" alt="在这里插入图片描述"><br><img src="/images/20200917170024987.png" alt="在这里插入图片描述"></p>
-<h3 id="4-3-点的指数"><a href="#4-3-点的指数" class="headerlink" title="4.3 点的指数"></a>4.3 点的指数</h3><p><img src="/images/20200917170134797.png" alt="在这里插入图片描述"></p>
-<h3 id="4-4-一笔画成"><a href="#4-4-一笔画成" class="headerlink" title="4.4 一笔画成"></a>4.4 一笔画成</h3><p><img src="/images/20200917170201812.png" alt="在这里插入图片描述"></p>
-<h3 id="4-5-图形是”平的”"><a href="#4-5-图形是”平的”" class="headerlink" title="4.5 图形是”平的”"></a>4.5 图形是”平的”</h3><p><img src="/images/20200917170251795.png" alt="在这里插入图片描述"><br><img src="/images/20200917170306580.png" alt="在这里插入图片描述"><br><img src="/images/20200917170333463.png" alt="在这里插入图片描述"><br><img src="/images/20200917170345898.png" alt="在这里插入图片描述"></p>
-<h3 id="4-6-约当定理"><a href="#4-6-约当定理" class="headerlink" title="4.6 约当定理"></a>4.6 约当定理</h3><p><img src="/images/20200917170537679.png" alt="在这里插入图片描述"><br><img src="/images/20200917170551568.png" alt="在这里插入图片描述"></p>
-]]></content>
-      <categories>
-        <category>拓扑学</category>
-      </categories>
-      <tags>
-        <tag>拓扑</tag>
-        <tag>拓扑不变量</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>基础拓扑学笔记(3)--连续映像</title>
     <url>/2020/09/20/%E5%9F%BA%E7%A1%80%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0-3-%E8%BF%9E%E7%BB%AD%E6%98%A0%E5%83%8F/</url>
     <content><![CDATA[<h2 id="1-问题-什么叫连续？什么叫连续映射，研究拓扑为什么需要连续映射？"><a href="#1-问题-什么叫连续？什么叫连续映射，研究拓扑为什么需要连续映射？" class="headerlink" title="1.问题:什么叫连续？什么叫连续映射，研究拓扑为什么需要连续映射？"></a>1.问题:什么叫连续？什么叫连续映射，研究拓扑为什么需要连续映射？</h2><p>每门学科都建立在一些基础概念上，而拓扑学中贯穿着一个概念，就是<strong>连续性</strong>的概念。</p>
@@ -2228,6 +2203,31 @@
       </tags>
   </entry>
   <entry>
+    <title>基础拓扑学笔记(2)--拓扑不变量</title>
+    <url>/2020/09/20/%E5%9F%BA%E7%A1%80%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0-2-%E6%8B%93%E6%89%91%E4%B8%8D%E5%8F%98%E9%87%8F/</url>
+    <content><![CDATA[<h2 id="1-拓扑是一门怎么样的学科"><a href="#1-拓扑是一门怎么样的学科" class="headerlink" title="1.拓扑是一门怎么样的学科"></a>1.拓扑是一门怎么样的学科</h2><p><img src="/images/20200916183934174.png" alt="在这里插入图片描述"><br>拓扑学本质来讲是<strong>分类学</strong></p>
+<span id="more"></span>
+
+<h2 id="2-如何分类，标准是什么"><a href="#2-如何分类，标准是什么" class="headerlink" title="2.如何分类，标准是什么?"></a>2.如何分类，标准是什么?</h2><p><img src="/images/20200916184033120.png" alt="在这里插入图片描述"><br>日常生活中，一般通过对比两个事物来辨别两个物体是否是同一类，如水果和香蕉都属于水果，而电脑属于电子产品。</p>
+<p>数学中要说明事物相同则需要满足所有条件，而证明不同则只需要提出一个条件，也就是说证明相同困难，而判断不同比较容易。</p>
+<h2 id="3-使用拓扑不变量作为标准进行分类"><a href="#3-使用拓扑不变量作为标准进行分类" class="headerlink" title="3.使用拓扑不变量作为标准进行分类"></a>3.使用拓扑不变量作为标准进行分类</h2><p><img src="/images/20200916184854732.png" alt="在这里插入图片描述"><br><img src="/images/20200916184917682.png" alt="在这里插入图片描述"><br><img src="/images/20200916184937481.png" alt="在这里插入图片描述"><br><img src="/images/2020091622061225.png" alt="在这里插入图片描述"><br><img src="/images/20200916220619163.png" alt="在这里插入图片描述"><br>定点数并不是不变量，拓扑学不研究。</p>
+<p><img src="/images/20200917094830126.png" alt="在这里插入图片描述"></p>
+<h2 id="4-一些拓扑不变量"><a href="#4-一些拓扑不变量" class="headerlink" title="4.一些拓扑不变量"></a>4.一些拓扑不变量</h2><h3 id="4-1联通区数目"><a href="#4-1联通区数目" class="headerlink" title="4.1联通区数目"></a>4.1联通区数目</h3><p><img src="/images/20200917165940385.png" alt="在这里插入图片描述"></p>
+<h3 id="4-2-分点"><a href="#4-2-分点" class="headerlink" title="4.2 分点"></a>4.2 分点</h3><p><img src="/images/20200917170012245.png" alt="在这里插入图片描述"><br><img src="/images/20200917170024987.png" alt="在这里插入图片描述"></p>
+<h3 id="4-3-点的指数"><a href="#4-3-点的指数" class="headerlink" title="4.3 点的指数"></a>4.3 点的指数</h3><p><img src="/images/20200917170134797.png" alt="在这里插入图片描述"></p>
+<h3 id="4-4-一笔画成"><a href="#4-4-一笔画成" class="headerlink" title="4.4 一笔画成"></a>4.4 一笔画成</h3><p><img src="/images/20200917170201812.png" alt="在这里插入图片描述"></p>
+<h3 id="4-5-图形是”平的”"><a href="#4-5-图形是”平的”" class="headerlink" title="4.5 图形是”平的”"></a>4.5 图形是”平的”</h3><p><img src="/images/20200917170251795.png" alt="在这里插入图片描述"><br><img src="/images/20200917170306580.png" alt="在这里插入图片描述"><br><img src="/images/20200917170333463.png" alt="在这里插入图片描述"><br><img src="/images/20200917170345898.png" alt="在这里插入图片描述"></p>
+<h3 id="4-6-约当定理"><a href="#4-6-约当定理" class="headerlink" title="4.6 约当定理"></a>4.6 约当定理</h3><p><img src="/images/20200917170537679.png" alt="在这里插入图片描述"><br><img src="/images/20200917170551568.png" alt="在这里插入图片描述"></p>
+]]></content>
+      <categories>
+        <category>拓扑学</category>
+      </categories>
+      <tags>
+        <tag>拓扑</tag>
+        <tag>拓扑不变量</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基础拓扑学笔记(4)--同胚映像</title>
     <url>/2020/09/20/%E5%9F%BA%E7%A1%80%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0-4-%E5%90%8C%E8%83%9A%E6%98%A0%E5%83%8F/</url>
     <content><![CDATA[<h2 id="1-”叠合”映射"><a href="#1-”叠合”映射" class="headerlink" title="1.”叠合”映射"></a>1.”叠合”映射</h2><p><img src="/images/20200916213946626.png" alt="在这里插入图片描述"><br><img src="/images/20200916214007860.png" alt="在这里插入图片描述"></p>
@@ -2249,20 +2249,28 @@
       </tags>
   </entry>
   <entry>
-    <title>基础拓扑学笔记(5)--欧拉示性数</title>
-    <url>/2020/09/20/%E5%9F%BA%E7%A1%80%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0-5-%E6%AC%A7%E6%8B%89%E7%A4%BA%E6%80%A7%E6%95%B0/</url>
-    <content><![CDATA[<h2 id="1-欧拉示性数与剖分无关，因此可以随意选择剖分"><a href="#1-欧拉示性数与剖分无关，因此可以随意选择剖分" class="headerlink" title="1.欧拉示性数与剖分无关，因此可以随意选择剖分"></a>1.欧拉示性数与剖分无关，因此可以随意选择剖分</h2><p><img src="/images/20200917211859895.png" alt="在这里插入图片描述"><br><img src="/images/20200917211917737.png" alt="在这里插入图片描述"></p>
+    <title>基础拓扑学笔记(6)--射影平面</title>
+    <url>/2020/09/20/%E5%9F%BA%E7%A1%80%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0-6-%E5%B0%84%E5%BD%B1%E5%B9%B3%E9%9D%A2/</url>
+    <content><![CDATA[<h2 id="1-射影平面定义"><a href="#1-射影平面定义" class="headerlink" title="1.射影平面定义"></a>1.射影平面定义</h2><p><img src="/images/2020091817210749.png" alt="在这里插入图片描述"></p>
 <span id="more"></span>
 
-<p><img src="/images/20200917211941733.png" alt="在这里插入图片描述"><br><img src="/images/20200917211953545.png" alt="在这里插入图片描述"></p>
-<h2 id="2-计算欧拉示性数"><a href="#2-计算欧拉示性数" class="headerlink" title="2.计算欧拉示性数"></a>2.计算欧拉示性数</h2><p><img src="/images/20200917212147758.png" alt="在这里插入图片描述"><br><img src="/images/20200917212244772.png" alt="在这里插入图片描述"><br><img src="/images/20200917212300374.png" alt="在这里插入图片描述"><br><img src="/images/20200917212310334.png" alt="在这里插入图片描述"><br>2-2*洞的个数<br><img src="/images/20200917212337358.png" alt="在这里插入图片描述"></p>
+<h2 id="2-摄像机与地面上的三角形"><a href="#2-摄像机与地面上的三角形" class="headerlink" title="2.摄像机与地面上的三角形"></a>2.摄像机与地面上的三角形</h2><p>图1。摄像机为投影中心，在地面上拍摄三角形ABC。这个地面是一个完美的平面。淡绿色的区域是从相机上看到的。从相机发出的黑色光线表示取景器的立体区域(金字塔)。在黑色光线上安装的方形板是为了显示我们可以通过相机看到的东西。让我们把这个正方形的板子叫做屏幕。三角形ABC在地面上的照片被拍成屏幕上的三角形A’ b ’ c&#96;。白光是三角形顶点的投影线。<br><img src="/images/20200918172127605.png" alt="在这里插入图片描述"><br>依旧，图2是俯视图的情况，而图3是侧视图。<br>图4是拍摄视角的试视图，而根据图可以看出经过射影变换之后的直线是不变的。虽然经过射影变换之后三角形的形状和大小会变化，但是直线依旧是直线。<br><img src="/images/20200918172138658.png" alt="在这里插入图片描述"><br>图6是平行线的投影。面板屏幕上的平行线看起来有端点，并在地平线上相遇。<br>图7画了两对平行线，将它们投射到面板屏幕上。同时，蓝色平行直线也在水平线上相交。</p>
+<h2 id="3-摄影机视角的平行线"><a href="#3-摄影机视角的平行线" class="headerlink" title="3.摄影机视角的平行线"></a>3.摄影机视角的平行线</h2><p><img src="/images/20200918172158706.png" alt="在这里插入图片描述"><br>图8显示了面板屏幕上的两对平行线。右下角是它们构成的平行四边形。数学家把平板屏幕上的视界称为<strong>无穷远处的一条线</strong>。然而，没有这样的物理线存在。这个名字很不合适。它混淆了初学者。它不是一条无限远的直线。我们只能在面板屏幕上捕捉到它作为地面和天空的边界。换句话说，<strong>无穷远处的线是人造的</strong>，那条线其实在现实中并不存在。</p>
+<h2 id="4-180°摄影机"><a href="#4-180°摄影机" class="headerlink" title="4.180°摄影机"></a>4.180°摄影机</h2><p><img src="/images/20200918173812224.png" alt="在这里插入图片描述"><br>图9显示了180°相机与矩形平面的拍摄。平面形成半圆柱体。帮助我们得到整个平行线范围的全图。地面上的平行线看起来像铁路，但在屏幕上则不然。</p>
+<p>图10显示了图9的展开面板屏幕。点P和P’在无穷远处(视界)线上。面板屏幕是全景的，很好的看到一对平行线。但对于平行线间距大的情况就不方便了。它不能覆盖不同方向的直线。</p>
+<p>图11显示了球面上的两对平行线。它们从地面投射到一个半球。半球的中心是投影中心。<strong>半球的边缘(赤道的周长)现在是一条无限远的线</strong>。</p>
+<p>吐槽:有一说一,射影平面确实是由摄影来的(</p>
+<h2 id="5-莫比乌斯环-Mobius-Strip"><a href="#5-莫比乌斯环-Mobius-Strip" class="headerlink" title="5.莫比乌斯环( Mobius Strip)"></a>5.莫比乌斯环( Mobius Strip)</h2><p>球面直径两端相对的两点称为对跖点。在一个半球的边缘有无数对映点。所有由地面中心投影形成的半球边缘对映点都必须被识别出来。也就是说，无限展开的地面有一些类似于对映点的东西。这个平面就是射影平面。<br><img src="/images/20200919220216702.png" alt="在这里插入图片描述"><br><img src="/images/20200919220254308.png" alt="在这里插入图片描述"><br>其经过变化<br><img src="/images/20200919220625321.png" alt="在这里插入图片描述"><br>经过简化<br><img src="/images/20200919220715596.png" alt="在这里插入图片描述"><br><img src="/images/20200919220810582.png" alt="在这里插入图片描述"></p>
+<h2 id="6-不可定向曲面包含莫比乌斯环"><a href="#6-不可定向曲面包含莫比乌斯环" class="headerlink" title="6.不可定向曲面包含莫比乌斯环"></a>6.不可定向曲面包含莫比乌斯环</h2><p><img src="/images/20200919220800878.png" alt="在这里插入图片描述"></p>
+<h2 id="7-投影平面上的线与莫比乌斯环的比较"><a href="#7-投影平面上的线与莫比乌斯环的比较" class="headerlink" title="7.投影平面上的线与莫比乌斯环的比较"></a>7.投影平面上的线与莫比乌斯环的比较</h2><p><img src="/images/20200919220839855.png" alt="在这里插入图片描述"><br><img src="/images/20200919220848956.png" alt="在这里插入图片描述"></p>
+<p>参考:<br><a href="http://web1.kcn.jp/hp28ah77/us27_infi.htm">Projective Geometry (1)</a><br>M335 TV3 The Projective Plane RP2 (with Colin Rourke) (Geometric Topology)</p>
 ]]></content>
       <categories>
         <category>拓扑学</category>
       </categories>
       <tags>
         <tag>拓扑</tag>
-        <tag>欧拉示性数</tag>
+        <tag>射影平面</tag>
       </tags>
   </entry>
   <entry>
@@ -2320,28 +2328,20 @@
       </tags>
   </entry>
   <entry>
-    <title>基础拓扑学笔记(6)--射影平面</title>
-    <url>/2020/09/20/%E5%9F%BA%E7%A1%80%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0-6-%E5%B0%84%E5%BD%B1%E5%B9%B3%E9%9D%A2/</url>
-    <content><![CDATA[<h2 id="1-射影平面定义"><a href="#1-射影平面定义" class="headerlink" title="1.射影平面定义"></a>1.射影平面定义</h2><p><img src="/images/2020091817210749.png" alt="在这里插入图片描述"></p>
+    <title>基础拓扑学笔记(5)--欧拉示性数</title>
+    <url>/2020/09/20/%E5%9F%BA%E7%A1%80%E6%8B%93%E6%89%91%E5%AD%A6%E7%AC%94%E8%AE%B0-5-%E6%AC%A7%E6%8B%89%E7%A4%BA%E6%80%A7%E6%95%B0/</url>
+    <content><![CDATA[<h2 id="1-欧拉示性数与剖分无关，因此可以随意选择剖分"><a href="#1-欧拉示性数与剖分无关，因此可以随意选择剖分" class="headerlink" title="1.欧拉示性数与剖分无关，因此可以随意选择剖分"></a>1.欧拉示性数与剖分无关，因此可以随意选择剖分</h2><p><img src="/images/20200917211859895.png" alt="在这里插入图片描述"><br><img src="/images/20200917211917737.png" alt="在这里插入图片描述"></p>
 <span id="more"></span>
 
-<h2 id="2-摄像机与地面上的三角形"><a href="#2-摄像机与地面上的三角形" class="headerlink" title="2.摄像机与地面上的三角形"></a>2.摄像机与地面上的三角形</h2><p>图1。摄像机为投影中心，在地面上拍摄三角形ABC。这个地面是一个完美的平面。淡绿色的区域是从相机上看到的。从相机发出的黑色光线表示取景器的立体区域(金字塔)。在黑色光线上安装的方形板是为了显示我们可以通过相机看到的东西。让我们把这个正方形的板子叫做屏幕。三角形ABC在地面上的照片被拍成屏幕上的三角形A’ b ’ c&#96;。白光是三角形顶点的投影线。<br><img src="/images/20200918172127605.png" alt="在这里插入图片描述"><br>依旧，图2是俯视图的情况，而图3是侧视图。<br>图4是拍摄视角的试视图，而根据图可以看出经过射影变换之后的直线是不变的。虽然经过射影变换之后三角形的形状和大小会变化，但是直线依旧是直线。<br><img src="/images/20200918172138658.png" alt="在这里插入图片描述"><br>图6是平行线的投影。面板屏幕上的平行线看起来有端点，并在地平线上相遇。<br>图7画了两对平行线，将它们投射到面板屏幕上。同时，蓝色平行直线也在水平线上相交。</p>
-<h2 id="3-摄影机视角的平行线"><a href="#3-摄影机视角的平行线" class="headerlink" title="3.摄影机视角的平行线"></a>3.摄影机视角的平行线</h2><p><img src="/images/20200918172158706.png" alt="在这里插入图片描述"><br>图8显示了面板屏幕上的两对平行线。右下角是它们构成的平行四边形。数学家把平板屏幕上的视界称为<strong>无穷远处的一条线</strong>。然而，没有这样的物理线存在。这个名字很不合适。它混淆了初学者。它不是一条无限远的直线。我们只能在面板屏幕上捕捉到它作为地面和天空的边界。换句话说，<strong>无穷远处的线是人造的</strong>，那条线其实在现实中并不存在。</p>
-<h2 id="4-180°摄影机"><a href="#4-180°摄影机" class="headerlink" title="4.180°摄影机"></a>4.180°摄影机</h2><p><img src="/images/20200918173812224.png" alt="在这里插入图片描述"><br>图9显示了180°相机与矩形平面的拍摄。平面形成半圆柱体。帮助我们得到整个平行线范围的全图。地面上的平行线看起来像铁路，但在屏幕上则不然。</p>
-<p>图10显示了图9的展开面板屏幕。点P和P’在无穷远处(视界)线上。面板屏幕是全景的，很好的看到一对平行线。但对于平行线间距大的情况就不方便了。它不能覆盖不同方向的直线。</p>
-<p>图11显示了球面上的两对平行线。它们从地面投射到一个半球。半球的中心是投影中心。<strong>半球的边缘(赤道的周长)现在是一条无限远的线</strong>。</p>
-<p>吐槽:有一说一,射影平面确实是由摄影来的(</p>
-<h2 id="5-莫比乌斯环-Mobius-Strip"><a href="#5-莫比乌斯环-Mobius-Strip" class="headerlink" title="5.莫比乌斯环( Mobius Strip)"></a>5.莫比乌斯环( Mobius Strip)</h2><p>球面直径两端相对的两点称为对跖点。在一个半球的边缘有无数对映点。所有由地面中心投影形成的半球边缘对映点都必须被识别出来。也就是说，无限展开的地面有一些类似于对映点的东西。这个平面就是射影平面。<br><img src="/images/20200919220216702.png" alt="在这里插入图片描述"><br><img src="/images/20200919220254308.png" alt="在这里插入图片描述"><br>其经过变化<br><img src="/images/20200919220625321.png" alt="在这里插入图片描述"><br>经过简化<br><img src="/images/20200919220715596.png" alt="在这里插入图片描述"><br><img src="/images/20200919220810582.png" alt="在这里插入图片描述"></p>
-<h2 id="6-不可定向曲面包含莫比乌斯环"><a href="#6-不可定向曲面包含莫比乌斯环" class="headerlink" title="6.不可定向曲面包含莫比乌斯环"></a>6.不可定向曲面包含莫比乌斯环</h2><p><img src="/images/20200919220800878.png" alt="在这里插入图片描述"></p>
-<h2 id="7-投影平面上的线与莫比乌斯环的比较"><a href="#7-投影平面上的线与莫比乌斯环的比较" class="headerlink" title="7.投影平面上的线与莫比乌斯环的比较"></a>7.投影平面上的线与莫比乌斯环的比较</h2><p><img src="/images/20200919220839855.png" alt="在这里插入图片描述"><br><img src="/images/20200919220848956.png" alt="在这里插入图片描述"></p>
-<p>参考:<br><a href="http://web1.kcn.jp/hp28ah77/us27_infi.htm">Projective Geometry (1)</a><br>M335 TV3 The Projective Plane RP2 (with Colin Rourke) (Geometric Topology)</p>
+<p><img src="/images/20200917211941733.png" alt="在这里插入图片描述"><br><img src="/images/20200917211953545.png" alt="在这里插入图片描述"></p>
+<h2 id="2-计算欧拉示性数"><a href="#2-计算欧拉示性数" class="headerlink" title="2.计算欧拉示性数"></a>2.计算欧拉示性数</h2><p><img src="/images/20200917212147758.png" alt="在这里插入图片描述"><br><img src="/images/20200917212244772.png" alt="在这里插入图片描述"><br><img src="/images/20200917212300374.png" alt="在这里插入图片描述"><br><img src="/images/20200917212310334.png" alt="在这里插入图片描述"><br>2-2*洞的个数<br><img src="/images/20200917212337358.png" alt="在这里插入图片描述"></p>
 ]]></content>
       <categories>
         <category>拓扑学</category>
       </categories>
       <tags>
         <tag>拓扑</tag>
-        <tag>射影平面</tag>
+        <tag>欧拉示性数</tag>
       </tags>
   </entry>
   <entry>
@@ -2381,17 +2381,21 @@
       </tags>
   </entry>
   <entry>
-    <title>构成课作业存档</title>
-    <url>/2020/04/29/%E6%9E%84%E6%88%90%E8%AF%BE%E4%BD%9C%E4%B8%9A%E5%AD%98%E6%A1%A3/</url>
-    <content><![CDATA[<h1 id="第一堂-飞行道具"><a href="#第一堂-飞行道具" class="headerlink" title="第一堂:飞行道具"></a>第一堂:飞行道具</h1>]]></content>
+    <title>绘画笔记-V大课程笔记-① 第一周 简介 认知与方法论 结构及人工网格</title>
+    <url>/2021/02/23/%E7%BB%98%E7%94%BB%E7%AC%94%E8%AE%B0-V%E5%A4%A7%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0-%E2%91%A0-%E7%AC%AC%E4%B8%80%E5%91%A8-%E7%AE%80%E4%BB%8B-%E8%AE%A4%E7%9F%A5%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA-%E7%BB%93%E6%9E%84%E5%8F%8A%E4%BA%BA%E5%B7%A5%E7%BD%91%E6%A0%BC/</url>
+    <content><![CDATA[<p><strong>基本几何体</strong> </p>
+<p><strong>最大转折</strong>:褶皱这类的概括使用最大转折来概括</p>
+<p><strong>形成方式:截面</strong></p>
+<p>1.结构</p>
+]]></content>
       <categories>
-        <category>构成课</category>
+        <category>V大课程笔记</category>
       </categories>
       <tags>
-        <tag>构成课</tag>
-        <tag>Krenz</tag>
-        <tag>DLC</tag>
-        <tag>基础作业</tag>
+        <tag>笔记</tag>
+        <tag>绘画</tag>
+        <tag>思考</tag>
+        <tag>V大</tag>
       </tags>
   </entry>
   <entry>
@@ -2415,6 +2419,39 @@
       <tags>
         <tag>拓扑</tag>
         <tag>度量空间</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>构成课作业存档</title>
+    <url>/2020/04/29/%E6%9E%84%E6%88%90%E8%AF%BE%E4%BD%9C%E4%B8%9A%E5%AD%98%E6%A1%A3/</url>
+    <content><![CDATA[<h1 id="第一堂-飞行道具"><a href="#第一堂-飞行道具" class="headerlink" title="第一堂:飞行道具"></a>第一堂:飞行道具</h1>]]></content>
+      <categories>
+        <category>构成课</category>
+      </categories>
+      <tags>
+        <tag>构成课</tag>
+        <tag>Krenz</tag>
+        <tag>DLC</tag>
+        <tag>基础作业</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>绘画笔记-冷暖</title>
+    <url>/2020/11/08/%E7%BB%98%E7%94%BB%E7%AC%94%E8%AE%B0-%E5%86%B7%E6%9A%96/</url>
+    <content><![CDATA[<h1 id="Alena-Aenami"><a href="#Alena-Aenami" class="headerlink" title="Alena Aenami"></a>Alena Aenami</h1><p>A站一个冷暖的画家</p>
+<p><img src="/images/huihuabiji/1546086573718.png" alt="1546086573718"></p>
+<h1 id="BATO-DUGARZHAPOV"><a href="#BATO-DUGARZHAPOV" class="headerlink" title="BATO DUGARZHAPOV"></a><a href="http://artrussia.ru/en/bato_dugarzhapov">BATO DUGARZHAPOV</a></h1><p><img src="/images/huihuabiji/bato-dugarzhapov-untitled.jpg" alt="bato-dugarzhapov-untitled"></p>
+<h1 id="冷暖-饱和度-的一个高级作用——表现体积-而不用明度表现体积"><a href="#冷暖-饱和度-的一个高级作用——表现体积-而不用明度表现体积" class="headerlink" title="冷暖(饱和度)的一个高级作用——表现体积(而不用明度表现体积)"></a>冷暖(饱和度)的一个高级作用——表现体积(而不用明度表现体积)</h1><p>其实本质来讲就是<strong>有对比</strong> 和之前投影的笔记一个样子，投影使用明度对比塑造体积感，而冷暖用饱和度塑造体积感，这两者在素描的层面上都是明度发生了变化</p>
+<p><img src="/images/huihuabiji/%E5%86%B7%E6%9A%96%E5%92%8C%E9%A5%B1%E5%92%8C%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%87%BA%E4%BD%93%E7%A7%AF-1546513659128.png" alt="冷暖和饱和度对比出体积-1546513659128"></p>
+]]></content>
+      <categories>
+        <category>绘画笔记</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>色彩</tag>
+        <tag>思考</tag>
+        <tag>冷暖</tag>
       </tags>
   </entry>
   <entry>
@@ -2508,24 +2545,6 @@
       </tags>
   </entry>
   <entry>
-    <title>绘画笔记-V大课程笔记-① 第一周 简介 认知与方法论 结构及人工网格</title>
-    <url>/2021/02/23/%E7%BB%98%E7%94%BB%E7%AC%94%E8%AE%B0-V%E5%A4%A7%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0-%E2%91%A0-%E7%AC%AC%E4%B8%80%E5%91%A8-%E7%AE%80%E4%BB%8B-%E8%AE%A4%E7%9F%A5%E4%B8%8E%E6%96%B9%E6%B3%95%E8%AE%BA-%E7%BB%93%E6%9E%84%E5%8F%8A%E4%BA%BA%E5%B7%A5%E7%BD%91%E6%A0%BC/</url>
-    <content><![CDATA[<p><strong>基本几何体</strong> </p>
-<p><strong>最大转折</strong>:褶皱这类的概括使用最大转折来概括</p>
-<p><strong>形成方式:截面</strong></p>
-<p>1.结构</p>
-]]></content>
-      <categories>
-        <category>V大课程笔记</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>绘画</tag>
-        <tag>思考</tag>
-        <tag>V大</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>绘画笔记-漫画的势与集中线</title>
     <url>/2020/11/14/%E7%BB%98%E7%94%BB%E7%AC%94%E8%AE%B0-%E6%BC%AB%E7%94%BB%E7%9A%84%E5%8A%BF%E4%B8%8E%E9%9B%86%E4%B8%AD%E7%BA%BF/</url>
     <content><![CDATA[<p><img src="/images/huihuabiji/image-20201114201405568.png" alt="image-20201114201405568"></p>
@@ -2544,47 +2563,6 @@
         <tag>思考</tag>
         <tag>投影</tag>
         <tag>构成</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>绘画笔记-冷暖</title>
-    <url>/2020/11/08/%E7%BB%98%E7%94%BB%E7%AC%94%E8%AE%B0-%E5%86%B7%E6%9A%96/</url>
-    <content><![CDATA[<h1 id="Alena-Aenami"><a href="#Alena-Aenami" class="headerlink" title="Alena Aenami"></a>Alena Aenami</h1><p>A站一个冷暖的画家</p>
-<p><img src="/images/huihuabiji/1546086573718.png" alt="1546086573718"></p>
-<h1 id="BATO-DUGARZHAPOV"><a href="#BATO-DUGARZHAPOV" class="headerlink" title="BATO DUGARZHAPOV"></a><a href="http://artrussia.ru/en/bato_dugarzhapov">BATO DUGARZHAPOV</a></h1><p><img src="/images/huihuabiji/bato-dugarzhapov-untitled.jpg" alt="bato-dugarzhapov-untitled"></p>
-<h1 id="冷暖-饱和度-的一个高级作用——表现体积-而不用明度表现体积"><a href="#冷暖-饱和度-的一个高级作用——表现体积-而不用明度表现体积" class="headerlink" title="冷暖(饱和度)的一个高级作用——表现体积(而不用明度表现体积)"></a>冷暖(饱和度)的一个高级作用——表现体积(而不用明度表现体积)</h1><p>其实本质来讲就是<strong>有对比</strong> 和之前投影的笔记一个样子，投影使用明度对比塑造体积感，而冷暖用饱和度塑造体积感，这两者在素描的层面上都是明度发生了变化</p>
-<p><img src="/images/huihuabiji/%E5%86%B7%E6%9A%96%E5%92%8C%E9%A5%B1%E5%92%8C%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%87%BA%E4%BD%93%E7%A7%AF-1546513659128.png" alt="冷暖和饱和度对比出体积-1546513659128"></p>
-]]></content>
-      <categories>
-        <category>绘画笔记</category>
-      </categories>
-      <tags>
-        <tag>笔记</tag>
-        <tag>色彩</tag>
-        <tag>思考</tag>
-        <tag>冷暖</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>绘画过程与思考-厨房的过程记录</title>
-    <url>/2020/04/22/%E7%BB%98%E7%94%BB%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%80%9D%E8%80%83-%E5%8E%A8%E6%88%BF%E7%9A%84%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h2 id="四叶妹妹厨房"><a href="#四叶妹妹厨房" class="headerlink" title="四叶妹妹厨房"></a>四叶妹妹厨房</h2><p><img src="/images/TouShi/siyemeimei/siyemeimei.png"></p>
-<p>这线条我画的好认真啊…</p>
-<span id="more"></span>
-
-<p><img src="/images/TouShi/siyemeimei/siyemeimei2.png"></p>
-<p>抱枕和纸片确定人物的占位和比例</p>
-<p><img src="/images/TouShi/siyemeimei/siyemeimei3.png"></p>
-<p>3D软件来确定地面然后升起来用色块确定物件的比例</p>
-]]></content>
-      <categories>
-        <category>绘画过程</category>
-      </categories>
-      <tags>
-        <tag>透视课</tag>
-        <tag>思考</tag>
-        <tag>过程</tag>
-        <tag>记录</tag>
       </tags>
   </entry>
   <entry>
@@ -2632,6 +2610,28 @@
       </tags>
   </entry>
   <entry>
+    <title>绘画过程与思考-厨房的过程记录</title>
+    <url>/2020/04/22/%E7%BB%98%E7%94%BB%E8%BF%87%E7%A8%8B%E4%B8%8E%E6%80%9D%E8%80%83-%E5%8E%A8%E6%88%BF%E7%9A%84%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h2 id="四叶妹妹厨房"><a href="#四叶妹妹厨房" class="headerlink" title="四叶妹妹厨房"></a>四叶妹妹厨房</h2><p><img src="/images/TouShi/siyemeimei/siyemeimei.png"></p>
+<p>这线条我画的好认真啊…</p>
+<span id="more"></span>
+
+<p><img src="/images/TouShi/siyemeimei/siyemeimei2.png"></p>
+<p>抱枕和纸片确定人物的占位和比例</p>
+<p><img src="/images/TouShi/siyemeimei/siyemeimei3.png"></p>
+<p>3D软件来确定地面然后升起来用色块确定物件的比例</p>
+]]></content>
+      <categories>
+        <category>绘画过程</category>
+      </categories>
+      <tags>
+        <tag>透视课</tag>
+        <tag>思考</tag>
+        <tag>过程</tag>
+        <tag>记录</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>色彩之路的两个选择</title>
     <url>/2021/01/21/%E8%89%B2%E5%BD%A9%E4%B9%8B%E8%B7%AF%E7%9A%84%E4%B8%A4%E4%B8%AA%E9%80%89%E6%8B%A9/</url>
     <content><![CDATA[]]></content>
@@ -2666,25 +2666,6 @@
         <tag>Krenz</tag>
         <tag>DLC</tag>
         <tag>homework</tag>
-        <tag>色彩课</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>色彩课心智图-文字总结</title>
-    <url>/2020/04/21/%E8%89%B2%E5%BD%A9%E8%AF%BE%E5%BF%83%E6%99%BA%E5%9B%BE-%E6%96%87%E5%AD%97%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h2 id="L1知识点"><a href="#L1知识点" class="headerlink" title="L1知识点"></a>L1知识点</h2><h3 id="1-焦点"><a href="#1-焦点" class="headerlink" title="1.焦点"></a>1.焦点</h3><p>一張作品中想表現的重點區域，我們在構圖&#x2F;配色&#x2F;打光所做的各種安排多是為了突顯焦點</p>
-<p>突顯焦點的方法：①灰純對比     ②冷暖(色相)對比    ③邊緣虚實對比    </p>
-<p>​                            ④明度对比      ⑤疏密對比              ⑥視覺導引</p>
-<h3 id="2-权利游戏-权重"><a href="#2-权利游戏-权重" class="headerlink" title="2.权利游戏(权重)"></a>2.权利游戏(权重)</h3><p>就像三國志的勢力圖,我們每下一筆色彩&#x2F;光影&#x2F;形狀,都會造成圖面上的勢力波動，要保持焦點擁有較好&#x2F;較稀缺的資源(較顯眼)</p>
-<h3 id="3-固有色配色"><a href="#3-固有色配色" class="headerlink" title="3.固有色配色"></a>3.固有色配色</h3><h4 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想:"></a>核心思想:</h4><p>高富帥主角-確認焦點處的重要地位，給予高純度&#x2F;特殊色相&#x2F;高明度差等等強烈對比，人物畫來說,通常是瞳孔&#x2F;髮飾&#x2F;首飾等等區域，高純度&#x2F;冷暖明顯的這個色彩又常被說是提神色</p>
-]]></content>
-      <categories>
-        <category>色彩课</category>
-      </categories>
-      <tags>
-        <tag>Krenz</tag>
-        <tag>知识点</tag>
-        <tag>色彩</tag>
         <tag>色彩课</tag>
       </tags>
   </entry>
@@ -2836,23 +2817,6 @@
       <tags>
         <tag>笔记</tag>
         <tag>共形几何</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>读书札记-1-言语</title>
-    <url>/2020/01/28/%E8%AF%BB%E4%B9%A6%E6%9C%AD%E8%AE%B0-1-%E8%A8%80%E8%AF%AD/</url>
-    <content><![CDATA[<p>​    说来奇怪，今天翻到了高中时候的读书笔记，自从上了大学倒没有记笔记的习惯了，这里暂且写一下占个地方也好，就当回忆一下黑历史了(笑)。</p>
-<h2 id="1-谈小说的作用"><a href="#1-谈小说的作用" class="headerlink" title="1.谈小说的作用"></a>1.谈小说的作用</h2><blockquote>
-<p>六经不能教，当以小说教之；正史不能入，当以小说入之。</p>
-<p>语录不能渝，当以小说渝之；律例不能活，当以小说活之。</p>
-</blockquote>
-<p>​                                                                                                                                          ——(小说的作用，市民文学现状)</p>
-]]></content>
-      <categories>
-        <category>读书札记</category>
-      </categories>
-      <tags>
-        <tag>读书札记</tag>
       </tags>
   </entry>
   <entry>
@@ -3013,6 +2977,35 @@
       </tags>
   </entry>
   <entry>
+    <title>读书札记-1-言语</title>
+    <url>/2020/01/28/%E8%AF%BB%E4%B9%A6%E6%9C%AD%E8%AE%B0-1-%E8%A8%80%E8%AF%AD/</url>
+    <content><![CDATA[<p>​    说来奇怪，今天翻到了高中时候的读书笔记，自从上了大学倒没有记笔记的习惯了，这里暂且写一下占个地方也好，就当回忆一下黑历史了(笑)。</p>
+<h2 id="1-谈小说的作用"><a href="#1-谈小说的作用" class="headerlink" title="1.谈小说的作用"></a>1.谈小说的作用</h2><blockquote>
+<p>六经不能教，当以小说教之；正史不能入，当以小说入之。</p>
+<p>语录不能渝，当以小说渝之；律例不能活，当以小说活之。</p>
+</blockquote>
+<p>​                                                                                                                                          ——(小说的作用，市民文学现状)</p>
+]]></content>
+      <categories>
+        <category>读书札记</category>
+      </categories>
+      <tags>
+        <tag>读书札记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>读书札记-镖人漫画</title>
+    <url>/2020/11/12/%E8%AF%BB%E4%B9%A6%E6%9C%AD%E8%AE%B0-%E9%95%96%E4%BA%BA%E6%BC%AB%E7%94%BB/</url>
+    <content><![CDATA[<p><img src="/images/dushubiji/image-20201112194821041.png" alt="image-20201112194821041"></p>
+]]></content>
+      <categories>
+        <category>读书札记</category>
+      </categories>
+      <tags>
+        <tag>读书札记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Krenz透视课作业存档</title>
     <url>/2018/11/03/%E9%80%8F%E8%A7%86%E8%AF%BE%E4%BD%9C%E4%B8%9A%E5%AD%98%E6%A1%A3/</url>
     <content><![CDATA[<p><img src="/images/%E5%AD%98%E6%A1%A32.jpg" alt="透视课LV1作业1.1"></p>
@@ -3031,15 +3024,22 @@
       </tags>
   </entry>
   <entry>
-    <title>读书札记-镖人漫画</title>
-    <url>/2020/11/12/%E8%AF%BB%E4%B9%A6%E6%9C%AD%E8%AE%B0-%E9%95%96%E4%BA%BA%E6%BC%AB%E7%94%BB/</url>
-    <content><![CDATA[<p><img src="/images/dushubiji/image-20201112194821041.png" alt="image-20201112194821041"></p>
+    <title>色彩课心智图-文字总结</title>
+    <url>/2020/04/21/%E8%89%B2%E5%BD%A9%E8%AF%BE%E5%BF%83%E6%99%BA%E5%9B%BE-%E6%96%87%E5%AD%97%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h2 id="L1知识点"><a href="#L1知识点" class="headerlink" title="L1知识点"></a>L1知识点</h2><h3 id="1-焦点"><a href="#1-焦点" class="headerlink" title="1.焦点"></a>1.焦点</h3><p>一張作品中想表現的重點區域，我們在構圖&#x2F;配色&#x2F;打光所做的各種安排多是為了突顯焦點</p>
+<p>突顯焦點的方法：①灰純對比     ②冷暖(色相)對比    ③邊緣虚實對比    </p>
+<p>​                            ④明度对比      ⑤疏密對比              ⑥視覺導引</p>
+<h3 id="2-权利游戏-权重"><a href="#2-权利游戏-权重" class="headerlink" title="2.权利游戏(权重)"></a>2.权利游戏(权重)</h3><p>就像三國志的勢力圖,我們每下一筆色彩&#x2F;光影&#x2F;形狀,都會造成圖面上的勢力波動，要保持焦點擁有較好&#x2F;較稀缺的資源(較顯眼)</p>
+<h3 id="3-固有色配色"><a href="#3-固有色配色" class="headerlink" title="3.固有色配色"></a>3.固有色配色</h3><h4 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想:"></a>核心思想:</h4><p>高富帥主角-確認焦點處的重要地位，給予高純度&#x2F;特殊色相&#x2F;高明度差等等強烈對比，人物畫來說,通常是瞳孔&#x2F;髮飾&#x2F;首飾等等區域，高純度&#x2F;冷暖明顯的這個色彩又常被說是提神色</p>
 ]]></content>
       <categories>
-        <category>读书札记</category>
+        <category>色彩课</category>
       </categories>
       <tags>
-        <tag>读书札记</tag>
+        <tag>Krenz</tag>
+        <tag>知识点</tag>
+        <tag>色彩</tag>
+        <tag>色彩课</tag>
       </tags>
   </entry>
   <entry>
